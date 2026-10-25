@@ -1677,6 +1677,32 @@ export class StorageDataCollaborationNotAllowed
     AzureErrorFields,
   ).pipe(Category.withConflictError) {}
 
+/**
+ * Microsoft.Compute: a VM (or scale set VM) run command is addressed through
+ * the `diagnosticRunCommands` surface but Azure holds it as a full-privilege
+ * run command, e.g. an earlier diagnostic run command right after a newer
+ * one ran on the same VM. Code `OperationNotAllowed`, "... was created
+ * with higher privilege and cannot be accessed via diagnostic RunCommand."
+ * (matched by message). Use the `runCommands` operations instead.
+ */
+export class RunCommandRequiresFullPrivilege
+  extends /*@__PURE__*/ Schema.TaggedError<RunCommandRequiresFullPrivilege>()(
+    "RunCommandRequiresFullPrivilege",
+    AzureErrorFields,
+  ).pipe(Category.withConflictError) {}
+
+/**
+ * Microsoft.FluidRelay: the service no longer accepts new Fluid Relay
+ * servers (tenants) -- Azure Fluid Relay is retiring. HTTP 503 "New tenant
+ * creation is disabled by Azure Fluid Relay." (matched by message). Not
+ * transient: retrying never succeeds.
+ */
+export class FluidRelayTenantCreationDisabled
+  extends /*@__PURE__*/ Schema.TaggedError<FluidRelayTenantCreationDisabled>()(
+    "FluidRelayTenantCreationDisabled",
+    AzureErrorFields,
+  ).pipe(Category.withBadRequestError) {}
+
 export const AZURE_ERROR_CODE_MAP: Record<string, new (props: any) => unknown> = {
   // Storage data planes
   BlobNotFound: BlobNotFound,
@@ -3226,6 +3252,15 @@ export const AZURE_ERROR_MESSAGE_MATCHERS: ReadonlyArray<{
     includes: "property in the data collaboration policy is not set or is set to false",
     error: StorageDataCollaborationNotAllowed,
   },
+  {
+    code: "OperationNotAllowed",
+    includes: "was created with higher privilege and cannot be accessed via diagnostic RunCommand",
+    error: RunCommandRequiresFullPrivilege,
+  },
+  {
+    includes: "New tenant creation is disabled by Azure Fluid Relay",
+    error: FluidRelayTenantCreationDisabled,
+  },
 ];
 
 export const matchAzureErrorMessage = (arm: {
@@ -3468,4 +3503,6 @@ export type AzureApiError =
   | AppComplianceAutomationBearerFallbackDisabled
   | MachineLearningAssetVersionDeleted
   | HttpResponsePayloadAPISpecValidationFailed
-  | StorageDataCollaborationNotAllowed;
+  | StorageDataCollaborationNotAllowed
+  | RunCommandRequiresFullPrivilege
+  | FluidRelayTenantCreationDisabled;

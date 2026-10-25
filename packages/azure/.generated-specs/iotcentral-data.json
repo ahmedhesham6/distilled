@@ -15,233 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.iotcentral_data#UsersRemove": "com.azure.iotcentral_data#RemoveUser",
-      "com.azure.iotcentral_data#UsersRemoveRequest": "com.azure.iotcentral_data#RemoveUserRequest",
-      "com.azure.iotcentral_data#UsersUpdate": "com.azure.iotcentral_data#UpdateUser",
-      "com.azure.iotcentral_data#UsersUpdateResponse": "com.azure.iotcentral_data#UpdateUserResponse",
-      "com.azure.iotcentral_data#UsersUpdateResponseRolesList": "com.azure.iotcentral_data#UpdateUserResponseRolesList",
-      "com.azure.iotcentral_data#UsersUpdateRequest": "com.azure.iotcentral_data#UpdateUserRequest",
-      "com.azure.iotcentral_data#UsersCreate": "com.azure.iotcentral_data#CreateUser",
-      "com.azure.iotcentral_data#UsersCreateResponse": "com.azure.iotcentral_data#CreateUserResponse",
-      "com.azure.iotcentral_data#UsersCreateResponseRolesList": "com.azure.iotcentral_data#CreateUserResponseRolesList",
-      "com.azure.iotcentral_data#UsersCreateRequest": "com.azure.iotcentral_data#CreateUserRequest",
-      "com.azure.iotcentral_data#UsersCreateRequestRolesList": "com.azure.iotcentral_data#CreateUserRequestRolesList",
-      "com.azure.iotcentral_data#UsersGet": "com.azure.iotcentral_data#GetUser",
-      "com.azure.iotcentral_data#UsersGetResponse": "com.azure.iotcentral_data#GetUserResponse",
-      "com.azure.iotcentral_data#UsersGetResponseRolesList": "com.azure.iotcentral_data#GetUserResponseRolesList",
-      "com.azure.iotcentral_data#UsersGetRequest": "com.azure.iotcentral_data#GetUserRequest",
-      "com.azure.iotcentral_data#UsersList": "com.azure.iotcentral_data#ListUsers",
-      "com.azure.iotcentral_data#UsersListRequest": "com.azure.iotcentral_data#ListUsersRequest",
-      "com.azure.iotcentral_data#ScheduledJobsListJobs": "com.azure.iotcentral_data#ListScheduledJobJobs",
-      "com.azure.iotcentral_data#ScheduledJobsListJobsRequest": "com.azure.iotcentral_data#ListScheduledJobJobsRequest",
-      "com.azure.iotcentral_data#ScheduledJobsRemove": "com.azure.iotcentral_data#RemoveScheduledJob",
-      "com.azure.iotcentral_data#ScheduledJobsRemoveRequest": "com.azure.iotcentral_data#RemoveScheduledJobRequest",
-      "com.azure.iotcentral_data#ScheduledJobsUpdate": "com.azure.iotcentral_data#UpdateScheduledJob",
-      "com.azure.iotcentral_data#ScheduledJobsUpdateRequest": "com.azure.iotcentral_data#UpdateScheduledJobRequest",
-      "com.azure.iotcentral_data#ScheduledJobsCreate": "com.azure.iotcentral_data#CreateScheduledJob",
-      "com.azure.iotcentral_data#ScheduledJobsCreateRequest": "com.azure.iotcentral_data#CreateScheduledJobRequest",
-      "com.azure.iotcentral_data#ScheduledJobsCreateRequestOrganizationsList": "com.azure.iotcentral_data#CreateScheduledJobRequestOrganizationsList",
-      "com.azure.iotcentral_data#ScheduledJobsCreateRequestDataList": "com.azure.iotcentral_data#CreateScheduledJobRequestDataList",
-      "com.azure.iotcentral_data#ScheduledJobsGet": "com.azure.iotcentral_data#GetScheduledJob",
-      "com.azure.iotcentral_data#ScheduledJobsGetRequest": "com.azure.iotcentral_data#GetScheduledJobRequest",
-      "com.azure.iotcentral_data#ScheduledJobsList": "com.azure.iotcentral_data#ListScheduledJobs",
-      "com.azure.iotcentral_data#ScheduledJobsListRequest": "com.azure.iotcentral_data#ListScheduledJobsRequest",
-      "com.azure.iotcentral_data#RolesGet": "com.azure.iotcentral_data#GetRole",
-      "com.azure.iotcentral_data#RolesGetRequest": "com.azure.iotcentral_data#GetRoleRequest",
-      "com.azure.iotcentral_data#RolesList": "com.azure.iotcentral_data#ListRoles",
-      "com.azure.iotcentral_data#RolesListRequest": "com.azure.iotcentral_data#ListRolesRequest",
-      "com.azure.iotcentral_data#OrganizationsRemove": "com.azure.iotcentral_data#RemoveOrganization",
-      "com.azure.iotcentral_data#OrganizationsRemoveRequest": "com.azure.iotcentral_data#RemoveOrganizationRequest",
-      "com.azure.iotcentral_data#OrganizationsUpdate": "com.azure.iotcentral_data#UpdateOrganization",
-      "com.azure.iotcentral_data#OrganizationsUpdateRequest": "com.azure.iotcentral_data#UpdateOrganizationRequest",
-      "com.azure.iotcentral_data#OrganizationsCreate": "com.azure.iotcentral_data#CreateOrganization",
-      "com.azure.iotcentral_data#OrganizationsCreateRequest": "com.azure.iotcentral_data#CreateOrganizationRequest",
-      "com.azure.iotcentral_data#OrganizationsGet": "com.azure.iotcentral_data#GetOrganization",
-      "com.azure.iotcentral_data#OrganizationsGetRequest": "com.azure.iotcentral_data#GetOrganizationRequest",
-      "com.azure.iotcentral_data#OrganizationsList": "com.azure.iotcentral_data#ListOrganizations",
-      "com.azure.iotcentral_data#OrganizationsListRequest": "com.azure.iotcentral_data#ListOrganizationsRequest",
-      "com.azure.iotcentral_data#JobsStop": "com.azure.iotcentral_data#StopJob",
-      "com.azure.iotcentral_data#JobsStopRequest": "com.azure.iotcentral_data#StopJobRequest",
-      "com.azure.iotcentral_data#JobsResume": "com.azure.iotcentral_data#ResumeJob",
-      "com.azure.iotcentral_data#JobsResumeRequest": "com.azure.iotcentral_data#ResumeJobRequest",
-      "com.azure.iotcentral_data#JobsGetDevices": "com.azure.iotcentral_data#GetJobDevices",
-      "com.azure.iotcentral_data#JobsGetDevicesRequest": "com.azure.iotcentral_data#GetJobDevicesRequest",
-      "com.azure.iotcentral_data#JobsCreate": "com.azure.iotcentral_data#CreateJob",
-      "com.azure.iotcentral_data#JobsCreateRequest": "com.azure.iotcentral_data#CreateJobRequest",
-      "com.azure.iotcentral_data#JobsCreateRequestOrganizationsList": "com.azure.iotcentral_data#CreateJobRequestOrganizationsList",
-      "com.azure.iotcentral_data#JobsCreateRequestDataList": "com.azure.iotcentral_data#CreateJobRequestDataList",
-      "com.azure.iotcentral_data#JobsGet": "com.azure.iotcentral_data#GetJob",
-      "com.azure.iotcentral_data#JobsGetRequest": "com.azure.iotcentral_data#GetJobRequest",
-      "com.azure.iotcentral_data#JobsList": "com.azure.iotcentral_data#ListJobs",
-      "com.azure.iotcentral_data#JobsListRequest": "com.azure.iotcentral_data#ListJobsRequest",
-      "com.azure.iotcentral_data#FileUploadsRemove": "com.azure.iotcentral_data#RemoveFileUpload",
-      "com.azure.iotcentral_data#FileUploadsRemoveRequest": "com.azure.iotcentral_data#RemoveFileUploadRequest",
-      "com.azure.iotcentral_data#FileUploadsUpdate": "com.azure.iotcentral_data#UpdateFileUpload",
-      "com.azure.iotcentral_data#FileUploadsUpdateRequest": "com.azure.iotcentral_data#UpdateFileUploadRequest",
-      "com.azure.iotcentral_data#FileUploadsCreate": "com.azure.iotcentral_data#CreateFileUpload",
-      "com.azure.iotcentral_data#FileUploadsCreateRequest": "com.azure.iotcentral_data#CreateFileUploadRequest",
-      "com.azure.iotcentral_data#FileUploadsGet": "com.azure.iotcentral_data#GetFileUpload",
-      "com.azure.iotcentral_data#FileUploadsGetRequest": "com.azure.iotcentral_data#GetFileUploadRequest",
-      "com.azure.iotcentral_data#EnrollmentGroupsVerifyX509": "com.azure.iotcentral_data#VerifyEnrollmentGroupX509",
-      "com.azure.iotcentral_data#EnrollmentGroupsVerifyX509Request": "com.azure.iotcentral_data#VerifyEnrollmentGroupX509Request",
-      "com.azure.iotcentral_data#EnrollmentGroupsVerifyX509RequestEntry": "com.azure.iotcentral_data#VerifyEnrollmentGroupX509RequestEntry",
-      "com.azure.iotcentral_data#EnrollmentGroupsGenerateVerificationCodeX509": "com.azure.iotcentral_data#GenerateEnrollmentGroupVerificationCodeX509",
-      "com.azure.iotcentral_data#EnrollmentGroupsGenerateVerificationCodeX509Request": "com.azure.iotcentral_data#GenerateEnrollmentGroupVerificationCodeX509Request",
-      "com.azure.iotcentral_data#EnrollmentGroupsGenerateVerificationCodeX509RequestEntry": "com.azure.iotcentral_data#GenerateEnrollmentGroupVerificationCodeX509RequestEntry",
-      "com.azure.iotcentral_data#EnrollmentGroupsRemoveX509": "com.azure.iotcentral_data#RemoveEnrollmentGroupX509",
-      "com.azure.iotcentral_data#EnrollmentGroupsRemoveX509Request": "com.azure.iotcentral_data#RemoveEnrollmentGroupX509Request",
-      "com.azure.iotcentral_data#EnrollmentGroupsRemoveX509RequestEntry": "com.azure.iotcentral_data#RemoveEnrollmentGroupX509RequestEntry",
-      "com.azure.iotcentral_data#EnrollmentGroupsCreateX509": "com.azure.iotcentral_data#CreateEnrollmentGroupX509",
-      "com.azure.iotcentral_data#EnrollmentGroupsCreateX509Request": "com.azure.iotcentral_data#CreateEnrollmentGroupX509Request",
-      "com.azure.iotcentral_data#EnrollmentGroupsCreateX509RequestEntry": "com.azure.iotcentral_data#CreateEnrollmentGroupX509RequestEntry",
-      "com.azure.iotcentral_data#EnrollmentGroupsGetX509": "com.azure.iotcentral_data#GetEnrollmentGroupX509",
-      "com.azure.iotcentral_data#EnrollmentGroupsGetX509Request": "com.azure.iotcentral_data#GetEnrollmentGroupX509Request",
-      "com.azure.iotcentral_data#EnrollmentGroupsGetX509RequestEntry": "com.azure.iotcentral_data#GetEnrollmentGroupX509RequestEntry",
-      "com.azure.iotcentral_data#EnrollmentGroupsRemove": "com.azure.iotcentral_data#RemoveEnrollmentGroup",
-      "com.azure.iotcentral_data#EnrollmentGroupsRemoveRequest": "com.azure.iotcentral_data#RemoveEnrollmentGroupRequest",
-      "com.azure.iotcentral_data#EnrollmentGroupsUpdate": "com.azure.iotcentral_data#UpdateEnrollmentGroup",
-      "com.azure.iotcentral_data#EnrollmentGroupsUpdateRequest": "com.azure.iotcentral_data#UpdateEnrollmentGroupRequest",
-      "com.azure.iotcentral_data#EnrollmentGroupsCreate": "com.azure.iotcentral_data#CreateEnrollmentGroup",
-      "com.azure.iotcentral_data#EnrollmentGroupsCreateRequest": "com.azure.iotcentral_data#CreateEnrollmentGroupRequest",
-      "com.azure.iotcentral_data#EnrollmentGroupsCreateRequestType": "com.azure.iotcentral_data#CreateEnrollmentGroupRequestType",
-      "com.azure.iotcentral_data#EnrollmentGroupsGet": "com.azure.iotcentral_data#GetEnrollmentGroup",
-      "com.azure.iotcentral_data#EnrollmentGroupsGetRequest": "com.azure.iotcentral_data#GetEnrollmentGroupRequest",
-      "com.azure.iotcentral_data#EnrollmentGroupsList": "com.azure.iotcentral_data#ListEnrollmentGroups",
-      "com.azure.iotcentral_data#EnrollmentGroupsListRequest": "com.azure.iotcentral_data#ListEnrollmentGroupsRequest",
-      "com.azure.iotcentral_data#DevicesGetTelemetryValue": "com.azure.iotcentral_data#GetDeviceTelemetryValue",
-      "com.azure.iotcentral_data#DevicesGetTelemetryValueRequest": "com.azure.iotcentral_data#GetDeviceTelemetryValueRequest",
-      "com.azure.iotcentral_data#DevicesRemoveRelationship": "com.azure.iotcentral_data#RemoveDeviceRelationship",
-      "com.azure.iotcentral_data#DevicesRemoveRelationshipRequest": "com.azure.iotcentral_data#RemoveDeviceRelationshipRequest",
-      "com.azure.iotcentral_data#DevicesUpdateRelationship": "com.azure.iotcentral_data#UpdateDeviceRelationship",
-      "com.azure.iotcentral_data#DevicesUpdateRelationshipRequest": "com.azure.iotcentral_data#UpdateDeviceRelationshipRequest",
-      "com.azure.iotcentral_data#DevicesCreateRelationship": "com.azure.iotcentral_data#CreateDeviceRelationship",
-      "com.azure.iotcentral_data#DevicesCreateRelationshipRequest": "com.azure.iotcentral_data#CreateDeviceRelationshipRequest",
-      "com.azure.iotcentral_data#DevicesGetRelationship": "com.azure.iotcentral_data#GetDeviceRelationship",
-      "com.azure.iotcentral_data#DevicesGetRelationshipRequest": "com.azure.iotcentral_data#GetDeviceRelationshipRequest",
-      "com.azure.iotcentral_data#DevicesListRelationships": "com.azure.iotcentral_data#ListDeviceRelationships",
-      "com.azure.iotcentral_data#DevicesListRelationshipsRequest": "com.azure.iotcentral_data#ListDeviceRelationshipsRequest",
-      "com.azure.iotcentral_data#DevicesUpdateProperties": "com.azure.iotcentral_data#UpdateDeviceProperties",
-      "com.azure.iotcentral_data#DevicesUpdatePropertiesRequest": "com.azure.iotcentral_data#UpdateDevicePropertiesRequest",
-      "com.azure.iotcentral_data#DevicesReplaceProperties": "com.azure.iotcentral_data#ReplaceDeviceProperties",
-      "com.azure.iotcentral_data#DevicesReplacePropertiesRequest": "com.azure.iotcentral_data#ReplaceDevicePropertiesRequest",
-      "com.azure.iotcentral_data#DevicesGetProperties": "com.azure.iotcentral_data#GetDeviceProperties",
-      "com.azure.iotcentral_data#DevicesGetPropertiesResponse": "com.azure.iotcentral_data#GetDevicePropertiesResponse",
-      "com.azure.iotcentral_data#DevicesGetPropertiesRequest": "com.azure.iotcentral_data#GetDevicePropertiesRequest",
-      "com.azure.iotcentral_data#DevicesGetModuleTelemetryValue": "com.azure.iotcentral_data#GetDeviceModuleTelemetryValue",
-      "com.azure.iotcentral_data#DevicesGetModuleTelemetryValueRequest": "com.azure.iotcentral_data#GetDeviceModuleTelemetryValueRequest",
-      "com.azure.iotcentral_data#DevicesUpdateModuleProperties": "com.azure.iotcentral_data#UpdateDeviceModuleProperties",
-      "com.azure.iotcentral_data#DevicesUpdateModulePropertiesRequest": "com.azure.iotcentral_data#UpdateDeviceModulePropertiesRequest",
-      "com.azure.iotcentral_data#DevicesReplaceModuleProperties": "com.azure.iotcentral_data#ReplaceDeviceModuleProperties",
-      "com.azure.iotcentral_data#DevicesReplaceModulePropertiesRequest": "com.azure.iotcentral_data#ReplaceDeviceModulePropertiesRequest",
-      "com.azure.iotcentral_data#DevicesGetModuleProperties": "com.azure.iotcentral_data#GetDeviceModuleProperties",
-      "com.azure.iotcentral_data#DevicesGetModulePropertiesResponse": "com.azure.iotcentral_data#GetDeviceModulePropertiesResponse",
-      "com.azure.iotcentral_data#DevicesGetModulePropertiesRequest": "com.azure.iotcentral_data#GetDeviceModulePropertiesRequest",
-      "com.azure.iotcentral_data#DevicesGetModuleComponentTelemetryValue": "com.azure.iotcentral_data#GetDeviceModuleComponentTelemetryValue",
-      "com.azure.iotcentral_data#DevicesGetModuleComponentTelemetryValueRequest": "com.azure.iotcentral_data#GetDeviceModuleComponentTelemetryValueRequest",
-      "com.azure.iotcentral_data#DevicesUpdateModuleComponentProperties": "com.azure.iotcentral_data#UpdateDeviceModuleComponentProperties",
-      "com.azure.iotcentral_data#DevicesUpdateModuleComponentPropertiesRequest": "com.azure.iotcentral_data#UpdateDeviceModuleComponentPropertiesRequest",
-      "com.azure.iotcentral_data#DevicesReplaceModuleComponentProperties": "com.azure.iotcentral_data#ReplaceDeviceModuleComponentProperties",
-      "com.azure.iotcentral_data#DevicesReplaceModuleComponentPropertiesRequest": "com.azure.iotcentral_data#ReplaceDeviceModuleComponentPropertiesRequest",
-      "com.azure.iotcentral_data#DevicesGetModuleComponentProperties": "com.azure.iotcentral_data#GetDeviceModuleComponentProperties",
-      "com.azure.iotcentral_data#DevicesGetModuleComponentPropertiesResponse": "com.azure.iotcentral_data#GetDeviceModuleComponentPropertiesResponse",
-      "com.azure.iotcentral_data#DevicesGetModuleComponentPropertiesRequest": "com.azure.iotcentral_data#GetDeviceModuleComponentPropertiesRequest",
-      "com.azure.iotcentral_data#DevicesRunModuleComponentCommand": "com.azure.iotcentral_data#RunDeviceModuleComponentCommand",
-      "com.azure.iotcentral_data#DevicesRunModuleComponentCommandRequest": "com.azure.iotcentral_data#RunDeviceModuleComponentCommandRequest",
-      "com.azure.iotcentral_data#DevicesGetModuleComponentCommandHistory": "com.azure.iotcentral_data#GetDeviceModuleComponentCommandHistory",
-      "com.azure.iotcentral_data#DevicesGetModuleComponentCommandHistoryRequest": "com.azure.iotcentral_data#GetDeviceModuleComponentCommandHistoryRequest",
-      "com.azure.iotcentral_data#DevicesListModuleComponents": "com.azure.iotcentral_data#ListDeviceModuleComponents",
-      "com.azure.iotcentral_data#DevicesListModuleComponentsRequest": "com.azure.iotcentral_data#ListDeviceModuleComponentsRequest",
-      "com.azure.iotcentral_data#DevicesRunModuleCommand": "com.azure.iotcentral_data#RunDeviceModuleCommand",
-      "com.azure.iotcentral_data#DevicesRunModuleCommandRequest": "com.azure.iotcentral_data#RunDeviceModuleCommandRequest",
-      "com.azure.iotcentral_data#DevicesGetModuleCommandHistory": "com.azure.iotcentral_data#GetDeviceModuleCommandHistory",
-      "com.azure.iotcentral_data#DevicesGetModuleCommandHistoryRequest": "com.azure.iotcentral_data#GetDeviceModuleCommandHistoryRequest",
-      "com.azure.iotcentral_data#DevicesListModules": "com.azure.iotcentral_data#ListDeviceModules",
-      "com.azure.iotcentral_data#DevicesListModulesRequest": "com.azure.iotcentral_data#ListDeviceModulesRequest",
-      "com.azure.iotcentral_data#DevicesGetCredentials": "com.azure.iotcentral_data#GetDeviceCredentials",
-      "com.azure.iotcentral_data#DevicesGetCredentialsRequest": "com.azure.iotcentral_data#GetDeviceCredentialsRequest",
-      "com.azure.iotcentral_data#DevicesGetComponentTelemetryValue": "com.azure.iotcentral_data#GetDeviceComponentTelemetryValue",
-      "com.azure.iotcentral_data#DevicesGetComponentTelemetryValueRequest": "com.azure.iotcentral_data#GetDeviceComponentTelemetryValueRequest",
-      "com.azure.iotcentral_data#DevicesUpdateComponentProperties": "com.azure.iotcentral_data#UpdateDeviceComponentProperties",
-      "com.azure.iotcentral_data#DevicesUpdateComponentPropertiesRequest": "com.azure.iotcentral_data#UpdateDeviceComponentPropertiesRequest",
-      "com.azure.iotcentral_data#DevicesReplaceComponentProperties": "com.azure.iotcentral_data#ReplaceDeviceComponentProperties",
-      "com.azure.iotcentral_data#DevicesReplaceComponentPropertiesRequest": "com.azure.iotcentral_data#ReplaceDeviceComponentPropertiesRequest",
-      "com.azure.iotcentral_data#DevicesGetComponentProperties": "com.azure.iotcentral_data#GetDeviceComponentProperties",
-      "com.azure.iotcentral_data#DevicesGetComponentPropertiesResponse": "com.azure.iotcentral_data#GetDeviceComponentPropertiesResponse",
-      "com.azure.iotcentral_data#DevicesGetComponentPropertiesRequest": "com.azure.iotcentral_data#GetDeviceComponentPropertiesRequest",
-      "com.azure.iotcentral_data#DevicesRunComponentCommand": "com.azure.iotcentral_data#RunDeviceComponentCommand",
-      "com.azure.iotcentral_data#DevicesRunComponentCommandRequest": "com.azure.iotcentral_data#RunDeviceComponentCommandRequest",
-      "com.azure.iotcentral_data#DevicesGetComponentCommandHistory": "com.azure.iotcentral_data#GetDeviceComponentCommandHistory",
-      "com.azure.iotcentral_data#DevicesGetComponentCommandHistoryRequest": "com.azure.iotcentral_data#GetDeviceComponentCommandHistoryRequest",
-      "com.azure.iotcentral_data#DevicesListComponents": "com.azure.iotcentral_data#ListDeviceComponents",
-      "com.azure.iotcentral_data#DevicesListComponentsRequest": "com.azure.iotcentral_data#ListDeviceComponentsRequest",
-      "com.azure.iotcentral_data#DevicesRunCommand": "com.azure.iotcentral_data#RunDeviceCommand",
-      "com.azure.iotcentral_data#DevicesRunCommandRequest": "com.azure.iotcentral_data#RunDeviceCommandRequest",
-      "com.azure.iotcentral_data#DevicesGetCommandHistory": "com.azure.iotcentral_data#GetDeviceCommandHistory",
-      "com.azure.iotcentral_data#DevicesGetCommandHistoryRequest": "com.azure.iotcentral_data#GetDeviceCommandHistoryRequest",
-      "com.azure.iotcentral_data#DevicesRemoveAttestation": "com.azure.iotcentral_data#RemoveDeviceAttestation",
-      "com.azure.iotcentral_data#DevicesRemoveAttestationRequest": "com.azure.iotcentral_data#RemoveDeviceAttestationRequest",
-      "com.azure.iotcentral_data#DevicesUpdateAttestation": "com.azure.iotcentral_data#UpdateDeviceAttestation",
-      "com.azure.iotcentral_data#DevicesUpdateAttestationRequest": "com.azure.iotcentral_data#UpdateDeviceAttestationRequest",
-      "com.azure.iotcentral_data#DevicesCreateAttestation": "com.azure.iotcentral_data#CreateDeviceAttestation",
-      "com.azure.iotcentral_data#DevicesCreateAttestationRequest": "com.azure.iotcentral_data#CreateDeviceAttestationRequest",
-      "com.azure.iotcentral_data#DevicesGetAttestation": "com.azure.iotcentral_data#GetDeviceAttestation",
-      "com.azure.iotcentral_data#DevicesGetAttestationRequest": "com.azure.iotcentral_data#GetDeviceAttestationRequest",
-      "com.azure.iotcentral_data#DevicesRemove": "com.azure.iotcentral_data#RemoveDevice",
-      "com.azure.iotcentral_data#DevicesRemoveRequest": "com.azure.iotcentral_data#RemoveDeviceRequest",
-      "com.azure.iotcentral_data#DevicesUpdate": "com.azure.iotcentral_data#UpdateDevice",
-      "com.azure.iotcentral_data#DevicesUpdateRequest": "com.azure.iotcentral_data#UpdateDeviceRequest",
-      "com.azure.iotcentral_data#DevicesCreate": "com.azure.iotcentral_data#CreateDevice",
-      "com.azure.iotcentral_data#DevicesCreateRequest": "com.azure.iotcentral_data#CreateDeviceRequest",
-      "com.azure.iotcentral_data#DevicesCreateRequestOrganizationsList": "com.azure.iotcentral_data#CreateDeviceRequestOrganizationsList",
-      "com.azure.iotcentral_data#DevicesGet": "com.azure.iotcentral_data#GetDevice",
-      "com.azure.iotcentral_data#DevicesGetRequest": "com.azure.iotcentral_data#GetDeviceRequest",
-      "com.azure.iotcentral_data#DevicesList": "com.azure.iotcentral_data#ListDevices",
-      "com.azure.iotcentral_data#DevicesListRequest": "com.azure.iotcentral_data#ListDevicesRequest",
-      "com.azure.iotcentral_data#DeviceTemplatesRemove": "com.azure.iotcentral_data#RemoveDeviceTemplate",
-      "com.azure.iotcentral_data#DeviceTemplatesRemoveRequest": "com.azure.iotcentral_data#RemoveDeviceTemplateRequest",
-      "com.azure.iotcentral_data#DeviceTemplatesUpdate": "com.azure.iotcentral_data#UpdateDeviceTemplate",
-      "com.azure.iotcentral_data#DeviceTemplatesUpdateRequest": "com.azure.iotcentral_data#UpdateDeviceTemplateRequest",
-      "com.azure.iotcentral_data#DeviceTemplatesCreate": "com.azure.iotcentral_data#CreateDeviceTemplate",
-      "com.azure.iotcentral_data#DeviceTemplatesCreateRequest": "com.azure.iotcentral_data#CreateDeviceTemplateRequest",
-      "com.azure.iotcentral_data#DeviceTemplatesCreateRequestTypeList": "com.azure.iotcentral_data#CreateDeviceTemplateRequestTypeList",
-      "com.azure.iotcentral_data#DeviceTemplatesGet": "com.azure.iotcentral_data#GetDeviceTemplate",
-      "com.azure.iotcentral_data#DeviceTemplatesGetRequest": "com.azure.iotcentral_data#GetDeviceTemplateRequest",
-      "com.azure.iotcentral_data#DeviceTemplatesList": "com.azure.iotcentral_data#ListDeviceTemplates",
-      "com.azure.iotcentral_data#DeviceTemplatesListRequest": "com.azure.iotcentral_data#ListDeviceTemplatesRequest",
-      "com.azure.iotcentral_data#DeviceGroupsGetDevices": "com.azure.iotcentral_data#GetDeviceGroupDevices",
-      "com.azure.iotcentral_data#DeviceGroupsGetDevicesRequest": "com.azure.iotcentral_data#GetDeviceGroupDevicesRequest",
-      "com.azure.iotcentral_data#DeviceGroupsRemove": "com.azure.iotcentral_data#RemoveDeviceGroup",
-      "com.azure.iotcentral_data#DeviceGroupsRemoveRequest": "com.azure.iotcentral_data#RemoveDeviceGroupRequest",
-      "com.azure.iotcentral_data#DeviceGroupsUpdate": "com.azure.iotcentral_data#UpdateDeviceGroup",
-      "com.azure.iotcentral_data#DeviceGroupsUpdateRequest": "com.azure.iotcentral_data#UpdateDeviceGroupRequest",
-      "com.azure.iotcentral_data#DeviceGroupsCreate": "com.azure.iotcentral_data#CreateDeviceGroup",
-      "com.azure.iotcentral_data#DeviceGroupsCreateRequest": "com.azure.iotcentral_data#CreateDeviceGroupRequest",
-      "com.azure.iotcentral_data#DeviceGroupsCreateRequestOrganizationsList": "com.azure.iotcentral_data#CreateDeviceGroupRequestOrganizationsList",
-      "com.azure.iotcentral_data#DeviceGroupsGet": "com.azure.iotcentral_data#GetDeviceGroup",
-      "com.azure.iotcentral_data#DeviceGroupsGetRequest": "com.azure.iotcentral_data#GetDeviceGroupRequest",
-      "com.azure.iotcentral_data#DeviceGroupsList": "com.azure.iotcentral_data#ListDeviceGroups",
-      "com.azure.iotcentral_data#DeviceGroupsListRequest": "com.azure.iotcentral_data#ListDeviceGroupsRequest",
-      "com.azure.iotcentral_data#ApiTokensRemove": "com.azure.iotcentral_data#RemoveApiToken",
-      "com.azure.iotcentral_data#ApiTokensRemoveRequest": "com.azure.iotcentral_data#RemoveApiTokenRequest",
-      "com.azure.iotcentral_data#ApiTokensCreate": "com.azure.iotcentral_data#CreateApiToken",
-      "com.azure.iotcentral_data#ApiTokensCreateResponse": "com.azure.iotcentral_data#CreateApiTokenResponse",
-      "com.azure.iotcentral_data#ApiTokensCreateResponseRolesList": "com.azure.iotcentral_data#CreateApiTokenResponseRolesList",
-      "com.azure.iotcentral_data#ApiTokensCreateRequest": "com.azure.iotcentral_data#CreateApiTokenRequest",
-      "com.azure.iotcentral_data#ApiTokensCreateRequestRolesList": "com.azure.iotcentral_data#CreateApiTokenRequestRolesList",
-      "com.azure.iotcentral_data#ApiTokensGet": "com.azure.iotcentral_data#GetApiToken",
-      "com.azure.iotcentral_data#ApiTokensGetResponse": "com.azure.iotcentral_data#GetApiTokenResponse",
-      "com.azure.iotcentral_data#ApiTokensGetResponseRolesList": "com.azure.iotcentral_data#GetApiTokenResponseRolesList",
-      "com.azure.iotcentral_data#ApiTokensGetRequest": "com.azure.iotcentral_data#GetApiTokenRequest",
-      "com.azure.iotcentral_data#ApiTokensList": "com.azure.iotcentral_data#ListApiTokens",
-      "com.azure.iotcentral_data#ApiTokensListRequest": "com.azure.iotcentral_data#ListApiTokensRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.iotcentral_data#UsersRemove": {
+    "com.azure.iotcentral_data#RemoveUser": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#UsersRemoveRequest"
+        "target": "com.azure.iotcentral_data#RemoveUserRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -263,7 +43,7 @@
         "smithy.api#documentation": "Delete a user"
       }
     },
-    "com.azure.iotcentral_data#UsersRemoveRequest": {
+    "com.azure.iotcentral_data#RemoveUserRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -294,13 +74,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#UsersUpdate": {
+    "com.azure.iotcentral_data#UpdateUser": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#UsersUpdateRequest"
+        "target": "com.azure.iotcentral_data#UpdateUserRequest"
       },
       "output": {
-        "target": "com.azure.iotcentral_data#UsersUpdateResponse"
+        "target": "com.azure.iotcentral_data#UpdateUserResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -319,11 +99,11 @@
         "smithy.api#documentation": "Update a user in the application via patch"
       }
     },
-    "com.azure.iotcentral_data#UsersUpdateResponse": {
+    "com.azure.iotcentral_data#UpdateUserResponse": {
       "type": "structure",
       "members": {
         "roles": {
-          "target": "com.azure.iotcentral_data#UsersUpdateResponseRolesList",
+          "target": "com.azure.iotcentral_data#UpdateUserResponseRolesList",
           "traits": {
             "smithy.api#documentation": "List of role assignments that specify the permissions to access the application.",
             "smithy.api#required": {}
@@ -347,7 +127,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.iotcentral_data#UsersUpdateResponseRolesList": {
+    "com.azure.iotcentral_data#UpdateUserResponseRolesList": {
       "type": "list",
       "member": {
         "target": "com.azure.iotcentral_data#RoleAssignment"
@@ -377,7 +157,7 @@
         "smithy.api#documentation": "The role assignment definition."
       }
     },
-    "com.azure.iotcentral_data#UsersUpdateRequest": {
+    "com.azure.iotcentral_data#UpdateUserRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -408,13 +188,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#UsersCreate": {
+    "com.azure.iotcentral_data#CreateUser": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#UsersCreateRequest"
+        "target": "com.azure.iotcentral_data#CreateUserRequest"
       },
       "output": {
-        "target": "com.azure.iotcentral_data#UsersCreateResponse"
+        "target": "com.azure.iotcentral_data#CreateUserResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -433,11 +213,11 @@
         "smithy.api#documentation": "Create a user in the application"
       }
     },
-    "com.azure.iotcentral_data#UsersCreateResponse": {
+    "com.azure.iotcentral_data#CreateUserResponse": {
       "type": "structure",
       "members": {
         "roles": {
-          "target": "com.azure.iotcentral_data#UsersCreateResponseRolesList",
+          "target": "com.azure.iotcentral_data#CreateUserResponseRolesList",
           "traits": {
             "smithy.api#documentation": "List of role assignments that specify the permissions to access the application.",
             "smithy.api#required": {}
@@ -461,7 +241,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.iotcentral_data#UsersCreateResponseRolesList": {
+    "com.azure.iotcentral_data#CreateUserResponseRolesList": {
       "type": "list",
       "member": {
         "target": "com.azure.iotcentral_data#RoleAssignment"
@@ -470,7 +250,7 @@
         "smithy.api#documentation": "List of role assignments that specify the permissions to access the application."
       }
     },
-    "com.azure.iotcentral_data#UsersCreateRequest": {
+    "com.azure.iotcentral_data#CreateUserRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -497,7 +277,7 @@
           }
         },
         "roles": {
-          "target": "com.azure.iotcentral_data#UsersCreateRequestRolesList",
+          "target": "com.azure.iotcentral_data#CreateUserRequestRolesList",
           "traits": {
             "smithy.api#documentation": "List of role assignments that specify the permissions to access the application.",
             "smithy.api#required": {}
@@ -515,7 +295,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#UsersCreateRequestRolesList": {
+    "com.azure.iotcentral_data#CreateUserRequestRolesList": {
       "type": "list",
       "member": {
         "target": "com.azure.iotcentral_data#RoleAssignment"
@@ -524,13 +304,13 @@
         "smithy.api#documentation": "List of role assignments that specify the permissions to access the application."
       }
     },
-    "com.azure.iotcentral_data#UsersGet": {
+    "com.azure.iotcentral_data#GetUser": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#UsersGetRequest"
+        "target": "com.azure.iotcentral_data#GetUserRequest"
       },
       "output": {
-        "target": "com.azure.iotcentral_data#UsersGetResponse"
+        "target": "com.azure.iotcentral_data#GetUserResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -549,11 +329,11 @@
         "smithy.api#documentation": "Get a user by ID"
       }
     },
-    "com.azure.iotcentral_data#UsersGetResponse": {
+    "com.azure.iotcentral_data#GetUserResponse": {
       "type": "structure",
       "members": {
         "roles": {
-          "target": "com.azure.iotcentral_data#UsersGetResponseRolesList",
+          "target": "com.azure.iotcentral_data#GetUserResponseRolesList",
           "traits": {
             "smithy.api#documentation": "List of role assignments that specify the permissions to access the application.",
             "smithy.api#required": {}
@@ -577,7 +357,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.iotcentral_data#UsersGetResponseRolesList": {
+    "com.azure.iotcentral_data#GetUserResponseRolesList": {
       "type": "list",
       "member": {
         "target": "com.azure.iotcentral_data#RoleAssignment"
@@ -586,7 +366,7 @@
         "smithy.api#documentation": "List of role assignments that specify the permissions to access the application."
       }
     },
-    "com.azure.iotcentral_data#UsersGetRequest": {
+    "com.azure.iotcentral_data#GetUserRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -617,10 +397,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#UsersList": {
+    "com.azure.iotcentral_data#ListUsers": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#UsersListRequest"
+        "target": "com.azure.iotcentral_data#ListUsersRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#UserCollection"
@@ -716,7 +496,7 @@
         "smithy.api#documentation": "List of role assignments that specify the permissions to access the application."
       }
     },
-    "com.azure.iotcentral_data#UsersListRequest": {
+    "com.azure.iotcentral_data#ListUsersRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -745,10 +525,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsListJobs": {
+    "com.azure.iotcentral_data#ListScheduledJobJobs": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#ScheduledJobsListJobsRequest"
+        "target": "com.azure.iotcentral_data#ListScheduledJobJobsRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#JobCollection"
@@ -1050,7 +830,7 @@
         "smithy.api#documentation": "Whether batching is done on a specified number of devices or a percentage of the total devices."
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsListJobsRequest": {
+    "com.azure.iotcentral_data#ListScheduledJobJobsRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -1087,10 +867,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsRemove": {
+    "com.azure.iotcentral_data#RemoveScheduledJob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#ScheduledJobsRemoveRequest"
+        "target": "com.azure.iotcentral_data#RemoveScheduledJobRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -1112,7 +892,7 @@
         "smithy.api#documentation": "Delete a scheduled job\n\nDelete an existing scheduled job by ID."
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsRemoveRequest": {
+    "com.azure.iotcentral_data#RemoveScheduledJobRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -1143,10 +923,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsUpdate": {
+    "com.azure.iotcentral_data#UpdateScheduledJob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#ScheduledJobsUpdateRequest"
+        "target": "com.azure.iotcentral_data#UpdateScheduledJobRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#ScheduledJob"
@@ -1337,7 +1117,7 @@
         "smithy.api#documentation": "Data related to the operation being performed by this job. All entries must be of the same type."
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsUpdateRequest": {
+    "com.azure.iotcentral_data#UpdateScheduledJobRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -1368,10 +1148,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsCreate": {
+    "com.azure.iotcentral_data#CreateScheduledJob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#ScheduledJobsCreateRequest"
+        "target": "com.azure.iotcentral_data#CreateScheduledJobRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#ScheduledJob"
@@ -1393,7 +1173,7 @@
         "smithy.api#documentation": "Create or update a scheduled job\n\nCreate or update a scheduled job by ID."
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsCreateRequest": {
+    "com.azure.iotcentral_data#CreateScheduledJobRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -1457,14 +1237,14 @@
           }
         },
         "data": {
-          "target": "com.azure.iotcentral_data#ScheduledJobsCreateRequestDataList",
+          "target": "com.azure.iotcentral_data#CreateScheduledJobRequestDataList",
           "traits": {
             "smithy.api#documentation": "Data related to the operation being performed by this job. All entries must be of the same type.",
             "smithy.api#required": {}
           }
         },
         "organizations": {
-          "target": "com.azure.iotcentral_data#ScheduledJobsCreateRequestOrganizationsList",
+          "target": "com.azure.iotcentral_data#CreateScheduledJobRequestOrganizationsList",
           "traits": {
             "smithy.api#documentation": "List of organizations of the job, only one organization is supported today, multiple organizations will be supported soon."
           }
@@ -1487,7 +1267,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsCreateRequestOrganizationsList": {
+    "com.azure.iotcentral_data#CreateScheduledJobRequestOrganizationsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -1496,7 +1276,7 @@
         "smithy.api#documentation": "List of organizations of the job, only one organization is supported today, multiple organizations will be supported soon."
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsCreateRequestDataList": {
+    "com.azure.iotcentral_data#CreateScheduledJobRequestDataList": {
       "type": "list",
       "member": {
         "target": "com.azure.iotcentral_data#JobData"
@@ -1505,10 +1285,10 @@
         "smithy.api#documentation": "Data related to the operation being performed by this job. All entries must be of the same type."
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsGet": {
+    "com.azure.iotcentral_data#GetScheduledJob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#ScheduledJobsGetRequest"
+        "target": "com.azure.iotcentral_data#GetScheduledJobRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#ScheduledJob"
@@ -1530,7 +1310,7 @@
         "smithy.api#documentation": "Get a scheduled job by ID\n\nGet details about a scheduled job by ID."
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsGetRequest": {
+    "com.azure.iotcentral_data#GetScheduledJobRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -1561,10 +1341,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsList": {
+    "com.azure.iotcentral_data#ListScheduledJobs": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#ScheduledJobsListRequest"
+        "target": "com.azure.iotcentral_data#ListScheduledJobsRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#ScheduledJobCollection"
@@ -1623,7 +1403,7 @@
         "smithy.api#documentation": "The collection of scheduled jobs."
       }
     },
-    "com.azure.iotcentral_data#ScheduledJobsListRequest": {
+    "com.azure.iotcentral_data#ListScheduledJobsRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -1652,10 +1432,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#RolesGet": {
+    "com.azure.iotcentral_data#GetRole": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#RolesGetRequest"
+        "target": "com.azure.iotcentral_data#GetRoleRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Role"
@@ -1697,7 +1477,7 @@
         "smithy.api#documentation": "The role definition."
       }
     },
-    "com.azure.iotcentral_data#RolesGetRequest": {
+    "com.azure.iotcentral_data#GetRoleRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -1728,10 +1508,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#RolesList": {
+    "com.azure.iotcentral_data#ListRoles": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#RolesListRequest"
+        "target": "com.azure.iotcentral_data#ListRolesRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#RoleCollection"
@@ -1790,7 +1570,7 @@
         "smithy.api#documentation": "The collection of roles."
       }
     },
-    "com.azure.iotcentral_data#RolesListRequest": {
+    "com.azure.iotcentral_data#ListRolesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -1819,10 +1599,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#OrganizationsRemove": {
+    "com.azure.iotcentral_data#RemoveOrganization": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#OrganizationsRemoveRequest"
+        "target": "com.azure.iotcentral_data#RemoveOrganizationRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -1844,7 +1624,7 @@
         "smithy.api#documentation": "Delete an organization"
       }
     },
-    "com.azure.iotcentral_data#OrganizationsRemoveRequest": {
+    "com.azure.iotcentral_data#RemoveOrganizationRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -1875,10 +1655,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#OrganizationsUpdate": {
+    "com.azure.iotcentral_data#UpdateOrganization": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#OrganizationsUpdateRequest"
+        "target": "com.azure.iotcentral_data#UpdateOrganizationRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Organization"
@@ -1926,7 +1706,7 @@
         "smithy.api#documentation": "The organization definition."
       }
     },
-    "com.azure.iotcentral_data#OrganizationsUpdateRequest": {
+    "com.azure.iotcentral_data#UpdateOrganizationRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -1957,10 +1737,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#OrganizationsCreate": {
+    "com.azure.iotcentral_data#CreateOrganization": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#OrganizationsCreateRequest"
+        "target": "com.azure.iotcentral_data#CreateOrganizationRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Organization"
@@ -1982,7 +1762,7 @@
         "smithy.api#documentation": "Create an organization in the application"
       }
     },
-    "com.azure.iotcentral_data#OrganizationsCreateRequest": {
+    "com.azure.iotcentral_data#CreateOrganizationRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -2025,10 +1805,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#OrganizationsGet": {
+    "com.azure.iotcentral_data#GetOrganization": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#OrganizationsGetRequest"
+        "target": "com.azure.iotcentral_data#GetOrganizationRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Organization"
@@ -2050,7 +1830,7 @@
         "smithy.api#documentation": "Get an organization by ID"
       }
     },
-    "com.azure.iotcentral_data#OrganizationsGetRequest": {
+    "com.azure.iotcentral_data#GetOrganizationRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -2081,10 +1861,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#OrganizationsList": {
+    "com.azure.iotcentral_data#ListOrganizations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#OrganizationsListRequest"
+        "target": "com.azure.iotcentral_data#ListOrganizationsRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#OrganizationCollection"
@@ -2143,7 +1923,7 @@
         "smithy.api#documentation": "The collection of organizations."
       }
     },
-    "com.azure.iotcentral_data#OrganizationsListRequest": {
+    "com.azure.iotcentral_data#ListOrganizationsRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -2172,10 +1952,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#JobsStop": {
+    "com.azure.iotcentral_data#StopJob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#JobsStopRequest"
+        "target": "com.azure.iotcentral_data#StopJobRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -2197,7 +1977,7 @@
         "smithy.api#documentation": "Stop a running job\n\nStop execution of a job that is currently running."
       }
     },
-    "com.azure.iotcentral_data#JobsStopRequest": {
+    "com.azure.iotcentral_data#StopJobRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -2228,10 +2008,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#JobsResume": {
+    "com.azure.iotcentral_data#ResumeJob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#JobsResumeRequest"
+        "target": "com.azure.iotcentral_data#ResumeJobRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -2253,7 +2033,7 @@
         "smithy.api#documentation": "Resume a stopped job\n\nResume execution of an existing stopped job."
       }
     },
-    "com.azure.iotcentral_data#JobsResumeRequest": {
+    "com.azure.iotcentral_data#ResumeJobRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -2348,10 +2128,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#JobsGetDevices": {
+    "com.azure.iotcentral_data#GetJobDevices": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#JobsGetDevicesRequest"
+        "target": "com.azure.iotcentral_data#GetJobDevicesRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#JobDeviceStatusCollection"
@@ -2430,7 +2210,7 @@
         "smithy.api#documentation": "The job device status definition."
       }
     },
-    "com.azure.iotcentral_data#JobsGetDevicesRequest": {
+    "com.azure.iotcentral_data#GetJobDevicesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -2467,10 +2247,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#JobsCreate": {
+    "com.azure.iotcentral_data#CreateJob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#JobsCreateRequest"
+        "target": "com.azure.iotcentral_data#CreateJobRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Job"
@@ -2492,7 +2272,7 @@
         "smithy.api#documentation": "Execute a new job\n\nCreate and execute a new job via its job definition."
       }
     },
-    "com.azure.iotcentral_data#JobsCreateRequest": {
+    "com.azure.iotcentral_data#CreateJobRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -2556,14 +2336,14 @@
           }
         },
         "data": {
-          "target": "com.azure.iotcentral_data#JobsCreateRequestDataList",
+          "target": "com.azure.iotcentral_data#CreateJobRequestDataList",
           "traits": {
             "smithy.api#documentation": "The capabilities being updated by the job and the values with which they are being updated.",
             "smithy.api#required": {}
           }
         },
         "organizations": {
-          "target": "com.azure.iotcentral_data#JobsCreateRequestOrganizationsList",
+          "target": "com.azure.iotcentral_data#CreateJobRequestOrganizationsList",
           "traits": {
             "smithy.api#documentation": "List of organizations of the job, only one organization is supported today, multiple organizations will be supported soon."
           }
@@ -2573,7 +2353,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#JobsCreateRequestOrganizationsList": {
+    "com.azure.iotcentral_data#CreateJobRequestOrganizationsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -2582,7 +2362,7 @@
         "smithy.api#documentation": "List of organizations of the job, only one organization is supported today, multiple organizations will be supported soon."
       }
     },
-    "com.azure.iotcentral_data#JobsCreateRequestDataList": {
+    "com.azure.iotcentral_data#CreateJobRequestDataList": {
       "type": "list",
       "member": {
         "target": "com.azure.iotcentral_data#JobData"
@@ -2591,10 +2371,10 @@
         "smithy.api#documentation": "The capabilities being updated by the job and the values with which they are being updated."
       }
     },
-    "com.azure.iotcentral_data#JobsGet": {
+    "com.azure.iotcentral_data#GetJob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#JobsGetRequest"
+        "target": "com.azure.iotcentral_data#GetJobRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Job"
@@ -2616,7 +2396,7 @@
         "smithy.api#documentation": "Get a job by ID\n\nGet details about a running or completed job by job ID."
       }
     },
-    "com.azure.iotcentral_data#JobsGetRequest": {
+    "com.azure.iotcentral_data#GetJobRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -2647,10 +2427,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#JobsList": {
+    "com.azure.iotcentral_data#ListJobs": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#JobsListRequest"
+        "target": "com.azure.iotcentral_data#ListJobsRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#JobCollection"
@@ -2679,7 +2459,7 @@
         }
       }
     },
-    "com.azure.iotcentral_data#JobsListRequest": {
+    "com.azure.iotcentral_data#ListJobsRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -2708,10 +2488,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#FileUploadsRemove": {
+    "com.azure.iotcentral_data#RemoveFileUpload": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#FileUploadsRemoveRequest"
+        "target": "com.azure.iotcentral_data#RemoveFileUploadRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -2733,7 +2513,7 @@
         "smithy.api#documentation": "Delete the file upload storage configuration."
       }
     },
-    "com.azure.iotcentral_data#FileUploadsRemoveRequest": {
+    "com.azure.iotcentral_data#RemoveFileUploadRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -2756,10 +2536,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#FileUploadsUpdate": {
+    "com.azure.iotcentral_data#UpdateFileUpload": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#FileUploadsUpdateRequest"
+        "target": "com.azure.iotcentral_data#UpdateFileUploadRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#FileUpload"
@@ -2866,7 +2646,7 @@
         "smithy.api#documentation": "The state of the file upload configuration"
       }
     },
-    "com.azure.iotcentral_data#FileUploadsUpdateRequest": {
+    "com.azure.iotcentral_data#UpdateFileUploadRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -2889,10 +2669,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#FileUploadsCreate": {
+    "com.azure.iotcentral_data#CreateFileUpload": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#FileUploadsCreateRequest"
+        "target": "com.azure.iotcentral_data#CreateFileUploadRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#FileUpload"
@@ -2914,7 +2694,7 @@
         "smithy.api#documentation": "Create the file upload storage account configuration."
       }
     },
-    "com.azure.iotcentral_data#FileUploadsCreateRequest": {
+    "com.azure.iotcentral_data#CreateFileUploadRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -2970,10 +2750,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#FileUploadsGet": {
+    "com.azure.iotcentral_data#GetFileUpload": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#FileUploadsGetRequest"
+        "target": "com.azure.iotcentral_data#GetFileUploadRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#FileUpload"
@@ -2995,7 +2775,7 @@
         "smithy.api#documentation": "Get the file upload storage account configuration."
       }
     },
-    "com.azure.iotcentral_data#FileUploadsGetRequest": {
+    "com.azure.iotcentral_data#GetFileUploadRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -3018,10 +2798,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsVerifyX509": {
+    "com.azure.iotcentral_data#VerifyEnrollmentGroupX509": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#EnrollmentGroupsVerifyX509Request"
+        "target": "com.azure.iotcentral_data#VerifyEnrollmentGroupX509Request"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -3043,7 +2823,7 @@
         "smithy.api#documentation": "Verify the primary or secondary x509 certificate of an enrollment group\n\nVerify the primary or secondary x509 certificate of an enrollment group by providing a certificate with the signed verification code."
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsVerifyX509Request": {
+    "com.azure.iotcentral_data#VerifyEnrollmentGroupX509Request": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -3070,7 +2850,7 @@
           }
         },
         "entry": {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsVerifyX509RequestEntry",
+          "target": "com.azure.iotcentral_data#VerifyEnrollmentGroupX509RequestEntry",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -3089,7 +2869,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsVerifyX509RequestEntry": {
+    "com.azure.iotcentral_data#VerifyEnrollmentGroupX509RequestEntry": {
       "type": "enum",
       "members": {
         "PRIMARY": {
@@ -3107,10 +2887,10 @@
       },
       "traits": {}
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsGenerateVerificationCodeX509": {
+    "com.azure.iotcentral_data#GenerateEnrollmentGroupVerificationCodeX509": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#EnrollmentGroupsGenerateVerificationCodeX509Request"
+        "target": "com.azure.iotcentral_data#GenerateEnrollmentGroupVerificationCodeX509Request"
       },
       "output": {
         "target": "com.azure.iotcentral_data#X509VerificationCode"
@@ -3146,7 +2926,7 @@
         "smithy.api#documentation": "The X509 certificate verification code."
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsGenerateVerificationCodeX509Request": {
+    "com.azure.iotcentral_data#GenerateEnrollmentGroupVerificationCodeX509Request": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -3173,7 +2953,7 @@
           }
         },
         "entry": {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsGenerateVerificationCodeX509RequestEntry",
+          "target": "com.azure.iotcentral_data#GenerateEnrollmentGroupVerificationCodeX509RequestEntry",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -3185,7 +2965,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsGenerateVerificationCodeX509RequestEntry": {
+    "com.azure.iotcentral_data#GenerateEnrollmentGroupVerificationCodeX509RequestEntry": {
       "type": "enum",
       "members": {
         "PRIMARY": {
@@ -3203,10 +2983,10 @@
       },
       "traits": {}
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsRemoveX509": {
+    "com.azure.iotcentral_data#RemoveEnrollmentGroupX509": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#EnrollmentGroupsRemoveX509Request"
+        "target": "com.azure.iotcentral_data#RemoveEnrollmentGroupX509Request"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -3228,7 +3008,7 @@
         "smithy.api#documentation": "Removes the primary or secondary x509 certificate of an enrollment group\n\nRemoves the primary or secondary x509 certificate of an enrollment group."
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsRemoveX509Request": {
+    "com.azure.iotcentral_data#RemoveEnrollmentGroupX509Request": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -3255,7 +3035,7 @@
           }
         },
         "entry": {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsRemoveX509RequestEntry",
+          "target": "com.azure.iotcentral_data#RemoveEnrollmentGroupX509RequestEntry",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -3267,7 +3047,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsRemoveX509RequestEntry": {
+    "com.azure.iotcentral_data#RemoveEnrollmentGroupX509RequestEntry": {
       "type": "enum",
       "members": {
         "PRIMARY": {
@@ -3285,10 +3065,10 @@
       },
       "traits": {}
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsCreateX509": {
+    "com.azure.iotcentral_data#CreateEnrollmentGroupX509": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#EnrollmentGroupsCreateX509Request"
+        "target": "com.azure.iotcentral_data#CreateEnrollmentGroupX509Request"
       },
       "output": {
         "target": "com.azure.iotcentral_data#SigningX509Certificate"
@@ -3357,7 +3137,7 @@
         "smithy.api#documentation": "The X509 certificate info."
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsCreateX509Request": {
+    "com.azure.iotcentral_data#CreateEnrollmentGroupX509Request": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -3384,7 +3164,7 @@
           }
         },
         "entry": {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsCreateX509RequestEntry",
+          "target": "com.azure.iotcentral_data#CreateEnrollmentGroupX509RequestEntry",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -3414,7 +3194,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsCreateX509RequestEntry": {
+    "com.azure.iotcentral_data#CreateEnrollmentGroupX509RequestEntry": {
       "type": "enum",
       "members": {
         "PRIMARY": {
@@ -3432,10 +3212,10 @@
       },
       "traits": {}
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsGetX509": {
+    "com.azure.iotcentral_data#GetEnrollmentGroupX509": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#EnrollmentGroupsGetX509Request"
+        "target": "com.azure.iotcentral_data#GetEnrollmentGroupX509Request"
       },
       "output": {
         "target": "com.azure.iotcentral_data#SigningX509Certificate"
@@ -3457,7 +3237,7 @@
         "smithy.api#documentation": "Get the primary or secondary x509 certificate of an enrollment group\n\nGet details about the primary or secondary x509 certificate of an enrollment group, if it exists."
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsGetX509Request": {
+    "com.azure.iotcentral_data#GetEnrollmentGroupX509Request": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -3484,7 +3264,7 @@
           }
         },
         "entry": {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsGetX509RequestEntry",
+          "target": "com.azure.iotcentral_data#GetEnrollmentGroupX509RequestEntry",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -3496,7 +3276,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsGetX509RequestEntry": {
+    "com.azure.iotcentral_data#GetEnrollmentGroupX509RequestEntry": {
       "type": "enum",
       "members": {
         "PRIMARY": {
@@ -3514,10 +3294,10 @@
       },
       "traits": {}
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsRemove": {
+    "com.azure.iotcentral_data#RemoveEnrollmentGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#EnrollmentGroupsRemoveRequest"
+        "target": "com.azure.iotcentral_data#RemoveEnrollmentGroupRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -3539,7 +3319,7 @@
         "smithy.api#documentation": "Delete an enrollment group\n\nDelete an enrollment group by ID."
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsRemoveRequest": {
+    "com.azure.iotcentral_data#RemoveEnrollmentGroupRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -3570,10 +3350,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsUpdate": {
+    "com.azure.iotcentral_data#UpdateEnrollmentGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#EnrollmentGroupsUpdateRequest"
+        "target": "com.azure.iotcentral_data#UpdateEnrollmentGroupRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#EnrollmentGroup"
@@ -3677,7 +3457,7 @@
         "smithy.api#documentation": "Type of devices that connect through the group."
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsUpdateRequest": {
+    "com.azure.iotcentral_data#UpdateEnrollmentGroupRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -3708,10 +3488,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsCreate": {
+    "com.azure.iotcentral_data#CreateEnrollmentGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#EnrollmentGroupsCreateRequest"
+        "target": "com.azure.iotcentral_data#CreateEnrollmentGroupRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#EnrollmentGroup"
@@ -3733,7 +3513,7 @@
         "smithy.api#documentation": "Create an enrollment group\n\nCreate an enrollment group."
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsCreateRequest": {
+    "com.azure.iotcentral_data#CreateEnrollmentGroupRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -3773,7 +3553,7 @@
           }
         },
         "type": {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsCreateRequestType",
+          "target": "com.azure.iotcentral_data#CreateEnrollmentGroupRequestType",
           "traits": {
             "smithy.api#documentation": "Type of devices that connect through the group.",
             "smithy.api#required": {}
@@ -3797,7 +3577,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsCreateRequestType": {
+    "com.azure.iotcentral_data#CreateEnrollmentGroupRequestType": {
       "type": "enum",
       "members": {
         "IOT": {
@@ -3817,10 +3597,10 @@
         "smithy.api#documentation": "Type of devices that connect through the group."
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsGet": {
+    "com.azure.iotcentral_data#GetEnrollmentGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#EnrollmentGroupsGetRequest"
+        "target": "com.azure.iotcentral_data#GetEnrollmentGroupRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#EnrollmentGroup"
@@ -3842,7 +3622,7 @@
         "smithy.api#documentation": "Get an enrollment group by ID\n\nGet details about an enrollment group by ID."
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsGetRequest": {
+    "com.azure.iotcentral_data#GetEnrollmentGroupRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -3873,10 +3653,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsList": {
+    "com.azure.iotcentral_data#ListEnrollmentGroups": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#EnrollmentGroupsListRequest"
+        "target": "com.azure.iotcentral_data#ListEnrollmentGroupsRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#EnrollmentGroupCollection"
@@ -3935,7 +3715,7 @@
         "smithy.api#documentation": "The collection of enrollment groups."
       }
     },
-    "com.azure.iotcentral_data#EnrollmentGroupsListRequest": {
+    "com.azure.iotcentral_data#ListEnrollmentGroupsRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -3964,10 +3744,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetTelemetryValue": {
+    "com.azure.iotcentral_data#GetDeviceTelemetryValue": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetTelemetryValueRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceTelemetryValueRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceTelemetry"
@@ -4009,7 +3789,7 @@
         "smithy.api#documentation": "The device telemetry definition."
       }
     },
-    "com.azure.iotcentral_data#DevicesGetTelemetryValueRequest": {
+    "com.azure.iotcentral_data#GetDeviceTelemetryValueRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4048,10 +3828,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesRemoveRelationship": {
+    "com.azure.iotcentral_data#RemoveDeviceRelationship": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesRemoveRelationshipRequest"
+        "target": "com.azure.iotcentral_data#RemoveDeviceRelationshipRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -4073,7 +3853,7 @@
         "smithy.api#documentation": "Given the ID for a device and an associated relationship ID, delete the relationship. The given device ID can be that of the upstream or downstream device.\n\nDelete a device relationship"
       }
     },
-    "com.azure.iotcentral_data#DevicesRemoveRelationshipRequest": {
+    "com.azure.iotcentral_data#RemoveDeviceRelationshipRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4112,10 +3892,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdateRelationship": {
+    "com.azure.iotcentral_data#UpdateDeviceRelationship": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesUpdateRelationshipRequest"
+        "target": "com.azure.iotcentral_data#UpdateDeviceRelationshipRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceRelationship"
@@ -4163,7 +3943,7 @@
         "smithy.api#documentation": "An object representing the relationship between an upstream and a downstream device."
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdateRelationshipRequest": {
+    "com.azure.iotcentral_data#UpdateDeviceRelationshipRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4202,10 +3982,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesCreateRelationship": {
+    "com.azure.iotcentral_data#CreateDeviceRelationship": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesCreateRelationshipRequest"
+        "target": "com.azure.iotcentral_data#CreateDeviceRelationshipRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceRelationship"
@@ -4227,7 +4007,7 @@
         "smithy.api#documentation": "Given the ID for a device and a relationship ID associated with this device, create a new relationship for between the given device and a second device specified in the body.\n\nCreate a device relationship"
       }
     },
-    "com.azure.iotcentral_data#DevicesCreateRelationshipRequest": {
+    "com.azure.iotcentral_data#CreateDeviceRelationshipRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4278,10 +4058,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetRelationship": {
+    "com.azure.iotcentral_data#GetDeviceRelationship": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetRelationshipRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceRelationshipRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceRelationship"
@@ -4303,7 +4083,7 @@
         "smithy.api#documentation": "Given the ID for a device and a relationship ID associated with this device, get the details of the relationship.\n\nGet device relationship by ID"
       }
     },
-    "com.azure.iotcentral_data#DevicesGetRelationshipRequest": {
+    "com.azure.iotcentral_data#GetDeviceRelationshipRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4342,10 +4122,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesListRelationships": {
+    "com.azure.iotcentral_data#ListDeviceRelationships": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesListRelationshipsRequest"
+        "target": "com.azure.iotcentral_data#ListDeviceRelationshipsRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceRelationshipCollection"
@@ -4404,7 +4184,7 @@
         "smithy.api#documentation": "The collection of device relationships."
       }
     },
-    "com.azure.iotcentral_data#DevicesListRelationshipsRequest": {
+    "com.azure.iotcentral_data#ListDeviceRelationshipsRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4441,10 +4221,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdateProperties": {
+    "com.azure.iotcentral_data#UpdateDeviceProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesUpdatePropertiesRequest"
+        "target": "com.azure.iotcentral_data#UpdateDevicePropertiesRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -4466,7 +4246,7 @@
         "smithy.api#documentation": "Update device properties via patch\n\nUpdate property values of a device by device ID."
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdatePropertiesRequest": {
+    "com.azure.iotcentral_data#UpdateDevicePropertiesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4497,10 +4277,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesReplaceProperties": {
+    "com.azure.iotcentral_data#ReplaceDeviceProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesReplacePropertiesRequest"
+        "target": "com.azure.iotcentral_data#ReplaceDevicePropertiesRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -4522,7 +4302,7 @@
         "smithy.api#documentation": "Replace device properties\n\nReplace all property values of a device by device ID."
       }
     },
-    "com.azure.iotcentral_data#DevicesReplacePropertiesRequest": {
+    "com.azure.iotcentral_data#ReplaceDevicePropertiesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4572,13 +4352,13 @@
         "smithy.api#documentation": "Property values associated with the device."
       }
     },
-    "com.azure.iotcentral_data#DevicesGetProperties": {
+    "com.azure.iotcentral_data#GetDeviceProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetPropertiesRequest"
+        "target": "com.azure.iotcentral_data#GetDevicePropertiesRequest"
       },
       "output": {
-        "target": "com.azure.iotcentral_data#DevicesGetPropertiesResponse"
+        "target": "com.azure.iotcentral_data#GetDevicePropertiesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4597,7 +4377,7 @@
         "smithy.api#documentation": "Get device properties\n\nGet all property values of a device by device ID."
       }
     },
-    "com.azure.iotcentral_data#DevicesGetPropertiesResponse": {
+    "com.azure.iotcentral_data#GetDevicePropertiesResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -4612,7 +4392,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetPropertiesRequest": {
+    "com.azure.iotcentral_data#GetDevicePropertiesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4643,10 +4423,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModuleTelemetryValue": {
+    "com.azure.iotcentral_data#GetDeviceModuleTelemetryValue": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetModuleTelemetryValueRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceModuleTelemetryValueRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceTelemetry"
@@ -4668,7 +4448,7 @@
         "smithy.api#documentation": "Get module telemetry value\n\nGet the last telemetry value from a module."
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModuleTelemetryValueRequest": {
+    "com.azure.iotcentral_data#GetDeviceModuleTelemetryValueRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4715,10 +4495,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdateModuleProperties": {
+    "com.azure.iotcentral_data#UpdateDeviceModuleProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesUpdateModulePropertiesRequest"
+        "target": "com.azure.iotcentral_data#UpdateDeviceModulePropertiesRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -4740,7 +4520,7 @@
         "smithy.api#documentation": "Update module properties via patch\n\nUpdate property values of a module."
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdateModulePropertiesRequest": {
+    "com.azure.iotcentral_data#UpdateDeviceModulePropertiesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4779,10 +4559,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesReplaceModuleProperties": {
+    "com.azure.iotcentral_data#ReplaceDeviceModuleProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesReplaceModulePropertiesRequest"
+        "target": "com.azure.iotcentral_data#ReplaceDeviceModulePropertiesRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -4804,7 +4584,7 @@
         "smithy.api#documentation": "Replace module properties\n\nReplace all property values of a module."
       }
     },
-    "com.azure.iotcentral_data#DevicesReplaceModulePropertiesRequest": {
+    "com.azure.iotcentral_data#ReplaceDeviceModulePropertiesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4850,13 +4630,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModuleProperties": {
+    "com.azure.iotcentral_data#GetDeviceModuleProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetModulePropertiesRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceModulePropertiesRequest"
       },
       "output": {
-        "target": "com.azure.iotcentral_data#DevicesGetModulePropertiesResponse"
+        "target": "com.azure.iotcentral_data#GetDeviceModulePropertiesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4875,7 +4655,7 @@
         "smithy.api#documentation": "Get module properties\n\nGet all property values of a module."
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModulePropertiesResponse": {
+    "com.azure.iotcentral_data#GetDeviceModulePropertiesResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -4890,7 +4670,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModulePropertiesRequest": {
+    "com.azure.iotcentral_data#GetDeviceModulePropertiesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -4929,10 +4709,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModuleComponentTelemetryValue": {
+    "com.azure.iotcentral_data#GetDeviceModuleComponentTelemetryValue": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetModuleComponentTelemetryValueRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceModuleComponentTelemetryValueRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceTelemetry"
@@ -4954,7 +4734,7 @@
         "smithy.api#documentation": "Get module component telemetry value\n\nGet the last telemetry value from a module component."
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModuleComponentTelemetryValueRequest": {
+    "com.azure.iotcentral_data#GetDeviceModuleComponentTelemetryValueRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -5009,10 +4789,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdateModuleComponentProperties": {
+    "com.azure.iotcentral_data#UpdateDeviceModuleComponentProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesUpdateModuleComponentPropertiesRequest"
+        "target": "com.azure.iotcentral_data#UpdateDeviceModuleComponentPropertiesRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -5034,7 +4814,7 @@
         "smithy.api#documentation": "Update module properties for a specific component via patch"
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdateModuleComponentPropertiesRequest": {
+    "com.azure.iotcentral_data#UpdateDeviceModuleComponentPropertiesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -5081,10 +4861,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesReplaceModuleComponentProperties": {
+    "com.azure.iotcentral_data#ReplaceDeviceModuleComponentProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesReplaceModuleComponentPropertiesRequest"
+        "target": "com.azure.iotcentral_data#ReplaceDeviceModuleComponentPropertiesRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -5106,7 +4886,7 @@
         "smithy.api#documentation": "Replace module properties for a specific component"
       }
     },
-    "com.azure.iotcentral_data#DevicesReplaceModuleComponentPropertiesRequest": {
+    "com.azure.iotcentral_data#ReplaceDeviceModuleComponentPropertiesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -5160,13 +4940,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModuleComponentProperties": {
+    "com.azure.iotcentral_data#GetDeviceModuleComponentProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetModuleComponentPropertiesRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceModuleComponentPropertiesRequest"
       },
       "output": {
-        "target": "com.azure.iotcentral_data#DevicesGetModuleComponentPropertiesResponse"
+        "target": "com.azure.iotcentral_data#GetDeviceModuleComponentPropertiesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -5185,7 +4965,7 @@
         "smithy.api#documentation": "Get module properties for a specific component"
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModuleComponentPropertiesResponse": {
+    "com.azure.iotcentral_data#GetDeviceModuleComponentPropertiesResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -5200,7 +4980,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModuleComponentPropertiesRequest": {
+    "com.azure.iotcentral_data#GetDeviceModuleComponentPropertiesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -5247,10 +5027,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesRunModuleComponentCommand": {
+    "com.azure.iotcentral_data#RunDeviceModuleComponentCommand": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesRunModuleComponentCommandRequest"
+        "target": "com.azure.iotcentral_data#RunDeviceModuleComponentCommandRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceCommand"
@@ -5316,7 +5096,7 @@
         "smithy.api#documentation": "The device command definition."
       }
     },
-    "com.azure.iotcentral_data#DevicesRunModuleComponentCommandRequest": {
+    "com.azure.iotcentral_data#RunDeviceModuleComponentCommandRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -5389,10 +5169,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModuleComponentCommandHistory": {
+    "com.azure.iotcentral_data#GetDeviceModuleComponentCommandHistory": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetModuleComponentCommandHistoryRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceModuleComponentCommandHistoryRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceCommandCollection"
@@ -5451,7 +5231,7 @@
         "smithy.api#documentation": "The collection of device command executions."
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModuleComponentCommandHistoryRequest": {
+    "com.azure.iotcentral_data#GetDeviceModuleComponentCommandHistoryRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -5512,10 +5292,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesListModuleComponents": {
+    "com.azure.iotcentral_data#ListDeviceModuleComponents": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesListModuleComponentsRequest"
+        "target": "com.azure.iotcentral_data#ListDeviceModuleComponentsRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Collection"
@@ -5567,7 +5347,7 @@
         "smithy.api#documentation": "The collection of entities."
       }
     },
-    "com.azure.iotcentral_data#DevicesListModuleComponentsRequest": {
+    "com.azure.iotcentral_data#ListDeviceModuleComponentsRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -5606,10 +5386,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesRunModuleCommand": {
+    "com.azure.iotcentral_data#RunDeviceModuleCommand": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesRunModuleCommandRequest"
+        "target": "com.azure.iotcentral_data#RunDeviceModuleCommandRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceCommand"
@@ -5631,7 +5411,7 @@
         "smithy.api#documentation": "Run a module command\n\nRun a command on a module."
       }
     },
-    "com.azure.iotcentral_data#DevicesRunModuleCommandRequest": {
+    "com.azure.iotcentral_data#RunDeviceModuleCommandRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -5696,10 +5476,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModuleCommandHistory": {
+    "com.azure.iotcentral_data#GetDeviceModuleCommandHistory": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetModuleCommandHistoryRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceModuleCommandHistoryRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceCommandCollection"
@@ -5728,7 +5508,7 @@
         }
       }
     },
-    "com.azure.iotcentral_data#DevicesGetModuleCommandHistoryRequest": {
+    "com.azure.iotcentral_data#GetDeviceModuleCommandHistoryRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -5781,10 +5561,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesListModules": {
+    "com.azure.iotcentral_data#ListDeviceModules": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesListModulesRequest"
+        "target": "com.azure.iotcentral_data#ListDeviceModulesRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Collection"
@@ -5806,7 +5586,7 @@
         "smithy.api#documentation": "List the modules present in a device"
       }
     },
-    "com.azure.iotcentral_data#DevicesListModulesRequest": {
+    "com.azure.iotcentral_data#ListDeviceModulesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -5837,10 +5617,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetCredentials": {
+    "com.azure.iotcentral_data#GetDeviceCredentials": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetCredentialsRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceCredentialsRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceCredentials"
@@ -5987,7 +5767,7 @@
         "smithy.api#documentation": "The symmetric key definition."
       }
     },
-    "com.azure.iotcentral_data#DevicesGetCredentialsRequest": {
+    "com.azure.iotcentral_data#GetDeviceCredentialsRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6018,10 +5798,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetComponentTelemetryValue": {
+    "com.azure.iotcentral_data#GetDeviceComponentTelemetryValue": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetComponentTelemetryValueRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceComponentTelemetryValueRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceTelemetry"
@@ -6043,7 +5823,7 @@
         "smithy.api#documentation": "Get component telemetry value\n\nGet the last telemetry value from a component."
       }
     },
-    "com.azure.iotcentral_data#DevicesGetComponentTelemetryValueRequest": {
+    "com.azure.iotcentral_data#GetDeviceComponentTelemetryValueRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6090,10 +5870,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdateComponentProperties": {
+    "com.azure.iotcentral_data#UpdateDeviceComponentProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesUpdateComponentPropertiesRequest"
+        "target": "com.azure.iotcentral_data#UpdateDeviceComponentPropertiesRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -6115,7 +5895,7 @@
         "smithy.api#documentation": "Update device properties for a specific component via patch"
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdateComponentPropertiesRequest": {
+    "com.azure.iotcentral_data#UpdateDeviceComponentPropertiesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6154,10 +5934,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesReplaceComponentProperties": {
+    "com.azure.iotcentral_data#ReplaceDeviceComponentProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesReplaceComponentPropertiesRequest"
+        "target": "com.azure.iotcentral_data#ReplaceDeviceComponentPropertiesRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -6179,7 +5959,7 @@
         "smithy.api#documentation": "Replace device properties for a specific component"
       }
     },
-    "com.azure.iotcentral_data#DevicesReplaceComponentPropertiesRequest": {
+    "com.azure.iotcentral_data#ReplaceDeviceComponentPropertiesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6225,13 +6005,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetComponentProperties": {
+    "com.azure.iotcentral_data#GetDeviceComponentProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetComponentPropertiesRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceComponentPropertiesRequest"
       },
       "output": {
-        "target": "com.azure.iotcentral_data#DevicesGetComponentPropertiesResponse"
+        "target": "com.azure.iotcentral_data#GetDeviceComponentPropertiesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6250,7 +6030,7 @@
         "smithy.api#documentation": "Get device properties for a specific component"
       }
     },
-    "com.azure.iotcentral_data#DevicesGetComponentPropertiesResponse": {
+    "com.azure.iotcentral_data#GetDeviceComponentPropertiesResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -6265,7 +6045,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetComponentPropertiesRequest": {
+    "com.azure.iotcentral_data#GetDeviceComponentPropertiesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6304,10 +6084,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesRunComponentCommand": {
+    "com.azure.iotcentral_data#RunDeviceComponentCommand": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesRunComponentCommandRequest"
+        "target": "com.azure.iotcentral_data#RunDeviceComponentCommandRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceCommand"
@@ -6329,7 +6109,7 @@
         "smithy.api#documentation": "Run a component command\n\nRun a command on a component."
       }
     },
-    "com.azure.iotcentral_data#DevicesRunComponentCommandRequest": {
+    "com.azure.iotcentral_data#RunDeviceComponentCommandRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6394,10 +6174,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetComponentCommandHistory": {
+    "com.azure.iotcentral_data#GetDeviceComponentCommandHistory": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetComponentCommandHistoryRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceComponentCommandHistoryRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceCommandCollection"
@@ -6426,7 +6206,7 @@
         }
       }
     },
-    "com.azure.iotcentral_data#DevicesGetComponentCommandHistoryRequest": {
+    "com.azure.iotcentral_data#GetDeviceComponentCommandHistoryRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6479,10 +6259,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesListComponents": {
+    "com.azure.iotcentral_data#ListDeviceComponents": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesListComponentsRequest"
+        "target": "com.azure.iotcentral_data#ListDeviceComponentsRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Collection"
@@ -6504,7 +6284,7 @@
         "smithy.api#documentation": "List the components present in a device"
       }
     },
-    "com.azure.iotcentral_data#DevicesListComponentsRequest": {
+    "com.azure.iotcentral_data#ListDeviceComponentsRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6535,10 +6315,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesRunCommand": {
+    "com.azure.iotcentral_data#RunDeviceCommand": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesRunCommandRequest"
+        "target": "com.azure.iotcentral_data#RunDeviceCommandRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceCommand"
@@ -6560,7 +6340,7 @@
         "smithy.api#documentation": "Run a device command\n\nRun a command on a device."
       }
     },
-    "com.azure.iotcentral_data#DevicesRunCommandRequest": {
+    "com.azure.iotcentral_data#RunDeviceCommandRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6617,10 +6397,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetCommandHistory": {
+    "com.azure.iotcentral_data#GetDeviceCommandHistory": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetCommandHistoryRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceCommandHistoryRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceCommandCollection"
@@ -6649,7 +6429,7 @@
         }
       }
     },
-    "com.azure.iotcentral_data#DevicesGetCommandHistoryRequest": {
+    "com.azure.iotcentral_data#GetDeviceCommandHistoryRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6694,10 +6474,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesRemoveAttestation": {
+    "com.azure.iotcentral_data#RemoveDeviceAttestation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesRemoveAttestationRequest"
+        "target": "com.azure.iotcentral_data#RemoveDeviceAttestationRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -6719,7 +6499,7 @@
         "smithy.api#documentation": "Remove an individual device attestation"
       }
     },
-    "com.azure.iotcentral_data#DevicesRemoveAttestationRequest": {
+    "com.azure.iotcentral_data#RemoveDeviceAttestationRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6750,10 +6530,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdateAttestation": {
+    "com.azure.iotcentral_data#UpdateDeviceAttestation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesUpdateAttestationRequest"
+        "target": "com.azure.iotcentral_data#UpdateDeviceAttestationRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Attestation"
@@ -6790,7 +6570,7 @@
         "smithy.api#documentation": "The attestation definition."
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdateAttestationRequest": {
+    "com.azure.iotcentral_data#UpdateDeviceAttestationRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6821,10 +6601,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesCreateAttestation": {
+    "com.azure.iotcentral_data#CreateDeviceAttestation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesCreateAttestationRequest"
+        "target": "com.azure.iotcentral_data#CreateDeviceAttestationRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Attestation"
@@ -6846,7 +6626,7 @@
         "smithy.api#documentation": "Create an individual device attestation"
       }
     },
-    "com.azure.iotcentral_data#DevicesCreateAttestationRequest": {
+    "com.azure.iotcentral_data#CreateDeviceAttestationRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6884,10 +6664,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesGetAttestation": {
+    "com.azure.iotcentral_data#GetDeviceAttestation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetAttestationRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceAttestationRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Attestation"
@@ -6909,7 +6689,7 @@
         "smithy.api#documentation": "Get device attestation"
       }
     },
-    "com.azure.iotcentral_data#DevicesGetAttestationRequest": {
+    "com.azure.iotcentral_data#GetDeviceAttestationRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6940,10 +6720,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesRemove": {
+    "com.azure.iotcentral_data#RemoveDevice": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesRemoveRequest"
+        "target": "com.azure.iotcentral_data#RemoveDeviceRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -6965,7 +6745,7 @@
         "smithy.api#documentation": "Delete a device\n\nDelete an existing device by device ID."
       }
     },
-    "com.azure.iotcentral_data#DevicesRemoveRequest": {
+    "com.azure.iotcentral_data#RemoveDeviceRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -6996,10 +6776,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdate": {
+    "com.azure.iotcentral_data#UpdateDevice": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesUpdateRequest"
+        "target": "com.azure.iotcentral_data#UpdateDeviceRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Device"
@@ -7086,7 +6866,7 @@
         "smithy.api#documentation": "List of organization IDs that the device is a part of, only one organization is supported today, multiple organizations will be supported soon."
       }
     },
-    "com.azure.iotcentral_data#DevicesUpdateRequest": {
+    "com.azure.iotcentral_data#UpdateDeviceRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -7117,10 +6897,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesCreate": {
+    "com.azure.iotcentral_data#CreateDevice": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesCreateRequest"
+        "target": "com.azure.iotcentral_data#CreateDeviceRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Device"
@@ -7142,7 +6922,7 @@
         "smithy.api#documentation": "Create or update a device\n\nCreate a new device."
       }
     },
-    "com.azure.iotcentral_data#DevicesCreateRequest": {
+    "com.azure.iotcentral_data#CreateDeviceRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -7199,7 +6979,7 @@
           }
         },
         "organizations": {
-          "target": "com.azure.iotcentral_data#DevicesCreateRequestOrganizationsList",
+          "target": "com.azure.iotcentral_data#CreateDeviceRequestOrganizationsList",
           "traits": {
             "smithy.api#documentation": "List of organization IDs that the device is a part of, only one organization is supported today, multiple organizations will be supported soon."
           }
@@ -7209,7 +6989,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesCreateRequestOrganizationsList": {
+    "com.azure.iotcentral_data#CreateDeviceRequestOrganizationsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -7218,10 +6998,10 @@
         "smithy.api#documentation": "List of organization IDs that the device is a part of, only one organization is supported today, multiple organizations will be supported soon."
       }
     },
-    "com.azure.iotcentral_data#DevicesGet": {
+    "com.azure.iotcentral_data#GetDevice": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesGetRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#Device"
@@ -7243,7 +7023,7 @@
         "smithy.api#documentation": "Get a device by ID\n\nGet details about an existing device by device ID."
       }
     },
-    "com.azure.iotcentral_data#DevicesGetRequest": {
+    "com.azure.iotcentral_data#GetDeviceRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -7274,10 +7054,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DevicesList": {
+    "com.azure.iotcentral_data#ListDevices": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DevicesListRequest"
+        "target": "com.azure.iotcentral_data#ListDevicesRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceCollection"
@@ -7336,7 +7116,7 @@
         "smithy.api#documentation": "The collection of devices."
       }
     },
-    "com.azure.iotcentral_data#DevicesListRequest": {
+    "com.azure.iotcentral_data#ListDevicesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -7365,10 +7145,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DeviceTemplatesRemove": {
+    "com.azure.iotcentral_data#RemoveDeviceTemplate": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DeviceTemplatesRemoveRequest"
+        "target": "com.azure.iotcentral_data#RemoveDeviceTemplateRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -7390,7 +7170,7 @@
         "smithy.api#documentation": "Delete a device template\n\nDelete an existing device template by device ID."
       }
     },
-    "com.azure.iotcentral_data#DeviceTemplatesRemoveRequest": {
+    "com.azure.iotcentral_data#RemoveDeviceTemplateRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -7421,10 +7201,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DeviceTemplatesUpdate": {
+    "com.azure.iotcentral_data#UpdateDeviceTemplate": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DeviceTemplatesUpdateRequest"
+        "target": "com.azure.iotcentral_data#UpdateDeviceTemplateRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceTemplate"
@@ -7503,7 +7283,7 @@
         "smithy.api#documentation": "The JSON-LD types of this device template."
       }
     },
-    "com.azure.iotcentral_data#DeviceTemplatesUpdateRequest": {
+    "com.azure.iotcentral_data#UpdateDeviceTemplateRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -7534,10 +7314,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DeviceTemplatesCreate": {
+    "com.azure.iotcentral_data#CreateDeviceTemplate": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DeviceTemplatesCreateRequest"
+        "target": "com.azure.iotcentral_data#CreateDeviceTemplateRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceTemplate"
@@ -7559,7 +7339,7 @@
         "smithy.api#documentation": "Publish a new device template. Default views will be automatically generated for new device templates created this way."
       }
     },
-    "com.azure.iotcentral_data#DeviceTemplatesCreateRequest": {
+    "com.azure.iotcentral_data#CreateDeviceTemplateRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -7586,7 +7366,7 @@
           }
         },
         "_type": {
-          "target": "com.azure.iotcentral_data#DeviceTemplatesCreateRequestTypeList",
+          "target": "com.azure.iotcentral_data#CreateDeviceTemplateRequestTypeList",
           "traits": {
             "smithy.api#documentation": "The JSON-LD types of this device template.",
             "smithy.api#required": {},
@@ -7623,7 +7403,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DeviceTemplatesCreateRequestTypeList": {
+    "com.azure.iotcentral_data#CreateDeviceTemplateRequestTypeList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -7632,10 +7412,10 @@
         "smithy.api#documentation": "The JSON-LD types of this device template."
       }
     },
-    "com.azure.iotcentral_data#DeviceTemplatesGet": {
+    "com.azure.iotcentral_data#GetDeviceTemplate": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DeviceTemplatesGetRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceTemplateRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceTemplate"
@@ -7657,7 +7437,7 @@
         "smithy.api#documentation": "Get a device template by ID"
       }
     },
-    "com.azure.iotcentral_data#DeviceTemplatesGetRequest": {
+    "com.azure.iotcentral_data#GetDeviceTemplateRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -7688,10 +7468,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DeviceTemplatesList": {
+    "com.azure.iotcentral_data#ListDeviceTemplates": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DeviceTemplatesListRequest"
+        "target": "com.azure.iotcentral_data#ListDeviceTemplatesRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceTemplateCollection"
@@ -7750,7 +7530,7 @@
         "smithy.api#documentation": "The collection of device templates."
       }
     },
-    "com.azure.iotcentral_data#DeviceTemplatesListRequest": {
+    "com.azure.iotcentral_data#ListDeviceTemplatesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -7779,10 +7559,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsGetDevices": {
+    "com.azure.iotcentral_data#GetDeviceGroupDevices": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DeviceGroupsGetDevicesRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceGroupDevicesRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceGroupDeviceCollection"
@@ -7841,7 +7621,7 @@
         "smithy.api#documentation": "The collection of devices belonging to the device group."
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsGetDevicesRequest": {
+    "com.azure.iotcentral_data#GetDeviceGroupDevicesRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -7878,10 +7658,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsRemove": {
+    "com.azure.iotcentral_data#RemoveDeviceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DeviceGroupsRemoveRequest"
+        "target": "com.azure.iotcentral_data#RemoveDeviceGroupRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -7903,7 +7683,7 @@
         "smithy.api#documentation": "Delete a device group."
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsRemoveRequest": {
+    "com.azure.iotcentral_data#RemoveDeviceGroupRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -7934,10 +7714,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsUpdate": {
+    "com.azure.iotcentral_data#UpdateDeviceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DeviceGroupsUpdateRequest"
+        "target": "com.azure.iotcentral_data#UpdateDeviceGroupRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceGroup"
@@ -8014,7 +7794,7 @@
         "smithy.api#documentation": "List of organization IDs of the device group, only one organization is supported today, multiple organizations will be supported soon."
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsUpdateRequest": {
+    "com.azure.iotcentral_data#UpdateDeviceGroupRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -8045,10 +7825,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsCreate": {
+    "com.azure.iotcentral_data#CreateDeviceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DeviceGroupsCreateRequest"
+        "target": "com.azure.iotcentral_data#CreateDeviceGroupRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceGroup"
@@ -8070,7 +7850,7 @@
         "smithy.api#documentation": "Create or update a device group\n\nCreate or update a device group."
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsCreateRequest": {
+    "com.azure.iotcentral_data#CreateDeviceGroupRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -8123,7 +7903,7 @@
           }
         },
         "organizations": {
-          "target": "com.azure.iotcentral_data#DeviceGroupsCreateRequestOrganizationsList",
+          "target": "com.azure.iotcentral_data#CreateDeviceGroupRequestOrganizationsList",
           "traits": {
             "smithy.api#documentation": "List of organization IDs of the device group, only one organization is supported today, multiple organizations will be supported soon."
           }
@@ -8133,7 +7913,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsCreateRequestOrganizationsList": {
+    "com.azure.iotcentral_data#CreateDeviceGroupRequestOrganizationsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -8142,10 +7922,10 @@
         "smithy.api#documentation": "List of organization IDs of the device group, only one organization is supported today, multiple organizations will be supported soon."
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsGet": {
+    "com.azure.iotcentral_data#GetDeviceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DeviceGroupsGetRequest"
+        "target": "com.azure.iotcentral_data#GetDeviceGroupRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceGroup"
@@ -8167,7 +7947,7 @@
         "smithy.api#documentation": "Get the device group by ID."
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsGetRequest": {
+    "com.azure.iotcentral_data#GetDeviceGroupRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -8198,10 +7978,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsList": {
+    "com.azure.iotcentral_data#ListDeviceGroups": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#DeviceGroupsListRequest"
+        "target": "com.azure.iotcentral_data#ListDeviceGroupsRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#DeviceGroupCollection"
@@ -8260,7 +8040,7 @@
         "smithy.api#documentation": "The collection of device groups."
       }
     },
-    "com.azure.iotcentral_data#DeviceGroupsListRequest": {
+    "com.azure.iotcentral_data#ListDeviceGroupsRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -8289,10 +8069,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#ApiTokensRemove": {
+    "com.azure.iotcentral_data#RemoveApiToken": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#ApiTokensRemoveRequest"
+        "target": "com.azure.iotcentral_data#RemoveApiTokenRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -8314,7 +8094,7 @@
         "smithy.api#documentation": "Delete an API token."
       }
     },
-    "com.azure.iotcentral_data#ApiTokensRemoveRequest": {
+    "com.azure.iotcentral_data#RemoveApiTokenRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -8345,13 +8125,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#ApiTokensCreate": {
+    "com.azure.iotcentral_data#CreateApiToken": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#ApiTokensCreateRequest"
+        "target": "com.azure.iotcentral_data#CreateApiTokenRequest"
       },
       "output": {
-        "target": "com.azure.iotcentral_data#ApiTokensCreateResponse"
+        "target": "com.azure.iotcentral_data#CreateApiTokenResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8370,11 +8150,11 @@
         "smithy.api#documentation": "Create a new API token in the application to use in the IoT Central public API. The token value will be returned in the response, and won't be returned again in subsequent requests."
       }
     },
-    "com.azure.iotcentral_data#ApiTokensCreateResponse": {
+    "com.azure.iotcentral_data#CreateApiTokenResponse": {
       "type": "structure",
       "members": {
         "roles": {
-          "target": "com.azure.iotcentral_data#ApiTokensCreateResponseRolesList",
+          "target": "com.azure.iotcentral_data#CreateApiTokenResponseRolesList",
           "traits": {
             "smithy.api#documentation": "List of role assignments that specify the permissions to access the application.",
             "smithy.api#required": {}
@@ -8403,7 +8183,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.iotcentral_data#ApiTokensCreateResponseRolesList": {
+    "com.azure.iotcentral_data#CreateApiTokenResponseRolesList": {
       "type": "list",
       "member": {
         "target": "com.azure.iotcentral_data#RoleAssignment"
@@ -8412,7 +8192,7 @@
         "smithy.api#documentation": "List of role assignments that specify the permissions to access the application."
       }
     },
-    "com.azure.iotcentral_data#ApiTokensCreateRequest": {
+    "com.azure.iotcentral_data#CreateApiTokenRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -8439,7 +8219,7 @@
           }
         },
         "roles": {
-          "target": "com.azure.iotcentral_data#ApiTokensCreateRequestRolesList",
+          "target": "com.azure.iotcentral_data#CreateApiTokenRequestRolesList",
           "traits": {
             "smithy.api#documentation": "List of role assignments that specify the permissions to access the application.",
             "smithy.api#required": {}
@@ -8456,7 +8236,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#ApiTokensCreateRequestRolesList": {
+    "com.azure.iotcentral_data#CreateApiTokenRequestRolesList": {
       "type": "list",
       "member": {
         "target": "com.azure.iotcentral_data#RoleAssignment"
@@ -8465,13 +8245,13 @@
         "smithy.api#documentation": "List of role assignments that specify the permissions to access the application."
       }
     },
-    "com.azure.iotcentral_data#ApiTokensGet": {
+    "com.azure.iotcentral_data#GetApiToken": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#ApiTokensGetRequest"
+        "target": "com.azure.iotcentral_data#GetApiTokenRequest"
       },
       "output": {
-        "target": "com.azure.iotcentral_data#ApiTokensGetResponse"
+        "target": "com.azure.iotcentral_data#GetApiTokenResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8490,11 +8270,11 @@
         "smithy.api#documentation": "Get an API token by ID."
       }
     },
-    "com.azure.iotcentral_data#ApiTokensGetResponse": {
+    "com.azure.iotcentral_data#GetApiTokenResponse": {
       "type": "structure",
       "members": {
         "roles": {
-          "target": "com.azure.iotcentral_data#ApiTokensGetResponseRolesList",
+          "target": "com.azure.iotcentral_data#GetApiTokenResponseRolesList",
           "traits": {
             "smithy.api#documentation": "List of role assignments that specify the permissions to access the application.",
             "smithy.api#required": {}
@@ -8523,7 +8303,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.iotcentral_data#ApiTokensGetResponseRolesList": {
+    "com.azure.iotcentral_data#GetApiTokenResponseRolesList": {
       "type": "list",
       "member": {
         "target": "com.azure.iotcentral_data#RoleAssignment"
@@ -8532,7 +8312,7 @@
         "smithy.api#documentation": "List of role assignments that specify the permissions to access the application."
       }
     },
-    "com.azure.iotcentral_data#ApiTokensGetRequest": {
+    "com.azure.iotcentral_data#GetApiTokenRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -8563,10 +8343,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.iotcentral_data#ApiTokensList": {
+    "com.azure.iotcentral_data#ListApiTokens": {
       "type": "operation",
       "input": {
-        "target": "com.azure.iotcentral_data#ApiTokensListRequest"
+        "target": "com.azure.iotcentral_data#ListApiTokensRequest"
       },
       "output": {
         "target": "com.azure.iotcentral_data#ApiTokenCollection"
@@ -8667,7 +8447,7 @@
         "smithy.api#documentation": "List of role assignments that specify the permissions to access the application."
       }
     },
-    "com.azure.iotcentral_data#ApiTokensListRequest": {
+    "com.azure.iotcentral_data#ListApiTokensRequest": {
       "type": "structure",
       "members": {
         "baseDomain": {
@@ -8701,292 +8481,292 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.iotcentral_data#UsersRemove"
+          "target": "com.azure.iotcentral_data#RemoveUser"
         },
         {
-          "target": "com.azure.iotcentral_data#UsersUpdate"
+          "target": "com.azure.iotcentral_data#UpdateUser"
         },
         {
-          "target": "com.azure.iotcentral_data#UsersCreate"
+          "target": "com.azure.iotcentral_data#CreateUser"
         },
         {
-          "target": "com.azure.iotcentral_data#UsersGet"
+          "target": "com.azure.iotcentral_data#GetUser"
         },
         {
-          "target": "com.azure.iotcentral_data#UsersList"
+          "target": "com.azure.iotcentral_data#ListUsers"
         },
         {
-          "target": "com.azure.iotcentral_data#ScheduledJobsListJobs"
+          "target": "com.azure.iotcentral_data#ListScheduledJobJobs"
         },
         {
-          "target": "com.azure.iotcentral_data#ScheduledJobsRemove"
+          "target": "com.azure.iotcentral_data#RemoveScheduledJob"
         },
         {
-          "target": "com.azure.iotcentral_data#ScheduledJobsUpdate"
+          "target": "com.azure.iotcentral_data#UpdateScheduledJob"
         },
         {
-          "target": "com.azure.iotcentral_data#ScheduledJobsCreate"
+          "target": "com.azure.iotcentral_data#CreateScheduledJob"
         },
         {
-          "target": "com.azure.iotcentral_data#ScheduledJobsGet"
+          "target": "com.azure.iotcentral_data#GetScheduledJob"
         },
         {
-          "target": "com.azure.iotcentral_data#ScheduledJobsList"
+          "target": "com.azure.iotcentral_data#ListScheduledJobs"
         },
         {
-          "target": "com.azure.iotcentral_data#RolesGet"
+          "target": "com.azure.iotcentral_data#GetRole"
         },
         {
-          "target": "com.azure.iotcentral_data#RolesList"
+          "target": "com.azure.iotcentral_data#ListRoles"
         },
         {
-          "target": "com.azure.iotcentral_data#OrganizationsRemove"
+          "target": "com.azure.iotcentral_data#RemoveOrganization"
         },
         {
-          "target": "com.azure.iotcentral_data#OrganizationsUpdate"
+          "target": "com.azure.iotcentral_data#UpdateOrganization"
         },
         {
-          "target": "com.azure.iotcentral_data#OrganizationsCreate"
+          "target": "com.azure.iotcentral_data#CreateOrganization"
         },
         {
-          "target": "com.azure.iotcentral_data#OrganizationsGet"
+          "target": "com.azure.iotcentral_data#GetOrganization"
         },
         {
-          "target": "com.azure.iotcentral_data#OrganizationsList"
+          "target": "com.azure.iotcentral_data#ListOrganizations"
         },
         {
-          "target": "com.azure.iotcentral_data#JobsStop"
+          "target": "com.azure.iotcentral_data#StopJob"
         },
         {
-          "target": "com.azure.iotcentral_data#JobsResume"
+          "target": "com.azure.iotcentral_data#ResumeJob"
         },
         {
           "target": "com.azure.iotcentral_data#JobsRerun"
         },
         {
-          "target": "com.azure.iotcentral_data#JobsGetDevices"
+          "target": "com.azure.iotcentral_data#GetJobDevices"
         },
         {
-          "target": "com.azure.iotcentral_data#JobsCreate"
+          "target": "com.azure.iotcentral_data#CreateJob"
         },
         {
-          "target": "com.azure.iotcentral_data#JobsGet"
+          "target": "com.azure.iotcentral_data#GetJob"
         },
         {
-          "target": "com.azure.iotcentral_data#JobsList"
+          "target": "com.azure.iotcentral_data#ListJobs"
         },
         {
-          "target": "com.azure.iotcentral_data#FileUploadsRemove"
+          "target": "com.azure.iotcentral_data#RemoveFileUpload"
         },
         {
-          "target": "com.azure.iotcentral_data#FileUploadsUpdate"
+          "target": "com.azure.iotcentral_data#UpdateFileUpload"
         },
         {
-          "target": "com.azure.iotcentral_data#FileUploadsCreate"
+          "target": "com.azure.iotcentral_data#CreateFileUpload"
         },
         {
-          "target": "com.azure.iotcentral_data#FileUploadsGet"
+          "target": "com.azure.iotcentral_data#GetFileUpload"
         },
         {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsVerifyX509"
+          "target": "com.azure.iotcentral_data#VerifyEnrollmentGroupX509"
         },
         {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsGenerateVerificationCodeX509"
+          "target": "com.azure.iotcentral_data#GenerateEnrollmentGroupVerificationCodeX509"
         },
         {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsRemoveX509"
+          "target": "com.azure.iotcentral_data#RemoveEnrollmentGroupX509"
         },
         {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsCreateX509"
+          "target": "com.azure.iotcentral_data#CreateEnrollmentGroupX509"
         },
         {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsGetX509"
+          "target": "com.azure.iotcentral_data#GetEnrollmentGroupX509"
         },
         {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsRemove"
+          "target": "com.azure.iotcentral_data#RemoveEnrollmentGroup"
         },
         {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsUpdate"
+          "target": "com.azure.iotcentral_data#UpdateEnrollmentGroup"
         },
         {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsCreate"
+          "target": "com.azure.iotcentral_data#CreateEnrollmentGroup"
         },
         {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsGet"
+          "target": "com.azure.iotcentral_data#GetEnrollmentGroup"
         },
         {
-          "target": "com.azure.iotcentral_data#EnrollmentGroupsList"
+          "target": "com.azure.iotcentral_data#ListEnrollmentGroups"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetTelemetryValue"
+          "target": "com.azure.iotcentral_data#GetDeviceTelemetryValue"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesRemoveRelationship"
+          "target": "com.azure.iotcentral_data#RemoveDeviceRelationship"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesUpdateRelationship"
+          "target": "com.azure.iotcentral_data#UpdateDeviceRelationship"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesCreateRelationship"
+          "target": "com.azure.iotcentral_data#CreateDeviceRelationship"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetRelationship"
+          "target": "com.azure.iotcentral_data#GetDeviceRelationship"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesListRelationships"
+          "target": "com.azure.iotcentral_data#ListDeviceRelationships"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesUpdateProperties"
+          "target": "com.azure.iotcentral_data#UpdateDeviceProperties"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesReplaceProperties"
+          "target": "com.azure.iotcentral_data#ReplaceDeviceProperties"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetProperties"
+          "target": "com.azure.iotcentral_data#GetDeviceProperties"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetModuleTelemetryValue"
+          "target": "com.azure.iotcentral_data#GetDeviceModuleTelemetryValue"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesUpdateModuleProperties"
+          "target": "com.azure.iotcentral_data#UpdateDeviceModuleProperties"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesReplaceModuleProperties"
+          "target": "com.azure.iotcentral_data#ReplaceDeviceModuleProperties"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetModuleProperties"
+          "target": "com.azure.iotcentral_data#GetDeviceModuleProperties"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetModuleComponentTelemetryValue"
+          "target": "com.azure.iotcentral_data#GetDeviceModuleComponentTelemetryValue"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesUpdateModuleComponentProperties"
+          "target": "com.azure.iotcentral_data#UpdateDeviceModuleComponentProperties"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesReplaceModuleComponentProperties"
+          "target": "com.azure.iotcentral_data#ReplaceDeviceModuleComponentProperties"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetModuleComponentProperties"
+          "target": "com.azure.iotcentral_data#GetDeviceModuleComponentProperties"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesRunModuleComponentCommand"
+          "target": "com.azure.iotcentral_data#RunDeviceModuleComponentCommand"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetModuleComponentCommandHistory"
+          "target": "com.azure.iotcentral_data#GetDeviceModuleComponentCommandHistory"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesListModuleComponents"
+          "target": "com.azure.iotcentral_data#ListDeviceModuleComponents"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesRunModuleCommand"
+          "target": "com.azure.iotcentral_data#RunDeviceModuleCommand"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetModuleCommandHistory"
+          "target": "com.azure.iotcentral_data#GetDeviceModuleCommandHistory"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesListModules"
+          "target": "com.azure.iotcentral_data#ListDeviceModules"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetCredentials"
+          "target": "com.azure.iotcentral_data#GetDeviceCredentials"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetComponentTelemetryValue"
+          "target": "com.azure.iotcentral_data#GetDeviceComponentTelemetryValue"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesUpdateComponentProperties"
+          "target": "com.azure.iotcentral_data#UpdateDeviceComponentProperties"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesReplaceComponentProperties"
+          "target": "com.azure.iotcentral_data#ReplaceDeviceComponentProperties"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetComponentProperties"
+          "target": "com.azure.iotcentral_data#GetDeviceComponentProperties"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesRunComponentCommand"
+          "target": "com.azure.iotcentral_data#RunDeviceComponentCommand"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetComponentCommandHistory"
+          "target": "com.azure.iotcentral_data#GetDeviceComponentCommandHistory"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesListComponents"
+          "target": "com.azure.iotcentral_data#ListDeviceComponents"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesRunCommand"
+          "target": "com.azure.iotcentral_data#RunDeviceCommand"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetCommandHistory"
+          "target": "com.azure.iotcentral_data#GetDeviceCommandHistory"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesRemoveAttestation"
+          "target": "com.azure.iotcentral_data#RemoveDeviceAttestation"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesUpdateAttestation"
+          "target": "com.azure.iotcentral_data#UpdateDeviceAttestation"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesCreateAttestation"
+          "target": "com.azure.iotcentral_data#CreateDeviceAttestation"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGetAttestation"
+          "target": "com.azure.iotcentral_data#GetDeviceAttestation"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesRemove"
+          "target": "com.azure.iotcentral_data#RemoveDevice"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesUpdate"
+          "target": "com.azure.iotcentral_data#UpdateDevice"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesCreate"
+          "target": "com.azure.iotcentral_data#CreateDevice"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesGet"
+          "target": "com.azure.iotcentral_data#GetDevice"
         },
         {
-          "target": "com.azure.iotcentral_data#DevicesList"
+          "target": "com.azure.iotcentral_data#ListDevices"
         },
         {
-          "target": "com.azure.iotcentral_data#DeviceTemplatesRemove"
+          "target": "com.azure.iotcentral_data#RemoveDeviceTemplate"
         },
         {
-          "target": "com.azure.iotcentral_data#DeviceTemplatesUpdate"
+          "target": "com.azure.iotcentral_data#UpdateDeviceTemplate"
         },
         {
-          "target": "com.azure.iotcentral_data#DeviceTemplatesCreate"
+          "target": "com.azure.iotcentral_data#CreateDeviceTemplate"
         },
         {
-          "target": "com.azure.iotcentral_data#DeviceTemplatesGet"
+          "target": "com.azure.iotcentral_data#GetDeviceTemplate"
         },
         {
-          "target": "com.azure.iotcentral_data#DeviceTemplatesList"
+          "target": "com.azure.iotcentral_data#ListDeviceTemplates"
         },
         {
-          "target": "com.azure.iotcentral_data#DeviceGroupsGetDevices"
+          "target": "com.azure.iotcentral_data#GetDeviceGroupDevices"
         },
         {
-          "target": "com.azure.iotcentral_data#DeviceGroupsRemove"
+          "target": "com.azure.iotcentral_data#RemoveDeviceGroup"
         },
         {
-          "target": "com.azure.iotcentral_data#DeviceGroupsUpdate"
+          "target": "com.azure.iotcentral_data#UpdateDeviceGroup"
         },
         {
-          "target": "com.azure.iotcentral_data#DeviceGroupsCreate"
+          "target": "com.azure.iotcentral_data#CreateDeviceGroup"
         },
         {
-          "target": "com.azure.iotcentral_data#DeviceGroupsGet"
+          "target": "com.azure.iotcentral_data#GetDeviceGroup"
         },
         {
-          "target": "com.azure.iotcentral_data#DeviceGroupsList"
+          "target": "com.azure.iotcentral_data#ListDeviceGroups"
         },
         {
-          "target": "com.azure.iotcentral_data#ApiTokensRemove"
+          "target": "com.azure.iotcentral_data#RemoveApiToken"
         },
         {
-          "target": "com.azure.iotcentral_data#ApiTokensCreate"
+          "target": "com.azure.iotcentral_data#CreateApiToken"
         },
         {
-          "target": "com.azure.iotcentral_data#ApiTokensGet"
+          "target": "com.azure.iotcentral_data#GetApiToken"
         },
         {
-          "target": "com.azure.iotcentral_data#ApiTokensList"
+          "target": "com.azure.iotcentral_data#ListApiTokens"
         }
       ],
       "traits": {

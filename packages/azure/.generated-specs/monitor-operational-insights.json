@@ -15,28 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.monitor_operational_insights#QueryExecute": "com.azure.monitor_operational_insights#ExecuteQuery",
-      "com.azure.monitor_operational_insights#QueryExecuteRequest": "com.azure.monitor_operational_insights#ExecuteQueryRequest",
-      "com.azure.monitor_operational_insights#QueryExecuteRequestWorkspacesList": "com.azure.monitor_operational_insights#ExecuteQueryRequestWorkspacesList",
-      "com.azure.monitor_operational_insights#QueryGet": "com.azure.monitor_operational_insights#GetQuery",
-      "com.azure.monitor_operational_insights#QueryGetRequest": "com.azure.monitor_operational_insights#GetQueryRequest",
-      "com.azure.monitor_operational_insights#MetadataPost": "com.azure.monitor_operational_insights#PostMetadata",
-      "com.azure.monitor_operational_insights#MetadataPostRequest": "com.azure.monitor_operational_insights#PostMetadataRequest",
-      "com.azure.monitor_operational_insights#MetadataGet": "com.azure.monitor_operational_insights#GetMetadata",
-      "com.azure.monitor_operational_insights#MetadataGetRequest": "com.azure.monitor_operational_insights#GetMetadataRequest",
-      "com.azure.monitor_operational_insights#QueryExecuteWithResourceId": "com.azure.monitor_operational_insights#ExecuteQueryWithResourceId",
-      "com.azure.monitor_operational_insights#QueryExecuteWithResourceIdRequest": "com.azure.monitor_operational_insights#ExecuteQueryWithResourceIdRequest",
-      "com.azure.monitor_operational_insights#QueryExecuteWithResourceIdRequestWorkspacesList": "com.azure.monitor_operational_insights#ExecuteQueryWithResourceIdRequestWorkspacesList",
-      "com.azure.monitor_operational_insights#QueryGetWithResourceId": "com.azure.monitor_operational_insights#GetQueryWithResourceId",
-      "com.azure.monitor_operational_insights#QueryGetWithResourceIdRequest": "com.azure.monitor_operational_insights#GetQueryWithResourceIdRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.monitor_operational_insights#QueryExecute": {
+    "com.azure.monitor_operational_insights#ExecuteQuery": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor_operational_insights#QueryExecuteRequest"
+        "target": "com.azure.monitor_operational_insights#ExecuteQueryRequest"
       },
       "output": {
         "target": "com.azure.monitor_operational_insights#QueryResults"
@@ -395,7 +380,7 @@
         "smithy.api#documentation": "The data type of a column."
       }
     },
-    "com.azure.monitor_operational_insights#QueryExecuteRequest": {
+    "com.azure.monitor_operational_insights#ExecuteQueryRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -434,7 +419,7 @@
           }
         },
         "workspaces": {
-          "target": "com.azure.monitor_operational_insights#QueryExecuteRequestWorkspacesList",
+          "target": "com.azure.monitor_operational_insights#ExecuteQueryRequestWorkspacesList",
           "traits": {
             "smithy.api#documentation": "A list of workspaces to query in addition to the primary workspace."
           }
@@ -444,7 +429,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.monitor_operational_insights#QueryExecuteRequestWorkspacesList": {
+    "com.azure.monitor_operational_insights#ExecuteQueryRequestWorkspacesList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -453,10 +438,10 @@
         "smithy.api#documentation": "A list of workspaces to query in addition to the primary workspace."
       }
     },
-    "com.azure.monitor_operational_insights#QueryGet": {
+    "com.azure.monitor_operational_insights#GetQuery": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor_operational_insights#QueryGetRequest"
+        "target": "com.azure.monitor_operational_insights#GetQueryRequest"
       },
       "output": {
         "target": "com.azure.monitor_operational_insights#QueryResults"
@@ -477,7 +462,7 @@
         "smithy.api#documentation": "Execute an Analytics query\n\nExecutes an Analytics query for data."
       }
     },
-    "com.azure.monitor_operational_insights#QueryGetRequest": {
+    "com.azure.monitor_operational_insights#GetQueryRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -515,10 +500,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.monitor_operational_insights#MetadataPost": {
+    "com.azure.monitor_operational_insights#PostMetadata": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor_operational_insights#MetadataPostRequest"
+        "target": "com.azure.monitor_operational_insights#PostMetadataRequest"
       },
       "output": {
         "target": "com.azure.monitor_operational_insights#MetadataResults"
@@ -2085,7 +2070,7 @@
         "smithy.api#documentation": "The tables related to the category"
       }
     },
-    "com.azure.monitor_operational_insights#MetadataPostRequest": {
+    "com.azure.monitor_operational_insights#PostMetadataRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -2108,10 +2093,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.monitor_operational_insights#MetadataGet": {
+    "com.azure.monitor_operational_insights#GetMetadata": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor_operational_insights#MetadataGetRequest"
+        "target": "com.azure.monitor_operational_insights#GetMetadataRequest"
       },
       "output": {
         "target": "com.azure.monitor_operational_insights#MetadataResults"
@@ -2132,7 +2117,7 @@
         "smithy.api#documentation": "Gets metadata information\n\nRetrieve the metadata information for the workspace, including its schema,\nfunctions, workspace info, categories etc."
       }
     },
-    "com.azure.monitor_operational_insights#MetadataGetRequest": {
+    "com.azure.monitor_operational_insights#GetMetadataRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -2439,10 +2424,10 @@
         "smithy.api#documentation": "Headers of the request. Can use prefer header to set server timeout and to\nquery statistics and visualization information."
       }
     },
-    "com.azure.monitor_operational_insights#QueryExecuteWithResourceId": {
+    "com.azure.monitor_operational_insights#ExecuteQueryWithResourceId": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor_operational_insights#QueryExecuteWithResourceIdRequest"
+        "target": "com.azure.monitor_operational_insights#ExecuteQueryWithResourceIdRequest"
       },
       "output": {
         "target": "com.azure.monitor_operational_insights#QueryResults"
@@ -2463,7 +2448,7 @@
         "smithy.api#documentation": "Execute an Analytics query using resource ID\n\nExecutes an Analytics query for data in the context of a resource.\n[Here](https://learn.microsoft.com/azure/azure-monitor/logs/api/azure-resource-queries)\nis an example for using POST with an Analytics query."
       }
     },
-    "com.azure.monitor_operational_insights#QueryExecuteWithResourceIdRequest": {
+    "com.azure.monitor_operational_insights#ExecuteQueryWithResourceIdRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -2502,7 +2487,7 @@
           }
         },
         "workspaces": {
-          "target": "com.azure.monitor_operational_insights#QueryExecuteWithResourceIdRequestWorkspacesList",
+          "target": "com.azure.monitor_operational_insights#ExecuteQueryWithResourceIdRequestWorkspacesList",
           "traits": {
             "smithy.api#documentation": "A list of workspaces to query in addition to the primary workspace."
           }
@@ -2512,7 +2497,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.monitor_operational_insights#QueryExecuteWithResourceIdRequestWorkspacesList": {
+    "com.azure.monitor_operational_insights#ExecuteQueryWithResourceIdRequestWorkspacesList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -2521,10 +2506,10 @@
         "smithy.api#documentation": "A list of workspaces to query in addition to the primary workspace."
       }
     },
-    "com.azure.monitor_operational_insights#QueryGetWithResourceId": {
+    "com.azure.monitor_operational_insights#GetQueryWithResourceId": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor_operational_insights#QueryGetWithResourceIdRequest"
+        "target": "com.azure.monitor_operational_insights#GetQueryWithResourceIdRequest"
       },
       "output": {
         "target": "com.azure.monitor_operational_insights#QueryResults"
@@ -2545,7 +2530,7 @@
         "smithy.api#documentation": "Execute an Analytics query using resource URI\n\nExecutes an Analytics query for data in the context of a resource.\n[Here](https://learn.microsoft.com/azure/azure-monitor/logs/api/azure-resource-queries)\nis an example for using POST with an Analytics query."
       }
     },
-    "com.azure.monitor_operational_insights#QueryGetWithResourceIdRequest": {
+    "com.azure.monitor_operational_insights#GetQueryWithResourceIdRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -2588,25 +2573,25 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.monitor_operational_insights#QueryExecute"
+          "target": "com.azure.monitor_operational_insights#ExecuteQuery"
         },
         {
-          "target": "com.azure.monitor_operational_insights#QueryGet"
+          "target": "com.azure.monitor_operational_insights#GetQuery"
         },
         {
-          "target": "com.azure.monitor_operational_insights#MetadataPost"
+          "target": "com.azure.monitor_operational_insights#PostMetadata"
         },
         {
-          "target": "com.azure.monitor_operational_insights#MetadataGet"
+          "target": "com.azure.monitor_operational_insights#GetMetadata"
         },
         {
           "target": "com.azure.monitor_operational_insights#QueryBatch"
         },
         {
-          "target": "com.azure.monitor_operational_insights#QueryExecuteWithResourceId"
+          "target": "com.azure.monitor_operational_insights#ExecuteQueryWithResourceId"
         },
         {
-          "target": "com.azure.monitor_operational_insights#QueryGetWithResourceId"
+          "target": "com.azure.monitor_operational_insights#GetQueryWithResourceId"
         }
       ],
       "traits": {

@@ -15,18 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.maps_traffic#TrafficGetTrafficIncident": "com.azure.maps_traffic#GetTrafficTrafficIncident",
-      "com.azure.maps_traffic#TrafficGetTrafficIncidentRequest": "com.azure.maps_traffic#GetTrafficTrafficIncidentRequest",
-      "com.azure.maps_traffic#TrafficGetTrafficIncidentRequestBboxList": "com.azure.maps_traffic#GetTrafficTrafficIncidentRequestBboxList",
-      "com.azure.maps_traffic#TrafficGetTrafficIncidentRequestIncidentType": "com.azure.maps_traffic#GetTrafficTrafficIncidentRequestIncidentType"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.maps_traffic#TrafficGetTrafficIncident": {
+    "com.azure.maps_traffic#GetTrafficTrafficIncident": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_traffic#TrafficGetTrafficIncidentRequest"
+        "target": "com.azure.maps_traffic#GetTrafficTrafficIncidentRequest"
       },
       "output": {
         "target": "com.azure.maps_traffic#TrafficIncidentResponse"
@@ -381,7 +376,7 @@
         "smithy.api#documentation": "Specifies the `GeoJSON` type. The only supported object type is\n`FeatureCollection`. For more information, see [RFC\n7946](https://www.rfc-editor.org/rfc/rfc7946)."
       }
     },
-    "com.azure.maps_traffic#TrafficGetTrafficIncidentRequest": {
+    "com.azure.maps_traffic#GetTrafficTrafficIncidentRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -392,14 +387,14 @@
           }
         },
         "incidentType": {
-          "target": "com.azure.maps_traffic#TrafficGetTrafficIncidentRequestIncidentType",
+          "target": "com.azure.maps_traffic#GetTrafficTrafficIncidentRequestIncidentType",
           "traits": {
             "smithy.api#httpQuery": "incidentType",
             "smithy.api#documentation": "Specifies the type of traffic incident to be returned. Multiple incident types\nwithin a single request are supported. If not specified, the results will\ninclude all incident types within the provided bounding box.\n\nExample, '&incidentType=Accident' or '&incidentType=Accident,Construction'."
           }
         },
         "bbox": {
-          "target": "com.azure.maps_traffic#TrafficGetTrafficIncidentRequestBboxList",
+          "target": "com.azure.maps_traffic#GetTrafficTrafficIncidentRequestBboxList",
           "traits": {
             "smithy.api#httpQuery": "bbox",
             "smithy.api#required": {},
@@ -425,14 +420,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_traffic#TrafficGetTrafficIncidentRequestBboxList": {
+    "com.azure.maps_traffic#GetTrafficTrafficIncidentRequestBboxList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_traffic#TrafficGetTrafficIncidentRequestIncidentType": {
+    "com.azure.maps_traffic#GetTrafficTrafficIncidentRequestIncidentType": {
       "type": "enum",
       "members": {
         "ACCIDENT": {
@@ -485,7 +480,7 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.maps_traffic#TrafficGetTrafficIncident"
+          "target": "com.azure.maps_traffic#GetTrafficTrafficIncident"
         }
       ],
       "traits": {

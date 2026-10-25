@@ -15,204 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.operationalinsights#UsagesList": "com.azure.operationalinsights#ListUsages",
-      "com.azure.operationalinsights#UsagesListRequest": "com.azure.operationalinsights#ListUsagesRequest",
-      "com.azure.operationalinsights#TablesMigrate": "com.azure.operationalinsights#MigrateTable",
-      "com.azure.operationalinsights#TablesMigrateRequest": "com.azure.operationalinsights#MigrateTableRequest",
-      "com.azure.operationalinsights#TablesDelete": "com.azure.operationalinsights#DeleteTable",
-      "com.azure.operationalinsights#TablesDeleteResponse": "com.azure.operationalinsights#DeleteTableResponse",
-      "com.azure.operationalinsights#TablesDeleteRequest": "com.azure.operationalinsights#DeleteTableRequest",
-      "com.azure.operationalinsights#TablesUpdate": "com.azure.operationalinsights#UpdateTable",
-      "com.azure.operationalinsights#TablesUpdateResponse": "com.azure.operationalinsights#UpdateTableResponse",
-      "com.azure.operationalinsights#TablesUpdateRequest": "com.azure.operationalinsights#UpdateTableRequest",
-      "com.azure.operationalinsights#TablesGet": "com.azure.operationalinsights#GetTable",
-      "com.azure.operationalinsights#TablesGetResponse": "com.azure.operationalinsights#GetTableResponse",
-      "com.azure.operationalinsights#TablesGetRequest": "com.azure.operationalinsights#GetTableRequest",
-      "com.azure.operationalinsights#TablesListByWorkspace": "com.azure.operationalinsights#ListTableByWorkspace",
-      "com.azure.operationalinsights#TablesListByWorkspaceRequest": "com.azure.operationalinsights#ListTableByWorkspaceRequest",
-      "com.azure.operationalinsights#SummaryLogsStop": "com.azure.operationalinsights#StopSummaryLog",
-      "com.azure.operationalinsights#SummaryLogsStopRequest": "com.azure.operationalinsights#StopSummaryLogRequest",
-      "com.azure.operationalinsights#SummaryLogsStart": "com.azure.operationalinsights#StartSummaryLog",
-      "com.azure.operationalinsights#SummaryLogsStartResponse": "com.azure.operationalinsights#StartSummaryLogResponse",
-      "com.azure.operationalinsights#SummaryLogsStartRequest": "com.azure.operationalinsights#StartSummaryLogRequest",
-      "com.azure.operationalinsights#SummaryLogsRetryBin": "com.azure.operationalinsights#RetrySummaryLogBin",
-      "com.azure.operationalinsights#SummaryLogsRetryBinResponse": "com.azure.operationalinsights#RetrySummaryLogBinResponse",
-      "com.azure.operationalinsights#SummaryLogsRetryBinRequest": "com.azure.operationalinsights#RetrySummaryLogBinRequest",
-      "com.azure.operationalinsights#SummaryLogsDelete": "com.azure.operationalinsights#DeleteSummaryLog",
-      "com.azure.operationalinsights#SummaryLogsDeleteResponse": "com.azure.operationalinsights#DeleteSummaryLogResponse",
-      "com.azure.operationalinsights#SummaryLogsDeleteRequest": "com.azure.operationalinsights#DeleteSummaryLogRequest",
-      "com.azure.operationalinsights#SummaryLogsGet": "com.azure.operationalinsights#GetSummaryLog",
-      "com.azure.operationalinsights#SummaryLogsGetResponse": "com.azure.operationalinsights#GetSummaryLogResponse",
-      "com.azure.operationalinsights#SummaryLogsGetRequest": "com.azure.operationalinsights#GetSummaryLogRequest",
-      "com.azure.operationalinsights#SummaryLogsListByWorkspace": "com.azure.operationalinsights#ListSummaryLogByWorkspace",
-      "com.azure.operationalinsights#SummaryLogsListByWorkspaceRequest": "com.azure.operationalinsights#ListSummaryLogByWorkspaceRequest",
-      "com.azure.operationalinsights#StorageInsightConfigsDelete": "com.azure.operationalinsights#DeleteStorageInsightConfig",
-      "com.azure.operationalinsights#StorageInsightConfigsDeleteRequest": "com.azure.operationalinsights#DeleteStorageInsightConfigRequest",
-      "com.azure.operationalinsights#StorageInsightConfigsGet": "com.azure.operationalinsights#GetStorageInsightConfig",
-      "com.azure.operationalinsights#StorageInsightConfigsGetResponse": "com.azure.operationalinsights#GetStorageInsightConfigResponse",
-      "com.azure.operationalinsights#StorageInsightConfigsGetResponseTagsMap": "com.azure.operationalinsights#GetStorageInsightConfigResponseTagsMap",
-      "com.azure.operationalinsights#StorageInsightConfigsGetRequest": "com.azure.operationalinsights#GetStorageInsightConfigRequest",
-      "com.azure.operationalinsights#StorageInsightConfigsListByWorkspace": "com.azure.operationalinsights#ListStorageInsightConfigByWorkspace",
-      "com.azure.operationalinsights#StorageInsightConfigsListByWorkspaceRequest": "com.azure.operationalinsights#ListStorageInsightConfigByWorkspaceRequest",
-      "com.azure.operationalinsights#SharedKeysGetSharedKeys": "com.azure.operationalinsights#GetSharedKeySharedKeys",
-      "com.azure.operationalinsights#SharedKeysGetSharedKeysRequest": "com.azure.operationalinsights#GetSharedKeySharedKeysRequest",
-      "com.azure.operationalinsights#SchemaGet": "com.azure.operationalinsights#GetSchema",
-      "com.azure.operationalinsights#SchemaGetRequest": "com.azure.operationalinsights#GetSchemaRequest",
-      "com.azure.operationalinsights#SavedSearchesDelete": "com.azure.operationalinsights#DeleteSavedSearch",
-      "com.azure.operationalinsights#SavedSearchesDeleteRequest": "com.azure.operationalinsights#DeleteSavedSearchRequest",
-      "com.azure.operationalinsights#SavedSearchesGet": "com.azure.operationalinsights#GetSavedSearch",
-      "com.azure.operationalinsights#SavedSearchesGetResponse": "com.azure.operationalinsights#GetSavedSearchResponse",
-      "com.azure.operationalinsights#SavedSearchesGetRequest": "com.azure.operationalinsights#GetSavedSearchRequest",
-      "com.azure.operationalinsights#SavedSearchesListByWorkspace": "com.azure.operationalinsights#ListSavedSearchByWorkspace",
-      "com.azure.operationalinsights#SavedSearchesListByWorkspaceRequest": "com.azure.operationalinsights#ListSavedSearchByWorkspaceRequest",
-      "com.azure.operationalinsights#SharedKeysRegenerate": "com.azure.operationalinsights#RegenerateSharedKey",
-      "com.azure.operationalinsights#SharedKeysRegenerateRequest": "com.azure.operationalinsights#RegenerateSharedKeyRequest",
-      "com.azure.operationalinsights#WorkspacePurgePurgeLakeData": "com.azure.operationalinsights#PurgeWorkspacePurgeLakeData",
-      "com.azure.operationalinsights#WorkspacePurgePurgeLakeDataResponse": "com.azure.operationalinsights#PurgeWorkspacePurgeLakeDataResponse",
-      "com.azure.operationalinsights#WorkspacePurgePurgeLakeDataRequest": "com.azure.operationalinsights#PurgeWorkspacePurgeLakeDataRequest",
-      "com.azure.operationalinsights#WorkspacePurgePurge": "com.azure.operationalinsights#PurgeWorkspacePurge",
-      "com.azure.operationalinsights#WorkspacePurgePurgeRequest": "com.azure.operationalinsights#PurgeWorkspacePurgeRequest",
-      "com.azure.operationalinsights#WorkspacePurgePurgeRequestFiltersList": "com.azure.operationalinsights#PurgeWorkspacePurgeRequestFiltersList",
-      "com.azure.operationalinsights#WorkspacesGetNSP": "com.azure.operationalinsights#GetWorkspaceNSP",
-      "com.azure.operationalinsights#WorkspacesGetNSPResponse": "com.azure.operationalinsights#GetWorkspaceNSPResponse",
-      "com.azure.operationalinsights#WorkspacesGetNSPRequest": "com.azure.operationalinsights#GetWorkspaceNSPRequest",
-      "com.azure.operationalinsights#WorkspacesListNSP": "com.azure.operationalinsights#ListWorkspaceNSP",
-      "com.azure.operationalinsights#WorkspacesListNSPResponse": "com.azure.operationalinsights#ListWorkspaceNSPResponse",
-      "com.azure.operationalinsights#WorkspacesListNSPResponseValueList": "com.azure.operationalinsights#ListWorkspaceNSPResponseValueList",
-      "com.azure.operationalinsights#WorkspacesListNSPRequest": "com.azure.operationalinsights#ListWorkspaceNSPRequest",
-      "com.azure.operationalinsights#ManagementGroupsList": "com.azure.operationalinsights#ListManagementGroups",
-      "com.azure.operationalinsights#ManagementGroupsListRequest": "com.azure.operationalinsights#ListManagementGroupsRequest",
-      "com.azure.operationalinsights#LinkedStorageAccountsDelete": "com.azure.operationalinsights#DeleteLinkedStorageAccount",
-      "com.azure.operationalinsights#LinkedStorageAccountsDeleteRequest": "com.azure.operationalinsights#DeleteLinkedStorageAccountRequest",
-      "com.azure.operationalinsights#LinkedStorageAccountsDeleteRequestDataSourceType": "com.azure.operationalinsights#DeleteLinkedStorageAccountRequestDataSourceType",
-      "com.azure.operationalinsights#LinkedStorageAccountsGet": "com.azure.operationalinsights#GetLinkedStorageAccount",
-      "com.azure.operationalinsights#LinkedStorageAccountsGetResponse": "com.azure.operationalinsights#GetLinkedStorageAccountResponse",
-      "com.azure.operationalinsights#LinkedStorageAccountsGetRequest": "com.azure.operationalinsights#GetLinkedStorageAccountRequest",
-      "com.azure.operationalinsights#LinkedStorageAccountsGetRequestDataSourceType": "com.azure.operationalinsights#GetLinkedStorageAccountRequestDataSourceType",
-      "com.azure.operationalinsights#LinkedStorageAccountsListByWorkspace": "com.azure.operationalinsights#ListLinkedStorageAccountByWorkspace",
-      "com.azure.operationalinsights#LinkedStorageAccountsListByWorkspaceRequest": "com.azure.operationalinsights#ListLinkedStorageAccountByWorkspaceRequest",
-      "com.azure.operationalinsights#LinkedServicesDelete": "com.azure.operationalinsights#DeleteLinkedService",
-      "com.azure.operationalinsights#LinkedServicesDeleteResponse": "com.azure.operationalinsights#DeleteLinkedServiceResponse",
-      "com.azure.operationalinsights#LinkedServicesDeleteResponseTagsMap": "com.azure.operationalinsights#DeleteLinkedServiceResponseTagsMap",
-      "com.azure.operationalinsights#LinkedServicesDeleteRequest": "com.azure.operationalinsights#DeleteLinkedServiceRequest",
-      "com.azure.operationalinsights#LinkedServicesGet": "com.azure.operationalinsights#GetLinkedService",
-      "com.azure.operationalinsights#LinkedServicesGetResponse": "com.azure.operationalinsights#GetLinkedServiceResponse",
-      "com.azure.operationalinsights#LinkedServicesGetResponseTagsMap": "com.azure.operationalinsights#GetLinkedServiceResponseTagsMap",
-      "com.azure.operationalinsights#LinkedServicesGetRequest": "com.azure.operationalinsights#GetLinkedServiceRequest",
-      "com.azure.operationalinsights#LinkedServicesListByWorkspace": "com.azure.operationalinsights#ListLinkedServiceByWorkspace",
-      "com.azure.operationalinsights#LinkedServicesListByWorkspaceRequest": "com.azure.operationalinsights#ListLinkedServiceByWorkspaceRequest",
-      "com.azure.operationalinsights#IntelligencePacksEnable": "com.azure.operationalinsights#EnableIntelligencePack",
-      "com.azure.operationalinsights#IntelligencePacksEnableRequest": "com.azure.operationalinsights#EnableIntelligencePackRequest",
-      "com.azure.operationalinsights#IntelligencePacksDisable": "com.azure.operationalinsights#DisableIntelligencePack",
-      "com.azure.operationalinsights#IntelligencePacksDisableRequest": "com.azure.operationalinsights#DisableIntelligencePackRequest",
-      "com.azure.operationalinsights#IntelligencePacksList": "com.azure.operationalinsights#ListIntelligencePacks",
-      "com.azure.operationalinsights#IntelligencePacksListResponse": "com.azure.operationalinsights#ListIntelligencePacksResponse",
-      "com.azure.operationalinsights#IntelligencePacksListResponseBodyList": "com.azure.operationalinsights#ListIntelligencePacksResponseBodyList",
-      "com.azure.operationalinsights#IntelligencePacksListRequest": "com.azure.operationalinsights#ListIntelligencePacksRequest",
-      "com.azure.operationalinsights#GatewaysDelete": "com.azure.operationalinsights#DeleteGateway",
-      "com.azure.operationalinsights#GatewaysDeleteRequest": "com.azure.operationalinsights#DeleteGatewayRequest",
-      "com.azure.operationalinsights#DataSourcesDelete": "com.azure.operationalinsights#DeleteDataSource",
-      "com.azure.operationalinsights#DataSourcesDeleteRequest": "com.azure.operationalinsights#DeleteDataSourceRequest",
-      "com.azure.operationalinsights#DataSourcesGet": "com.azure.operationalinsights#GetDataSource",
-      "com.azure.operationalinsights#DataSourcesGetResponse": "com.azure.operationalinsights#GetDataSourceResponse",
-      "com.azure.operationalinsights#DataSourcesGetResponseTagsMap": "com.azure.operationalinsights#GetDataSourceResponseTagsMap",
-      "com.azure.operationalinsights#DataSourcesGetRequest": "com.azure.operationalinsights#GetDataSourceRequest",
-      "com.azure.operationalinsights#DataSourcesListByWorkspace": "com.azure.operationalinsights#ListDataSourceByWorkspace",
-      "com.azure.operationalinsights#DataSourcesListByWorkspaceRequest": "com.azure.operationalinsights#ListDataSourceByWorkspaceRequest",
-      "com.azure.operationalinsights#DataExportsDelete": "com.azure.operationalinsights#DeleteDataExport",
-      "com.azure.operationalinsights#DataExportsDeleteRequest": "com.azure.operationalinsights#DeleteDataExportRequest",
-      "com.azure.operationalinsights#DataExportsGet": "com.azure.operationalinsights#GetDataExport",
-      "com.azure.operationalinsights#DataExportsGetResponse": "com.azure.operationalinsights#GetDataExportResponse",
-      "com.azure.operationalinsights#DataExportsGetRequest": "com.azure.operationalinsights#GetDataExportRequest",
-      "com.azure.operationalinsights#DataExportsListByWorkspace": "com.azure.operationalinsights#ListDataExportByWorkspace",
-      "com.azure.operationalinsights#DataExportsListByWorkspaceRequest": "com.azure.operationalinsights#ListDataExportByWorkspaceRequest",
-      "com.azure.operationalinsights#AvailableServiceTiersListByWorkspace": "com.azure.operationalinsights#ListAvailableServiceTierByWorkspace",
-      "com.azure.operationalinsights#AvailableServiceTiersListByWorkspaceResponse": "com.azure.operationalinsights#ListAvailableServiceTierByWorkspaceResponse",
-      "com.azure.operationalinsights#AvailableServiceTiersListByWorkspaceResponseBodyList": "com.azure.operationalinsights#ListAvailableServiceTierByWorkspaceResponseBodyList",
-      "com.azure.operationalinsights#AvailableServiceTiersListByWorkspaceRequest": "com.azure.operationalinsights#ListAvailableServiceTierByWorkspaceRequest",
-      "com.azure.operationalinsights#WorkspacesDelete": "com.azure.operationalinsights#DeleteWorkspace",
-      "com.azure.operationalinsights#WorkspacesDeleteResponse": "com.azure.operationalinsights#DeleteWorkspaceResponse",
-      "com.azure.operationalinsights#WorkspacesDeleteRequest": "com.azure.operationalinsights#DeleteWorkspaceRequest",
-      "com.azure.operationalinsights#WorkspacesUpdate": "com.azure.operationalinsights#UpdateWorkspace",
-      "com.azure.operationalinsights#WorkspacesUpdateResponse": "com.azure.operationalinsights#UpdateWorkspaceResponse",
-      "com.azure.operationalinsights#WorkspacesUpdateResponseTagsMap": "com.azure.operationalinsights#UpdateWorkspaceResponseTagsMap",
-      "com.azure.operationalinsights#WorkspacesUpdateRequest": "com.azure.operationalinsights#UpdateWorkspaceRequest",
-      "com.azure.operationalinsights#WorkspacesUpdateRequestTagsMap": "com.azure.operationalinsights#UpdateWorkspaceRequestTagsMap",
-      "com.azure.operationalinsights#WorkspacesGet": "com.azure.operationalinsights#GetWorkspace",
-      "com.azure.operationalinsights#WorkspacesGetResponse": "com.azure.operationalinsights#GetWorkspaceResponse",
-      "com.azure.operationalinsights#WorkspacesGetResponseTagsMap": "com.azure.operationalinsights#GetWorkspaceResponseTagsMap",
-      "com.azure.operationalinsights#WorkspacesGetRequest": "com.azure.operationalinsights#GetWorkspaceRequest",
-      "com.azure.operationalinsights#WorkspacesListByResourceGroup": "com.azure.operationalinsights#ListWorkspaceByResourceGroup",
-      "com.azure.operationalinsights#WorkspacesListByResourceGroupRequest": "com.azure.operationalinsights#ListWorkspaceByResourceGroupRequest",
-      "com.azure.operationalinsights#QueriesSearch": "com.azure.operationalinsights#SearchQuery",
-      "com.azure.operationalinsights#QueriesSearchRequest": "com.azure.operationalinsights#SearchQueryRequest",
-      "com.azure.operationalinsights#QueriesSearchRequestTagsMap": "com.azure.operationalinsights#SearchQueryRequestTagsMap",
-      "com.azure.operationalinsights#QueriesSearchRequestTagsValueList": "com.azure.operationalinsights#SearchQueryRequestTagsValueList",
-      "com.azure.operationalinsights#QueriesDelete": "com.azure.operationalinsights#DeleteQuery",
-      "com.azure.operationalinsights#QueriesDeleteRequest": "com.azure.operationalinsights#DeleteQueryRequest",
-      "com.azure.operationalinsights#QueriesUpdate": "com.azure.operationalinsights#UpdateQuery",
-      "com.azure.operationalinsights#QueriesUpdateResponse": "com.azure.operationalinsights#UpdateQueryResponse",
-      "com.azure.operationalinsights#QueriesUpdateRequest": "com.azure.operationalinsights#UpdateQueryRequest",
-      "com.azure.operationalinsights#QueriesPut": "com.azure.operationalinsights#PutQuery",
-      "com.azure.operationalinsights#QueriesPutResponse": "com.azure.operationalinsights#PutQueryResponse",
-      "com.azure.operationalinsights#QueriesPutRequest": "com.azure.operationalinsights#PutQueryRequest",
-      "com.azure.operationalinsights#QueriesGet": "com.azure.operationalinsights#GetQuery",
-      "com.azure.operationalinsights#QueriesGetResponse": "com.azure.operationalinsights#GetQueryResponse",
-      "com.azure.operationalinsights#QueriesGetRequest": "com.azure.operationalinsights#GetQueryRequest",
-      "com.azure.operationalinsights#QueriesList": "com.azure.operationalinsights#ListQueries",
-      "com.azure.operationalinsights#QueriesListRequest": "com.azure.operationalinsights#ListQueriesRequest",
-      "com.azure.operationalinsights#QueryPacksDelete": "com.azure.operationalinsights#DeleteQueryPack",
-      "com.azure.operationalinsights#QueryPacksDeleteRequest": "com.azure.operationalinsights#DeleteQueryPackRequest",
-      "com.azure.operationalinsights#QueryPacksUpdateTags": "com.azure.operationalinsights#UpdateQueryPackTags",
-      "com.azure.operationalinsights#QueryPacksUpdateTagsResponse": "com.azure.operationalinsights#UpdateQueryPackTagsResponse",
-      "com.azure.operationalinsights#QueryPacksUpdateTagsResponseTagsMap": "com.azure.operationalinsights#UpdateQueryPackTagsResponseTagsMap",
-      "com.azure.operationalinsights#QueryPacksUpdateTagsRequest": "com.azure.operationalinsights#UpdateQueryPackTagsRequest",
-      "com.azure.operationalinsights#QueryPacksUpdateTagsRequestTagsMap": "com.azure.operationalinsights#UpdateQueryPackTagsRequestTagsMap",
-      "com.azure.operationalinsights#QueryPacksGet": "com.azure.operationalinsights#GetQueryPack",
-      "com.azure.operationalinsights#QueryPacksGetResponse": "com.azure.operationalinsights#GetQueryPackResponse",
-      "com.azure.operationalinsights#QueryPacksGetResponseTagsMap": "com.azure.operationalinsights#GetQueryPackResponseTagsMap",
-      "com.azure.operationalinsights#QueryPacksGetRequest": "com.azure.operationalinsights#GetQueryPackRequest",
-      "com.azure.operationalinsights#QueryPacksListByResourceGroup": "com.azure.operationalinsights#ListQueryPackByResourceGroup",
-      "com.azure.operationalinsights#QueryPacksListByResourceGroupRequest": "com.azure.operationalinsights#ListQueryPackByResourceGroupRequest",
-      "com.azure.operationalinsights#DeletedWorkspacesListByResourceGroup": "com.azure.operationalinsights#ListDeletedWorkspaceByResourceGroup",
-      "com.azure.operationalinsights#DeletedWorkspacesListByResourceGroupRequest": "com.azure.operationalinsights#ListDeletedWorkspaceByResourceGroupRequest",
-      "com.azure.operationalinsights#ClustersDelete": "com.azure.operationalinsights#DeleteCluster",
-      "com.azure.operationalinsights#ClustersDeleteResponse": "com.azure.operationalinsights#DeleteClusterResponse",
-      "com.azure.operationalinsights#ClustersDeleteRequest": "com.azure.operationalinsights#DeleteClusterRequest",
-      "com.azure.operationalinsights#ClustersUpdate": "com.azure.operationalinsights#UpdateCluster",
-      "com.azure.operationalinsights#ClustersUpdateResponse": "com.azure.operationalinsights#UpdateClusterResponse",
-      "com.azure.operationalinsights#ClustersUpdateResponseIdentity": "com.azure.operationalinsights#UpdateClusterResponseIdentity",
-      "com.azure.operationalinsights#ClustersUpdateResponseTagsMap": "com.azure.operationalinsights#UpdateClusterResponseTagsMap",
-      "com.azure.operationalinsights#ClustersUpdateRequest": "com.azure.operationalinsights#UpdateClusterRequest",
-      "com.azure.operationalinsights#ClustersUpdateRequestTagsMap": "com.azure.operationalinsights#UpdateClusterRequestTagsMap",
-      "com.azure.operationalinsights#ClustersUpdateRequestIdentity": "com.azure.operationalinsights#UpdateClusterRequestIdentity",
-      "com.azure.operationalinsights#ClustersGet": "com.azure.operationalinsights#GetCluster",
-      "com.azure.operationalinsights#ClustersGetResponse": "com.azure.operationalinsights#GetClusterResponse",
-      "com.azure.operationalinsights#ClustersGetResponseIdentity": "com.azure.operationalinsights#GetClusterResponseIdentity",
-      "com.azure.operationalinsights#ClustersGetResponseTagsMap": "com.azure.operationalinsights#GetClusterResponseTagsMap",
-      "com.azure.operationalinsights#ClustersGetRequest": "com.azure.operationalinsights#GetClusterRequest",
-      "com.azure.operationalinsights#ClustersListByResourceGroup": "com.azure.operationalinsights#ListClusterByResourceGroup",
-      "com.azure.operationalinsights#ClustersListByResourceGroupRequest": "com.azure.operationalinsights#ListClusterByResourceGroupRequest",
-      "com.azure.operationalinsights#WorkspacesList": "com.azure.operationalinsights#ListWorkspaces",
-      "com.azure.operationalinsights#WorkspacesListRequest": "com.azure.operationalinsights#ListWorkspacesRequest",
-      "com.azure.operationalinsights#QueryPacksList": "com.azure.operationalinsights#ListQueryPacks",
-      "com.azure.operationalinsights#QueryPacksListRequest": "com.azure.operationalinsights#ListQueryPacksRequest",
-      "com.azure.operationalinsights#OperationStatusesGet": "com.azure.operationalinsights#GetOperationStatus",
-      "com.azure.operationalinsights#OperationStatusesGetRequest": "com.azure.operationalinsights#GetOperationStatusRequest",
-      "com.azure.operationalinsights#DeletedWorkspacesList": "com.azure.operationalinsights#ListDeletedWorkspaces",
-      "com.azure.operationalinsights#DeletedWorkspacesListRequest": "com.azure.operationalinsights#ListDeletedWorkspacesRequest",
-      "com.azure.operationalinsights#ClustersList": "com.azure.operationalinsights#ListClusters",
-      "com.azure.operationalinsights#ClustersListRequest": "com.azure.operationalinsights#ListClustersRequest",
-      "com.azure.operationalinsights#OperationsList": "com.azure.operationalinsights#ListOperations",
-      "com.azure.operationalinsights#OperationsListRequest": "com.azure.operationalinsights#ListOperationsRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.operationalinsights#UsagesList": {
+    "com.azure.operationalinsights#ListUsages": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#UsagesListRequest"
+        "target": "com.azure.operationalinsights#ListUsagesRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#WorkspaceListUsagesResult"
@@ -328,7 +137,7 @@
         "smithy.api#documentation": "The name of a metric."
       }
     },
-    "com.azure.operationalinsights#UsagesListRequest": {
+    "com.azure.operationalinsights#ListUsagesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -366,10 +175,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#TablesMigrate": {
+    "com.azure.operationalinsights#MigrateTable": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#TablesMigrateRequest"
+        "target": "com.azure.operationalinsights#MigrateTableRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -385,7 +194,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#TablesMigrateRequest": {
+    "com.azure.operationalinsights#MigrateTableRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -484,13 +293,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#TablesDelete": {
+    "com.azure.operationalinsights#DeleteTable": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#TablesDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteTableRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#TablesDeleteResponse"
+        "target": "com.azure.operationalinsights#DeleteTableResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -503,7 +312,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#TablesDeleteResponse": {
+    "com.azure.operationalinsights#DeleteTableResponse": {
       "type": "structure",
       "members": {
         "azureAsyncOperation": {
@@ -532,7 +341,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#TablesDeleteRequest": {
+    "com.azure.operationalinsights#DeleteTableRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -572,13 +381,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#TablesUpdate": {
+    "com.azure.operationalinsights#UpdateTable": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#TablesUpdateRequest"
+        "target": "com.azure.operationalinsights#UpdateTableRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#TablesUpdateResponse"
+        "target": "com.azure.operationalinsights#UpdateTableResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -591,7 +400,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#TablesUpdateResponse": {
+    "com.azure.operationalinsights#UpdateTableResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1364,7 +1173,7 @@
         "smithy.api#documentation": "The type of identity that created the resource."
       }
     },
-    "com.azure.operationalinsights#TablesUpdateRequest": {
+    "com.azure.operationalinsights#UpdateTableRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1720,13 +1529,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#TablesGet": {
+    "com.azure.operationalinsights#GetTable": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#TablesGetRequest"
+        "target": "com.azure.operationalinsights#GetTableRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#TablesGetResponse"
+        "target": "com.azure.operationalinsights#GetTableResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1739,7 +1548,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#TablesGetResponse": {
+    "com.azure.operationalinsights#GetTableResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1777,7 +1586,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#TablesGetRequest": {
+    "com.azure.operationalinsights#GetTableRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1817,10 +1626,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#TablesListByWorkspace": {
+    "com.azure.operationalinsights#ListTableByWorkspace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#TablesListByWorkspaceRequest"
+        "target": "com.azure.operationalinsights#ListTableByWorkspaceRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#TablesListResult"
@@ -1910,7 +1719,7 @@
         "smithy.api#documentation": "Workspace data table definition."
       }
     },
-    "com.azure.operationalinsights#TablesListByWorkspaceRequest": {
+    "com.azure.operationalinsights#ListTableByWorkspaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1948,10 +1757,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#SummaryLogsStop": {
+    "com.azure.operationalinsights#StopSummaryLog": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#SummaryLogsStopRequest"
+        "target": "com.azure.operationalinsights#StopSummaryLogRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -1967,7 +1776,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#SummaryLogsStopRequest": {
+    "com.azure.operationalinsights#StopSummaryLogRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2007,13 +1816,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#SummaryLogsStart": {
+    "com.azure.operationalinsights#StartSummaryLog": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#SummaryLogsStartRequest"
+        "target": "com.azure.operationalinsights#StartSummaryLogRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#SummaryLogsStartResponse"
+        "target": "com.azure.operationalinsights#StartSummaryLogResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2026,7 +1835,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#SummaryLogsStartResponse": {
+    "com.azure.operationalinsights#StartSummaryLogResponse": {
       "type": "structure",
       "members": {
         "azureAsyncOperation": {
@@ -2055,7 +1864,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#SummaryLogsStartRequest": {
+    "com.azure.operationalinsights#StartSummaryLogRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2095,13 +1904,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#SummaryLogsRetryBin": {
+    "com.azure.operationalinsights#RetrySummaryLogBin": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#SummaryLogsRetryBinRequest"
+        "target": "com.azure.operationalinsights#RetrySummaryLogBinRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#SummaryLogsRetryBinResponse"
+        "target": "com.azure.operationalinsights#RetrySummaryLogBinResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2114,7 +1923,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#SummaryLogsRetryBinResponse": {
+    "com.azure.operationalinsights#RetrySummaryLogBinResponse": {
       "type": "structure",
       "members": {
         "azureAsyncOperation": {
@@ -2143,7 +1952,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#SummaryLogsRetryBinRequest": {
+    "com.azure.operationalinsights#RetrySummaryLogBinRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2204,13 +2013,13 @@
         "smithy.api#documentation": "Properties for retrying a Summary rule bin."
       }
     },
-    "com.azure.operationalinsights#SummaryLogsDelete": {
+    "com.azure.operationalinsights#DeleteSummaryLog": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#SummaryLogsDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteSummaryLogRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#SummaryLogsDeleteResponse"
+        "target": "com.azure.operationalinsights#DeleteSummaryLogResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2223,7 +2032,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#SummaryLogsDeleteResponse": {
+    "com.azure.operationalinsights#DeleteSummaryLogResponse": {
       "type": "structure",
       "members": {
         "azureAsyncOperation": {
@@ -2252,7 +2061,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#SummaryLogsDeleteRequest": {
+    "com.azure.operationalinsights#DeleteSummaryLogRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2765,13 +2574,13 @@
         "smithy.api#documentation": "Summary rule properties."
       }
     },
-    "com.azure.operationalinsights#SummaryLogsGet": {
+    "com.azure.operationalinsights#GetSummaryLog": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#SummaryLogsGetRequest"
+        "target": "com.azure.operationalinsights#GetSummaryLogRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#SummaryLogsGetResponse"
+        "target": "com.azure.operationalinsights#GetSummaryLogResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2784,7 +2593,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#SummaryLogsGetResponse": {
+    "com.azure.operationalinsights#GetSummaryLogResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -2828,7 +2637,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#SummaryLogsGetRequest": {
+    "com.azure.operationalinsights#GetSummaryLogRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2868,10 +2677,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#SummaryLogsListByWorkspace": {
+    "com.azure.operationalinsights#ListSummaryLogByWorkspace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#SummaryLogsListByWorkspaceRequest"
+        "target": "com.azure.operationalinsights#ListSummaryLogByWorkspaceRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#SummaryLogsListResult"
@@ -2968,7 +2777,7 @@
         "smithy.api#documentation": "Workspace data summary rules definition."
       }
     },
-    "com.azure.operationalinsights#SummaryLogsListByWorkspaceRequest": {
+    "com.azure.operationalinsights#ListSummaryLogByWorkspaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3006,10 +2815,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#StorageInsightConfigsDelete": {
+    "com.azure.operationalinsights#DeleteStorageInsightConfig": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#StorageInsightConfigsDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteStorageInsightConfigRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -3025,7 +2834,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#StorageInsightConfigsDeleteRequest": {
+    "com.azure.operationalinsights#DeleteStorageInsightConfigRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3330,13 +3139,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#StorageInsightConfigsGet": {
+    "com.azure.operationalinsights#GetStorageInsightConfig": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#StorageInsightConfigsGetRequest"
+        "target": "com.azure.operationalinsights#GetStorageInsightConfigRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#StorageInsightConfigsGetResponse"
+        "target": "com.azure.operationalinsights#GetStorageInsightConfigResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3349,7 +3158,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#StorageInsightConfigsGetResponse": {
+    "com.azure.operationalinsights#GetStorageInsightConfigResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -3389,7 +3198,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#StorageInsightConfigsGetResponseTagsMap",
+          "target": "com.azure.operationalinsights#GetStorageInsightConfigResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -3399,7 +3208,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#StorageInsightConfigsGetResponseTagsMap": {
+    "com.azure.operationalinsights#GetStorageInsightConfigResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3411,7 +3220,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#StorageInsightConfigsGetRequest": {
+    "com.azure.operationalinsights#GetStorageInsightConfigRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3451,10 +3260,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#StorageInsightConfigsListByWorkspace": {
+    "com.azure.operationalinsights#ListStorageInsightConfigByWorkspace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#StorageInsightConfigsListByWorkspaceRequest"
+        "target": "com.azure.operationalinsights#ListStorageInsightConfigByWorkspaceRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#StorageInsightListResult"
@@ -3569,7 +3378,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#StorageInsightConfigsListByWorkspaceRequest": {
+    "com.azure.operationalinsights#ListStorageInsightConfigByWorkspaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3607,10 +3416,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#SharedKeysGetSharedKeys": {
+    "com.azure.operationalinsights#GetSharedKeySharedKeys": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#SharedKeysGetSharedKeysRequest"
+        "target": "com.azure.operationalinsights#GetSharedKeySharedKeysRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#SharedKeys"
@@ -3646,7 +3455,7 @@
         "smithy.api#documentation": "The shared keys for a workspace."
       }
     },
-    "com.azure.operationalinsights#SharedKeysGetSharedKeysRequest": {
+    "com.azure.operationalinsights#GetSharedKeySharedKeysRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3678,10 +3487,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#SchemaGet": {
+    "com.azure.operationalinsights#GetSchema": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#SchemaGetRequest"
+        "target": "com.azure.operationalinsights#GetSchemaRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#SearchGetSchemaResponse"
@@ -3997,7 +3806,7 @@
         "smithy.api#documentation": "The core summary of a search."
       }
     },
-    "com.azure.operationalinsights#SchemaGetRequest": {
+    "com.azure.operationalinsights#GetSchemaRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4029,10 +3838,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#SavedSearchesDelete": {
+    "com.azure.operationalinsights#DeleteSavedSearch": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#SavedSearchesDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteSavedSearchRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -4048,7 +3857,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#SavedSearchesDeleteRequest": {
+    "com.azure.operationalinsights#DeleteSavedSearchRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4289,13 +4098,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#SavedSearchesGet": {
+    "com.azure.operationalinsights#GetSavedSearch": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#SavedSearchesGetRequest"
+        "target": "com.azure.operationalinsights#GetSavedSearchRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#SavedSearchesGetResponse"
+        "target": "com.azure.operationalinsights#GetSavedSearchResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4308,7 +4117,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#SavedSearchesGetResponse": {
+    "com.azure.operationalinsights#GetSavedSearchResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -4353,7 +4162,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#SavedSearchesGetRequest": {
+    "com.azure.operationalinsights#GetSavedSearchRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4393,10 +4202,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#SavedSearchesListByWorkspace": {
+    "com.azure.operationalinsights#ListSavedSearchByWorkspace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#SavedSearchesListByWorkspaceRequest"
+        "target": "com.azure.operationalinsights#ListSavedSearchByWorkspaceRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#SavedSearchesListResult"
@@ -4480,7 +4289,7 @@
         "smithy.api#documentation": "Value object for saved search results."
       }
     },
-    "com.azure.operationalinsights#SavedSearchesListByWorkspaceRequest": {
+    "com.azure.operationalinsights#ListSavedSearchByWorkspaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4512,10 +4321,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#SharedKeysRegenerate": {
+    "com.azure.operationalinsights#RegenerateSharedKey": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#SharedKeysRegenerateRequest"
+        "target": "com.azure.operationalinsights#RegenerateSharedKeyRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#SharedKeys"
@@ -4531,7 +4340,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#SharedKeysRegenerateRequest": {
+    "com.azure.operationalinsights#RegenerateSharedKeyRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4563,13 +4372,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacePurgePurgeLakeData": {
+    "com.azure.operationalinsights#PurgeWorkspacePurgeLakeData": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#WorkspacePurgePurgeLakeDataRequest"
+        "target": "com.azure.operationalinsights#PurgeWorkspacePurgeLakeDataRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#WorkspacePurgePurgeLakeDataResponse"
+        "target": "com.azure.operationalinsights#PurgeWorkspacePurgeLakeDataResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4582,7 +4391,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#WorkspacePurgePurgeLakeDataResponse": {
+    "com.azure.operationalinsights#PurgeWorkspacePurgeLakeDataResponse": {
       "type": "structure",
       "members": {
         "azureAsyncOperation": {
@@ -4611,7 +4420,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacePurgePurgeLakeDataRequest": {
+    "com.azure.operationalinsights#PurgeWorkspacePurgeLakeDataRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4679,10 +4488,10 @@
         "smithy.api#documentation": "The time range over which a data lake purge request operates."
       }
     },
-    "com.azure.operationalinsights#WorkspacePurgePurge": {
+    "com.azure.operationalinsights#PurgeWorkspacePurge": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#WorkspacePurgePurgeRequest"
+        "target": "com.azure.operationalinsights#PurgeWorkspacePurgeRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -4698,7 +4507,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#WorkspacePurgePurgeRequest": {
+    "com.azure.operationalinsights#PurgeWorkspacePurgeRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4733,7 +4542,7 @@
           }
         },
         "filters": {
-          "target": "com.azure.operationalinsights#WorkspacePurgePurgeRequestFiltersList",
+          "target": "com.azure.operationalinsights#PurgeWorkspacePurgeRequestFiltersList",
           "traits": {
             "smithy.api#documentation": "The set of columns and filters (queries) to run over them to purge the resulting data.",
             "smithy.api#required": {}
@@ -4744,7 +4553,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacePurgePurgeRequestFiltersList": {
+    "com.azure.operationalinsights#PurgeWorkspacePurgeRequestFiltersList": {
       "type": "list",
       "member": {
         "target": "com.azure.operationalinsights#WorkspacePurgeBodyFilters"
@@ -4960,13 +4769,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacesGetNSP": {
+    "com.azure.operationalinsights#GetWorkspaceNSP": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#WorkspacesGetNSPRequest"
+        "target": "com.azure.operationalinsights#GetWorkspaceNSPRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#WorkspacesGetNSPResponse"
+        "target": "com.azure.operationalinsights#GetWorkspaceNSPResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4979,7 +4788,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#WorkspacesGetNSPResponse": {
+    "com.azure.operationalinsights#GetWorkspaceNSPResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -5501,7 +5310,7 @@
         "smithy.api#documentation": "Provisioning state of a network security perimeter configuration that is being created or updated."
       }
     },
-    "com.azure.operationalinsights#WorkspacesGetNSPRequest": {
+    "com.azure.operationalinsights#GetWorkspaceNSPRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5541,13 +5350,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacesListNSP": {
+    "com.azure.operationalinsights#ListWorkspaceNSP": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#WorkspacesListNSPRequest"
+        "target": "com.azure.operationalinsights#ListWorkspaceNSPRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#WorkspacesListNSPResponse"
+        "target": "com.azure.operationalinsights#ListWorkspaceNSPResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -5567,11 +5376,11 @@
         }
       }
     },
-    "com.azure.operationalinsights#WorkspacesListNSPResponse": {
+    "com.azure.operationalinsights#ListWorkspaceNSPResponse": {
       "type": "structure",
       "members": {
         "value": {
-          "target": "com.azure.operationalinsights#WorkspacesListNSPResponseValueList",
+          "target": "com.azure.operationalinsights#ListWorkspaceNSPResponseValueList",
           "traits": {
             "smithy.api#documentation": "Array of network security perimeter results."
           }
@@ -5587,7 +5396,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacesListNSPResponseValueList": {
+    "com.azure.operationalinsights#ListWorkspaceNSPResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.operationalinsights#NetworkSecurityPerimeterConfiguration"
@@ -5631,7 +5440,7 @@
         "smithy.api#documentation": "Network security perimeter (NSP) configuration resource"
       }
     },
-    "com.azure.operationalinsights#WorkspacesListNSPRequest": {
+    "com.azure.operationalinsights#ListWorkspaceNSPRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5669,10 +5478,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#ManagementGroupsList": {
+    "com.azure.operationalinsights#ListManagementGroups": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#ManagementGroupsListRequest"
+        "target": "com.azure.operationalinsights#ListManagementGroupsRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#WorkspaceListManagementGroupsResult"
@@ -5794,7 +5603,7 @@
         "smithy.api#documentation": "Management group properties."
       }
     },
-    "com.azure.operationalinsights#ManagementGroupsListRequest": {
+    "com.azure.operationalinsights#ListManagementGroupsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5832,10 +5641,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#LinkedStorageAccountsDelete": {
+    "com.azure.operationalinsights#DeleteLinkedStorageAccount": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#LinkedStorageAccountsDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteLinkedStorageAccountRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -5851,7 +5660,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#LinkedStorageAccountsDeleteRequest": {
+    "com.azure.operationalinsights#DeleteLinkedStorageAccountRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5879,7 +5688,7 @@
           }
         },
         "dataSourceType": {
-          "target": "com.azure.operationalinsights#LinkedStorageAccountsDeleteRequestDataSourceType",
+          "target": "com.azure.operationalinsights#DeleteLinkedStorageAccountRequestDataSourceType",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -5891,7 +5700,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#LinkedStorageAccountsDeleteRequestDataSourceType": {
+    "com.azure.operationalinsights#DeleteLinkedStorageAccountRequestDataSourceType": {
       "type": "enum",
       "members": {
         "CUSTOMLOGS": {
@@ -6135,13 +5944,13 @@
       },
       "traits": {}
     },
-    "com.azure.operationalinsights#LinkedStorageAccountsGet": {
+    "com.azure.operationalinsights#GetLinkedStorageAccount": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#LinkedStorageAccountsGetRequest"
+        "target": "com.azure.operationalinsights#GetLinkedStorageAccountRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#LinkedStorageAccountsGetResponse"
+        "target": "com.azure.operationalinsights#GetLinkedStorageAccountResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6154,7 +5963,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#LinkedStorageAccountsGetResponse": {
+    "com.azure.operationalinsights#GetLinkedStorageAccountResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -6193,7 +6002,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#LinkedStorageAccountsGetRequest": {
+    "com.azure.operationalinsights#GetLinkedStorageAccountRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -6221,7 +6030,7 @@
           }
         },
         "dataSourceType": {
-          "target": "com.azure.operationalinsights#LinkedStorageAccountsGetRequestDataSourceType",
+          "target": "com.azure.operationalinsights#GetLinkedStorageAccountRequestDataSourceType",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -6233,7 +6042,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#LinkedStorageAccountsGetRequestDataSourceType": {
+    "com.azure.operationalinsights#GetLinkedStorageAccountRequestDataSourceType": {
       "type": "enum",
       "members": {
         "CUSTOMLOGS": {
@@ -6269,10 +6078,10 @@
       },
       "traits": {}
     },
-    "com.azure.operationalinsights#LinkedStorageAccountsListByWorkspace": {
+    "com.azure.operationalinsights#ListLinkedStorageAccountByWorkspace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#LinkedStorageAccountsListByWorkspaceRequest"
+        "target": "com.azure.operationalinsights#ListLinkedStorageAccountByWorkspaceRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#LinkedStorageAccountsListResult"
@@ -6363,7 +6172,7 @@
         "smithy.api#documentation": "Linked storage accounts top level resource container."
       }
     },
-    "com.azure.operationalinsights#LinkedStorageAccountsListByWorkspaceRequest": {
+    "com.azure.operationalinsights#ListLinkedStorageAccountByWorkspaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -6401,13 +6210,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#LinkedServicesDelete": {
+    "com.azure.operationalinsights#DeleteLinkedService": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#LinkedServicesDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteLinkedServiceRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#LinkedServicesDeleteResponse"
+        "target": "com.azure.operationalinsights#DeleteLinkedServiceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6420,7 +6229,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#LinkedServicesDeleteResponse": {
+    "com.azure.operationalinsights#DeleteLinkedServiceResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -6455,7 +6264,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#LinkedServicesDeleteResponseTagsMap",
+          "target": "com.azure.operationalinsights#DeleteLinkedServiceResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -6479,7 +6288,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#LinkedServicesDeleteResponseTagsMap": {
+    "com.azure.operationalinsights#DeleteLinkedServiceResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -6549,7 +6358,7 @@
         "smithy.api#documentation": "The provisioning state of the linked service."
       }
     },
-    "com.azure.operationalinsights#LinkedServicesDeleteRequest": {
+    "com.azure.operationalinsights#DeleteLinkedServiceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -6744,13 +6553,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#LinkedServicesGet": {
+    "com.azure.operationalinsights#GetLinkedService": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#LinkedServicesGetRequest"
+        "target": "com.azure.operationalinsights#GetLinkedServiceRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#LinkedServicesGetResponse"
+        "target": "com.azure.operationalinsights#GetLinkedServiceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6763,7 +6572,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#LinkedServicesGetResponse": {
+    "com.azure.operationalinsights#GetLinkedServiceResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -6798,7 +6607,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#LinkedServicesGetResponseTagsMap",
+          "target": "com.azure.operationalinsights#GetLinkedServiceResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -6808,7 +6617,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#LinkedServicesGetResponseTagsMap": {
+    "com.azure.operationalinsights#GetLinkedServiceResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -6820,7 +6629,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#LinkedServicesGetRequest": {
+    "com.azure.operationalinsights#GetLinkedServiceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -6860,10 +6669,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#LinkedServicesListByWorkspace": {
+    "com.azure.operationalinsights#ListLinkedServiceByWorkspace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#LinkedServicesListByWorkspaceRequest"
+        "target": "com.azure.operationalinsights#ListLinkedServiceByWorkspaceRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#LinkedServiceListResult"
@@ -6972,7 +6781,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#LinkedServicesListByWorkspaceRequest": {
+    "com.azure.operationalinsights#ListLinkedServiceByWorkspaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7010,10 +6819,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#IntelligencePacksEnable": {
+    "com.azure.operationalinsights#EnableIntelligencePack": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#IntelligencePacksEnableRequest"
+        "target": "com.azure.operationalinsights#EnableIntelligencePackRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -7029,7 +6838,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#IntelligencePacksEnableRequest": {
+    "com.azure.operationalinsights#EnableIntelligencePackRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7069,10 +6878,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#IntelligencePacksDisable": {
+    "com.azure.operationalinsights#DisableIntelligencePack": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#IntelligencePacksDisableRequest"
+        "target": "com.azure.operationalinsights#DisableIntelligencePackRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -7088,7 +6897,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#IntelligencePacksDisableRequest": {
+    "com.azure.operationalinsights#DisableIntelligencePackRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7128,13 +6937,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#IntelligencePacksList": {
+    "com.azure.operationalinsights#ListIntelligencePacks": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#IntelligencePacksListRequest"
+        "target": "com.azure.operationalinsights#ListIntelligencePacksRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#IntelligencePacksListResponse"
+        "target": "com.azure.operationalinsights#ListIntelligencePacksResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -7147,11 +6956,11 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#IntelligencePacksListResponse": {
+    "com.azure.operationalinsights#ListIntelligencePacksResponse": {
       "type": "structure",
       "members": {
         "body": {
-          "target": "com.azure.operationalinsights#IntelligencePacksListResponseBodyList",
+          "target": "com.azure.operationalinsights#ListIntelligencePacksResponseBodyList",
           "traits": {
             "com.distilled.openapi#rawResponse": {},
             "smithy.api#required": {}
@@ -7162,7 +6971,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#IntelligencePacksListResponseBodyList": {
+    "com.azure.operationalinsights#ListIntelligencePacksResponseBodyList": {
       "type": "list",
       "member": {
         "target": "com.azure.operationalinsights#IntelligencePack"
@@ -7195,7 +7004,7 @@
         "smithy.api#documentation": "Intelligence Pack containing a string name and boolean indicating if it's enabled."
       }
     },
-    "com.azure.operationalinsights#IntelligencePacksListRequest": {
+    "com.azure.operationalinsights#ListIntelligencePacksRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7227,10 +7036,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#GatewaysDelete": {
+    "com.azure.operationalinsights#DeleteGateway": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#GatewaysDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteGatewayRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -7246,7 +7055,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#GatewaysDeleteRequest": {
+    "com.azure.operationalinsights#DeleteGatewayRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7366,10 +7175,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#DataSourcesDelete": {
+    "com.azure.operationalinsights#DeleteDataSource": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#DataSourcesDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteDataSourceRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -7385,7 +7194,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#DataSourcesDeleteRequest": {
+    "com.azure.operationalinsights#DeleteDataSourceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7798,13 +7607,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#DataSourcesGet": {
+    "com.azure.operationalinsights#GetDataSource": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#DataSourcesGetRequest"
+        "target": "com.azure.operationalinsights#GetDataSourceRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#DataSourcesGetResponse"
+        "target": "com.azure.operationalinsights#GetDataSourceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -7817,7 +7626,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#DataSourcesGetResponse": {
+    "com.azure.operationalinsights#GetDataSourceResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -7865,7 +7674,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#DataSourcesGetResponseTagsMap",
+          "target": "com.azure.operationalinsights#GetDataSourceResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -7875,7 +7684,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#DataSourcesGetResponseTagsMap": {
+    "com.azure.operationalinsights#GetDataSourceResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -7887,7 +7696,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#DataSourcesGetRequest": {
+    "com.azure.operationalinsights#GetDataSourceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7927,10 +7736,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#DataSourcesListByWorkspace": {
+    "com.azure.operationalinsights#ListDataSourceByWorkspace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#DataSourcesListByWorkspaceRequest"
+        "target": "com.azure.operationalinsights#ListDataSourceByWorkspaceRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#DataSourceListResult"
@@ -8053,7 +7862,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#DataSourcesListByWorkspaceRequest": {
+    "com.azure.operationalinsights#ListDataSourceByWorkspaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -8106,10 +7915,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#DataExportsDelete": {
+    "com.azure.operationalinsights#DeleteDataExport": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#DataExportsDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteDataExportRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -8125,7 +7934,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#DataExportsDeleteRequest": {
+    "com.azure.operationalinsights#DeleteDataExportRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -8383,13 +8192,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#DataExportsGet": {
+    "com.azure.operationalinsights#GetDataExport": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#DataExportsGetRequest"
+        "target": "com.azure.operationalinsights#GetDataExportRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#DataExportsGetResponse"
+        "target": "com.azure.operationalinsights#GetDataExportResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8402,7 +8211,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#DataExportsGetResponse": {
+    "com.azure.operationalinsights#GetDataExportResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -8440,7 +8249,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#DataExportsGetRequest": {
+    "com.azure.operationalinsights#GetDataExportRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -8480,10 +8289,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#DataExportsListByWorkspace": {
+    "com.azure.operationalinsights#ListDataExportByWorkspace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#DataExportsListByWorkspaceRequest"
+        "target": "com.azure.operationalinsights#ListDataExportByWorkspaceRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#DataExportListResult"
@@ -8573,7 +8382,7 @@
         "smithy.api#documentation": "The top level data export resource container."
       }
     },
-    "com.azure.operationalinsights#DataExportsListByWorkspaceRequest": {
+    "com.azure.operationalinsights#ListDataExportByWorkspaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -8611,13 +8420,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#AvailableServiceTiersListByWorkspace": {
+    "com.azure.operationalinsights#ListAvailableServiceTierByWorkspace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#AvailableServiceTiersListByWorkspaceRequest"
+        "target": "com.azure.operationalinsights#ListAvailableServiceTierByWorkspaceRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#AvailableServiceTiersListByWorkspaceResponse"
+        "target": "com.azure.operationalinsights#ListAvailableServiceTierByWorkspaceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8630,11 +8439,11 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#AvailableServiceTiersListByWorkspaceResponse": {
+    "com.azure.operationalinsights#ListAvailableServiceTierByWorkspaceResponse": {
       "type": "structure",
       "members": {
         "body": {
-          "target": "com.azure.operationalinsights#AvailableServiceTiersListByWorkspaceResponseBodyList",
+          "target": "com.azure.operationalinsights#ListAvailableServiceTierByWorkspaceResponseBodyList",
           "traits": {
             "com.distilled.openapi#rawResponse": {},
             "smithy.api#required": {}
@@ -8645,7 +8454,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#AvailableServiceTiersListByWorkspaceResponseBodyList": {
+    "com.azure.operationalinsights#ListAvailableServiceTierByWorkspaceResponseBodyList": {
       "type": "list",
       "member": {
         "target": "com.azure.operationalinsights#AvailableServiceTier"
@@ -8752,7 +8561,7 @@
         "smithy.api#documentation": "The name of the Service Tier."
       }
     },
-    "com.azure.operationalinsights#AvailableServiceTiersListByWorkspaceRequest": {
+    "com.azure.operationalinsights#ListAvailableServiceTierByWorkspaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -8784,13 +8593,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacesDelete": {
+    "com.azure.operationalinsights#DeleteWorkspace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#WorkspacesDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteWorkspaceRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#WorkspacesDeleteResponse"
+        "target": "com.azure.operationalinsights#DeleteWorkspaceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8803,7 +8612,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#WorkspacesDeleteResponse": {
+    "com.azure.operationalinsights#DeleteWorkspaceResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -8825,7 +8634,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacesDeleteRequest": {
+    "com.azure.operationalinsights#DeleteWorkspaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -8864,13 +8673,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacesUpdate": {
+    "com.azure.operationalinsights#UpdateWorkspace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#WorkspacesUpdateRequest"
+        "target": "com.azure.operationalinsights#UpdateWorkspaceRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#WorkspacesUpdateResponse"
+        "target": "com.azure.operationalinsights#UpdateWorkspaceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8883,7 +8692,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#WorkspacesUpdateResponse": {
+    "com.azure.operationalinsights#UpdateWorkspaceResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -8911,7 +8720,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#WorkspacesUpdateResponseTagsMap",
+          "target": "com.azure.operationalinsights#UpdateWorkspaceResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -9652,7 +9461,7 @@
         "smithy.api#documentation": "The provisioning state of the workspace."
       }
     },
-    "com.azure.operationalinsights#WorkspacesUpdateResponseTagsMap": {
+    "com.azure.operationalinsights#UpdateWorkspaceResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -9664,7 +9473,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#WorkspacesUpdateRequest": {
+    "com.azure.operationalinsights#UpdateWorkspaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -9704,7 +9513,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#WorkspacesUpdateRequestTagsMap",
+          "target": "com.azure.operationalinsights#UpdateWorkspaceRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags. Optional."
           }
@@ -9714,7 +9523,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacesUpdateRequestTagsMap": {
+    "com.azure.operationalinsights#UpdateWorkspaceRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -10184,13 +9993,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#WorkspacesGet": {
+    "com.azure.operationalinsights#GetWorkspace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#WorkspacesGetRequest"
+        "target": "com.azure.operationalinsights#GetWorkspaceRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#WorkspacesGetResponse"
+        "target": "com.azure.operationalinsights#GetWorkspaceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -10203,7 +10012,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#WorkspacesGetResponse": {
+    "com.azure.operationalinsights#GetWorkspaceResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -10231,7 +10040,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#WorkspacesGetResponseTagsMap",
+          "target": "com.azure.operationalinsights#GetWorkspaceResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -10266,7 +10075,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacesGetResponseTagsMap": {
+    "com.azure.operationalinsights#GetWorkspaceResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -10278,7 +10087,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#WorkspacesGetRequest": {
+    "com.azure.operationalinsights#GetWorkspaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -10310,10 +10119,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacesListByResourceGroup": {
+    "com.azure.operationalinsights#ListWorkspaceByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#WorkspacesListByResourceGroupRequest"
+        "target": "com.azure.operationalinsights#ListWorkspaceByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#WorkspaceListResult"
@@ -10440,7 +10249,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#WorkspacesListByResourceGroupRequest": {
+    "com.azure.operationalinsights#ListWorkspaceByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -10470,10 +10279,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#QueriesSearch": {
+    "com.azure.operationalinsights#SearchQuery": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#QueriesSearchRequest"
+        "target": "com.azure.operationalinsights#SearchQueryRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#LogAnalyticsQueryPackQueryListResult"
@@ -10706,7 +10515,7 @@
         "smithy.api#documentation": "The related categories for the function."
       }
     },
-    "com.azure.operationalinsights#QueriesSearchRequest": {
+    "com.azure.operationalinsights#SearchQueryRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -10761,7 +10570,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#QueriesSearchRequestTagsMap",
+          "target": "com.azure.operationalinsights#SearchQueryRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Tags associated with the query."
           }
@@ -10777,19 +10586,19 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#QueriesSearchRequestTagsMap": {
+    "com.azure.operationalinsights#SearchQueryRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
       },
       "value": {
-        "target": "com.azure.operationalinsights#QueriesSearchRequestTagsValueList"
+        "target": "com.azure.operationalinsights#SearchQueryRequestTagsValueList"
       },
       "traits": {
         "smithy.api#documentation": "Tags associated with the query."
       }
     },
-    "com.azure.operationalinsights#QueriesSearchRequestTagsValueList": {
+    "com.azure.operationalinsights#SearchQueryRequestTagsValueList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -10849,10 +10658,10 @@
         "smithy.api#documentation": "The related categories for the function."
       }
     },
-    "com.azure.operationalinsights#QueriesDelete": {
+    "com.azure.operationalinsights#DeleteQuery": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#QueriesDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteQueryRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -10868,7 +10677,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#QueriesDeleteRequest": {
+    "com.azure.operationalinsights#DeleteQueryRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -10908,13 +10717,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#QueriesUpdate": {
+    "com.azure.operationalinsights#UpdateQuery": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#QueriesUpdateRequest"
+        "target": "com.azure.operationalinsights#UpdateQueryRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#QueriesUpdateResponse"
+        "target": "com.azure.operationalinsights#UpdateQueryResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -10927,7 +10736,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#QueriesUpdateResponse": {
+    "com.azure.operationalinsights#UpdateQueryResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -10965,7 +10774,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#QueriesUpdateRequest": {
+    "com.azure.operationalinsights#UpdateQueryRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11076,13 +10885,13 @@
       },
       "traits": {}
     },
-    "com.azure.operationalinsights#QueriesPut": {
+    "com.azure.operationalinsights#PutQuery": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#QueriesPutRequest"
+        "target": "com.azure.operationalinsights#PutQueryRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#QueriesPutResponse"
+        "target": "com.azure.operationalinsights#PutQueryResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -11095,7 +10904,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#QueriesPutResponse": {
+    "com.azure.operationalinsights#PutQueryResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -11133,7 +10942,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#QueriesPutRequest": {
+    "com.azure.operationalinsights#PutQueryRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11179,13 +10988,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#QueriesGet": {
+    "com.azure.operationalinsights#GetQuery": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#QueriesGetRequest"
+        "target": "com.azure.operationalinsights#GetQueryRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#QueriesGetResponse"
+        "target": "com.azure.operationalinsights#GetQueryResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -11198,7 +11007,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#QueriesGetResponse": {
+    "com.azure.operationalinsights#GetQueryResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -11236,7 +11045,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#QueriesGetRequest": {
+    "com.azure.operationalinsights#GetQueryRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11276,10 +11085,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#QueriesList": {
+    "com.azure.operationalinsights#ListQueries": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#QueriesListRequest"
+        "target": "com.azure.operationalinsights#ListQueriesRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#LogAnalyticsQueryPackQueryListResult"
@@ -11302,7 +11111,7 @@
         }
       }
     },
-    "com.azure.operationalinsights#QueriesListRequest": {
+    "com.azure.operationalinsights#ListQueriesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11361,10 +11170,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#QueryPacksDelete": {
+    "com.azure.operationalinsights#DeleteQueryPack": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#QueryPacksDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteQueryPackRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -11380,7 +11189,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#QueryPacksDeleteRequest": {
+    "com.azure.operationalinsights#DeleteQueryPackRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11412,13 +11221,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#QueryPacksUpdateTags": {
+    "com.azure.operationalinsights#UpdateQueryPackTags": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#QueryPacksUpdateTagsRequest"
+        "target": "com.azure.operationalinsights#UpdateQueryPackTagsRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#QueryPacksUpdateTagsResponse"
+        "target": "com.azure.operationalinsights#UpdateQueryPackTagsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -11431,7 +11240,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#QueryPacksUpdateTagsResponse": {
+    "com.azure.operationalinsights#UpdateQueryPackTagsResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -11459,7 +11268,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#QueryPacksUpdateTagsResponseTagsMap",
+          "target": "com.azure.operationalinsights#UpdateQueryPackTagsResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -11515,7 +11324,7 @@
         "smithy.api#documentation": "Properties that define a Log Analytics QueryPack resource."
       }
     },
-    "com.azure.operationalinsights#QueryPacksUpdateTagsResponseTagsMap": {
+    "com.azure.operationalinsights#UpdateQueryPackTagsResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -11527,7 +11336,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#QueryPacksUpdateTagsRequest": {
+    "com.azure.operationalinsights#UpdateQueryPackTagsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11555,7 +11364,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#QueryPacksUpdateTagsRequestTagsMap",
+          "target": "com.azure.operationalinsights#UpdateQueryPackTagsRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags"
           }
@@ -11565,7 +11374,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#QueryPacksUpdateTagsRequestTagsMap": {
+    "com.azure.operationalinsights#UpdateQueryPackTagsRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -11731,13 +11540,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#QueryPacksGet": {
+    "com.azure.operationalinsights#GetQueryPack": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#QueryPacksGetRequest"
+        "target": "com.azure.operationalinsights#GetQueryPackRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#QueryPacksGetResponse"
+        "target": "com.azure.operationalinsights#GetQueryPackResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -11750,7 +11559,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#QueryPacksGetResponse": {
+    "com.azure.operationalinsights#GetQueryPackResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -11778,7 +11587,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#QueryPacksGetResponseTagsMap",
+          "target": "com.azure.operationalinsights#GetQueryPackResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -11802,7 +11611,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#QueryPacksGetResponseTagsMap": {
+    "com.azure.operationalinsights#GetQueryPackResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -11814,7 +11623,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#QueryPacksGetRequest": {
+    "com.azure.operationalinsights#GetQueryPackRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11985,10 +11794,10 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#QueryPacksListByResourceGroup": {
+    "com.azure.operationalinsights#ListQueryPackByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#QueryPacksListByResourceGroupRequest"
+        "target": "com.azure.operationalinsights#ListQueryPackByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#LogAnalyticsQueryPackListResult"
@@ -12105,7 +11914,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#QueryPacksListByResourceGroupRequest": {
+    "com.azure.operationalinsights#ListQueryPackByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -12223,10 +12032,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#DeletedWorkspacesListByResourceGroup": {
+    "com.azure.operationalinsights#ListDeletedWorkspaceByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#DeletedWorkspacesListByResourceGroupRequest"
+        "target": "com.azure.operationalinsights#ListDeletedWorkspaceByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#WorkspaceListResult"
@@ -12249,7 +12058,7 @@
         }
       }
     },
-    "com.azure.operationalinsights#DeletedWorkspacesListByResourceGroupRequest": {
+    "com.azure.operationalinsights#ListDeletedWorkspaceByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -12279,13 +12088,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#ClustersDelete": {
+    "com.azure.operationalinsights#DeleteCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#ClustersDeleteRequest"
+        "target": "com.azure.operationalinsights#DeleteClusterRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#ClustersDeleteResponse"
+        "target": "com.azure.operationalinsights#DeleteClusterResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -12298,7 +12107,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#ClustersDeleteResponse": {
+    "com.azure.operationalinsights#DeleteClusterResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -12320,7 +12129,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#ClustersDeleteRequest": {
+    "com.azure.operationalinsights#DeleteClusterRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -12352,13 +12161,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#ClustersUpdate": {
+    "com.azure.operationalinsights#UpdateCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#ClustersUpdateRequest"
+        "target": "com.azure.operationalinsights#UpdateClusterRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#ClustersUpdateResponse"
+        "target": "com.azure.operationalinsights#UpdateClusterResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -12371,7 +12180,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#ClustersUpdateResponse": {
+    "com.azure.operationalinsights#UpdateClusterResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -12399,7 +12208,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#ClustersUpdateResponseTagsMap",
+          "target": "com.azure.operationalinsights#UpdateClusterResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -12418,7 +12227,7 @@
           }
         },
         "identity": {
-          "target": "com.azure.operationalinsights#ClustersUpdateResponseIdentity",
+          "target": "com.azure.operationalinsights#UpdateClusterResponseIdentity",
           "traits": {
             "smithy.api#documentation": "Managed service identity (system assigned and/or user assigned identities)"
           }
@@ -12490,7 +12299,7 @@
         "smithy.api#documentation": "The SKU (tier) of a cluster."
       }
     },
-    "com.azure.operationalinsights#ClustersUpdateResponseIdentity": {
+    "com.azure.operationalinsights#UpdateClusterResponseIdentity": {
       "type": "structure",
       "members": {
         "principalId": {
@@ -12929,7 +12738,7 @@
         "smithy.api#documentation": "The provisioning state of the cluster."
       }
     },
-    "com.azure.operationalinsights#ClustersUpdateResponseTagsMap": {
+    "com.azure.operationalinsights#UpdateClusterResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -12941,7 +12750,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#ClustersUpdateRequest": {
+    "com.azure.operationalinsights#UpdateClusterRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -12975,7 +12784,7 @@
           }
         },
         "identity": {
-          "target": "com.azure.operationalinsights#ClustersUpdateRequestIdentity",
+          "target": "com.azure.operationalinsights#UpdateClusterRequestIdentity",
           "traits": {
             "smithy.api#documentation": "Managed service identity (system assigned and/or user assigned identities)"
           }
@@ -12987,7 +12796,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#ClustersUpdateRequestTagsMap",
+          "target": "com.azure.operationalinsights#UpdateClusterRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -12997,7 +12806,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#ClustersUpdateRequestTagsMap": {
+    "com.azure.operationalinsights#UpdateClusterRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -13009,7 +12818,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#ClustersUpdateRequestIdentity": {
+    "com.azure.operationalinsights#UpdateClusterRequestIdentity": {
       "type": "structure",
       "members": {
         "type": {
@@ -13403,13 +13212,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#ClustersGet": {
+    "com.azure.operationalinsights#GetCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#ClustersGetRequest"
+        "target": "com.azure.operationalinsights#GetClusterRequest"
       },
       "output": {
-        "target": "com.azure.operationalinsights#ClustersGetResponse"
+        "target": "com.azure.operationalinsights#GetClusterResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -13422,7 +13231,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.operationalinsights#ClustersGetResponse": {
+    "com.azure.operationalinsights#GetClusterResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -13450,7 +13259,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.operationalinsights#ClustersGetResponseTagsMap",
+          "target": "com.azure.operationalinsights#GetClusterResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -13469,7 +13278,7 @@
           }
         },
         "identity": {
-          "target": "com.azure.operationalinsights#ClustersGetResponseIdentity",
+          "target": "com.azure.operationalinsights#GetClusterResponseIdentity",
           "traits": {
             "smithy.api#documentation": "Managed service identity (system assigned and/or user assigned identities)"
           }
@@ -13485,7 +13294,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.operationalinsights#ClustersGetResponseIdentity": {
+    "com.azure.operationalinsights#GetClusterResponseIdentity": {
       "type": "structure",
       "members": {
         "principalId": {
@@ -13514,7 +13323,7 @@
         "smithy.api#documentation": "Managed service identity (system assigned and/or user assigned identities)"
       }
     },
-    "com.azure.operationalinsights#ClustersGetResponseTagsMap": {
+    "com.azure.operationalinsights#GetClusterResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -13526,7 +13335,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#ClustersGetRequest": {
+    "com.azure.operationalinsights#GetClusterRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -13558,10 +13367,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#ClustersListByResourceGroup": {
+    "com.azure.operationalinsights#ListClusterByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#ClustersListByResourceGroupRequest"
+        "target": "com.azure.operationalinsights#ListClusterByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#ClusterListResult"
@@ -13718,7 +13527,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.operationalinsights#ClustersListByResourceGroupRequest": {
+    "com.azure.operationalinsights#ListClusterByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -13748,10 +13557,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#WorkspacesList": {
+    "com.azure.operationalinsights#ListWorkspaces": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#WorkspacesListRequest"
+        "target": "com.azure.operationalinsights#ListWorkspacesRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#WorkspaceListResult"
@@ -13774,7 +13583,7 @@
         }
       }
     },
-    "com.azure.operationalinsights#WorkspacesListRequest": {
+    "com.azure.operationalinsights#ListWorkspacesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -13796,10 +13605,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#QueryPacksList": {
+    "com.azure.operationalinsights#ListQueryPacks": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#QueryPacksListRequest"
+        "target": "com.azure.operationalinsights#ListQueryPacksRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#LogAnalyticsQueryPackListResult"
@@ -13822,7 +13631,7 @@
         }
       }
     },
-    "com.azure.operationalinsights#QueryPacksListRequest": {
+    "com.azure.operationalinsights#ListQueryPacksRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -13844,10 +13653,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#OperationStatusesGet": {
+    "com.azure.operationalinsights#GetOperationStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#OperationStatusesGetRequest"
+        "target": "com.azure.operationalinsights#GetOperationStatusRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#OperationStatus"
@@ -13997,7 +13806,7 @@
         "smithy.api#documentation": "The error details."
       }
     },
-    "com.azure.operationalinsights#OperationStatusesGetRequest": {
+    "com.azure.operationalinsights#GetOperationStatusRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -14029,10 +13838,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#DeletedWorkspacesList": {
+    "com.azure.operationalinsights#ListDeletedWorkspaces": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#DeletedWorkspacesListRequest"
+        "target": "com.azure.operationalinsights#ListDeletedWorkspacesRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#WorkspaceListResult"
@@ -14055,7 +13864,7 @@
         }
       }
     },
-    "com.azure.operationalinsights#DeletedWorkspacesListRequest": {
+    "com.azure.operationalinsights#ListDeletedWorkspacesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -14077,10 +13886,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#ClustersList": {
+    "com.azure.operationalinsights#ListClusters": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#ClustersListRequest"
+        "target": "com.azure.operationalinsights#ListClustersRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#ClusterListResult"
@@ -14103,7 +13912,7 @@
         }
       }
     },
-    "com.azure.operationalinsights#ClustersListRequest": {
+    "com.azure.operationalinsights#ListClustersRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -14125,10 +13934,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.operationalinsights#OperationsList": {
+    "com.azure.operationalinsights#ListOperations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.operationalinsights#OperationsListRequest"
+        "target": "com.azure.operationalinsights#ListOperationsRequest"
       },
       "output": {
         "target": "com.azure.operationalinsights#OperationListResult"
@@ -14233,7 +14042,7 @@
         "smithy.api#documentation": "Display metadata associated with the operation."
       }
     },
-    "com.azure.operationalinsights#OperationsListRequest": {
+    "com.azure.operationalinsights#ListOperationsRequest": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -14252,88 +14061,88 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.operationalinsights#UsagesList"
+          "target": "com.azure.operationalinsights#ListUsages"
         },
         {
-          "target": "com.azure.operationalinsights#TablesMigrate"
+          "target": "com.azure.operationalinsights#MigrateTable"
         },
         {
           "target": "com.azure.operationalinsights#TablesCancelSearch"
         },
         {
-          "target": "com.azure.operationalinsights#TablesDelete"
+          "target": "com.azure.operationalinsights#DeleteTable"
         },
         {
-          "target": "com.azure.operationalinsights#TablesUpdate"
+          "target": "com.azure.operationalinsights#UpdateTable"
         },
         {
           "target": "com.azure.operationalinsights#TablesCreateOrUpdate"
         },
         {
-          "target": "com.azure.operationalinsights#TablesGet"
+          "target": "com.azure.operationalinsights#GetTable"
         },
         {
-          "target": "com.azure.operationalinsights#TablesListByWorkspace"
+          "target": "com.azure.operationalinsights#ListTableByWorkspace"
         },
         {
-          "target": "com.azure.operationalinsights#SummaryLogsStop"
+          "target": "com.azure.operationalinsights#StopSummaryLog"
         },
         {
-          "target": "com.azure.operationalinsights#SummaryLogsStart"
+          "target": "com.azure.operationalinsights#StartSummaryLog"
         },
         {
-          "target": "com.azure.operationalinsights#SummaryLogsRetryBin"
+          "target": "com.azure.operationalinsights#RetrySummaryLogBin"
         },
         {
-          "target": "com.azure.operationalinsights#SummaryLogsDelete"
+          "target": "com.azure.operationalinsights#DeleteSummaryLog"
         },
         {
           "target": "com.azure.operationalinsights#SummaryLogsCreateOrUpdate"
         },
         {
-          "target": "com.azure.operationalinsights#SummaryLogsGet"
+          "target": "com.azure.operationalinsights#GetSummaryLog"
         },
         {
-          "target": "com.azure.operationalinsights#SummaryLogsListByWorkspace"
+          "target": "com.azure.operationalinsights#ListSummaryLogByWorkspace"
         },
         {
-          "target": "com.azure.operationalinsights#StorageInsightConfigsDelete"
+          "target": "com.azure.operationalinsights#DeleteStorageInsightConfig"
         },
         {
           "target": "com.azure.operationalinsights#StorageInsightConfigsCreateOrUpdate"
         },
         {
-          "target": "com.azure.operationalinsights#StorageInsightConfigsGet"
+          "target": "com.azure.operationalinsights#GetStorageInsightConfig"
         },
         {
-          "target": "com.azure.operationalinsights#StorageInsightConfigsListByWorkspace"
+          "target": "com.azure.operationalinsights#ListStorageInsightConfigByWorkspace"
         },
         {
-          "target": "com.azure.operationalinsights#SharedKeysGetSharedKeys"
+          "target": "com.azure.operationalinsights#GetSharedKeySharedKeys"
         },
         {
-          "target": "com.azure.operationalinsights#SchemaGet"
+          "target": "com.azure.operationalinsights#GetSchema"
         },
         {
-          "target": "com.azure.operationalinsights#SavedSearchesDelete"
+          "target": "com.azure.operationalinsights#DeleteSavedSearch"
         },
         {
           "target": "com.azure.operationalinsights#SavedSearchesCreateOrUpdate"
         },
         {
-          "target": "com.azure.operationalinsights#SavedSearchesGet"
+          "target": "com.azure.operationalinsights#GetSavedSearch"
         },
         {
-          "target": "com.azure.operationalinsights#SavedSearchesListByWorkspace"
+          "target": "com.azure.operationalinsights#ListSavedSearchByWorkspace"
         },
         {
-          "target": "com.azure.operationalinsights#SharedKeysRegenerate"
+          "target": "com.azure.operationalinsights#RegenerateSharedKey"
         },
         {
-          "target": "com.azure.operationalinsights#WorkspacePurgePurgeLakeData"
+          "target": "com.azure.operationalinsights#PurgeWorkspacePurgeLakeData"
         },
         {
-          "target": "com.azure.operationalinsights#WorkspacePurgePurge"
+          "target": "com.azure.operationalinsights#PurgeWorkspacePurge"
         },
         {
           "target": "com.azure.operationalinsights#WorkspacePurgeGetPurgeStatus"
@@ -14342,169 +14151,169 @@
           "target": "com.azure.operationalinsights#WorkspacesReconcileNSP"
         },
         {
-          "target": "com.azure.operationalinsights#WorkspacesGetNSP"
+          "target": "com.azure.operationalinsights#GetWorkspaceNSP"
         },
         {
-          "target": "com.azure.operationalinsights#WorkspacesListNSP"
+          "target": "com.azure.operationalinsights#ListWorkspaceNSP"
         },
         {
-          "target": "com.azure.operationalinsights#ManagementGroupsList"
+          "target": "com.azure.operationalinsights#ListManagementGroups"
         },
         {
-          "target": "com.azure.operationalinsights#LinkedStorageAccountsDelete"
+          "target": "com.azure.operationalinsights#DeleteLinkedStorageAccount"
         },
         {
           "target": "com.azure.operationalinsights#LinkedStorageAccountsCreateOrUpdate"
         },
         {
-          "target": "com.azure.operationalinsights#LinkedStorageAccountsGet"
+          "target": "com.azure.operationalinsights#GetLinkedStorageAccount"
         },
         {
-          "target": "com.azure.operationalinsights#LinkedStorageAccountsListByWorkspace"
+          "target": "com.azure.operationalinsights#ListLinkedStorageAccountByWorkspace"
         },
         {
-          "target": "com.azure.operationalinsights#LinkedServicesDelete"
+          "target": "com.azure.operationalinsights#DeleteLinkedService"
         },
         {
           "target": "com.azure.operationalinsights#LinkedServicesCreateOrUpdate"
         },
         {
-          "target": "com.azure.operationalinsights#LinkedServicesGet"
+          "target": "com.azure.operationalinsights#GetLinkedService"
         },
         {
-          "target": "com.azure.operationalinsights#LinkedServicesListByWorkspace"
+          "target": "com.azure.operationalinsights#ListLinkedServiceByWorkspace"
         },
         {
-          "target": "com.azure.operationalinsights#IntelligencePacksEnable"
+          "target": "com.azure.operationalinsights#EnableIntelligencePack"
         },
         {
-          "target": "com.azure.operationalinsights#IntelligencePacksDisable"
+          "target": "com.azure.operationalinsights#DisableIntelligencePack"
         },
         {
-          "target": "com.azure.operationalinsights#IntelligencePacksList"
+          "target": "com.azure.operationalinsights#ListIntelligencePacks"
         },
         {
-          "target": "com.azure.operationalinsights#GatewaysDelete"
+          "target": "com.azure.operationalinsights#DeleteGateway"
         },
         {
           "target": "com.azure.operationalinsights#WorkspacesFailback"
         },
         {
-          "target": "com.azure.operationalinsights#DataSourcesDelete"
+          "target": "com.azure.operationalinsights#DeleteDataSource"
         },
         {
           "target": "com.azure.operationalinsights#DataSourcesCreateOrUpdate"
         },
         {
-          "target": "com.azure.operationalinsights#DataSourcesGet"
+          "target": "com.azure.operationalinsights#GetDataSource"
         },
         {
-          "target": "com.azure.operationalinsights#DataSourcesListByWorkspace"
+          "target": "com.azure.operationalinsights#ListDataSourceByWorkspace"
         },
         {
-          "target": "com.azure.operationalinsights#DataExportsDelete"
+          "target": "com.azure.operationalinsights#DeleteDataExport"
         },
         {
           "target": "com.azure.operationalinsights#DataExportsCreateOrUpdate"
         },
         {
-          "target": "com.azure.operationalinsights#DataExportsGet"
+          "target": "com.azure.operationalinsights#GetDataExport"
         },
         {
-          "target": "com.azure.operationalinsights#DataExportsListByWorkspace"
+          "target": "com.azure.operationalinsights#ListDataExportByWorkspace"
         },
         {
-          "target": "com.azure.operationalinsights#AvailableServiceTiersListByWorkspace"
+          "target": "com.azure.operationalinsights#ListAvailableServiceTierByWorkspace"
         },
         {
-          "target": "com.azure.operationalinsights#WorkspacesDelete"
+          "target": "com.azure.operationalinsights#DeleteWorkspace"
         },
         {
-          "target": "com.azure.operationalinsights#WorkspacesUpdate"
+          "target": "com.azure.operationalinsights#UpdateWorkspace"
         },
         {
           "target": "com.azure.operationalinsights#WorkspacesCreateOrUpdate"
         },
         {
-          "target": "com.azure.operationalinsights#WorkspacesGet"
+          "target": "com.azure.operationalinsights#GetWorkspace"
         },
         {
-          "target": "com.azure.operationalinsights#WorkspacesListByResourceGroup"
+          "target": "com.azure.operationalinsights#ListWorkspaceByResourceGroup"
         },
         {
-          "target": "com.azure.operationalinsights#QueriesSearch"
+          "target": "com.azure.operationalinsights#SearchQuery"
         },
         {
-          "target": "com.azure.operationalinsights#QueriesDelete"
+          "target": "com.azure.operationalinsights#DeleteQuery"
         },
         {
-          "target": "com.azure.operationalinsights#QueriesUpdate"
+          "target": "com.azure.operationalinsights#UpdateQuery"
         },
         {
-          "target": "com.azure.operationalinsights#QueriesPut"
+          "target": "com.azure.operationalinsights#PutQuery"
         },
         {
-          "target": "com.azure.operationalinsights#QueriesGet"
+          "target": "com.azure.operationalinsights#GetQuery"
         },
         {
-          "target": "com.azure.operationalinsights#QueriesList"
+          "target": "com.azure.operationalinsights#ListQueries"
         },
         {
-          "target": "com.azure.operationalinsights#QueryPacksDelete"
+          "target": "com.azure.operationalinsights#DeleteQueryPack"
         },
         {
-          "target": "com.azure.operationalinsights#QueryPacksUpdateTags"
+          "target": "com.azure.operationalinsights#UpdateQueryPackTags"
         },
         {
           "target": "com.azure.operationalinsights#QueryPacksCreateOrUpdate"
         },
         {
-          "target": "com.azure.operationalinsights#QueryPacksGet"
+          "target": "com.azure.operationalinsights#GetQueryPack"
         },
         {
           "target": "com.azure.operationalinsights#QueryPacksCreateOrUpdateWithoutName"
         },
         {
-          "target": "com.azure.operationalinsights#QueryPacksListByResourceGroup"
+          "target": "com.azure.operationalinsights#ListQueryPackByResourceGroup"
         },
         {
           "target": "com.azure.operationalinsights#WorkspacesFailover"
         },
         {
-          "target": "com.azure.operationalinsights#DeletedWorkspacesListByResourceGroup"
+          "target": "com.azure.operationalinsights#ListDeletedWorkspaceByResourceGroup"
         },
         {
-          "target": "com.azure.operationalinsights#ClustersDelete"
+          "target": "com.azure.operationalinsights#DeleteCluster"
         },
         {
-          "target": "com.azure.operationalinsights#ClustersUpdate"
+          "target": "com.azure.operationalinsights#UpdateCluster"
         },
         {
           "target": "com.azure.operationalinsights#ClustersCreateOrUpdate"
         },
         {
-          "target": "com.azure.operationalinsights#ClustersGet"
+          "target": "com.azure.operationalinsights#GetCluster"
         },
         {
-          "target": "com.azure.operationalinsights#ClustersListByResourceGroup"
+          "target": "com.azure.operationalinsights#ListClusterByResourceGroup"
         },
         {
-          "target": "com.azure.operationalinsights#WorkspacesList"
+          "target": "com.azure.operationalinsights#ListWorkspaces"
         },
         {
-          "target": "com.azure.operationalinsights#QueryPacksList"
+          "target": "com.azure.operationalinsights#ListQueryPacks"
         },
         {
-          "target": "com.azure.operationalinsights#OperationStatusesGet"
+          "target": "com.azure.operationalinsights#GetOperationStatus"
         },
         {
-          "target": "com.azure.operationalinsights#DeletedWorkspacesList"
+          "target": "com.azure.operationalinsights#ListDeletedWorkspaces"
         },
         {
-          "target": "com.azure.operationalinsights#ClustersList"
+          "target": "com.azure.operationalinsights#ListClusters"
         },
         {
-          "target": "com.azure.operationalinsights#OperationsList"
+          "target": "com.azure.operationalinsights#ListOperations"
         }
       ],
       "traits": {

@@ -15,91 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.maps_weather#WeatherGetTropicalStormLocations": "com.azure.maps_weather#GetWeatherTropicalStormLocations",
-      "com.azure.maps_weather#WeatherGetTropicalStormLocationsRequest": "com.azure.maps_weather#GetWeatherTropicalStormLocationsRequest",
-      "com.azure.maps_weather#WeatherGetTropicalStormLocationsRequestUnit": "com.azure.maps_weather#GetWeatherTropicalStormLocationsRequestUnit",
-      "com.azure.maps_weather#WeatherGetTropicalStormLocationsRequestBasinId": "com.azure.maps_weather#GetWeatherTropicalStormLocationsRequestBasinId",
-      "com.azure.maps_weather#WeatherGetTropicalStormLocationsRequestFormat": "com.azure.maps_weather#GetWeatherTropicalStormLocationsRequestFormat",
-      "com.azure.maps_weather#WeatherGetTropicalStormForecast": "com.azure.maps_weather#GetWeatherTropicalStormForecast",
-      "com.azure.maps_weather#WeatherGetTropicalStormForecastRequest": "com.azure.maps_weather#GetWeatherTropicalStormForecastRequest",
-      "com.azure.maps_weather#WeatherGetTropicalStormForecastRequestUnit": "com.azure.maps_weather#GetWeatherTropicalStormForecastRequestUnit",
-      "com.azure.maps_weather#WeatherGetTropicalStormForecastRequestBasinId": "com.azure.maps_weather#GetWeatherTropicalStormForecastRequestBasinId",
-      "com.azure.maps_weather#WeatherGetTropicalStormForecastRequestFormat": "com.azure.maps_weather#GetWeatherTropicalStormForecastRequestFormat",
-      "com.azure.maps_weather#WeatherGetTropicalStormActive": "com.azure.maps_weather#GetWeatherTropicalStormActive",
-      "com.azure.maps_weather#WeatherGetTropicalStormActiveRequest": "com.azure.maps_weather#GetWeatherTropicalStormActiveRequest",
-      "com.azure.maps_weather#WeatherGetTropicalStormActiveRequestFormat": "com.azure.maps_weather#GetWeatherTropicalStormActiveRequestFormat",
-      "com.azure.maps_weather#WeatherGetSevereWeatherAlerts": "com.azure.maps_weather#GetWeatherSevereWeatherAlerts",
-      "com.azure.maps_weather#WeatherGetSevereWeatherAlertsRequest": "com.azure.maps_weather#GetWeatherSevereWeatherAlertsRequest",
-      "com.azure.maps_weather#WeatherGetSevereWeatherAlertsRequestQueryList": "com.azure.maps_weather#GetWeatherSevereWeatherAlertsRequestQueryList",
-      "com.azure.maps_weather#WeatherGetSevereWeatherAlertsRequestFormat": "com.azure.maps_weather#GetWeatherSevereWeatherAlertsRequestFormat",
-      "com.azure.maps_weather#WeatherGetWeatherAlongRoute": "com.azure.maps_weather#GetWeatherWeatherAlongRoute",
-      "com.azure.maps_weather#WeatherGetWeatherAlongRouteRequest": "com.azure.maps_weather#GetWeatherWeatherAlongRouteRequest",
-      "com.azure.maps_weather#WeatherGetWeatherAlongRouteRequestFormat": "com.azure.maps_weather#GetWeatherWeatherAlongRouteRequestFormat",
-      "com.azure.maps_weather#WeatherGetDailyIndices": "com.azure.maps_weather#GetWeatherDailyIndices",
-      "com.azure.maps_weather#WeatherGetDailyIndicesRequest": "com.azure.maps_weather#GetWeatherDailyIndicesRequest",
-      "com.azure.maps_weather#WeatherGetDailyIndicesRequestQueryList": "com.azure.maps_weather#GetWeatherDailyIndicesRequestQueryList",
-      "com.azure.maps_weather#WeatherGetDailyIndicesRequestFormat": "com.azure.maps_weather#GetWeatherDailyIndicesRequestFormat",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalRecords": "com.azure.maps_weather#GetWeatherDailyHistoricalRecords",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalRecordsRequest": "com.azure.maps_weather#GetWeatherDailyHistoricalRecordsRequest",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalRecordsRequestUnit": "com.azure.maps_weather#GetWeatherDailyHistoricalRecordsRequestUnit",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalRecordsRequestQueryList": "com.azure.maps_weather#GetWeatherDailyHistoricalRecordsRequestQueryList",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalRecordsRequestFormat": "com.azure.maps_weather#GetWeatherDailyHistoricalRecordsRequestFormat",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalNormals": "com.azure.maps_weather#GetWeatherDailyHistoricalNormals",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalNormalsRequest": "com.azure.maps_weather#GetWeatherDailyHistoricalNormalsRequest",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalNormalsRequestUnit": "com.azure.maps_weather#GetWeatherDailyHistoricalNormalsRequestUnit",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalNormalsRequestQueryList": "com.azure.maps_weather#GetWeatherDailyHistoricalNormalsRequestQueryList",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalNormalsRequestFormat": "com.azure.maps_weather#GetWeatherDailyHistoricalNormalsRequestFormat",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalActuals": "com.azure.maps_weather#GetWeatherDailyHistoricalActuals",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalActualsRequest": "com.azure.maps_weather#GetWeatherDailyHistoricalActualsRequest",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalActualsRequestUnit": "com.azure.maps_weather#GetWeatherDailyHistoricalActualsRequestUnit",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalActualsRequestQueryList": "com.azure.maps_weather#GetWeatherDailyHistoricalActualsRequestQueryList",
-      "com.azure.maps_weather#WeatherGetDailyHistoricalActualsRequestFormat": "com.azure.maps_weather#GetWeatherDailyHistoricalActualsRequestFormat",
-      "com.azure.maps_weather#WeatherGetQuarterDayForecast": "com.azure.maps_weather#GetWeatherQuarterDayForecast",
-      "com.azure.maps_weather#WeatherGetQuarterDayForecastRequest": "com.azure.maps_weather#GetWeatherQuarterDayForecastRequest",
-      "com.azure.maps_weather#WeatherGetQuarterDayForecastRequestUnit": "com.azure.maps_weather#GetWeatherQuarterDayForecastRequestUnit",
-      "com.azure.maps_weather#WeatherGetQuarterDayForecastRequestQueryList": "com.azure.maps_weather#GetWeatherQuarterDayForecastRequestQueryList",
-      "com.azure.maps_weather#WeatherGetQuarterDayForecastRequestFormat": "com.azure.maps_weather#GetWeatherQuarterDayForecastRequestFormat",
-      "com.azure.maps_weather#WeatherGetMinuteForecast": "com.azure.maps_weather#GetWeatherMinuteForecast",
-      "com.azure.maps_weather#WeatherGetMinuteForecastRequest": "com.azure.maps_weather#GetWeatherMinuteForecastRequest",
-      "com.azure.maps_weather#WeatherGetMinuteForecastRequestQueryList": "com.azure.maps_weather#GetWeatherMinuteForecastRequestQueryList",
-      "com.azure.maps_weather#WeatherGetMinuteForecastRequestFormat": "com.azure.maps_weather#GetWeatherMinuteForecastRequestFormat",
-      "com.azure.maps_weather#WeatherGetHourlyForecast": "com.azure.maps_weather#GetWeatherHourlyForecast",
-      "com.azure.maps_weather#WeatherGetHourlyForecastRequest": "com.azure.maps_weather#GetWeatherHourlyForecastRequest",
-      "com.azure.maps_weather#WeatherGetHourlyForecastRequestUnit": "com.azure.maps_weather#GetWeatherHourlyForecastRequestUnit",
-      "com.azure.maps_weather#WeatherGetHourlyForecastRequestQueryList": "com.azure.maps_weather#GetWeatherHourlyForecastRequestQueryList",
-      "com.azure.maps_weather#WeatherGetHourlyForecastRequestFormat": "com.azure.maps_weather#GetWeatherHourlyForecastRequestFormat",
-      "com.azure.maps_weather#WeatherGetDailyForecast": "com.azure.maps_weather#GetWeatherDailyForecast",
-      "com.azure.maps_weather#WeatherGetDailyForecastRequest": "com.azure.maps_weather#GetWeatherDailyForecastRequest",
-      "com.azure.maps_weather#WeatherGetDailyForecastRequestUnit": "com.azure.maps_weather#GetWeatherDailyForecastRequestUnit",
-      "com.azure.maps_weather#WeatherGetDailyForecastRequestQueryList": "com.azure.maps_weather#GetWeatherDailyForecastRequestQueryList",
-      "com.azure.maps_weather#WeatherGetDailyForecastRequestFormat": "com.azure.maps_weather#GetWeatherDailyForecastRequestFormat",
-      "com.azure.maps_weather#WeatherGetCurrentConditions": "com.azure.maps_weather#GetWeatherCurrentConditions",
-      "com.azure.maps_weather#WeatherGetCurrentConditionsRequest": "com.azure.maps_weather#GetWeatherCurrentConditionsRequest",
-      "com.azure.maps_weather#WeatherGetCurrentConditionsRequestUnit": "com.azure.maps_weather#GetWeatherCurrentConditionsRequestUnit",
-      "com.azure.maps_weather#WeatherGetCurrentConditionsRequestQueryList": "com.azure.maps_weather#GetWeatherCurrentConditionsRequestQueryList",
-      "com.azure.maps_weather#WeatherGetCurrentConditionsRequestFormat": "com.azure.maps_weather#GetWeatherCurrentConditionsRequestFormat",
-      "com.azure.maps_weather#WeatherGetAirQualityHourlyForecasts": "com.azure.maps_weather#GetWeatherAirQualityHourlyForecasts",
-      "com.azure.maps_weather#WeatherGetAirQualityHourlyForecastsRequest": "com.azure.maps_weather#GetWeatherAirQualityHourlyForecastsRequest",
-      "com.azure.maps_weather#WeatherGetAirQualityHourlyForecastsRequestDuration": "com.azure.maps_weather#GetWeatherAirQualityHourlyForecastsRequestDuration",
-      "com.azure.maps_weather#WeatherGetAirQualityHourlyForecastsRequestQueryList": "com.azure.maps_weather#GetWeatherAirQualityHourlyForecastsRequestQueryList",
-      "com.azure.maps_weather#WeatherGetAirQualityHourlyForecastsRequestFormat": "com.azure.maps_weather#GetWeatherAirQualityHourlyForecastsRequestFormat",
-      "com.azure.maps_weather#WeatherGetAirQualityDailyForecasts": "com.azure.maps_weather#GetWeatherAirQualityDailyForecasts",
-      "com.azure.maps_weather#WeatherGetAirQualityDailyForecastsRequest": "com.azure.maps_weather#GetWeatherAirQualityDailyForecastsRequest",
-      "com.azure.maps_weather#WeatherGetAirQualityDailyForecastsRequestDuration": "com.azure.maps_weather#GetWeatherAirQualityDailyForecastsRequestDuration",
-      "com.azure.maps_weather#WeatherGetAirQualityDailyForecastsRequestQueryList": "com.azure.maps_weather#GetWeatherAirQualityDailyForecastsRequestQueryList",
-      "com.azure.maps_weather#WeatherGetAirQualityDailyForecastsRequestFormat": "com.azure.maps_weather#GetWeatherAirQualityDailyForecastsRequestFormat",
-      "com.azure.maps_weather#WeatherGetCurrentAirQuality": "com.azure.maps_weather#GetWeatherCurrentAirQuality",
-      "com.azure.maps_weather#WeatherGetCurrentAirQualityRequest": "com.azure.maps_weather#GetWeatherCurrentAirQualityRequest",
-      "com.azure.maps_weather#WeatherGetCurrentAirQualityRequestQueryList": "com.azure.maps_weather#GetWeatherCurrentAirQualityRequestQueryList",
-      "com.azure.maps_weather#WeatherGetCurrentAirQualityRequestFormat": "com.azure.maps_weather#GetWeatherCurrentAirQualityRequestFormat"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.maps_weather#WeatherGetTropicalStormLocations": {
+    "com.azure.maps_weather#GetWeatherTropicalStormLocations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetTropicalStormLocationsRequest"
+        "target": "com.azure.maps_weather#GetWeatherTropicalStormLocationsRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#StormLocationsResult"
@@ -615,7 +537,7 @@
         "smithy.api#documentation": "A location represented as a latitude and longitude."
       }
     },
-    "com.azure.maps_weather#WeatherGetTropicalStormLocationsRequest": {
+    "com.azure.maps_weather#GetWeatherTropicalStormLocationsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -626,7 +548,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetTropicalStormLocationsRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherTropicalStormLocationsRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -642,7 +564,7 @@
           }
         },
         "basinId": {
-          "target": "com.azure.maps_weather#WeatherGetTropicalStormLocationsRequestBasinId",
+          "target": "com.azure.maps_weather#GetWeatherTropicalStormLocationsRequestBasinId",
           "traits": {
             "smithy.api#httpQuery": "basinId",
             "smithy.api#required": {},
@@ -672,7 +594,7 @@
           }
         },
         "unit": {
-          "target": "com.azure.maps_weather#WeatherGetTropicalStormLocationsRequestUnit",
+          "target": "com.azure.maps_weather#GetWeatherTropicalStormLocationsRequestUnit",
           "traits": {
             "smithy.api#httpQuery": "unit",
             "smithy.api#documentation": "Specifies to return the data in either metric units or imperial units. Default\nvalue is metric."
@@ -697,7 +619,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetTropicalStormLocationsRequestUnit": {
+    "com.azure.maps_weather#GetWeatherTropicalStormLocationsRequestUnit": {
       "type": "enum",
       "members": {
         "IMPERIAL": {
@@ -715,7 +637,7 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetTropicalStormLocationsRequestBasinId": {
+    "com.azure.maps_weather#GetWeatherTropicalStormLocationsRequestBasinId": {
       "type": "enum",
       "members": {
         "AL": {
@@ -763,7 +685,7 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetTropicalStormLocationsRequestFormat": {
+    "com.azure.maps_weather#GetWeatherTropicalStormLocationsRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -775,10 +697,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetTropicalStormForecast": {
+    "com.azure.maps_weather#GetWeatherTropicalStormForecast": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetTropicalStormForecastRequest"
+        "target": "com.azure.maps_weather#GetWeatherTropicalStormForecastRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#StormForecastResult"
@@ -944,7 +866,7 @@
         "smithy.api#documentation": "The forecast window covering one segment of a tropical storm's predicted\ntrack, returned as `StormForecast.window`. Each window represents the\narea of uncertainty around the storm's projected path - bounded in time\nby `beginDateTime` and `endDateTime` and laterally by the `left` and\n`right` points marking the left and right edges of the path relative to\nthe storm's direction of travel - and reports the storm's classification\nat the start and end of the segment (`beginStatus`, `endStatus`). When\nthe request asks for the window geometry, `geometry` carries a GeoJSON\nrepresentation of the affected area."
       }
     },
-    "com.azure.maps_weather#WeatherGetTropicalStormForecastRequest": {
+    "com.azure.maps_weather#GetWeatherTropicalStormForecastRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -955,7 +877,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetTropicalStormForecastRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherTropicalStormForecastRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -971,7 +893,7 @@
           }
         },
         "basinId": {
-          "target": "com.azure.maps_weather#WeatherGetTropicalStormForecastRequestBasinId",
+          "target": "com.azure.maps_weather#GetWeatherTropicalStormForecastRequestBasinId",
           "traits": {
             "smithy.api#httpQuery": "basinId",
             "smithy.api#required": {},
@@ -987,7 +909,7 @@
           }
         },
         "unit": {
-          "target": "com.azure.maps_weather#WeatherGetTropicalStormForecastRequestUnit",
+          "target": "com.azure.maps_weather#GetWeatherTropicalStormForecastRequestUnit",
           "traits": {
             "smithy.api#httpQuery": "unit",
             "smithy.api#documentation": "Specifies to return the data in either metric units or imperial units. Default\nvalue is metric."
@@ -1026,7 +948,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetTropicalStormForecastRequestUnit": {
+    "com.azure.maps_weather#GetWeatherTropicalStormForecastRequestUnit": {
       "type": "enum",
       "members": {
         "IMPERIAL": {
@@ -1044,7 +966,7 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetTropicalStormForecastRequestBasinId": {
+    "com.azure.maps_weather#GetWeatherTropicalStormForecastRequestBasinId": {
       "type": "enum",
       "members": {
         "AL": {
@@ -1092,7 +1014,7 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetTropicalStormForecastRequestFormat": {
+    "com.azure.maps_weather#GetWeatherTropicalStormForecastRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -1104,10 +1026,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetTropicalStormActive": {
+    "com.azure.maps_weather#GetWeatherTropicalStormActive": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetTropicalStormActiveRequest"
+        "target": "com.azure.maps_weather#GetWeatherTropicalStormActiveRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#ActiveStormResult"
@@ -1252,7 +1174,7 @@
         "smithy.api#documentation": "The `basinId` enum categorizes the different ocean basins where tropical\nstorms can originate. Each basin is assigned a unique identifier to help\nspecify the location of the storm's origin."
       }
     },
-    "com.azure.maps_weather#WeatherGetTropicalStormActiveRequest": {
+    "com.azure.maps_weather#GetWeatherTropicalStormActiveRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1263,7 +1185,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetTropicalStormActiveRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherTropicalStormActiveRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -1282,7 +1204,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetTropicalStormActiveRequestFormat": {
+    "com.azure.maps_weather#GetWeatherTropicalStormActiveRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -1510,10 +1432,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetSevereWeatherAlerts": {
+    "com.azure.maps_weather#GetWeatherSevereWeatherAlerts": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetSevereWeatherAlertsRequest"
+        "target": "com.azure.maps_weather#GetWeatherSevereWeatherAlertsRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#SevereWeatherAlertsResult"
@@ -1787,7 +1709,7 @@
         "smithy.api#documentation": "Short summary phrases for a severe weather alert, returned on\n`SevereWeatherAlert.description`. The same phrase is provided twice: once\ntranslated into the language specified on the request (`localized`) and\nonce in English (`english`), so callers can display a localized label to\nend users while still keeping a stable, language-independent string for\nlogging, matching, or fallback display."
       }
     },
-    "com.azure.maps_weather#WeatherGetSevereWeatherAlertsRequest": {
+    "com.azure.maps_weather#GetWeatherSevereWeatherAlertsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1798,7 +1720,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetSevereWeatherAlertsRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherSevereWeatherAlertsRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -1806,7 +1728,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetSevereWeatherAlertsRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherSevereWeatherAlertsRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -1839,14 +1761,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetSevereWeatherAlertsRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherSevereWeatherAlertsRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetSevereWeatherAlertsRequestFormat": {
+    "com.azure.maps_weather#GetWeatherSevereWeatherAlertsRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -1858,10 +1780,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetWeatherAlongRoute": {
+    "com.azure.maps_weather#GetWeatherWeatherAlongRoute": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetWeatherAlongRouteRequest"
+        "target": "com.azure.maps_weather#GetWeatherWeatherAlongRouteRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#WeatherAlongRouteResult"
@@ -2434,7 +2356,7 @@
         "smithy.api#documentation": "The route-level summary on `WeatherAlongRouteResult.summary`,\ngiving a single high-level snapshot of conditions across the entire\nroute. Includes a representative weather `iconCode` for the route\nand an aggregated `hazards` block reporting the maximum hazard\nindex and the specific hazard types encountered at any waypoint.\nUse this when a single route-level indicator is needed; for\nper-waypoint detail, use `WeatherAlongRouteResult.waypoints`."
       }
     },
-    "com.azure.maps_weather#WeatherGetWeatherAlongRouteRequest": {
+    "com.azure.maps_weather#GetWeatherWeatherAlongRouteRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -2445,7 +2367,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetWeatherAlongRouteRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherWeatherAlongRouteRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -2479,7 +2401,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetWeatherAlongRouteRequestFormat": {
+    "com.azure.maps_weather#GetWeatherWeatherAlongRouteRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -2491,10 +2413,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyIndices": {
+    "com.azure.maps_weather#GetWeatherDailyIndices": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetDailyIndicesRequest"
+        "target": "com.azure.maps_weather#GetWeatherDailyIndicesRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#DailyIndicesResult"
@@ -2595,7 +2517,7 @@
         "smithy.api#documentation": "A single index rating in the `DailyIndicesResult.results` array, scoring\nhow well one day's weather conditions are suited to a particular outdoor\nactivity such as running, golfing, kite flying, or barbecuing. Each\nentry includes the activity name (for example, *Ski Weather Forecast*),\nthe date it applies to, a numeric `value` from **0.0** to **10.0**, a\nmatching qualitative `category` label (for example, *Poor*), and a\nshort `description` of the conditions (for example, *Expect poor\nconditions for skiing.*). A response may contain many entries - one\nper day per index - covering each day in the requested `duration` and\neach requested index."
       }
     },
-    "com.azure.maps_weather#WeatherGetDailyIndicesRequest": {
+    "com.azure.maps_weather#GetWeatherDailyIndicesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -2606,7 +2528,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetDailyIndicesRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherDailyIndicesRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -2614,7 +2536,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetDailyIndicesRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherDailyIndicesRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -2661,14 +2583,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetDailyIndicesRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherDailyIndicesRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyIndicesRequestFormat": {
+    "com.azure.maps_weather#GetWeatherDailyIndicesRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -2680,10 +2602,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalRecords": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalRecords": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetDailyHistoricalRecordsRequest"
+        "target": "com.azure.maps_weather#GetWeatherDailyHistoricalRecordsRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#DailyHistoricalRecordsResult"
@@ -2838,7 +2760,7 @@
         "smithy.api#documentation": "The record-temperature triple for a single calendar day at a location -\nrecord `maximum` and `minimum` (each tagged with the year the record was\nset) plus the long-term `average` for that calendar date. Used as the\n`temperature` field on `DailyHistoricalRecords`. Values are in degrees\nCelsius (°C) or Fahrenheit (°F) depending on the unit specified in the\nrequest. For example, on *2012-01-20* the record high is *18.3 °C* set\nin *1951*, the record low is *-19.4 °C* set in *1984*, and the\nlong-term average for the date is *-0.6 °C*."
       }
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalRecordsRequest": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalRecordsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -2849,7 +2771,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetDailyHistoricalRecordsRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherDailyHistoricalRecordsRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -2857,7 +2779,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetDailyHistoricalRecordsRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherDailyHistoricalRecordsRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -2881,7 +2803,7 @@
           }
         },
         "unit": {
-          "target": "com.azure.maps_weather#WeatherGetDailyHistoricalRecordsRequestUnit",
+          "target": "com.azure.maps_weather#GetWeatherDailyHistoricalRecordsRequestUnit",
           "traits": {
             "smithy.api#httpQuery": "unit",
             "smithy.api#documentation": "Specifies to return the data in either metric units or imperial units. Default\nvalue is metric."
@@ -2899,7 +2821,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalRecordsRequestUnit": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalRecordsRequestUnit": {
       "type": "enum",
       "members": {
         "IMPERIAL": {
@@ -2917,14 +2839,14 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalRecordsRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalRecordsRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalRecordsRequestFormat": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalRecordsRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -2936,10 +2858,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalNormals": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalNormals": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetDailyHistoricalNormalsRequest"
+        "target": "com.azure.maps_weather#GetWeatherDailyHistoricalNormalsRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#DailyHistoricalNormalsResult"
@@ -3068,7 +2990,7 @@
         "smithy.api#documentation": "A three-value temperature summary - `minimum`, `maximum`, and `average` -\nfor a single day at the queried location, in degrees Celsius (°C) or\nFahrenheit (°F) depending on the unit specified in the request. Used for\nthe `temperature` field on `DailyHistoricalActuals` (what was actually\nobserved on the day) and on `DailyHistoricalNormals` (the 30-year average\nfor that calendar day) so the two responses can be compared\nfield-for-field. For example, on *2012-01-20* the observed reading was\nminimum *-11.1 °C*, maximum *-6.1 °C*, and average *-8.6 °C*, while the\n30-year normal for the same calendar day was minimum *-3.7 °C*, maximum\n*4.4 °C*, and average *0.4 °C* - the difference reveals an unusually\ncold day relative to climate normals."
       }
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalNormalsRequest": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalNormalsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3079,7 +3001,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetDailyHistoricalNormalsRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherDailyHistoricalNormalsRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -3087,7 +3009,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetDailyHistoricalNormalsRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherDailyHistoricalNormalsRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -3111,7 +3033,7 @@
           }
         },
         "unit": {
-          "target": "com.azure.maps_weather#WeatherGetDailyHistoricalNormalsRequestUnit",
+          "target": "com.azure.maps_weather#GetWeatherDailyHistoricalNormalsRequestUnit",
           "traits": {
             "smithy.api#httpQuery": "unit",
             "smithy.api#documentation": "Specifies to return the data in either metric units or imperial units. Default\nvalue is metric."
@@ -3129,7 +3051,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalNormalsRequestUnit": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalNormalsRequestUnit": {
       "type": "enum",
       "members": {
         "IMPERIAL": {
@@ -3147,14 +3069,14 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalNormalsRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalNormalsRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalNormalsRequestFormat": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalNormalsRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -3166,10 +3088,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalActuals": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalActuals": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetDailyHistoricalActualsRequest"
+        "target": "com.azure.maps_weather#GetWeatherDailyHistoricalActualsRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#DailyHistoricalActualsResult"
@@ -3264,7 +3186,7 @@
         "smithy.api#documentation": "The observed weather summary for a single past day at the queried\nlocation, returned as one entry in `DailyHistoricalActualsResult.results`.\nEach entry reports what was actually measured that day - minimum,\nmaximum, and average `temperature`; accumulated `precipitation`,\n`snowfall`, and `snowDepth`; and a `degreeDaySummary` of heating and\ncooling demand. Across the entries in a single response the values\nchange from day to day - in the example response the average daily\ntemperature warms from *-8.6 °C* on *2012-01-20* to *-5.3 °C* on\n*2012-01-21* to *-3.6 °C* on *2012-01-22*, while accumulated snow\ndepth on the ground falls from *15.2 cm* to *12.7 cm* to *10.2 cm*\nover the same three days."
       }
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalActualsRequest": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalActualsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3275,7 +3197,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetDailyHistoricalActualsRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherDailyHistoricalActualsRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -3283,7 +3205,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetDailyHistoricalActualsRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherDailyHistoricalActualsRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -3307,7 +3229,7 @@
           }
         },
         "unit": {
-          "target": "com.azure.maps_weather#WeatherGetDailyHistoricalActualsRequestUnit",
+          "target": "com.azure.maps_weather#GetWeatherDailyHistoricalActualsRequestUnit",
           "traits": {
             "smithy.api#httpQuery": "unit",
             "smithy.api#documentation": "Specifies to return the data in either metric units or imperial units. Default\nvalue is metric."
@@ -3325,7 +3247,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalActualsRequestUnit": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalActualsRequestUnit": {
       "type": "enum",
       "members": {
         "IMPERIAL": {
@@ -3343,14 +3265,14 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalActualsRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalActualsRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyHistoricalActualsRequestFormat": {
+    "com.azure.maps_weather#GetWeatherDailyHistoricalActualsRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -3362,10 +3284,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetQuarterDayForecast": {
+    "com.azure.maps_weather#GetWeatherQuarterDayForecast": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetQuarterDayForecastRequest"
+        "target": "com.azure.maps_weather#GetWeatherQuarterDayForecastRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#QuarterDayForecastResult"
@@ -3640,7 +3562,7 @@
         "smithy.api#documentation": "Divides the day into four 6-hour quarters. Valid values are 0-3:\n\n- 0: Morning (7am - 1pm)\n- 1: Afternoon (1pm - 7pm)\n- 2: Evening (7pm - 1am)\n- 3: Overnight (1am - 7am)"
       }
     },
-    "com.azure.maps_weather#WeatherGetQuarterDayForecastRequest": {
+    "com.azure.maps_weather#GetWeatherQuarterDayForecastRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3651,7 +3573,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetQuarterDayForecastRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherQuarterDayForecastRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -3659,7 +3581,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetQuarterDayForecastRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherQuarterDayForecastRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -3667,7 +3589,7 @@
           }
         },
         "unit": {
-          "target": "com.azure.maps_weather#WeatherGetQuarterDayForecastRequestUnit",
+          "target": "com.azure.maps_weather#GetWeatherQuarterDayForecastRequestUnit",
           "traits": {
             "smithy.api#httpQuery": "unit",
             "smithy.api#documentation": "Specifies to return the data in either metric units or imperial units. Default\nvalue is metric."
@@ -3699,7 +3621,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetQuarterDayForecastRequestUnit": {
+    "com.azure.maps_weather#GetWeatherQuarterDayForecastRequestUnit": {
       "type": "enum",
       "members": {
         "IMPERIAL": {
@@ -3717,14 +3639,14 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetQuarterDayForecastRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherQuarterDayForecastRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetQuarterDayForecastRequestFormat": {
+    "com.azure.maps_weather#GetWeatherQuarterDayForecastRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -3736,10 +3658,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetMinuteForecast": {
+    "com.azure.maps_weather#GetWeatherMinuteForecast": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetMinuteForecastRequest"
+        "target": "com.azure.maps_weather#GetWeatherMinuteForecastRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#MinuteForecastResult"
@@ -3993,7 +3915,7 @@
         "smithy.api#documentation": "Provides phrase summaries describing the precipitation outlook for the\nupcoming minute-by-minute forecast period. Multiple phrase lengths are\nincluded - short (~25 characters), brief (~60 characters), and long\n(60+ characters) - so applications can display the level of detail that\nbest fits the available UI space. An `iconCode` indicates the\nrepresentative weather icon for the period."
       }
     },
-    "com.azure.maps_weather#WeatherGetMinuteForecastRequest": {
+    "com.azure.maps_weather#GetWeatherMinuteForecastRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4004,7 +3926,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetMinuteForecastRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherMinuteForecastRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -4012,7 +3934,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetMinuteForecastRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherMinuteForecastRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -4045,14 +3967,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetMinuteForecastRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherMinuteForecastRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetMinuteForecastRequestFormat": {
+    "com.azure.maps_weather#GetWeatherMinuteForecastRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -4064,10 +3986,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetHourlyForecast": {
+    "com.azure.maps_weather#GetWeatherHourlyForecast": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetHourlyForecastRequest"
+        "target": "com.azure.maps_weather#GetWeatherHourlyForecastRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#HourlyForecastResult"
@@ -4270,7 +4192,7 @@
         "smithy.api#documentation": "The `HourlyForecast` object provides hourly weather details, including date and\ntime, expected and perceived temperatures, and dew point. It covers wind\nspeed and direction, wind gusts, relative humidity, visibility, and\nprecipitation probability. It indicates if precipitation is expected and\nspecifies its type. Additional properties include UV index, cloud cover\npercentage, and cloud ceiling height. It also features an icon code and\nphrase describing the weather condition."
       }
     },
-    "com.azure.maps_weather#WeatherGetHourlyForecastRequest": {
+    "com.azure.maps_weather#GetWeatherHourlyForecastRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4281,7 +4203,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetHourlyForecastRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherHourlyForecastRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -4289,7 +4211,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetHourlyForecastRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherHourlyForecastRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -4297,7 +4219,7 @@
           }
         },
         "unit": {
-          "target": "com.azure.maps_weather#WeatherGetHourlyForecastRequestUnit",
+          "target": "com.azure.maps_weather#GetWeatherHourlyForecastRequestUnit",
           "traits": {
             "smithy.api#httpQuery": "unit",
             "smithy.api#documentation": "Specifies to return the data in either metric units or imperial units. Default\nvalue is metric."
@@ -4329,7 +4251,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetHourlyForecastRequestUnit": {
+    "com.azure.maps_weather#GetWeatherHourlyForecastRequestUnit": {
       "type": "enum",
       "members": {
         "IMPERIAL": {
@@ -4347,14 +4269,14 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetHourlyForecastRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherHourlyForecastRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetHourlyForecastRequestFormat": {
+    "com.azure.maps_weather#GetWeatherHourlyForecastRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -4366,10 +4288,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyForecast": {
+    "com.azure.maps_weather#GetWeatherDailyForecast": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetDailyForecastRequest"
+        "target": "com.azure.maps_weather#GetWeatherDailyForecastRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#DailyForecastResult"
@@ -4760,7 +4682,7 @@
         "smithy.api#documentation": "A high-level summary of the dominant weather conditions across part or\nall of the requested daily-forecast window. The summarized window can be\nnarrower than the full request - for example, when significant weather\n(such as a storm system) is expected during only a portion of the\nperiod - and is delimited by `startDate` and `endDate`. The conditions\nthemselves are described both as a free-form `phrase`, a one or\ntwo-word `category` label, and a numeric `severity` rating."
       }
     },
-    "com.azure.maps_weather#WeatherGetDailyForecastRequest": {
+    "com.azure.maps_weather#GetWeatherDailyForecastRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4771,7 +4693,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetDailyForecastRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherDailyForecastRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -4779,7 +4701,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetDailyForecastRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherDailyForecastRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -4787,7 +4709,7 @@
           }
         },
         "unit": {
-          "target": "com.azure.maps_weather#WeatherGetDailyForecastRequestUnit",
+          "target": "com.azure.maps_weather#GetWeatherDailyForecastRequestUnit",
           "traits": {
             "smithy.api#httpQuery": "unit",
             "smithy.api#documentation": "Specifies to return the data in either metric units or imperial units. Default\nvalue is metric."
@@ -4819,7 +4741,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetDailyForecastRequestUnit": {
+    "com.azure.maps_weather#GetWeatherDailyForecastRequestUnit": {
       "type": "enum",
       "members": {
         "IMPERIAL": {
@@ -4837,14 +4759,14 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyForecastRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherDailyForecastRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetDailyForecastRequestFormat": {
+    "com.azure.maps_weather#GetWeatherDailyForecastRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -4856,10 +4778,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetCurrentConditions": {
+    "com.azure.maps_weather#GetWeatherCurrentConditions": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetCurrentConditionsRequest"
+        "target": "com.azure.maps_weather#GetWeatherCurrentConditionsRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#CurrentConditionsResult"
@@ -5184,7 +5106,7 @@
         "smithy.api#documentation": "The recent trend in atmospheric pressure - whether the pressure is\nrising, falling, or steady - returned as both a localized phrase and a\none-letter code. Useful for anticipating short-term weather changes;\nfalling pressure often signals deteriorating weather, while rising\npressure typically indicates improving conditions."
       }
     },
-    "com.azure.maps_weather#WeatherGetCurrentConditionsRequest": {
+    "com.azure.maps_weather#GetWeatherCurrentConditionsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5195,7 +5117,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetCurrentConditionsRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherCurrentConditionsRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -5203,7 +5125,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetCurrentConditionsRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherCurrentConditionsRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -5211,7 +5133,7 @@
           }
         },
         "unit": {
-          "target": "com.azure.maps_weather#WeatherGetCurrentConditionsRequestUnit",
+          "target": "com.azure.maps_weather#GetWeatherCurrentConditionsRequestUnit",
           "traits": {
             "smithy.api#httpQuery": "unit",
             "smithy.api#documentation": "Specifies to return the data in either metric units or imperial units. Default\nvalue is metric."
@@ -5250,7 +5172,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetCurrentConditionsRequestUnit": {
+    "com.azure.maps_weather#GetWeatherCurrentConditionsRequestUnit": {
       "type": "enum",
       "members": {
         "IMPERIAL": {
@@ -5268,14 +5190,14 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetCurrentConditionsRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherCurrentConditionsRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetCurrentConditionsRequestFormat": {
+    "com.azure.maps_weather#GetWeatherCurrentConditionsRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -5287,10 +5209,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetAirQualityHourlyForecasts": {
+    "com.azure.maps_weather#GetWeatherAirQualityHourlyForecasts": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetAirQualityHourlyForecastsRequest"
+        "target": "com.azure.maps_weather#GetWeatherAirQualityHourlyForecastsRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#AirQualityResult"
@@ -5532,7 +5454,7 @@
         "smithy.api#documentation": "Identifies the pollutant with the highest concentration."
       }
     },
-    "com.azure.maps_weather#WeatherGetAirQualityHourlyForecastsRequest": {
+    "com.azure.maps_weather#GetWeatherAirQualityHourlyForecastsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5543,7 +5465,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetAirQualityHourlyForecastsRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherAirQualityHourlyForecastsRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -5558,7 +5480,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetAirQualityHourlyForecastsRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherAirQualityHourlyForecastsRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -5566,7 +5488,7 @@
           }
         },
         "duration": {
-          "target": "com.azure.maps_weather#WeatherGetAirQualityHourlyForecastsRequestDuration",
+          "target": "com.azure.maps_weather#GetWeatherAirQualityHourlyForecastsRequestDuration",
           "traits": {
             "smithy.api#httpQuery": "duration",
             "smithy.api#documentation": "Defines the duration, in hours, for the air quality forecast. Available values\nare 1, 12, 24, 48, 72, and 96. The default value is 1 hour."
@@ -5591,7 +5513,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetAirQualityHourlyForecastsRequestDuration": {
+    "com.azure.maps_weather#GetWeatherAirQualityHourlyForecastsRequestDuration": {
       "type": "intEnum",
       "members": {
         "_1": {
@@ -5633,14 +5555,14 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetAirQualityHourlyForecastsRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherAirQualityHourlyForecastsRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetAirQualityHourlyForecastsRequestFormat": {
+    "com.azure.maps_weather#GetWeatherAirQualityHourlyForecastsRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -5652,10 +5574,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetAirQualityDailyForecasts": {
+    "com.azure.maps_weather#GetWeatherAirQualityDailyForecasts": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetAirQualityDailyForecastsRequest"
+        "target": "com.azure.maps_weather#GetWeatherAirQualityDailyForecastsRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#DailyAirQualityForecastResult"
@@ -5756,7 +5678,7 @@
         "smithy.api#documentation": "The forecasted air-quality reading for a single day at the queried\nlocation, returned as one entry in `DailyAirQualityForecastResult.results`.\nEach entry summarizes the day's expected air quality on the same scales\nused by `AirQuality` for the current reading - the local AQI (`index`),\nthe internationally normalized index (`globalIndex`), the\n`dominantPollutant`, a short `category` label (for example, *Fair*) and\nmatching `categoryColor` swatch (for example, *#FFC300*), and a textual\n`description` of what the reading means for people. Across the entries\nin a single forecast response the values typically evolve from day to\nday - in the example response *globalIndex* runs *42.2* -> *37* -> *40*\nacross three consecutive days while the dominant pollutant stays\n*Ozone*."
       }
     },
-    "com.azure.maps_weather#WeatherGetAirQualityDailyForecastsRequest": {
+    "com.azure.maps_weather#GetWeatherAirQualityDailyForecastsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5767,7 +5689,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetAirQualityDailyForecastsRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherAirQualityDailyForecastsRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -5782,7 +5704,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetAirQualityDailyForecastsRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherAirQualityDailyForecastsRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -5790,7 +5712,7 @@
           }
         },
         "duration": {
-          "target": "com.azure.maps_weather#WeatherGetAirQualityDailyForecastsRequestDuration",
+          "target": "com.azure.maps_weather#GetWeatherAirQualityDailyForecastsRequestDuration",
           "traits": {
             "smithy.api#httpQuery": "duration",
             "smithy.api#documentation": "Defines the duration for the air quality forecast, with options ranging from 1\nto 7 days. The default duration is 1 day."
@@ -5808,7 +5730,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetAirQualityDailyForecastsRequestDuration": {
+    "com.azure.maps_weather#GetWeatherAirQualityDailyForecastsRequestDuration": {
       "type": "intEnum",
       "members": {
         "_1": {
@@ -5856,14 +5778,14 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetAirQualityDailyForecastsRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherAirQualityDailyForecastsRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetAirQualityDailyForecastsRequestFormat": {
+    "com.azure.maps_weather#GetWeatherAirQualityDailyForecastsRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -5875,10 +5797,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetCurrentAirQuality": {
+    "com.azure.maps_weather#GetWeatherCurrentAirQuality": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_weather#WeatherGetCurrentAirQualityRequest"
+        "target": "com.azure.maps_weather#GetWeatherCurrentAirQualityRequest"
       },
       "output": {
         "target": "com.azure.maps_weather#AirQualityResult"
@@ -5900,7 +5822,7 @@
         "smithy.api#documentation": "Use to get current air quality information that includes potential risks and\nsuggested precautions.\n\nThe `Get Current Air Quality` API is an HTTP `GET` request that returns\ndetailed information about the concentration of pollutants and overall status\nfor current air quality, including pollution levels, air quality index values,\nthe dominant pollutant, and a brief statement summarizing risk level and\nsuggested precautions."
       }
     },
-    "com.azure.maps_weather#WeatherGetCurrentAirQualityRequest": {
+    "com.azure.maps_weather#GetWeatherCurrentAirQualityRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5911,7 +5833,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_weather#WeatherGetCurrentAirQualityRequestFormat",
+          "target": "com.azure.maps_weather#GetWeatherCurrentAirQualityRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -5926,7 +5848,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_weather#WeatherGetCurrentAirQualityRequestQueryList",
+          "target": "com.azure.maps_weather#GetWeatherCurrentAirQualityRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -5952,14 +5874,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_weather#WeatherGetCurrentAirQualityRequestQueryList": {
+    "com.azure.maps_weather#GetWeatherCurrentAirQualityRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_weather#WeatherGetCurrentAirQualityRequestFormat": {
+    "com.azure.maps_weather#GetWeatherCurrentAirQualityRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -5976,58 +5898,58 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.maps_weather#WeatherGetTropicalStormLocations"
+          "target": "com.azure.maps_weather#GetWeatherTropicalStormLocations"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetTropicalStormForecast"
+          "target": "com.azure.maps_weather#GetWeatherTropicalStormForecast"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetTropicalStormActive"
+          "target": "com.azure.maps_weather#GetWeatherTropicalStormActive"
         },
         {
           "target": "com.azure.maps_weather#WeatherGetTropicalStormSearch"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetSevereWeatherAlerts"
+          "target": "com.azure.maps_weather#GetWeatherSevereWeatherAlerts"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetWeatherAlongRoute"
+          "target": "com.azure.maps_weather#GetWeatherWeatherAlongRoute"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetDailyIndices"
+          "target": "com.azure.maps_weather#GetWeatherDailyIndices"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetDailyHistoricalRecords"
+          "target": "com.azure.maps_weather#GetWeatherDailyHistoricalRecords"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetDailyHistoricalNormals"
+          "target": "com.azure.maps_weather#GetWeatherDailyHistoricalNormals"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetDailyHistoricalActuals"
+          "target": "com.azure.maps_weather#GetWeatherDailyHistoricalActuals"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetQuarterDayForecast"
+          "target": "com.azure.maps_weather#GetWeatherQuarterDayForecast"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetMinuteForecast"
+          "target": "com.azure.maps_weather#GetWeatherMinuteForecast"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetHourlyForecast"
+          "target": "com.azure.maps_weather#GetWeatherHourlyForecast"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetDailyForecast"
+          "target": "com.azure.maps_weather#GetWeatherDailyForecast"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetCurrentConditions"
+          "target": "com.azure.maps_weather#GetWeatherCurrentConditions"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetAirQualityHourlyForecasts"
+          "target": "com.azure.maps_weather#GetWeatherAirQualityHourlyForecasts"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetAirQualityDailyForecasts"
+          "target": "com.azure.maps_weather#GetWeatherAirQualityDailyForecasts"
         },
         {
-          "target": "com.azure.maps_weather#WeatherGetCurrentAirQuality"
+          "target": "com.azure.maps_weather#GetWeatherCurrentAirQuality"
         }
       ],
       "traits": {

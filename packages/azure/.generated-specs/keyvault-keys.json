@@ -14,7 +14,8 @@
         "id": "UnreferencedShape",
         "namespace": "*"
       }
-    ]
+    ],
+    "distilled.finalized": true
   },
   "shapes": {
     "com.azure.keyvault_keys#GetRandomBytes": {
@@ -2389,7 +2390,6 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpLabel": {},
-            "smithy.api#required": {},
             "smithy.api#documentation": "Adding the version parameter retrieves attestation blob for specific version of a key. This URI fragment is optional. If not specified, the latest version of the key attestation blob is returned."
           }
         }
@@ -2540,7 +2540,6 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpLabel": {},
-            "smithy.api#required": {},
             "smithy.api#documentation": "Adding the version parameter retrieves a specific version of a key. This URI fragment is optional. If not specified, the latest version of the key is returned."
           }
         }

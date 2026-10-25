@@ -15,46 +15,7 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.reservations#ReservationListAll": "com.azure.reservations#ListReservationAll",
-      "com.azure.reservations#ReservationListAllRequest": "com.azure.reservations#ListReservationAllRequest",
-      "com.azure.reservations#ReturnPost": "com.azure.reservations#PostReturn",
-      "com.azure.reservations#ReturnPostResponse": "com.azure.reservations#PostReturnResponse",
-      "com.azure.reservations#ReturnPostRequest": "com.azure.reservations#PostReturnRequest",
-      "com.azure.reservations#ReservationUnarchive": "com.azure.reservations#UnarchiveReservation",
-      "com.azure.reservations#ReservationUnarchiveRequest": "com.azure.reservations#UnarchiveReservationRequest",
-      "com.azure.reservations#ReservationListRevisions": "com.azure.reservations#ListReservationRevisions",
-      "com.azure.reservations#ReservationListRevisionsRequest": "com.azure.reservations#ListReservationRevisionsRequest",
-      "com.azure.reservations#ReservationArchive": "com.azure.reservations#ArchiveReservation",
-      "com.azure.reservations#ReservationArchiveRequest": "com.azure.reservations#ArchiveReservationRequest",
-      "com.azure.reservations#ReservationUpdate": "com.azure.reservations#UpdateReservation",
-      "com.azure.reservations#ReservationUpdateResponse": "com.azure.reservations#UpdateReservationResponse",
-      "com.azure.reservations#ReservationUpdateResponseKind": "com.azure.reservations#UpdateReservationResponseKind",
-      "com.azure.reservations#ReservationUpdateRequest": "com.azure.reservations#UpdateReservationRequest",
-      "com.azure.reservations#ReservationGet": "com.azure.reservations#GetReservation",
-      "com.azure.reservations#ReservationGetResponse": "com.azure.reservations#GetReservationResponse",
-      "com.azure.reservations#ReservationGetResponseKind": "com.azure.reservations#GetReservationResponseKind",
-      "com.azure.reservations#ReservationGetRequest": "com.azure.reservations#GetReservationRequest",
-      "com.azure.reservations#ReservationList2": "com.azure.reservations#ListReservation",
-      "com.azure.reservations#ReservationListRequest": "com.azure.reservations#ListReservationRequest",
-      "com.azure.reservations#ReservationMerge": "com.azure.reservations#MergeReservation",
-      "com.azure.reservations#ReservationMergeResponse": "com.azure.reservations#MergeReservationResponse",
-      "com.azure.reservations#ReservationMergeResponseBodyList": "com.azure.reservations#MergeReservationResponseBodyList",
-      "com.azure.reservations#ReservationMergeRequest": "com.azure.reservations#MergeReservationRequest",
-      "com.azure.reservations#CalculateRefundPost": "com.azure.reservations#PostCalculateRefund",
-      "com.azure.reservations#CalculateRefundPostRequest": "com.azure.reservations#PostCalculateRefundRequest",
-      "com.azure.reservations#ReservationOrderGet": "com.azure.reservations#GetReservationOrder",
-      "com.azure.reservations#ReservationOrderGetResponse": "com.azure.reservations#GetReservationOrderResponse",
-      "com.azure.reservations#ReservationOrderGetRequest": "com.azure.reservations#GetReservationOrderRequest",
-      "com.azure.reservations#ReservationOrderList2": "com.azure.reservations#ListReservationOrder",
-      "com.azure.reservations#ReservationOrderListRequest": "com.azure.reservations#ListReservationOrderRequest",
-      "com.azure.reservations#OperationList2": "com.azure.reservations#ListOperation",
-      "com.azure.reservations#OperationListRequest": "com.azure.reservations#ListOperationRequest",
-      "com.azure.reservations#ExchangePost": "com.azure.reservations#PostExchange",
-      "com.azure.reservations#ExchangePostRequest": "com.azure.reservations#PostExchangeRequest",
-      "com.azure.reservations#CalculateExchangePost": "com.azure.reservations#PostCalculateExchange",
-      "com.azure.reservations#CalculateExchangePostRequest": "com.azure.reservations#PostCalculateExchangeRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
     "com.azure.reservations#GetCatalog": {
@@ -589,10 +550,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.reservations#ReservationListAll": {
+    "com.azure.reservations#ListReservationAll": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#ReservationListAllRequest"
+        "target": "com.azure.reservations#ListReservationAllRequest"
       },
       "output": {
         "target": "com.azure.reservations#ReservationsListResult"
@@ -1874,7 +1835,7 @@
         "smithy.api#documentation": "The type of identity that created the resource."
       }
     },
-    "com.azure.reservations#ReservationListAllRequest": {
+    "com.azure.reservations#ListReservationAllRequest": {
       "type": "structure",
       "members": {
         "_filter": {
@@ -2022,13 +1983,13 @@
         "smithy.api#documentation": "List of the quantities in the new reservations to create."
       }
     },
-    "com.azure.reservations#ReturnPost": {
+    "com.azure.reservations#PostReturn": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#ReturnPostRequest"
+        "target": "com.azure.reservations#PostReturnRequest"
       },
       "output": {
-        "target": "com.azure.reservations#ReturnPostResponse"
+        "target": "com.azure.reservations#PostReturnResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2041,7 +2002,7 @@
         "com.distilled.openapi#apiVersion": "2022-11-01"
       }
     },
-    "com.azure.reservations#ReturnPostResponse": {
+    "com.azure.reservations#PostReturnResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -2301,7 +2262,7 @@
         "smithy.api#documentation": "Describes whether the payment is completed, failed, cancelled or scheduled in the future."
       }
     },
-    "com.azure.reservations#ReturnPostRequest": {
+    "com.azure.reservations#PostReturnRequest": {
       "type": "structure",
       "members": {
         "reservationOrderId": {
@@ -2375,10 +2336,10 @@
         "smithy.api#documentation": "Reservation to return"
       }
     },
-    "com.azure.reservations#ReservationUnarchive": {
+    "com.azure.reservations#UnarchiveReservation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#ReservationUnarchiveRequest"
+        "target": "com.azure.reservations#UnarchiveReservationRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -2394,7 +2355,7 @@
         "com.distilled.openapi#apiVersion": "2022-11-01"
       }
     },
-    "com.azure.reservations#ReservationUnarchiveRequest": {
+    "com.azure.reservations#UnarchiveReservationRequest": {
       "type": "structure",
       "members": {
         "reservationOrderId": {
@@ -2418,10 +2379,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.reservations#ReservationListRevisions": {
+    "com.azure.reservations#ListReservationRevisions": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#ReservationListRevisionsRequest"
+        "target": "com.azure.reservations#ListReservationRevisionsRequest"
       },
       "output": {
         "target": "com.azure.reservations#ReservationList"
@@ -2474,7 +2435,7 @@
         "smithy.api#documentation": "The ReservationResponse items on this page"
       }
     },
-    "com.azure.reservations#ReservationListRevisionsRequest": {
+    "com.azure.reservations#ListReservationRevisionsRequest": {
       "type": "structure",
       "members": {
         "reservationOrderId": {
@@ -2631,10 +2592,10 @@
       },
       "traits": {}
     },
-    "com.azure.reservations#ReservationArchive": {
+    "com.azure.reservations#ArchiveReservation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#ReservationArchiveRequest"
+        "target": "com.azure.reservations#ArchiveReservationRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -2650,7 +2611,7 @@
         "com.distilled.openapi#apiVersion": "2022-11-01"
       }
     },
-    "com.azure.reservations#ReservationArchiveRequest": {
+    "com.azure.reservations#ArchiveReservationRequest": {
       "type": "structure",
       "members": {
         "reservationOrderId": {
@@ -2674,13 +2635,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.reservations#ReservationUpdate": {
+    "com.azure.reservations#UpdateReservation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#ReservationUpdateRequest"
+        "target": "com.azure.reservations#UpdateReservationRequest"
       },
       "output": {
-        "target": "com.azure.reservations#ReservationUpdateResponse"
+        "target": "com.azure.reservations#UpdateReservationResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2693,7 +2654,7 @@
         "com.distilled.openapi#apiVersion": "2022-11-01"
       }
     },
-    "com.azure.reservations#ReservationUpdateResponse": {
+    "com.azure.reservations#UpdateReservationResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -2742,7 +2703,7 @@
           }
         },
         "kind": {
-          "target": "com.azure.reservations#ReservationUpdateResponseKind",
+          "target": "com.azure.reservations#UpdateReservationResponseKind",
           "traits": {
             "smithy.api#documentation": "Resource Provider type to be reserved."
           }
@@ -2773,7 +2734,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.reservations#ReservationUpdateResponseKind": {
+    "com.azure.reservations#UpdateReservationResponseKind": {
       "type": "enum",
       "members": {
         "MICROSOFT_COMPUTE": {
@@ -2787,7 +2748,7 @@
         "smithy.api#documentation": "Resource Provider type to be reserved."
       }
     },
-    "com.azure.reservations#ReservationUpdateRequest": {
+    "com.azure.reservations#UpdateReservationRequest": {
       "type": "structure",
       "members": {
         "reservationOrderId": {
@@ -2891,13 +2852,13 @@
         "smithy.api#documentation": "List of the subscriptions that the benefit will be applied. Do not specify if AppliedScopeType is Shared. This property will be deprecated and replaced by appliedScopeProperties instead for Single AppliedScopeType."
       }
     },
-    "com.azure.reservations#ReservationGet": {
+    "com.azure.reservations#GetReservation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#ReservationGetRequest"
+        "target": "com.azure.reservations#GetReservationRequest"
       },
       "output": {
-        "target": "com.azure.reservations#ReservationGetResponse"
+        "target": "com.azure.reservations#GetReservationResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2910,7 +2871,7 @@
         "com.distilled.openapi#apiVersion": "2022-11-01"
       }
     },
-    "com.azure.reservations#ReservationGetResponse": {
+    "com.azure.reservations#GetReservationResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -2959,7 +2920,7 @@
           }
         },
         "kind": {
-          "target": "com.azure.reservations#ReservationGetResponseKind",
+          "target": "com.azure.reservations#GetReservationResponseKind",
           "traits": {
             "smithy.api#documentation": "Resource Provider type to be reserved."
           }
@@ -2969,7 +2930,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.reservations#ReservationGetResponseKind": {
+    "com.azure.reservations#GetReservationResponseKind": {
       "type": "enum",
       "members": {
         "MICROSOFT_COMPUTE": {
@@ -2983,7 +2944,7 @@
         "smithy.api#documentation": "Resource Provider type to be reserved."
       }
     },
-    "com.azure.reservations#ReservationGetRequest": {
+    "com.azure.reservations#GetReservationRequest": {
       "type": "structure",
       "members": {
         "reservationOrderId": {
@@ -3014,10 +2975,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.reservations#ReservationList2": {
+    "com.azure.reservations#ListReservation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#ReservationListRequest"
+        "target": "com.azure.reservations#ListReservationRequest"
       },
       "output": {
         "target": "com.azure.reservations#ReservationList"
@@ -3040,7 +3001,7 @@
         }
       }
     },
-    "com.azure.reservations#ReservationListRequest": {
+    "com.azure.reservations#ListReservationRequest": {
       "type": "structure",
       "members": {
         "reservationOrderId": {
@@ -3062,13 +3023,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.reservations#ReservationMerge": {
+    "com.azure.reservations#MergeReservation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#ReservationMergeRequest"
+        "target": "com.azure.reservations#MergeReservationRequest"
       },
       "output": {
-        "target": "com.azure.reservations#ReservationMergeResponse"
+        "target": "com.azure.reservations#MergeReservationResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3081,11 +3042,11 @@
         "com.distilled.openapi#apiVersion": "2022-11-01"
       }
     },
-    "com.azure.reservations#ReservationMergeResponse": {
+    "com.azure.reservations#MergeReservationResponse": {
       "type": "structure",
       "members": {
         "body": {
-          "target": "com.azure.reservations#ReservationMergeResponseBodyList",
+          "target": "com.azure.reservations#MergeReservationResponseBodyList",
           "traits": {
             "com.distilled.openapi#rawResponse": {},
             "smithy.api#required": {}
@@ -3096,14 +3057,14 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.reservations#ReservationMergeResponseBodyList": {
+    "com.azure.reservations#MergeReservationResponseBodyList": {
       "type": "list",
       "member": {
         "target": "com.azure.reservations#ReservationResponse"
       },
       "traits": {}
     },
-    "com.azure.reservations#ReservationMergeRequest": {
+    "com.azure.reservations#MergeReservationRequest": {
       "type": "structure",
       "members": {
         "reservationOrderId": {
@@ -3245,10 +3206,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.reservations#CalculateRefundPost": {
+    "com.azure.reservations#PostCalculateRefund": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#CalculateRefundPostRequest"
+        "target": "com.azure.reservations#PostCalculateRefundRequest"
       },
       "output": {
         "target": "com.azure.reservations#CalculateRefundResponse"
@@ -3794,7 +3755,7 @@
         "smithy.api#documentation": "Error code describing the reason that service is not able to process the incoming request"
       }
     },
-    "com.azure.reservations#CalculateRefundPostRequest": {
+    "com.azure.reservations#PostCalculateRefundRequest": {
       "type": "structure",
       "members": {
         "reservationOrderId": {
@@ -3950,13 +3911,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.reservations#ReservationOrderGet": {
+    "com.azure.reservations#GetReservationOrder": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#ReservationOrderGetRequest"
+        "target": "com.azure.reservations#GetReservationOrderRequest"
       },
       "output": {
-        "target": "com.azure.reservations#ReservationOrderGetResponse"
+        "target": "com.azure.reservations#GetReservationOrderResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3969,7 +3930,7 @@
         "com.distilled.openapi#apiVersion": "2022-11-01"
       }
     },
-    "com.azure.reservations#ReservationOrderGetResponse": {
+    "com.azure.reservations#GetReservationOrderResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -4010,7 +3971,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.reservations#ReservationOrderGetRequest": {
+    "com.azure.reservations#GetReservationOrderRequest": {
       "type": "structure",
       "members": {
         "reservationOrderId": {
@@ -4033,10 +3994,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.reservations#ReservationOrderList2": {
+    "com.azure.reservations#ListReservationOrder": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#ReservationOrderListRequest"
+        "target": "com.azure.reservations#ListReservationOrderRequest"
       },
       "output": {
         "target": "com.azure.reservations#ReservationOrderList"
@@ -4130,7 +4091,7 @@
         "smithy.api#documentation": "Details of a reservation order being returned."
       }
     },
-    "com.azure.reservations#ReservationOrderListRequest": {
+    "com.azure.reservations#ListReservationOrderRequest": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -4144,10 +4105,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.reservations#OperationList2": {
+    "com.azure.reservations#ListOperation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#OperationListRequest"
+        "target": "com.azure.reservations#ListOperationRequest"
       },
       "output": {
         "target": "com.azure.reservations#OperationList"
@@ -4250,7 +4211,7 @@
         "smithy.api#documentation": "Information about an operation"
       }
     },
-    "com.azure.reservations#OperationListRequest": {
+    "com.azure.reservations#ListOperationRequest": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -4264,10 +4225,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.reservations#ExchangePost": {
+    "com.azure.reservations#PostExchange": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#ExchangePostRequest"
+        "target": "com.azure.reservations#PostExchangeRequest"
       },
       "output": {
         "target": "com.azure.reservations#ExchangeOperationResultResponse"
@@ -4833,7 +4794,7 @@
         "smithy.api#documentation": "Status of the operation."
       }
     },
-    "com.azure.reservations#ExchangePostRequest": {
+    "com.azure.reservations#PostExchangeRequest": {
       "type": "structure",
       "members": {
         "properties": {
@@ -5035,10 +4996,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.reservations#CalculateExchangePost": {
+    "com.azure.reservations#PostCalculateExchange": {
       "type": "operation",
       "input": {
-        "target": "com.azure.reservations#CalculateExchangePostRequest"
+        "target": "com.azure.reservations#PostCalculateExchangeRequest"
       },
       "output": {
         "target": "com.azure.reservations#CalculateExchangeOperationResultResponse"
@@ -5300,7 +5261,7 @@
         "smithy.api#documentation": "Status of the operation."
       }
     },
-    "com.azure.reservations#CalculateExchangePostRequest": {
+    "com.azure.reservations#PostCalculateExchangeRequest": {
       "type": "structure",
       "members": {
         "properties": {
@@ -5378,64 +5339,64 @@
           "target": "com.azure.reservations#GetAppliedReservationList"
         },
         {
-          "target": "com.azure.reservations#ReservationListAll"
+          "target": "com.azure.reservations#ListReservationAll"
         },
         {
           "target": "com.azure.reservations#ReservationSplit"
         },
         {
-          "target": "com.azure.reservations#ReturnPost"
+          "target": "com.azure.reservations#PostReturn"
         },
         {
-          "target": "com.azure.reservations#ReservationUnarchive"
+          "target": "com.azure.reservations#UnarchiveReservation"
         },
         {
-          "target": "com.azure.reservations#ReservationListRevisions"
+          "target": "com.azure.reservations#ListReservationRevisions"
         },
         {
           "target": "com.azure.reservations#ReservationAvailableScopes"
         },
         {
-          "target": "com.azure.reservations#ReservationArchive"
+          "target": "com.azure.reservations#ArchiveReservation"
         },
         {
-          "target": "com.azure.reservations#ReservationUpdate"
+          "target": "com.azure.reservations#UpdateReservation"
         },
         {
-          "target": "com.azure.reservations#ReservationGet"
+          "target": "com.azure.reservations#GetReservation"
         },
         {
-          "target": "com.azure.reservations#ReservationList2"
+          "target": "com.azure.reservations#ListReservation"
         },
         {
-          "target": "com.azure.reservations#ReservationMerge"
+          "target": "com.azure.reservations#MergeReservation"
         },
         {
           "target": "com.azure.reservations#ReservationOrderChangeDirectory"
         },
         {
-          "target": "com.azure.reservations#CalculateRefundPost"
+          "target": "com.azure.reservations#PostCalculateRefund"
         },
         {
           "target": "com.azure.reservations#ReservationOrderPurchase"
         },
         {
-          "target": "com.azure.reservations#ReservationOrderGet"
+          "target": "com.azure.reservations#GetReservationOrder"
         },
         {
-          "target": "com.azure.reservations#ReservationOrderList2"
+          "target": "com.azure.reservations#ListReservationOrder"
         },
         {
-          "target": "com.azure.reservations#OperationList2"
+          "target": "com.azure.reservations#ListOperation"
         },
         {
-          "target": "com.azure.reservations#ExchangePost"
+          "target": "com.azure.reservations#PostExchange"
         },
         {
           "target": "com.azure.reservations#ReservationOrderCalculate"
         },
         {
-          "target": "com.azure.reservations#CalculateExchangePost"
+          "target": "com.azure.reservations#PostCalculateExchange"
         }
       ],
       "traits": {

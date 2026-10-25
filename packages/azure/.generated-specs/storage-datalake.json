@@ -15,71 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.storage_datalake#PathUndelete": "com.azure.storage_datalake#UndeletePath",
-      "com.azure.storage_datalake#PathUndeleteRequest": "com.azure.storage_datalake#UndeletePathRequest",
-      "com.azure.storage_datalake#PathSetExpiry": "com.azure.storage_datalake#SetPathExpiry",
-      "com.azure.storage_datalake#PathSetExpiryResponse": "com.azure.storage_datalake#SetPathExpiryResponse",
-      "com.azure.storage_datalake#PathSetExpiryRequest": "com.azure.storage_datalake#SetPathExpiryRequest",
-      "com.azure.storage_datalake#PathSetExpiryRequestXMsExpiryOption": "com.azure.storage_datalake#SetPathExpiryRequestXMsExpiryOption",
-      "com.azure.storage_datalake#PathFlushData": "com.azure.storage_datalake#FlushPathData",
-      "com.azure.storage_datalake#PathFlushDataResponse": "com.azure.storage_datalake#FlushPathDataResponse",
-      "com.azure.storage_datalake#PathFlushDataRequest": "com.azure.storage_datalake#FlushPathDataRequest",
-      "com.azure.storage_datalake#PathFlushDataRequestXMsEncryptionAlgorithm": "com.azure.storage_datalake#FlushPathDataRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_datalake#PathFlushDataRequestXMsLeaseAction": "com.azure.storage_datalake#FlushPathDataRequestXMsLeaseAction",
-      "com.azure.storage_datalake#PathSetAccessControlRecursive": "com.azure.storage_datalake#SetPathAccessControlRecursive",
-      "com.azure.storage_datalake#PathSetAccessControlRecursiveRequest": "com.azure.storage_datalake#SetPathAccessControlRecursiveRequest",
-      "com.azure.storage_datalake#PathSetAccessControlRecursiveRequestMode": "com.azure.storage_datalake#SetPathAccessControlRecursiveRequestMode",
-      "com.azure.storage_datalake#PathSetAccessControl": "com.azure.storage_datalake#SetPathAccessControl",
-      "com.azure.storage_datalake#PathSetAccessControlResponse": "com.azure.storage_datalake#SetPathAccessControlResponse",
-      "com.azure.storage_datalake#PathSetAccessControlRequest": "com.azure.storage_datalake#SetPathAccessControlRequest",
-      "com.azure.storage_datalake#PathGetProperties": "com.azure.storage_datalake#GetPathProperties",
-      "com.azure.storage_datalake#PathGetPropertiesRequest": "com.azure.storage_datalake#GetPathPropertiesRequest",
-      "com.azure.storage_datalake#PathGetPropertiesRequestAction": "com.azure.storage_datalake#GetPathPropertiesRequestAction",
-      "com.azure.storage_datalake#PathDelete": "com.azure.storage_datalake#DeletePath",
-      "com.azure.storage_datalake#PathDeleteRequest": "com.azure.storage_datalake#DeletePathRequest",
-      "com.azure.storage_datalake#PathUpdate": "com.azure.storage_datalake#UpdatePath",
-      "com.azure.storage_datalake#PathUpdateResponse": "com.azure.storage_datalake#UpdatePathResponse",
-      "com.azure.storage_datalake#PathUpdateRequest": "com.azure.storage_datalake#UpdatePathRequest",
-      "com.azure.storage_datalake#PathUpdateRequestMode": "com.azure.storage_datalake#UpdatePathRequestMode",
-      "com.azure.storage_datalake#PathUpdateRequestAction": "com.azure.storage_datalake#UpdatePathRequestAction",
-      "com.azure.storage_datalake#PathCreate": "com.azure.storage_datalake#CreatePath",
-      "com.azure.storage_datalake#PathCreateResponse": "com.azure.storage_datalake#CreatePathResponse",
-      "com.azure.storage_datalake#PathCreateRequest": "com.azure.storage_datalake#CreatePathRequest",
-      "com.azure.storage_datalake#PathCreateRequestXMsExpiryOption": "com.azure.storage_datalake#CreatePathRequestXMsExpiryOption",
-      "com.azure.storage_datalake#PathCreateRequestXMsEncryptionAlgorithm": "com.azure.storage_datalake#CreatePathRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_datalake#PathCreateRequestMode": "com.azure.storage_datalake#CreatePathRequestMode",
-      "com.azure.storage_datalake#PathCreateRequestResource": "com.azure.storage_datalake#CreatePathRequestResource",
-      "com.azure.storage_datalake#PathRead": "com.azure.storage_datalake#ReadPath",
-      "com.azure.storage_datalake#PathReadResponse": "com.azure.storage_datalake#ReadPathResponse",
-      "com.azure.storage_datalake#PathReadRequest": "com.azure.storage_datalake#ReadPathRequest",
-      "com.azure.storage_datalake#PathReadRequestXMsEncryptionAlgorithm": "com.azure.storage_datalake#ReadPathRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_datalake#FileSystemListBlobHierarchySegment": "com.azure.storage_datalake#ListFileSystemBlobHierarchySegment",
-      "com.azure.storage_datalake#FileSystemListBlobHierarchySegmentRequest": "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentRequest",
-      "com.azure.storage_datalake#FileSystemListBlobHierarchySegmentRequestShowonly": "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentRequestShowonly",
-      "com.azure.storage_datalake#FileSystemListBlobHierarchySegmentRequestIncludeList": "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentRequestIncludeList",
-      "com.azure.storage_datalake#FileSystemListBlobHierarchySegmentRequestIncludeItem": "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentRequestIncludeItem",
-      "com.azure.storage_datalake#FileSystemListPaths": "com.azure.storage_datalake#ListFileSystemPaths",
-      "com.azure.storage_datalake#FileSystemListPathsRequest": "com.azure.storage_datalake#ListFileSystemPathsRequest",
-      "com.azure.storage_datalake#FileSystemGetProperties": "com.azure.storage_datalake#GetFileSystemProperties",
-      "com.azure.storage_datalake#FileSystemGetPropertiesRequest": "com.azure.storage_datalake#GetFileSystemPropertiesRequest",
-      "com.azure.storage_datalake#FileSystemDelete": "com.azure.storage_datalake#DeleteFileSystem",
-      "com.azure.storage_datalake#FileSystemDeleteRequest": "com.azure.storage_datalake#DeleteFileSystemRequest",
-      "com.azure.storage_datalake#FileSystemSetProperties": "com.azure.storage_datalake#SetFileSystemProperties",
-      "com.azure.storage_datalake#FileSystemSetPropertiesResponse": "com.azure.storage_datalake#SetFileSystemPropertiesResponse",
-      "com.azure.storage_datalake#FileSystemSetPropertiesRequest": "com.azure.storage_datalake#SetFileSystemPropertiesRequest",
-      "com.azure.storage_datalake#FileSystemCreate": "com.azure.storage_datalake#CreateFileSystem",
-      "com.azure.storage_datalake#FileSystemCreateResponse": "com.azure.storage_datalake#CreateFileSystemResponse",
-      "com.azure.storage_datalake#FileSystemCreateRequest": "com.azure.storage_datalake#CreateFileSystemRequest",
-      "com.azure.storage_datalake#ServiceListFileSystems": "com.azure.storage_datalake#ListServiceFileSystems",
-      "com.azure.storage_datalake#ServiceListFileSystemsRequest": "com.azure.storage_datalake#ListServiceFileSystemsRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.storage_datalake#PathUndelete": {
+    "com.azure.storage_datalake#UndeletePath": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#PathUndeleteRequest"
+        "target": "com.azure.storage_datalake#UndeletePathRequest"
       },
       "output": {
         "target": "com.azure.storage_datalake#UndeletePathResponse"
@@ -146,7 +88,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#PathUndeleteRequest": {
+    "com.azure.storage_datalake#UndeletePathRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -199,13 +141,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#PathSetExpiry": {
+    "com.azure.storage_datalake#SetPathExpiry": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#PathSetExpiryRequest"
+        "target": "com.azure.storage_datalake#SetPathExpiryRequest"
       },
       "output": {
-        "target": "com.azure.storage_datalake#PathSetExpiryResponse"
+        "target": "com.azure.storage_datalake#SetPathExpiryResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -226,7 +168,7 @@
         "smithy.api#documentation": "Sets the time a blob will expire and be deleted."
       }
     },
-    "com.azure.storage_datalake#PathSetExpiryResponse": {
+    "com.azure.storage_datalake#SetPathExpiryResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -276,7 +218,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#PathSetExpiryRequest": {
+    "com.azure.storage_datalake#SetPathExpiryRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -318,7 +260,7 @@
           }
         },
         "xMsExpiryOption": {
-          "target": "com.azure.storage_datalake#PathSetExpiryRequestXMsExpiryOption",
+          "target": "com.azure.storage_datalake#SetPathExpiryRequestXMsExpiryOption",
           "traits": {
             "smithy.api#httpHeader": "x-ms-expiry-option",
             "smithy.api#required": {},
@@ -337,7 +279,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#PathSetExpiryRequestXMsExpiryOption": {
+    "com.azure.storage_datalake#SetPathExpiryRequestXMsExpiryOption": {
       "type": "enum",
       "members": {
         "NEVEREXPIRE": {
@@ -665,13 +607,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#PathFlushData": {
+    "com.azure.storage_datalake#FlushPathData": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#PathFlushDataRequest"
+        "target": "com.azure.storage_datalake#FlushPathDataRequest"
       },
       "output": {
-        "target": "com.azure.storage_datalake#PathFlushDataResponse"
+        "target": "com.azure.storage_datalake#FlushPathDataResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -692,7 +634,7 @@
         "smithy.api#documentation": "Set the owner, group, permissions, or access control list for a path."
       }
     },
-    "com.azure.storage_datalake#PathFlushDataResponse": {
+    "com.azure.storage_datalake#FlushPathDataResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -770,7 +712,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#PathFlushDataRequest": {
+    "com.azure.storage_datalake#FlushPathDataRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -840,7 +782,7 @@
           }
         },
         "xMsLeaseAction": {
-          "target": "com.azure.storage_datalake#PathFlushDataRequestXMsLeaseAction",
+          "target": "com.azure.storage_datalake#FlushPathDataRequestXMsLeaseAction",
           "traits": {
             "smithy.api#httpHeader": "x-ms-lease-action",
             "smithy.api#documentation": "Optional. If \"acquire\" it will acquire the lease. If \"auto-renew\" it will renew the lease. If \"release\" it will release the lease only on flush. If \"acquire-release\" it will acquire & complete the operation & release the lease once operation is done."
@@ -945,7 +887,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_datalake#PathFlushDataRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_datalake#FlushPathDataRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -956,7 +898,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#PathFlushDataRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_datalake#FlushPathDataRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -968,7 +910,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#PathFlushDataRequestXMsLeaseAction": {
+    "com.azure.storage_datalake#FlushPathDataRequestXMsLeaseAction": {
       "type": "enum",
       "members": {
         "ACQUIRE": {
@@ -998,10 +940,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#PathSetAccessControlRecursive": {
+    "com.azure.storage_datalake#SetPathAccessControlRecursive": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#PathSetAccessControlRecursiveRequest"
+        "target": "com.azure.storage_datalake#SetPathAccessControlRecursiveRequest"
       },
       "output": {
         "target": "com.azure.storage_datalake#SetPathAccessControlRecursiveResponse"
@@ -1102,7 +1044,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#PathSetAccessControlRecursiveRequest": {
+    "com.azure.storage_datalake#SetPathAccessControlRecursiveRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1144,7 +1086,7 @@
           }
         },
         "mode": {
-          "target": "com.azure.storage_datalake#PathSetAccessControlRecursiveRequestMode",
+          "target": "com.azure.storage_datalake#SetPathAccessControlRecursiveRequestMode",
           "traits": {
             "smithy.api#httpQuery": "mode",
             "smithy.api#required": {},
@@ -1184,7 +1126,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#PathSetAccessControlRecursiveRequestMode": {
+    "com.azure.storage_datalake#SetPathAccessControlRecursiveRequestMode": {
       "type": "enum",
       "members": {
         "SET": {
@@ -1208,13 +1150,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#PathSetAccessControl": {
+    "com.azure.storage_datalake#SetPathAccessControl": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#PathSetAccessControlRequest"
+        "target": "com.azure.storage_datalake#SetPathAccessControlRequest"
       },
       "output": {
-        "target": "com.azure.storage_datalake#PathSetAccessControlResponse"
+        "target": "com.azure.storage_datalake#SetPathAccessControlResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1235,7 +1177,7 @@
         "smithy.api#documentation": "Set the owner, group, permissions, or access control list for a path."
       }
     },
-    "com.azure.storage_datalake#PathSetAccessControlResponse": {
+    "com.azure.storage_datalake#SetPathAccessControlResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -1285,7 +1227,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#PathSetAccessControlRequest": {
+    "com.azure.storage_datalake#SetPathAccessControlRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1394,10 +1336,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#PathGetProperties": {
+    "com.azure.storage_datalake#GetPathProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#PathGetPropertiesRequest"
+        "target": "com.azure.storage_datalake#GetPathPropertiesRequest"
       },
       "output": {
         "target": "com.azure.storage_datalake#GetPathPropertiesResponse"
@@ -1629,7 +1571,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#PathGetPropertiesRequest": {
+    "com.azure.storage_datalake#GetPathPropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1664,7 +1606,7 @@
           }
         },
         "action": {
-          "target": "com.azure.storage_datalake#PathGetPropertiesRequestAction",
+          "target": "com.azure.storage_datalake#GetPathPropertiesRequestAction",
           "traits": {
             "smithy.api#httpQuery": "action",
             "smithy.api#documentation": "Optional. If the value is \"getStatus\" only the system defined properties for the path are returned. If the value is \"getAccessControl\" the access control list is returned in the response headers (Hierarchical Namespace must be enabled for the account), otherwise the properties are returned."
@@ -1724,7 +1666,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#PathGetPropertiesRequestAction": {
+    "com.azure.storage_datalake#GetPathPropertiesRequestAction": {
       "type": "enum",
       "members": {
         "GETACCESSCONTROL": {
@@ -1742,10 +1684,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#PathDelete": {
+    "com.azure.storage_datalake#DeletePath": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#PathDeleteRequest"
+        "target": "com.azure.storage_datalake#DeletePathRequest"
       },
       "output": {
         "target": "com.azure.storage_datalake#DeletePathResponse"
@@ -1809,7 +1751,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#PathDeleteRequest": {
+    "com.azure.storage_datalake#DeletePathRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1911,13 +1853,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#PathUpdate": {
+    "com.azure.storage_datalake#UpdatePath": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#PathUpdateRequest"
+        "target": "com.azure.storage_datalake#UpdatePathRequest"
       },
       "output": {
-        "target": "com.azure.storage_datalake#PathUpdateResponse"
+        "target": "com.azure.storage_datalake#UpdatePathResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1935,7 +1877,7 @@
         "smithy.api#documentation": "Append Data | Flush Data | Set Properties | Set Access Control\n\nUploads data to be appended to a file, flushes (writes) previously uploaded data to a file, sets properties for a file or directory, or sets access control for a file or directory. Data can only be appended to a file. Concurrent writes to the same file using multiple clients are not supported. This operation supports conditional HTTP requests. For more information, see [Specifying Conditional Headers for Blob Service Operations](https://learn.microsoft.com/rest/api/storageservices/specifying-conditional-headers-for-blob-service-operations)."
       }
     },
-    "com.azure.storage_datalake#PathUpdateResponse": {
+    "com.azure.storage_datalake#UpdatePathResponse": {
       "type": "structure",
       "members": {
         "directoriesSuccessful": {
@@ -2074,7 +2016,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#PathUpdateRequest": {
+    "com.azure.storage_datalake#UpdatePathRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -2109,7 +2051,7 @@
           }
         },
         "action": {
-          "target": "com.azure.storage_datalake#PathUpdateRequestAction",
+          "target": "com.azure.storage_datalake#UpdatePathRequestAction",
           "traits": {
             "smithy.api#httpQuery": "action",
             "smithy.api#required": {},
@@ -2131,7 +2073,7 @@
           }
         },
         "mode": {
-          "target": "com.azure.storage_datalake#PathUpdateRequestMode",
+          "target": "com.azure.storage_datalake#UpdatePathRequestMode",
           "traits": {
             "smithy.api#httpQuery": "mode",
             "smithy.api#required": {},
@@ -2311,7 +2253,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#PathUpdateRequestMode": {
+    "com.azure.storage_datalake#UpdatePathRequestMode": {
       "type": "enum",
       "members": {
         "SET": {
@@ -2335,7 +2277,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#PathUpdateRequestAction": {
+    "com.azure.storage_datalake#UpdatePathRequestAction": {
       "type": "enum",
       "members": {
         "APPEND": {
@@ -2598,13 +2540,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#PathCreate": {
+    "com.azure.storage_datalake#CreatePath": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#PathCreateRequest"
+        "target": "com.azure.storage_datalake#CreatePathRequest"
       },
       "output": {
-        "target": "com.azure.storage_datalake#PathCreateResponse"
+        "target": "com.azure.storage_datalake#CreatePathResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2622,7 +2564,7 @@
         "smithy.api#documentation": "Create File | Create Directory | Rename File | Rename Directory\n\nCreate or rename a file or directory.    By default, the destination is overwritten and if the destination already exists and has a lease the lease is broken.  This operation supports conditional HTTP requests.  For more information, see [Specifying Conditional Headers for Blob Service Operations](https://learn.microsoft.com/rest/api/storageservices/specifying-conditional-headers-for-blob-service-operations).  To fail if the destination already exists, use a conditional request with If-None-Match: \"*\"."
       }
     },
-    "com.azure.storage_datalake#PathCreateResponse": {
+    "com.azure.storage_datalake#CreatePathResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -2693,7 +2635,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#PathCreateRequest": {
+    "com.azure.storage_datalake#CreatePathRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -2728,7 +2670,7 @@
           }
         },
         "resource": {
-          "target": "com.azure.storage_datalake#PathCreateRequestResource",
+          "target": "com.azure.storage_datalake#CreatePathRequestResource",
           "traits": {
             "smithy.api#httpQuery": "resource",
             "smithy.api#documentation": "Required only for Create File and Create Directory. The value must be \"file\" or \"directory\"."
@@ -2742,7 +2684,7 @@
           }
         },
         "mode": {
-          "target": "com.azure.storage_datalake#PathCreateRequestMode",
+          "target": "com.azure.storage_datalake#CreatePathRequestMode",
           "traits": {
             "smithy.api#httpQuery": "mode",
             "smithy.api#documentation": "Optional. Valid only when namespace is enabled. This parameter determines the behavior of the rename operation. The value must be \"legacy\" or \"posix\", and the default value will be \"posix\"."
@@ -2903,7 +2845,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_datalake#PathCreateRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_datalake#CreatePathRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -2945,7 +2887,7 @@
           }
         },
         "xMsExpiryOption": {
-          "target": "com.azure.storage_datalake#PathCreateRequestXMsExpiryOption",
+          "target": "com.azure.storage_datalake#CreatePathRequestXMsExpiryOption",
           "traits": {
             "smithy.api#httpHeader": "x-ms-expiry-option",
             "smithy.api#documentation": "Required. Indicates mode of the expiry time"
@@ -2970,7 +2912,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#PathCreateRequestXMsExpiryOption": {
+    "com.azure.storage_datalake#CreatePathRequestXMsExpiryOption": {
       "type": "enum",
       "members": {
         "NEVEREXPIRE": {
@@ -3000,7 +2942,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#PathCreateRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_datalake#CreatePathRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -3012,7 +2954,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#PathCreateRequestMode": {
+    "com.azure.storage_datalake#CreatePathRequestMode": {
       "type": "enum",
       "members": {
         "LEGACY": {
@@ -3030,7 +2972,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#PathCreateRequestResource": {
+    "com.azure.storage_datalake#CreatePathRequestResource": {
       "type": "enum",
       "members": {
         "DIRECTORY": {
@@ -3048,13 +2990,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#PathRead": {
+    "com.azure.storage_datalake#ReadPath": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#PathReadRequest"
+        "target": "com.azure.storage_datalake#ReadPathRequest"
       },
       "output": {
-        "target": "com.azure.storage_datalake#PathReadResponse"
+        "target": "com.azure.storage_datalake#ReadPathResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3072,7 +3014,7 @@
         "smithy.api#documentation": "Read File\n\nRead the contents of a file.  For read operations, range requests are supported. This operation supports conditional HTTP requests.  For more information, see [Specifying Conditional Headers for Blob Service Operations](https://learn.microsoft.com/rest/api/storageservices/specifying-conditional-headers-for-blob-service-operations)."
       }
     },
-    "com.azure.storage_datalake#PathReadResponse": {
+    "com.azure.storage_datalake#ReadPathResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -3241,7 +3183,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#PathReadRequest": {
+    "com.azure.storage_datalake#ReadPathRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -3346,7 +3288,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_datalake#PathReadRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_datalake#ReadPathRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -3357,7 +3299,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#PathReadRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_datalake#ReadPathRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -3369,10 +3311,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#FileSystemListBlobHierarchySegment": {
+    "com.azure.storage_datalake#ListFileSystemBlobHierarchySegment": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#FileSystemListBlobHierarchySegmentRequest"
+        "target": "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentRequest"
       },
       "output": {
         "target": "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentResponse"
@@ -3735,7 +3677,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#FileSystemListBlobHierarchySegmentRequest": {
+    "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -3783,14 +3725,14 @@
           }
         },
         "include": {
-          "target": "com.azure.storage_datalake#FileSystemListBlobHierarchySegmentRequestIncludeList",
+          "target": "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentRequestIncludeList",
           "traits": {
             "smithy.api#httpQuery": "include",
             "smithy.api#documentation": "Include this parameter to specify one or more datasets to include in the response."
           }
         },
         "showonly": {
-          "target": "com.azure.storage_datalake#FileSystemListBlobHierarchySegmentRequestShowonly",
+          "target": "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentRequestShowonly",
           "traits": {
             "smithy.api#httpQuery": "showonly",
             "smithy.api#documentation": "Include this parameter to specify one or more datasets to include in the response."
@@ -3815,7 +3757,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#FileSystemListBlobHierarchySegmentRequestShowonly": {
+    "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentRequestShowonly": {
       "type": "enum",
       "members": {
         "DELETED": {
@@ -3827,14 +3769,14 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#FileSystemListBlobHierarchySegmentRequestIncludeList": {
+    "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentRequestIncludeList": {
       "type": "list",
       "member": {
-        "target": "com.azure.storage_datalake#FileSystemListBlobHierarchySegmentRequestIncludeItem"
+        "target": "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentRequestIncludeItem"
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#FileSystemListBlobHierarchySegmentRequestIncludeItem": {
+    "com.azure.storage_datalake#ListFileSystemBlobHierarchySegmentRequestIncludeItem": {
       "type": "enum",
       "members": {
         "COPY": {
@@ -3882,10 +3824,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#FileSystemListPaths": {
+    "com.azure.storage_datalake#ListFileSystemPaths": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#FileSystemListPathsRequest"
+        "target": "com.azure.storage_datalake#ListFileSystemPathsRequest"
       },
       "output": {
         "target": "com.azure.storage_datalake#ListFileSystemPathsResponse"
@@ -4018,7 +3960,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#FileSystemListPathsRequest": {
+    "com.azure.storage_datalake#ListFileSystemPathsRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -4099,10 +4041,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#FileSystemGetProperties": {
+    "com.azure.storage_datalake#GetFileSystemProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#FileSystemGetPropertiesRequest"
+        "target": "com.azure.storage_datalake#GetFileSystemPropertiesRequest"
       },
       "output": {
         "target": "com.azure.storage_datalake#GetFileSystemPropertiesResponse"
@@ -4183,7 +4125,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#FileSystemGetPropertiesRequest": {
+    "com.azure.storage_datalake#GetFileSystemPropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -4221,10 +4163,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#FileSystemDelete": {
+    "com.azure.storage_datalake#DeleteFileSystem": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#FileSystemDeleteRequest"
+        "target": "com.azure.storage_datalake#DeleteFileSystemRequest"
       },
       "output": {
         "target": "com.azure.storage_datalake#DeleteFileSystemResponse"
@@ -4277,7 +4219,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#FileSystemDeleteRequest": {
+    "com.azure.storage_datalake#DeleteFileSystemRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -4329,13 +4271,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#FileSystemSetProperties": {
+    "com.azure.storage_datalake#SetFileSystemProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#FileSystemSetPropertiesRequest"
+        "target": "com.azure.storage_datalake#SetFileSystemPropertiesRequest"
       },
       "output": {
-        "target": "com.azure.storage_datalake#FileSystemSetPropertiesResponse"
+        "target": "com.azure.storage_datalake#SetFileSystemPropertiesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4356,7 +4298,7 @@
         "smithy.api#documentation": "Set FileSystem Properties\n\nSet properties for the FileSystem.  This operation supports conditional HTTP requests.  For more information, see [Specifying Conditional Headers for Blob Service Operations](https://learn.microsoft.com/rest/api/storageservices/specifying-conditional-headers-for-blob-service-operations)."
       }
     },
-    "com.azure.storage_datalake#FileSystemSetPropertiesResponse": {
+    "com.azure.storage_datalake#SetFileSystemPropertiesResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -4399,7 +4341,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#FileSystemSetPropertiesRequest": {
+    "com.azure.storage_datalake#SetFileSystemPropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -4458,13 +4400,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#FileSystemCreate": {
+    "com.azure.storage_datalake#CreateFileSystem": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#FileSystemCreateRequest"
+        "target": "com.azure.storage_datalake#CreateFileSystemRequest"
       },
       "output": {
-        "target": "com.azure.storage_datalake#FileSystemCreateResponse"
+        "target": "com.azure.storage_datalake#CreateFileSystemResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4485,7 +4427,7 @@
         "smithy.api#documentation": "Create FileSystem\n\nCreate a FileSystem rooted at the specified location. If the FileSystem already exists, the operation fails.  This operation does not support conditional HTTP requests."
       }
     },
-    "com.azure.storage_datalake#FileSystemCreateResponse": {
+    "com.azure.storage_datalake#CreateFileSystemResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -4535,7 +4477,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_datalake#FileSystemCreateRequest": {
+    "com.azure.storage_datalake#CreateFileSystemRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -4580,10 +4522,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_datalake#ServiceListFileSystems": {
+    "com.azure.storage_datalake#ListServiceFileSystems": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_datalake#ServiceListFileSystemsRequest"
+        "target": "com.azure.storage_datalake#ListServiceFileSystemsRequest"
       },
       "output": {
         "target": "com.azure.storage_datalake#ListServiceFileSystemsResponse"
@@ -4679,7 +4621,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_datalake#ServiceListFileSystemsRequest": {
+    "com.azure.storage_datalake#ListServiceFileSystemsRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -4735,61 +4677,61 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.storage_datalake#PathUndelete"
+          "target": "com.azure.storage_datalake#UndeletePath"
         },
         {
-          "target": "com.azure.storage_datalake#PathSetExpiry"
+          "target": "com.azure.storage_datalake#SetPathExpiry"
         },
         {
           "target": "com.azure.storage_datalake#PathAppendData"
         },
         {
-          "target": "com.azure.storage_datalake#PathFlushData"
+          "target": "com.azure.storage_datalake#FlushPathData"
         },
         {
-          "target": "com.azure.storage_datalake#PathSetAccessControlRecursive"
+          "target": "com.azure.storage_datalake#SetPathAccessControlRecursive"
         },
         {
-          "target": "com.azure.storage_datalake#PathSetAccessControl"
+          "target": "com.azure.storage_datalake#SetPathAccessControl"
         },
         {
-          "target": "com.azure.storage_datalake#PathGetProperties"
+          "target": "com.azure.storage_datalake#GetPathProperties"
         },
         {
-          "target": "com.azure.storage_datalake#PathDelete"
+          "target": "com.azure.storage_datalake#DeletePath"
         },
         {
-          "target": "com.azure.storage_datalake#PathUpdate"
+          "target": "com.azure.storage_datalake#UpdatePath"
         },
         {
           "target": "com.azure.storage_datalake#PathLease"
         },
         {
-          "target": "com.azure.storage_datalake#PathCreate"
+          "target": "com.azure.storage_datalake#CreatePath"
         },
         {
-          "target": "com.azure.storage_datalake#PathRead"
+          "target": "com.azure.storage_datalake#ReadPath"
         },
         {
-          "target": "com.azure.storage_datalake#FileSystemListBlobHierarchySegment"
+          "target": "com.azure.storage_datalake#ListFileSystemBlobHierarchySegment"
         },
         {
-          "target": "com.azure.storage_datalake#FileSystemListPaths"
+          "target": "com.azure.storage_datalake#ListFileSystemPaths"
         },
         {
-          "target": "com.azure.storage_datalake#FileSystemGetProperties"
+          "target": "com.azure.storage_datalake#GetFileSystemProperties"
         },
         {
-          "target": "com.azure.storage_datalake#FileSystemDelete"
+          "target": "com.azure.storage_datalake#DeleteFileSystem"
         },
         {
-          "target": "com.azure.storage_datalake#FileSystemSetProperties"
+          "target": "com.azure.storage_datalake#SetFileSystemProperties"
         },
         {
-          "target": "com.azure.storage_datalake#FileSystemCreate"
+          "target": "com.azure.storage_datalake#CreateFileSystem"
         },
         {
-          "target": "com.azure.storage_datalake#ServiceListFileSystems"
+          "target": "com.azure.storage_datalake#ListServiceFileSystems"
         }
       ],
       "traits": {

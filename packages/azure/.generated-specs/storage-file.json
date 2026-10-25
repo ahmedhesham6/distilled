@@ -15,173 +15,16 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.storage_file#FileCreateHardLink": "com.azure.storage_file#CreateFileHardLink",
-      "com.azure.storage_file#FileCreateHardLinkResponse": "com.azure.storage_file#CreateFileHardLinkResponse",
-      "com.azure.storage_file#FileCreateHardLinkRequest": "com.azure.storage_file#CreateFileHardLinkRequest",
-      "com.azure.storage_file#FileCreateHardLinkRequestXMsFileRequestIntent": "com.azure.storage_file#CreateFileHardLinkRequestXMsFileRequestIntent",
-      "com.azure.storage_file#FileCreateSymbolicLink": "com.azure.storage_file#CreateFileSymbolicLink",
-      "com.azure.storage_file#FileCreateSymbolicLinkResponse": "com.azure.storage_file#CreateFileSymbolicLinkResponse",
-      "com.azure.storage_file#FileCreateSymbolicLinkRequest": "com.azure.storage_file#CreateFileSymbolicLinkRequest",
-      "com.azure.storage_file#FileCreateSymbolicLinkRequestXMsFileRequestIntent": "com.azure.storage_file#CreateFileSymbolicLinkRequestXMsFileRequestIntent",
-      "com.azure.storage_file#FileGetSymbolicLink": "com.azure.storage_file#GetFileSymbolicLink",
-      "com.azure.storage_file#FileGetSymbolicLinkResponse": "com.azure.storage_file#GetFileSymbolicLinkResponse",
-      "com.azure.storage_file#FileGetSymbolicLinkRequest": "com.azure.storage_file#GetFileSymbolicLinkRequest",
-      "com.azure.storage_file#FileGetSymbolicLinkRequestXMsFileRequestIntent": "com.azure.storage_file#GetFileSymbolicLinkRequestXMsFileRequestIntent",
-      "com.azure.storage_file#FileRename": "com.azure.storage_file#RenameFile",
-      "com.azure.storage_file#FileRenameResponse": "com.azure.storage_file#RenameFileResponse",
-      "com.azure.storage_file#FileRenameRequest": "com.azure.storage_file#RenameFileRequest",
-      "com.azure.storage_file#FileRenameRequestXMsFileRequestIntent": "com.azure.storage_file#RenameFileRequestXMsFileRequestIntent",
-      "com.azure.storage_file#FileRenameRequestXMsFilePermissionFormat": "com.azure.storage_file#RenameFileRequestXMsFilePermissionFormat",
-      "com.azure.storage_file#FileListHandles": "com.azure.storage_file#ListFileHandles",
-      "com.azure.storage_file#FileListHandlesRequest": "com.azure.storage_file#ListFileHandlesRequest",
-      "com.azure.storage_file#FileListHandlesRequestXMsFileRequestIntent": "com.azure.storage_file#ListFileHandlesRequestXMsFileRequestIntent",
-      "com.azure.storage_file#FileUploadRangeFromURL": "com.azure.storage_file#UploadFileRangeFromURL",
-      "com.azure.storage_file#FileUploadRangeFromURLResponse": "com.azure.storage_file#UploadFileRangeFromURLResponse",
-      "com.azure.storage_file#FileUploadRangeFromURLRequest": "com.azure.storage_file#UploadFileRangeFromURLRequest",
-      "com.azure.storage_file#FileUploadRangeFromURLRequestXMsFileRequestIntent": "com.azure.storage_file#UploadFileRangeFromURLRequestXMsFileRequestIntent",
-      "com.azure.storage_file#FileUploadRangeFromURLRequestXMsFileLastWriteTime": "com.azure.storage_file#UploadFileRangeFromURLRequestXMsFileLastWriteTime",
-      "com.azure.storage_file#FileUploadRange": "com.azure.storage_file#UploadFileRange",
-      "com.azure.storage_file#FileUploadRangeResponse": "com.azure.storage_file#UploadFileRangeResponse",
-      "com.azure.storage_file#FileUploadRangeRequest": "com.azure.storage_file#UploadFileRangeRequest",
-      "com.azure.storage_file#FileUploadRangeRequestXMsFileRequestIntent": "com.azure.storage_file#UploadFileRangeRequestXMsFileRequestIntent",
-      "com.azure.storage_file#FileUploadRangeRequestXMsFileLastWriteTime": "com.azure.storage_file#UploadFileRangeRequestXMsFileLastWriteTime",
-      "com.azure.storage_file#FileUploadRangeRequestXMsWrite": "com.azure.storage_file#UploadFileRangeRequestXMsWrite",
-      "com.azure.storage_file#FileSetMetadata": "com.azure.storage_file#SetFileMetadata",
-      "com.azure.storage_file#FileSetMetadataResponse": "com.azure.storage_file#SetFileMetadataResponse",
-      "com.azure.storage_file#FileSetMetadataRequest": "com.azure.storage_file#SetFileMetadataRequest",
-      "com.azure.storage_file#FileSetMetadataRequestXMsFileRequestIntent": "com.azure.storage_file#SetFileMetadataRequestXMsFileRequestIntent",
-      "com.azure.storage_file#FileSetHTTPHeaders": "com.azure.storage_file#SetFileHTTPHeaders",
-      "com.azure.storage_file#FileSetHTTPHeadersResponse": "com.azure.storage_file#SetFileHTTPHeadersResponse",
-      "com.azure.storage_file#FileSetHTTPHeadersRequest": "com.azure.storage_file#SetFileHTTPHeadersRequest",
-      "com.azure.storage_file#FileSetHTTPHeadersRequestXMsFileRequestIntent": "com.azure.storage_file#SetFileHTTPHeadersRequestXMsFileRequestIntent",
-      "com.azure.storage_file#FileSetHTTPHeadersRequestXMsFilePermissionFormat": "com.azure.storage_file#SetFileHTTPHeadersRequestXMsFilePermissionFormat",
-      "com.azure.storage_file#FileGetProperties": "com.azure.storage_file#GetFileProperties",
-      "com.azure.storage_file#FileGetPropertiesRequest": "com.azure.storage_file#GetFilePropertiesRequest",
-      "com.azure.storage_file#FileGetPropertiesRequestXMsFileRequestIntent": "com.azure.storage_file#GetFilePropertiesRequestXMsFileRequestIntent",
-      "com.azure.storage_file#FileDelete": "com.azure.storage_file#DeleteFile",
-      "com.azure.storage_file#FileDeleteRequest": "com.azure.storage_file#DeleteFileRequest",
-      "com.azure.storage_file#FileDeleteRequestXMsFileRequestIntent": "com.azure.storage_file#DeleteFileRequestXMsFileRequestIntent",
-      "com.azure.storage_file#FileCreate": "com.azure.storage_file#CreateFile",
-      "com.azure.storage_file#FileCreateResponse": "com.azure.storage_file#CreateFileResponse",
-      "com.azure.storage_file#FileCreateRequest": "com.azure.storage_file#CreateFileRequest",
-      "com.azure.storage_file#FileCreateRequestXMsFilePropertySemantics": "com.azure.storage_file#CreateFileRequestXMsFilePropertySemantics",
-      "com.azure.storage_file#FileCreateRequestXMsFileFileType": "com.azure.storage_file#CreateFileRequestXMsFileFileType",
-      "com.azure.storage_file#FileCreateRequestXMsFileRequestIntent": "com.azure.storage_file#CreateFileRequestXMsFileRequestIntent",
-      "com.azure.storage_file#FileCreateRequestXMsFilePermissionFormat": "com.azure.storage_file#CreateFileRequestXMsFilePermissionFormat",
-      "com.azure.storage_file#FileDownload": "com.azure.storage_file#DownloadFile",
-      "com.azure.storage_file#FileDownloadResponse": "com.azure.storage_file#DownloadFileResponse",
-      "com.azure.storage_file#FileDownloadRequest": "com.azure.storage_file#DownloadFileRequest",
-      "com.azure.storage_file#FileDownloadRequestXMsFileRequestIntent": "com.azure.storage_file#DownloadFileRequestXMsFileRequestIntent",
-      "com.azure.storage_file#DirectoryRename": "com.azure.storage_file#RenameDirectory",
-      "com.azure.storage_file#DirectoryRenameResponse": "com.azure.storage_file#RenameDirectoryResponse",
-      "com.azure.storage_file#DirectoryRenameRequest": "com.azure.storage_file#RenameDirectoryRequest",
-      "com.azure.storage_file#DirectoryRenameRequestXMsFileRequestIntent": "com.azure.storage_file#RenameDirectoryRequestXMsFileRequestIntent",
-      "com.azure.storage_file#DirectoryRenameRequestXMsFilePermissionFormat": "com.azure.storage_file#RenameDirectoryRequestXMsFilePermissionFormat",
-      "com.azure.storage_file#DirectoryListHandles": "com.azure.storage_file#ListDirectoryHandles",
-      "com.azure.storage_file#DirectoryListHandlesRequest": "com.azure.storage_file#ListDirectoryHandlesRequest",
-      "com.azure.storage_file#DirectoryListHandlesRequestXMsFileRequestIntent": "com.azure.storage_file#ListDirectoryHandlesRequestXMsFileRequestIntent",
-      "com.azure.storage_file#DirectorySetMetadata": "com.azure.storage_file#SetDirectoryMetadata",
-      "com.azure.storage_file#DirectorySetMetadataResponse": "com.azure.storage_file#SetDirectoryMetadataResponse",
-      "com.azure.storage_file#DirectorySetMetadataRequest": "com.azure.storage_file#SetDirectoryMetadataRequest",
-      "com.azure.storage_file#DirectorySetMetadataRequestXMsFileRequestIntent": "com.azure.storage_file#SetDirectoryMetadataRequestXMsFileRequestIntent",
-      "com.azure.storage_file#DirectorySetProperties": "com.azure.storage_file#SetDirectoryProperties",
-      "com.azure.storage_file#DirectorySetPropertiesResponse": "com.azure.storage_file#SetDirectoryPropertiesResponse",
-      "com.azure.storage_file#DirectorySetPropertiesRequest": "com.azure.storage_file#SetDirectoryPropertiesRequest",
-      "com.azure.storage_file#DirectorySetPropertiesRequestXMsFileRequestIntent": "com.azure.storage_file#SetDirectoryPropertiesRequestXMsFileRequestIntent",
-      "com.azure.storage_file#DirectorySetPropertiesRequestXMsFilePermissionFormat": "com.azure.storage_file#SetDirectoryPropertiesRequestXMsFilePermissionFormat",
-      "com.azure.storage_file#DirectoryDelete": "com.azure.storage_file#DeleteDirectory",
-      "com.azure.storage_file#DirectoryDeleteRequest": "com.azure.storage_file#DeleteDirectoryRequest",
-      "com.azure.storage_file#DirectoryDeleteRequestXMsFileRequestIntent": "com.azure.storage_file#DeleteDirectoryRequestXMsFileRequestIntent",
-      "com.azure.storage_file#DirectoryCreate": "com.azure.storage_file#CreateDirectory",
-      "com.azure.storage_file#DirectoryCreateResponse": "com.azure.storage_file#CreateDirectoryResponse",
-      "com.azure.storage_file#DirectoryCreateRequest": "com.azure.storage_file#CreateDirectoryRequest",
-      "com.azure.storage_file#DirectoryCreateRequestXMsFilePropertySemantics": "com.azure.storage_file#CreateDirectoryRequestXMsFilePropertySemantics",
-      "com.azure.storage_file#DirectoryCreateRequestXMsFileRequestIntent": "com.azure.storage_file#CreateDirectoryRequestXMsFileRequestIntent",
-      "com.azure.storage_file#DirectoryCreateRequestXMsFilePermissionFormat": "com.azure.storage_file#CreateDirectoryRequestXMsFilePermissionFormat",
-      "com.azure.storage_file#DirectoryGetProperties": "com.azure.storage_file#GetDirectoryProperties",
-      "com.azure.storage_file#DirectoryGetPropertiesResponse": "com.azure.storage_file#GetDirectoryPropertiesResponse",
-      "com.azure.storage_file#DirectoryGetPropertiesRequest": "com.azure.storage_file#GetDirectoryPropertiesRequest",
-      "com.azure.storage_file#DirectoryGetPropertiesRequestXMsFileRequestIntent": "com.azure.storage_file#GetDirectoryPropertiesRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareRestore": "com.azure.storage_file#RestoreShare",
-      "com.azure.storage_file#ShareRestoreResponse": "com.azure.storage_file#RestoreShareResponse",
-      "com.azure.storage_file#ShareRestoreRequest": "com.azure.storage_file#RestoreShareRequest",
-      "com.azure.storage_file#ShareRestoreRequestXMsFileRequestIntent": "com.azure.storage_file#RestoreShareRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareGetStatistics": "com.azure.storage_file#GetShareStatistics",
-      "com.azure.storage_file#ShareGetStatisticsRequest": "com.azure.storage_file#GetShareStatisticsRequest",
-      "com.azure.storage_file#ShareGetStatisticsRequestXMsFileRequestIntent": "com.azure.storage_file#GetShareStatisticsRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareSetAccessPolicy": "com.azure.storage_file#SetShareAccessPolicy",
-      "com.azure.storage_file#ShareSetAccessPolicyResponse": "com.azure.storage_file#SetShareAccessPolicyResponse",
-      "com.azure.storage_file#ShareSetAccessPolicyRequest": "com.azure.storage_file#SetShareAccessPolicyRequest",
-      "com.azure.storage_file#ShareSetAccessPolicyRequestXMsFileRequestIntent": "com.azure.storage_file#SetShareAccessPolicyRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareGetAccessPolicy": "com.azure.storage_file#GetShareAccessPolicy",
-      "com.azure.storage_file#ShareGetAccessPolicyResponse": "com.azure.storage_file#GetShareAccessPolicyResponse",
-      "com.azure.storage_file#ShareGetAccessPolicyRequest": "com.azure.storage_file#GetShareAccessPolicyRequest",
-      "com.azure.storage_file#ShareGetAccessPolicyRequestXMsFileRequestIntent": "com.azure.storage_file#GetShareAccessPolicyRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareSetMetadata": "com.azure.storage_file#SetShareMetadata",
-      "com.azure.storage_file#ShareSetMetadataResponse": "com.azure.storage_file#SetShareMetadataResponse",
-      "com.azure.storage_file#ShareSetMetadataRequest": "com.azure.storage_file#SetShareMetadataRequest",
-      "com.azure.storage_file#ShareSetMetadataRequestXMsFileRequestIntent": "com.azure.storage_file#SetShareMetadataRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareSetProperties": "com.azure.storage_file#SetShareProperties",
-      "com.azure.storage_file#ShareSetPropertiesResponse": "com.azure.storage_file#SetSharePropertiesResponse",
-      "com.azure.storage_file#ShareSetPropertiesRequest": "com.azure.storage_file#SetSharePropertiesRequest",
-      "com.azure.storage_file#ShareSetPropertiesRequestXMsFileRequestIntent": "com.azure.storage_file#SetSharePropertiesRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareSetPropertiesRequestXMsRootSquash": "com.azure.storage_file#SetSharePropertiesRequestXMsRootSquash",
-      "com.azure.storage_file#ShareSetPropertiesRequestXMsAccessTier": "com.azure.storage_file#SetSharePropertiesRequestXMsAccessTier",
-      "com.azure.storage_file#ShareCreatePermission": "com.azure.storage_file#CreateSharePermission",
-      "com.azure.storage_file#ShareCreatePermissionRequest": "com.azure.storage_file#CreateSharePermissionRequest",
-      "com.azure.storage_file#ShareCreatePermissionRequestFormat": "com.azure.storage_file#CreateSharePermissionRequestFormat",
-      "com.azure.storage_file#ShareCreatePermissionRequestXMsFileRequestIntent": "com.azure.storage_file#CreateSharePermissionRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareGetPermission": "com.azure.storage_file#GetSharePermission",
-      "com.azure.storage_file#ShareGetPermissionRequest": "com.azure.storage_file#GetSharePermissionRequest",
-      "com.azure.storage_file#ShareGetPermissionRequestXMsFileRequestIntent": "com.azure.storage_file#GetSharePermissionRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareGetPermissionRequestXMsFilePermissionFormat": "com.azure.storage_file#GetSharePermissionRequestXMsFilePermissionFormat",
-      "com.azure.storage_file#ShareCreateSnapshot": "com.azure.storage_file#CreateShareSnapshot",
-      "com.azure.storage_file#ShareCreateSnapshotResponse": "com.azure.storage_file#CreateShareSnapshotResponse",
-      "com.azure.storage_file#ShareCreateSnapshotRequest": "com.azure.storage_file#CreateShareSnapshotRequest",
-      "com.azure.storage_file#ShareCreateSnapshotRequestXMsFileRequestIntent": "com.azure.storage_file#CreateShareSnapshotRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareRenewLease": "com.azure.storage_file#RenewShareLease",
-      "com.azure.storage_file#ShareRenewLeaseResponse": "com.azure.storage_file#RenewShareLeaseResponse",
-      "com.azure.storage_file#ShareRenewLeaseRequest": "com.azure.storage_file#RenewShareLeaseRequest",
-      "com.azure.storage_file#ShareRenewLeaseRequestXMsFileRequestIntent": "com.azure.storage_file#RenewShareLeaseRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareDelete": "com.azure.storage_file#DeleteShare",
-      "com.azure.storage_file#ShareDeleteRequest": "com.azure.storage_file#DeleteShareRequest",
-      "com.azure.storage_file#ShareDeleteRequestXMsFileRequestIntent": "com.azure.storage_file#DeleteShareRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareDeleteRequestXMsDeleteSnapshots": "com.azure.storage_file#DeleteShareRequestXMsDeleteSnapshots",
-      "com.azure.storage_file#ShareCreate": "com.azure.storage_file#CreateShare",
-      "com.azure.storage_file#ShareCreateResponse": "com.azure.storage_file#CreateShareResponse",
-      "com.azure.storage_file#ShareCreateRequest": "com.azure.storage_file#CreateShareRequest",
-      "com.azure.storage_file#ShareCreateRequestXMsFileRequestIntent": "com.azure.storage_file#CreateShareRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ShareCreateRequestXMsRootSquash": "com.azure.storage_file#CreateShareRequestXMsRootSquash",
-      "com.azure.storage_file#ShareCreateRequestXMsAccessTier": "com.azure.storage_file#CreateShareRequestXMsAccessTier",
-      "com.azure.storage_file#ShareGetProperties": "com.azure.storage_file#GetShareProperties",
-      "com.azure.storage_file#ShareGetPropertiesResponse": "com.azure.storage_file#GetSharePropertiesResponse",
-      "com.azure.storage_file#ShareGetPropertiesRequest": "com.azure.storage_file#GetSharePropertiesRequest",
-      "com.azure.storage_file#ShareGetPropertiesRequestXMsFileRequestIntent": "com.azure.storage_file#GetSharePropertiesRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ServiceGetUserDelegationKey": "com.azure.storage_file#GetServiceUserDelegationKey",
-      "com.azure.storage_file#ServiceGetUserDelegationKeyRequest": "com.azure.storage_file#GetServiceUserDelegationKeyRequest",
-      "com.azure.storage_file#ServiceListSharesSegment": "com.azure.storage_file#ListServiceSharesSegment",
-      "com.azure.storage_file#ServiceListSharesSegmentRequest": "com.azure.storage_file#ListServiceSharesSegmentRequest",
-      "com.azure.storage_file#ServiceListSharesSegmentRequestXMsFileRequestIntent": "com.azure.storage_file#ListServiceSharesSegmentRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ServiceListSharesSegmentRequestIncludeList": "com.azure.storage_file#ListServiceSharesSegmentRequestIncludeList",
-      "com.azure.storage_file#ServiceListSharesSegmentRequestIncludeItem": "com.azure.storage_file#ListServiceSharesSegmentRequestIncludeItem",
-      "com.azure.storage_file#ServiceSetProperties": "com.azure.storage_file#SetServiceProperties",
-      "com.azure.storage_file#ServiceSetPropertiesRequest": "com.azure.storage_file#SetServicePropertiesRequest",
-      "com.azure.storage_file#ServiceSetPropertiesRequestCorsList": "com.azure.storage_file#SetServicePropertiesRequestCorsList",
-      "com.azure.storage_file#ServiceSetPropertiesRequestXMsFileRequestIntent": "com.azure.storage_file#SetServicePropertiesRequestXMsFileRequestIntent",
-      "com.azure.storage_file#ServiceGetProperties": "com.azure.storage_file#GetServiceProperties",
-      "com.azure.storage_file#ServiceGetPropertiesRequest": "com.azure.storage_file#GetServicePropertiesRequest",
-      "com.azure.storage_file#ServiceGetPropertiesRequestXMsFileRequestIntent": "com.azure.storage_file#GetServicePropertiesRequestXMsFileRequestIntent"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.storage_file#FileCreateHardLink": {
+    "com.azure.storage_file#CreateFileHardLink": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileCreateHardLinkRequest"
+        "target": "com.azure.storage_file#CreateFileHardLinkRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#FileCreateHardLinkResponse"
+        "target": "com.azure.storage_file#CreateFileHardLinkResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -205,7 +48,7 @@
         "smithy.api#documentation": "Creates a hard link."
       }
     },
-    "com.azure.storage_file#FileCreateHardLinkResponse": {
+    "com.azure.storage_file#CreateFileHardLinkResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -325,7 +168,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileCreateHardLinkRequest": {
+    "com.azure.storage_file#CreateFileHardLinkRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -390,7 +233,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileCreateHardLinkRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#CreateFileHardLinkRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -401,7 +244,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileCreateHardLinkRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#CreateFileHardLinkRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -413,13 +256,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileCreateSymbolicLink": {
+    "com.azure.storage_file#CreateFileSymbolicLink": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileCreateSymbolicLinkRequest"
+        "target": "com.azure.storage_file#CreateFileSymbolicLinkRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#FileCreateSymbolicLinkResponse"
+        "target": "com.azure.storage_file#CreateFileSymbolicLinkResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -440,7 +283,7 @@
         "smithy.api#documentation": "Creates a symbolic link."
       }
     },
-    "com.azure.storage_file#FileCreateSymbolicLinkResponse": {
+    "com.azure.storage_file#CreateFileSymbolicLinkResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -553,7 +396,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileCreateSymbolicLinkRequest": {
+    "com.azure.storage_file#CreateFileSymbolicLinkRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -646,7 +489,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileCreateSymbolicLinkRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#CreateFileSymbolicLinkRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -673,7 +516,7 @@
         "target": "smithy.api#String"
       }
     },
-    "com.azure.storage_file#FileCreateSymbolicLinkRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#CreateFileSymbolicLinkRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -685,13 +528,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileGetSymbolicLink": {
+    "com.azure.storage_file#GetFileSymbolicLink": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileGetSymbolicLinkRequest"
+        "target": "com.azure.storage_file#GetFileSymbolicLinkRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#FileGetSymbolicLinkResponse"
+        "target": "com.azure.storage_file#GetFileSymbolicLinkResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -711,7 +554,7 @@
         }
       }
     },
-    "com.azure.storage_file#FileGetSymbolicLinkResponse": {
+    "com.azure.storage_file#GetFileSymbolicLinkResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -768,7 +611,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileGetSymbolicLinkRequest": {
+    "com.azure.storage_file#GetFileSymbolicLinkRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -825,7 +668,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileGetSymbolicLinkRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#GetFileSymbolicLinkRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -836,7 +679,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileGetSymbolicLinkRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#GetFileSymbolicLinkRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -848,13 +691,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileRename": {
+    "com.azure.storage_file#RenameFile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileRenameRequest"
+        "target": "com.azure.storage_file#RenameFileRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#FileRenameResponse"
+        "target": "com.azure.storage_file#RenameFileResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -875,7 +718,7 @@
         "smithy.api#documentation": "Renames a file"
       }
     },
-    "com.azure.storage_file#FileRenameResponse": {
+    "com.azure.storage_file#RenameFileResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -974,7 +817,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileRenameRequest": {
+    "com.azure.storage_file#RenameFileRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1088,7 +931,7 @@
           }
         },
         "xMsFilePermissionFormat": {
-          "target": "com.azure.storage_file#FileRenameRequestXMsFilePermissionFormat",
+          "target": "com.azure.storage_file#RenameFileRequestXMsFilePermissionFormat",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-permission-format",
             "smithy.api#documentation": "Optional. Available for version 2023-06-01 and later. Specifies the format in which the permission is returned. Acceptable values are SDDL or binary. If x-ms-file-permission-format is unspecified or explicitly set to SDDL, the permission is returned in SDDL format. If x-ms-file-permission-format is explicitly set to binary, the permission is returned as a base64 string representing the binary encoding of the permission"
@@ -1123,7 +966,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileRenameRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#RenameFileRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -1141,7 +984,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileRenameRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#RenameFileRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -1153,7 +996,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileRenameRequestXMsFilePermissionFormat": {
+    "com.azure.storage_file#RenameFileRequestXMsFilePermissionFormat": {
       "type": "enum",
       "members": {
         "SDDL": {
@@ -1343,10 +1186,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileListHandles": {
+    "com.azure.storage_file#ListFileHandles": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileListHandlesRequest"
+        "target": "com.azure.storage_file#ListFileHandlesRequest"
       },
       "output": {
         "target": "com.azure.storage_file#ListFileHandlesResponse"
@@ -1552,7 +1395,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileListHandlesRequest": {
+    "com.azure.storage_file#ListFileHandlesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1623,7 +1466,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileListHandlesRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#ListFileHandlesRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -1634,7 +1477,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileListHandlesRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#ListFileHandlesRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -1646,13 +1489,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileAbortCopy": {
+    "com.azure.storage_file#CopyFileAbort": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileAbortCopyRequest"
+        "target": "com.azure.storage_file#CopyFileAbortRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#FileAbortCopyResponse"
+        "target": "com.azure.storage_file#CopyFileAbortResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1676,7 +1519,7 @@
         "smithy.api#documentation": "Aborts a pending Copy File operation, and leaves a destination file with zero length and full metadata."
       }
     },
-    "com.azure.storage_file#FileAbortCopyResponse": {
+    "com.azure.storage_file#CopyFileAbortResponse": {
       "type": "structure",
       "members": {
         "xMsRequestId": {
@@ -1705,7 +1548,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileAbortCopyRequest": {
+    "com.azure.storage_file#CopyFileAbortRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1770,7 +1613,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileAbortCopyRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#CopyFileAbortRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -1781,7 +1624,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileAbortCopyRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#CopyFileAbortRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -2431,13 +2274,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileUploadRangeFromURL": {
+    "com.azure.storage_file#UploadFileRangeFromURL": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileUploadRangeFromURLRequest"
+        "target": "com.azure.storage_file#UploadFileRangeFromURLRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#FileUploadRangeFromURLResponse"
+        "target": "com.azure.storage_file#UploadFileRangeFromURLResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2461,7 +2304,7 @@
         "smithy.api#documentation": "Upload a range of bytes to a file where the contents are read from a URL."
       }
     },
-    "com.azure.storage_file#FileUploadRangeFromURLResponse": {
+    "com.azure.storage_file#UploadFileRangeFromURLResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -2525,7 +2368,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileUploadRangeFromURLRequest": {
+    "com.azure.storage_file#UploadFileRangeFromURLRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -2626,7 +2469,7 @@
           }
         },
         "xMsFileLastWriteTime": {
-          "target": "com.azure.storage_file#FileUploadRangeFromURLRequestXMsFileLastWriteTime",
+          "target": "com.azure.storage_file#UploadFileRangeFromURLRequestXMsFileLastWriteTime",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-last-write-time",
             "smithy.api#documentation": "If the file last write time should be preserved or overwritten"
@@ -2647,7 +2490,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileUploadRangeFromURLRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#UploadFileRangeFromURLRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -2658,7 +2501,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileUploadRangeFromURLRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#UploadFileRangeFromURLRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -2670,7 +2513,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileUploadRangeFromURLRequestXMsFileLastWriteTime": {
+    "com.azure.storage_file#UploadFileRangeFromURLRequestXMsFileLastWriteTime": {
       "type": "enum",
       "members": {
         "NOW": {
@@ -2688,13 +2531,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileUploadRange": {
+    "com.azure.storage_file#UploadFileRange": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileUploadRangeRequest"
+        "target": "com.azure.storage_file#UploadFileRangeRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#FileUploadRangeResponse"
+        "target": "com.azure.storage_file#UploadFileRangeResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2715,7 +2558,7 @@
         "smithy.api#documentation": "Upload a range of bytes to a file."
       }
     },
-    "com.azure.storage_file#FileUploadRangeResponse": {
+    "com.azure.storage_file#UploadFileRangeResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -2786,7 +2629,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileUploadRangeRequest": {
+    "com.azure.storage_file#UploadFileRangeRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -2837,7 +2680,7 @@
           }
         },
         "xMsWrite": {
-          "target": "com.azure.storage_file#FileUploadRangeRequestXMsWrite",
+          "target": "com.azure.storage_file#UploadFileRangeRequestXMsWrite",
           "traits": {
             "smithy.api#httpHeader": "x-ms-write",
             "smithy.api#required": {},
@@ -2859,7 +2702,7 @@
           }
         },
         "xMsFileLastWriteTime": {
-          "target": "com.azure.storage_file#FileUploadRangeRequestXMsFileLastWriteTime",
+          "target": "com.azure.storage_file#UploadFileRangeRequestXMsFileLastWriteTime",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-last-write-time",
             "smithy.api#documentation": "If the file last write time should be preserved or overwritten"
@@ -2873,7 +2716,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileUploadRangeRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#UploadFileRangeRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -2904,7 +2747,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileUploadRangeRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#UploadFileRangeRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -2916,7 +2759,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileUploadRangeRequestXMsFileLastWriteTime": {
+    "com.azure.storage_file#UploadFileRangeRequestXMsFileLastWriteTime": {
       "type": "enum",
       "members": {
         "NOW": {
@@ -2934,7 +2777,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileUploadRangeRequestXMsWrite": {
+    "com.azure.storage_file#UploadFileRangeRequestXMsWrite": {
       "type": "enum",
       "members": {
         "UPDATE": {
@@ -3657,13 +3500,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileSetMetadata": {
+    "com.azure.storage_file#SetFileMetadata": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileSetMetadataRequest"
+        "target": "com.azure.storage_file#SetFileMetadataRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#FileSetMetadataResponse"
+        "target": "com.azure.storage_file#SetFileMetadataResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3684,7 +3527,7 @@
         "smithy.api#documentation": "Updates user-defined metadata for the specified file."
       }
     },
-    "com.azure.storage_file#FileSetMetadataResponse": {
+    "com.azure.storage_file#SetFileMetadataResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -3727,7 +3570,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileSetMetadataRequest": {
+    "com.azure.storage_file#SetFileMetadataRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -3784,7 +3627,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileSetMetadataRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#SetFileMetadataRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -3802,7 +3645,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileSetMetadataRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#SetFileMetadataRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -3814,13 +3657,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileSetHTTPHeaders": {
+    "com.azure.storage_file#SetFileHTTPHeaders": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileSetHTTPHeadersRequest"
+        "target": "com.azure.storage_file#SetFileHTTPHeadersRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#FileSetHTTPHeadersResponse"
+        "target": "com.azure.storage_file#SetFileHTTPHeadersResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3841,7 +3684,7 @@
         "smithy.api#documentation": "Sets HTTP headers on the file."
       }
     },
-    "com.azure.storage_file#FileSetHTTPHeadersResponse": {
+    "com.azure.storage_file#SetFileHTTPHeadersResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -3968,7 +3811,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileSetHTTPHeadersRequest": {
+    "com.azure.storage_file#SetFileHTTPHeadersRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -4067,7 +3910,7 @@
           }
         },
         "xMsFilePermissionFormat": {
-          "target": "com.azure.storage_file#FileSetHTTPHeadersRequestXMsFilePermissionFormat",
+          "target": "com.azure.storage_file#SetFileHTTPHeadersRequestXMsFilePermissionFormat",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-permission-format",
             "smithy.api#documentation": "Optional. Available for version 2023-06-01 and later. Specifies the format in which the permission is returned. Acceptable values are SDDL or binary. If x-ms-file-permission-format is unspecified or explicitly set to SDDL, the permission is returned in SDDL format. If x-ms-file-permission-format is explicitly set to binary, the permission is returned as a base64 string representing the binary encoding of the permission"
@@ -4123,7 +3966,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileSetHTTPHeadersRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#SetFileHTTPHeadersRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -4155,7 +3998,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileSetHTTPHeadersRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#SetFileHTTPHeadersRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -4167,7 +4010,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileSetHTTPHeadersRequestXMsFilePermissionFormat": {
+    "com.azure.storage_file#SetFileHTTPHeadersRequestXMsFilePermissionFormat": {
       "type": "enum",
       "members": {
         "SDDL": {
@@ -4185,10 +4028,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileGetProperties": {
+    "com.azure.storage_file#GetFileProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileGetPropertiesRequest"
+        "target": "com.azure.storage_file#GetFilePropertiesRequest"
       },
       "output": {
         "target": "com.azure.storage_file#GetFilePropertiesResponse"
@@ -4469,7 +4312,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileGetPropertiesRequest": {
+    "com.azure.storage_file#GetFilePropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -4533,7 +4376,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileGetPropertiesRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#GetFilePropertiesRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -4544,7 +4387,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileGetPropertiesRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#GetFilePropertiesRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -4556,10 +4399,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileDelete": {
+    "com.azure.storage_file#DeleteFile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileDeleteRequest"
+        "target": "com.azure.storage_file#DeleteFileRequest"
       },
       "output": {
         "target": "com.azure.storage_file#DeleteFileResponse"
@@ -4616,7 +4459,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileDeleteRequest": {
+    "com.azure.storage_file#DeleteFileRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -4673,7 +4516,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileDeleteRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#DeleteFileRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -4684,7 +4527,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileDeleteRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#DeleteFileRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -4696,13 +4539,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileCreate": {
+    "com.azure.storage_file#CreateFile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileCreateRequest"
+        "target": "com.azure.storage_file#CreateFileRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#FileCreateResponse"
+        "target": "com.azure.storage_file#CreateFileResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4723,7 +4566,7 @@
         "smithy.api#documentation": "Creates a new file or replaces a file. Can also initialize the file with content."
       }
     },
-    "com.azure.storage_file#FileCreateResponse": {
+    "com.azure.storage_file#CreateFileResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -4871,7 +4714,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileCreateRequest": {
+    "com.azure.storage_file#CreateFileRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -4978,7 +4821,7 @@
           }
         },
         "xMsFilePermissionFormat": {
-          "target": "com.azure.storage_file#FileCreateRequestXMsFilePermissionFormat",
+          "target": "com.azure.storage_file#CreateFileRequestXMsFilePermissionFormat",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-permission-format",
             "smithy.api#documentation": "Optional. Available for version 2023-06-01 and later. Specifies the format in which the permission is returned. Acceptable values are SDDL or binary. If x-ms-file-permission-format is unspecified or explicitly set to SDDL, the permission is returned in SDDL format. If x-ms-file-permission-format is explicitly set to binary, the permission is returned as a base64 string representing the binary encoding of the permission"
@@ -5027,7 +4870,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileCreateRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#CreateFileRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -5055,7 +4898,7 @@
           }
         },
         "xMsFileFileType": {
-          "target": "com.azure.storage_file#FileCreateRequestXMsFileFileType",
+          "target": "com.azure.storage_file#CreateFileRequestXMsFileFileType",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-file-type",
             "smithy.api#documentation": "Optional, NFS only. Type of the file or directory."
@@ -5069,7 +4912,7 @@
           }
         },
         "xMsFilePropertySemantics": {
-          "target": "com.azure.storage_file#FileCreateRequestXMsFilePropertySemantics",
+          "target": "com.azure.storage_file#CreateFileRequestXMsFilePropertySemantics",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-property-semantics",
             "smithy.api#documentation": "SMB only, default value is New.  New will forcefully add the ARCHIVE attribute flag and alter the permissions specified in x-ms-file-permission to inherit missing permissions from the parent.  Restore will apply changes without further modification."
@@ -5107,7 +4950,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileCreateRequestXMsFilePropertySemantics": {
+    "com.azure.storage_file#CreateFileRequestXMsFilePropertySemantics": {
       "type": "enum",
       "members": {
         "NEW": {
@@ -5125,7 +4968,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileCreateRequestXMsFileFileType": {
+    "com.azure.storage_file#CreateFileRequestXMsFileFileType": {
       "type": "enum",
       "members": {
         "REGULAR": {
@@ -5149,7 +4992,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileCreateRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#CreateFileRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -5161,7 +5004,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileCreateRequestXMsFilePermissionFormat": {
+    "com.azure.storage_file#CreateFileRequestXMsFilePermissionFormat": {
       "type": "enum",
       "members": {
         "SDDL": {
@@ -5179,13 +5022,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#FileDownload": {
+    "com.azure.storage_file#DownloadFile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#FileDownloadRequest"
+        "target": "com.azure.storage_file#DownloadFileRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#FileDownloadResponse"
+        "target": "com.azure.storage_file#DownloadFileResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -5203,7 +5046,7 @@
         "smithy.api#documentation": "Reads or downloads a file from the system, including its metadata and properties."
       }
     },
-    "com.azure.storage_file#FileDownloadResponse": {
+    "com.azure.storage_file#DownloadFileResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -5491,7 +5334,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#FileDownloadRequest": {
+    "com.azure.storage_file#DownloadFileRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -5569,7 +5412,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#FileDownloadRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#DownloadFileRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -5580,7 +5423,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#FileDownloadRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#DownloadFileRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -5592,13 +5435,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#DirectoryRename": {
+    "com.azure.storage_file#RenameDirectory": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#DirectoryRenameRequest"
+        "target": "com.azure.storage_file#RenameDirectoryRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#DirectoryRenameResponse"
+        "target": "com.azure.storage_file#RenameDirectoryResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -5620,7 +5463,7 @@
         "smithy.api#documentation": "Renames a directory"
       }
     },
-    "com.azure.storage_file#DirectoryRenameResponse": {
+    "com.azure.storage_file#RenameDirectoryResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -5719,7 +5562,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#DirectoryRenameRequest": {
+    "com.azure.storage_file#RenameDirectoryRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -5825,7 +5668,7 @@
           }
         },
         "xMsFilePermissionFormat": {
-          "target": "com.azure.storage_file#DirectoryRenameRequestXMsFilePermissionFormat",
+          "target": "com.azure.storage_file#RenameDirectoryRequestXMsFilePermissionFormat",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-permission-format",
             "smithy.api#documentation": "Optional. Available for version 2023-06-01 and later. Specifies the format in which the permission is returned. Acceptable values are SDDL or binary. If x-ms-file-permission-format is unspecified or explicitly set to SDDL, the permission is returned in SDDL format. If x-ms-file-permission-format is explicitly set to binary, the permission is returned as a base64 string representing the binary encoding of the permission"
@@ -5853,7 +5696,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#DirectoryRenameRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#RenameDirectoryRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -5871,7 +5714,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#DirectoryRenameRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#RenameDirectoryRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -5883,7 +5726,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#DirectoryRenameRequestXMsFilePermissionFormat": {
+    "com.azure.storage_file#RenameDirectoryRequestXMsFilePermissionFormat": {
       "type": "enum",
       "members": {
         "SDDL": {
@@ -6072,10 +5915,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#DirectoryListHandles": {
+    "com.azure.storage_file#ListDirectoryHandles": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#DirectoryListHandlesRequest"
+        "target": "com.azure.storage_file#ListDirectoryHandlesRequest"
       },
       "output": {
         "target": "com.azure.storage_file#ListDirectoryHandlesResponse"
@@ -6149,7 +5992,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#DirectoryListHandlesRequest": {
+    "com.azure.storage_file#ListDirectoryHandlesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -6219,7 +6062,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#DirectoryListHandlesRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#ListDirectoryHandlesRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -6230,7 +6073,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#DirectoryListHandlesRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#ListDirectoryHandlesRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -6663,13 +6506,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#DirectorySetMetadata": {
+    "com.azure.storage_file#SetDirectoryMetadata": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#DirectorySetMetadataRequest"
+        "target": "com.azure.storage_file#SetDirectoryMetadataRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#DirectorySetMetadataResponse"
+        "target": "com.azure.storage_file#SetDirectoryMetadataResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6691,7 +6534,7 @@
         "smithy.api#documentation": "Updates user defined metadata for the specified directory."
       }
     },
-    "com.azure.storage_file#DirectorySetMetadataResponse": {
+    "com.azure.storage_file#SetDirectoryMetadataResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -6734,7 +6577,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#DirectorySetMetadataRequest": {
+    "com.azure.storage_file#SetDirectoryMetadataRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -6776,7 +6619,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#DirectorySetMetadataRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#SetDirectoryMetadataRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -6794,7 +6637,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#DirectorySetMetadataRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#SetDirectoryMetadataRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -6806,13 +6649,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#DirectorySetProperties": {
+    "com.azure.storage_file#SetDirectoryProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#DirectorySetPropertiesRequest"
+        "target": "com.azure.storage_file#SetDirectoryPropertiesRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#DirectorySetPropertiesResponse"
+        "target": "com.azure.storage_file#SetDirectoryPropertiesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6834,7 +6677,7 @@
         "smithy.api#documentation": "Sets properties on the directory."
       }
     },
-    "com.azure.storage_file#DirectorySetPropertiesResponse": {
+    "com.azure.storage_file#SetDirectoryPropertiesResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -6954,7 +6797,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#DirectorySetPropertiesRequest": {
+    "com.azure.storage_file#SetDirectoryPropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -6996,7 +6839,7 @@
           }
         },
         "xMsFilePermissionFormat": {
-          "target": "com.azure.storage_file#DirectorySetPropertiesRequestXMsFilePermissionFormat",
+          "target": "com.azure.storage_file#SetDirectoryPropertiesRequestXMsFilePermissionFormat",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-permission-format",
             "smithy.api#documentation": "Optional. Available for version 2023-06-01 and later. Specifies the format in which the permission is returned. Acceptable values are SDDL or binary. If x-ms-file-permission-format is unspecified or explicitly set to SDDL, the permission is returned in SDDL format. If x-ms-file-permission-format is explicitly set to binary, the permission is returned as a base64 string representing the binary encoding of the permission"
@@ -7045,7 +6888,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#DirectorySetPropertiesRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#SetDirectoryPropertiesRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -7077,7 +6920,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#DirectorySetPropertiesRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#SetDirectoryPropertiesRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -7089,7 +6932,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#DirectorySetPropertiesRequestXMsFilePermissionFormat": {
+    "com.azure.storage_file#SetDirectoryPropertiesRequestXMsFilePermissionFormat": {
       "type": "enum",
       "members": {
         "SDDL": {
@@ -7107,10 +6950,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#DirectoryDelete": {
+    "com.azure.storage_file#DeleteDirectory": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#DirectoryDeleteRequest"
+        "target": "com.azure.storage_file#DeleteDirectoryRequest"
       },
       "output": {
         "target": "com.azure.storage_file#DeleteDirectoryResponse"
@@ -7163,7 +7006,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#DirectoryDeleteRequest": {
+    "com.azure.storage_file#DeleteDirectoryRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -7205,7 +7048,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#DirectoryDeleteRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#DeleteDirectoryRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -7216,7 +7059,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#DirectoryDeleteRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#DeleteDirectoryRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -7228,13 +7071,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#DirectoryCreate": {
+    "com.azure.storage_file#CreateDirectory": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#DirectoryCreateRequest"
+        "target": "com.azure.storage_file#CreateDirectoryRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#DirectoryCreateResponse"
+        "target": "com.azure.storage_file#CreateDirectoryResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -7255,7 +7098,7 @@
         "smithy.api#documentation": "Creates a new directory under the specified share or parent directory."
       }
     },
-    "com.azure.storage_file#DirectoryCreateResponse": {
+    "com.azure.storage_file#CreateDirectoryResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -7382,7 +7225,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#DirectoryCreateRequest": {
+    "com.azure.storage_file#CreateDirectoryRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -7431,7 +7274,7 @@
           }
         },
         "xMsFilePermissionFormat": {
-          "target": "com.azure.storage_file#DirectoryCreateRequestXMsFilePermissionFormat",
+          "target": "com.azure.storage_file#CreateDirectoryRequestXMsFilePermissionFormat",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-permission-format",
             "smithy.api#documentation": "Optional. Available for version 2023-06-01 and later. Specifies the format in which the permission is returned. Acceptable values are SDDL or binary. If x-ms-file-permission-format is unspecified or explicitly set to SDDL, the permission is returned in SDDL format. If x-ms-file-permission-format is explicitly set to binary, the permission is returned as a base64 string representing the binary encoding of the permission"
@@ -7473,7 +7316,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#DirectoryCreateRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#CreateDirectoryRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -7501,7 +7344,7 @@
           }
         },
         "xMsFilePropertySemantics": {
-          "target": "com.azure.storage_file#DirectoryCreateRequestXMsFilePropertySemantics",
+          "target": "com.azure.storage_file#CreateDirectoryRequestXMsFilePropertySemantics",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-property-semantics",
             "smithy.api#documentation": "SMB only, default value is New.  New will forcefully add the ARCHIVE attribute flag and alter the permissions specified in x-ms-file-permission to inherit missing permissions from the parent.  Restore will apply changes without further modification."
@@ -7519,7 +7362,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#DirectoryCreateRequestXMsFilePropertySemantics": {
+    "com.azure.storage_file#CreateDirectoryRequestXMsFilePropertySemantics": {
       "type": "enum",
       "members": {
         "NEW": {
@@ -7537,7 +7380,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#DirectoryCreateRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#CreateDirectoryRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -7549,7 +7392,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#DirectoryCreateRequestXMsFilePermissionFormat": {
+    "com.azure.storage_file#CreateDirectoryRequestXMsFilePermissionFormat": {
       "type": "enum",
       "members": {
         "SDDL": {
@@ -7567,13 +7410,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#DirectoryGetProperties": {
+    "com.azure.storage_file#GetDirectoryProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#DirectoryGetPropertiesRequest"
+        "target": "com.azure.storage_file#GetDirectoryPropertiesRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#DirectoryGetPropertiesResponse"
+        "target": "com.azure.storage_file#GetDirectoryPropertiesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -7594,7 +7437,7 @@
         "smithy.api#documentation": "Returns all system properties for the specified directory, and can also be used to check the existence of a directory. The data returned does not include the files in the directory or any subdirectories."
       }
     },
-    "com.azure.storage_file#DirectoryGetPropertiesResponse": {
+    "com.azure.storage_file#GetDirectoryPropertiesResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -7728,7 +7571,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#DirectoryGetPropertiesRequest": {
+    "com.azure.storage_file#GetDirectoryPropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -7777,7 +7620,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#DirectoryGetPropertiesRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#GetDirectoryPropertiesRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -7788,7 +7631,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#DirectoryGetPropertiesRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#GetDirectoryPropertiesRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -7800,13 +7643,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareRestore": {
+    "com.azure.storage_file#RestoreShare": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareRestoreRequest"
+        "target": "com.azure.storage_file#RestoreShareRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#ShareRestoreResponse"
+        "target": "com.azure.storage_file#RestoreShareResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -7828,7 +7671,7 @@
         "smithy.api#documentation": "Restores a previously deleted Share."
       }
     },
-    "com.azure.storage_file#ShareRestoreResponse": {
+    "com.azure.storage_file#RestoreShareResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -7913,7 +7756,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ShareRestoreRequest": {
+    "com.azure.storage_file#RestoreShareRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -7961,7 +7804,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareRestoreRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#RestoreShareRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -7972,7 +7815,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ShareRestoreRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#RestoreShareRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -7984,10 +7827,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareGetStatistics": {
+    "com.azure.storage_file#GetShareStatistics": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareGetStatisticsRequest"
+        "target": "com.azure.storage_file#GetShareStatisticsRequest"
       },
       "output": {
         "target": "com.azure.storage_file#GetShareStatisticsResponse"
@@ -8063,7 +7906,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ShareGetStatisticsRequest": {
+    "com.azure.storage_file#GetShareStatisticsRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -8097,7 +7940,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareGetStatisticsRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#GetShareStatisticsRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -8108,7 +7951,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ShareGetStatisticsRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#GetShareStatisticsRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -8120,13 +7963,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareSetAccessPolicy": {
+    "com.azure.storage_file#SetShareAccessPolicy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareSetAccessPolicyRequest"
+        "target": "com.azure.storage_file#SetShareAccessPolicyRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#ShareSetAccessPolicyResponse"
+        "target": "com.azure.storage_file#SetShareAccessPolicyResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8149,7 +7992,7 @@
         "smithy.api#documentation": "Sets a stored access policy for use with shared access signatures."
       }
     },
-    "com.azure.storage_file#ShareSetAccessPolicyResponse": {
+    "com.azure.storage_file#SetShareAccessPolicyResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -8192,7 +8035,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ShareSetAccessPolicyRequest": {
+    "com.azure.storage_file#SetShareAccessPolicyRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -8226,7 +8069,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareSetAccessPolicyRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#SetShareAccessPolicyRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -8300,7 +8143,7 @@
         "smithy.api#documentation": "An Access policy."
       }
     },
-    "com.azure.storage_file#ShareSetAccessPolicyRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#SetShareAccessPolicyRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -8312,13 +8155,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareGetAccessPolicy": {
+    "com.azure.storage_file#GetShareAccessPolicy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareGetAccessPolicyRequest"
+        "target": "com.azure.storage_file#GetShareAccessPolicyRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#ShareGetAccessPolicyResponse"
+        "target": "com.azure.storage_file#GetShareAccessPolicyResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8340,7 +8183,7 @@
         "smithy.api#documentation": "Returns information about stored access policies specified on the share."
       }
     },
-    "com.azure.storage_file#ShareGetAccessPolicyResponse": {
+    "com.azure.storage_file#GetShareAccessPolicyResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -8357,7 +8200,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ShareGetAccessPolicyRequest": {
+    "com.azure.storage_file#GetShareAccessPolicyRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -8391,7 +8234,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareGetAccessPolicyRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#GetShareAccessPolicyRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -8402,7 +8245,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ShareGetAccessPolicyRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#GetShareAccessPolicyRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -8414,13 +8257,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareSetMetadata": {
+    "com.azure.storage_file#SetShareMetadata": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareSetMetadataRequest"
+        "target": "com.azure.storage_file#SetShareMetadataRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#ShareSetMetadataResponse"
+        "target": "com.azure.storage_file#SetShareMetadataResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8442,7 +8285,7 @@
         "smithy.api#documentation": "Sets one or more user-defined name-value pairs for the specified share."
       }
     },
-    "com.azure.storage_file#ShareSetMetadataResponse": {
+    "com.azure.storage_file#SetShareMetadataResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -8485,7 +8328,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ShareSetMetadataRequest": {
+    "com.azure.storage_file#SetShareMetadataRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -8519,7 +8362,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareSetMetadataRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#SetShareMetadataRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -8537,7 +8380,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ShareSetMetadataRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#SetShareMetadataRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -8549,13 +8392,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareSetProperties": {
+    "com.azure.storage_file#SetShareProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareSetPropertiesRequest"
+        "target": "com.azure.storage_file#SetSharePropertiesRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#ShareSetPropertiesResponse"
+        "target": "com.azure.storage_file#SetSharePropertiesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8577,7 +8420,7 @@
         "smithy.api#documentation": "Sets properties for the specified share."
       }
     },
-    "com.azure.storage_file#ShareSetPropertiesResponse": {
+    "com.azure.storage_file#SetSharePropertiesResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -8676,7 +8519,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ShareSetPropertiesRequest": {
+    "com.azure.storage_file#SetSharePropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -8710,7 +8553,7 @@
           }
         },
         "xMsAccessTier": {
-          "target": "com.azure.storage_file#ShareSetPropertiesRequestXMsAccessTier",
+          "target": "com.azure.storage_file#SetSharePropertiesRequestXMsAccessTier",
           "traits": {
             "smithy.api#httpHeader": "x-ms-access-tier",
             "smithy.api#documentation": "Specifies the access tier of the share."
@@ -8724,7 +8567,7 @@
           }
         },
         "xMsRootSquash": {
-          "target": "com.azure.storage_file#ShareSetPropertiesRequestXMsRootSquash",
+          "target": "com.azure.storage_file#SetSharePropertiesRequestXMsRootSquash",
           "traits": {
             "smithy.api#httpHeader": "x-ms-root-squash",
             "smithy.api#documentation": "Root squash to set on the share.  Only valid for NFS shares."
@@ -8758,7 +8601,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareSetPropertiesRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#SetSharePropertiesRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -8790,7 +8633,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ShareSetPropertiesRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#SetSharePropertiesRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -8802,7 +8645,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareSetPropertiesRequestXMsRootSquash": {
+    "com.azure.storage_file#SetSharePropertiesRequestXMsRootSquash": {
       "type": "enum",
       "members": {
         "NOROOTSQUASH": {
@@ -8826,7 +8669,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareSetPropertiesRequestXMsAccessTier": {
+    "com.azure.storage_file#SetSharePropertiesRequestXMsAccessTier": {
       "type": "enum",
       "members": {
         "TRANSACTIONOPTIMIZED": {
@@ -8856,10 +8699,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareCreatePermission": {
+    "com.azure.storage_file#CreateSharePermission": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareCreatePermissionRequest"
+        "target": "com.azure.storage_file#CreateSharePermissionRequest"
       },
       "output": {
         "target": "com.azure.storage_file#CreateSharePermissionResponse"
@@ -8920,7 +8763,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ShareCreatePermissionRequest": {
+    "com.azure.storage_file#CreateSharePermissionRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -8947,7 +8790,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareCreatePermissionRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#CreateSharePermissionRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -8961,14 +8804,14 @@
           }
         },
         "format": {
-          "target": "com.azure.storage_file#ShareCreatePermissionRequestFormat"
+          "target": "com.azure.storage_file#CreateSharePermissionRequestFormat"
         }
       },
       "traits": {
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ShareCreatePermissionRequestFormat": {
+    "com.azure.storage_file#CreateSharePermissionRequestFormat": {
       "type": "enum",
       "members": {
         "SDDL": {
@@ -8986,7 +8829,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareCreatePermissionRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#CreateSharePermissionRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -8998,10 +8841,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareGetPermission": {
+    "com.azure.storage_file#GetSharePermission": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareGetPermissionRequest"
+        "target": "com.azure.storage_file#GetSharePermissionRequest"
       },
       "output": {
         "target": "com.azure.storage_file#GetSharePermissionResponse"
@@ -9084,7 +8927,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareGetPermissionRequest": {
+    "com.azure.storage_file#GetSharePermissionRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -9119,14 +8962,14 @@
           }
         },
         "xMsFilePermissionFormat": {
-          "target": "com.azure.storage_file#ShareGetPermissionRequestXMsFilePermissionFormat",
+          "target": "com.azure.storage_file#GetSharePermissionRequestXMsFilePermissionFormat",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-permission-format",
             "smithy.api#documentation": "Optional. Available for version 2023-06-01 and later. Specifies the format in which the permission is returned. Acceptable values are SDDL or binary. If x-ms-file-permission-format is unspecified or explicitly set to SDDL, the permission is returned in SDDL format. If x-ms-file-permission-format is explicitly set to binary, the permission is returned as a base64 string representing the binary encoding of the permission"
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareGetPermissionRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#GetSharePermissionRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -9137,7 +8980,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ShareGetPermissionRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#GetSharePermissionRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -9149,7 +8992,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareGetPermissionRequestXMsFilePermissionFormat": {
+    "com.azure.storage_file#GetSharePermissionRequestXMsFilePermissionFormat": {
       "type": "enum",
       "members": {
         "SDDL": {
@@ -9167,13 +9010,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareCreateSnapshot": {
+    "com.azure.storage_file#CreateShareSnapshot": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareCreateSnapshotRequest"
+        "target": "com.azure.storage_file#CreateShareSnapshotRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#ShareCreateSnapshotResponse"
+        "target": "com.azure.storage_file#CreateShareSnapshotResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -9195,7 +9038,7 @@
         "smithy.api#documentation": "Creates a read-only snapshot of a share."
       }
     },
-    "com.azure.storage_file#ShareCreateSnapshotResponse": {
+    "com.azure.storage_file#CreateShareSnapshotResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -9245,7 +9088,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ShareCreateSnapshotRequest": {
+    "com.azure.storage_file#CreateShareSnapshotRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -9272,7 +9115,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareCreateSnapshotRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#CreateShareSnapshotRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -9290,7 +9133,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ShareCreateSnapshotRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#CreateShareSnapshotRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -9475,13 +9318,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareRenewLease": {
+    "com.azure.storage_file#RenewShareLease": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareRenewLeaseRequest"
+        "target": "com.azure.storage_file#RenewShareLeaseRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#ShareRenewLeaseResponse"
+        "target": "com.azure.storage_file#RenewShareLeaseResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -9506,7 +9349,7 @@
         "smithy.api#documentation": "The Lease Share operation establishes and manages a lock on a share, or the specified snapshot for set and delete share operations."
       }
     },
-    "com.azure.storage_file#ShareRenewLeaseResponse": {
+    "com.azure.storage_file#RenewShareLeaseResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -9563,7 +9406,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ShareRenewLeaseRequest": {
+    "com.azure.storage_file#RenewShareLeaseRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -9612,7 +9455,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareRenewLeaseRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#RenewShareLeaseRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -9623,7 +9466,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ShareRenewLeaseRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#RenewShareLeaseRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -10121,10 +9964,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareDelete": {
+    "com.azure.storage_file#DeleteShare": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareDeleteRequest"
+        "target": "com.azure.storage_file#DeleteShareRequest"
       },
       "output": {
         "target": "com.azure.storage_file#DeleteShareResponse"
@@ -10191,7 +10034,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ShareDeleteRequest": {
+    "com.azure.storage_file#DeleteShareRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -10225,7 +10068,7 @@
           }
         },
         "xMsDeleteSnapshots": {
-          "target": "com.azure.storage_file#ShareDeleteRequestXMsDeleteSnapshots",
+          "target": "com.azure.storage_file#DeleteShareRequestXMsDeleteSnapshots",
           "traits": {
             "smithy.api#httpHeader": "x-ms-delete-snapshots",
             "smithy.api#documentation": "Specifies the option include to delete the base share and all of its snapshots."
@@ -10239,7 +10082,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareDeleteRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#DeleteShareRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -10250,7 +10093,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ShareDeleteRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#DeleteShareRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -10262,7 +10105,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareDeleteRequestXMsDeleteSnapshots": {
+    "com.azure.storage_file#DeleteShareRequestXMsDeleteSnapshots": {
       "type": "enum",
       "members": {
         "INCLUDE": {
@@ -10280,13 +10123,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareCreate": {
+    "com.azure.storage_file#CreateShare": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareCreateRequest"
+        "target": "com.azure.storage_file#CreateShareRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#ShareCreateResponse"
+        "target": "com.azure.storage_file#CreateShareResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -10307,7 +10150,7 @@
         "smithy.api#documentation": "Creates a new share under the specified account. If the share with the same name already exists, the operation fails."
       }
     },
-    "com.azure.storage_file#ShareCreateResponse": {
+    "com.azure.storage_file#CreateShareResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -10385,7 +10228,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ShareCreateRequest": {
+    "com.azure.storage_file#CreateShareRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -10419,7 +10262,7 @@
           }
         },
         "xMsAccessTier": {
-          "target": "com.azure.storage_file#ShareCreateRequestXMsAccessTier",
+          "target": "com.azure.storage_file#CreateShareRequestXMsAccessTier",
           "traits": {
             "smithy.api#httpHeader": "x-ms-access-tier",
             "smithy.api#documentation": "Specifies the access tier of the share."
@@ -10433,7 +10276,7 @@
           }
         },
         "xMsRootSquash": {
-          "target": "com.azure.storage_file#ShareCreateRequestXMsRootSquash",
+          "target": "com.azure.storage_file#CreateShareRequestXMsRootSquash",
           "traits": {
             "smithy.api#httpHeader": "x-ms-root-squash",
             "smithy.api#documentation": "Root squash to set on the share.  Only valid for NFS shares."
@@ -10467,7 +10310,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareCreateRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#CreateShareRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -10506,7 +10349,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ShareCreateRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#CreateShareRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -10518,7 +10361,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareCreateRequestXMsRootSquash": {
+    "com.azure.storage_file#CreateShareRequestXMsRootSquash": {
       "type": "enum",
       "members": {
         "NOROOTSQUASH": {
@@ -10542,7 +10385,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareCreateRequestXMsAccessTier": {
+    "com.azure.storage_file#CreateShareRequestXMsAccessTier": {
       "type": "enum",
       "members": {
         "TRANSACTIONOPTIMIZED": {
@@ -10572,13 +10415,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ShareGetProperties": {
+    "com.azure.storage_file#GetShareProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ShareGetPropertiesRequest"
+        "target": "com.azure.storage_file#GetSharePropertiesRequest"
       },
       "output": {
-        "target": "com.azure.storage_file#ShareGetPropertiesResponse"
+        "target": "com.azure.storage_file#GetSharePropertiesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -10599,7 +10442,7 @@
         "smithy.api#documentation": "Returns all user-defined metadata and system properties for the specified share or share snapshot. The data returned does not include the share's list of files."
       }
     },
-    "com.azure.storage_file#ShareGetPropertiesResponse": {
+    "com.azure.storage_file#GetSharePropertiesResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -10810,7 +10653,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ShareGetPropertiesRequest": {
+    "com.azure.storage_file#GetSharePropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -10851,7 +10694,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ShareGetPropertiesRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#GetSharePropertiesRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -10862,7 +10705,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ShareGetPropertiesRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#GetSharePropertiesRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -10874,10 +10717,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ServiceGetUserDelegationKey": {
+    "com.azure.storage_file#GetServiceUserDelegationKey": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ServiceGetUserDelegationKeyRequest"
+        "target": "com.azure.storage_file#GetServiceUserDelegationKeyRequest"
       },
       "output": {
         "target": "com.azure.storage_file#GetServiceUserDelegationKeyResponse"
@@ -10995,7 +10838,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ServiceGetUserDelegationKeyRequest": {
+    "com.azure.storage_file#GetServiceUserDelegationKeyRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -11044,10 +10887,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ServiceListSharesSegment": {
+    "com.azure.storage_file#ListServiceSharesSegment": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ServiceListSharesSegmentRequest"
+        "target": "com.azure.storage_file#ListServiceSharesSegmentRequest"
       },
       "output": {
         "target": "com.azure.storage_file#ListServiceSharesSegmentResponse"
@@ -11410,7 +11253,7 @@
         "smithy.api#documentation": "The current lease status of the share."
       }
     },
-    "com.azure.storage_file#ServiceListSharesSegmentRequest": {
+    "com.azure.storage_file#ListServiceSharesSegmentRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -11443,7 +11286,7 @@
           }
         },
         "include": {
-          "target": "com.azure.storage_file#ServiceListSharesSegmentRequestIncludeList",
+          "target": "com.azure.storage_file#ListServiceSharesSegmentRequestIncludeList",
           "traits": {
             "smithy.api#httpQuery": "include",
             "smithy.api#documentation": "Include this parameter to specify one or more datasets to include in the response."
@@ -11457,7 +11300,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ServiceListSharesSegmentRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#ListServiceSharesSegmentRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -11468,7 +11311,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ServiceListSharesSegmentRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#ListServiceSharesSegmentRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -11480,14 +11323,14 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ServiceListSharesSegmentRequestIncludeList": {
+    "com.azure.storage_file#ListServiceSharesSegmentRequestIncludeList": {
       "type": "list",
       "member": {
-        "target": "com.azure.storage_file#ServiceListSharesSegmentRequestIncludeItem"
+        "target": "com.azure.storage_file#ListServiceSharesSegmentRequestIncludeItem"
       },
       "traits": {}
     },
-    "com.azure.storage_file#ServiceListSharesSegmentRequestIncludeItem": {
+    "com.azure.storage_file#ListServiceSharesSegmentRequestIncludeItem": {
       "type": "enum",
       "members": {
         "SNAPSHOTS": {
@@ -11511,10 +11354,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ServiceSetProperties": {
+    "com.azure.storage_file#SetServiceProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ServiceSetPropertiesRequest"
+        "target": "com.azure.storage_file#SetServicePropertiesRequest"
       },
       "output": {
         "target": "com.azure.storage_file#SetServicePropertiesResponse"
@@ -11562,7 +11405,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_file#ServiceSetPropertiesRequest": {
+    "com.azure.storage_file#SetServicePropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -11581,7 +11424,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ServiceSetPropertiesRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#SetServicePropertiesRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -11600,7 +11443,7 @@
           }
         },
         "Cors": {
-          "target": "com.azure.storage_file#ServiceSetPropertiesRequestCorsList",
+          "target": "com.azure.storage_file#SetServicePropertiesRequestCorsList",
           "traits": {
             "smithy.api#documentation": "The set of CORS rules.",
             "com.azure.protocols#xmlItemName": "CorsRule"
@@ -11716,7 +11559,7 @@
         "smithy.api#documentation": "Settings for SMB multichannel"
       }
     },
-    "com.azure.storage_file#ServiceSetPropertiesRequestCorsList": {
+    "com.azure.storage_file#SetServicePropertiesRequestCorsList": {
       "type": "list",
       "member": {
         "target": "com.azure.storage_file#CorsRule"
@@ -11821,7 +11664,7 @@
         "smithy.api#documentation": "The retention policy."
       }
     },
-    "com.azure.storage_file#ServiceSetPropertiesRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#SetServicePropertiesRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -11833,10 +11676,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_file#ServiceGetProperties": {
+    "com.azure.storage_file#GetServiceProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_file#ServiceGetPropertiesRequest"
+        "target": "com.azure.storage_file#GetServicePropertiesRequest"
       },
       "output": {
         "target": "com.azure.storage_file#GetServicePropertiesResponse"
@@ -11919,7 +11762,7 @@
         "smithy.api#documentation": "The set of CORS rules."
       }
     },
-    "com.azure.storage_file#ServiceGetPropertiesRequest": {
+    "com.azure.storage_file#GetServicePropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -11938,7 +11781,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_file#ServiceGetPropertiesRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_file#GetServicePropertiesRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -11949,7 +11792,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_file#ServiceGetPropertiesRequestXMsFileRequestIntent": {
+    "com.azure.storage_file#GetServicePropertiesRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -11966,25 +11809,25 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.storage_file#FileCreateHardLink"
+          "target": "com.azure.storage_file#CreateFileHardLink"
         },
         {
-          "target": "com.azure.storage_file#FileCreateSymbolicLink"
+          "target": "com.azure.storage_file#CreateFileSymbolicLink"
         },
         {
-          "target": "com.azure.storage_file#FileGetSymbolicLink"
+          "target": "com.azure.storage_file#GetFileSymbolicLink"
         },
         {
-          "target": "com.azure.storage_file#FileRename"
+          "target": "com.azure.storage_file#RenameFile"
         },
         {
           "target": "com.azure.storage_file#FileForceCloseHandles"
         },
         {
-          "target": "com.azure.storage_file#FileListHandles"
+          "target": "com.azure.storage_file#ListFileHandles"
         },
         {
-          "target": "com.azure.storage_file#FileAbortCopy"
+          "target": "com.azure.storage_file#CopyFileAbort"
         },
         {
           "target": "com.azure.storage_file#FileStartCopy"
@@ -11993,10 +11836,10 @@
           "target": "com.azure.storage_file#FileGetRangeList"
         },
         {
-          "target": "com.azure.storage_file#FileUploadRangeFromURL"
+          "target": "com.azure.storage_file#UploadFileRangeFromURL"
         },
         {
-          "target": "com.azure.storage_file#FileUploadRange"
+          "target": "com.azure.storage_file#UploadFileRange"
         },
         {
           "target": "com.azure.storage_file#FileBreakLease"
@@ -12011,82 +11854,82 @@
           "target": "com.azure.storage_file#FileAcquireLease"
         },
         {
-          "target": "com.azure.storage_file#FileSetMetadata"
+          "target": "com.azure.storage_file#SetFileMetadata"
         },
         {
-          "target": "com.azure.storage_file#FileSetHTTPHeaders"
+          "target": "com.azure.storage_file#SetFileHTTPHeaders"
         },
         {
-          "target": "com.azure.storage_file#FileGetProperties"
+          "target": "com.azure.storage_file#GetFileProperties"
         },
         {
-          "target": "com.azure.storage_file#FileDelete"
+          "target": "com.azure.storage_file#DeleteFile"
         },
         {
-          "target": "com.azure.storage_file#FileCreate"
+          "target": "com.azure.storage_file#CreateFile"
         },
         {
-          "target": "com.azure.storage_file#FileDownload"
+          "target": "com.azure.storage_file#DownloadFile"
         },
         {
-          "target": "com.azure.storage_file#DirectoryRename"
+          "target": "com.azure.storage_file#RenameDirectory"
         },
         {
           "target": "com.azure.storage_file#DirectoryForceCloseHandles"
         },
         {
-          "target": "com.azure.storage_file#DirectoryListHandles"
+          "target": "com.azure.storage_file#ListDirectoryHandles"
         },
         {
           "target": "com.azure.storage_file#DirectoryListFilesAndDirectoriesSegment"
         },
         {
-          "target": "com.azure.storage_file#DirectorySetMetadata"
+          "target": "com.azure.storage_file#SetDirectoryMetadata"
         },
         {
-          "target": "com.azure.storage_file#DirectorySetProperties"
+          "target": "com.azure.storage_file#SetDirectoryProperties"
         },
         {
-          "target": "com.azure.storage_file#DirectoryDelete"
+          "target": "com.azure.storage_file#DeleteDirectory"
         },
         {
-          "target": "com.azure.storage_file#DirectoryCreate"
+          "target": "com.azure.storage_file#CreateDirectory"
         },
         {
-          "target": "com.azure.storage_file#DirectoryGetProperties"
+          "target": "com.azure.storage_file#GetDirectoryProperties"
         },
         {
-          "target": "com.azure.storage_file#ShareRestore"
+          "target": "com.azure.storage_file#RestoreShare"
         },
         {
-          "target": "com.azure.storage_file#ShareGetStatistics"
+          "target": "com.azure.storage_file#GetShareStatistics"
         },
         {
-          "target": "com.azure.storage_file#ShareSetAccessPolicy"
+          "target": "com.azure.storage_file#SetShareAccessPolicy"
         },
         {
-          "target": "com.azure.storage_file#ShareGetAccessPolicy"
+          "target": "com.azure.storage_file#GetShareAccessPolicy"
         },
         {
-          "target": "com.azure.storage_file#ShareSetMetadata"
+          "target": "com.azure.storage_file#SetShareMetadata"
         },
         {
-          "target": "com.azure.storage_file#ShareSetProperties"
+          "target": "com.azure.storage_file#SetShareProperties"
         },
         {
-          "target": "com.azure.storage_file#ShareCreatePermission"
+          "target": "com.azure.storage_file#CreateSharePermission"
         },
         {
-          "target": "com.azure.storage_file#ShareGetPermission"
+          "target": "com.azure.storage_file#GetSharePermission"
         },
         {
-          "target": "com.azure.storage_file#ShareCreateSnapshot"
+          "target": "com.azure.storage_file#CreateShareSnapshot"
         },
         {
           "target": "com.azure.storage_file#ShareBreakLease"
         },
         {
-          "target": "com.azure.storage_file#ShareRenewLease"
+          "target": "com.azure.storage_file#RenewShareLease"
         },
         {
           "target": "com.azure.storage_file#ShareChangeLease"
@@ -12098,25 +11941,25 @@
           "target": "com.azure.storage_file#ShareAcquireLease"
         },
         {
-          "target": "com.azure.storage_file#ShareDelete"
+          "target": "com.azure.storage_file#DeleteShare"
         },
         {
-          "target": "com.azure.storage_file#ShareCreate"
+          "target": "com.azure.storage_file#CreateShare"
         },
         {
-          "target": "com.azure.storage_file#ShareGetProperties"
+          "target": "com.azure.storage_file#GetShareProperties"
         },
         {
-          "target": "com.azure.storage_file#ServiceGetUserDelegationKey"
+          "target": "com.azure.storage_file#GetServiceUserDelegationKey"
         },
         {
-          "target": "com.azure.storage_file#ServiceListSharesSegment"
+          "target": "com.azure.storage_file#ListServiceSharesSegment"
         },
         {
-          "target": "com.azure.storage_file#ServiceSetProperties"
+          "target": "com.azure.storage_file#SetServiceProperties"
         },
         {
-          "target": "com.azure.storage_file#ServiceGetProperties"
+          "target": "com.azure.storage_file#GetServiceProperties"
         }
       ],
       "traits": {

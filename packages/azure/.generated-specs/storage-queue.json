@@ -15,46 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.storage_queue#MessageIdDelete": "com.azure.storage_queue#DeleteMessageId",
-      "com.azure.storage_queue#MessageIdDeleteRequest": "com.azure.storage_queue#DeleteMessageIdRequest",
-      "com.azure.storage_queue#MessageIdUpdate": "com.azure.storage_queue#UpdateMessageId",
-      "com.azure.storage_queue#MessageIdUpdateRequest": "com.azure.storage_queue#UpdateMessageIdRequest",
-      "com.azure.storage_queue#MessagesClear": "com.azure.storage_queue#ClearMessage",
-      "com.azure.storage_queue#MessagesClearRequest": "com.azure.storage_queue#ClearMessageRequest",
-      "com.azure.storage_queue#QueueSetAccessPolicy": "com.azure.storage_queue#SetQueueAccessPolicy",
-      "com.azure.storage_queue#QueueSetAccessPolicyRequest": "com.azure.storage_queue#SetQueueAccessPolicyRequest",
-      "com.azure.storage_queue#QueueGetAccessPolicy": "com.azure.storage_queue#GetQueueAccessPolicy",
-      "com.azure.storage_queue#QueueGetAccessPolicyResponse": "com.azure.storage_queue#GetQueueAccessPolicyResponse",
-      "com.azure.storage_queue#QueueGetAccessPolicyRequest": "com.azure.storage_queue#GetQueueAccessPolicyRequest",
-      "com.azure.storage_queue#QueueSetMetadata": "com.azure.storage_queue#SetQueueMetadata",
-      "com.azure.storage_queue#QueueSetMetadataRequest": "com.azure.storage_queue#SetQueueMetadataRequest",
-      "com.azure.storage_queue#QueueGetProperties": "com.azure.storage_queue#GetQueueProperties",
-      "com.azure.storage_queue#QueueGetPropertiesRequest": "com.azure.storage_queue#GetQueuePropertiesRequest",
-      "com.azure.storage_queue#QueueDelete": "com.azure.storage_queue#DeleteQueue",
-      "com.azure.storage_queue#QueueDeleteRequest": "com.azure.storage_queue#DeleteQueueRequest",
-      "com.azure.storage_queue#QueueCreate": "com.azure.storage_queue#CreateQueue",
-      "com.azure.storage_queue#QueueCreateRequest": "com.azure.storage_queue#CreateQueueRequest",
-      "com.azure.storage_queue#ServiceListQueuesSegment": "com.azure.storage_queue#ListServiceQueuesSegment",
-      "com.azure.storage_queue#ServiceListQueuesSegmentRequest": "com.azure.storage_queue#ListServiceQueuesSegmentRequest",
-      "com.azure.storage_queue#ServiceListQueuesSegmentRequestIncludeList": "com.azure.storage_queue#ListServiceQueuesSegmentRequestIncludeList",
-      "com.azure.storage_queue#ServiceListQueuesSegmentRequestIncludeItem": "com.azure.storage_queue#ListServiceQueuesSegmentRequestIncludeItem",
-      "com.azure.storage_queue#ServiceGetUserDelegationKey": "com.azure.storage_queue#GetServiceUserDelegationKey",
-      "com.azure.storage_queue#ServiceGetUserDelegationKeyRequest": "com.azure.storage_queue#GetServiceUserDelegationKeyRequest",
-      "com.azure.storage_queue#ServiceGetStatistics": "com.azure.storage_queue#GetServiceStatistics",
-      "com.azure.storage_queue#ServiceGetStatisticsRequest": "com.azure.storage_queue#GetServiceStatisticsRequest",
-      "com.azure.storage_queue#ServiceSetProperties": "com.azure.storage_queue#SetServiceProperties",
-      "com.azure.storage_queue#ServiceSetPropertiesRequest": "com.azure.storage_queue#SetServicePropertiesRequest",
-      "com.azure.storage_queue#ServiceSetPropertiesRequestCorsList": "com.azure.storage_queue#SetServicePropertiesRequestCorsList",
-      "com.azure.storage_queue#ServiceGetProperties": "com.azure.storage_queue#GetServiceProperties",
-      "com.azure.storage_queue#ServiceGetPropertiesRequest": "com.azure.storage_queue#GetServicePropertiesRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.storage_queue#MessageIdDelete": {
+    "com.azure.storage_queue#DeleteMessageId": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#MessageIdDeleteRequest"
+        "target": "com.azure.storage_queue#DeleteMessageIdRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#DeleteMessageIdResponse"
@@ -104,7 +71,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_queue#MessageIdDeleteRequest": {
+    "com.azure.storage_queue#DeleteMessageIdRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -158,10 +125,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_queue#MessageIdUpdate": {
+    "com.azure.storage_queue#UpdateMessageId": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#MessageIdUpdateRequest"
+        "target": "com.azure.storage_queue#UpdateMessageIdRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#UpdateMessageIdResponse"
@@ -226,7 +193,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_queue#MessageIdUpdateRequest": {
+    "com.azure.storage_queue#UpdateMessageIdRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -436,10 +403,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_queue#MessagesClear": {
+    "com.azure.storage_queue#ClearMessage": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#MessagesClearRequest"
+        "target": "com.azure.storage_queue#ClearMessageRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#ClearMessageResponse"
@@ -489,7 +456,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_queue#MessagesClearRequest": {
+    "com.azure.storage_queue#ClearMessageRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -839,10 +806,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_queue#QueueSetAccessPolicy": {
+    "com.azure.storage_queue#SetQueueAccessPolicy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#QueueSetAccessPolicyRequest"
+        "target": "com.azure.storage_queue#SetQueueAccessPolicyRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#SetQueueAccessPolicyResponse"
@@ -896,7 +863,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_queue#QueueSetAccessPolicyRequest": {
+    "com.azure.storage_queue#SetQueueAccessPolicyRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -998,13 +965,13 @@
         "smithy.api#documentation": "An Access policy"
       }
     },
-    "com.azure.storage_queue#QueueGetAccessPolicy": {
+    "com.azure.storage_queue#GetQueueAccessPolicy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#QueueGetAccessPolicyRequest"
+        "target": "com.azure.storage_queue#GetQueueAccessPolicyRequest"
       },
       "output": {
-        "target": "com.azure.storage_queue#QueueGetAccessPolicyResponse"
+        "target": "com.azure.storage_queue#GetQueueAccessPolicyResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1025,7 +992,7 @@
         "smithy.api#documentation": "returns details about any stored access policies specified on the queue that may be used with Shared Access Signatures."
       }
     },
-    "com.azure.storage_queue#QueueGetAccessPolicyResponse": {
+    "com.azure.storage_queue#GetQueueAccessPolicyResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -1042,7 +1009,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_queue#QueueGetAccessPolicyRequest": {
+    "com.azure.storage_queue#GetQueueAccessPolicyRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1080,10 +1047,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_queue#QueueSetMetadata": {
+    "com.azure.storage_queue#SetQueueMetadata": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#QueueSetMetadataRequest"
+        "target": "com.azure.storage_queue#SetQueueMetadataRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#SetQueueMetadataResponse"
@@ -1136,7 +1103,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_queue#QueueSetMetadataRequest": {
+    "com.azure.storage_queue#SetQueueMetadataRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1190,10 +1157,10 @@
         "target": "smithy.api#String"
       }
     },
-    "com.azure.storage_queue#QueueGetProperties": {
+    "com.azure.storage_queue#GetQueueProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#QueueGetPropertiesRequest"
+        "target": "com.azure.storage_queue#GetQueuePropertiesRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#GetQueuePropertiesResponse"
@@ -1259,7 +1226,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_queue#QueueGetPropertiesRequest": {
+    "com.azure.storage_queue#GetQueuePropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1297,10 +1264,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_queue#QueueDelete": {
+    "com.azure.storage_queue#DeleteQueue": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#QueueDeleteRequest"
+        "target": "com.azure.storage_queue#DeleteQueueRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#DeleteQueueResponse"
@@ -1350,7 +1317,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_queue#QueueDeleteRequest": {
+    "com.azure.storage_queue#DeleteQueueRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1388,10 +1355,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_queue#QueueCreate": {
+    "com.azure.storage_queue#CreateQueue": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#QueueCreateRequest"
+        "target": "com.azure.storage_queue#CreateQueueRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#CreateQueueResponse"
@@ -1441,7 +1408,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_queue#QueueCreateRequest": {
+    "com.azure.storage_queue#CreateQueueRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1486,10 +1453,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_queue#ServiceListQueuesSegment": {
+    "com.azure.storage_queue#ListServiceQueuesSegment": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#ServiceListQueuesSegmentRequest"
+        "target": "com.azure.storage_queue#ListServiceQueuesSegmentRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#ListServiceQueuesSegmentResponse"
@@ -1621,7 +1588,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_queue#ServiceListQueuesSegmentRequest": {
+    "com.azure.storage_queue#ListServiceQueuesSegmentRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1654,7 +1621,7 @@
           }
         },
         "include": {
-          "target": "com.azure.storage_queue#ServiceListQueuesSegmentRequestIncludeList",
+          "target": "com.azure.storage_queue#ListServiceQueuesSegmentRequestIncludeList",
           "traits": {
             "smithy.api#httpQuery": "include",
             "smithy.api#documentation": "Include this parameter to specify that the queues' metadata be returned as part of the response body."
@@ -1679,14 +1646,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_queue#ServiceListQueuesSegmentRequestIncludeList": {
+    "com.azure.storage_queue#ListServiceQueuesSegmentRequestIncludeList": {
       "type": "list",
       "member": {
-        "target": "com.azure.storage_queue#ServiceListQueuesSegmentRequestIncludeItem"
+        "target": "com.azure.storage_queue#ListServiceQueuesSegmentRequestIncludeItem"
       },
       "traits": {}
     },
-    "com.azure.storage_queue#ServiceListQueuesSegmentRequestIncludeItem": {
+    "com.azure.storage_queue#ListServiceQueuesSegmentRequestIncludeItem": {
       "type": "enum",
       "members": {
         "METADATA": {
@@ -1698,10 +1665,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_queue#ServiceGetUserDelegationKey": {
+    "com.azure.storage_queue#GetServiceUserDelegationKey": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#ServiceGetUserDelegationKeyRequest"
+        "target": "com.azure.storage_queue#GetServiceUserDelegationKeyRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#GetServiceUserDelegationKeyResponse"
@@ -1819,7 +1786,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_queue#ServiceGetUserDelegationKeyRequest": {
+    "com.azure.storage_queue#GetServiceUserDelegationKeyRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1868,10 +1835,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_queue#ServiceGetStatistics": {
+    "com.azure.storage_queue#GetServiceStatistics": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#ServiceGetStatisticsRequest"
+        "target": "com.azure.storage_queue#GetServiceStatisticsRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#GetServiceStatisticsResponse"
@@ -1978,7 +1945,7 @@
         "smithy.api#documentation": "The status of the secondary location"
       }
     },
-    "com.azure.storage_queue#ServiceGetStatisticsRequest": {
+    "com.azure.storage_queue#GetServiceStatisticsRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -2008,10 +1975,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_queue#ServiceSetProperties": {
+    "com.azure.storage_queue#SetServiceProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#ServiceSetPropertiesRequest"
+        "target": "com.azure.storage_queue#SetServicePropertiesRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#SetServicePropertiesResponse"
@@ -2059,7 +2026,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_queue#ServiceSetPropertiesRequest": {
+    "com.azure.storage_queue#SetServicePropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -2103,7 +2070,7 @@
           }
         },
         "Cors": {
-          "target": "com.azure.storage_queue#ServiceSetPropertiesRequestCorsList",
+          "target": "com.azure.storage_queue#SetServicePropertiesRequestCorsList",
           "traits": {
             "smithy.api#documentation": "The set of CORS rules.",
             "com.azure.protocols#xmlItemName": "CorsRule"
@@ -2114,7 +2081,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_queue#ServiceSetPropertiesRequestCorsList": {
+    "com.azure.storage_queue#SetServicePropertiesRequestCorsList": {
       "type": "list",
       "member": {
         "target": "com.azure.storage_queue#CorsRule"
@@ -2260,10 +2227,10 @@
         "smithy.api#documentation": "Azure Analytics Logging settings."
       }
     },
-    "com.azure.storage_queue#ServiceGetProperties": {
+    "com.azure.storage_queue#GetServiceProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_queue#ServiceGetPropertiesRequest"
+        "target": "com.azure.storage_queue#GetServicePropertiesRequest"
       },
       "output": {
         "target": "com.azure.storage_queue#GetServicePropertiesResponse"
@@ -2345,7 +2312,7 @@
         "smithy.api#documentation": "The set of CORS rules."
       }
     },
-    "com.azure.storage_queue#ServiceGetPropertiesRequest": {
+    "com.azure.storage_queue#GetServicePropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -2380,16 +2347,16 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.storage_queue#MessageIdDelete"
+          "target": "com.azure.storage_queue#DeleteMessageId"
         },
         {
-          "target": "com.azure.storage_queue#MessageIdUpdate"
+          "target": "com.azure.storage_queue#UpdateMessageId"
         },
         {
           "target": "com.azure.storage_queue#MessagesPeek"
         },
         {
-          "target": "com.azure.storage_queue#MessagesClear"
+          "target": "com.azure.storage_queue#ClearMessage"
         },
         {
           "target": "com.azure.storage_queue#MessagesEnqueue"
@@ -2398,37 +2365,37 @@
           "target": "com.azure.storage_queue#MessagesDequeue"
         },
         {
-          "target": "com.azure.storage_queue#QueueSetAccessPolicy"
+          "target": "com.azure.storage_queue#SetQueueAccessPolicy"
         },
         {
-          "target": "com.azure.storage_queue#QueueGetAccessPolicy"
+          "target": "com.azure.storage_queue#GetQueueAccessPolicy"
         },
         {
-          "target": "com.azure.storage_queue#QueueSetMetadata"
+          "target": "com.azure.storage_queue#SetQueueMetadata"
         },
         {
-          "target": "com.azure.storage_queue#QueueGetProperties"
+          "target": "com.azure.storage_queue#GetQueueProperties"
         },
         {
-          "target": "com.azure.storage_queue#QueueDelete"
+          "target": "com.azure.storage_queue#DeleteQueue"
         },
         {
-          "target": "com.azure.storage_queue#QueueCreate"
+          "target": "com.azure.storage_queue#CreateQueue"
         },
         {
-          "target": "com.azure.storage_queue#ServiceListQueuesSegment"
+          "target": "com.azure.storage_queue#ListServiceQueuesSegment"
         },
         {
-          "target": "com.azure.storage_queue#ServiceGetUserDelegationKey"
+          "target": "com.azure.storage_queue#GetServiceUserDelegationKey"
         },
         {
-          "target": "com.azure.storage_queue#ServiceGetStatistics"
+          "target": "com.azure.storage_queue#GetServiceStatistics"
         },
         {
-          "target": "com.azure.storage_queue#ServiceSetProperties"
+          "target": "com.azure.storage_queue#SetServiceProperties"
         },
         {
-          "target": "com.azure.storage_queue#ServiceGetProperties"
+          "target": "com.azure.storage_queue#GetServiceProperties"
         }
       ],
       "traits": {

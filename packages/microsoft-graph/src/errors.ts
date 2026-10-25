@@ -206,6 +206,19 @@ export class DuplicatePropertyValue
   ).pipe(Category.withConflictError, Category.withAlreadyExistsError) {}
 
 /**
+ * Another federated identity credential on the application already has
+ * this issuer and subject. Right after that credential is deleted (a
+ * rename) this is replication lag. Graph returns it as HTTP 400 with the
+ * message "The combination of issuer and subject must be unique for the
+ * application"; matched in {@link GRAPH_ERROR_MESSAGE_MATCHERS}.
+ */
+export class FederatedIdentityCredentialSubjectInUse
+  extends /*@__PURE__*/ Schema.TaggedError<FederatedIdentityCredentialSubjectInUse>()(
+    "FederatedIdentityCredentialSubjectInUse",
+    GraphErrorFields,
+  ).pipe(Category.withConflictError, Category.withAlreadyExistsError) {}
+
+/**
  * Concurrent writes to the same directory object collided ("Error due to
  * concurrent requests being made to the tenant. Please wait briefly and
  * retry."). Retryable: the default retry policy retries it. Graph code:
@@ -216,6 +229,20 @@ export class DirectoryConcurrencyViolation
     "DirectoryConcurrencyViolation",
     GraphErrorFields,
   ).pipe(Category.withConflictError, Category.withRetryableError) {}
+
+/**
+ * A directory replica could not read the tenant while it served the
+ * request ("Unable to read the company information from the directory.",
+ * HTTP 404). Seen on `removePassword` seconds after the application's
+ * service principal was deleted; the same request succeeds a second later.
+ * Retryable: the default retry policy retries it. Graph code:
+ * `Directory_ObjectNotFound`.
+ */
+export class DirectoryObjectNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<DirectoryObjectNotFound>()(
+    "DirectoryObjectNotFound",
+    GraphErrorFields,
+  ).pipe(Category.withServerError, Category.withRetryableError) {}
 
 // ---------------------------------------------------------------------------
 // Code tables
@@ -240,6 +267,7 @@ export const GRAPH_ERROR_CODE_MAP: Record<string, new (props: any) => unknown> =
   // Conflict
   Request_MultipleObjectsWithSameKeyValue: MultipleObjectsWithSameKeyValue,
   Directory_ConcurrencyViolation: DirectoryConcurrencyViolation,
+  Directory_ObjectNotFound: DirectoryObjectNotFound,
 };
 
 /**
@@ -271,6 +299,11 @@ export const GRAPH_ERROR_MESSAGE_MATCHERS: ReadonlyArray<{
     code: "Request_BadRequest",
     includes: "No password credential found with keyId",
     error: PasswordCredentialNotFound,
+  },
+  {
+    // The code is not one of Graph's usual ones, so match any code.
+    includes: "The combination of issuer and subject must be unique",
+    error: FederatedIdentityCredentialSubjectInUse,
   },
 ];
 
@@ -321,4 +354,6 @@ export type MicrosoftGraphApiError =
   | MultipleObjectsWithSameKeyValue
   | ObjectReferenceAlreadyExists
   | DuplicatePropertyValue
-  | DirectoryConcurrencyViolation;
+  | DirectoryConcurrencyViolation
+  | DirectoryObjectNotFound
+  | FederatedIdentityCredentialSubjectInUse;

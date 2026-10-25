@@ -15,31 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.monitor#DataCollectionRuleConfigurationMetadataFetch": "com.azure.monitor#FetchDataCollectionRuleConfigurationMetadata",
-      "com.azure.monitor#DataCollectionRuleConfigurationMetadataFetchRequest": "com.azure.monitor#FetchDataCollectionRuleConfigurationMetadataRequest",
-      "com.azure.monitor#OperationsList": "com.azure.monitor#ListOperations",
-      "com.azure.monitor#OperationsListResponse": "com.azure.monitor#ListOperationsResponse",
-      "com.azure.monitor#OperationsListResponseValueList": "com.azure.monitor#ListOperationsResponseValueList",
-      "com.azure.monitor#OperationsListRequest": "com.azure.monitor#ListOperationsRequest",
-      "com.azure.monitor#ScheduledQueryRulesDelete": "com.azure.monitor#DeleteScheduledQueryRule",
-      "com.azure.monitor#ScheduledQueryRulesDeleteRequest": "com.azure.monitor#DeleteScheduledQueryRuleRequest",
-      "com.azure.monitor#ScheduledQueryRulesUpdate": "com.azure.monitor#UpdateScheduledQueryRule",
-      "com.azure.monitor#ScheduledQueryRulesUpdateRequest": "com.azure.monitor#UpdateScheduledQueryRuleRequest",
-      "com.azure.monitor#ScheduledQueryRulesUpdateRequestTagsMap": "com.azure.monitor#UpdateScheduledQueryRuleRequestTagsMap",
-      "com.azure.monitor#ScheduledQueryRulesGet": "com.azure.monitor#GetScheduledQueryRule",
-      "com.azure.monitor#ScheduledQueryRulesGetRequest": "com.azure.monitor#GetScheduledQueryRuleRequest",
-      "com.azure.monitor#ScheduledQueryRulesListByResourceGroup": "com.azure.monitor#ListScheduledQueryRuleByResourceGroup",
-      "com.azure.monitor#ScheduledQueryRulesListByResourceGroupRequest": "com.azure.monitor#ListScheduledQueryRuleByResourceGroupRequest",
-      "com.azure.monitor#ScheduledQueryRulesListBySubscription": "com.azure.monitor#ListScheduledQueryRuleBySubscription",
-      "com.azure.monitor#ScheduledQueryRulesListBySubscriptionRequest": "com.azure.monitor#ListScheduledQueryRuleBySubscriptionRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.monitor#DataCollectionRuleConfigurationMetadataFetch": {
+    "com.azure.monitor#FetchDataCollectionRuleConfigurationMetadata": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor#DataCollectionRuleConfigurationMetadataFetchRequest"
+        "target": "com.azure.monitor#FetchDataCollectionRuleConfigurationMetadataRequest"
       },
       "output": {
         "target": "com.azure.monitor#DataCollectionRuleConfigurationMetadataResponse"
@@ -284,7 +266,7 @@
         "smithy.api#documentation": "List of supported destination resource types."
       }
     },
-    "com.azure.monitor#DataCollectionRuleConfigurationMetadataFetchRequest": {
+    "com.azure.monitor#FetchDataCollectionRuleConfigurationMetadataRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -326,13 +308,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.monitor#OperationsList": {
+    "com.azure.monitor#ListOperations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor#OperationsListRequest"
+        "target": "com.azure.monitor#ListOperationsRequest"
       },
       "output": {
-        "target": "com.azure.monitor#OperationsListResponse"
+        "target": "com.azure.monitor#ListOperationsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -352,11 +334,11 @@
         }
       }
     },
-    "com.azure.monitor#OperationsListResponse": {
+    "com.azure.monitor#ListOperationsResponse": {
       "type": "structure",
       "members": {
         "value": {
-          "target": "com.azure.monitor#OperationsListResponseValueList",
+          "target": "com.azure.monitor#ListOperationsResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of operations supported by the resource provider"
           }
@@ -372,7 +354,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.monitor#OperationsListResponseValueList": {
+    "com.azure.monitor#ListOperationsResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.monitor#Operation"
@@ -491,7 +473,7 @@
         "smithy.api#documentation": "Localized display information for this particular operation."
       }
     },
-    "com.azure.monitor#OperationsListRequest": {
+    "com.azure.monitor#ListOperationsRequest": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -505,10 +487,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.monitor#ScheduledQueryRulesDelete": {
+    "com.azure.monitor#DeleteScheduledQueryRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor#ScheduledQueryRulesDeleteRequest"
+        "target": "com.azure.monitor#DeleteScheduledQueryRuleRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -524,7 +506,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.monitor#ScheduledQueryRulesDeleteRequest": {
+    "com.azure.monitor#DeleteScheduledQueryRuleRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -556,10 +538,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.monitor#ScheduledQueryRulesUpdate": {
+    "com.azure.monitor#UpdateScheduledQueryRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor#ScheduledQueryRulesUpdateRequest"
+        "target": "com.azure.monitor#UpdateScheduledQueryRuleRequest"
       },
       "output": {
         "target": "com.azure.monitor#ScheduledQueryRuleResource"
@@ -1437,7 +1419,7 @@
         "smithy.api#documentation": "Type of managed service identity."
       }
     },
-    "com.azure.monitor#ScheduledQueryRulesUpdateRequest": {
+    "com.azure.monitor#UpdateScheduledQueryRuleRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1471,7 +1453,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.monitor#ScheduledQueryRulesUpdateRequestTagsMap",
+          "target": "com.azure.monitor#UpdateScheduledQueryRuleRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags"
           }
@@ -1647,7 +1629,7 @@
         "smithy.api#documentation": "Severity of the alert. Should be an integer between [0-4]. Value of 0 is severest. Relevant and required only for rules of the kind LogAlert."
       }
     },
-    "com.azure.monitor#ScheduledQueryRulesUpdateRequestTagsMap": {
+    "com.azure.monitor#UpdateScheduledQueryRuleRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1846,10 +1828,10 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.monitor#ScheduledQueryRulesGet": {
+    "com.azure.monitor#GetScheduledQueryRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor#ScheduledQueryRulesGetRequest"
+        "target": "com.azure.monitor#GetScheduledQueryRuleRequest"
       },
       "output": {
         "target": "com.azure.monitor#ScheduledQueryRuleResource"
@@ -1865,7 +1847,7 @@
         "com.distilled.openapi#apiVersion": "2026-03-01"
       }
     },
-    "com.azure.monitor#ScheduledQueryRulesGetRequest": {
+    "com.azure.monitor#GetScheduledQueryRuleRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1897,10 +1879,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.monitor#ScheduledQueryRulesListByResourceGroup": {
+    "com.azure.monitor#ListScheduledQueryRuleByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor#ScheduledQueryRulesListByResourceGroupRequest"
+        "target": "com.azure.monitor#ListScheduledQueryRuleByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.monitor#ScheduledQueryRuleResourceCollection"
@@ -1952,7 +1934,7 @@
         "smithy.api#documentation": "The values for the scheduled query rule resources."
       }
     },
-    "com.azure.monitor#ScheduledQueryRulesListByResourceGroupRequest": {
+    "com.azure.monitor#ListScheduledQueryRuleByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1982,10 +1964,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.monitor#ScheduledQueryRulesListBySubscription": {
+    "com.azure.monitor#ListScheduledQueryRuleBySubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.monitor#ScheduledQueryRulesListBySubscriptionRequest"
+        "target": "com.azure.monitor#ListScheduledQueryRuleBySubscriptionRequest"
       },
       "output": {
         "target": "com.azure.monitor#ScheduledQueryRuleResourceCollection"
@@ -2008,7 +1990,7 @@
         }
       }
     },
-    "com.azure.monitor#ScheduledQueryRulesListBySubscriptionRequest": {
+    "com.azure.monitor#ListScheduledQueryRuleBySubscriptionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2035,28 +2017,28 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.monitor#DataCollectionRuleConfigurationMetadataFetch"
+          "target": "com.azure.monitor#FetchDataCollectionRuleConfigurationMetadata"
         },
         {
-          "target": "com.azure.monitor#OperationsList"
+          "target": "com.azure.monitor#ListOperations"
         },
         {
-          "target": "com.azure.monitor#ScheduledQueryRulesDelete"
+          "target": "com.azure.monitor#DeleteScheduledQueryRule"
         },
         {
-          "target": "com.azure.monitor#ScheduledQueryRulesUpdate"
+          "target": "com.azure.monitor#UpdateScheduledQueryRule"
         },
         {
           "target": "com.azure.monitor#ScheduledQueryRulesCreateOrUpdate"
         },
         {
-          "target": "com.azure.monitor#ScheduledQueryRulesGet"
+          "target": "com.azure.monitor#GetScheduledQueryRule"
         },
         {
-          "target": "com.azure.monitor#ScheduledQueryRulesListByResourceGroup"
+          "target": "com.azure.monitor#ListScheduledQueryRuleByResourceGroup"
         },
         {
-          "target": "com.azure.monitor#ScheduledQueryRulesListBySubscription"
+          "target": "com.azure.monitor#ListScheduledQueryRuleBySubscription"
         }
       ],
       "traits": {

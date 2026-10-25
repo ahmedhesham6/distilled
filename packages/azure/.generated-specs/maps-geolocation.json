@@ -15,17 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.maps_geolocation#GeolocationGetIPToLocation": "com.azure.maps_geolocation#GetGeolocationIPToLocation",
-      "com.azure.maps_geolocation#GeolocationGetIPToLocationRequest": "com.azure.maps_geolocation#GetGeolocationIPToLocationRequest",
-      "com.azure.maps_geolocation#GeolocationGetIPToLocationRequestFormat": "com.azure.maps_geolocation#GetGeolocationIPToLocationRequestFormat"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.maps_geolocation#GeolocationGetIPToLocation": {
+    "com.azure.maps_geolocation#GetGeolocationIPToLocation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_geolocation#GeolocationGetIPToLocationRequest"
+        "target": "com.azure.maps_geolocation#GetGeolocationIPToLocationRequest"
       },
       "output": {
         "target": "com.azure.maps_geolocation#IpAddressToLocationResult"
@@ -81,7 +77,7 @@
         "smithy.api#documentation": "The object containing the country/region information."
       }
     },
-    "com.azure.maps_geolocation#GeolocationGetIPToLocationRequest": {
+    "com.azure.maps_geolocation#GetGeolocationIPToLocationRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -92,7 +88,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_geolocation#GeolocationGetIPToLocationRequestFormat",
+          "target": "com.azure.maps_geolocation#GetGeolocationIPToLocationRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -119,7 +115,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_geolocation#GeolocationGetIPToLocationRequestFormat": {
+    "com.azure.maps_geolocation#GetGeolocationIPToLocationRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -136,7 +132,7 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.maps_geolocation#GeolocationGetIPToLocation"
+          "target": "com.azure.maps_geolocation#GetGeolocationIPToLocation"
         }
       ],
       "traits": {

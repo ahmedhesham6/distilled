@@ -15,44 +15,16 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANA": "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANA",
-      "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANAResponse": "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANAResponse",
-      "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANAResponseBodyList": "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANAResponseBodyList",
-      "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANARequest": "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANARequest",
-      "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANARequestFormat": "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANARequestFormat",
-      "com.azure.maps_timezone#TimezoneGetTimezoneIANAVersion": "com.azure.maps_timezone#GetTimezoneTimezoneIANAVersion",
-      "com.azure.maps_timezone#TimezoneGetTimezoneIANAVersionRequest": "com.azure.maps_timezone#GetTimezoneTimezoneIANAVersionRequest",
-      "com.azure.maps_timezone#TimezoneGetTimezoneIANAVersionRequestFormat": "com.azure.maps_timezone#GetTimezoneTimezoneIANAVersionRequestFormat",
-      "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindows": "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindows",
-      "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindowsResponse": "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindowsResponse",
-      "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindowsResponseBodyList": "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindowsResponseBodyList",
-      "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindowsRequest": "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindowsRequest",
-      "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindowsRequestFormat": "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindowsRequestFormat",
-      "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANA": "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANA",
-      "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANAResponse": "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANAResponse",
-      "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANAResponseBodyList": "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANAResponseBodyList",
-      "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANARequest": "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANARequest",
-      "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANARequestFormat": "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANARequestFormat",
-      "com.azure.maps_timezone#TimezoneGetTimezoneByID": "com.azure.maps_timezone#GetTimezoneTimezoneByID",
-      "com.azure.maps_timezone#TimezoneGetTimezoneByIDRequest": "com.azure.maps_timezone#GetTimezoneTimezoneByIDRequest",
-      "com.azure.maps_timezone#TimezoneGetTimezoneByIDRequestOptions": "com.azure.maps_timezone#GetTimezoneTimezoneByIDRequestOptions",
-      "com.azure.maps_timezone#TimezoneGetTimezoneByIDRequestFormat": "com.azure.maps_timezone#GetTimezoneTimezoneByIDRequestFormat",
-      "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinates": "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinates",
-      "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinatesRequest": "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequest",
-      "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinatesRequestQueryList": "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequestQueryList",
-      "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinatesRequestOptions": "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequestOptions",
-      "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinatesRequestFormat": "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequestFormat"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANA": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANA": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANARequest"
+        "target": "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANARequest"
       },
       "output": {
-        "target": "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANAResponse"
+        "target": "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANAResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -71,11 +43,11 @@
         "smithy.api#documentation": "Use to get the IANA ID.\n\nThe `Get Windows to IANA Time Zone` API is an HTTP `GET` request that returns a\ncorresponding Internet Assigned Numbers Authority (IANA) ID, given a valid\nWindows Time Zone ID. Multiple IANA IDs may be returned for a single Windows\nID. It is possible to narrow these results by adding an optional territory\nparameter."
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANAResponse": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANAResponse": {
       "type": "structure",
       "members": {
         "body": {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANAResponseBodyList",
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANAResponseBodyList",
           "traits": {
             "com.distilled.openapi#rawResponse": {},
             "smithy.api#required": {}
@@ -86,7 +58,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANAResponseBodyList": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANAResponseBodyList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_timezone#IanaId"
@@ -125,7 +97,7 @@
         "smithy.api#documentation": "IANA time zone ID information."
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANARequest": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANARequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -136,7 +108,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANARequestFormat",
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANARequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -170,7 +142,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANARequestFormat": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANARequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -182,10 +154,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneIANAVersion": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneIANAVersion": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_timezone#TimezoneGetTimezoneIANAVersionRequest"
+        "target": "com.azure.maps_timezone#GetTimezoneTimezoneIANAVersionRequest"
       },
       "output": {
         "target": "com.azure.maps_timezone#TimezoneIanaVersionResult"
@@ -221,7 +193,7 @@
         "smithy.api#documentation": "This object is returned from a successful Timezone IANA Version call"
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneIANAVersionRequest": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneIANAVersionRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -232,7 +204,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneIANAVersionRequestFormat",
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneIANAVersionRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -251,7 +223,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneIANAVersionRequestFormat": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneIANAVersionRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -263,13 +235,13 @@
       },
       "traits": {}
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindows": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindows": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindowsRequest"
+        "target": "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindowsRequest"
       },
       "output": {
-        "target": "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindowsResponse"
+        "target": "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindowsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -288,11 +260,11 @@
         "smithy.api#documentation": "Use to get the list of Windows Time Zone IDs.\n\nThe `Get Windows Time Zones` API is an HTTP `GET` request that returns a full\nlist of Windows Time Zone IDs."
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindowsResponse": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindowsResponse": {
       "type": "structure",
       "members": {
         "body": {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindowsResponseBodyList",
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindowsResponseBodyList",
           "traits": {
             "com.distilled.openapi#rawResponse": {},
             "smithy.api#required": {}
@@ -303,7 +275,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindowsResponseBodyList": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindowsResponseBodyList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_timezone#TimezoneWindows"
@@ -345,7 +317,7 @@
         "smithy.api#documentation": "IanaIds array"
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindowsRequest": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindowsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -356,7 +328,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindowsRequestFormat",
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindowsRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -375,7 +347,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindowsRequestFormat": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindowsRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -387,13 +359,13 @@
       },
       "traits": {}
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANA": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANA": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANARequest"
+        "target": "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANARequest"
       },
       "output": {
-        "target": "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANAResponse"
+        "target": "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANAResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -412,11 +384,11 @@
         "smithy.api#documentation": "Use to get the list of IANA time zone IDs.\n\nThe `Get IANA Time Zones` API is an HTTP `GET` request that returns a full list\nof Internet Assigned Numbers Authority (IANA) time zone IDs. Updates to the\nIANA service are reflected in the system within one day."
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANAResponse": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANAResponse": {
       "type": "structure",
       "members": {
         "body": {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANAResponseBodyList",
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANAResponseBodyList",
           "traits": {
             "com.distilled.openapi#rawResponse": {},
             "smithy.api#required": {}
@@ -427,14 +399,14 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANAResponseBodyList": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANAResponseBodyList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_timezone#IanaId"
       },
       "traits": {}
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANARequest": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANARequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -445,7 +417,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANARequestFormat",
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANARequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -464,7 +436,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANARequestFormat": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANARequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -476,10 +448,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneByID": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneByID": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_timezone#TimezoneGetTimezoneByIDRequest"
+        "target": "com.azure.maps_timezone#GetTimezoneTimezoneByIDRequest"
       },
       "output": {
         "target": "com.azure.maps_timezone#TimezoneResult"
@@ -779,7 +751,7 @@
         "smithy.api#documentation": "An array of time zone ID aliases. Only returned when [options]=*zoneinfo* or\n*all*.\n\nNote: may be null."
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneByIDRequest": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneByIDRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -790,7 +762,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneByIDRequestFormat",
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneByIDRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -798,7 +770,7 @@
           }
         },
         "options": {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneByIDRequestOptions",
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneByIDRequestOptions",
           "traits": {
             "smithy.api#httpQuery": "options",
             "smithy.api#documentation": "Alternatively, use alias \"o\". Options available for types of information\nreturned in the result."
@@ -852,7 +824,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneByIDRequestOptions": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneByIDRequestOptions": {
       "type": "enum",
       "members": {
         "NONE": {
@@ -882,7 +854,7 @@
       },
       "traits": {}
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneByIDRequestFormat": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneByIDRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -894,10 +866,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinates": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinates": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinatesRequest"
+        "target": "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequest"
       },
       "output": {
         "target": "com.azure.maps_timezone#TimezoneResult"
@@ -919,7 +891,7 @@
         "smithy.api#documentation": "Use to get the current, historical, and future time zone information for the\nspecified latitude-longitude pair.\n\nThe `Get Timezone By Coordinates` API is an HTTP `GET` request that returns\ncurrent, historical, and future time zone information for a specified\nlatitude-longitude pair. In addition, the API provides sunset and sunrise times\nfor a given location, with the exception of regions that observe solar days."
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinatesRequest": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -930,7 +902,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinatesRequestFormat",
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -938,7 +910,7 @@
           }
         },
         "options": {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinatesRequestOptions",
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequestOptions",
           "traits": {
             "smithy.api#httpQuery": "options",
             "smithy.api#documentation": "Alternatively, use alias \"o\". Options available for types of information\nreturned in the result."
@@ -966,7 +938,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinatesRequestQueryList",
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequestQueryList",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},
@@ -992,14 +964,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinatesRequestQueryList": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequestQueryList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinatesRequestOptions": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequestOptions": {
       "type": "enum",
       "members": {
         "NONE": {
@@ -1029,7 +1001,7 @@
       },
       "traits": {}
     },
-    "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinatesRequestFormat": {
+    "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -1046,22 +1018,22 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneWindowsToIANA"
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneWindowsToIANA"
         },
         {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneIANAVersion"
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneIANAVersion"
         },
         {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneEnumWindows"
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneEnumWindows"
         },
         {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneEnumIANA"
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneEnumIANA"
         },
         {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneByID"
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneByID"
         },
         {
-          "target": "com.azure.maps_timezone#TimezoneGetTimezoneByCoordinates"
+          "target": "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinates"
         }
       ],
       "traits": {

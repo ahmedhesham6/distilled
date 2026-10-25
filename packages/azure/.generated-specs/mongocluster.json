@@ -15,85 +15,16 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.mongocluster#UsersDelete": "com.azure.mongocluster#DeleteUser",
-      "com.azure.mongocluster#UsersDeleteResponse": "com.azure.mongocluster#DeleteUserResponse",
-      "com.azure.mongocluster#UsersDeleteRequest": "com.azure.mongocluster#DeleteUserRequest",
-      "com.azure.mongocluster#UsersGet": "com.azure.mongocluster#GetUser",
-      "com.azure.mongocluster#UsersGetResponse": "com.azure.mongocluster#GetUserResponse",
-      "com.azure.mongocluster#UsersGetRequest": "com.azure.mongocluster#GetUserRequest",
-      "com.azure.mongocluster#UsersListByMongoCluster": "com.azure.mongocluster#ListUserByMongoCluster",
-      "com.azure.mongocluster#UsersListByMongoClusterRequest": "com.azure.mongocluster#ListUserByMongoClusterRequest",
-      "com.azure.mongocluster#ReplicasListByParent": "com.azure.mongocluster#ListReplicasByParent",
-      "com.azure.mongocluster#ReplicasListByParentRequest": "com.azure.mongocluster#ListReplicasByParentRequest",
-      "com.azure.mongocluster#MongoClustersPromote": "com.azure.mongocluster#PromoteMongoCluster",
-      "com.azure.mongocluster#MongoClustersPromoteResponse": "com.azure.mongocluster#PromoteMongoClusterResponse",
-      "com.azure.mongocluster#MongoClustersPromoteRequest": "com.azure.mongocluster#PromoteMongoClusterRequest",
-      "com.azure.mongocluster#PrivateLinksListByMongoCluster": "com.azure.mongocluster#ListPrivateLinkByMongoCluster",
-      "com.azure.mongocluster#PrivateLinksListByMongoClusterRequest": "com.azure.mongocluster#ListPrivateLinkByMongoClusterRequest",
-      "com.azure.mongocluster#PrivateEndpointConnectionsDelete": "com.azure.mongocluster#DeletePrivateEndpointConnection",
-      "com.azure.mongocluster#PrivateEndpointConnectionsDeleteResponse": "com.azure.mongocluster#DeletePrivateEndpointConnectionResponse",
-      "com.azure.mongocluster#PrivateEndpointConnectionsDeleteRequest": "com.azure.mongocluster#DeletePrivateEndpointConnectionRequest",
-      "com.azure.mongocluster#PrivateEndpointConnectionsCreate": "com.azure.mongocluster#CreatePrivateEndpointConnection",
-      "com.azure.mongocluster#PrivateEndpointConnectionsCreateResponse": "com.azure.mongocluster#CreatePrivateEndpointConnectionResponse",
-      "com.azure.mongocluster#PrivateEndpointConnectionsCreateResponseProperties": "com.azure.mongocluster#CreatePrivateEndpointConnectionResponseProperties",
-      "com.azure.mongocluster#PrivateEndpointConnectionsCreateResponsePropertiesGroupIdsList": "com.azure.mongocluster#CreatePrivateEndpointConnectionResponsePropertiesGroupIdsList",
-      "com.azure.mongocluster#PrivateEndpointConnectionsCreateRequest": "com.azure.mongocluster#CreatePrivateEndpointConnectionRequest",
-      "com.azure.mongocluster#PrivateEndpointConnectionsCreateRequestProperties": "com.azure.mongocluster#CreatePrivateEndpointConnectionRequestProperties",
-      "com.azure.mongocluster#PrivateEndpointConnectionsGet": "com.azure.mongocluster#GetPrivateEndpointConnection",
-      "com.azure.mongocluster#PrivateEndpointConnectionsGetResponse": "com.azure.mongocluster#GetPrivateEndpointConnectionResponse",
-      "com.azure.mongocluster#PrivateEndpointConnectionsGetResponseProperties": "com.azure.mongocluster#GetPrivateEndpointConnectionResponseProperties",
-      "com.azure.mongocluster#PrivateEndpointConnectionsGetResponsePropertiesGroupIdsList": "com.azure.mongocluster#GetPrivateEndpointConnectionResponsePropertiesGroupIdsList",
-      "com.azure.mongocluster#PrivateEndpointConnectionsGetRequest": "com.azure.mongocluster#GetPrivateEndpointConnectionRequest",
-      "com.azure.mongocluster#PrivateEndpointConnectionsListByMongoCluster": "com.azure.mongocluster#ListPrivateEndpointConnectionByMongoCluster",
-      "com.azure.mongocluster#PrivateEndpointConnectionsListByMongoClusterRequest": "com.azure.mongocluster#ListPrivateEndpointConnectionByMongoClusterRequest",
-      "com.azure.mongocluster#MongoClustersListConnectionStrings": "com.azure.mongocluster#ListMongoClusterConnectionStrings",
-      "com.azure.mongocluster#MongoClustersListConnectionStringsRequest": "com.azure.mongocluster#ListMongoClusterConnectionStringsRequest",
-      "com.azure.mongocluster#FirewallRulesDelete": "com.azure.mongocluster#DeleteFirewallRule",
-      "com.azure.mongocluster#FirewallRulesDeleteResponse": "com.azure.mongocluster#DeleteFirewallRuleResponse",
-      "com.azure.mongocluster#FirewallRulesDeleteRequest": "com.azure.mongocluster#DeleteFirewallRuleRequest",
-      "com.azure.mongocluster#FirewallRulesGet": "com.azure.mongocluster#GetFirewallRule",
-      "com.azure.mongocluster#FirewallRulesGetResponse": "com.azure.mongocluster#GetFirewallRuleResponse",
-      "com.azure.mongocluster#FirewallRulesGetRequest": "com.azure.mongocluster#GetFirewallRuleRequest",
-      "com.azure.mongocluster#FirewallRulesListByMongoCluster": "com.azure.mongocluster#ListFirewallRuleByMongoCluster",
-      "com.azure.mongocluster#FirewallRulesListByMongoClusterRequest": "com.azure.mongocluster#ListFirewallRuleByMongoClusterRequest",
-      "com.azure.mongocluster#MongoClustersDelete": "com.azure.mongocluster#DeleteMongoCluster",
-      "com.azure.mongocluster#MongoClustersDeleteResponse": "com.azure.mongocluster#DeleteMongoClusterResponse",
-      "com.azure.mongocluster#MongoClustersDeleteRequest": "com.azure.mongocluster#DeleteMongoClusterRequest",
-      "com.azure.mongocluster#MongoClustersUpdate": "com.azure.mongocluster#UpdateMongoCluster",
-      "com.azure.mongocluster#MongoClustersUpdateResponse": "com.azure.mongocluster#UpdateMongoClusterResponse",
-      "com.azure.mongocluster#MongoClustersUpdateResponseIdentity": "com.azure.mongocluster#UpdateMongoClusterResponseIdentity",
-      "com.azure.mongocluster#MongoClustersUpdateResponseTagsMap": "com.azure.mongocluster#UpdateMongoClusterResponseTagsMap",
-      "com.azure.mongocluster#MongoClustersUpdateRequest": "com.azure.mongocluster#UpdateMongoClusterRequest",
-      "com.azure.mongocluster#MongoClustersUpdateRequestTagsMap": "com.azure.mongocluster#UpdateMongoClusterRequestTagsMap",
-      "com.azure.mongocluster#MongoClustersUpdateRequestIdentity": "com.azure.mongocluster#UpdateMongoClusterRequestIdentity",
-      "com.azure.mongocluster#MongoClustersGet": "com.azure.mongocluster#GetMongoCluster",
-      "com.azure.mongocluster#MongoClustersGetResponse": "com.azure.mongocluster#GetMongoClusterResponse",
-      "com.azure.mongocluster#MongoClustersGetResponseIdentity": "com.azure.mongocluster#GetMongoClusterResponseIdentity",
-      "com.azure.mongocluster#MongoClustersGetResponseTagsMap": "com.azure.mongocluster#GetMongoClusterResponseTagsMap",
-      "com.azure.mongocluster#MongoClustersGetRequest": "com.azure.mongocluster#GetMongoClusterRequest",
-      "com.azure.mongocluster#MongoClustersListByResourceGroup": "com.azure.mongocluster#ListMongoClusterByResourceGroup",
-      "com.azure.mongocluster#MongoClustersListByResourceGroupRequest": "com.azure.mongocluster#ListMongoClusterByResourceGroupRequest",
-      "com.azure.mongocluster#MongoClustersList": "com.azure.mongocluster#ListMongoClusters",
-      "com.azure.mongocluster#MongoClustersListRequest": "com.azure.mongocluster#ListMongoClustersRequest",
-      "com.azure.mongocluster#MongoClustersCheckNameAvailability": "com.azure.mongocluster#CheckMongoClusterNameAvailability",
-      "com.azure.mongocluster#MongoClustersCheckNameAvailabilityResponse": "com.azure.mongocluster#CheckMongoClusterNameAvailabilityResponse",
-      "com.azure.mongocluster#MongoClustersCheckNameAvailabilityResponseReason": "com.azure.mongocluster#CheckMongoClusterNameAvailabilityResponseReason",
-      "com.azure.mongocluster#MongoClustersCheckNameAvailabilityRequest": "com.azure.mongocluster#CheckMongoClusterNameAvailabilityRequest",
-      "com.azure.mongocluster#OperationsList": "com.azure.mongocluster#ListOperations",
-      "com.azure.mongocluster#OperationsListResponse": "com.azure.mongocluster#ListOperationsResponse",
-      "com.azure.mongocluster#OperationsListResponseValueList": "com.azure.mongocluster#ListOperationsResponseValueList",
-      "com.azure.mongocluster#OperationsListRequest": "com.azure.mongocluster#ListOperationsRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.mongocluster#UsersDelete": {
+    "com.azure.mongocluster#DeleteUser": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#UsersDeleteRequest"
+        "target": "com.azure.mongocluster#DeleteUserRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#UsersDeleteResponse"
+        "target": "com.azure.mongocluster#DeleteUserResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -106,7 +37,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.mongocluster#UsersDeleteResponse": {
+    "com.azure.mongocluster#DeleteUserResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -128,7 +59,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#UsersDeleteRequest": {
+    "com.azure.mongocluster#DeleteUserRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -311,6 +242,12 @@
           "traits": {
             "smithy.api#documentation": "The type of identity provider that the user belongs to.",
             "smithy.api#required": {}
+          }
+        },
+        "properties": {
+          "target": "com.azure.mongocluster#EntraIdentityProviderProperties",
+          "traits": {
+            "smithy.api#documentation": "MicrosoftEntraID: the Entra identity properties for the user."
           }
         }
       },
@@ -559,13 +496,13 @@
         "smithy.api#documentation": "Database roles that are assigned to the user."
       }
     },
-    "com.azure.mongocluster#UsersGet": {
+    "com.azure.mongocluster#GetUser": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#UsersGetRequest"
+        "target": "com.azure.mongocluster#GetUserRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#UsersGetResponse"
+        "target": "com.azure.mongocluster#GetUserResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -578,7 +515,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.mongocluster#UsersGetResponse": {
+    "com.azure.mongocluster#GetUserResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -616,7 +553,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#UsersGetRequest": {
+    "com.azure.mongocluster#GetUserRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -656,10 +593,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#UsersListByMongoCluster": {
+    "com.azure.mongocluster#ListUserByMongoCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#UsersListByMongoClusterRequest"
+        "target": "com.azure.mongocluster#ListUserByMongoClusterRequest"
       },
       "output": {
         "target": "com.azure.mongocluster#UserListResult"
@@ -750,7 +687,7 @@
         "smithy.api#documentation": "Represents a Mongo cluster user."
       }
     },
-    "com.azure.mongocluster#UsersListByMongoClusterRequest": {
+    "com.azure.mongocluster#ListUserByMongoClusterRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -788,10 +725,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#ReplicasListByParent": {
+    "com.azure.mongocluster#ListReplicasByParent": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#ReplicasListByParentRequest"
+        "target": "com.azure.mongocluster#ListReplicasByParentRequest"
       },
       "output": {
         "target": "com.azure.mongocluster#ReplicaListResult"
@@ -1781,7 +1718,7 @@
         "smithy.api#documentation": "The mode that the Mongo Cluster is created with."
       }
     },
-    "com.azure.mongocluster#ReplicasListByParentRequest": {
+    "com.azure.mongocluster#ListReplicasByParentRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1819,13 +1756,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#MongoClustersPromote": {
+    "com.azure.mongocluster#PromoteMongoCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#MongoClustersPromoteRequest"
+        "target": "com.azure.mongocluster#PromoteMongoClusterRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#MongoClustersPromoteResponse"
+        "target": "com.azure.mongocluster#PromoteMongoClusterResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1838,7 +1775,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.mongocluster#MongoClustersPromoteResponse": {
+    "com.azure.mongocluster#PromoteMongoClusterResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -1860,7 +1797,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#MongoClustersPromoteRequest": {
+    "com.azure.mongocluster#PromoteMongoClusterRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1933,10 +1870,10 @@
         "smithy.api#documentation": "The option to apply to a promote operation."
       }
     },
-    "com.azure.mongocluster#PrivateLinksListByMongoCluster": {
+    "com.azure.mongocluster#ListPrivateLinkByMongoCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#PrivateLinksListByMongoClusterRequest"
+        "target": "com.azure.mongocluster#ListPrivateLinkByMongoClusterRequest"
       },
       "output": {
         "target": "com.azure.mongocluster#PrivateLinkResourceListResult"
@@ -2071,7 +2008,7 @@
         "smithy.api#documentation": "The private link resource required member names."
       }
     },
-    "com.azure.mongocluster#PrivateLinksListByMongoClusterRequest": {
+    "com.azure.mongocluster#ListPrivateLinkByMongoClusterRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2109,13 +2046,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsDelete": {
+    "com.azure.mongocluster#DeletePrivateEndpointConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#PrivateEndpointConnectionsDeleteRequest"
+        "target": "com.azure.mongocluster#DeletePrivateEndpointConnectionRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#PrivateEndpointConnectionsDeleteResponse"
+        "target": "com.azure.mongocluster#DeletePrivateEndpointConnectionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2128,7 +2065,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsDeleteResponse": {
+    "com.azure.mongocluster#DeletePrivateEndpointConnectionResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -2150,7 +2087,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsDeleteRequest": {
+    "com.azure.mongocluster#DeletePrivateEndpointConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2190,13 +2127,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsCreate": {
+    "com.azure.mongocluster#CreatePrivateEndpointConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#PrivateEndpointConnectionsCreateRequest"
+        "target": "com.azure.mongocluster#CreatePrivateEndpointConnectionRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#PrivateEndpointConnectionsCreateResponse"
+        "target": "com.azure.mongocluster#CreatePrivateEndpointConnectionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2209,7 +2146,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsCreateResponse": {
+    "com.azure.mongocluster#CreatePrivateEndpointConnectionResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -2237,7 +2174,7 @@
           }
         },
         "properties": {
-          "target": "com.azure.mongocluster#PrivateEndpointConnectionsCreateResponseProperties",
+          "target": "com.azure.mongocluster#CreatePrivateEndpointConnectionResponseProperties",
           "traits": {
             "smithy.api#documentation": "Properties of the private endpoint connection."
           }
@@ -2261,11 +2198,11 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsCreateResponseProperties": {
+    "com.azure.mongocluster#CreatePrivateEndpointConnectionResponseProperties": {
       "type": "structure",
       "members": {
         "groupIds": {
-          "target": "com.azure.mongocluster#PrivateEndpointConnectionsCreateResponsePropertiesGroupIdsList",
+          "target": "com.azure.mongocluster#CreatePrivateEndpointConnectionResponsePropertiesGroupIdsList",
           "traits": {
             "smithy.api#documentation": "The group ids for the private endpoint resource."
           }
@@ -2294,7 +2231,7 @@
         "smithy.api#documentation": "Properties of the private endpoint connection."
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsCreateResponsePropertiesGroupIdsList": {
+    "com.azure.mongocluster#CreatePrivateEndpointConnectionResponsePropertiesGroupIdsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -2303,7 +2240,7 @@
         "smithy.api#documentation": "The group ids for the private endpoint resource."
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsCreateRequest": {
+    "com.azure.mongocluster#CreatePrivateEndpointConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2339,7 +2276,7 @@
           }
         },
         "properties": {
-          "target": "com.azure.mongocluster#PrivateEndpointConnectionsCreateRequestProperties",
+          "target": "com.azure.mongocluster#CreatePrivateEndpointConnectionRequestProperties",
           "traits": {
             "smithy.api#documentation": "Properties of the private endpoint connection."
           }
@@ -2349,7 +2286,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsCreateRequestProperties": {
+    "com.azure.mongocluster#CreatePrivateEndpointConnectionRequestProperties": {
       "type": "structure",
       "members": {
         "privateEndpoint": {
@@ -2377,13 +2314,13 @@
         "smithy.api#documentation": "The private endpoint resource."
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsGet": {
+    "com.azure.mongocluster#GetPrivateEndpointConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#PrivateEndpointConnectionsGetRequest"
+        "target": "com.azure.mongocluster#GetPrivateEndpointConnectionRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#PrivateEndpointConnectionsGetResponse"
+        "target": "com.azure.mongocluster#GetPrivateEndpointConnectionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2396,7 +2333,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsGetResponse": {
+    "com.azure.mongocluster#GetPrivateEndpointConnectionResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -2424,7 +2361,7 @@
           }
         },
         "properties": {
-          "target": "com.azure.mongocluster#PrivateEndpointConnectionsGetResponseProperties",
+          "target": "com.azure.mongocluster#GetPrivateEndpointConnectionResponseProperties",
           "traits": {
             "smithy.api#documentation": "Properties of the private endpoint connection."
           }
@@ -2434,11 +2371,11 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsGetResponseProperties": {
+    "com.azure.mongocluster#GetPrivateEndpointConnectionResponseProperties": {
       "type": "structure",
       "members": {
         "groupIds": {
-          "target": "com.azure.mongocluster#PrivateEndpointConnectionsGetResponsePropertiesGroupIdsList",
+          "target": "com.azure.mongocluster#GetPrivateEndpointConnectionResponsePropertiesGroupIdsList",
           "traits": {
             "smithy.api#documentation": "The group ids for the private endpoint resource."
           }
@@ -2467,7 +2404,7 @@
         "smithy.api#documentation": "Properties of the private endpoint connection."
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsGetResponsePropertiesGroupIdsList": {
+    "com.azure.mongocluster#GetPrivateEndpointConnectionResponsePropertiesGroupIdsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -2476,7 +2413,7 @@
         "smithy.api#documentation": "The group ids for the private endpoint resource."
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsGetRequest": {
+    "com.azure.mongocluster#GetPrivateEndpointConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2516,10 +2453,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsListByMongoCluster": {
+    "com.azure.mongocluster#ListPrivateEndpointConnectionByMongoCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#PrivateEndpointConnectionsListByMongoClusterRequest"
+        "target": "com.azure.mongocluster#ListPrivateEndpointConnectionByMongoClusterRequest"
       },
       "output": {
         "target": "com.azure.mongocluster#PrivateEndpointConnectionResourceListResult"
@@ -2652,7 +2589,7 @@
         "smithy.api#documentation": "The group ids for the private endpoint resource."
       }
     },
-    "com.azure.mongocluster#PrivateEndpointConnectionsListByMongoClusterRequest": {
+    "com.azure.mongocluster#ListPrivateEndpointConnectionByMongoClusterRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2690,10 +2627,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#MongoClustersListConnectionStrings": {
+    "com.azure.mongocluster#ListMongoClusterConnectionStrings": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#MongoClustersListConnectionStringsRequest"
+        "target": "com.azure.mongocluster#ListMongoClusterConnectionStringsRequest"
       },
       "output": {
         "target": "com.azure.mongocluster#ListConnectionStringsResult"
@@ -2759,7 +2696,7 @@
         "smithy.api#documentation": "Connection string for the mongo cluster"
       }
     },
-    "com.azure.mongocluster#MongoClustersListConnectionStringsRequest": {
+    "com.azure.mongocluster#ListMongoClusterConnectionStringsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2791,13 +2728,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#FirewallRulesDelete": {
+    "com.azure.mongocluster#DeleteFirewallRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#FirewallRulesDeleteRequest"
+        "target": "com.azure.mongocluster#DeleteFirewallRuleRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#FirewallRulesDeleteResponse"
+        "target": "com.azure.mongocluster#DeleteFirewallRuleResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2810,7 +2747,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.mongocluster#FirewallRulesDeleteResponse": {
+    "com.azure.mongocluster#DeleteFirewallRuleResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -2832,7 +2769,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#FirewallRulesDeleteRequest": {
+    "com.azure.mongocluster#DeleteFirewallRuleRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3039,13 +2976,13 @@
         "smithy.api#documentation": "The properties of a mongo cluster firewall rule."
       }
     },
-    "com.azure.mongocluster#FirewallRulesGet": {
+    "com.azure.mongocluster#GetFirewallRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#FirewallRulesGetRequest"
+        "target": "com.azure.mongocluster#GetFirewallRuleRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#FirewallRulesGetResponse"
+        "target": "com.azure.mongocluster#GetFirewallRuleResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3058,7 +2995,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.mongocluster#FirewallRulesGetResponse": {
+    "com.azure.mongocluster#GetFirewallRuleResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -3096,7 +3033,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#FirewallRulesGetRequest": {
+    "com.azure.mongocluster#GetFirewallRuleRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3136,10 +3073,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#FirewallRulesListByMongoCluster": {
+    "com.azure.mongocluster#ListFirewallRuleByMongoCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#FirewallRulesListByMongoClusterRequest"
+        "target": "com.azure.mongocluster#ListFirewallRuleByMongoClusterRequest"
       },
       "output": {
         "target": "com.azure.mongocluster#FirewallRuleListResult"
@@ -3230,7 +3167,7 @@
         "smithy.api#documentation": "Represents a mongo cluster firewall rule."
       }
     },
-    "com.azure.mongocluster#FirewallRulesListByMongoClusterRequest": {
+    "com.azure.mongocluster#ListFirewallRuleByMongoClusterRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3268,13 +3205,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#MongoClustersDelete": {
+    "com.azure.mongocluster#DeleteMongoCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#MongoClustersDeleteRequest"
+        "target": "com.azure.mongocluster#DeleteMongoClusterRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#MongoClustersDeleteResponse"
+        "target": "com.azure.mongocluster#DeleteMongoClusterResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3287,7 +3224,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.mongocluster#MongoClustersDeleteResponse": {
+    "com.azure.mongocluster#DeleteMongoClusterResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -3309,7 +3246,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#MongoClustersDeleteRequest": {
+    "com.azure.mongocluster#DeleteMongoClusterRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3341,13 +3278,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#MongoClustersUpdate": {
+    "com.azure.mongocluster#UpdateMongoCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#MongoClustersUpdateRequest"
+        "target": "com.azure.mongocluster#UpdateMongoClusterRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#MongoClustersUpdateResponse"
+        "target": "com.azure.mongocluster#UpdateMongoClusterResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3360,7 +3297,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.mongocluster#MongoClustersUpdateResponse": {
+    "com.azure.mongocluster#UpdateMongoClusterResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -3388,7 +3325,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.mongocluster#MongoClustersUpdateResponseTagsMap",
+          "target": "com.azure.mongocluster#UpdateMongoClusterResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -3407,7 +3344,7 @@
           }
         },
         "identity": {
-          "target": "com.azure.mongocluster#MongoClustersUpdateResponseIdentity",
+          "target": "com.azure.mongocluster#UpdateMongoClusterResponseIdentity",
           "traits": {
             "smithy.api#documentation": "Managed service identity (system assigned and/or user assigned identities)"
           }
@@ -3431,7 +3368,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#MongoClustersUpdateResponseIdentity": {
+    "com.azure.mongocluster#UpdateMongoClusterResponseIdentity": {
       "type": "structure",
       "members": {
         "principalId": {
@@ -3527,7 +3464,7 @@
         "smithy.api#documentation": "Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed)."
       }
     },
-    "com.azure.mongocluster#MongoClustersUpdateResponseTagsMap": {
+    "com.azure.mongocluster#UpdateMongoClusterResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3539,7 +3476,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.mongocluster#MongoClustersUpdateRequest": {
+    "com.azure.mongocluster#UpdateMongoClusterRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3567,13 +3504,13 @@
           }
         },
         "identity": {
-          "target": "com.azure.mongocluster#MongoClustersUpdateRequestIdentity",
+          "target": "com.azure.mongocluster#UpdateMongoClusterRequestIdentity",
           "traits": {
             "smithy.api#documentation": "Managed service identity (system assigned and/or user assigned identities)"
           }
         },
         "tags": {
-          "target": "com.azure.mongocluster#MongoClustersUpdateRequestTagsMap",
+          "target": "com.azure.mongocluster#UpdateMongoClusterRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -3691,7 +3628,7 @@
         "smithy.api#documentation": "The backup properties of the cluster. This includes the earliest restore time and retention settings."
       }
     },
-    "com.azure.mongocluster#MongoClustersUpdateRequestTagsMap": {
+    "com.azure.mongocluster#UpdateMongoClusterRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3703,7 +3640,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.mongocluster#MongoClustersUpdateRequestIdentity": {
+    "com.azure.mongocluster#UpdateMongoClusterRequestIdentity": {
       "type": "structure",
       "members": {
         "type": {
@@ -4065,13 +4002,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.mongocluster#MongoClustersGet": {
+    "com.azure.mongocluster#GetMongoCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#MongoClustersGetRequest"
+        "target": "com.azure.mongocluster#GetMongoClusterRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#MongoClustersGetResponse"
+        "target": "com.azure.mongocluster#GetMongoClusterResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4084,7 +4021,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.mongocluster#MongoClustersGetResponse": {
+    "com.azure.mongocluster#GetMongoClusterResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -4112,7 +4049,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.mongocluster#MongoClustersGetResponseTagsMap",
+          "target": "com.azure.mongocluster#GetMongoClusterResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -4131,7 +4068,7 @@
           }
         },
         "identity": {
-          "target": "com.azure.mongocluster#MongoClustersGetResponseIdentity",
+          "target": "com.azure.mongocluster#GetMongoClusterResponseIdentity",
           "traits": {
             "smithy.api#documentation": "Managed service identity (system assigned and/or user assigned identities)"
           }
@@ -4141,7 +4078,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#MongoClustersGetResponseIdentity": {
+    "com.azure.mongocluster#GetMongoClusterResponseIdentity": {
       "type": "structure",
       "members": {
         "principalId": {
@@ -4170,7 +4107,7 @@
         "smithy.api#documentation": "Managed service identity (system assigned and/or user assigned identities)"
       }
     },
-    "com.azure.mongocluster#MongoClustersGetResponseTagsMap": {
+    "com.azure.mongocluster#GetMongoClusterResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -4182,7 +4119,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.mongocluster#MongoClustersGetRequest": {
+    "com.azure.mongocluster#GetMongoClusterRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4214,10 +4151,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#MongoClustersListByResourceGroup": {
+    "com.azure.mongocluster#ListMongoClusterByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#MongoClustersListByResourceGroupRequest"
+        "target": "com.azure.mongocluster#ListMongoClusterByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.mongocluster#MongoClusterListResult"
@@ -4368,7 +4305,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.mongocluster#MongoClustersListByResourceGroupRequest": {
+    "com.azure.mongocluster#ListMongoClusterByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4398,10 +4335,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#MongoClustersList": {
+    "com.azure.mongocluster#ListMongoClusters": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#MongoClustersListRequest"
+        "target": "com.azure.mongocluster#ListMongoClustersRequest"
       },
       "output": {
         "target": "com.azure.mongocluster#MongoClusterListResult"
@@ -4424,7 +4361,7 @@
         }
       }
     },
-    "com.azure.mongocluster#MongoClustersListRequest": {
+    "com.azure.mongocluster#ListMongoClustersRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4446,13 +4383,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#MongoClustersCheckNameAvailability": {
+    "com.azure.mongocluster#CheckMongoClusterNameAvailability": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#MongoClustersCheckNameAvailabilityRequest"
+        "target": "com.azure.mongocluster#CheckMongoClusterNameAvailabilityRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#MongoClustersCheckNameAvailabilityResponse"
+        "target": "com.azure.mongocluster#CheckMongoClusterNameAvailabilityResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4465,7 +4402,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.mongocluster#MongoClustersCheckNameAvailabilityResponse": {
+    "com.azure.mongocluster#CheckMongoClusterNameAvailabilityResponse": {
       "type": "structure",
       "members": {
         "nameAvailable": {
@@ -4475,7 +4412,7 @@
           }
         },
         "reason": {
-          "target": "com.azure.mongocluster#MongoClustersCheckNameAvailabilityResponseReason",
+          "target": "com.azure.mongocluster#CheckMongoClusterNameAvailabilityResponseReason",
           "traits": {
             "smithy.api#documentation": "The reason why the given name is not available."
           }
@@ -4491,7 +4428,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#MongoClustersCheckNameAvailabilityResponseReason": {
+    "com.azure.mongocluster#CheckMongoClusterNameAvailabilityResponseReason": {
       "type": "enum",
       "members": {
         "INVALID": {
@@ -4511,7 +4448,7 @@
         "smithy.api#documentation": "The reason why the given name is not available."
       }
     },
-    "com.azure.mongocluster#MongoClustersCheckNameAvailabilityRequest": {
+    "com.azure.mongocluster#CheckMongoClusterNameAvailabilityRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4547,13 +4484,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mongocluster#OperationsList": {
+    "com.azure.mongocluster#ListOperations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mongocluster#OperationsListRequest"
+        "target": "com.azure.mongocluster#ListOperationsRequest"
       },
       "output": {
-        "target": "com.azure.mongocluster#OperationsListResponse"
+        "target": "com.azure.mongocluster#ListOperationsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4573,11 +4510,11 @@
         }
       }
     },
-    "com.azure.mongocluster#OperationsListResponse": {
+    "com.azure.mongocluster#ListOperationsResponse": {
       "type": "structure",
       "members": {
         "value": {
-          "target": "com.azure.mongocluster#OperationsListResponseValueList",
+          "target": "com.azure.mongocluster#ListOperationsResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of operations supported by the resource provider"
           }
@@ -4593,7 +4530,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.mongocluster#OperationsListResponseValueList": {
+    "com.azure.mongocluster#ListOperationsResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.mongocluster#Operation"
@@ -4712,7 +4649,7 @@
         "smithy.api#documentation": "Localized display information for this particular operation."
       }
     },
-    "com.azure.mongocluster#OperationsListRequest": {
+    "com.azure.mongocluster#ListOperationsRequest": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -4731,81 +4668,96 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.mongocluster#UsersDelete"
+          "target": "com.azure.mongocluster#DeleteUser"
         },
         {
           "target": "com.azure.mongocluster#UsersCreateOrUpdate"
         },
         {
-          "target": "com.azure.mongocluster#UsersGet"
+          "target": "com.azure.mongocluster#GetUser"
         },
         {
-          "target": "com.azure.mongocluster#UsersListByMongoCluster"
+          "target": "com.azure.mongocluster#ListUserByMongoCluster"
         },
         {
-          "target": "com.azure.mongocluster#ReplicasListByParent"
+          "target": "com.azure.mongocluster#ListReplicasByParent"
         },
         {
-          "target": "com.azure.mongocluster#MongoClustersPromote"
+          "target": "com.azure.mongocluster#PromoteMongoCluster"
         },
         {
-          "target": "com.azure.mongocluster#PrivateLinksListByMongoCluster"
+          "target": "com.azure.mongocluster#ListPrivateLinkByMongoCluster"
         },
         {
-          "target": "com.azure.mongocluster#PrivateEndpointConnectionsDelete"
+          "target": "com.azure.mongocluster#DeletePrivateEndpointConnection"
         },
         {
-          "target": "com.azure.mongocluster#PrivateEndpointConnectionsCreate"
+          "target": "com.azure.mongocluster#CreatePrivateEndpointConnection"
         },
         {
-          "target": "com.azure.mongocluster#PrivateEndpointConnectionsGet"
+          "target": "com.azure.mongocluster#GetPrivateEndpointConnection"
         },
         {
-          "target": "com.azure.mongocluster#PrivateEndpointConnectionsListByMongoCluster"
+          "target": "com.azure.mongocluster#ListPrivateEndpointConnectionByMongoCluster"
         },
         {
-          "target": "com.azure.mongocluster#MongoClustersListConnectionStrings"
+          "target": "com.azure.mongocluster#ListMongoClusterConnectionStrings"
         },
         {
-          "target": "com.azure.mongocluster#FirewallRulesDelete"
+          "target": "com.azure.mongocluster#DeleteFirewallRule"
         },
         {
           "target": "com.azure.mongocluster#FirewallRulesCreateOrUpdate"
         },
         {
-          "target": "com.azure.mongocluster#FirewallRulesGet"
+          "target": "com.azure.mongocluster#GetFirewallRule"
         },
         {
-          "target": "com.azure.mongocluster#FirewallRulesListByMongoCluster"
+          "target": "com.azure.mongocluster#ListFirewallRuleByMongoCluster"
         },
         {
-          "target": "com.azure.mongocluster#MongoClustersDelete"
+          "target": "com.azure.mongocluster#DeleteMongoCluster"
         },
         {
-          "target": "com.azure.mongocluster#MongoClustersUpdate"
+          "target": "com.azure.mongocluster#UpdateMongoCluster"
         },
         {
           "target": "com.azure.mongocluster#MongoClustersCreateOrUpdate"
         },
         {
-          "target": "com.azure.mongocluster#MongoClustersGet"
+          "target": "com.azure.mongocluster#GetMongoCluster"
         },
         {
-          "target": "com.azure.mongocluster#MongoClustersListByResourceGroup"
+          "target": "com.azure.mongocluster#ListMongoClusterByResourceGroup"
         },
         {
-          "target": "com.azure.mongocluster#MongoClustersList"
+          "target": "com.azure.mongocluster#ListMongoClusters"
         },
         {
-          "target": "com.azure.mongocluster#MongoClustersCheckNameAvailability"
+          "target": "com.azure.mongocluster#CheckMongoClusterNameAvailability"
         },
         {
-          "target": "com.azure.mongocluster#OperationsList"
+          "target": "com.azure.mongocluster#ListOperations"
         }
       ],
       "traits": {
         "smithy.api#title": "Azure Mongocluster",
         "smithy.api#documentation": "Azure Mongocluster API — merged from the mongocluster resource-manager specs (latest stable api-version per resource provider)."
+      }
+    },
+    "com.azure.mongocluster#EntraIdentityProviderProperties": {
+      "type": "structure",
+      "members": {
+        "principalType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The principal type of the user: `user` or `servicePrincipal`.",
+            "smithy.api#required": {}
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "Microsoft Entra ID provider properties."
       }
     }
   }

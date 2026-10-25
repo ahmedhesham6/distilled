@@ -15,37 +15,7 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.servicebus_data#NamespaceGet": "com.azure.servicebus_data#GetNamespace",
-      "com.azure.servicebus_data#NamespaceGetRequest": "com.azure.servicebus_data#GetNamespaceRequest",
-      "com.azure.servicebus_data#RuleDelete": "com.azure.servicebus_data#DeleteRule",
-      "com.azure.servicebus_data#RuleDeleteResponse": "com.azure.servicebus_data#DeleteRuleResponse",
-      "com.azure.servicebus_data#RuleDeleteRequest": "com.azure.servicebus_data#DeleteRuleRequest",
-      "com.azure.servicebus_data#RulePut": "com.azure.servicebus_data#PutRule",
-      "com.azure.servicebus_data#RulePutResponse": "com.azure.servicebus_data#PutRuleResponse",
-      "com.azure.servicebus_data#RulePutRequest": "com.azure.servicebus_data#PutRuleRequest",
-      "com.azure.servicebus_data#RuleGet": "com.azure.servicebus_data#GetRule",
-      "com.azure.servicebus_data#RuleGetResponse": "com.azure.servicebus_data#GetRuleResponse",
-      "com.azure.servicebus_data#RuleGetRequest": "com.azure.servicebus_data#GetRuleRequest",
-      "com.azure.servicebus_data#SubscriptionDelete": "com.azure.servicebus_data#DeleteSubscription",
-      "com.azure.servicebus_data#SubscriptionDeleteResponse": "com.azure.servicebus_data#DeleteSubscriptionResponse",
-      "com.azure.servicebus_data#SubscriptionDeleteRequest": "com.azure.servicebus_data#DeleteSubscriptionRequest",
-      "com.azure.servicebus_data#SubscriptionPut": "com.azure.servicebus_data#PutSubscription",
-      "com.azure.servicebus_data#SubscriptionPutResponse": "com.azure.servicebus_data#PutSubscriptionResponse",
-      "com.azure.servicebus_data#SubscriptionPutRequest": "com.azure.servicebus_data#PutSubscriptionRequest",
-      "com.azure.servicebus_data#SubscriptionGet": "com.azure.servicebus_data#GetSubscription",
-      "com.azure.servicebus_data#SubscriptionGetResponse": "com.azure.servicebus_data#GetSubscriptionResponse",
-      "com.azure.servicebus_data#SubscriptionGetRequest": "com.azure.servicebus_data#GetSubscriptionRequest",
-      "com.azure.servicebus_data#EntityDelete": "com.azure.servicebus_data#DeleteEntity",
-      "com.azure.servicebus_data#EntityDeleteResponse": "com.azure.servicebus_data#DeleteEntityResponse",
-      "com.azure.servicebus_data#EntityDeleteRequest": "com.azure.servicebus_data#DeleteEntityRequest",
-      "com.azure.servicebus_data#EntityPut": "com.azure.servicebus_data#PutEntity",
-      "com.azure.servicebus_data#EntityPutResponse": "com.azure.servicebus_data#PutEntityResponse",
-      "com.azure.servicebus_data#EntityPutRequest": "com.azure.servicebus_data#PutEntityRequest",
-      "com.azure.servicebus_data#EntityGet": "com.azure.servicebus_data#GetEntity",
-      "com.azure.servicebus_data#EntityGetResponse": "com.azure.servicebus_data#GetEntityResponse",
-      "com.azure.servicebus_data#EntityGetRequest": "com.azure.servicebus_data#GetEntityRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
     "com.azure.servicebus_data#ListEntities": {
@@ -121,10 +91,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.servicebus_data#NamespaceGet": {
+    "com.azure.servicebus_data#GetNamespace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.servicebus_data#NamespaceGetRequest"
+        "target": "com.azure.servicebus_data#GetNamespaceRequest"
       },
       "output": {
         "target": "com.azure.servicebus_data#NamespacePropertiesEntry"
@@ -345,7 +315,7 @@
         "smithy.api#documentation": "The author that created this resource"
       }
     },
-    "com.azure.servicebus_data#NamespaceGetRequest": {
+    "com.azure.servicebus_data#GetNamespaceRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -361,13 +331,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.servicebus_data#RuleDelete": {
+    "com.azure.servicebus_data#DeleteRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.servicebus_data#RuleDeleteRequest"
+        "target": "com.azure.servicebus_data#DeleteRuleRequest"
       },
       "output": {
-        "target": "com.azure.servicebus_data#RuleDeleteResponse"
+        "target": "com.azure.servicebus_data#DeleteRuleResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -383,7 +353,7 @@
         "smithy.api#documentation": "Delete Subscription\n\nDelete the rule with the given topicName, subscriptionName and ruleName."
       }
     },
-    "com.azure.servicebus_data#RuleDeleteResponse": {
+    "com.azure.servicebus_data#DeleteRuleResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -398,7 +368,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.servicebus_data#RuleDeleteRequest": {
+    "com.azure.servicebus_data#DeleteRuleRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -438,13 +408,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.servicebus_data#RulePut": {
+    "com.azure.servicebus_data#PutRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.servicebus_data#RulePutRequest"
+        "target": "com.azure.servicebus_data#PutRuleRequest"
       },
       "output": {
-        "target": "com.azure.servicebus_data#RulePutResponse"
+        "target": "com.azure.servicebus_data#PutRuleResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -460,7 +430,7 @@
         "smithy.api#documentation": "Create or update a rule"
       }
     },
-    "com.azure.servicebus_data#RulePutResponse": {
+    "com.azure.servicebus_data#PutRuleResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -475,7 +445,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.servicebus_data#RulePutRequest": {
+    "com.azure.servicebus_data#PutRuleRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -522,13 +492,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.servicebus_data#RuleGet": {
+    "com.azure.servicebus_data#GetRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.servicebus_data#RuleGetRequest"
+        "target": "com.azure.servicebus_data#GetRuleRequest"
       },
       "output": {
-        "target": "com.azure.servicebus_data#RuleGetResponse"
+        "target": "com.azure.servicebus_data#GetRuleResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -544,7 +514,7 @@
         "smithy.api#documentation": "Get Rule\n\nGet the details about the rule of a subscription of a topic."
       }
     },
-    "com.azure.servicebus_data#RuleGetResponse": {
+    "com.azure.servicebus_data#GetRuleResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -559,7 +529,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.servicebus_data#RuleGetRequest": {
+    "com.azure.servicebus_data#GetRuleRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -687,13 +657,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.servicebus_data#SubscriptionDelete": {
+    "com.azure.servicebus_data#DeleteSubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.servicebus_data#SubscriptionDeleteRequest"
+        "target": "com.azure.servicebus_data#DeleteSubscriptionRequest"
       },
       "output": {
-        "target": "com.azure.servicebus_data#SubscriptionDeleteResponse"
+        "target": "com.azure.servicebus_data#DeleteSubscriptionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -709,7 +679,7 @@
         "smithy.api#documentation": "Delete Subscription\n\nDelete the subscription with the given topicName and subscriptionName."
       }
     },
-    "com.azure.servicebus_data#SubscriptionDeleteResponse": {
+    "com.azure.servicebus_data#DeleteSubscriptionResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -724,7 +694,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.servicebus_data#SubscriptionDeleteRequest": {
+    "com.azure.servicebus_data#DeleteSubscriptionRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -756,13 +726,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.servicebus_data#SubscriptionPut": {
+    "com.azure.servicebus_data#PutSubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.servicebus_data#SubscriptionPutRequest"
+        "target": "com.azure.servicebus_data#PutSubscriptionRequest"
       },
       "output": {
-        "target": "com.azure.servicebus_data#SubscriptionPutResponse"
+        "target": "com.azure.servicebus_data#PutSubscriptionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -778,7 +748,7 @@
         "smithy.api#documentation": "Create or update a subscription"
       }
     },
-    "com.azure.servicebus_data#SubscriptionPutResponse": {
+    "com.azure.servicebus_data#PutSubscriptionResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -793,7 +763,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.servicebus_data#SubscriptionPutRequest": {
+    "com.azure.servicebus_data#PutSubscriptionRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -832,13 +802,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.servicebus_data#SubscriptionGet": {
+    "com.azure.servicebus_data#GetSubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.servicebus_data#SubscriptionGetRequest"
+        "target": "com.azure.servicebus_data#GetSubscriptionRequest"
       },
       "output": {
-        "target": "com.azure.servicebus_data#SubscriptionGetResponse"
+        "target": "com.azure.servicebus_data#GetSubscriptionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -854,7 +824,7 @@
         "smithy.api#documentation": "Get Subscription\n\nGet the details about the subscription of a topic."
       }
     },
-    "com.azure.servicebus_data#SubscriptionGetResponse": {
+    "com.azure.servicebus_data#GetSubscriptionResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -869,7 +839,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.servicebus_data#SubscriptionGetRequest": {
+    "com.azure.servicebus_data#GetSubscriptionRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -981,13 +951,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.servicebus_data#EntityDelete": {
+    "com.azure.servicebus_data#DeleteEntity": {
       "type": "operation",
       "input": {
-        "target": "com.azure.servicebus_data#EntityDeleteRequest"
+        "target": "com.azure.servicebus_data#DeleteEntityRequest"
       },
       "output": {
-        "target": "com.azure.servicebus_data#EntityDeleteResponse"
+        "target": "com.azure.servicebus_data#DeleteEntityResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1003,7 +973,7 @@
         "smithy.api#documentation": "Delete Queue or Topic\n\nDelete the Queue or Topic with the given entityName."
       }
     },
-    "com.azure.servicebus_data#EntityDeleteResponse": {
+    "com.azure.servicebus_data#DeleteEntityResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -1018,7 +988,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.servicebus_data#EntityDeleteRequest": {
+    "com.azure.servicebus_data#DeleteEntityRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1042,13 +1012,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.servicebus_data#EntityPut": {
+    "com.azure.servicebus_data#PutEntity": {
       "type": "operation",
       "input": {
-        "target": "com.azure.servicebus_data#EntityPutRequest"
+        "target": "com.azure.servicebus_data#PutEntityRequest"
       },
       "output": {
-        "target": "com.azure.servicebus_data#EntityPutResponse"
+        "target": "com.azure.servicebus_data#PutEntityResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1064,7 +1034,7 @@
         "smithy.api#documentation": "Create or update a queue or topic at the provided entityName"
       }
     },
-    "com.azure.servicebus_data#EntityPutResponse": {
+    "com.azure.servicebus_data#PutEntityResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -1079,7 +1049,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.servicebus_data#EntityPutRequest": {
+    "com.azure.servicebus_data#PutEntityRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1110,13 +1080,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.servicebus_data#EntityGet": {
+    "com.azure.servicebus_data#GetEntity": {
       "type": "operation",
       "input": {
-        "target": "com.azure.servicebus_data#EntityGetRequest"
+        "target": "com.azure.servicebus_data#GetEntityRequest"
       },
       "output": {
-        "target": "com.azure.servicebus_data#EntityGetResponse"
+        "target": "com.azure.servicebus_data#GetEntityResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1132,7 +1102,7 @@
         "smithy.api#documentation": "Get Queue or Topic\n\nGet the details about the Queue or Topic with the given entityName."
       }
     },
-    "com.azure.servicebus_data#EntityGetResponse": {
+    "com.azure.servicebus_data#GetEntityResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -1147,7 +1117,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.servicebus_data#EntityGetRequest": {
+    "com.azure.servicebus_data#GetEntityRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1186,40 +1156,40 @@
           "target": "com.azure.servicebus_data#ListEntities"
         },
         {
-          "target": "com.azure.servicebus_data#NamespaceGet"
+          "target": "com.azure.servicebus_data#GetNamespace"
         },
         {
-          "target": "com.azure.servicebus_data#RuleDelete"
+          "target": "com.azure.servicebus_data#DeleteRule"
         },
         {
-          "target": "com.azure.servicebus_data#RulePut"
+          "target": "com.azure.servicebus_data#PutRule"
         },
         {
-          "target": "com.azure.servicebus_data#RuleGet"
+          "target": "com.azure.servicebus_data#GetRule"
         },
         {
           "target": "com.azure.servicebus_data#ListRules"
         },
         {
-          "target": "com.azure.servicebus_data#SubscriptionDelete"
+          "target": "com.azure.servicebus_data#DeleteSubscription"
         },
         {
-          "target": "com.azure.servicebus_data#SubscriptionPut"
+          "target": "com.azure.servicebus_data#PutSubscription"
         },
         {
-          "target": "com.azure.servicebus_data#SubscriptionGet"
+          "target": "com.azure.servicebus_data#GetSubscription"
         },
         {
           "target": "com.azure.servicebus_data#ListSubscriptions"
         },
         {
-          "target": "com.azure.servicebus_data#EntityDelete"
+          "target": "com.azure.servicebus_data#DeleteEntity"
         },
         {
-          "target": "com.azure.servicebus_data#EntityPut"
+          "target": "com.azure.servicebus_data#PutEntity"
         },
         {
-          "target": "com.azure.servicebus_data#EntityGet"
+          "target": "com.azure.servicebus_data#GetEntity"
         }
       ],
       "traits": {

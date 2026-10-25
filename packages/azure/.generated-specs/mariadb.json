@@ -15,18 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.mariadb#ServersStop": "com.azure.mariadb#StopServer",
-      "com.azure.mariadb#ServersStopRequest": "com.azure.mariadb#StopServerRequest",
-      "com.azure.mariadb#ServersStart": "com.azure.mariadb#StartServer",
-      "com.azure.mariadb#ServersStartRequest": "com.azure.mariadb#StartServerRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.mariadb#ServersStop": {
+    "com.azure.mariadb#StopServer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mariadb#ServersStopRequest"
+        "target": "com.azure.mariadb#StopServerRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -42,7 +37,7 @@
         "com.distilled.openapi#apiVersion": "2020-01-01"
       }
     },
-    "com.azure.mariadb#ServersStopRequest": {
+    "com.azure.mariadb#StopServerRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -74,10 +69,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.mariadb#ServersStart": {
+    "com.azure.mariadb#StartServer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.mariadb#ServersStartRequest"
+        "target": "com.azure.mariadb#StartServerRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -93,7 +88,7 @@
         "com.distilled.openapi#apiVersion": "2020-01-01"
       }
     },
-    "com.azure.mariadb#ServersStartRequest": {
+    "com.azure.mariadb#StartServerRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -130,10 +125,10 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.mariadb#ServersStop"
+          "target": "com.azure.mariadb#StopServer"
         },
         {
-          "target": "com.azure.mariadb#ServersStart"
+          "target": "com.azure.mariadb#StartServer"
         }
       ],
       "traits": {

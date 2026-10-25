@@ -15,57 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.maps_render#RenderGetMapTileset": "com.azure.maps_render#GetRenderMapTileset",
-      "com.azure.maps_render#RenderGetMapTilesetRequest": "com.azure.maps_render#GetRenderMapTilesetRequest",
-      "com.azure.maps_render#RenderGetMapTilesetRequestTilesetId": "com.azure.maps_render#GetRenderMapTilesetRequestTilesetId",
-      "com.azure.maps_render#RenderGetMapTile": "com.azure.maps_render#GetRenderMapTile",
-      "com.azure.maps_render#RenderGetMapTileResponse": "com.azure.maps_render#GetRenderMapTileResponse",
-      "com.azure.maps_render#RenderGetMapTileRequest": "com.azure.maps_render#GetRenderMapTileRequest",
-      "com.azure.maps_render#RenderGetMapTileRequestView": "com.azure.maps_render#GetRenderMapTileRequestView",
-      "com.azure.maps_render#RenderGetMapTileRequestTileSize": "com.azure.maps_render#GetRenderMapTileRequestTileSize",
-      "com.azure.maps_render#RenderGetMapTileRequestTilesetId": "com.azure.maps_render#GetRenderMapTileRequestTilesetId",
-      "com.azure.maps_render#RenderGetMapStaticImage": "com.azure.maps_render#GetRenderMapStaticImage",
-      "com.azure.maps_render#RenderGetMapStaticImageResponse": "com.azure.maps_render#GetRenderMapStaticImageResponse",
-      "com.azure.maps_render#RenderGetMapStaticImageRequest": "com.azure.maps_render#GetRenderMapStaticImageRequest",
-      "com.azure.maps_render#RenderGetMapStaticImageRequestPathList": "com.azure.maps_render#GetRenderMapStaticImageRequestPathList",
-      "com.azure.maps_render#RenderGetMapStaticImageRequestPinsList": "com.azure.maps_render#GetRenderMapStaticImageRequestPinsList",
-      "com.azure.maps_render#RenderGetMapStaticImageRequestView": "com.azure.maps_render#GetRenderMapStaticImageRequestView",
-      "com.azure.maps_render#RenderGetMapStaticImageRequestBboxList": "com.azure.maps_render#GetRenderMapStaticImageRequestBboxList",
-      "com.azure.maps_render#RenderGetMapStaticImageRequestCenterList": "com.azure.maps_render#GetRenderMapStaticImageRequestCenterList",
-      "com.azure.maps_render#RenderGetMapStaticImageRequestTrafficLayer": "com.azure.maps_render#GetRenderMapStaticImageRequestTrafficLayer",
-      "com.azure.maps_render#RenderGetMapStaticImageRequestTilesetId": "com.azure.maps_render#GetRenderMapStaticImageRequestTilesetId",
-      "com.azure.maps_render#RenderGetMapStateTile": "com.azure.maps_render#GetRenderMapStateTile",
-      "com.azure.maps_render#RenderGetMapStateTileResponse": "com.azure.maps_render#GetRenderMapStateTileResponse",
-      "com.azure.maps_render#RenderGetMapStateTileRequest": "com.azure.maps_render#GetRenderMapStateTileRequest",
-      "com.azure.maps_render#RenderGetCopyrightForWorld": "com.azure.maps_render#GetRenderCopyrightForWorld",
-      "com.azure.maps_render#RenderGetCopyrightForWorldRequest": "com.azure.maps_render#GetRenderCopyrightForWorldRequest",
-      "com.azure.maps_render#RenderGetCopyrightForWorldRequestText": "com.azure.maps_render#GetRenderCopyrightForWorldRequestText",
-      "com.azure.maps_render#RenderGetCopyrightForWorldRequestFormat": "com.azure.maps_render#GetRenderCopyrightForWorldRequestFormat",
-      "com.azure.maps_render#RenderGetCopyrightForTile": "com.azure.maps_render#GetRenderCopyrightForTile",
-      "com.azure.maps_render#RenderGetCopyrightForTileRequest": "com.azure.maps_render#GetRenderCopyrightForTileRequest",
-      "com.azure.maps_render#RenderGetCopyrightForTileRequestText": "com.azure.maps_render#GetRenderCopyrightForTileRequestText",
-      "com.azure.maps_render#RenderGetCopyrightForTileRequestFormat": "com.azure.maps_render#GetRenderCopyrightForTileRequestFormat",
-      "com.azure.maps_render#RenderGetCopyrightCaption": "com.azure.maps_render#GetRenderCopyrightCaption",
-      "com.azure.maps_render#RenderGetCopyrightCaptionRequest": "com.azure.maps_render#GetRenderCopyrightCaptionRequest",
-      "com.azure.maps_render#RenderGetCopyrightCaptionRequestFormat": "com.azure.maps_render#GetRenderCopyrightCaptionRequestFormat",
-      "com.azure.maps_render#RenderGetCopyrightFromBoundingBox": "com.azure.maps_render#GetRenderCopyrightFromBoundingBox",
-      "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequest": "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequest",
-      "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequestText": "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestText",
-      "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequestMaxcoordinatesList": "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestMaxcoordinatesList",
-      "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequestMincoordinatesList": "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestMincoordinatesList",
-      "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequestFormat": "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestFormat",
-      "com.azure.maps_render#RenderGetMapAttribution": "com.azure.maps_render#GetRenderMapAttribution",
-      "com.azure.maps_render#RenderGetMapAttributionRequest": "com.azure.maps_render#GetRenderMapAttributionRequest",
-      "com.azure.maps_render#RenderGetMapAttributionRequestBoundsList": "com.azure.maps_render#GetRenderMapAttributionRequestBoundsList",
-      "com.azure.maps_render#RenderGetMapAttributionRequestTilesetId": "com.azure.maps_render#GetRenderMapAttributionRequestTilesetId"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.maps_render#RenderGetMapTileset": {
+    "com.azure.maps_render#GetRenderMapTileset": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_render#RenderGetMapTilesetRequest"
+        "target": "com.azure.maps_render#GetRenderMapTilesetRequest"
       },
       "output": {
         "target": "com.azure.maps_render#MapTileset"
@@ -230,7 +186,7 @@
         "smithy.api#documentation": "An array of tile endpoints. If multiple endpoints are specified, clients may\nuse any combination of endpoints. All endpoints MUST return the same content\nfor the same URL. The array MUST contain at least one endpoint."
       }
     },
-    "com.azure.maps_render#RenderGetMapTilesetRequest": {
+    "com.azure.maps_render#GetRenderMapTilesetRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -241,7 +197,7 @@
           }
         },
         "tilesetId": {
-          "target": "com.azure.maps_render#RenderGetMapTilesetRequestTilesetId",
+          "target": "com.azure.maps_render#GetRenderMapTilesetRequestTilesetId",
           "traits": {
             "smithy.api#httpQuery": "tilesetId",
             "smithy.api#required": {},
@@ -260,7 +216,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_render#RenderGetMapTilesetRequestTilesetId": {
+    "com.azure.maps_render#GetRenderMapTilesetRequestTilesetId": {
       "type": "enum",
       "members": {
         "MICROSOFT_BASE": {
@@ -398,13 +354,13 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapTile": {
+    "com.azure.maps_render#GetRenderMapTile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_render#RenderGetMapTileRequest"
+        "target": "com.azure.maps_render#GetRenderMapTileRequest"
       },
       "output": {
-        "target": "com.azure.maps_render#RenderGetMapTileResponse"
+        "target": "com.azure.maps_render#GetRenderMapTileResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -423,7 +379,7 @@
         "smithy.api#documentation": "Use to request map tiles in vector or raster format.\n\nThe `Get Map Tiles` API enables users to request map tiles in either vector or\nraster formats, typically for integration into a map control or SDK. Supported\ntile types include Azure Maps road tiles and real-time Weather Radar tiles. By\ndefault, the Azure Maps [Web SDK](/azure/azure-maps/about-azure-maps#web-sdk)\nuses vector tiles for rendering its web map control.\n\n> [!Important]\n>\n> When using the **Get Map Tile** API, you must also call the [Get Map Attribution](/rest/api/maps/render/get-map-attribution) API to retrieve the required map data attribution text.\n>\n> The returned attribution must be displayed wherever tiles retrieved from **Get Map Tile** are rendered, including in third-party map controls or custom rendering implementations."
       }
     },
-    "com.azure.maps_render#RenderGetMapTileResponse": {
+    "com.azure.maps_render#GetRenderMapTileResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -438,7 +394,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.maps_render#RenderGetMapTileRequest": {
+    "com.azure.maps_render#GetRenderMapTileRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -449,7 +405,7 @@
           }
         },
         "tilesetId": {
-          "target": "com.azure.maps_render#RenderGetMapTileRequestTilesetId",
+          "target": "com.azure.maps_render#GetRenderMapTileRequestTilesetId",
           "traits": {
             "smithy.api#httpQuery": "tilesetId",
             "smithy.api#required": {},
@@ -488,7 +444,7 @@
           }
         },
         "tileSize": {
-          "target": "com.azure.maps_render#RenderGetMapTileRequestTileSize",
+          "target": "com.azure.maps_render#GetRenderMapTileRequestTileSize",
           "traits": {
             "smithy.api#httpQuery": "tileSize",
             "smithy.api#documentation": "The size of the returned map tile in pixels."
@@ -502,7 +458,7 @@
           }
         },
         "view": {
-          "target": "com.azure.maps_render#RenderGetMapTileRequestView",
+          "target": "com.azure.maps_render#GetRenderMapTileRequestView",
           "traits": {
             "smithy.api#httpQuery": "view",
             "smithy.api#documentation": "The View parameter (also called the \"user region\" parameter) allows you to show\nthe correct maps for a certain country/region for geopolitically disputed\nregions. Different countries/regions have different views of such regions, and\nthe View parameter allows your application to comply with the view required by\nthe country/region your application will be serving. By default, the View\nparameter is set to “Unified” even if you haven’t defined it in  the request.\nIt is your responsibility to determine the location of your users, and then set\nthe View parameter correctly for that location. Alternatively, you have the\noption to set ‘View=Auto’, which will return the map data based on the IP\naddress of the request. The View parameter in Azure Maps must be used in\ncompliance with applicable laws, including those  regarding mapping, of the\ncountry/region where maps, images and other data and third party content that\nyou are authorized to  access via Azure Maps is made available. Example:\nview=IN.\n\nPlease refer to [Supported Views](https://aka.ms/AzureMapsLocalizationViews)\nfor details and to see the available Views."
@@ -520,7 +476,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_render#RenderGetMapTileRequestView": {
+    "com.azure.maps_render#GetRenderMapTileRequestView": {
       "type": "enum",
       "members": {
         "AE": {
@@ -640,7 +596,7 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapTileRequestTileSize": {
+    "com.azure.maps_render#GetRenderMapTileRequestTileSize": {
       "type": "enum",
       "members": {
         "_256": {
@@ -658,7 +614,7 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapTileRequestTilesetId": {
+    "com.azure.maps_render#GetRenderMapTileRequestTilesetId": {
       "type": "enum",
       "members": {
         "MICROSOFT_BASE": {
@@ -796,13 +752,13 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapStaticImage": {
+    "com.azure.maps_render#GetRenderMapStaticImage": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_render#RenderGetMapStaticImageRequest"
+        "target": "com.azure.maps_render#GetRenderMapStaticImageRequest"
       },
       "output": {
-        "target": "com.azure.maps_render#RenderGetMapStaticImageResponse"
+        "target": "com.azure.maps_render#GetRenderMapStaticImageResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -821,7 +777,7 @@
         "smithy.api#documentation": "This rendering API produces static, rasterized map views of a user-defined\narea. It's suitable for lightweight web applications, when the desired user\nexperience doesn't require interactive map controls, or when bandwidth is\nlimited. This API is also useful for embedding maps in applications outside of\nthe browser, in backend services, report generation, or desktop applications.\n\nThis API includes parameters for basic data visualization:\n\n- Labeled pushpins in multiple styles.\n- Render circle, path, and polygon geometry types.\n\nFor more information and detailed examples, see [Render custom data on a raster\nmap](/azure/azure-maps/how-to-render-custom-data).\n<br><br>\nThe dimensions of the bbox parameter are constrained, depending on the zoom\nlevel. This ensures the resulting image has an appropriate level of detail.\n<br><br>\n\nZoom Level | Min Lon Range   | Max Lon Range   | Min Lat Range | Max Lat Range\n:----------|:----------------|:----------------|:--------------|:---------------\n0          | 56.25           | 360.0           | 30.1105585173 | 180.0\n1          | 28.125          | 360.0           | 14.87468995   | 180.0\n2          | 14.063          | 351.5625        | 7.4130741851  | 137.9576312246\n3          | 7.03125         | 175.78125       | 3.7034501005  | 73.6354071932\n4          | 3.515625        | 87.890625       | 1.8513375155  | 35.4776115315\n5          | 1.7578125       | 43.9453125      | 0.925620264   | 17.4589959239\n6          | 0.87890625      | 21.97265625     | 0.4628040687  | 8.6907788223\n7          | 0.439453125     | 10.986328125    | 0.2314012764  | 4.3404320789\n8          | 0.2197265625    | 5.4931640625    | 0.1157005434  | 2.1695927024\n9          | 0.1098632812    | 2.7465820312    | 0.0578502599  | 1.0847183194\n10         | 0.0549316406    | 1.3732910156    | 0.0289251285  | 0.5423494021\n11         | 0.0274658203    | 0.6866455078    | 0.014462564   | 0.2711734813\n12         | 0.0137329102    | 0.3433227539    | 0.007231282   | 0.1355865882\n13         | 0.0068664551    | 0.171661377     | 0.003615641   | 0.067793275\n14         | 0.0034332275    | 0.0858306885    | 0.0018078205  | 0.0338966351\n15         | 0.0017166138    | 0.0429153442    | 0.0009039102  | 0.0169483173\n16         | 0.0008583069    | 0.0214576721    | 0.0004519551  | 0.0084741586\n17         | 0.0004291534    | 0.0107288361    | 0.0002259776  | 0.0042370793\n18         | 0.0002145767    | 0.005364418     | 0.0001129888  | 0.0021185396\n19         | 0.0001072884    | 0.002682209     | 5.64944E-05   | 0.0010592698\n20         | 5.36442E-05     | 0.0013411045    | 2.82472E-05   | 0.0005296349\n\n_Note_ : Either **center** or **bbox** parameter must be supplied to the API."
       }
     },
-    "com.azure.maps_render#RenderGetMapStaticImageResponse": {
+    "com.azure.maps_render#GetRenderMapStaticImageResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -836,7 +792,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.maps_render#RenderGetMapStaticImageRequest": {
+    "com.azure.maps_render#GetRenderMapStaticImageRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -847,14 +803,14 @@
           }
         },
         "tilesetId": {
-          "target": "com.azure.maps_render#RenderGetMapStaticImageRequestTilesetId",
+          "target": "com.azure.maps_render#GetRenderMapStaticImageRequestTilesetId",
           "traits": {
             "smithy.api#httpQuery": "tilesetId",
             "smithy.api#documentation": "Map style to be returned. Possible values are microsoft.base.road,\nmicrosoft.base.darkgrey, and microsoft.imagery.  Default value is set to be\nmicrosoft.base.road. For more information, see [Render\nTilesetId](https://learn.microsoft.com/en-us/rest/api/maps/render/get-map-tileset?view=rest-maps-2023-06-01&tabs=HTTP#tilesetid)."
           }
         },
         "trafficLayer": {
-          "target": "com.azure.maps_render#RenderGetMapStaticImageRequestTrafficLayer",
+          "target": "com.azure.maps_render#GetRenderMapStaticImageRequestTrafficLayer",
           "traits": {
             "smithy.api#httpQuery": "trafficLayer",
             "smithy.api#documentation": "Optional Value, indicating no traffic flow overlaid on the image result.\nPossible values are microsoft.traffic.relative.main and none. Default value is\nnone, indicating no traffic flow returned. If traffic related tilesetId is\nprovided, will return map image with corresponding traffic layer. For more\ninformation, see [Render\nTilesetId](https://learn.microsoft.com/en-us/rest/api/maps/render/get-map-tileset?view=rest-maps-2023-06-01&tabs=HTTP#tilesetid)."
@@ -868,14 +824,14 @@
           }
         },
         "center": {
-          "target": "com.azure.maps_render#RenderGetMapStaticImageRequestCenterList",
+          "target": "com.azure.maps_render#GetRenderMapStaticImageRequestCenterList",
           "traits": {
             "smithy.api#httpQuery": "center",
             "smithy.api#documentation": "Coordinates of the center point in double. Format: 'lon,lat'. Longitude range:\n-180 to 180. Latitude range: -90 to 90.\n\nNote: Either center or bbox are required parameters. They are\nmutually exclusive."
           }
         },
         "bbox": {
-          "target": "com.azure.maps_render#RenderGetMapStaticImageRequestBboxList",
+          "target": "com.azure.maps_render#GetRenderMapStaticImageRequestBboxList",
           "traits": {
             "smithy.api#httpQuery": "bbox",
             "smithy.api#documentation": "A bounding box is defined by two latitudes and two longitudes that represent\nthe four sides of a rectangular area on the Earth. Format : 'minLon, minLat,\nmaxLon, maxLat' (in double).\n\nNote: Either bbox or center are required\nparameters. They are mutually exclusive. bbox shouldn’t be used with\nheight or width.\n\nThe maximum and minimum allowed ranges for Lat and Lon are defined for each\nzoom level\nin the table at the top of this page."
@@ -903,21 +859,21 @@
           }
         },
         "view": {
-          "target": "com.azure.maps_render#RenderGetMapStaticImageRequestView",
+          "target": "com.azure.maps_render#GetRenderMapStaticImageRequestView",
           "traits": {
             "smithy.api#httpQuery": "view",
             "smithy.api#documentation": "The View parameter (also called the \"user region\" parameter) allows you to show\nthe correct maps for a certain country/region for geopolitically disputed\nregions. Different countries/regions have different views of such regions, and\nthe View parameter allows your application to comply with the view required by\nthe country/region your application will be serving. By default, the View\nparameter is set to “Unified” even if you haven’t defined it in  the request.\nIt is your responsibility to determine the location of your users, and then set\nthe View parameter correctly for that location. Alternatively, you have the\noption to set ‘View=Auto’, which will return the map data based on the IP\naddress of the request. The View parameter in Azure Maps must be used in\ncompliance with applicable laws, including those  regarding mapping, of the\ncountry/region where maps, images and other data and third party content that\nyou are authorized to  access via Azure Maps is made available. Example:\nview=IN.\n\nPlease refer to [Supported Views](https://aka.ms/AzureMapsLocalizationViews)\nfor details and to see the available Views."
           }
         },
         "pins": {
-          "target": "com.azure.maps_render#RenderGetMapStaticImageRequestPinsList",
+          "target": "com.azure.maps_render#GetRenderMapStaticImageRequestPinsList",
           "traits": {
             "smithy.api#httpQuery": "pins",
             "smithy.api#documentation": "Pushpin style and instances. Use this parameter to optionally add pushpins to\nthe image.\nThe pushpin style describes the appearance of the pushpins, and the instances\nspecify\nthe coordinates of the pushpins (in double) and optional labels for each pin.\n(Be sure to properly URL-encode values of this\nparameter since it will contain reserved characters such as pipes and\npunctuation.)\n\nYou can specify up to 25 instances of the pins parameter to use multiple pin\nstyles. Each instance supports up to 50 locations.\n\nTo render a pushpin at latitude 45°N and longitude 122°W using the default\nbuilt-in pushpin style, add the\nquerystring parameter\n\n`pins=default||-122 45`\n\nNote that the longitude comes before the latitude.\nAfter URL encoding this will look like\n\n`pins=default%7C%7C-122+45`\n\nAll of the examples here show the pins\nparameter without URL encoding, for clarity.\n\nTo render a pin at multiple locations, separate each location with a pipe\ncharacter. For example, use\n\n`pins=default||-122 45|-119.5 43.2|-121.67 47.12`\n\n### Style Modifiers\n\nYou can modify the appearance of the pins by adding style modifiers. These are\nadded after the style but before\nthe locations and labels. Style modifiers each have a two-letter name. These\nabbreviated names are used to help\nreduce the length of the URL.\n\nTo change the color of the pushpin, use the 'co' style modifier and specify the\ncolor using the HTML/CSS RGB color\nformat which is a six-digit hexadecimal number (the three-digit form is not\nsupported). For example, to use\na deep pink color which you would specify as #FF1493 in CSS, use\n\n`pins=default|coFF1493||-122 45`\n\n### Pushpin Labels\n\nTo add a label to the pins, put the label in single quotes just before the\ncoordinates. Avoid using special character such as `|` or `||` in label. For\nexample, to label\nthree pins with the values '1', '2', and '3', use\n\n`pins=default||'1'-122 45|'2'-119.5 43.2|'3'-121.67 47.12`\n\nThere is a built-in pushpin style called 'none' that does not display a pushpin\nimage. You can use this if\nyou want to display labels without any pin image. For example,\n\n`pins=none||'A'-122 45|'B'-119.5 43.2`\n\nTo change the color of the pushpin labels, use the 'lc' label color style\nmodifier. For example, to use pink\npushpins with black labels, use\n\n`pins=default|coFF1493|lc000000||-122 45`\n\nTo change the size of the labels, use the 'ls' label size style modifier. The\nlabel size represents the approximate\nheight of the label text in pixels. For example, to increase the label size to\n12, use\n\n`pins=default|ls12||'A'-122 45|'B'-119 43`\n\nThe labels are centered at the pushpin 'label anchor.' The anchor location is\npredefined for built-in pushpins and\nis at the top center of custom pushpins (see below). To override the label\nanchor, using the 'la' style modifier\nand provide X and Y pixel coordinates for the anchor. These coordinates are\nrelative to the top left corner of the\npushpin image. Positive X values move the anchor to the right, and positive Y\nvalues move the anchor down. For example,\nto position the label anchor 10 pixels right and 4 pixels above the top left\ncorner of the pushpin image,\nuse\n\n`pins=default|la10 -4||'A'-122 45|'B'-119 43`\n\n### Custom Pushpins\n\nTo use a custom pushpin image, use the word 'custom' as the pin style name, and\nthen specify a URL after the\nlocation and label information. The maximum allowed size for a customized label\nimage is 65,536 pixels. Use two pipe characters to indicate that you're done\nspecifying locations and are\nstarting the URL. For example,\n\n`pins=custom||-122 45||http://contoso.com/pushpins/red.png`\n\nAfter URL encoding, this would look like\n\n`pins=custom%7C%7C-122+45%7C%7Chttp%3A%2F%2Fcontoso.com%2Fpushpins%2Fred.png`\n\nBy default, custom pushpin images are drawn centered at the pin coordinates.\nThis usually isn't ideal as it obscures\nthe location that you're trying to highlight. To override the anchor location\nof the pin image, use the 'an'\nstyle modifier. This uses the same format as the 'la' label anchor style\nmodifier. For example, if your custom\npin image has the tip of the pin at the top left corner of the image, you can\nset the anchor to that spot by\nusing\n\n`pins=custom|an0 0||-122 45||http://contoso.com/pushpins/red.png`\n\nNote: If you use the 'co' color modifier with a custom pushpin image, the\nspecified color will replace the RGB\nchannels of the pixels in the image but will leave the alpha (opacity) channel\nunchanged. This would usually\nonly be done with a solid-color custom image.\n\n### Scale, Rotation, and Opacity\n\nYou can make pushpins and their labels larger or smaller by using the 'sc'\nscale style modifier. This is a\nvalue greater than zero. A value of 1 is the standard scale. Values larger than\n1 will make the pins larger, and\nvalues smaller than 1 will make them smaller. For example, to draw the pushpins\n50% larger than normal, use\n\n`pins=default|sc1.5||-122 45`\n\nYou can rotate pushpins and their labels by using the 'ro' rotation style\nmodifier. This is a number of degrees\nof clockwise rotation. Use a negative number to rotate counter-clockwise. For\nexample, to rotate the pushpins\n90 degrees clockwise and double their size, use\n\n`pins=default|ro90|sc2||-122 45`\n\nYou can make pushpins and their labels partially transparent by specifying the\n'al' alpha style modifier.\nThis is a number between 0 and 1 indicating the opacity of the pushpins. Zero\nmakes them completely transparent\n(and not visible) and 1 makes them completely opaque (which is the default).\nFor example, to make pushpins\nand their labels only 67% opaque, use\n\n`pins=default|al.67||-122 45`\n\n### Style Modifier Summary\n\nModifier  | Description     | Type           | Range\n:--------:|-----------------|----------------|------------------\nal        | Alpha (opacity) | float          | 0 to 1\nan        | Pin anchor      | <int32, int32> | *\nco        | Pin color       | string         | 000000 to FFFFFF\nla        | Label anchor    | <int32, int32> | *\nlc        | Label color     | string         | 000000 to FFFFFF\nls        | Label size      | float          | Greater than 0\nro        | Rotation        | float          | -360 to 360\nsc        | Scale           | float          | Greater than 0\n\n* X and Y coordinates can be anywhere within pin image or a margin around it.\nThe margin size is the minimum of the pin width and height."
           }
         },
         "path": {
-          "target": "com.azure.maps_render#RenderGetMapStaticImageRequestPathList",
+          "target": "com.azure.maps_render#GetRenderMapStaticImageRequestPathList",
           "traits": {
             "smithy.api#httpQuery": "path",
             "smithy.api#documentation": "Path style and locations (in double). Use this parameter to optionally add\nlines, polygons or circles to the image.\nThe path style describes the appearance of the line and fill. (Be sure to\nproperly URL-encode values of this\nparameter since it will contain reserved characters such as pipes and\npunctuation.)\n\nYou can specify multiple instances of the path parameter to render multiple\ngeometries with different styles. A request supports up to 10 path parameters\nand up to 100 locations per path.\n\nTo render a circle with radius 100 meters and center point at latitude 45°N and\nlongitude 122°W using the default style, add the\nquerystring parameter\n\n`path=ra100||-122 45`\n\nNote that the longitude comes before the latitude.\nAfter URL encoding this will look like\n\n`path=ra100%7C%7C-122+45`\n\nAll of the examples here show the path parameter without URL encoding, for\nclarity.\n\nTo render a line, separate each location with a pipe character. For example,\nuse\n\n`path=||-122 45|-119.5 43.2|-121.67 47.12`\n\nA polygon is specified with a closed path, where the first and last points are\nequal. For example, use\n\n`path=||-122 45|-119.5 43.2|-121.67 47.12|-122 45`\n\nLongitude value for locations of lines and polygons can be in the range from\n-360 to 360 to allow for rendering of geometries crossing the anti-meridian.\n\n### Style Modifiers\n\nYou can modify the appearance of the path by adding style modifiers. These are\nadded before the locations.\nStyle modifiers each have a two-letter name. These abbreviated names are used\nto help reduce the length\nof the URL.\n\nTo change the color of the outline, use the 'lc' style modifier and specify the\ncolor using the HTML/CSS RGB color\nformat which is a six-digit hexadecimal number (the three-digit form is not\nsupported). For example, to use\na deep pink color which you would specify as #FF1493 in CSS, use\n\n`path=lcFF1493||-122 45|-119.5 43.2`\n\nMultiple style modifiers may be combined to create a more complex visual style.\n\n`lc0000FF|lw3|la0.60|fa0.50||-122.2 47.6|-122.2 47.7|-122.3 47.7|-122.3 47.6|-122.2 47.6`\n\n### Style Modifier Summary\n\nModifier | Description            | Type   | Range\n:-------:|------------------------|--------|-----------------\nlc       | Line color             | string | 000000 to FFFFFF\nfc       | Fill color             | string | 000000 to FFFFFF\nla       | Line alpha (opacity)   | float  | 0 to 1\nfa       | Fill alpha (opacity)   | float  | 0 to 1\nlw       | Line width             | int32  | (0, 50]\nra       | Circle radius (meters) | float  | Greater than 0"
@@ -935,21 +891,21 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_render#RenderGetMapStaticImageRequestPathList": {
+    "com.azure.maps_render#GetRenderMapStaticImageRequestPathList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapStaticImageRequestPinsList": {
+    "com.azure.maps_render#GetRenderMapStaticImageRequestPinsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapStaticImageRequestView": {
+    "com.azure.maps_render#GetRenderMapStaticImageRequestView": {
       "type": "enum",
       "members": {
         "AE": {
@@ -1069,21 +1025,21 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapStaticImageRequestBboxList": {
+    "com.azure.maps_render#GetRenderMapStaticImageRequestBboxList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapStaticImageRequestCenterList": {
+    "com.azure.maps_render#GetRenderMapStaticImageRequestCenterList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapStaticImageRequestTrafficLayer": {
+    "com.azure.maps_render#GetRenderMapStaticImageRequestTrafficLayer": {
       "type": "enum",
       "members": {
         "MICROSOFT_TRAFFIC_RELATIVE_MAIN": {
@@ -1101,7 +1057,7 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapStaticImageRequestTilesetId": {
+    "com.azure.maps_render#GetRenderMapStaticImageRequestTilesetId": {
       "type": "enum",
       "members": {
         "MICROSOFT_BASE_ROAD": {
@@ -1125,13 +1081,13 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapStateTile": {
+    "com.azure.maps_render#GetRenderMapStateTile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_render#RenderGetMapStateTileRequest"
+        "target": "com.azure.maps_render#GetRenderMapStateTileRequest"
       },
       "output": {
-        "target": "com.azure.maps_render#RenderGetMapStateTileResponse"
+        "target": "com.azure.maps_render#GetRenderMapStateTileResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1150,7 +1106,7 @@
         "smithy.api#documentation": "Use to get state tiles in vector format that can then be used to display\nfeature state information in an indoor map.\n\nFetches state tiles in vector format typically to be integrated into indoor\nmaps module of map control or SDK. The map control will call this API after\nuser turns on dynamic styling. For more information, see [Zoom Levels and Tile\nGrid](/azure/location-based-services/zoom-levels-and-tile-grid)."
       }
     },
-    "com.azure.maps_render#RenderGetMapStateTileResponse": {
+    "com.azure.maps_render#GetRenderMapStateTileResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -1165,7 +1121,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.maps_render#RenderGetMapStateTileRequest": {
+    "com.azure.maps_render#GetRenderMapStateTileRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1219,10 +1175,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_render#RenderGetCopyrightForWorld": {
+    "com.azure.maps_render#GetRenderCopyrightForWorld": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_render#RenderGetCopyrightForWorldRequest"
+        "target": "com.azure.maps_render#GetRenderCopyrightForWorldRequest"
       },
       "output": {
         "target": "com.azure.maps_render#Copyright"
@@ -1337,7 +1293,7 @@
         "smithy.api#documentation": "General Copyrights array"
       }
     },
-    "com.azure.maps_render#RenderGetCopyrightForWorldRequest": {
+    "com.azure.maps_render#GetRenderCopyrightForWorldRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1348,7 +1304,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_render#RenderGetCopyrightForWorldRequestFormat",
+          "target": "com.azure.maps_render#GetRenderCopyrightForWorldRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -1356,7 +1312,7 @@
           }
         },
         "text": {
-          "target": "com.azure.maps_render#RenderGetCopyrightForWorldRequestText",
+          "target": "com.azure.maps_render#GetRenderCopyrightForWorldRequestText",
           "traits": {
             "smithy.api#httpQuery": "text",
             "smithy.api#documentation": "Yes/no value to exclude textual data from response. Only images and\ncountry/region names will be in response."
@@ -1374,7 +1330,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_render#RenderGetCopyrightForWorldRequestText": {
+    "com.azure.maps_render#GetRenderCopyrightForWorldRequestText": {
       "type": "enum",
       "members": {
         "YES": {
@@ -1392,7 +1348,7 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetCopyrightForWorldRequestFormat": {
+    "com.azure.maps_render#GetRenderCopyrightForWorldRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -1410,10 +1366,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetCopyrightForTile": {
+    "com.azure.maps_render#GetRenderCopyrightForTile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_render#RenderGetCopyrightForTileRequest"
+        "target": "com.azure.maps_render#GetRenderCopyrightForTileRequest"
       },
       "output": {
         "target": "com.azure.maps_render#Copyright"
@@ -1435,7 +1391,7 @@
         "smithy.api#documentation": "Use to get copyright information.\n\nTo obtain the copyright information for a particular tile, the request should\nspecify the tile's zoom level and x and y coordinates. For more information,\nsee [Zoom Levels and Tile Grid](/azure/azure-maps/zoom-levels-and-tile-grid).\n\nCopyrights API is designed to serve copyright information for Render service.\nIn addition to basic copyright for the whole map, API is serving specific\ngroups of copyrights for some countries/regions."
       }
     },
-    "com.azure.maps_render#RenderGetCopyrightForTileRequest": {
+    "com.azure.maps_render#GetRenderCopyrightForTileRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1446,7 +1402,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_render#RenderGetCopyrightForTileRequestFormat",
+          "target": "com.azure.maps_render#GetRenderCopyrightForTileRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -1478,7 +1434,7 @@
           }
         },
         "text": {
-          "target": "com.azure.maps_render#RenderGetCopyrightForTileRequestText",
+          "target": "com.azure.maps_render#GetRenderCopyrightForTileRequestText",
           "traits": {
             "smithy.api#httpQuery": "text",
             "smithy.api#documentation": "Yes/no value to exclude textual data from response. Only images and\ncountry/region names will be in response."
@@ -1496,7 +1452,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_render#RenderGetCopyrightForTileRequestText": {
+    "com.azure.maps_render#GetRenderCopyrightForTileRequestText": {
       "type": "enum",
       "members": {
         "YES": {
@@ -1514,7 +1470,7 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetCopyrightForTileRequestFormat": {
+    "com.azure.maps_render#GetRenderCopyrightForTileRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -1532,10 +1488,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetCopyrightCaption": {
+    "com.azure.maps_render#GetRenderCopyrightCaption": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_render#RenderGetCopyrightCaptionRequest"
+        "target": "com.azure.maps_render#GetRenderCopyrightCaptionRequest"
       },
       "output": {
         "target": "com.azure.maps_render#CopyrightCaption"
@@ -1577,7 +1533,7 @@
         "smithy.api#documentation": "This object is returned from a successful copyright call"
       }
     },
-    "com.azure.maps_render#RenderGetCopyrightCaptionRequest": {
+    "com.azure.maps_render#GetRenderCopyrightCaptionRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1588,7 +1544,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_render#RenderGetCopyrightCaptionRequestFormat",
+          "target": "com.azure.maps_render#GetRenderCopyrightCaptionRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -1607,7 +1563,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_render#RenderGetCopyrightCaptionRequestFormat": {
+    "com.azure.maps_render#GetRenderCopyrightCaptionRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -1625,10 +1581,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetCopyrightFromBoundingBox": {
+    "com.azure.maps_render#GetRenderCopyrightFromBoundingBox": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequest"
+        "target": "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequest"
       },
       "output": {
         "target": "com.azure.maps_render#Copyright"
@@ -1650,7 +1606,7 @@
         "smithy.api#documentation": "Use to get copyright information for the specified bounding box.\n\nReturns copyright information for a given bounding box. Bounding-box requests\nshould specify the minimum and maximum longitude and latitude (EPSG-3857)\ncoordinates"
       }
     },
-    "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequest": {
+    "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1661,7 +1617,7 @@
           }
         },
         "format": {
-          "target": "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequestFormat",
+          "target": "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestFormat",
           "traits": {
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
@@ -1669,7 +1625,7 @@
           }
         },
         "mincoordinates": {
-          "target": "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequestMincoordinatesList",
+          "target": "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestMincoordinatesList",
           "traits": {
             "smithy.api#httpQuery": "mincoordinates",
             "smithy.api#required": {},
@@ -1677,7 +1633,7 @@
           }
         },
         "maxcoordinates": {
-          "target": "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequestMaxcoordinatesList",
+          "target": "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestMaxcoordinatesList",
           "traits": {
             "smithy.api#httpQuery": "maxcoordinates",
             "smithy.api#required": {},
@@ -1685,7 +1641,7 @@
           }
         },
         "text": {
-          "target": "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequestText",
+          "target": "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestText",
           "traits": {
             "smithy.api#httpQuery": "text",
             "smithy.api#documentation": "Yes/no value to exclude textual data from response. Only images and\ncountry/region names will be in response."
@@ -1703,7 +1659,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequestText": {
+    "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestText": {
       "type": "enum",
       "members": {
         "YES": {
@@ -1721,21 +1677,21 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequestMaxcoordinatesList": {
+    "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestMaxcoordinatesList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequestMincoordinatesList": {
+    "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestMincoordinatesList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetCopyrightFromBoundingBoxRequestFormat": {
+    "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestFormat": {
       "type": "enum",
       "members": {
         "JSON": {
@@ -1753,10 +1709,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapAttribution": {
+    "com.azure.maps_render#GetRenderMapAttribution": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_render#RenderGetMapAttributionRequest"
+        "target": "com.azure.maps_render#GetRenderMapAttributionRequest"
       },
       "output": {
         "target": "com.azure.maps_render#MapAttribution"
@@ -1801,7 +1757,7 @@
         "smithy.api#documentation": "A list of copyright strings."
       }
     },
-    "com.azure.maps_render#RenderGetMapAttributionRequest": {
+    "com.azure.maps_render#GetRenderMapAttributionRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1812,7 +1768,7 @@
           }
         },
         "tilesetId": {
-          "target": "com.azure.maps_render#RenderGetMapAttributionRequestTilesetId",
+          "target": "com.azure.maps_render#GetRenderMapAttributionRequestTilesetId",
           "traits": {
             "smithy.api#httpQuery": "tilesetId",
             "smithy.api#required": {},
@@ -1828,7 +1784,7 @@
           }
         },
         "bounds": {
-          "target": "com.azure.maps_render#RenderGetMapAttributionRequestBoundsList",
+          "target": "com.azure.maps_render#GetRenderMapAttributionRequestBoundsList",
           "traits": {
             "smithy.api#httpQuery": "bounds",
             "smithy.api#required": {},
@@ -1847,14 +1803,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_render#RenderGetMapAttributionRequestBoundsList": {
+    "com.azure.maps_render#GetRenderMapAttributionRequestBoundsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#Double"
       },
       "traits": {}
     },
-    "com.azure.maps_render#RenderGetMapAttributionRequestTilesetId": {
+    "com.azure.maps_render#GetRenderMapAttributionRequestTilesetId": {
       "type": "enum",
       "members": {
         "MICROSOFT_BASE": {
@@ -1997,31 +1953,31 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.maps_render#RenderGetMapTileset"
+          "target": "com.azure.maps_render#GetRenderMapTileset"
         },
         {
-          "target": "com.azure.maps_render#RenderGetMapTile"
+          "target": "com.azure.maps_render#GetRenderMapTile"
         },
         {
-          "target": "com.azure.maps_render#RenderGetMapStaticImage"
+          "target": "com.azure.maps_render#GetRenderMapStaticImage"
         },
         {
-          "target": "com.azure.maps_render#RenderGetMapStateTile"
+          "target": "com.azure.maps_render#GetRenderMapStateTile"
         },
         {
-          "target": "com.azure.maps_render#RenderGetCopyrightForWorld"
+          "target": "com.azure.maps_render#GetRenderCopyrightForWorld"
         },
         {
-          "target": "com.azure.maps_render#RenderGetCopyrightForTile"
+          "target": "com.azure.maps_render#GetRenderCopyrightForTile"
         },
         {
-          "target": "com.azure.maps_render#RenderGetCopyrightCaption"
+          "target": "com.azure.maps_render#GetRenderCopyrightCaption"
         },
         {
-          "target": "com.azure.maps_render#RenderGetCopyrightFromBoundingBox"
+          "target": "com.azure.maps_render#GetRenderCopyrightFromBoundingBox"
         },
         {
-          "target": "com.azure.maps_render#RenderGetMapAttribution"
+          "target": "com.azure.maps_render#GetRenderMapAttribution"
         }
       ],
       "traits": {

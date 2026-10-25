@@ -15,28 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.help#DiscoverySolutionList": "com.azure.help#ListDiscoverySolution",
-      "com.azure.help#DiscoverySolutionListRequest": "com.azure.help#ListDiscoverySolutionRequest",
-      "com.azure.help#DiagnosticsCreate": "com.azure.help#CreateDiagnostic",
-      "com.azure.help#DiagnosticsCreateResponse": "com.azure.help#CreateDiagnosticResponse",
-      "com.azure.help#DiagnosticsCreateRequest": "com.azure.help#CreateDiagnosticRequest",
-      "com.azure.help#DiagnosticsGet": "com.azure.help#GetDiagnostic",
-      "com.azure.help#DiagnosticsGetResponse": "com.azure.help#GetDiagnosticResponse",
-      "com.azure.help#DiagnosticsGetRequest": "com.azure.help#GetDiagnosticRequest",
-      "com.azure.help#DiagnosticsCheckNameAvailability": "com.azure.help#CheckDiagnosticNameAvailability",
-      "com.azure.help#DiagnosticsCheckNameAvailabilityRequest": "com.azure.help#CheckDiagnosticNameAvailabilityRequest",
-      "com.azure.help#OperationsList": "com.azure.help#ListOperations",
-      "com.azure.help#OperationsListResponse": "com.azure.help#ListOperationsResponse",
-      "com.azure.help#OperationsListResponseValueList": "com.azure.help#ListOperationsResponseValueList",
-      "com.azure.help#OperationsListRequest": "com.azure.help#ListOperationsRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.help#DiscoverySolutionList": {
+    "com.azure.help#ListDiscoverySolution": {
       "type": "operation",
       "input": {
-        "target": "com.azure.help#DiscoverySolutionListRequest"
+        "target": "com.azure.help#ListDiscoverySolutionRequest"
       },
       "output": {
         "target": "com.azure.help#DiscoveryResponse"
@@ -282,7 +267,7 @@
         "smithy.api#documentation": "The type of identity that created the resource."
       }
     },
-    "com.azure.help#DiscoverySolutionListRequest": {
+    "com.azure.help#ListDiscoverySolutionRequest": {
       "type": "structure",
       "members": {
         "scope": {
@@ -318,13 +303,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.help#DiagnosticsCreate": {
+    "com.azure.help#CreateDiagnostic": {
       "type": "operation",
       "input": {
-        "target": "com.azure.help#DiagnosticsCreateRequest"
+        "target": "com.azure.help#CreateDiagnosticRequest"
       },
       "output": {
-        "target": "com.azure.help#DiagnosticsCreateResponse"
+        "target": "com.azure.help#CreateDiagnosticResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -337,7 +322,7 @@
         "com.distilled.openapi#apiVersion": "2023-06-01"
       }
     },
-    "com.azure.help#DiagnosticsCreateResponse": {
+    "com.azure.help#CreateDiagnosticResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -679,7 +664,7 @@
         "smithy.api#documentation": "Global parameters that can be passed to all solutionIds."
       }
     },
-    "com.azure.help#DiagnosticsCreateRequest": {
+    "com.azure.help#CreateDiagnosticRequest": {
       "type": "structure",
       "members": {
         "scope": {
@@ -750,13 +735,13 @@
         "smithy.api#documentation": "Global parameters that can be passed to all solutionIds."
       }
     },
-    "com.azure.help#DiagnosticsGet": {
+    "com.azure.help#GetDiagnostic": {
       "type": "operation",
       "input": {
-        "target": "com.azure.help#DiagnosticsGetRequest"
+        "target": "com.azure.help#GetDiagnosticRequest"
       },
       "output": {
-        "target": "com.azure.help#DiagnosticsGetResponse"
+        "target": "com.azure.help#GetDiagnosticResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -769,7 +754,7 @@
         "com.distilled.openapi#apiVersion": "2023-06-01"
       }
     },
-    "com.azure.help#DiagnosticsGetResponse": {
+    "com.azure.help#GetDiagnosticResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -807,7 +792,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.help#DiagnosticsGetRequest": {
+    "com.azure.help#GetDiagnosticRequest": {
       "type": "structure",
       "members": {
         "scope": {
@@ -831,10 +816,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.help#DiagnosticsCheckNameAvailability": {
+    "com.azure.help#CheckDiagnosticNameAvailability": {
       "type": "operation",
       "input": {
-        "target": "com.azure.help#DiagnosticsCheckNameAvailabilityRequest"
+        "target": "com.azure.help#CheckDiagnosticNameAvailabilityRequest"
       },
       "output": {
         "target": "com.azure.help#CheckNameAvailabilityResponse"
@@ -876,7 +861,7 @@
         "smithy.api#documentation": "Response for whether the requested resource name is available or not."
       }
     },
-    "com.azure.help#DiagnosticsCheckNameAvailabilityRequest": {
+    "com.azure.help#CheckDiagnosticNameAvailabilityRequest": {
       "type": "structure",
       "members": {
         "scope": {
@@ -904,13 +889,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.help#OperationsList": {
+    "com.azure.help#ListOperations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.help#OperationsListRequest"
+        "target": "com.azure.help#ListOperationsRequest"
       },
       "output": {
-        "target": "com.azure.help#OperationsListResponse"
+        "target": "com.azure.help#ListOperationsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -930,11 +915,11 @@
         }
       }
     },
-    "com.azure.help#OperationsListResponse": {
+    "com.azure.help#ListOperationsResponse": {
       "type": "structure",
       "members": {
         "value": {
-          "target": "com.azure.help#OperationsListResponseValueList",
+          "target": "com.azure.help#ListOperationsResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of operations supported by the resource provider"
           }
@@ -950,7 +935,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.help#OperationsListResponseValueList": {
+    "com.azure.help#ListOperationsResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.help#Operation"
@@ -1069,7 +1054,7 @@
         "smithy.api#documentation": "Localized display information for this particular operation."
       }
     },
-    "com.azure.help#OperationsListRequest": {
+    "com.azure.help#ListOperationsRequest": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -1088,19 +1073,19 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.help#DiscoverySolutionList"
+          "target": "com.azure.help#ListDiscoverySolution"
         },
         {
-          "target": "com.azure.help#DiagnosticsCreate"
+          "target": "com.azure.help#CreateDiagnostic"
         },
         {
-          "target": "com.azure.help#DiagnosticsGet"
+          "target": "com.azure.help#GetDiagnostic"
         },
         {
-          "target": "com.azure.help#DiagnosticsCheckNameAvailability"
+          "target": "com.azure.help#CheckDiagnosticNameAvailability"
         },
         {
-          "target": "com.azure.help#OperationsList"
+          "target": "com.azure.help#ListOperations"
         }
       ],
       "traits": {

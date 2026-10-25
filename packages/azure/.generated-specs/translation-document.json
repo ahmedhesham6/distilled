@@ -15,31 +15,7 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.translation_document#DocumentTranslationOperationsGetSupportedFormats": "com.azure.translation_document#GetDocumentTranslationOperationSupportedFormats",
-      "com.azure.translation_document#DocumentTranslationOperationsGetSupportedFormatsRequest": "com.azure.translation_document#GetDocumentTranslationOperationSupportedFormatsRequest",
-      "com.azure.translation_document#DocumentTranslationOperationsGetSupportedFormatsRequestType": "com.azure.translation_document#GetDocumentTranslationOperationSupportedFormatsRequestType",
-      "com.azure.translation_document#DocumentTranslationOperationsGetDocumentStatus": "com.azure.translation_document#GetDocumentTranslationOperationDocumentStatus",
-      "com.azure.translation_document#DocumentTranslationOperationsGetDocumentStatusRequest": "com.azure.translation_document#GetDocumentTranslationOperationDocumentStatusRequest",
-      "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatus": "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatus",
-      "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatusRequest": "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatusRequest",
-      "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatusRequestOrderbyList": "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatusRequestOrderbyList",
-      "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatusRequestStatusesList": "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatusRequestStatusesList",
-      "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatusRequestIdsList": "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatusRequestIdsList",
-      "com.azure.translation_document#DocumentTranslationOperationsCancelTranslation": "com.azure.translation_document#CancelDocumentTranslationOperationTranslation",
-      "com.azure.translation_document#DocumentTranslationOperationsCancelTranslationRequest": "com.azure.translation_document#CancelDocumentTranslationOperationTranslationRequest",
-      "com.azure.translation_document#DocumentTranslationOperationsGetTranslationStatus": "com.azure.translation_document#GetDocumentTranslationOperationTranslationStatus",
-      "com.azure.translation_document#DocumentTranslationOperationsGetTranslationStatusRequest": "com.azure.translation_document#GetDocumentTranslationOperationTranslationStatusRequest",
-      "com.azure.translation_document#DocumentTranslationOperationsStartTranslation": "com.azure.translation_document#StartDocumentTranslationOperationTranslation",
-      "com.azure.translation_document#DocumentTranslationOperationsStartTranslationResponse": "com.azure.translation_document#StartDocumentTranslationOperationTranslationResponse",
-      "com.azure.translation_document#DocumentTranslationOperationsStartTranslationRequest": "com.azure.translation_document#StartDocumentTranslationOperationTranslationRequest",
-      "com.azure.translation_document#DocumentTranslationOperationsStartTranslationRequestInputsList": "com.azure.translation_document#StartDocumentTranslationOperationTranslationRequestInputsList",
-      "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatus": "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatus",
-      "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatusRequest": "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatusRequest",
-      "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatusRequestOrderbyList": "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatusRequestOrderbyList",
-      "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatusRequestStatusesList": "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatusRequestStatusesList",
-      "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatusRequestIdsList": "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatusRequestIdsList"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
     "com.azure.translation_document#DocumentTranslationOperationsDocumentTranslate": {
@@ -145,10 +121,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetSupportedFormats": {
+    "com.azure.translation_document#GetDocumentTranslationOperationSupportedFormats": {
       "type": "operation",
       "input": {
-        "target": "com.azure.translation_document#DocumentTranslationOperationsGetSupportedFormatsRequest"
+        "target": "com.azure.translation_document#GetDocumentTranslationOperationSupportedFormatsRequest"
       },
       "output": {
         "target": "com.azure.translation_document#SupportedFileFormats"
@@ -285,7 +261,7 @@
         "smithy.api#documentation": "Supported file extension for this format"
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetSupportedFormatsRequest": {
+    "com.azure.translation_document#GetDocumentTranslationOperationSupportedFormatsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -297,7 +273,7 @@
           }
         },
         "type": {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsGetSupportedFormatsRequestType",
+          "target": "com.azure.translation_document#GetDocumentTranslationOperationSupportedFormatsRequestType",
           "traits": {
             "smithy.api#httpQuery": "type",
             "smithy.api#required": {},
@@ -309,7 +285,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetSupportedFormatsRequestType": {
+    "com.azure.translation_document#GetDocumentTranslationOperationSupportedFormatsRequestType": {
       "type": "enum",
       "members": {
         "DOCUMENT": {
@@ -327,10 +303,10 @@
       },
       "traits": {}
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetDocumentStatus": {
+    "com.azure.translation_document#GetDocumentTranslationOperationDocumentStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.translation_document#DocumentTranslationOperationsGetDocumentStatusRequest"
+        "target": "com.azure.translation_document#GetDocumentTranslationOperationDocumentStatusRequest"
       },
       "output": {
         "target": "com.azure.translation_document#DocumentStatus"
@@ -622,7 +598,7 @@
         "smithy.api#documentation": "List of possible statuses for job or document"
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetDocumentStatusRequest": {
+    "com.azure.translation_document#GetDocumentTranslationOperationDocumentStatusRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -654,10 +630,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatus": {
+    "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatusRequest"
+        "target": "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatusRequest"
       },
       "output": {
         "target": "com.azure.translation_document#DocumentsStatus"
@@ -713,7 +689,7 @@
         "smithy.api#documentation": "The detail status of individual documents"
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatusRequest": {
+    "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatusRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -754,14 +730,14 @@
           }
         },
         "ids": {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatusRequestIdsList",
+          "target": "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatusRequestIdsList",
           "traits": {
             "smithy.api#httpQuery": "ids",
             "smithy.api#documentation": "Ids to use in filtering"
           }
         },
         "statuses": {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatusRequestStatusesList",
+          "target": "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatusRequestStatusesList",
           "traits": {
             "smithy.api#httpQuery": "statuses",
             "smithy.api#documentation": "Statuses to use in filtering"
@@ -782,7 +758,7 @@
           }
         },
         "orderby": {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatusRequestOrderbyList",
+          "target": "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatusRequestOrderbyList",
           "traits": {
             "smithy.api#httpQuery": "orderby",
             "smithy.api#documentation": "the sorting query for the collection (ex: 'CreatedDateTimeUtc asc','CreatedDateTimeUtc desc')"
@@ -799,31 +775,31 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatusRequestOrderbyList": {
+    "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatusRequestOrderbyList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatusRequestStatusesList": {
+    "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatusRequestStatusesList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatusRequestIdsList": {
+    "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatusRequestIdsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.translation_document#DocumentTranslationOperationsCancelTranslation": {
+    "com.azure.translation_document#CancelDocumentTranslationOperationTranslation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.translation_document#DocumentTranslationOperationsCancelTranslationRequest"
+        "target": "com.azure.translation_document#CancelDocumentTranslationOperationTranslationRequest"
       },
       "output": {
         "target": "com.azure.translation_document#TranslationStatus"
@@ -966,7 +942,7 @@
         "smithy.api#documentation": "Status Summary"
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsCancelTranslationRequest": {
+    "com.azure.translation_document#CancelDocumentTranslationOperationTranslationRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -990,10 +966,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetTranslationStatus": {
+    "com.azure.translation_document#GetDocumentTranslationOperationTranslationStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.translation_document#DocumentTranslationOperationsGetTranslationStatusRequest"
+        "target": "com.azure.translation_document#GetDocumentTranslationOperationTranslationStatusRequest"
       },
       "output": {
         "target": "com.azure.translation_document#TranslationStatus"
@@ -1012,7 +988,7 @@
         "smithy.api#documentation": "Returns the status for a document translation request\n\nReturns the status for a document translation request.\nThe status includes the\noverall request status, as well as the status for documents that are being\ntranslated as part of that request."
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetTranslationStatusRequest": {
+    "com.azure.translation_document#GetDocumentTranslationOperationTranslationStatusRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1036,13 +1012,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsStartTranslation": {
+    "com.azure.translation_document#StartDocumentTranslationOperationTranslation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.translation_document#DocumentTranslationOperationsStartTranslationRequest"
+        "target": "com.azure.translation_document#StartDocumentTranslationOperationTranslationRequest"
       },
       "output": {
-        "target": "com.azure.translation_document#DocumentTranslationOperationsStartTranslationResponse"
+        "target": "com.azure.translation_document#StartDocumentTranslationOperationTranslationResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1058,7 +1034,7 @@
         "smithy.api#documentation": "Submit a document translation request to the Document Translation service\n\nUse this API to submit a bulk (batch) translation request to the Document\nTranslation service.\nEach request can contain multiple documents and must\ncontain a source and destination container for each document.\n            \nThe\nprefix and suffix filter (if supplied) are used to filter folders. The prefix\nis applied to the subpath after the container name.\n            \nGlossaries /\nTranslation memory can be included in the request and are applied by the\nservice when the document is translated.\n            \nIf the glossary is\ninvalid or unreachable during translation, an error is indicated in the\ndocument status.\nIf a file with the same name already exists at the\ndestination, it will be overwritten. The targetUrl for each target language\nmust be unique."
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsStartTranslationResponse": {
+    "com.azure.translation_document#StartDocumentTranslationOperationTranslationResponse": {
       "type": "structure",
       "members": {
         "operationLocation": {
@@ -1073,7 +1049,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsStartTranslationRequest": {
+    "com.azure.translation_document#StartDocumentTranslationOperationTranslationRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1085,7 +1061,7 @@
           }
         },
         "inputs": {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsStartTranslationRequestInputsList",
+          "target": "com.azure.translation_document#StartDocumentTranslationOperationTranslationRequestInputsList",
           "traits": {
             "smithy.api#documentation": "The input list of documents or folders containing documents",
             "smithy.api#required": {}
@@ -1116,7 +1092,7 @@
         "smithy.api#documentation": "Translation batch request options"
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsStartTranslationRequestInputsList": {
+    "com.azure.translation_document#StartDocumentTranslationOperationTranslationRequestInputsList": {
       "type": "list",
       "member": {
         "target": "com.azure.translation_document#BatchRequest"
@@ -1338,10 +1314,10 @@
         "smithy.api#documentation": "Document filter"
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatus": {
+    "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatusRequest"
+        "target": "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatusRequest"
       },
       "output": {
         "target": "com.azure.translation_document#TranslationsStatus"
@@ -1397,7 +1373,7 @@
         "smithy.api#documentation": "The summary status of individual operation"
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatusRequest": {
+    "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatusRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1430,14 +1406,14 @@
           }
         },
         "ids": {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatusRequestIdsList",
+          "target": "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatusRequestIdsList",
           "traits": {
             "smithy.api#httpQuery": "ids",
             "smithy.api#documentation": "Ids to use in filtering"
           }
         },
         "statuses": {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatusRequestStatusesList",
+          "target": "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatusRequestStatusesList",
           "traits": {
             "smithy.api#httpQuery": "statuses",
             "smithy.api#documentation": "Statuses to use in filtering"
@@ -1458,7 +1434,7 @@
           }
         },
         "orderby": {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatusRequestOrderbyList",
+          "target": "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatusRequestOrderbyList",
           "traits": {
             "smithy.api#httpQuery": "orderby",
             "smithy.api#documentation": "the sorting query for the collection (ex: 'CreatedDateTimeUtc asc','CreatedDateTimeUtc desc')"
@@ -1475,21 +1451,21 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatusRequestOrderbyList": {
+    "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatusRequestOrderbyList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatusRequestStatusesList": {
+    "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatusRequestStatusesList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatusRequestIdsList": {
+    "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatusRequestIdsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -1504,25 +1480,25 @@
           "target": "com.azure.translation_document#DocumentTranslationOperationsDocumentTranslate"
         },
         {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsGetSupportedFormats"
+          "target": "com.azure.translation_document#GetDocumentTranslationOperationSupportedFormats"
         },
         {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsGetDocumentStatus"
+          "target": "com.azure.translation_document#GetDocumentTranslationOperationDocumentStatus"
         },
         {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsGetDocumentsStatus"
+          "target": "com.azure.translation_document#GetDocumentTranslationOperationDocumentsStatus"
         },
         {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsCancelTranslation"
+          "target": "com.azure.translation_document#CancelDocumentTranslationOperationTranslation"
         },
         {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsGetTranslationStatus"
+          "target": "com.azure.translation_document#GetDocumentTranslationOperationTranslationStatus"
         },
         {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsStartTranslation"
+          "target": "com.azure.translation_document#StartDocumentTranslationOperationTranslation"
         },
         {
-          "target": "com.azure.translation_document#DocumentTranslationOperationsGetTranslationsStatus"
+          "target": "com.azure.translation_document#GetDocumentTranslationOperationTranslationsStatus"
         }
       ],
       "traits": {

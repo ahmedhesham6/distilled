@@ -15,72 +15,16 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.powerbidedicated#CapacitiesSuspend": "com.azure.powerbidedicated#SuspendCapacity",
-      "com.azure.powerbidedicated#CapacitiesSuspendResponse": "com.azure.powerbidedicated#SuspendCapacityResponse",
-      "com.azure.powerbidedicated#CapacitiesSuspendRequest": "com.azure.powerbidedicated#SuspendCapacityRequest",
-      "com.azure.powerbidedicated#CapacitiesListSkusForCapacity": "com.azure.powerbidedicated#ListCapacitySkusForCapacity",
-      "com.azure.powerbidedicated#CapacitiesListSkusForCapacityRequest": "com.azure.powerbidedicated#ListCapacitySkusForCapacityRequest",
-      "com.azure.powerbidedicated#CapacitiesResume": "com.azure.powerbidedicated#ResumeCapacity",
-      "com.azure.powerbidedicated#CapacitiesResumeResponse": "com.azure.powerbidedicated#ResumeCapacityResponse",
-      "com.azure.powerbidedicated#CapacitiesResumeRequest": "com.azure.powerbidedicated#ResumeCapacityRequest",
-      "com.azure.powerbidedicated#CapacitiesDelete": "com.azure.powerbidedicated#DeleteCapacity",
-      "com.azure.powerbidedicated#CapacitiesDeleteResponse": "com.azure.powerbidedicated#DeleteCapacityResponse",
-      "com.azure.powerbidedicated#CapacitiesDeleteRequest": "com.azure.powerbidedicated#DeleteCapacityRequest",
-      "com.azure.powerbidedicated#CapacitiesUpdate": "com.azure.powerbidedicated#UpdateCapacity",
-      "com.azure.powerbidedicated#CapacitiesUpdateResponse": "com.azure.powerbidedicated#UpdateCapacityResponse",
-      "com.azure.powerbidedicated#CapacitiesUpdateResponseTagsMap": "com.azure.powerbidedicated#UpdateCapacityResponseTagsMap",
-      "com.azure.powerbidedicated#CapacitiesUpdateRequest": "com.azure.powerbidedicated#UpdateCapacityRequest",
-      "com.azure.powerbidedicated#CapacitiesUpdateRequestTagsMap": "com.azure.powerbidedicated#UpdateCapacityRequestTagsMap",
-      "com.azure.powerbidedicated#CapacitiesCreate": "com.azure.powerbidedicated#CreateCapacity",
-      "com.azure.powerbidedicated#CapacitiesCreateResponse": "com.azure.powerbidedicated#CreateCapacityResponse",
-      "com.azure.powerbidedicated#CapacitiesCreateResponseTagsMap": "com.azure.powerbidedicated#CreateCapacityResponseTagsMap",
-      "com.azure.powerbidedicated#CapacitiesCreateRequest": "com.azure.powerbidedicated#CreateCapacityRequest",
-      "com.azure.powerbidedicated#CapacitiesCreateRequestTagsMap": "com.azure.powerbidedicated#CreateCapacityRequestTagsMap",
-      "com.azure.powerbidedicated#CapacitiesGetDetails": "com.azure.powerbidedicated#GetCapacityDetails",
-      "com.azure.powerbidedicated#CapacitiesGetDetailsResponse": "com.azure.powerbidedicated#GetCapacityDetailsResponse",
-      "com.azure.powerbidedicated#CapacitiesGetDetailsResponseTagsMap": "com.azure.powerbidedicated#GetCapacityDetailsResponseTagsMap",
-      "com.azure.powerbidedicated#CapacitiesGetDetailsRequest": "com.azure.powerbidedicated#GetCapacityDetailsRequest",
-      "com.azure.powerbidedicated#CapacitiesListByResourceGroup": "com.azure.powerbidedicated#ListCapacityByResourceGroup",
-      "com.azure.powerbidedicated#CapacitiesListByResourceGroupRequest": "com.azure.powerbidedicated#ListCapacityByResourceGroupRequest",
-      "com.azure.powerbidedicated#AutoScaleVCoresDelete": "com.azure.powerbidedicated#DeleteAutoScaleVCore",
-      "com.azure.powerbidedicated#AutoScaleVCoresDeleteRequest": "com.azure.powerbidedicated#DeleteAutoScaleVCoreRequest",
-      "com.azure.powerbidedicated#AutoScaleVCoresUpdate": "com.azure.powerbidedicated#UpdateAutoScaleVCore",
-      "com.azure.powerbidedicated#AutoScaleVCoresUpdateResponse": "com.azure.powerbidedicated#UpdateAutoScaleVCoreResponse",
-      "com.azure.powerbidedicated#AutoScaleVCoresUpdateResponseTagsMap": "com.azure.powerbidedicated#UpdateAutoScaleVCoreResponseTagsMap",
-      "com.azure.powerbidedicated#AutoScaleVCoresUpdateRequest": "com.azure.powerbidedicated#UpdateAutoScaleVCoreRequest",
-      "com.azure.powerbidedicated#AutoScaleVCoresUpdateRequestTagsMap": "com.azure.powerbidedicated#UpdateAutoScaleVCoreRequestTagsMap",
-      "com.azure.powerbidedicated#AutoScaleVCoresCreate": "com.azure.powerbidedicated#CreateAutoScaleVCore",
-      "com.azure.powerbidedicated#AutoScaleVCoresCreateResponse": "com.azure.powerbidedicated#CreateAutoScaleVCoreResponse",
-      "com.azure.powerbidedicated#AutoScaleVCoresCreateResponseTagsMap": "com.azure.powerbidedicated#CreateAutoScaleVCoreResponseTagsMap",
-      "com.azure.powerbidedicated#AutoScaleVCoresCreateRequest": "com.azure.powerbidedicated#CreateAutoScaleVCoreRequest",
-      "com.azure.powerbidedicated#AutoScaleVCoresCreateRequestTagsMap": "com.azure.powerbidedicated#CreateAutoScaleVCoreRequestTagsMap",
-      "com.azure.powerbidedicated#AutoScaleVCoresGet": "com.azure.powerbidedicated#GetAutoScaleVCore",
-      "com.azure.powerbidedicated#AutoScaleVCoresGetResponse": "com.azure.powerbidedicated#GetAutoScaleVCoreResponse",
-      "com.azure.powerbidedicated#AutoScaleVCoresGetResponseTagsMap": "com.azure.powerbidedicated#GetAutoScaleVCoreResponseTagsMap",
-      "com.azure.powerbidedicated#AutoScaleVCoresGetRequest": "com.azure.powerbidedicated#GetAutoScaleVCoreRequest",
-      "com.azure.powerbidedicated#AutoScaleVCoresListByResourceGroup": "com.azure.powerbidedicated#ListAutoScaleVCoreByResourceGroup",
-      "com.azure.powerbidedicated#AutoScaleVCoresListByResourceGroupRequest": "com.azure.powerbidedicated#ListAutoScaleVCoreByResourceGroupRequest",
-      "com.azure.powerbidedicated#CapacitiesListSkus": "com.azure.powerbidedicated#ListCapacitySkus",
-      "com.azure.powerbidedicated#CapacitiesListSkusRequest": "com.azure.powerbidedicated#ListCapacitySkusRequest",
-      "com.azure.powerbidedicated#CapacitiesCheckNameAvailability": "com.azure.powerbidedicated#CheckCapacityNameAvailability",
-      "com.azure.powerbidedicated#CapacitiesCheckNameAvailabilityRequest": "com.azure.powerbidedicated#CheckCapacityNameAvailabilityRequest",
-      "com.azure.powerbidedicated#CapacitiesList": "com.azure.powerbidedicated#ListCapacities",
-      "com.azure.powerbidedicated#CapacitiesListRequest": "com.azure.powerbidedicated#ListCapacitiesRequest",
-      "com.azure.powerbidedicated#AutoScaleVCoresListBySubscription": "com.azure.powerbidedicated#ListAutoScaleVCoreBySubscription",
-      "com.azure.powerbidedicated#AutoScaleVCoresListBySubscriptionRequest": "com.azure.powerbidedicated#ListAutoScaleVCoreBySubscriptionRequest",
-      "com.azure.powerbidedicated#OperationsList": "com.azure.powerbidedicated#ListOperations",
-      "com.azure.powerbidedicated#OperationsListRequest": "com.azure.powerbidedicated#ListOperationsRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.powerbidedicated#CapacitiesSuspend": {
+    "com.azure.powerbidedicated#SuspendCapacity": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#CapacitiesSuspendRequest"
+        "target": "com.azure.powerbidedicated#SuspendCapacityRequest"
       },
       "output": {
-        "target": "com.azure.powerbidedicated#CapacitiesSuspendResponse"
+        "target": "com.azure.powerbidedicated#SuspendCapacityResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -93,7 +37,7 @@
         "com.distilled.openapi#apiVersion": "2021-01-01"
       }
     },
-    "com.azure.powerbidedicated#CapacitiesSuspendResponse": {
+    "com.azure.powerbidedicated#SuspendCapacityResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -115,7 +59,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesSuspendRequest": {
+    "com.azure.powerbidedicated#SuspendCapacityRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -147,10 +91,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesListSkusForCapacity": {
+    "com.azure.powerbidedicated#ListCapacitySkusForCapacity": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#CapacitiesListSkusForCapacityRequest"
+        "target": "com.azure.powerbidedicated#ListCapacitySkusForCapacityRequest"
       },
       "output": {
         "target": "com.azure.powerbidedicated#SkuEnumerationForExistingResourceResult"
@@ -262,7 +206,7 @@
         "smithy.api#documentation": "The name of the Azure pricing tier to which the SKU applies."
       }
     },
-    "com.azure.powerbidedicated#CapacitiesListSkusForCapacityRequest": {
+    "com.azure.powerbidedicated#ListCapacitySkusForCapacityRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -294,13 +238,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesResume": {
+    "com.azure.powerbidedicated#ResumeCapacity": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#CapacitiesResumeRequest"
+        "target": "com.azure.powerbidedicated#ResumeCapacityRequest"
       },
       "output": {
-        "target": "com.azure.powerbidedicated#CapacitiesResumeResponse"
+        "target": "com.azure.powerbidedicated#ResumeCapacityResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -313,7 +257,7 @@
         "com.distilled.openapi#apiVersion": "2021-01-01"
       }
     },
-    "com.azure.powerbidedicated#CapacitiesResumeResponse": {
+    "com.azure.powerbidedicated#ResumeCapacityResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -335,7 +279,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesResumeRequest": {
+    "com.azure.powerbidedicated#ResumeCapacityRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -367,13 +311,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesDelete": {
+    "com.azure.powerbidedicated#DeleteCapacity": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#CapacitiesDeleteRequest"
+        "target": "com.azure.powerbidedicated#DeleteCapacityRequest"
       },
       "output": {
-        "target": "com.azure.powerbidedicated#CapacitiesDeleteResponse"
+        "target": "com.azure.powerbidedicated#DeleteCapacityResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -386,7 +330,7 @@
         "com.distilled.openapi#apiVersion": "2021-01-01"
       }
     },
-    "com.azure.powerbidedicated#CapacitiesDeleteResponse": {
+    "com.azure.powerbidedicated#DeleteCapacityResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -408,7 +352,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesDeleteRequest": {
+    "com.azure.powerbidedicated#DeleteCapacityRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -440,13 +384,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesUpdate": {
+    "com.azure.powerbidedicated#UpdateCapacity": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#CapacitiesUpdateRequest"
+        "target": "com.azure.powerbidedicated#UpdateCapacityRequest"
       },
       "output": {
-        "target": "com.azure.powerbidedicated#CapacitiesUpdateResponse"
+        "target": "com.azure.powerbidedicated#UpdateCapacityResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -459,7 +403,7 @@
         "com.distilled.openapi#apiVersion": "2021-01-01"
       }
     },
-    "com.azure.powerbidedicated#CapacitiesUpdateResponse": {
+    "com.azure.powerbidedicated#UpdateCapacityResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -487,7 +431,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.powerbidedicated#CapacitiesUpdateResponseTagsMap",
+          "target": "com.azure.powerbidedicated#UpdateCapacityResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -778,7 +722,7 @@
         "smithy.api#documentation": "An array of administrator user identities."
       }
     },
-    "com.azure.powerbidedicated#CapacitiesUpdateResponseTagsMap": {
+    "com.azure.powerbidedicated#UpdateCapacityResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -898,7 +842,7 @@
         "smithy.api#documentation": "The type of identity that created the resource."
       }
     },
-    "com.azure.powerbidedicated#CapacitiesUpdateRequest": {
+    "com.azure.powerbidedicated#UpdateCapacityRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -932,7 +876,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.powerbidedicated#CapacitiesUpdateRequestTagsMap",
+          "target": "com.azure.powerbidedicated#UpdateCapacityRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Key-value pairs of additional provisioning properties."
           }
@@ -968,7 +912,7 @@
         "smithy.api#documentation": "An object that represents a set of mutable Dedicated capacity resource properties."
       }
     },
-    "com.azure.powerbidedicated#CapacitiesUpdateRequestTagsMap": {
+    "com.azure.powerbidedicated#UpdateCapacityRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -980,13 +924,13 @@
         "smithy.api#documentation": "Key-value pairs of additional provisioning properties."
       }
     },
-    "com.azure.powerbidedicated#CapacitiesCreate": {
+    "com.azure.powerbidedicated#CreateCapacity": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#CapacitiesCreateRequest"
+        "target": "com.azure.powerbidedicated#CreateCapacityRequest"
       },
       "output": {
-        "target": "com.azure.powerbidedicated#CapacitiesCreateResponse"
+        "target": "com.azure.powerbidedicated#CreateCapacityResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -999,7 +943,7 @@
         "com.distilled.openapi#apiVersion": "2021-01-01"
       }
     },
-    "com.azure.powerbidedicated#CapacitiesCreateResponse": {
+    "com.azure.powerbidedicated#CreateCapacityResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1027,7 +971,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.powerbidedicated#CapacitiesCreateResponseTagsMap",
+          "target": "com.azure.powerbidedicated#CreateCapacityResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1071,7 +1015,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesCreateResponseTagsMap": {
+    "com.azure.powerbidedicated#CreateCapacityResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1083,7 +1027,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.powerbidedicated#CapacitiesCreateRequest": {
+    "com.azure.powerbidedicated#CreateCapacityRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1111,7 +1055,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.powerbidedicated#CapacitiesCreateRequestTagsMap",
+          "target": "com.azure.powerbidedicated#CreateCapacityRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1161,7 +1105,7 @@
         "smithy.api#documentation": "Properties of Dedicated Capacity resource."
       }
     },
-    "com.azure.powerbidedicated#CapacitiesCreateRequestTagsMap": {
+    "com.azure.powerbidedicated#CreateCapacityRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1173,13 +1117,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.powerbidedicated#CapacitiesGetDetails": {
+    "com.azure.powerbidedicated#GetCapacityDetails": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#CapacitiesGetDetailsRequest"
+        "target": "com.azure.powerbidedicated#GetCapacityDetailsRequest"
       },
       "output": {
-        "target": "com.azure.powerbidedicated#CapacitiesGetDetailsResponse"
+        "target": "com.azure.powerbidedicated#GetCapacityDetailsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1192,7 +1136,7 @@
         "com.distilled.openapi#apiVersion": "2021-01-01"
       }
     },
-    "com.azure.powerbidedicated#CapacitiesGetDetailsResponse": {
+    "com.azure.powerbidedicated#GetCapacityDetailsResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1220,7 +1164,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.powerbidedicated#CapacitiesGetDetailsResponseTagsMap",
+          "target": "com.azure.powerbidedicated#GetCapacityDetailsResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1250,7 +1194,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesGetDetailsResponseTagsMap": {
+    "com.azure.powerbidedicated#GetCapacityDetailsResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1262,7 +1206,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.powerbidedicated#CapacitiesGetDetailsRequest": {
+    "com.azure.powerbidedicated#GetCapacityDetailsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1294,10 +1238,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesListByResourceGroup": {
+    "com.azure.powerbidedicated#ListCapacityByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#CapacitiesListByResourceGroupRequest"
+        "target": "com.azure.powerbidedicated#ListCapacityByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.powerbidedicated#DedicatedCapacities"
@@ -1420,7 +1364,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.powerbidedicated#CapacitiesListByResourceGroupRequest": {
+    "com.azure.powerbidedicated#ListCapacityByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1450,10 +1394,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresDelete": {
+    "com.azure.powerbidedicated#DeleteAutoScaleVCore": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#AutoScaleVCoresDeleteRequest"
+        "target": "com.azure.powerbidedicated#DeleteAutoScaleVCoreRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -1469,7 +1413,7 @@
         "com.distilled.openapi#apiVersion": "2021-01-01"
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresDeleteRequest": {
+    "com.azure.powerbidedicated#DeleteAutoScaleVCoreRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1501,13 +1445,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresUpdate": {
+    "com.azure.powerbidedicated#UpdateAutoScaleVCore": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#AutoScaleVCoresUpdateRequest"
+        "target": "com.azure.powerbidedicated#UpdateAutoScaleVCoreRequest"
       },
       "output": {
-        "target": "com.azure.powerbidedicated#AutoScaleVCoresUpdateResponse"
+        "target": "com.azure.powerbidedicated#UpdateAutoScaleVCoreResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1520,7 +1464,7 @@
         "com.distilled.openapi#apiVersion": "2021-01-01"
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresUpdateResponse": {
+    "com.azure.powerbidedicated#UpdateAutoScaleVCoreResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1548,7 +1492,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.powerbidedicated#AutoScaleVCoresUpdateResponseTagsMap",
+          "target": "com.azure.powerbidedicated#UpdateAutoScaleVCoreResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1659,7 +1603,7 @@
         "smithy.api#documentation": "The current deployment state of an auto scale v-core resource. The provisioningState is to indicate states for resource provisioning."
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresUpdateResponseTagsMap": {
+    "com.azure.powerbidedicated#UpdateAutoScaleVCoreResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1671,7 +1615,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresUpdateRequest": {
+    "com.azure.powerbidedicated#UpdateAutoScaleVCoreRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1705,7 +1649,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.powerbidedicated#AutoScaleVCoresUpdateRequestTagsMap",
+          "target": "com.azure.powerbidedicated#UpdateAutoScaleVCoreRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Key-value pairs of additional provisioning properties."
           }
@@ -1735,7 +1679,7 @@
         "smithy.api#documentation": "An object that represents a set of mutable auto scale v-core resource properties."
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresUpdateRequestTagsMap": {
+    "com.azure.powerbidedicated#UpdateAutoScaleVCoreRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1747,13 +1691,13 @@
         "smithy.api#documentation": "Key-value pairs of additional provisioning properties."
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresCreate": {
+    "com.azure.powerbidedicated#CreateAutoScaleVCore": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#AutoScaleVCoresCreateRequest"
+        "target": "com.azure.powerbidedicated#CreateAutoScaleVCoreRequest"
       },
       "output": {
-        "target": "com.azure.powerbidedicated#AutoScaleVCoresCreateResponse"
+        "target": "com.azure.powerbidedicated#CreateAutoScaleVCoreResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1766,7 +1710,7 @@
         "com.distilled.openapi#apiVersion": "2021-01-01"
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresCreateResponse": {
+    "com.azure.powerbidedicated#CreateAutoScaleVCoreResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1794,7 +1738,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.powerbidedicated#AutoScaleVCoresCreateResponseTagsMap",
+          "target": "com.azure.powerbidedicated#CreateAutoScaleVCoreResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1824,7 +1768,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresCreateResponseTagsMap": {
+    "com.azure.powerbidedicated#CreateAutoScaleVCoreResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1836,7 +1780,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresCreateRequest": {
+    "com.azure.powerbidedicated#CreateAutoScaleVCoreRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1864,7 +1808,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.powerbidedicated#AutoScaleVCoresCreateRequestTagsMap",
+          "target": "com.azure.powerbidedicated#CreateAutoScaleVCoreRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1894,7 +1838,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresCreateRequestTagsMap": {
+    "com.azure.powerbidedicated#CreateAutoScaleVCoreRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1906,13 +1850,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresGet": {
+    "com.azure.powerbidedicated#GetAutoScaleVCore": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#AutoScaleVCoresGetRequest"
+        "target": "com.azure.powerbidedicated#GetAutoScaleVCoreRequest"
       },
       "output": {
-        "target": "com.azure.powerbidedicated#AutoScaleVCoresGetResponse"
+        "target": "com.azure.powerbidedicated#GetAutoScaleVCoreResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1925,7 +1869,7 @@
         "com.distilled.openapi#apiVersion": "2021-01-01"
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresGetResponse": {
+    "com.azure.powerbidedicated#GetAutoScaleVCoreResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1953,7 +1897,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.powerbidedicated#AutoScaleVCoresGetResponseTagsMap",
+          "target": "com.azure.powerbidedicated#GetAutoScaleVCoreResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1983,7 +1927,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresGetResponseTagsMap": {
+    "com.azure.powerbidedicated#GetAutoScaleVCoreResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1995,7 +1939,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresGetRequest": {
+    "com.azure.powerbidedicated#GetAutoScaleVCoreRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2027,10 +1971,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresListByResourceGroup": {
+    "com.azure.powerbidedicated#ListAutoScaleVCoreByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#AutoScaleVCoresListByResourceGroupRequest"
+        "target": "com.azure.powerbidedicated#ListAutoScaleVCoreByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.powerbidedicated#AutoScaleVCoreListResult"
@@ -2150,7 +2094,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresListByResourceGroupRequest": {
+    "com.azure.powerbidedicated#ListAutoScaleVCoreByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2180,10 +2124,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesListSkus": {
+    "com.azure.powerbidedicated#ListCapacitySkus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#CapacitiesListSkusRequest"
+        "target": "com.azure.powerbidedicated#ListCapacitySkusRequest"
       },
       "output": {
         "target": "com.azure.powerbidedicated#SkuEnumerationForNewResourceResult"
@@ -2222,7 +2166,7 @@
         "smithy.api#documentation": "The collection of available SKUs for new resources"
       }
     },
-    "com.azure.powerbidedicated#CapacitiesListSkusRequest": {
+    "com.azure.powerbidedicated#ListCapacitySkusRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2238,10 +2182,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesCheckNameAvailability": {
+    "com.azure.powerbidedicated#CheckCapacityNameAvailability": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#CapacitiesCheckNameAvailabilityRequest"
+        "target": "com.azure.powerbidedicated#CheckCapacityNameAvailabilityRequest"
       },
       "output": {
         "target": "com.azure.powerbidedicated#CheckCapacityNameAvailabilityResult"
@@ -2283,7 +2227,7 @@
         "smithy.api#documentation": "The checking result of capacity name availability."
       }
     },
-    "com.azure.powerbidedicated#CapacitiesCheckNameAvailabilityRequest": {
+    "com.azure.powerbidedicated#CheckCapacityNameAvailabilityRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2319,10 +2263,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#CapacitiesList": {
+    "com.azure.powerbidedicated#ListCapacities": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#CapacitiesListRequest"
+        "target": "com.azure.powerbidedicated#ListCapacitiesRequest"
       },
       "output": {
         "target": "com.azure.powerbidedicated#DedicatedCapacities"
@@ -2345,7 +2289,7 @@
         }
       }
     },
-    "com.azure.powerbidedicated#CapacitiesListRequest": {
+    "com.azure.powerbidedicated#ListCapacitiesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2367,10 +2311,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresListBySubscription": {
+    "com.azure.powerbidedicated#ListAutoScaleVCoreBySubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#AutoScaleVCoresListBySubscriptionRequest"
+        "target": "com.azure.powerbidedicated#ListAutoScaleVCoreBySubscriptionRequest"
       },
       "output": {
         "target": "com.azure.powerbidedicated#AutoScaleVCoreListResult"
@@ -2393,7 +2337,7 @@
         }
       }
     },
-    "com.azure.powerbidedicated#AutoScaleVCoresListBySubscriptionRequest": {
+    "com.azure.powerbidedicated#ListAutoScaleVCoreBySubscriptionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2415,10 +2359,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbidedicated#OperationsList": {
+    "com.azure.powerbidedicated#ListOperations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbidedicated#OperationsListRequest"
+        "target": "com.azure.powerbidedicated#ListOperationsRequest"
       },
       "output": {
         "target": "com.azure.powerbidedicated#OperationListResult"
@@ -2689,7 +2633,7 @@
         "smithy.api#documentation": "The object that represents the operation."
       }
     },
-    "com.azure.powerbidedicated#OperationsListRequest": {
+    "com.azure.powerbidedicated#ListOperationsRequest": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -2708,58 +2652,58 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.powerbidedicated#CapacitiesSuspend"
+          "target": "com.azure.powerbidedicated#SuspendCapacity"
         },
         {
-          "target": "com.azure.powerbidedicated#CapacitiesListSkusForCapacity"
+          "target": "com.azure.powerbidedicated#ListCapacitySkusForCapacity"
         },
         {
-          "target": "com.azure.powerbidedicated#CapacitiesResume"
+          "target": "com.azure.powerbidedicated#ResumeCapacity"
         },
         {
-          "target": "com.azure.powerbidedicated#CapacitiesDelete"
+          "target": "com.azure.powerbidedicated#DeleteCapacity"
         },
         {
-          "target": "com.azure.powerbidedicated#CapacitiesUpdate"
+          "target": "com.azure.powerbidedicated#UpdateCapacity"
         },
         {
-          "target": "com.azure.powerbidedicated#CapacitiesCreate"
+          "target": "com.azure.powerbidedicated#CreateCapacity"
         },
         {
-          "target": "com.azure.powerbidedicated#CapacitiesGetDetails"
+          "target": "com.azure.powerbidedicated#GetCapacityDetails"
         },
         {
-          "target": "com.azure.powerbidedicated#CapacitiesListByResourceGroup"
+          "target": "com.azure.powerbidedicated#ListCapacityByResourceGroup"
         },
         {
-          "target": "com.azure.powerbidedicated#AutoScaleVCoresDelete"
+          "target": "com.azure.powerbidedicated#DeleteAutoScaleVCore"
         },
         {
-          "target": "com.azure.powerbidedicated#AutoScaleVCoresUpdate"
+          "target": "com.azure.powerbidedicated#UpdateAutoScaleVCore"
         },
         {
-          "target": "com.azure.powerbidedicated#AutoScaleVCoresCreate"
+          "target": "com.azure.powerbidedicated#CreateAutoScaleVCore"
         },
         {
-          "target": "com.azure.powerbidedicated#AutoScaleVCoresGet"
+          "target": "com.azure.powerbidedicated#GetAutoScaleVCore"
         },
         {
-          "target": "com.azure.powerbidedicated#AutoScaleVCoresListByResourceGroup"
+          "target": "com.azure.powerbidedicated#ListAutoScaleVCoreByResourceGroup"
         },
         {
-          "target": "com.azure.powerbidedicated#CapacitiesListSkus"
+          "target": "com.azure.powerbidedicated#ListCapacitySkus"
         },
         {
-          "target": "com.azure.powerbidedicated#CapacitiesCheckNameAvailability"
+          "target": "com.azure.powerbidedicated#CheckCapacityNameAvailability"
         },
         {
-          "target": "com.azure.powerbidedicated#CapacitiesList"
+          "target": "com.azure.powerbidedicated#ListCapacities"
         },
         {
-          "target": "com.azure.powerbidedicated#AutoScaleVCoresListBySubscription"
+          "target": "com.azure.powerbidedicated#ListAutoScaleVCoreBySubscription"
         },
         {
-          "target": "com.azure.powerbidedicated#OperationsList"
+          "target": "com.azure.powerbidedicated#ListOperations"
         }
       ],
       "traits": {

@@ -15,74 +15,16 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.fileshares#PrivateLinkResourcesGet": "com.azure.fileshares#GetPrivateLinkResource",
-      "com.azure.fileshares#PrivateLinkResourcesGetResponse": "com.azure.fileshares#GetPrivateLinkResourceResponse",
-      "com.azure.fileshares#PrivateLinkResourcesGetRequest": "com.azure.fileshares#GetPrivateLinkResourceRequest",
-      "com.azure.fileshares#PrivateLinkResourcesList": "com.azure.fileshares#ListPrivateLinkResources",
-      "com.azure.fileshares#PrivateLinkResourcesListRequest": "com.azure.fileshares#ListPrivateLinkResourcesRequest",
-      "com.azure.fileshares#PrivateEndpointConnectionsDelete": "com.azure.fileshares#DeletePrivateEndpointConnection",
-      "com.azure.fileshares#PrivateEndpointConnectionsDeleteResponse": "com.azure.fileshares#DeletePrivateEndpointConnectionResponse",
-      "com.azure.fileshares#PrivateEndpointConnectionsDeleteRequest": "com.azure.fileshares#DeletePrivateEndpointConnectionRequest",
-      "com.azure.fileshares#PrivateEndpointConnectionsCreate": "com.azure.fileshares#CreatePrivateEndpointConnection",
-      "com.azure.fileshares#PrivateEndpointConnectionsCreateResponse": "com.azure.fileshares#CreatePrivateEndpointConnectionResponse",
-      "com.azure.fileshares#PrivateEndpointConnectionsCreateRequest": "com.azure.fileshares#CreatePrivateEndpointConnectionRequest",
-      "com.azure.fileshares#PrivateEndpointConnectionsGet": "com.azure.fileshares#GetPrivateEndpointConnection",
-      "com.azure.fileshares#PrivateEndpointConnectionsGetResponse": "com.azure.fileshares#GetPrivateEndpointConnectionResponse",
-      "com.azure.fileshares#PrivateEndpointConnectionsGetRequest": "com.azure.fileshares#GetPrivateEndpointConnectionRequest",
-      "com.azure.fileshares#PrivateEndpointConnectionsListByFileShare": "com.azure.fileshares#ListPrivateEndpointConnectionByFileShare",
-      "com.azure.fileshares#PrivateEndpointConnectionsListByFileShareRequest": "com.azure.fileshares#ListPrivateEndpointConnectionByFileShareRequest",
-      "com.azure.fileshares#FileShareSnapshotDelete": "com.azure.fileshares#DeleteFileShareSnapshot",
-      "com.azure.fileshares#FileShareSnapshotDeleteResponse": "com.azure.fileshares#DeleteFileShareSnapshotResponse",
-      "com.azure.fileshares#FileShareSnapshotDeleteRequest": "com.azure.fileshares#DeleteFileShareSnapshotRequest",
-      "com.azure.fileshares#FileShareSnapshotUpdate": "com.azure.fileshares#UpdateFileShareSnapshot",
-      "com.azure.fileshares#FileShareSnapshotUpdateResponse": "com.azure.fileshares#UpdateFileShareSnapshotResponse",
-      "com.azure.fileshares#FileShareSnapshotUpdateRequest": "com.azure.fileshares#UpdateFileShareSnapshotRequest",
-      "com.azure.fileshares#FileShareSnapshotGet": "com.azure.fileshares#GetFileShareSnapshot",
-      "com.azure.fileshares#FileShareSnapshotGetResponse": "com.azure.fileshares#GetFileShareSnapshotResponse",
-      "com.azure.fileshares#FileShareSnapshotGetRequest": "com.azure.fileshares#GetFileShareSnapshotRequest",
-      "com.azure.fileshares#FileShareSnapshotList": "com.azure.fileshares#ListFileShareSnapshot",
-      "com.azure.fileshares#FileShareSnapshotListRequest": "com.azure.fileshares#ListFileShareSnapshotRequest",
-      "com.azure.fileshares#FileSharesDelete": "com.azure.fileshares#DeleteFileShare",
-      "com.azure.fileshares#FileSharesDeleteResponse": "com.azure.fileshares#DeleteFileShareResponse",
-      "com.azure.fileshares#FileSharesDeleteRequest": "com.azure.fileshares#DeleteFileShareRequest",
-      "com.azure.fileshares#FileSharesUpdate": "com.azure.fileshares#UpdateFileShare",
-      "com.azure.fileshares#FileSharesUpdateResponse": "com.azure.fileshares#UpdateFileShareResponse",
-      "com.azure.fileshares#FileSharesUpdateResponseTagsMap": "com.azure.fileshares#UpdateFileShareResponseTagsMap",
-      "com.azure.fileshares#FileSharesUpdateRequest": "com.azure.fileshares#UpdateFileShareRequest",
-      "com.azure.fileshares#FileSharesUpdateRequestTagsMap": "com.azure.fileshares#UpdateFileShareRequestTagsMap",
-      "com.azure.fileshares#FileSharesGet": "com.azure.fileshares#GetFileShare",
-      "com.azure.fileshares#FileSharesGetResponse": "com.azure.fileshares#GetFileShareResponse",
-      "com.azure.fileshares#FileSharesGetResponseTagsMap": "com.azure.fileshares#GetFileShareResponseTagsMap",
-      "com.azure.fileshares#FileSharesGetRequest": "com.azure.fileshares#GetFileShareRequest",
-      "com.azure.fileshares#FileSharesListByParent": "com.azure.fileshares#ListFileShareByParent",
-      "com.azure.fileshares#FileSharesListByParentRequest": "com.azure.fileshares#ListFileShareByParentRequest",
-      "com.azure.fileshares#FileShareGetUsageData": "com.azure.fileshares#GetFileShareUsageData",
-      "com.azure.fileshares#FileShareGetUsageDataRequest": "com.azure.fileshares#GetFileShareUsageDataRequest",
-      "com.azure.fileshares#FileShareGetProvisioningRecommendation": "com.azure.fileshares#GetFileShareProvisioningRecommendation",
-      "com.azure.fileshares#FileShareGetProvisioningRecommendationRequest": "com.azure.fileshares#GetFileShareProvisioningRecommendationRequest",
-      "com.azure.fileshares#FileShareGetLimits": "com.azure.fileshares#GetFileShareLimits",
-      "com.azure.fileshares#FileShareGetLimitsRequest": "com.azure.fileshares#GetFileShareLimitsRequest",
-      "com.azure.fileshares#FileSharesCheckNameAvailability": "com.azure.fileshares#CheckFileShareNameAvailability",
-      "com.azure.fileshares#FileSharesCheckNameAvailabilityResponse": "com.azure.fileshares#CheckFileShareNameAvailabilityResponse",
-      "com.azure.fileshares#FileSharesCheckNameAvailabilityResponseReason": "com.azure.fileshares#CheckFileShareNameAvailabilityResponseReason",
-      "com.azure.fileshares#FileSharesCheckNameAvailabilityRequest": "com.azure.fileshares#CheckFileShareNameAvailabilityRequest",
-      "com.azure.fileshares#FileSharesListBySubscription": "com.azure.fileshares#ListFileShareBySubscription",
-      "com.azure.fileshares#FileSharesListBySubscriptionRequest": "com.azure.fileshares#ListFileShareBySubscriptionRequest",
-      "com.azure.fileshares#OperationsList": "com.azure.fileshares#ListOperations",
-      "com.azure.fileshares#OperationsListResponse": "com.azure.fileshares#ListOperationsResponse",
-      "com.azure.fileshares#OperationsListResponseValueList": "com.azure.fileshares#ListOperationsResponseValueList",
-      "com.azure.fileshares#OperationsListRequest": "com.azure.fileshares#ListOperationsRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.fileshares#PrivateLinkResourcesGet": {
+    "com.azure.fileshares#GetPrivateLinkResource": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#PrivateLinkResourcesGetRequest"
+        "target": "com.azure.fileshares#GetPrivateLinkResourceRequest"
       },
       "output": {
-        "target": "com.azure.fileshares#PrivateLinkResourcesGetResponse"
+        "target": "com.azure.fileshares#GetPrivateLinkResourceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -95,7 +37,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.fileshares#PrivateLinkResourcesGetResponse": {
+    "com.azure.fileshares#GetPrivateLinkResourceResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -285,7 +227,7 @@
         "smithy.api#documentation": "The type of identity that created the resource."
       }
     },
-    "com.azure.fileshares#PrivateLinkResourcesGetRequest": {
+    "com.azure.fileshares#GetPrivateLinkResourceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -325,10 +267,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#PrivateLinkResourcesList": {
+    "com.azure.fileshares#ListPrivateLinkResources": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#PrivateLinkResourcesListRequest"
+        "target": "com.azure.fileshares#ListPrivateLinkResourcesRequest"
       },
       "output": {
         "target": "com.azure.fileshares#PrivateLinkResourceListResult"
@@ -419,7 +361,7 @@
         "smithy.api#documentation": "A private link resource."
       }
     },
-    "com.azure.fileshares#PrivateLinkResourcesListRequest": {
+    "com.azure.fileshares#ListPrivateLinkResourcesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -457,13 +399,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#PrivateEndpointConnectionsDelete": {
+    "com.azure.fileshares#DeletePrivateEndpointConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#PrivateEndpointConnectionsDeleteRequest"
+        "target": "com.azure.fileshares#DeletePrivateEndpointConnectionRequest"
       },
       "output": {
-        "target": "com.azure.fileshares#PrivateEndpointConnectionsDeleteResponse"
+        "target": "com.azure.fileshares#DeletePrivateEndpointConnectionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -476,7 +418,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.fileshares#PrivateEndpointConnectionsDeleteResponse": {
+    "com.azure.fileshares#DeletePrivateEndpointConnectionResponse": {
       "type": "structure",
       "members": {
         "azureAsyncOperation": {
@@ -505,7 +447,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.fileshares#PrivateEndpointConnectionsDeleteRequest": {
+    "com.azure.fileshares#DeletePrivateEndpointConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -545,13 +487,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#PrivateEndpointConnectionsCreate": {
+    "com.azure.fileshares#CreatePrivateEndpointConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#PrivateEndpointConnectionsCreateRequest"
+        "target": "com.azure.fileshares#CreatePrivateEndpointConnectionRequest"
       },
       "output": {
-        "target": "com.azure.fileshares#PrivateEndpointConnectionsCreateResponse"
+        "target": "com.azure.fileshares#CreatePrivateEndpointConnectionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -564,7 +506,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.fileshares#PrivateEndpointConnectionsCreateResponse": {
+    "com.azure.fileshares#CreatePrivateEndpointConnectionResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -763,7 +705,7 @@
         "smithy.api#documentation": "The group ids for the private endpoint resource."
       }
     },
-    "com.azure.fileshares#PrivateEndpointConnectionsCreateRequest": {
+    "com.azure.fileshares#CreatePrivateEndpointConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -837,13 +779,13 @@
         "smithy.api#documentation": "The private endpoint resource."
       }
     },
-    "com.azure.fileshares#PrivateEndpointConnectionsGet": {
+    "com.azure.fileshares#GetPrivateEndpointConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#PrivateEndpointConnectionsGetRequest"
+        "target": "com.azure.fileshares#GetPrivateEndpointConnectionRequest"
       },
       "output": {
-        "target": "com.azure.fileshares#PrivateEndpointConnectionsGetResponse"
+        "target": "com.azure.fileshares#GetPrivateEndpointConnectionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -856,7 +798,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.fileshares#PrivateEndpointConnectionsGetResponse": {
+    "com.azure.fileshares#GetPrivateEndpointConnectionResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -894,7 +836,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.fileshares#PrivateEndpointConnectionsGetRequest": {
+    "com.azure.fileshares#GetPrivateEndpointConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -934,10 +876,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#PrivateEndpointConnectionsListByFileShare": {
+    "com.azure.fileshares#ListPrivateEndpointConnectionByFileShare": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#PrivateEndpointConnectionsListByFileShareRequest"
+        "target": "com.azure.fileshares#ListPrivateEndpointConnectionByFileShareRequest"
       },
       "output": {
         "target": "com.azure.fileshares#PrivateEndpointConnectionListResult"
@@ -1028,7 +970,7 @@
         "smithy.api#documentation": "The private endpoint connection resource."
       }
     },
-    "com.azure.fileshares#PrivateEndpointConnectionsListByFileShareRequest": {
+    "com.azure.fileshares#ListPrivateEndpointConnectionByFileShareRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1066,13 +1008,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#FileShareSnapshotDelete": {
+    "com.azure.fileshares#DeleteFileShareSnapshot": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileShareSnapshotDeleteRequest"
+        "target": "com.azure.fileshares#DeleteFileShareSnapshotRequest"
       },
       "output": {
-        "target": "com.azure.fileshares#FileShareSnapshotDeleteResponse"
+        "target": "com.azure.fileshares#DeleteFileShareSnapshotResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1085,7 +1027,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.fileshares#FileShareSnapshotDeleteResponse": {
+    "com.azure.fileshares#DeleteFileShareSnapshotResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -1107,7 +1049,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.fileshares#FileShareSnapshotDeleteRequest": {
+    "com.azure.fileshares#DeleteFileShareSnapshotRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1147,13 +1089,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#FileShareSnapshotUpdate": {
+    "com.azure.fileshares#UpdateFileShareSnapshot": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileShareSnapshotUpdateRequest"
+        "target": "com.azure.fileshares#UpdateFileShareSnapshotRequest"
       },
       "output": {
-        "target": "com.azure.fileshares#FileShareSnapshotUpdateResponse"
+        "target": "com.azure.fileshares#UpdateFileShareSnapshotResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1166,7 +1108,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.fileshares#FileShareSnapshotUpdateResponse": {
+    "com.azure.fileshares#UpdateFileShareSnapshotResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1263,7 +1205,7 @@
         "smithy.api#documentation": "The metadata"
       }
     },
-    "com.azure.fileshares#FileShareSnapshotUpdateRequest": {
+    "com.azure.fileshares#UpdateFileShareSnapshotRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1461,13 +1403,13 @@
         "smithy.api#documentation": "The metadata"
       }
     },
-    "com.azure.fileshares#FileShareSnapshotGet": {
+    "com.azure.fileshares#GetFileShareSnapshot": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileShareSnapshotGetRequest"
+        "target": "com.azure.fileshares#GetFileShareSnapshotRequest"
       },
       "output": {
-        "target": "com.azure.fileshares#FileShareSnapshotGetResponse"
+        "target": "com.azure.fileshares#GetFileShareSnapshotResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1480,7 +1422,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.fileshares#FileShareSnapshotGetResponse": {
+    "com.azure.fileshares#GetFileShareSnapshotResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1518,7 +1460,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.fileshares#FileShareSnapshotGetRequest": {
+    "com.azure.fileshares#GetFileShareSnapshotRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1558,10 +1500,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#FileShareSnapshotList": {
+    "com.azure.fileshares#ListFileShareSnapshot": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileShareSnapshotListRequest"
+        "target": "com.azure.fileshares#ListFileShareSnapshotRequest"
       },
       "output": {
         "target": "com.azure.fileshares#FileShareSnapshotListResult"
@@ -1652,7 +1594,7 @@
         "smithy.api#documentation": "FileShareSnapshot resource"
       }
     },
-    "com.azure.fileshares#FileShareSnapshotListRequest": {
+    "com.azure.fileshares#ListFileShareSnapshotRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1690,13 +1632,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#FileSharesDelete": {
+    "com.azure.fileshares#DeleteFileShare": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileSharesDeleteRequest"
+        "target": "com.azure.fileshares#DeleteFileShareRequest"
       },
       "output": {
-        "target": "com.azure.fileshares#FileSharesDeleteResponse"
+        "target": "com.azure.fileshares#DeleteFileShareResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1709,7 +1651,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.fileshares#FileSharesDeleteResponse": {
+    "com.azure.fileshares#DeleteFileShareResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -1731,7 +1673,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.fileshares#FileSharesDeleteRequest": {
+    "com.azure.fileshares#DeleteFileShareRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1763,13 +1705,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#FileSharesUpdate": {
+    "com.azure.fileshares#UpdateFileShare": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileSharesUpdateRequest"
+        "target": "com.azure.fileshares#UpdateFileShareRequest"
       },
       "output": {
-        "target": "com.azure.fileshares#FileSharesUpdateResponse"
+        "target": "com.azure.fileshares#UpdateFileShareResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1782,7 +1724,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.fileshares#FileSharesUpdateResponse": {
+    "com.azure.fileshares#UpdateFileShareResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1810,7 +1752,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.fileshares#FileSharesUpdateResponseTagsMap",
+          "target": "com.azure.fileshares#UpdateFileShareResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -2247,7 +2189,7 @@
         "smithy.api#documentation": "Media Tier enum."
       }
     },
-    "com.azure.fileshares#FileSharesUpdateResponseTagsMap": {
+    "com.azure.fileshares#UpdateFileShareResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -2259,7 +2201,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.fileshares#FileSharesUpdateRequest": {
+    "com.azure.fileshares#UpdateFileShareRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2287,7 +2229,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.fileshares#FileSharesUpdateRequestTagsMap",
+          "target": "com.azure.fileshares#UpdateFileShareRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -2347,7 +2289,7 @@
         "smithy.api#documentation": "The updatable properties of the FileShare."
       }
     },
-    "com.azure.fileshares#FileSharesUpdateRequestTagsMap": {
+    "com.azure.fileshares#UpdateFileShareRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -2586,13 +2528,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.fileshares#FileSharesGet": {
+    "com.azure.fileshares#GetFileShare": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileSharesGetRequest"
+        "target": "com.azure.fileshares#GetFileShareRequest"
       },
       "output": {
-        "target": "com.azure.fileshares#FileSharesGetResponse"
+        "target": "com.azure.fileshares#GetFileShareResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2605,7 +2547,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.fileshares#FileSharesGetResponse": {
+    "com.azure.fileshares#GetFileShareResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -2633,7 +2575,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.fileshares#FileSharesGetResponseTagsMap",
+          "target": "com.azure.fileshares#GetFileShareResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -2656,7 +2598,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.fileshares#FileSharesGetResponseTagsMap": {
+    "com.azure.fileshares#GetFileShareResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -2668,7 +2610,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.fileshares#FileSharesGetRequest": {
+    "com.azure.fileshares#GetFileShareRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2700,10 +2642,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#FileSharesListByParent": {
+    "com.azure.fileshares#ListFileShareByParent": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileSharesListByParentRequest"
+        "target": "com.azure.fileshares#ListFileShareByParentRequest"
       },
       "output": {
         "target": "com.azure.fileshares#FileShareListResult"
@@ -2819,7 +2761,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.fileshares#FileSharesListByParentRequest": {
+    "com.azure.fileshares#ListFileShareByParentRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2849,10 +2791,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#FileShareGetUsageData": {
+    "com.azure.fileshares#GetFileShareUsageData": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileShareGetUsageDataRequest"
+        "target": "com.azure.fileshares#GetFileShareUsageDataRequest"
       },
       "output": {
         "target": "com.azure.fileshares#FileShareUsageDataResponse"
@@ -2913,7 +2855,7 @@
         "smithy.api#documentation": "Usage data for live shares."
       }
     },
-    "com.azure.fileshares#FileShareGetUsageDataRequest": {
+    "com.azure.fileshares#GetFileShareUsageDataRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2937,10 +2879,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#FileShareGetProvisioningRecommendation": {
+    "com.azure.fileshares#GetFileShareProvisioningRecommendation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileShareGetProvisioningRecommendationRequest"
+        "target": "com.azure.fileshares#GetFileShareProvisioningRecommendationRequest"
       },
       "output": {
         "target": "com.azure.fileshares#FileShareProvisioningRecommendationResponse"
@@ -3009,7 +2951,7 @@
         "smithy.api#documentation": "Redundancy options for the share."
       }
     },
-    "com.azure.fileshares#FileShareGetProvisioningRecommendationRequest": {
+    "com.azure.fileshares#GetFileShareProvisioningRecommendationRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3055,10 +2997,10 @@
         "smithy.api#documentation": "File share provisioning parameters recommendation API input structure."
       }
     },
-    "com.azure.fileshares#FileShareGetLimits": {
+    "com.azure.fileshares#GetFileShareLimits": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileShareGetLimitsRequest"
+        "target": "com.azure.fileshares#GetFileShareLimitsRequest"
       },
       "output": {
         "target": "com.azure.fileshares#FileShareLimitsResponse"
@@ -3239,7 +3181,7 @@
         "smithy.api#documentation": "File share-related limits in the specified subscription/location."
       }
     },
-    "com.azure.fileshares#FileShareGetLimitsRequest": {
+    "com.azure.fileshares#GetFileShareLimitsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3263,13 +3205,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#FileSharesCheckNameAvailability": {
+    "com.azure.fileshares#CheckFileShareNameAvailability": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileSharesCheckNameAvailabilityRequest"
+        "target": "com.azure.fileshares#CheckFileShareNameAvailabilityRequest"
       },
       "output": {
-        "target": "com.azure.fileshares#FileSharesCheckNameAvailabilityResponse"
+        "target": "com.azure.fileshares#CheckFileShareNameAvailabilityResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3282,7 +3224,7 @@
         "com.distilled.openapi#apiVersion": "2026-06-01"
       }
     },
-    "com.azure.fileshares#FileSharesCheckNameAvailabilityResponse": {
+    "com.azure.fileshares#CheckFileShareNameAvailabilityResponse": {
       "type": "structure",
       "members": {
         "nameAvailable": {
@@ -3292,7 +3234,7 @@
           }
         },
         "reason": {
-          "target": "com.azure.fileshares#FileSharesCheckNameAvailabilityResponseReason",
+          "target": "com.azure.fileshares#CheckFileShareNameAvailabilityResponseReason",
           "traits": {
             "smithy.api#documentation": "The reason why the given name is not available."
           }
@@ -3308,7 +3250,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.fileshares#FileSharesCheckNameAvailabilityResponseReason": {
+    "com.azure.fileshares#CheckFileShareNameAvailabilityResponseReason": {
       "type": "enum",
       "members": {
         "INVALID": {
@@ -3328,7 +3270,7 @@
         "smithy.api#documentation": "The reason why the given name is not available."
       }
     },
-    "com.azure.fileshares#FileSharesCheckNameAvailabilityRequest": {
+    "com.azure.fileshares#CheckFileShareNameAvailabilityRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3364,10 +3306,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#FileSharesListBySubscription": {
+    "com.azure.fileshares#ListFileShareBySubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#FileSharesListBySubscriptionRequest"
+        "target": "com.azure.fileshares#ListFileShareBySubscriptionRequest"
       },
       "output": {
         "target": "com.azure.fileshares#FileShareListResult"
@@ -3390,7 +3332,7 @@
         }
       }
     },
-    "com.azure.fileshares#FileSharesListBySubscriptionRequest": {
+    "com.azure.fileshares#ListFileShareBySubscriptionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3412,13 +3354,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.fileshares#OperationsList": {
+    "com.azure.fileshares#ListOperations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.fileshares#OperationsListRequest"
+        "target": "com.azure.fileshares#ListOperationsRequest"
       },
       "output": {
-        "target": "com.azure.fileshares#OperationsListResponse"
+        "target": "com.azure.fileshares#ListOperationsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3438,11 +3380,11 @@
         }
       }
     },
-    "com.azure.fileshares#OperationsListResponse": {
+    "com.azure.fileshares#ListOperationsResponse": {
       "type": "structure",
       "members": {
         "value": {
-          "target": "com.azure.fileshares#OperationsListResponseValueList",
+          "target": "com.azure.fileshares#ListOperationsResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of operations supported by the resource provider"
           }
@@ -3458,7 +3400,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.fileshares#OperationsListResponseValueList": {
+    "com.azure.fileshares#ListOperationsResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.fileshares#Operation"
@@ -3577,7 +3519,7 @@
         "smithy.api#documentation": "Localized display information for this particular operation."
       }
     },
-    "com.azure.fileshares#OperationsListRequest": {
+    "com.azure.fileshares#ListOperationsRequest": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -3596,70 +3538,70 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.fileshares#PrivateLinkResourcesGet"
+          "target": "com.azure.fileshares#GetPrivateLinkResource"
         },
         {
-          "target": "com.azure.fileshares#PrivateLinkResourcesList"
+          "target": "com.azure.fileshares#ListPrivateLinkResources"
         },
         {
-          "target": "com.azure.fileshares#PrivateEndpointConnectionsDelete"
+          "target": "com.azure.fileshares#DeletePrivateEndpointConnection"
         },
         {
-          "target": "com.azure.fileshares#PrivateEndpointConnectionsCreate"
+          "target": "com.azure.fileshares#CreatePrivateEndpointConnection"
         },
         {
-          "target": "com.azure.fileshares#PrivateEndpointConnectionsGet"
+          "target": "com.azure.fileshares#GetPrivateEndpointConnection"
         },
         {
-          "target": "com.azure.fileshares#PrivateEndpointConnectionsListByFileShare"
+          "target": "com.azure.fileshares#ListPrivateEndpointConnectionByFileShare"
         },
         {
-          "target": "com.azure.fileshares#FileShareSnapshotDelete"
+          "target": "com.azure.fileshares#DeleteFileShareSnapshot"
         },
         {
-          "target": "com.azure.fileshares#FileShareSnapshotUpdate"
+          "target": "com.azure.fileshares#UpdateFileShareSnapshot"
         },
         {
           "target": "com.azure.fileshares#FileShareSnapshotCreateOrUpdate"
         },
         {
-          "target": "com.azure.fileshares#FileShareSnapshotGet"
+          "target": "com.azure.fileshares#GetFileShareSnapshot"
         },
         {
-          "target": "com.azure.fileshares#FileShareSnapshotList"
+          "target": "com.azure.fileshares#ListFileShareSnapshot"
         },
         {
-          "target": "com.azure.fileshares#FileSharesDelete"
+          "target": "com.azure.fileshares#DeleteFileShare"
         },
         {
-          "target": "com.azure.fileshares#FileSharesUpdate"
+          "target": "com.azure.fileshares#UpdateFileShare"
         },
         {
           "target": "com.azure.fileshares#FileSharesCreateOrUpdate"
         },
         {
-          "target": "com.azure.fileshares#FileSharesGet"
+          "target": "com.azure.fileshares#GetFileShare"
         },
         {
-          "target": "com.azure.fileshares#FileSharesListByParent"
+          "target": "com.azure.fileshares#ListFileShareByParent"
         },
         {
-          "target": "com.azure.fileshares#FileShareGetUsageData"
+          "target": "com.azure.fileshares#GetFileShareUsageData"
         },
         {
-          "target": "com.azure.fileshares#FileShareGetProvisioningRecommendation"
+          "target": "com.azure.fileshares#GetFileShareProvisioningRecommendation"
         },
         {
-          "target": "com.azure.fileshares#FileShareGetLimits"
+          "target": "com.azure.fileshares#GetFileShareLimits"
         },
         {
-          "target": "com.azure.fileshares#FileSharesCheckNameAvailability"
+          "target": "com.azure.fileshares#CheckFileShareNameAvailability"
         },
         {
-          "target": "com.azure.fileshares#FileSharesListBySubscription"
+          "target": "com.azure.fileshares#ListFileShareBySubscription"
         },
         {
-          "target": "com.azure.fileshares#OperationsList"
+          "target": "com.azure.fileshares#ListOperations"
         }
       ],
       "traits": {

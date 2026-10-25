@@ -15,256 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.recoveryservicesbackup#PrivateEndpointGetOperationStatus": "com.azure.recoveryservicesbackup#GetPrivateEndpointOperationStatus",
-      "com.azure.recoveryservicesbackup#PrivateEndpointGetOperationStatusRequest": "com.azure.recoveryservicesbackup#GetPrivateEndpointOperationStatusRequest",
-      "com.azure.recoveryservicesbackup#PrivateEndpointConnectionDelete": "com.azure.recoveryservicesbackup#DeletePrivateEndpointConnection",
-      "com.azure.recoveryservicesbackup#PrivateEndpointConnectionDeleteResponse": "com.azure.recoveryservicesbackup#DeletePrivateEndpointConnectionResponse",
-      "com.azure.recoveryservicesbackup#PrivateEndpointConnectionDeleteRequest": "com.azure.recoveryservicesbackup#DeletePrivateEndpointConnectionRequest",
-      "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPut": "com.azure.recoveryservicesbackup#PutPrivateEndpointConnection",
-      "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPutResponse": "com.azure.recoveryservicesbackup#PutPrivateEndpointConnectionResponse",
-      "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPutResponseTagsMap": "com.azure.recoveryservicesbackup#PutPrivateEndpointConnectionResponseTagsMap",
-      "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPutRequest": "com.azure.recoveryservicesbackup#PutPrivateEndpointConnectionRequest",
-      "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPutRequestTagsMap": "com.azure.recoveryservicesbackup#PutPrivateEndpointConnectionRequestTagsMap",
-      "com.azure.recoveryservicesbackup#PrivateEndpointConnectionGet": "com.azure.recoveryservicesbackup#GetPrivateEndpointConnection",
-      "com.azure.recoveryservicesbackup#PrivateEndpointConnectionGetResponse": "com.azure.recoveryservicesbackup#GetPrivateEndpointConnectionResponse",
-      "com.azure.recoveryservicesbackup#PrivateEndpointConnectionGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetPrivateEndpointConnectionResponseTagsMap",
-      "com.azure.recoveryservicesbackup#PrivateEndpointConnectionGetRequest": "com.azure.recoveryservicesbackup#GetPrivateEndpointConnectionRequest",
-      "com.azure.recoveryservicesbackup#BMSPrepareDataMove": "com.azure.recoveryservicesbackup#MoveBMSPrepareData",
-      "com.azure.recoveryservicesbackup#BMSPrepareDataMoveResponse": "com.azure.recoveryservicesbackup#MoveBMSPrepareDataResponse",
-      "com.azure.recoveryservicesbackup#BMSPrepareDataMoveRequest": "com.azure.recoveryservicesbackup#MoveBMSPrepareDataRequest",
-      "com.azure.recoveryservicesbackup#BMSPrepareDataMoveRequestSourceContainerArmIdsList": "com.azure.recoveryservicesbackup#MoveBMSPrepareDataRequestSourceContainerArmIdsList",
-      "com.azure.recoveryservicesbackup#BMSPrepareDataMoveOperationResultGet": "com.azure.recoveryservicesbackup#GetBMSPrepareDataMoveOperationResult",
-      "com.azure.recoveryservicesbackup#BMSPrepareDataMoveOperationResultGetRequest": "com.azure.recoveryservicesbackup#GetBMSPrepareDataMoveOperationResultRequest",
-      "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRPatch": "com.azure.recoveryservicesbackup#PatchBackupResourceStorageConfigsNonCRR",
-      "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRPatchRequest": "com.azure.recoveryservicesbackup#PatchBackupResourceStorageConfigsNonCRRRequest",
-      "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRPatchRequestTagsMap": "com.azure.recoveryservicesbackup#PatchBackupResourceStorageConfigsNonCRRRequestTagsMap",
-      "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdate": "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRR",
-      "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdateResponse": "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRRResponse",
-      "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdateResponseTagsMap": "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRRResponseTagsMap",
-      "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdateRequest": "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRRRequest",
-      "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdateRequestTagsMap": "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRRRequestTagsMap",
-      "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRGet": "com.azure.recoveryservicesbackup#GetBackupResourceStorageConfigsNonCRR",
-      "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRGetResponse": "com.azure.recoveryservicesbackup#GetBackupResourceStorageConfigsNonCRRResponse",
-      "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetBackupResourceStorageConfigsNonCRRResponseTagsMap",
-      "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRGetRequest": "com.azure.recoveryservicesbackup#GetBackupResourceStorageConfigsNonCRRRequest",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdate": "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfig",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdateResponse": "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfigResponse",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdateResponseTagsMap": "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfigResponseTagsMap",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdateRequest": "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfigRequest",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdateRequestTagsMap": "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfigRequestTagsMap",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPut": "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfig",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPutResponse": "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfigResponse",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPutResponseTagsMap": "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfigResponseTagsMap",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPutRequest": "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfigRequest",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPutRequestTagsMap": "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfigRequestTagsMap",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsGet": "com.azure.recoveryservicesbackup#GetBackupResourceVaultConfig",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsGetResponse": "com.azure.recoveryservicesbackup#GetBackupResourceVaultConfigResponse",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetBackupResourceVaultConfigResponseTagsMap",
-      "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsGetRequest": "com.azure.recoveryservicesbackup#GetBackupResourceVaultConfigRequest",
-      "com.azure.recoveryservicesbackup#ValidateOperationStatusesGet": "com.azure.recoveryservicesbackup#GetValidateOperationStatus",
-      "com.azure.recoveryservicesbackup#ValidateOperationStatusesGetRequest": "com.azure.recoveryservicesbackup#GetValidateOperationStatusRequest",
-      "com.azure.recoveryservicesbackup#ValidateOperationResultsGet": "com.azure.recoveryservicesbackup#GetValidateOperationResult",
-      "com.azure.recoveryservicesbackup#ValidateOperationResultsGetRequest": "com.azure.recoveryservicesbackup#GetValidateOperationResultRequest",
-      "com.azure.recoveryservicesbackup#OperationValidate": "com.azure.recoveryservicesbackup#ValidateOperation",
-      "com.azure.recoveryservicesbackup#OperationValidateRequest": "com.azure.recoveryservicesbackup#ValidateOperationRequest2",
-      "com.azure.recoveryservicesbackup#BackupUsageSummariesList": "com.azure.recoveryservicesbackup#ListBackupUsageSummaries",
-      "com.azure.recoveryservicesbackup#BackupUsageSummariesListResponse": "com.azure.recoveryservicesbackup#ListBackupUsageSummariesResponse",
-      "com.azure.recoveryservicesbackup#BackupUsageSummariesListResponseValueList": "com.azure.recoveryservicesbackup#ListBackupUsageSummariesResponseValueList",
-      "com.azure.recoveryservicesbackup#BackupUsageSummariesListRequest": "com.azure.recoveryservicesbackup#ListBackupUsageSummariesRequest",
-      "com.azure.recoveryservicesbackup#ValidateOperationTrigger": "com.azure.recoveryservicesbackup#TriggerValidateOperation",
-      "com.azure.recoveryservicesbackup#ValidateOperationTriggerResponse": "com.azure.recoveryservicesbackup#TriggerValidateOperationResponse",
-      "com.azure.recoveryservicesbackup#ValidateOperationTriggerRequest": "com.azure.recoveryservicesbackup#TriggerValidateOperationRequest",
-      "com.azure.recoveryservicesbackup#TieringCostOperationStatusGet": "com.azure.recoveryservicesbackup#GetTieringCostOperationStatus",
-      "com.azure.recoveryservicesbackup#TieringCostOperationStatusGetRequest": "com.azure.recoveryservicesbackup#GetTieringCostOperationStatusRequest",
-      "com.azure.recoveryservicesbackup#GetTieringCostOperationResultGet": "com.azure.recoveryservicesbackup#GetGetTieringCostOperationResult",
-      "com.azure.recoveryservicesbackup#GetTieringCostOperationResultGetRequest": "com.azure.recoveryservicesbackup#GetGetTieringCostOperationResultRequest",
-      "com.azure.recoveryservicesbackup#FetchTieringCostPost": "com.azure.recoveryservicesbackup#PostFetchTieringCost",
-      "com.azure.recoveryservicesbackup#FetchTieringCostPostResponse": "com.azure.recoveryservicesbackup#PostFetchTieringCostResponse",
-      "com.azure.recoveryservicesbackup#FetchTieringCostPostRequest": "com.azure.recoveryservicesbackup#PostFetchTieringCostRequest",
-      "com.azure.recoveryservicesbackup#SecurityPINsGet": "com.azure.recoveryservicesbackup#GetSecurityPIN",
-      "com.azure.recoveryservicesbackup#SecurityPINsGetRequest": "com.azure.recoveryservicesbackup#GetSecurityPINRequest",
-      "com.azure.recoveryservicesbackup#SecurityPINsGetRequestResourceGuardOperationRequestsList": "com.azure.recoveryservicesbackup#GetSecurityPINRequestResourceGuardOperationRequestsList",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxyDelete": "com.azure.recoveryservicesbackup#DeleteResourceGuardProxy",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxyDeleteRequest": "com.azure.recoveryservicesbackup#DeleteResourceGuardProxyRequest",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxyPut": "com.azure.recoveryservicesbackup#PutResourceGuardProxy",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxyPutResponse": "com.azure.recoveryservicesbackup#PutResourceGuardProxyResponse",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxyPutResponseTagsMap": "com.azure.recoveryservicesbackup#PutResourceGuardProxyResponseTagsMap",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxyPutRequest": "com.azure.recoveryservicesbackup#PutResourceGuardProxyRequest",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxyPutRequestTagsMap": "com.azure.recoveryservicesbackup#PutResourceGuardProxyRequestTagsMap",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxyGet": "com.azure.recoveryservicesbackup#GetResourceGuardProxy2",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxyGetResponse": "com.azure.recoveryservicesbackup#GetResourceGuardProxyResponse2",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxyGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetResourceGuardProxyResponseTagsMap",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxyGetRequest": "com.azure.recoveryservicesbackup#GetResourceGuardProxyRequest2",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxiesGet": "com.azure.recoveryservicesbackup#GetResourceGuardProxy",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxiesGetResponse": "com.azure.recoveryservicesbackup#GetResourceGuardProxyResponse",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxiesGetResponseValueList": "com.azure.recoveryservicesbackup#GetResourceGuardProxyResponseValueList",
-      "com.azure.recoveryservicesbackup#ResourceGuardProxiesGetRequest": "com.azure.recoveryservicesbackup#GetResourceGuardProxyRequest",
-      "com.azure.recoveryservicesbackup#BackupProtectionIntentList": "com.azure.recoveryservicesbackup#ListBackupProtectionIntent",
-      "com.azure.recoveryservicesbackup#BackupProtectionIntentListResponse": "com.azure.recoveryservicesbackup#ListBackupProtectionIntentResponse",
-      "com.azure.recoveryservicesbackup#BackupProtectionIntentListResponseValueList": "com.azure.recoveryservicesbackup#ListBackupProtectionIntentResponseValueList",
-      "com.azure.recoveryservicesbackup#BackupProtectionIntentListRequest": "com.azure.recoveryservicesbackup#ListBackupProtectionIntentRequest",
-      "com.azure.recoveryservicesbackup#BackupProtectionContainersList": "com.azure.recoveryservicesbackup#ListBackupProtectionContainers",
-      "com.azure.recoveryservicesbackup#BackupProtectionContainersListResponse": "com.azure.recoveryservicesbackup#ListBackupProtectionContainersResponse",
-      "com.azure.recoveryservicesbackup#BackupProtectionContainersListResponseValueList": "com.azure.recoveryservicesbackup#ListBackupProtectionContainersResponseValueList",
-      "com.azure.recoveryservicesbackup#BackupProtectionContainersListRequest": "com.azure.recoveryservicesbackup#ListBackupProtectionContainersRequest",
-      "com.azure.recoveryservicesbackup#BackupProtectedItemsList": "com.azure.recoveryservicesbackup#ListBackupProtectedItems",
-      "com.azure.recoveryservicesbackup#BackupProtectedItemsListResponse": "com.azure.recoveryservicesbackup#ListBackupProtectedItemsResponse",
-      "com.azure.recoveryservicesbackup#BackupProtectedItemsListResponseValueList": "com.azure.recoveryservicesbackup#ListBackupProtectedItemsResponseValueList",
-      "com.azure.recoveryservicesbackup#BackupProtectedItemsListRequest": "com.azure.recoveryservicesbackup#ListBackupProtectedItemsRequest",
-      "com.azure.recoveryservicesbackup#BackupProtectableItemsList": "com.azure.recoveryservicesbackup#ListBackupProtectableItems",
-      "com.azure.recoveryservicesbackup#BackupProtectableItemsListResponse": "com.azure.recoveryservicesbackup#ListBackupProtectableItemsResponse",
-      "com.azure.recoveryservicesbackup#BackupProtectableItemsListResponseValueList": "com.azure.recoveryservicesbackup#ListBackupProtectableItemsResponseValueList",
-      "com.azure.recoveryservicesbackup#BackupProtectableItemsListRequest": "com.azure.recoveryservicesbackup#ListBackupProtectableItemsRequest",
-      "com.azure.recoveryservicesbackup#ProtectionPolicyOperationStatusesGet": "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationStatus",
-      "com.azure.recoveryservicesbackup#ProtectionPolicyOperationStatusesGetRequest": "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationStatusRequest",
-      "com.azure.recoveryservicesbackup#ProtectionPolicyOperationResultsGet": "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationResult",
-      "com.azure.recoveryservicesbackup#ProtectionPolicyOperationResultsGetResponse": "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationResultResponse",
-      "com.azure.recoveryservicesbackup#ProtectionPolicyOperationResultsGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationResultResponseTagsMap",
-      "com.azure.recoveryservicesbackup#ProtectionPolicyOperationResultsGetRequest": "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationResultRequest",
-      "com.azure.recoveryservicesbackup#ProtectionPoliciesDelete": "com.azure.recoveryservicesbackup#DeleteProtectionPolicy",
-      "com.azure.recoveryservicesbackup#ProtectionPoliciesDeleteResponse": "com.azure.recoveryservicesbackup#DeleteProtectionPolicyResponse",
-      "com.azure.recoveryservicesbackup#ProtectionPoliciesDeleteRequest": "com.azure.recoveryservicesbackup#DeleteProtectionPolicyRequest",
-      "com.azure.recoveryservicesbackup#ProtectionPoliciesGet": "com.azure.recoveryservicesbackup#GetProtectionPolicy",
-      "com.azure.recoveryservicesbackup#ProtectionPoliciesGetResponse": "com.azure.recoveryservicesbackup#GetProtectionPolicyResponse",
-      "com.azure.recoveryservicesbackup#ProtectionPoliciesGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetProtectionPolicyResponseTagsMap",
-      "com.azure.recoveryservicesbackup#ProtectionPoliciesGetRequest": "com.azure.recoveryservicesbackup#GetProtectionPolicyRequest",
-      "com.azure.recoveryservicesbackup#BackupPoliciesList": "com.azure.recoveryservicesbackup#ListBackupPolicies",
-      "com.azure.recoveryservicesbackup#BackupPoliciesListResponse": "com.azure.recoveryservicesbackup#ListBackupPoliciesResponse",
-      "com.azure.recoveryservicesbackup#BackupPoliciesListResponseValueList": "com.azure.recoveryservicesbackup#ListBackupPoliciesResponseValueList",
-      "com.azure.recoveryservicesbackup#BackupPoliciesListRequest": "com.azure.recoveryservicesbackup#ListBackupPoliciesRequest",
-      "com.azure.recoveryservicesbackup#BackupOperationStatusesGet": "com.azure.recoveryservicesbackup#GetBackupOperationStatus",
-      "com.azure.recoveryservicesbackup#BackupOperationStatusesGetRequest": "com.azure.recoveryservicesbackup#GetBackupOperationStatusRequest",
-      "com.azure.recoveryservicesbackup#BackupOperationResultsGet": "com.azure.recoveryservicesbackup#GetBackupOperationResult",
-      "com.azure.recoveryservicesbackup#BackupOperationResultsGetRequest": "com.azure.recoveryservicesbackup#GetBackupOperationResultRequest",
-      "com.azure.recoveryservicesbackup#JobsExport": "com.azure.recoveryservicesbackup#ExportJob",
-      "com.azure.recoveryservicesbackup#JobsExportRequest": "com.azure.recoveryservicesbackup#ExportJobRequest",
-      "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGet": "com.azure.recoveryservicesbackup#GetExportJobsOperationResult",
-      "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGetResponse": "com.azure.recoveryservicesbackup#GetExportJobsOperationResultResponse",
-      "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGetResponseHeadersMap": "com.azure.recoveryservicesbackup#GetExportJobsOperationResultResponseHeadersMap",
-      "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGetResponseHeadersValueList": "com.azure.recoveryservicesbackup#GetExportJobsOperationResultResponseHeadersValueList",
-      "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGetRequest": "com.azure.recoveryservicesbackup#GetExportJobsOperationResultRequest",
-      "com.azure.recoveryservicesbackup#JobOperationResultsGet": "com.azure.recoveryservicesbackup#GetJobOperationResult",
-      "com.azure.recoveryservicesbackup#JobOperationResultsGetRequest": "com.azure.recoveryservicesbackup#GetJobOperationResultRequest",
-      "com.azure.recoveryservicesbackup#JobCancellationsTrigger": "com.azure.recoveryservicesbackup#TriggerJobCancellation",
-      "com.azure.recoveryservicesbackup#JobCancellationsTriggerRequest": "com.azure.recoveryservicesbackup#TriggerJobCancellationRequest",
-      "com.azure.recoveryservicesbackup#JobDetailsGet": "com.azure.recoveryservicesbackup#GetJobDetail",
-      "com.azure.recoveryservicesbackup#JobDetailsGetResponse": "com.azure.recoveryservicesbackup#GetJobDetailResponse",
-      "com.azure.recoveryservicesbackup#JobDetailsGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetJobDetailResponseTagsMap",
-      "com.azure.recoveryservicesbackup#JobDetailsGetRequest": "com.azure.recoveryservicesbackup#GetJobDetailRequest",
-      "com.azure.recoveryservicesbackup#BackupJobsList": "com.azure.recoveryservicesbackup#ListBackupJobs",
-      "com.azure.recoveryservicesbackup#BackupJobsListResponse": "com.azure.recoveryservicesbackup#ListBackupJobsResponse",
-      "com.azure.recoveryservicesbackup#BackupJobsListResponseValueList": "com.azure.recoveryservicesbackup#ListBackupJobsResponseValueList",
-      "com.azure.recoveryservicesbackup#BackupJobsListRequest": "com.azure.recoveryservicesbackup#ListBackupJobsRequest",
-      "com.azure.recoveryservicesbackup#ProtectionContainersRefresh": "com.azure.recoveryservicesbackup#RefreshProtectionContainer",
-      "com.azure.recoveryservicesbackup#ProtectionContainersRefreshRequest": "com.azure.recoveryservicesbackup#RefreshProtectionContainerRequest",
-      "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveList": "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMove",
-      "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveListResponse": "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMoveResponse",
-      "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveListResponseValueList": "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMoveResponseValueList",
-      "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveListRequest": "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMoveRequest",
-      "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveListRequestExcludedRPListList": "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMoveRequestExcludedRPListList",
-      "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsRevoke": "com.azure.recoveryservicesbackup#RevokeItemLevelRecoveryConnection",
-      "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsRevokeRequest": "com.azure.recoveryservicesbackup#RevokeItemLevelRecoveryConnectionRequest",
-      "com.azure.recoveryservicesbackup#RestoresTrigger": "com.azure.recoveryservicesbackup#TriggerRestore",
-      "com.azure.recoveryservicesbackup#RestoresTriggerResponse": "com.azure.recoveryservicesbackup#TriggerRestoreResponse",
-      "com.azure.recoveryservicesbackup#RestoresTriggerRequest": "com.azure.recoveryservicesbackup#TriggerRestoreRequest",
-      "com.azure.recoveryservicesbackup#RestoresTriggerRequestTagsMap": "com.azure.recoveryservicesbackup#TriggerRestoreRequestTagsMap",
-      "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsProvision": "com.azure.recoveryservicesbackup#ProvisionItemLevelRecoveryConnection",
-      "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsProvisionRequest": "com.azure.recoveryservicesbackup#ProvisionItemLevelRecoveryConnectionRequest",
-      "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsProvisionRequestTagsMap": "com.azure.recoveryservicesbackup#ProvisionItemLevelRecoveryConnectionRequestTagsMap",
-      "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsListInstantItemRecoveryOperationResult": "com.azure.recoveryservicesbackup#ListItemLevelRecoveryConnectionInstantItemRecoveryOperationResult",
-      "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsListInstantItemRecoveryOperationResultRequest": "com.azure.recoveryservicesbackup#ListItemLevelRecoveryConnectionInstantItemRecoveryOperationResultRequest",
-      "com.azure.recoveryservicesbackup#RecoveryPointsGet": "com.azure.recoveryservicesbackup#GetRecoveryPoint",
-      "com.azure.recoveryservicesbackup#RecoveryPointsGetResponse": "com.azure.recoveryservicesbackup#GetRecoveryPointResponse",
-      "com.azure.recoveryservicesbackup#RecoveryPointsGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetRecoveryPointResponseTagsMap",
-      "com.azure.recoveryservicesbackup#RecoveryPointsGetRequest": "com.azure.recoveryservicesbackup#GetRecoveryPointRequest",
-      "com.azure.recoveryservicesbackup#RecoveryPointsList": "com.azure.recoveryservicesbackup#ListRecoveryPoints",
-      "com.azure.recoveryservicesbackup#RecoveryPointsListResponse": "com.azure.recoveryservicesbackup#ListRecoveryPointsResponse",
-      "com.azure.recoveryservicesbackup#RecoveryPointsListResponseValueList": "com.azure.recoveryservicesbackup#ListRecoveryPointsResponseValueList",
-      "com.azure.recoveryservicesbackup#RecoveryPointsListRequest": "com.azure.recoveryservicesbackup#ListRecoveryPointsRequest",
-      "com.azure.recoveryservicesbackup#ProtectedItemOperationStatusesGet": "com.azure.recoveryservicesbackup#GetProtectedItemOperationStatus",
-      "com.azure.recoveryservicesbackup#ProtectedItemOperationStatusesGetRequest": "com.azure.recoveryservicesbackup#GetProtectedItemOperationStatusRequest",
-      "com.azure.recoveryservicesbackup#ProtectedItemOperationResultsGet": "com.azure.recoveryservicesbackup#GetProtectedItemOperationResult",
-      "com.azure.recoveryservicesbackup#ProtectedItemOperationResultsGetResponse": "com.azure.recoveryservicesbackup#GetProtectedItemOperationResultResponse",
-      "com.azure.recoveryservicesbackup#ProtectedItemOperationResultsGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetProtectedItemOperationResultResponseTagsMap",
-      "com.azure.recoveryservicesbackup#ProtectedItemOperationResultsGetRequest": "com.azure.recoveryservicesbackup#GetProtectedItemOperationResultRequest",
-      "com.azure.recoveryservicesbackup#ConfigureSourceScanExecute": "com.azure.recoveryservicesbackup#ExecuteConfigureSourceScan",
-      "com.azure.recoveryservicesbackup#ConfigureSourceScanExecuteResponse": "com.azure.recoveryservicesbackup#ExecuteConfigureSourceScanResponse",
-      "com.azure.recoveryservicesbackup#ConfigureSourceScanExecuteRequest": "com.azure.recoveryservicesbackup#ExecuteConfigureSourceScanRequest",
-      "com.azure.recoveryservicesbackup#BackupsTrigger": "com.azure.recoveryservicesbackup#TriggerBackup",
-      "com.azure.recoveryservicesbackup#BackupsTriggerRequest": "com.azure.recoveryservicesbackup#TriggerBackupRequest",
-      "com.azure.recoveryservicesbackup#BackupsTriggerRequestTagsMap": "com.azure.recoveryservicesbackup#TriggerBackupRequestTagsMap",
-      "com.azure.recoveryservicesbackup#ProtectedItemsDelete": "com.azure.recoveryservicesbackup#DeleteProtectedItem",
-      "com.azure.recoveryservicesbackup#ProtectedItemsDeleteRequest": "com.azure.recoveryservicesbackup#DeleteProtectedItemRequest",
-      "com.azure.recoveryservicesbackup#ProtectedItemsGet": "com.azure.recoveryservicesbackup#GetProtectedItem",
-      "com.azure.recoveryservicesbackup#ProtectedItemsGetResponse": "com.azure.recoveryservicesbackup#GetProtectedItemResponse",
-      "com.azure.recoveryservicesbackup#ProtectedItemsGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetProtectedItemResponseTagsMap",
-      "com.azure.recoveryservicesbackup#ProtectedItemsGetRequest": "com.azure.recoveryservicesbackup#GetProtectedItemRequest",
-      "com.azure.recoveryservicesbackup#ProtectionContainerOperationResultsGet": "com.azure.recoveryservicesbackup#GetProtectionContainerOperationResult",
-      "com.azure.recoveryservicesbackup#ProtectionContainerOperationResultsGetResponse": "com.azure.recoveryservicesbackup#GetProtectionContainerOperationResultResponse",
-      "com.azure.recoveryservicesbackup#ProtectionContainerOperationResultsGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetProtectionContainerOperationResultResponseTagsMap",
-      "com.azure.recoveryservicesbackup#ProtectionContainerOperationResultsGetRequest": "com.azure.recoveryservicesbackup#GetProtectionContainerOperationResultRequest",
-      "com.azure.recoveryservicesbackup#BackupWorkloadItemsList": "com.azure.recoveryservicesbackup#ListBackupWorkloadItems",
-      "com.azure.recoveryservicesbackup#BackupWorkloadItemsListResponse": "com.azure.recoveryservicesbackup#ListBackupWorkloadItemsResponse",
-      "com.azure.recoveryservicesbackup#BackupWorkloadItemsListResponseValueList": "com.azure.recoveryservicesbackup#ListBackupWorkloadItemsResponseValueList",
-      "com.azure.recoveryservicesbackup#BackupWorkloadItemsListRequest": "com.azure.recoveryservicesbackup#ListBackupWorkloadItemsRequest",
-      "com.azure.recoveryservicesbackup#ProtectionContainersUnregister": "com.azure.recoveryservicesbackup#UnregisterProtectionContainer",
-      "com.azure.recoveryservicesbackup#ProtectionContainersUnregisterRequest": "com.azure.recoveryservicesbackup#UnregisterProtectionContainerRequest",
-      "com.azure.recoveryservicesbackup#ProtectionContainersRegister": "com.azure.recoveryservicesbackup#RegisterProtectionContainer",
-      "com.azure.recoveryservicesbackup#ProtectionContainersRegisterResponse": "com.azure.recoveryservicesbackup#RegisterProtectionContainerResponse",
-      "com.azure.recoveryservicesbackup#ProtectionContainersRegisterResponseTagsMap": "com.azure.recoveryservicesbackup#RegisterProtectionContainerResponseTagsMap",
-      "com.azure.recoveryservicesbackup#ProtectionContainersRegisterRequest": "com.azure.recoveryservicesbackup#RegisterProtectionContainerRequest",
-      "com.azure.recoveryservicesbackup#ProtectionContainersRegisterRequestTagsMap": "com.azure.recoveryservicesbackup#RegisterProtectionContainerRequestTagsMap",
-      "com.azure.recoveryservicesbackup#ProtectionContainersGet": "com.azure.recoveryservicesbackup#GetProtectionContainer",
-      "com.azure.recoveryservicesbackup#ProtectionContainersGetResponse": "com.azure.recoveryservicesbackup#GetProtectionContainerResponse",
-      "com.azure.recoveryservicesbackup#ProtectionContainersGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetProtectionContainerResponseTagsMap",
-      "com.azure.recoveryservicesbackup#ProtectionContainersGetRequest": "com.azure.recoveryservicesbackup#GetProtectionContainerRequest",
-      "com.azure.recoveryservicesbackup#ProtectableContainersList": "com.azure.recoveryservicesbackup#ListProtectableContainers",
-      "com.azure.recoveryservicesbackup#ProtectableContainersListResponse": "com.azure.recoveryservicesbackup#ListProtectableContainersResponse",
-      "com.azure.recoveryservicesbackup#ProtectableContainersListResponseValueList": "com.azure.recoveryservicesbackup#ListProtectableContainersResponseValueList",
-      "com.azure.recoveryservicesbackup#ProtectableContainersListRequest": "com.azure.recoveryservicesbackup#ListProtectableContainersRequest",
-      "com.azure.recoveryservicesbackup#ProtectionContainerRefreshOperationResultsGet": "com.azure.recoveryservicesbackup#GetProtectionContainerRefreshOperationResult",
-      "com.azure.recoveryservicesbackup#ProtectionContainerRefreshOperationResultsGetRequest": "com.azure.recoveryservicesbackup#GetProtectionContainerRefreshOperationResultRequest",
-      "com.azure.recoveryservicesbackup#ProtectionIntentDelete": "com.azure.recoveryservicesbackup#DeleteProtectionIntent",
-      "com.azure.recoveryservicesbackup#ProtectionIntentDeleteRequest": "com.azure.recoveryservicesbackup#DeleteProtectionIntentRequest",
-      "com.azure.recoveryservicesbackup#ProtectionIntentGet": "com.azure.recoveryservicesbackup#GetProtectionIntent",
-      "com.azure.recoveryservicesbackup#ProtectionIntentGetResponse": "com.azure.recoveryservicesbackup#GetProtectionIntentResponse",
-      "com.azure.recoveryservicesbackup#ProtectionIntentGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetProtectionIntentResponseTagsMap",
-      "com.azure.recoveryservicesbackup#ProtectionIntentGetRequest": "com.azure.recoveryservicesbackup#GetProtectionIntentRequest",
-      "com.azure.recoveryservicesbackup#BackupEnginesGet": "com.azure.recoveryservicesbackup#GetBackupEngine",
-      "com.azure.recoveryservicesbackup#BackupEnginesGetResponse": "com.azure.recoveryservicesbackup#GetBackupEngineResponse",
-      "com.azure.recoveryservicesbackup#BackupEnginesGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetBackupEngineResponseTagsMap",
-      "com.azure.recoveryservicesbackup#BackupEnginesGetRequest": "com.azure.recoveryservicesbackup#GetBackupEngineRequest",
-      "com.azure.recoveryservicesbackup#BackupEnginesList": "com.azure.recoveryservicesbackup#ListBackupEngines",
-      "com.azure.recoveryservicesbackup#BackupEnginesListResponse": "com.azure.recoveryservicesbackup#ListBackupEnginesResponse",
-      "com.azure.recoveryservicesbackup#BackupEnginesListResponseValueList": "com.azure.recoveryservicesbackup#ListBackupEnginesResponseValueList",
-      "com.azure.recoveryservicesbackup#BackupEnginesListRequest": "com.azure.recoveryservicesbackup#ListBackupEnginesRequest",
-      "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsUpdate": "com.azure.recoveryservicesbackup#UpdateBackupResourceEncryptionConfig",
-      "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsUpdateRequest": "com.azure.recoveryservicesbackup#UpdateBackupResourceEncryptionConfigRequest",
-      "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsUpdateRequestTagsMap": "com.azure.recoveryservicesbackup#UpdateBackupResourceEncryptionConfigRequestTagsMap",
-      "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsGet": "com.azure.recoveryservicesbackup#GetBackupResourceEncryptionConfig",
-      "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsGetResponse": "com.azure.recoveryservicesbackup#GetBackupResourceEncryptionConfigResponse",
-      "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsGetResponseTagsMap": "com.azure.recoveryservicesbackup#GetBackupResourceEncryptionConfigResponseTagsMap",
-      "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsGetRequest": "com.azure.recoveryservicesbackup#GetBackupResourceEncryptionConfigRequest",
-      "com.azure.recoveryservicesbackup#DeletedProtectionContainersList": "com.azure.recoveryservicesbackup#ListDeletedProtectionContainers",
-      "com.azure.recoveryservicesbackup#DeletedProtectionContainersListResponse": "com.azure.recoveryservicesbackup#ListDeletedProtectionContainersResponse",
-      "com.azure.recoveryservicesbackup#DeletedProtectionContainersListResponseValueList": "com.azure.recoveryservicesbackup#ListDeletedProtectionContainersResponseValueList",
-      "com.azure.recoveryservicesbackup#DeletedProtectionContainersListRequest": "com.azure.recoveryservicesbackup#ListDeletedProtectionContainersRequest",
-      "com.azure.recoveryservicesbackup#FeatureSupportValidate": "com.azure.recoveryservicesbackup#ValidateFeatureSupport",
-      "com.azure.recoveryservicesbackup#FeatureSupportValidateRequest": "com.azure.recoveryservicesbackup#ValidateFeatureSupportRequest",
-      "com.azure.recoveryservicesbackup#BackupStatusGet": "com.azure.recoveryservicesbackup#GetBackupStatus",
-      "com.azure.recoveryservicesbackup#BackupStatusGetRequest": "com.azure.recoveryservicesbackup#GetBackupStatusRequest",
-      "com.azure.recoveryservicesbackup#ProtectionIntentValidate": "com.azure.recoveryservicesbackup#ValidateProtectionIntent",
-      "com.azure.recoveryservicesbackup#ProtectionIntentValidateRequest": "com.azure.recoveryservicesbackup#ValidateProtectionIntentRequest",
-      "com.azure.recoveryservicesbackup#OperationsList": "com.azure.recoveryservicesbackup#ListOperations",
-      "com.azure.recoveryservicesbackup#OperationsListRequest": "com.azure.recoveryservicesbackup#ListOperationsRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.recoveryservicesbackup#PrivateEndpointGetOperationStatus": {
+    "com.azure.recoveryservicesbackup#GetPrivateEndpointOperationStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#PrivateEndpointGetOperationStatusRequest"
+        "target": "com.azure.recoveryservicesbackup#GetPrivateEndpointOperationStatusRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#OperationStatus"
@@ -403,7 +160,7 @@
         "smithy.api#documentation": "Operation status."
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointGetOperationStatusRequest": {
+    "com.azure.recoveryservicesbackup#GetPrivateEndpointOperationStatusRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -451,13 +208,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointConnectionDelete": {
+    "com.azure.recoveryservicesbackup#DeletePrivateEndpointConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#PrivateEndpointConnectionDeleteRequest"
+        "target": "com.azure.recoveryservicesbackup#DeletePrivateEndpointConnectionRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#PrivateEndpointConnectionDeleteResponse"
+        "target": "com.azure.recoveryservicesbackup#DeletePrivateEndpointConnectionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -470,7 +227,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointConnectionDeleteResponse": {
+    "com.azure.recoveryservicesbackup#DeletePrivateEndpointConnectionResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -492,7 +249,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointConnectionDeleteRequest": {
+    "com.azure.recoveryservicesbackup#DeletePrivateEndpointConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -532,13 +289,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPut": {
+    "com.azure.recoveryservicesbackup#PutPrivateEndpointConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPutRequest"
+        "target": "com.azure.recoveryservicesbackup#PutPrivateEndpointConnectionRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPutResponse"
+        "target": "com.azure.recoveryservicesbackup#PutPrivateEndpointConnectionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -551,7 +308,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPutResponse": {
+    "com.azure.recoveryservicesbackup#PutPrivateEndpointConnectionResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -585,7 +342,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPutResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#PutPrivateEndpointConnectionResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -621,7 +378,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPutResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#PutPrivateEndpointConnectionResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -912,7 +669,7 @@
         "smithy.api#documentation": "The type of identity that created the resource."
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPutRequest": {
+    "com.azure.recoveryservicesbackup#PutPrivateEndpointConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -954,7 +711,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPutRequestTagsMap",
+          "target": "com.azure.recoveryservicesbackup#PutPrivateEndpointConnectionRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -976,7 +733,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPutRequestTagsMap": {
+    "com.azure.recoveryservicesbackup#PutPrivateEndpointConnectionRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -988,13 +745,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointConnectionGet": {
+    "com.azure.recoveryservicesbackup#GetPrivateEndpointConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#PrivateEndpointConnectionGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetPrivateEndpointConnectionRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#PrivateEndpointConnectionGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetPrivateEndpointConnectionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1007,7 +764,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointConnectionGetResponse": {
+    "com.azure.recoveryservicesbackup#GetPrivateEndpointConnectionResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1041,7 +798,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#PrivateEndpointConnectionGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetPrivateEndpointConnectionResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1063,7 +820,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointConnectionGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetPrivateEndpointConnectionResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1075,7 +832,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#PrivateEndpointConnectionGetRequest": {
+    "com.azure.recoveryservicesbackup#GetPrivateEndpointConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1263,13 +1020,13 @@
         "smithy.api#documentation": "DataMove Level"
       }
     },
-    "com.azure.recoveryservicesbackup#BMSPrepareDataMove": {
+    "com.azure.recoveryservicesbackup#MoveBMSPrepareData": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BMSPrepareDataMoveRequest"
+        "target": "com.azure.recoveryservicesbackup#MoveBMSPrepareDataRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BMSPrepareDataMoveResponse"
+        "target": "com.azure.recoveryservicesbackup#MoveBMSPrepareDataResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1282,7 +1039,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BMSPrepareDataMoveResponse": {
+    "com.azure.recoveryservicesbackup#MoveBMSPrepareDataResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -1304,7 +1061,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BMSPrepareDataMoveRequest": {
+    "com.azure.recoveryservicesbackup#MoveBMSPrepareDataRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1353,7 +1110,7 @@
           }
         },
         "sourceContainerArmIds": {
-          "target": "com.azure.recoveryservicesbackup#BMSPrepareDataMoveRequestSourceContainerArmIdsList",
+          "target": "com.azure.recoveryservicesbackup#MoveBMSPrepareDataRequestSourceContainerArmIdsList",
           "traits": {
             "smithy.api#documentation": "Source Container ArmIds\nThis needs to be populated only if DataMoveLevel is set to container"
           }
@@ -1369,7 +1126,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BMSPrepareDataMoveRequestSourceContainerArmIdsList": {
+    "com.azure.recoveryservicesbackup#MoveBMSPrepareDataRequestSourceContainerArmIdsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -1437,10 +1194,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BMSPrepareDataMoveOperationResultGet": {
+    "com.azure.recoveryservicesbackup#GetBMSPrepareDataMoveOperationResult": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BMSPrepareDataMoveOperationResultGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetBMSPrepareDataMoveOperationResultRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#VaultStorageConfigOperationResultResponse"
@@ -1471,7 +1228,7 @@
         "smithy.api#documentation": "Operation result response for Vault Storage Config"
       }
     },
-    "com.azure.recoveryservicesbackup#BMSPrepareDataMoveOperationResultGetRequest": {
+    "com.azure.recoveryservicesbackup#GetBMSPrepareDataMoveOperationResultRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1511,10 +1268,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRPatch": {
+    "com.azure.recoveryservicesbackup#PatchBackupResourceStorageConfigsNonCRR": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRPatchRequest"
+        "target": "com.azure.recoveryservicesbackup#PatchBackupResourceStorageConfigsNonCRRRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -1530,7 +1287,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRPatchRequest": {
+    "com.azure.recoveryservicesbackup#PatchBackupResourceStorageConfigsNonCRRRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1564,7 +1321,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRPatchRequestTagsMap",
+          "target": "com.azure.recoveryservicesbackup#PatchBackupResourceStorageConfigsNonCRRRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1586,7 +1343,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRPatchRequestTagsMap": {
+    "com.azure.recoveryservicesbackup#PatchBackupResourceStorageConfigsNonCRRRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1758,13 +1515,13 @@
         "smithy.api#documentation": "Storage type"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdate": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRR": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdateRequest"
+        "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRRRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdateResponse"
+        "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRRResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1777,7 +1534,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdateResponse": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRRResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1811,7 +1568,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdateResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRRResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1833,7 +1590,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdateResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRRResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1845,7 +1602,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdateRequest": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRRRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1879,7 +1636,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdateRequestTagsMap",
+          "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRRRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1901,7 +1658,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdateRequestTagsMap": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRRRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1913,13 +1670,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRGet": {
+    "com.azure.recoveryservicesbackup#GetBackupResourceStorageConfigsNonCRR": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetBackupResourceStorageConfigsNonCRRRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetBackupResourceStorageConfigsNonCRRResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1932,7 +1689,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRGetResponse": {
+    "com.azure.recoveryservicesbackup#GetBackupResourceStorageConfigsNonCRRResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1966,7 +1723,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetBackupResourceStorageConfigsNonCRRResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1988,7 +1745,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetBackupResourceStorageConfigsNonCRRResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -2000,7 +1757,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRGetRequest": {
+    "com.azure.recoveryservicesbackup#GetBackupResourceStorageConfigsNonCRRRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2032,13 +1789,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdate": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfig": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdateRequest"
+        "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfigRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdateResponse"
+        "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfigResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2051,7 +1808,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdateResponse": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfigResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -2085,7 +1842,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdateResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfigResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -2107,7 +1864,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdateResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfigResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -2242,7 +1999,7 @@
         "smithy.api#documentation": "Enabled or Disabled."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdateRequest": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfigRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2276,7 +2033,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdateRequestTagsMap",
+          "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfigRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -2298,7 +2055,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdateRequestTagsMap": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfigRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -2310,13 +2067,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPut": {
+    "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfig": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPutRequest"
+        "target": "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfigRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPutResponse"
+        "target": "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfigResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2329,7 +2086,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPutResponse": {
+    "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfigResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -2363,7 +2120,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPutResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfigResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -2385,7 +2142,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPutResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfigResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -2397,7 +2154,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPutRequest": {
+    "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfigRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2431,7 +2188,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPutRequestTagsMap",
+          "target": "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfigRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -2453,7 +2210,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPutRequestTagsMap": {
+    "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfigRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -2465,13 +2222,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsGet": {
+    "com.azure.recoveryservicesbackup#GetBackupResourceVaultConfig": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetBackupResourceVaultConfigRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetBackupResourceVaultConfigResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2484,7 +2241,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsGetResponse": {
+    "com.azure.recoveryservicesbackup#GetBackupResourceVaultConfigResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -2518,7 +2275,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetBackupResourceVaultConfigResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -2540,7 +2297,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetBackupResourceVaultConfigResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -2552,7 +2309,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetBackupResourceVaultConfigRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2584,10 +2341,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ValidateOperationStatusesGet": {
+    "com.azure.recoveryservicesbackup#GetValidateOperationStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ValidateOperationStatusesGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetValidateOperationStatusRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#OperationStatus"
@@ -2603,7 +2360,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ValidateOperationStatusesGetRequest": {
+    "com.azure.recoveryservicesbackup#GetValidateOperationStatusRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2643,10 +2400,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ValidateOperationResultsGet": {
+    "com.azure.recoveryservicesbackup#GetValidateOperationResult": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ValidateOperationResultsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetValidateOperationResultRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#ValidateOperationsResponse"
@@ -2732,7 +2489,7 @@
         "smithy.api#documentation": "List of recommendation strings."
       }
     },
-    "com.azure.recoveryservicesbackup#ValidateOperationResultsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetValidateOperationResultRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2772,10 +2529,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#OperationValidate": {
+    "com.azure.recoveryservicesbackup#ValidateOperation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#OperationValidateRequest"
+        "target": "com.azure.recoveryservicesbackup#ValidateOperationRequest2"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#ValidateOperationsResponse"
@@ -2791,7 +2548,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#OperationValidateRequest": {
+    "com.azure.recoveryservicesbackup#ValidateOperationRequest2": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2852,13 +2609,13 @@
         "smithy.api#documentation": "Base class for validate operation request."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupUsageSummariesList": {
+    "com.azure.recoveryservicesbackup#ListBackupUsageSummaries": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupUsageSummariesListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListBackupUsageSummariesRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupUsageSummariesListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListBackupUsageSummariesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2878,7 +2635,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#BackupUsageSummariesListResponse": {
+    "com.azure.recoveryservicesbackup#ListBackupUsageSummariesResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -2888,7 +2645,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#BackupUsageSummariesListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListBackupUsageSummariesResponseValueList",
           "traits": {
             "smithy.api#documentation": "The list of backup management usages for the given vault."
           }
@@ -2898,7 +2655,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupUsageSummariesListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListBackupUsageSummariesResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#BackupManagementUsage"
@@ -3015,7 +2772,7 @@
         "smithy.api#documentation": "Unit of the usage."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupUsageSummariesListRequest": {
+    "com.azure.recoveryservicesbackup#ListBackupUsageSummariesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3067,13 +2824,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ValidateOperationTrigger": {
+    "com.azure.recoveryservicesbackup#TriggerValidateOperation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ValidateOperationTriggerRequest"
+        "target": "com.azure.recoveryservicesbackup#TriggerValidateOperationRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ValidateOperationTriggerResponse"
+        "target": "com.azure.recoveryservicesbackup#TriggerValidateOperationResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3086,7 +2843,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ValidateOperationTriggerResponse": {
+    "com.azure.recoveryservicesbackup#TriggerValidateOperationResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -3108,7 +2865,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ValidateOperationTriggerRequest": {
+    "com.azure.recoveryservicesbackup#TriggerValidateOperationRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3154,10 +2911,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#TieringCostOperationStatusGet": {
+    "com.azure.recoveryservicesbackup#GetTieringCostOperationStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#TieringCostOperationStatusGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetTieringCostOperationStatusRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#OperationStatus"
@@ -3173,7 +2930,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#TieringCostOperationStatusGetRequest": {
+    "com.azure.recoveryservicesbackup#GetTieringCostOperationStatusRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3212,10 +2969,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#GetTieringCostOperationResultGet": {
+    "com.azure.recoveryservicesbackup#GetGetTieringCostOperationResult": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#GetTieringCostOperationResultGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetGetTieringCostOperationResultRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#TieringCostInfo"
@@ -3246,7 +3003,7 @@
         "smithy.api#documentation": "Base class for tiering cost response"
       }
     },
-    "com.azure.recoveryservicesbackup#GetTieringCostOperationResultGetRequest": {
+    "com.azure.recoveryservicesbackup#GetGetTieringCostOperationResultRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3285,13 +3042,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#FetchTieringCostPost": {
+    "com.azure.recoveryservicesbackup#PostFetchTieringCost": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#FetchTieringCostPostRequest"
+        "target": "com.azure.recoveryservicesbackup#PostFetchTieringCostRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#FetchTieringCostPostResponse"
+        "target": "com.azure.recoveryservicesbackup#PostFetchTieringCostResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3304,7 +3061,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#FetchTieringCostPostResponse": {
+    "com.azure.recoveryservicesbackup#PostFetchTieringCostResponse": {
       "type": "structure",
       "members": {
         "objectType": {
@@ -3334,7 +3091,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#FetchTieringCostPostRequest": {
+    "com.azure.recoveryservicesbackup#PostFetchTieringCostRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3419,10 +3176,10 @@
         "smithy.api#documentation": "Recovery point tier type."
       }
     },
-    "com.azure.recoveryservicesbackup#SecurityPINsGet": {
+    "com.azure.recoveryservicesbackup#GetSecurityPIN": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#SecurityPINsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetSecurityPINRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#TokenInformation"
@@ -3464,7 +3221,7 @@
         "smithy.api#documentation": "The token information details."
       }
     },
-    "com.azure.recoveryservicesbackup#SecurityPINsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetSecurityPINRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3492,7 +3249,7 @@
           }
         },
         "resourceGuardOperationRequests": {
-          "target": "com.azure.recoveryservicesbackup#SecurityPINsGetRequestResourceGuardOperationRequestsList",
+          "target": "com.azure.recoveryservicesbackup#GetSecurityPINRequestResourceGuardOperationRequestsList",
           "traits": {
             "smithy.api#documentation": "ResourceGuard Operation Requests"
           }
@@ -3502,7 +3259,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#SecurityPINsGetRequestResourceGuardOperationRequestsList": {
+    "com.azure.recoveryservicesbackup#GetSecurityPINRequestResourceGuardOperationRequestsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -3596,10 +3353,10 @@
       },
       "traits": {}
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxyDelete": {
+    "com.azure.recoveryservicesbackup#DeleteResourceGuardProxy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyDeleteRequest"
+        "target": "com.azure.recoveryservicesbackup#DeleteResourceGuardProxyRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -3615,7 +3372,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxyDeleteRequest": {
+    "com.azure.recoveryservicesbackup#DeleteResourceGuardProxyRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3654,13 +3411,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxyPut": {
+    "com.azure.recoveryservicesbackup#PutResourceGuardProxy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyPutRequest"
+        "target": "com.azure.recoveryservicesbackup#PutResourceGuardProxyRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyPutResponse"
+        "target": "com.azure.recoveryservicesbackup#PutResourceGuardProxyResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3673,7 +3430,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxyPutResponse": {
+    "com.azure.recoveryservicesbackup#PutResourceGuardProxyResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -3707,7 +3464,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyPutResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#PutResourceGuardProxyResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -3729,7 +3486,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxyPutResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#PutResourceGuardProxyResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3781,7 +3538,7 @@
       },
       "traits": {}
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxyPutRequest": {
+    "com.azure.recoveryservicesbackup#PutResourceGuardProxyRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3822,7 +3579,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyPutRequestTagsMap",
+          "target": "com.azure.recoveryservicesbackup#PutResourceGuardProxyRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -3844,7 +3601,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxyPutRequestTagsMap": {
+    "com.azure.recoveryservicesbackup#PutResourceGuardProxyRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3856,13 +3613,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxyGet": {
+    "com.azure.recoveryservicesbackup#GetResourceGuardProxy2": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetResourceGuardProxyRequest2"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetResourceGuardProxyResponse2"
       },
       "traits": {
         "smithy.api#http": {
@@ -3875,7 +3632,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxyGetResponse": {
+    "com.azure.recoveryservicesbackup#GetResourceGuardProxyResponse2": {
       "type": "structure",
       "members": {
         "id": {
@@ -3909,7 +3666,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetResourceGuardProxyResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -3931,7 +3688,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxyGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetResourceGuardProxyResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3943,7 +3700,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxyGetRequest": {
+    "com.azure.recoveryservicesbackup#GetResourceGuardProxyRequest2": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3982,13 +3739,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxiesGet": {
+    "com.azure.recoveryservicesbackup#GetResourceGuardProxy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ResourceGuardProxiesGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetResourceGuardProxyRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ResourceGuardProxiesGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetResourceGuardProxyResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4008,7 +3765,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxiesGetResponse": {
+    "com.azure.recoveryservicesbackup#GetResourceGuardProxyResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -4018,7 +3775,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#ResourceGuardProxiesGetResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#GetResourceGuardProxyResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -4028,7 +3785,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxiesGetResponseValueList": {
+    "com.azure.recoveryservicesbackup#GetResourceGuardProxyResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyBaseResource"
@@ -4103,7 +3860,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ResourceGuardProxiesGetRequest": {
+    "com.azure.recoveryservicesbackup#GetResourceGuardProxyRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4141,13 +3898,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectionIntentList": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectionIntent": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupProtectionIntentListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListBackupProtectionIntentRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupProtectionIntentListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListBackupProtectionIntentResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4167,7 +3924,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectionIntentListResponse": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectionIntentResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -4177,7 +3934,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#BackupProtectionIntentListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListBackupProtectionIntentResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -4187,7 +3944,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectionIntentListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectionIntentResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#ProtectionIntentResource"
@@ -4302,6 +4059,12 @@
           "target": "com.azure.recoveryservicesbackup#ProtectionStatus",
           "traits": {
             "smithy.api#documentation": "Backup state of this backup item."
+          }
+        },
+        "workloadItemType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Workload item type to auto-protect, e.g. `SQLInstance` (AzureWorkloadSQLAutoProtectionIntent)."
           }
         }
       },
@@ -4453,7 +4216,7 @@
         "smithy.api#documentation": "backup protectionIntent type."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectionIntentListRequest": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectionIntentRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4505,13 +4268,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectionContainersList": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectionContainers": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupProtectionContainersListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListBackupProtectionContainersRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupProtectionContainersListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListBackupProtectionContainersResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4531,7 +4294,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectionContainersListResponse": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectionContainersResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -4541,7 +4304,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#BackupProtectionContainersListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListBackupProtectionContainersResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -4551,7 +4314,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectionContainersListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectionContainersResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#ProtectionContainerResource"
@@ -4672,6 +4435,60 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#documentation": "Source location of the container"
+          }
+        },
+        "sourceResourceId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "ARM ID of the registered resource (storage account for StorageContainer, VM for VMAppContainer)."
+          }
+        },
+        "acquireStorageAccountLock": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Whether to place an `AzureBackupProtectionLock` delete lock on the storage account: `Acquire` or `NotAcquire` (StorageContainer)."
+          }
+        },
+        "protectedItemCount": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "Number of items backed up in this container (StorageContainer)."
+          }
+        },
+        "storageAccountVersion": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Storage account version (StorageContainer)."
+          }
+        },
+        "resourceGroup": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Resource group of the registered resource (StorageContainer)."
+          }
+        },
+        "workloadType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Workload type for the container (VMAppContainer)."
+          }
+        },
+        "operationType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Operation type, e.g. `Register` or `Reregister` (VMAppContainer)."
+          }
+        },
+        "extendedInfo": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Additional container information (VMAppContainer)."
+          }
+        },
+        "lastUpdatedTime": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Time the container was last refreshed (VMAppContainer)."
           }
         }
       },
@@ -4795,7 +4612,7 @@
         "smithy.api#documentation": "Type of the container. The value of this property for\n1. Compute Azure VM is Microsoft.Compute/virtualMachines\n2. Classic Compute Azure VM is Microsoft.ClassicCompute/virtualMachines"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectionContainersListRequest": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectionContainersRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4840,13 +4657,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectedItemsList": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectedItems": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupProtectedItemsListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListBackupProtectedItemsRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupProtectedItemsListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListBackupProtectedItemsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4866,7 +4683,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectedItemsListResponse": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectedItemsResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -4876,7 +4693,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#BackupProtectedItemsListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListBackupProtectedItemsResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -4886,7 +4703,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectedItemsListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectedItemsResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#ProtectedItemResource"
@@ -5091,6 +4908,54 @@
           "target": "com.azure.recoveryservicesbackup#SourceSideScanInfo",
           "traits": {
             "smithy.api#documentation": "Source side threat information"
+          }
+        },
+        "friendlyName": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Friendly name of the protected datasource (AzureFileShare / IaaS VM items)."
+          }
+        },
+        "protectionState": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Protection state: `Protected`, `ProtectionStopped`, `IRPending`, `ProtectionError`, `ProtectionPaused`, `BackupsSuspended`."
+          }
+        },
+        "extendedProperties": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Subtype-specific extended properties (e.g. disk exclusion for IaaS VMs)."
+          }
+        },
+        "protectionStatus": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Backup status of the item (read-only)."
+          }
+        },
+        "lastBackupStatus": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Status of the last backup (read-only)."
+          }
+        },
+        "lastBackupTime": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Timestamp of the last backup (read-only)."
+          }
+        },
+        "healthStatus": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Health status of the item (read-only)."
+          }
+        },
+        "virtualMachineId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "ARM ID of the protected VM (IaaS VM items, read-only)."
           }
         }
       },
@@ -5327,7 +5192,7 @@
         "smithy.api#documentation": "Type of workload this item represents."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectedItemsListRequest": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectedItemsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5379,13 +5244,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectableItemsList": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectableItems": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupProtectableItemsListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListBackupProtectableItemsRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupProtectableItemsListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListBackupProtectableItemsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -5405,7 +5270,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectableItemsListResponse": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectableItemsResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -5415,7 +5280,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#BackupProtectableItemsListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListBackupProtectableItemsResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -5425,7 +5290,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectableItemsListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectableItemsResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#WorkloadProtectableItemResource"
@@ -5541,7 +5406,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupProtectableItemsListRequest": {
+    "com.azure.recoveryservicesbackup#ListBackupProtectableItemsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5593,10 +5458,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPolicyOperationStatusesGet": {
+    "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionPolicyOperationStatusesGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationStatusRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#OperationStatus"
@@ -5612,7 +5477,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPolicyOperationStatusesGetRequest": {
+    "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationStatusRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5660,13 +5525,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPolicyOperationResultsGet": {
+    "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationResult": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionPolicyOperationResultsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationResultRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionPolicyOperationResultsGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationResultResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -5679,7 +5544,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPolicyOperationResultsGetResponse": {
+    "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationResultResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -5713,7 +5578,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ProtectionPolicyOperationResultsGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationResultResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -5735,7 +5600,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPolicyOperationResultsGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationResultResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -5768,6 +5633,84 @@
           "traits": {
             "smithy.api#documentation": "ResourceGuard Operation Requests"
           }
+        },
+        "workLoadType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Workload type (AzureFileShare / AzureStorage and AzureWorkload policies)."
+          }
+        },
+        "schedulePolicy": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Backup schedule (polymorphic on `schedulePolicyType`: SimpleSchedulePolicy, SimpleSchedulePolicyV2, LongTermSchedulePolicy, LogSchedulePolicy)."
+          }
+        },
+        "retentionPolicy": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Retention policy (polymorphic on `retentionPolicyType`: LongTermRetentionPolicy, SimpleRetentionPolicy)."
+          }
+        },
+        "vaultRetentionPolicy": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Vaulted backup retention (AzureFileShare vault-tier policies)."
+          }
+        },
+        "timeZone": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Time zone of the schedule, e.g. `UTC`."
+          }
+        },
+        "instantRpRetentionRangeInDays": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "Instant recovery point retention in days (AzureIaasVM)."
+          }
+        },
+        "instantRPDetails": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Instant recovery point resource group settings (AzureIaasVM)."
+          }
+        },
+        "policyType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "IaaS VM policy type: `V1` (standard) or `V2` (enhanced)."
+          }
+        },
+        "tieringPolicy": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Archive tiering policy keyed by tier (AzureIaasVM)."
+          }
+        },
+        "snapshotConsistencyType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Snapshot consistency type (AzureIaasVM)."
+          }
+        },
+        "settings": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Workload settings such as time zone and compression (AzureWorkload)."
+          }
+        },
+        "subProtectionPolicy": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Sub-policies per backup type (AzureWorkload)."
+          }
+        },
+        "makePolicyConsistent": {
+          "target": "smithy.api#Boolean",
+          "traits": {
+            "smithy.api#documentation": "Fix a policy that is inconsistent with its sub-policies (AzureWorkload)."
+          }
         }
       },
       "traits": {
@@ -5783,7 +5726,7 @@
         "smithy.api#documentation": "ResourceGuard Operation Requests"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPolicyOperationResultsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationResultRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5831,13 +5774,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPoliciesDelete": {
+    "com.azure.recoveryservicesbackup#DeleteProtectionPolicy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionPoliciesDeleteRequest"
+        "target": "com.azure.recoveryservicesbackup#DeleteProtectionPolicyRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionPoliciesDeleteResponse"
+        "target": "com.azure.recoveryservicesbackup#DeleteProtectionPolicyResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -5850,7 +5793,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPoliciesDeleteResponse": {
+    "com.azure.recoveryservicesbackup#DeleteProtectionPolicyResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -5872,7 +5815,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPoliciesDeleteRequest": {
+    "com.azure.recoveryservicesbackup#DeleteProtectionPolicyRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -6075,13 +6018,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPoliciesGet": {
+    "com.azure.recoveryservicesbackup#GetProtectionPolicy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionPoliciesGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetProtectionPolicyRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionPoliciesGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetProtectionPolicyResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6094,7 +6037,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPoliciesGetResponse": {
+    "com.azure.recoveryservicesbackup#GetProtectionPolicyResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -6128,7 +6071,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ProtectionPoliciesGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetProtectionPolicyResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -6150,7 +6093,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPoliciesGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetProtectionPolicyResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -6162,7 +6105,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionPoliciesGetRequest": {
+    "com.azure.recoveryservicesbackup#GetProtectionPolicyRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -6202,13 +6145,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupPoliciesList": {
+    "com.azure.recoveryservicesbackup#ListBackupPolicies": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupPoliciesListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListBackupPoliciesRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupPoliciesListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListBackupPoliciesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6228,7 +6171,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#BackupPoliciesListResponse": {
+    "com.azure.recoveryservicesbackup#ListBackupPoliciesResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -6238,7 +6181,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#BackupPoliciesListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListBackupPoliciesResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -6248,7 +6191,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupPoliciesListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListBackupPoliciesResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#ProtectionPolicyResource"
@@ -6325,7 +6268,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupPoliciesListRequest": {
+    "com.azure.recoveryservicesbackup#ListBackupPoliciesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -6370,10 +6313,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupOperationStatusesGet": {
+    "com.azure.recoveryservicesbackup#GetBackupOperationStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupOperationStatusesGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetBackupOperationStatusRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#OperationStatus"
@@ -6389,7 +6332,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupOperationStatusesGetRequest": {
+    "com.azure.recoveryservicesbackup#GetBackupOperationStatusRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -6429,10 +6372,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupOperationResultsGet": {
+    "com.azure.recoveryservicesbackup#GetBackupOperationResult": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupOperationResultsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetBackupOperationResultRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -6448,7 +6391,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupOperationResultsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetBackupOperationResultRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -6488,10 +6431,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#JobsExport": {
+    "com.azure.recoveryservicesbackup#ExportJob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#JobsExportRequest"
+        "target": "com.azure.recoveryservicesbackup#ExportJobRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -6507,7 +6450,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#JobsExportRequest": {
+    "com.azure.recoveryservicesbackup#ExportJobRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -6546,13 +6489,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGet": {
+    "com.azure.recoveryservicesbackup#GetExportJobsOperationResult": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetExportJobsOperationResultRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetExportJobsOperationResultResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6565,7 +6508,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGetResponse": {
+    "com.azure.recoveryservicesbackup#GetExportJobsOperationResultResponse": {
       "type": "structure",
       "members": {
         "statusCode": {
@@ -6575,7 +6518,7 @@
           }
         },
         "headers": {
-          "target": "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGetResponseHeadersMap",
+          "target": "com.azure.recoveryservicesbackup#GetExportJobsOperationResultResponseHeadersMap",
           "traits": {
             "smithy.api#documentation": "HTTP headers associated with this operation."
           }
@@ -6606,19 +6549,19 @@
         "smithy.api#documentation": "Base class for operation result info."
       }
     },
-    "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGetResponseHeadersMap": {
+    "com.azure.recoveryservicesbackup#GetExportJobsOperationResultResponseHeadersMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
       },
       "value": {
-        "target": "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGetResponseHeadersValueList"
+        "target": "com.azure.recoveryservicesbackup#GetExportJobsOperationResultResponseHeadersValueList"
       },
       "traits": {
         "smithy.api#documentation": "HTTP headers associated with this operation."
       }
     },
-    "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGetResponseHeadersValueList": {
+    "com.azure.recoveryservicesbackup#GetExportJobsOperationResultResponseHeadersValueList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -6915,7 +6858,7 @@
         "smithy.api#documentation": "HTTP Status Code of the operation."
       }
     },
-    "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetExportJobsOperationResultRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -6955,10 +6898,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#JobOperationResultsGet": {
+    "com.azure.recoveryservicesbackup#GetJobOperationResult": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#JobOperationResultsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetJobOperationResultRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -6974,7 +6917,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#JobOperationResultsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetJobOperationResultRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7022,10 +6965,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#JobCancellationsTrigger": {
+    "com.azure.recoveryservicesbackup#TriggerJobCancellation": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#JobCancellationsTriggerRequest"
+        "target": "com.azure.recoveryservicesbackup#TriggerJobCancellationRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -7041,7 +6984,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#JobCancellationsTriggerRequest": {
+    "com.azure.recoveryservicesbackup#TriggerJobCancellationRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7081,13 +7024,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#JobDetailsGet": {
+    "com.azure.recoveryservicesbackup#GetJobDetail": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#JobDetailsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetJobDetailRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#JobDetailsGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetJobDetailResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -7100,7 +7043,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#JobDetailsGetResponse": {
+    "com.azure.recoveryservicesbackup#GetJobDetailResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -7134,7 +7077,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#JobDetailsGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetJobDetailResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -7156,7 +7099,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#JobDetailsGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetJobDetailResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -7225,7 +7168,7 @@
         "smithy.api#documentation": "Defines workload agnostic properties for a job."
       }
     },
-    "com.azure.recoveryservicesbackup#JobDetailsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetJobDetailRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7265,13 +7208,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupJobsList": {
+    "com.azure.recoveryservicesbackup#ListBackupJobs": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupJobsListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListBackupJobsRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupJobsListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListBackupJobsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -7291,7 +7234,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#BackupJobsListResponse": {
+    "com.azure.recoveryservicesbackup#ListBackupJobsResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -7301,7 +7244,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#BackupJobsListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListBackupJobsResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -7311,7 +7254,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupJobsListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListBackupJobsResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#JobResource"
@@ -7388,7 +7331,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupJobsListRequest": {
+    "com.azure.recoveryservicesbackup#ListBackupJobsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7440,10 +7383,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersRefresh": {
+    "com.azure.recoveryservicesbackup#RefreshProtectionContainer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionContainersRefreshRequest"
+        "target": "com.azure.recoveryservicesbackup#RefreshProtectionContainerRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -7459,7 +7402,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersRefreshRequest": {
+    "com.azure.recoveryservicesbackup#RefreshProtectionContainerRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7506,13 +7449,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveList": {
+    "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMove": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMoveRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMoveResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -7532,7 +7475,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveListResponse": {
+    "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMoveResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -7542,7 +7485,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMoveResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -7552,7 +7495,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMoveResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#RecoveryPointResource"
@@ -7823,7 +7766,7 @@
         "smithy.api#documentation": "Threat status of the recovery point"
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveListRequest": {
+    "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMoveRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7881,7 +7824,7 @@
           }
         },
         "excludedRPList": {
-          "target": "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveListRequestExcludedRPListList",
+          "target": "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMoveRequestExcludedRPListList",
           "traits": {
             "smithy.api#documentation": "List of Recovery Points excluded from Move"
           }
@@ -7897,7 +7840,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveListRequestExcludedRPListList": {
+    "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMoveRequestExcludedRPListList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -7906,10 +7849,10 @@
         "smithy.api#documentation": "List of Recovery Points excluded from Move"
       }
     },
-    "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsRevoke": {
+    "com.azure.recoveryservicesbackup#RevokeItemLevelRecoveryConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsRevokeRequest"
+        "target": "com.azure.recoveryservicesbackup#RevokeItemLevelRecoveryConnectionRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -7925,7 +7868,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsRevokeRequest": {
+    "com.azure.recoveryservicesbackup#RevokeItemLevelRecoveryConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -7989,13 +7932,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#RestoresTrigger": {
+    "com.azure.recoveryservicesbackup#TriggerRestore": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#RestoresTriggerRequest"
+        "target": "com.azure.recoveryservicesbackup#TriggerRestoreRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#RestoresTriggerResponse"
+        "target": "com.azure.recoveryservicesbackup#TriggerRestoreResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8008,7 +7951,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#RestoresTriggerResponse": {
+    "com.azure.recoveryservicesbackup#TriggerRestoreResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -8030,7 +7973,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#RestoresTriggerRequest": {
+    "com.azure.recoveryservicesbackup#TriggerRestoreRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -8096,7 +8039,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#RestoresTriggerRequestTagsMap",
+          "target": "com.azure.recoveryservicesbackup#TriggerRestoreRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -8148,7 +8091,7 @@
         "smithy.api#documentation": "ResourceGuardOperationRequests on which LAC check will be performed"
       }
     },
-    "com.azure.recoveryservicesbackup#RestoresTriggerRequestTagsMap": {
+    "com.azure.recoveryservicesbackup#TriggerRestoreRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -8160,10 +8103,10 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsProvision": {
+    "com.azure.recoveryservicesbackup#ProvisionItemLevelRecoveryConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsProvisionRequest"
+        "target": "com.azure.recoveryservicesbackup#ProvisionItemLevelRecoveryConnectionRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -8179,7 +8122,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsProvisionRequest": {
+    "com.azure.recoveryservicesbackup#ProvisionItemLevelRecoveryConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -8245,7 +8188,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsProvisionRequestTagsMap",
+          "target": "com.azure.recoveryservicesbackup#ProvisionItemLevelRecoveryConnectionRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -8282,7 +8225,7 @@
         "smithy.api#documentation": "Parameters to Provision ILR API."
       }
     },
-    "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsProvisionRequestTagsMap": {
+    "com.azure.recoveryservicesbackup#ProvisionItemLevelRecoveryConnectionRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -8417,10 +8360,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsListInstantItemRecoveryOperationResult": {
+    "com.azure.recoveryservicesbackup#ListItemLevelRecoveryConnectionInstantItemRecoveryOperationResult": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsListInstantItemRecoveryOperationResultRequest"
+        "target": "com.azure.recoveryservicesbackup#ListItemLevelRecoveryConnectionInstantItemRecoveryOperationResultRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#InstantItemRecoveryTarget"
@@ -8497,7 +8440,7 @@
         "smithy.api#documentation": "Client script details for file / folder restore."
       }
     },
-    "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsListInstantItemRecoveryOperationResultRequest": {
+    "com.azure.recoveryservicesbackup#ListItemLevelRecoveryConnectionInstantItemRecoveryOperationResultRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -8568,13 +8511,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsGet": {
+    "com.azure.recoveryservicesbackup#GetRecoveryPoint": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#RecoveryPointsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetRecoveryPointRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#RecoveryPointsGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetRecoveryPointResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8587,7 +8530,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsGetResponse": {
+    "com.azure.recoveryservicesbackup#GetRecoveryPointResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -8621,7 +8564,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#RecoveryPointsGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetRecoveryPointResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -8643,7 +8586,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetRecoveryPointResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -8655,7 +8598,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetRecoveryPointRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -8719,13 +8662,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsList": {
+    "com.azure.recoveryservicesbackup#ListRecoveryPoints": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#RecoveryPointsListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListRecoveryPointsRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#RecoveryPointsListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListRecoveryPointsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8745,7 +8688,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsListResponse": {
+    "com.azure.recoveryservicesbackup#ListRecoveryPointsResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -8755,7 +8698,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#RecoveryPointsListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListRecoveryPointsResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -8765,7 +8708,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListRecoveryPointsResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#RecoveryPointResource"
@@ -8774,7 +8717,7 @@
         "smithy.api#documentation": "List of resources."
       }
     },
-    "com.azure.recoveryservicesbackup#RecoveryPointsListRequest": {
+    "com.azure.recoveryservicesbackup#ListRecoveryPointsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -8843,10 +8786,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectedItemOperationStatusesGet": {
+    "com.azure.recoveryservicesbackup#GetProtectedItemOperationStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectedItemOperationStatusesGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetProtectedItemOperationStatusRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#OperationStatus"
@@ -8862,7 +8805,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectedItemOperationStatusesGetRequest": {
+    "com.azure.recoveryservicesbackup#GetProtectedItemOperationStatusRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -8926,13 +8869,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectedItemOperationResultsGet": {
+    "com.azure.recoveryservicesbackup#GetProtectedItemOperationResult": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectedItemOperationResultsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetProtectedItemOperationResultRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ProtectedItemOperationResultsGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetProtectedItemOperationResultResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8945,7 +8888,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectedItemOperationResultsGetResponse": {
+    "com.azure.recoveryservicesbackup#GetProtectedItemOperationResultResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -8979,7 +8922,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ProtectedItemOperationResultsGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetProtectedItemOperationResultResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -9001,7 +8944,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectedItemOperationResultsGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetProtectedItemOperationResultResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -9013,7 +8956,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectedItemOperationResultsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetProtectedItemOperationResultRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -9077,13 +9020,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ConfigureSourceScanExecute": {
+    "com.azure.recoveryservicesbackup#ExecuteConfigureSourceScan": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ConfigureSourceScanExecuteRequest"
+        "target": "com.azure.recoveryservicesbackup#ExecuteConfigureSourceScanRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ConfigureSourceScanExecuteResponse"
+        "target": "com.azure.recoveryservicesbackup#ExecuteConfigureSourceScanResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -9096,7 +9039,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ConfigureSourceScanExecuteResponse": {
+    "com.azure.recoveryservicesbackup#ExecuteConfigureSourceScanResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -9168,7 +9111,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ConfigureSourceScanExecuteRequest": {
+    "com.azure.recoveryservicesbackup#ExecuteConfigureSourceScanRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -9250,10 +9193,10 @@
         "smithy.api#documentation": "Source scan configuration status for enabling or disabling source scan"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupsTrigger": {
+    "com.azure.recoveryservicesbackup#TriggerBackup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupsTriggerRequest"
+        "target": "com.azure.recoveryservicesbackup#TriggerBackupRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -9269,7 +9212,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupsTriggerRequest": {
+    "com.azure.recoveryservicesbackup#TriggerBackupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -9327,7 +9270,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupsTriggerRequestTagsMap",
+          "target": "com.azure.recoveryservicesbackup#TriggerBackupRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -9364,7 +9307,7 @@
         "smithy.api#documentation": "Base class for backup request. Workload-specific backup requests are derived from this class."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupsTriggerRequestTagsMap": {
+    "com.azure.recoveryservicesbackup#TriggerBackupRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -9376,10 +9319,10 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectedItemsDelete": {
+    "com.azure.recoveryservicesbackup#DeleteProtectedItem": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectedItemsDeleteRequest"
+        "target": "com.azure.recoveryservicesbackup#DeleteProtectedItemRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -9395,7 +9338,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectedItemsDeleteRequest": {
+    "com.azure.recoveryservicesbackup#DeleteProtectedItemRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -9749,6 +9692,24 @@
           "traits": {
             "smithy.api#documentation": "Source side threat information"
           }
+        },
+        "friendlyName": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Friendly name of the protected datasource (AzureFileShare / IaaS VM items)."
+          }
+        },
+        "protectionState": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Protection state: `Protected`, `ProtectionStopped`, `IRPending`, `ProtectionError`, `ProtectionPaused`, `BackupsSuspended`."
+          }
+        },
+        "extendedProperties": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Subtype-specific extended properties (e.g. disk exclusion for IaaS VMs)."
+          }
         }
       },
       "traits": {
@@ -9764,13 +9725,13 @@
         "smithy.api#documentation": "ResourceGuardOperationRequests on which LAC check will be performed"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectedItemsGet": {
+    "com.azure.recoveryservicesbackup#GetProtectedItem": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectedItemsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetProtectedItemRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ProtectedItemsGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetProtectedItemResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -9783,7 +9744,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectedItemsGetResponse": {
+    "com.azure.recoveryservicesbackup#GetProtectedItemResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -9817,7 +9778,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ProtectedItemsGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetProtectedItemResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -9839,7 +9800,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectedItemsGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetProtectedItemResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -9851,7 +9812,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectedItemsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetProtectedItemRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -9914,13 +9875,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainerOperationResultsGet": {
+    "com.azure.recoveryservicesbackup#GetProtectionContainerOperationResult": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionContainerOperationResultsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetProtectionContainerOperationResultRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionContainerOperationResultsGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetProtectionContainerOperationResultResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -9933,7 +9894,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainerOperationResultsGetResponse": {
+    "com.azure.recoveryservicesbackup#GetProtectionContainerOperationResultResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -9967,7 +9928,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ProtectionContainerOperationResultsGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetProtectionContainerOperationResultResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -9989,7 +9950,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainerOperationResultsGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetProtectionContainerOperationResultResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -10001,7 +9962,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainerOperationResultsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetProtectionContainerOperationResultRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -10057,13 +10018,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupWorkloadItemsList": {
+    "com.azure.recoveryservicesbackup#ListBackupWorkloadItems": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupWorkloadItemsListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListBackupWorkloadItemsRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupWorkloadItemsListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListBackupWorkloadItemsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -10083,7 +10044,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#BackupWorkloadItemsListResponse": {
+    "com.azure.recoveryservicesbackup#ListBackupWorkloadItemsResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -10093,7 +10054,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#BackupWorkloadItemsListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListBackupWorkloadItemsResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -10103,7 +10064,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupWorkloadItemsListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListBackupWorkloadItemsResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#WorkloadItemResource"
@@ -10219,7 +10180,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupWorkloadItemsListRequest": {
+    "com.azure.recoveryservicesbackup#ListBackupWorkloadItemsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -10361,10 +10322,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersUnregister": {
+    "com.azure.recoveryservicesbackup#UnregisterProtectionContainer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionContainersUnregisterRequest"
+        "target": "com.azure.recoveryservicesbackup#UnregisterProtectionContainerRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -10380,7 +10341,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersUnregisterRequest": {
+    "com.azure.recoveryservicesbackup#UnregisterProtectionContainerRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -10428,13 +10389,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersRegister": {
+    "com.azure.recoveryservicesbackup#RegisterProtectionContainer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionContainersRegisterRequest"
+        "target": "com.azure.recoveryservicesbackup#RegisterProtectionContainerRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionContainersRegisterResponse"
+        "target": "com.azure.recoveryservicesbackup#RegisterProtectionContainerResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -10447,7 +10408,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersRegisterResponse": {
+    "com.azure.recoveryservicesbackup#RegisterProtectionContainerResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -10481,7 +10442,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ProtectionContainersRegisterResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#RegisterProtectionContainerResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -10517,7 +10478,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersRegisterResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#RegisterProtectionContainerResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -10529,7 +10490,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersRegisterRequest": {
+    "com.azure.recoveryservicesbackup#RegisterProtectionContainerRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -10579,7 +10540,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ProtectionContainersRegisterRequestTagsMap",
+          "target": "com.azure.recoveryservicesbackup#RegisterProtectionContainerRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -10601,7 +10562,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersRegisterRequestTagsMap": {
+    "com.azure.recoveryservicesbackup#RegisterProtectionContainerRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -10652,19 +10613,73 @@
           "traits": {
             "smithy.api#documentation": "Type of the protectable object associated with this container"
           }
+        },
+        "sourceResourceId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "ARM ID of the registered resource (storage account for StorageContainer, VM for VMAppContainer)."
+          }
+        },
+        "acquireStorageAccountLock": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Whether to place an `AzureBackupProtectionLock` delete lock on the storage account: `Acquire` or `NotAcquire` (StorageContainer)."
+          }
+        },
+        "protectedItemCount": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "Number of items backed up in this container (StorageContainer)."
+          }
+        },
+        "storageAccountVersion": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Storage account version (StorageContainer)."
+          }
+        },
+        "resourceGroup": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Resource group of the registered resource (StorageContainer)."
+          }
+        },
+        "workloadType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Workload type for the container (VMAppContainer)."
+          }
+        },
+        "operationType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Operation type, e.g. `Register` or `Reregister` (VMAppContainer)."
+          }
+        },
+        "extendedInfo": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Additional container information (VMAppContainer)."
+          }
+        },
+        "lastUpdatedTime": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Time the container was last refreshed (VMAppContainer)."
+          }
         }
       },
       "traits": {
         "smithy.api#documentation": "Base class for container with backup items. Containers with specific workloads are derived from this class."
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersGet": {
+    "com.azure.recoveryservicesbackup#GetProtectionContainer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionContainersGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetProtectionContainerRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionContainersGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetProtectionContainerResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -10677,7 +10692,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersGetResponse": {
+    "com.azure.recoveryservicesbackup#GetProtectionContainerResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -10711,7 +10726,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ProtectionContainersGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetProtectionContainerResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -10733,7 +10748,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetProtectionContainerResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -10745,7 +10760,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainersGetRequest": {
+    "com.azure.recoveryservicesbackup#GetProtectionContainerRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -10793,13 +10808,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectableContainersList": {
+    "com.azure.recoveryservicesbackup#ListProtectableContainers": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectableContainersListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListProtectableContainersRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ProtectableContainersListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListProtectableContainersResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -10819,7 +10834,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectableContainersListResponse": {
+    "com.azure.recoveryservicesbackup#ListProtectableContainersResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -10829,7 +10844,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#ProtectableContainersListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListProtectableContainersResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -10839,7 +10854,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectableContainersListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListProtectableContainersResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#ProtectableContainerResource"
@@ -10955,7 +10970,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectableContainersListRequest": {
+    "com.azure.recoveryservicesbackup#ListProtectableContainersRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11007,10 +11022,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainerRefreshOperationResultsGet": {
+    "com.azure.recoveryservicesbackup#GetProtectionContainerRefreshOperationResult": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionContainerRefreshOperationResultsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetProtectionContainerRefreshOperationResultRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -11026,7 +11041,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionContainerRefreshOperationResultsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetProtectionContainerRefreshOperationResultRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11074,10 +11089,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionIntentDelete": {
+    "com.azure.recoveryservicesbackup#DeleteProtectionIntent": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionIntentDeleteRequest"
+        "target": "com.azure.recoveryservicesbackup#DeleteProtectionIntentRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -11093,7 +11108,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionIntentDeleteRequest": {
+    "com.azure.recoveryservicesbackup#DeleteProtectionIntentRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11312,13 +11327,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionIntentGet": {
+    "com.azure.recoveryservicesbackup#GetProtectionIntent": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionIntentGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetProtectionIntentRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionIntentGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetProtectionIntentResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -11331,7 +11346,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionIntentGetResponse": {
+    "com.azure.recoveryservicesbackup#GetProtectionIntentResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -11365,7 +11380,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#ProtectionIntentGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetProtectionIntentResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -11387,7 +11402,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionIntentGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetProtectionIntentResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -11399,7 +11414,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionIntentGetRequest": {
+    "com.azure.recoveryservicesbackup#GetProtectionIntentRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11447,13 +11462,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupEnginesGet": {
+    "com.azure.recoveryservicesbackup#GetBackupEngine": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupEnginesGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetBackupEngineRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupEnginesGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetBackupEngineResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -11466,7 +11481,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupEnginesGetResponse": {
+    "com.azure.recoveryservicesbackup#GetBackupEngineResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -11500,7 +11515,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupEnginesGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetBackupEngineResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -11522,7 +11537,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupEnginesGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetBackupEngineResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -11703,7 +11718,7 @@
         "smithy.api#documentation": "Type of the backup engine."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupEnginesGetRequest": {
+    "com.azure.recoveryservicesbackup#GetBackupEngineRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11757,13 +11772,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupEnginesList": {
+    "com.azure.recoveryservicesbackup#ListBackupEngines": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupEnginesListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListBackupEnginesRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupEnginesListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListBackupEnginesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -11783,7 +11798,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#BackupEnginesListResponse": {
+    "com.azure.recoveryservicesbackup#ListBackupEnginesResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -11793,7 +11808,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#BackupEnginesListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListBackupEnginesResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -11803,7 +11818,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupEnginesListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListBackupEnginesResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#BackupEngineBaseResource"
@@ -11880,7 +11895,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.recoveryservicesbackup#BackupEnginesListRequest": {
+    "com.azure.recoveryservicesbackup#ListBackupEnginesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11932,10 +11947,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsUpdate": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceEncryptionConfig": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsUpdateRequest"
+        "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceEncryptionConfigRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -11951,7 +11966,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsUpdateRequest": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceEncryptionConfigRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -11985,7 +12000,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsUpdateRequestTagsMap",
+          "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceEncryptionConfigRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -12007,7 +12022,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsUpdateRequestTagsMap": {
+    "com.azure.recoveryservicesbackup#UpdateBackupResourceEncryptionConfigRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -12153,13 +12168,13 @@
         "smithy.api#documentation": "Encryption At Rest Type"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsGet": {
+    "com.azure.recoveryservicesbackup#GetBackupResourceEncryptionConfig": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetBackupResourceEncryptionConfigRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsGetResponse"
+        "target": "com.azure.recoveryservicesbackup#GetBackupResourceEncryptionConfigResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -12172,7 +12187,7 @@
         "com.distilled.openapi#apiVersion": "2026-08-01"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsGetResponse": {
+    "com.azure.recoveryservicesbackup#GetBackupResourceEncryptionConfigResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -12206,7 +12221,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsGetResponseTagsMap",
+          "target": "com.azure.recoveryservicesbackup#GetBackupResourceEncryptionConfigResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -12228,7 +12243,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsGetResponseTagsMap": {
+    "com.azure.recoveryservicesbackup#GetBackupResourceEncryptionConfigResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -12282,7 +12297,7 @@
       },
       "traits": {}
     },
-    "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsGetRequest": {
+    "com.azure.recoveryservicesbackup#GetBackupResourceEncryptionConfigRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -12314,13 +12329,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#DeletedProtectionContainersList": {
+    "com.azure.recoveryservicesbackup#ListDeletedProtectionContainers": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#DeletedProtectionContainersListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListDeletedProtectionContainersRequest"
       },
       "output": {
-        "target": "com.azure.recoveryservicesbackup#DeletedProtectionContainersListResponse"
+        "target": "com.azure.recoveryservicesbackup#ListDeletedProtectionContainersResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -12340,7 +12355,7 @@
         }
       }
     },
-    "com.azure.recoveryservicesbackup#DeletedProtectionContainersListResponse": {
+    "com.azure.recoveryservicesbackup#ListDeletedProtectionContainersResponse": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -12350,7 +12365,7 @@
           }
         },
         "value": {
-          "target": "com.azure.recoveryservicesbackup#DeletedProtectionContainersListResponseValueList",
+          "target": "com.azure.recoveryservicesbackup#ListDeletedProtectionContainersResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of resources."
           }
@@ -12360,7 +12375,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.recoveryservicesbackup#DeletedProtectionContainersListResponseValueList": {
+    "com.azure.recoveryservicesbackup#ListDeletedProtectionContainersResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.recoveryservicesbackup#ProtectionContainerResource"
@@ -12369,7 +12384,7 @@
         "smithy.api#documentation": "List of resources."
       }
     },
-    "com.azure.recoveryservicesbackup#DeletedProtectionContainersListRequest": {
+    "com.azure.recoveryservicesbackup#ListDeletedProtectionContainersRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -12414,10 +12429,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#FeatureSupportValidate": {
+    "com.azure.recoveryservicesbackup#ValidateFeatureSupport": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#FeatureSupportValidateRequest"
+        "target": "com.azure.recoveryservicesbackup#ValidateFeatureSupportRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#AzureVMResourceFeatureSupportResponse"
@@ -12485,7 +12500,7 @@
         "smithy.api#documentation": "Support status of feature"
       }
     },
-    "com.azure.recoveryservicesbackup#FeatureSupportValidateRequest": {
+    "com.azure.recoveryservicesbackup#ValidateFeatureSupportRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -12516,10 +12531,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#BackupStatusGet": {
+    "com.azure.recoveryservicesbackup#GetBackupStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#BackupStatusGetRequest"
+        "target": "com.azure.recoveryservicesbackup#GetBackupStatusRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#BackupStatusResponse"
@@ -12649,7 +12664,7 @@
         "smithy.api#documentation": "Specifies the fabric name - Azure or AD"
       }
     },
-    "com.azure.recoveryservicesbackup#BackupStatusGetRequest": {
+    "com.azure.recoveryservicesbackup#GetBackupStatusRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -12691,10 +12706,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionIntentValidate": {
+    "com.azure.recoveryservicesbackup#ValidateProtectionIntent": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#ProtectionIntentValidateRequest"
+        "target": "com.azure.recoveryservicesbackup#ValidateProtectionIntentRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#PreValidateEnableBackupResponse"
@@ -12780,7 +12795,7 @@
         "smithy.api#documentation": "Validation Status"
       }
     },
-    "com.azure.recoveryservicesbackup#ProtectionIntentValidateRequest": {
+    "com.azure.recoveryservicesbackup#ValidateProtectionIntentRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -12828,10 +12843,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.recoveryservicesbackup#OperationsList": {
+    "com.azure.recoveryservicesbackup#ListOperations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.recoveryservicesbackup#OperationsListRequest"
+        "target": "com.azure.recoveryservicesbackup#ListOperationsRequest"
       },
       "output": {
         "target": "com.azure.recoveryservicesbackup#ClientDiscoveryResponse"
@@ -13010,7 +13025,7 @@
         "smithy.api#documentation": "Localized display information of an operation."
       }
     },
-    "com.azure.recoveryservicesbackup#OperationsListRequest": {
+    "com.azure.recoveryservicesbackup#ListOperationsRequest": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -13029,250 +13044,250 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.recoveryservicesbackup#PrivateEndpointGetOperationStatus"
+          "target": "com.azure.recoveryservicesbackup#GetPrivateEndpointOperationStatus"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#PrivateEndpointConnectionDelete"
+          "target": "com.azure.recoveryservicesbackup#DeletePrivateEndpointConnection"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#PrivateEndpointConnectionPut"
+          "target": "com.azure.recoveryservicesbackup#PutPrivateEndpointConnection"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#PrivateEndpointConnectionGet"
+          "target": "com.azure.recoveryservicesbackup#GetPrivateEndpointConnection"
         },
         {
           "target": "com.azure.recoveryservicesbackup#BMSTriggerDataMove"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BMSPrepareDataMove"
+          "target": "com.azure.recoveryservicesbackup#MoveBMSPrepareData"
         },
         {
           "target": "com.azure.recoveryservicesbackup#GetOperationStatus"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BMSPrepareDataMoveOperationResultGet"
+          "target": "com.azure.recoveryservicesbackup#GetBMSPrepareDataMoveOperationResult"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRPatch"
+          "target": "com.azure.recoveryservicesbackup#PatchBackupResourceStorageConfigsNonCRR"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRUpdate"
+          "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceStorageConfigsNonCRR"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceStorageConfigsNonCRRGet"
+          "target": "com.azure.recoveryservicesbackup#GetBackupResourceStorageConfigsNonCRR"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsUpdate"
+          "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceVaultConfig"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsPut"
+          "target": "com.azure.recoveryservicesbackup#PutBackupResourceVaultConfig"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceVaultConfigsGet"
+          "target": "com.azure.recoveryservicesbackup#GetBackupResourceVaultConfig"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ValidateOperationStatusesGet"
+          "target": "com.azure.recoveryservicesbackup#GetValidateOperationStatus"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ValidateOperationResultsGet"
+          "target": "com.azure.recoveryservicesbackup#GetValidateOperationResult"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#OperationValidate"
+          "target": "com.azure.recoveryservicesbackup#ValidateOperation"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupUsageSummariesList"
+          "target": "com.azure.recoveryservicesbackup#ListBackupUsageSummaries"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ValidateOperationTrigger"
+          "target": "com.azure.recoveryservicesbackup#TriggerValidateOperation"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#TieringCostOperationStatusGet"
+          "target": "com.azure.recoveryservicesbackup#GetTieringCostOperationStatus"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#GetTieringCostOperationResultGet"
+          "target": "com.azure.recoveryservicesbackup#GetGetTieringCostOperationResult"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#FetchTieringCostPost"
+          "target": "com.azure.recoveryservicesbackup#PostFetchTieringCost"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#SecurityPINsGet"
+          "target": "com.azure.recoveryservicesbackup#GetSecurityPIN"
         },
         {
           "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyUnlockDelete"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyDelete"
+          "target": "com.azure.recoveryservicesbackup#DeleteResourceGuardProxy"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyPut"
+          "target": "com.azure.recoveryservicesbackup#PutResourceGuardProxy"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ResourceGuardProxyGet"
+          "target": "com.azure.recoveryservicesbackup#GetResourceGuardProxy2"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ResourceGuardProxiesGet"
+          "target": "com.azure.recoveryservicesbackup#GetResourceGuardProxy"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupProtectionIntentList"
+          "target": "com.azure.recoveryservicesbackup#ListBackupProtectionIntent"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupProtectionContainersList"
+          "target": "com.azure.recoveryservicesbackup#ListBackupProtectionContainers"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupProtectedItemsList"
+          "target": "com.azure.recoveryservicesbackup#ListBackupProtectedItems"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupProtectableItemsList"
+          "target": "com.azure.recoveryservicesbackup#ListBackupProtectableItems"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionPolicyOperationStatusesGet"
+          "target": "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationStatus"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionPolicyOperationResultsGet"
+          "target": "com.azure.recoveryservicesbackup#GetProtectionPolicyOperationResult"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionPoliciesDelete"
+          "target": "com.azure.recoveryservicesbackup#DeleteProtectionPolicy"
         },
         {
           "target": "com.azure.recoveryservicesbackup#ProtectionPoliciesCreateOrUpdate"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionPoliciesGet"
+          "target": "com.azure.recoveryservicesbackup#GetProtectionPolicy"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupPoliciesList"
+          "target": "com.azure.recoveryservicesbackup#ListBackupPolicies"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupOperationStatusesGet"
+          "target": "com.azure.recoveryservicesbackup#GetBackupOperationStatus"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupOperationResultsGet"
+          "target": "com.azure.recoveryservicesbackup#GetBackupOperationResult"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#JobsExport"
+          "target": "com.azure.recoveryservicesbackup#ExportJob"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ExportJobsOperationResultsGet"
+          "target": "com.azure.recoveryservicesbackup#GetExportJobsOperationResult"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#JobOperationResultsGet"
+          "target": "com.azure.recoveryservicesbackup#GetJobOperationResult"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#JobCancellationsTrigger"
+          "target": "com.azure.recoveryservicesbackup#TriggerJobCancellation"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#JobDetailsGet"
+          "target": "com.azure.recoveryservicesbackup#GetJobDetail"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupJobsList"
+          "target": "com.azure.recoveryservicesbackup#ListBackupJobs"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionContainersRefresh"
+          "target": "com.azure.recoveryservicesbackup#RefreshProtectionContainer"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#RecoveryPointsRecommendedForMoveList"
+          "target": "com.azure.recoveryservicesbackup#ListRecoveryPointsRecommendedForMove"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsRevoke"
+          "target": "com.azure.recoveryservicesbackup#RevokeItemLevelRecoveryConnection"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#RestoresTrigger"
+          "target": "com.azure.recoveryservicesbackup#TriggerRestore"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsProvision"
+          "target": "com.azure.recoveryservicesbackup#ProvisionItemLevelRecoveryConnection"
         },
         {
           "target": "com.azure.recoveryservicesbackup#MoveRecoveryPoint"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ItemLevelRecoveryConnectionsListInstantItemRecoveryOperationResult"
+          "target": "com.azure.recoveryservicesbackup#ListItemLevelRecoveryConnectionInstantItemRecoveryOperationResult"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#RecoveryPointsGet"
+          "target": "com.azure.recoveryservicesbackup#GetRecoveryPoint"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#RecoveryPointsList"
+          "target": "com.azure.recoveryservicesbackup#ListRecoveryPoints"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectedItemOperationStatusesGet"
+          "target": "com.azure.recoveryservicesbackup#GetProtectedItemOperationStatus"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectedItemOperationResultsGet"
+          "target": "com.azure.recoveryservicesbackup#GetProtectedItemOperationResult"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ConfigureSourceScanExecute"
+          "target": "com.azure.recoveryservicesbackup#ExecuteConfigureSourceScan"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupsTrigger"
+          "target": "com.azure.recoveryservicesbackup#TriggerBackup"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectedItemsDelete"
+          "target": "com.azure.recoveryservicesbackup#DeleteProtectedItem"
         },
         {
           "target": "com.azure.recoveryservicesbackup#ProtectedItemsCreateOrUpdate"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectedItemsGet"
+          "target": "com.azure.recoveryservicesbackup#GetProtectedItem"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionContainerOperationResultsGet"
+          "target": "com.azure.recoveryservicesbackup#GetProtectionContainerOperationResult"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupWorkloadItemsList"
+          "target": "com.azure.recoveryservicesbackup#ListBackupWorkloadItems"
         },
         {
           "target": "com.azure.recoveryservicesbackup#ProtectionContainersInquire"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionContainersUnregister"
+          "target": "com.azure.recoveryservicesbackup#UnregisterProtectionContainer"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionContainersRegister"
+          "target": "com.azure.recoveryservicesbackup#RegisterProtectionContainer"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionContainersGet"
+          "target": "com.azure.recoveryservicesbackup#GetProtectionContainer"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectableContainersList"
+          "target": "com.azure.recoveryservicesbackup#ListProtectableContainers"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionContainerRefreshOperationResultsGet"
+          "target": "com.azure.recoveryservicesbackup#GetProtectionContainerRefreshOperationResult"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionIntentDelete"
+          "target": "com.azure.recoveryservicesbackup#DeleteProtectionIntent"
         },
         {
           "target": "com.azure.recoveryservicesbackup#ProtectionIntentCreateOrUpdate"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionIntentGet"
+          "target": "com.azure.recoveryservicesbackup#GetProtectionIntent"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupEnginesGet"
+          "target": "com.azure.recoveryservicesbackup#GetBackupEngine"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupEnginesList"
+          "target": "com.azure.recoveryservicesbackup#ListBackupEngines"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsUpdate"
+          "target": "com.azure.recoveryservicesbackup#UpdateBackupResourceEncryptionConfig"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupResourceEncryptionConfigsGet"
+          "target": "com.azure.recoveryservicesbackup#GetBackupResourceEncryptionConfig"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#DeletedProtectionContainersList"
+          "target": "com.azure.recoveryservicesbackup#ListDeletedProtectionContainers"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#FeatureSupportValidate"
+          "target": "com.azure.recoveryservicesbackup#ValidateFeatureSupport"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#BackupStatusGet"
+          "target": "com.azure.recoveryservicesbackup#GetBackupStatus"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#ProtectionIntentValidate"
+          "target": "com.azure.recoveryservicesbackup#ValidateProtectionIntent"
         },
         {
-          "target": "com.azure.recoveryservicesbackup#OperationsList"
+          "target": "com.azure.recoveryservicesbackup#ListOperations"
         }
       ],
       "traits": {

@@ -15,40 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.powerbiembedded#WorkspaceCollectionsMigrate": "com.azure.powerbiembedded#MigrateWorkspaceCollection",
-      "com.azure.powerbiembedded#WorkspaceCollectionsMigrateRequest": "com.azure.powerbiembedded#MigrateWorkspaceCollectionRequest",
-      "com.azure.powerbiembedded#WorkspaceCollectionsMigrateRequestResourcesList": "com.azure.powerbiembedded#MigrateWorkspaceCollectionRequestResourcesList",
-      "com.azure.powerbiembedded#WorkspacesList": "com.azure.powerbiembedded#ListWorkspaces",
-      "com.azure.powerbiembedded#WorkspacesListRequest": "com.azure.powerbiembedded#ListWorkspacesRequest",
-      "com.azure.powerbiembedded#WorkspaceCollectionsRegenerateKey": "com.azure.powerbiembedded#RegenerateWorkspaceCollectionKey",
-      "com.azure.powerbiembedded#WorkspaceCollectionsRegenerateKeyRequest": "com.azure.powerbiembedded#RegenerateWorkspaceCollectionKeyRequest",
-      "com.azure.powerbiembedded#WorkspaceCollectionsRegenerateKeyRequestKeyName": "com.azure.powerbiembedded#RegenerateWorkspaceCollectionKeyRequestKeyName",
-      "com.azure.powerbiembedded#WorkspaceCollectionsGetAccessKeys": "com.azure.powerbiembedded#GetWorkspaceCollectionAccessKeys",
-      "com.azure.powerbiembedded#WorkspaceCollectionsGetAccessKeysRequest": "com.azure.powerbiembedded#GetWorkspaceCollectionAccessKeysRequest",
-      "com.azure.powerbiembedded#WorkspaceCollectionsListBySubscription": "com.azure.powerbiembedded#ListWorkspaceCollectionBySubscription",
-      "com.azure.powerbiembedded#WorkspaceCollectionsListBySubscriptionRequest": "com.azure.powerbiembedded#ListWorkspaceCollectionBySubscriptionRequest",
-      "com.azure.powerbiembedded#WorkspaceCollectionsListByResourceGroup": "com.azure.powerbiembedded#ListWorkspaceCollectionByResourceGroup",
-      "com.azure.powerbiembedded#WorkspaceCollectionsListByResourceGroupRequest": "com.azure.powerbiembedded#ListWorkspaceCollectionByResourceGroupRequest",
-      "com.azure.powerbiembedded#WorkspaceCollectionsCheckNameAvailability": "com.azure.powerbiembedded#CheckWorkspaceCollectionNameAvailability",
-      "com.azure.powerbiembedded#WorkspaceCollectionsCheckNameAvailabilityRequest": "com.azure.powerbiembedded#CheckWorkspaceCollectionNameAvailabilityRequest",
-      "com.azure.powerbiembedded#WorkspaceCollectionsDelete": "com.azure.powerbiembedded#DeleteWorkspaceCollection",
-      "com.azure.powerbiembedded#WorkspaceCollectionsDeleteRequest": "com.azure.powerbiembedded#DeleteWorkspaceCollectionRequest",
-      "com.azure.powerbiembedded#WorkspaceCollectionsUpdate": "com.azure.powerbiembedded#UpdateWorkspaceCollection",
-      "com.azure.powerbiembedded#WorkspaceCollectionsUpdateRequest": "com.azure.powerbiembedded#UpdateWorkspaceCollectionRequest",
-      "com.azure.powerbiembedded#WorkspaceCollectionsUpdateRequestTagsMap": "com.azure.powerbiembedded#UpdateWorkspaceCollectionRequestTagsMap",
-      "com.azure.powerbiembedded#WorkspaceCollectionsCreate": "com.azure.powerbiembedded#CreateWorkspaceCollection",
-      "com.azure.powerbiembedded#WorkspaceCollectionsCreateRequest": "com.azure.powerbiembedded#CreateWorkspaceCollectionRequest",
-      "com.azure.powerbiembedded#WorkspaceCollectionsCreateRequestTagsMap": "com.azure.powerbiembedded#CreateWorkspaceCollectionRequestTagsMap",
-      "com.azure.powerbiembedded#WorkspaceCollectionsGetByName": "com.azure.powerbiembedded#GetWorkspaceCollectionByName",
-      "com.azure.powerbiembedded#WorkspaceCollectionsGetByNameRequest": "com.azure.powerbiembedded#GetWorkspaceCollectionByNameRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.powerbiembedded#WorkspaceCollectionsMigrate": {
+    "com.azure.powerbiembedded#MigrateWorkspaceCollection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbiembedded#WorkspaceCollectionsMigrateRequest"
+        "target": "com.azure.powerbiembedded#MigrateWorkspaceCollectionRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -64,7 +37,7 @@
         "com.distilled.openapi#apiVersion": "2016-01-29"
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsMigrateRequest": {
+    "com.azure.powerbiembedded#MigrateWorkspaceCollectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -90,24 +63,24 @@
           }
         },
         "resources": {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsMigrateRequestResourcesList"
+          "target": "com.azure.powerbiembedded#MigrateWorkspaceCollectionRequestResourcesList"
         }
       },
       "traits": {
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsMigrateRequestResourcesList": {
+    "com.azure.powerbiembedded#MigrateWorkspaceCollectionRequestResourcesList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.powerbiembedded#WorkspacesList": {
+    "com.azure.powerbiembedded#ListWorkspaces": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbiembedded#WorkspacesListRequest"
+        "target": "com.azure.powerbiembedded#ListWorkspacesRequest"
       },
       "output": {
         "target": "com.azure.powerbiembedded#WorkspaceList"
@@ -173,7 +146,7 @@
       },
       "traits": {}
     },
-    "com.azure.powerbiembedded#WorkspacesListRequest": {
+    "com.azure.powerbiembedded#ListWorkspacesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -291,10 +264,10 @@
       },
       "traits": {}
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsRegenerateKey": {
+    "com.azure.powerbiembedded#RegenerateWorkspaceCollectionKey": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbiembedded#WorkspaceCollectionsRegenerateKeyRequest"
+        "target": "com.azure.powerbiembedded#RegenerateWorkspaceCollectionKeyRequest"
       },
       "output": {
         "target": "com.azure.powerbiembedded#WorkspaceCollectionAccessKeys"
@@ -328,7 +301,7 @@
       },
       "traits": {}
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsRegenerateKeyRequest": {
+    "com.azure.powerbiembedded#RegenerateWorkspaceCollectionKeyRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -356,7 +329,7 @@
           }
         },
         "keyName": {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsRegenerateKeyRequestKeyName",
+          "target": "com.azure.powerbiembedded#RegenerateWorkspaceCollectionKeyRequestKeyName",
           "traits": {
             "smithy.api#documentation": "Key name"
           }
@@ -366,7 +339,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsRegenerateKeyRequestKeyName": {
+    "com.azure.powerbiembedded#RegenerateWorkspaceCollectionKeyRequestKeyName": {
       "type": "enum",
       "members": {
         "KEY1": {
@@ -386,10 +359,10 @@
         "smithy.api#documentation": "Key name"
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsGetAccessKeys": {
+    "com.azure.powerbiembedded#GetWorkspaceCollectionAccessKeys": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbiembedded#WorkspaceCollectionsGetAccessKeysRequest"
+        "target": "com.azure.powerbiembedded#GetWorkspaceCollectionAccessKeysRequest"
       },
       "output": {
         "target": "com.azure.powerbiembedded#WorkspaceCollectionAccessKeys"
@@ -405,7 +378,7 @@
         "com.distilled.openapi#apiVersion": "2016-01-29"
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsGetAccessKeysRequest": {
+    "com.azure.powerbiembedded#GetWorkspaceCollectionAccessKeysRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -437,10 +410,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsListBySubscription": {
+    "com.azure.powerbiembedded#ListWorkspaceCollectionBySubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbiembedded#WorkspaceCollectionsListBySubscriptionRequest"
+        "target": "com.azure.powerbiembedded#ListWorkspaceCollectionBySubscriptionRequest"
       },
       "output": {
         "target": "com.azure.powerbiembedded#WorkspaceCollectionList"
@@ -576,7 +549,7 @@
       },
       "traits": {}
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsListBySubscriptionRequest": {
+    "com.azure.powerbiembedded#ListWorkspaceCollectionBySubscriptionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -592,10 +565,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsListByResourceGroup": {
+    "com.azure.powerbiembedded#ListWorkspaceCollectionByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbiembedded#WorkspaceCollectionsListByResourceGroupRequest"
+        "target": "com.azure.powerbiembedded#ListWorkspaceCollectionByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.powerbiembedded#WorkspaceCollectionList"
@@ -615,7 +588,7 @@
         }
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsListByResourceGroupRequest": {
+    "com.azure.powerbiembedded#ListWorkspaceCollectionByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -639,10 +612,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsCheckNameAvailability": {
+    "com.azure.powerbiembedded#CheckWorkspaceCollectionNameAvailability": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbiembedded#WorkspaceCollectionsCheckNameAvailabilityRequest"
+        "target": "com.azure.powerbiembedded#CheckWorkspaceCollectionNameAvailabilityRequest"
       },
       "output": {
         "target": "com.azure.powerbiembedded#CheckNameResponse"
@@ -702,7 +675,7 @@
         "smithy.api#documentation": "Reason why the workspace collection name cannot be used."
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsCheckNameAvailabilityRequest": {
+    "com.azure.powerbiembedded#CheckWorkspaceCollectionNameAvailabilityRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -738,10 +711,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsDelete": {
+    "com.azure.powerbiembedded#DeleteWorkspaceCollection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbiembedded#WorkspaceCollectionsDeleteRequest"
+        "target": "com.azure.powerbiembedded#DeleteWorkspaceCollectionRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -757,7 +730,7 @@
         "com.distilled.openapi#apiVersion": "2016-01-29"
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsDeleteRequest": {
+    "com.azure.powerbiembedded#DeleteWorkspaceCollectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -789,10 +762,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsUpdate": {
+    "com.azure.powerbiembedded#UpdateWorkspaceCollection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbiembedded#WorkspaceCollectionsUpdateRequest"
+        "target": "com.azure.powerbiembedded#UpdateWorkspaceCollectionRequest"
       },
       "output": {
         "target": "com.azure.powerbiembedded#WorkspaceCollection"
@@ -808,7 +781,7 @@
         "com.distilled.openapi#apiVersion": "2016-01-29"
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsUpdateRequest": {
+    "com.azure.powerbiembedded#UpdateWorkspaceCollectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -836,7 +809,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsUpdateRequestTagsMap"
+          "target": "com.azure.powerbiembedded#UpdateWorkspaceCollectionRequestTagsMap"
         },
         "sku": {
           "target": "com.azure.powerbiembedded#AzureSku"
@@ -846,7 +819,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsUpdateRequestTagsMap": {
+    "com.azure.powerbiembedded#UpdateWorkspaceCollectionRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -856,10 +829,10 @@
       },
       "traits": {}
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsCreate": {
+    "com.azure.powerbiembedded#CreateWorkspaceCollection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbiembedded#WorkspaceCollectionsCreateRequest"
+        "target": "com.azure.powerbiembedded#CreateWorkspaceCollectionRequest"
       },
       "output": {
         "target": "com.azure.powerbiembedded#WorkspaceCollection"
@@ -875,7 +848,7 @@
         "com.distilled.openapi#apiVersion": "2016-01-29"
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsCreateRequest": {
+    "com.azure.powerbiembedded#CreateWorkspaceCollectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -909,7 +882,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsCreateRequestTagsMap"
+          "target": "com.azure.powerbiembedded#CreateWorkspaceCollectionRequestTagsMap"
         },
         "sku": {
           "target": "com.azure.powerbiembedded#AzureSku"
@@ -919,7 +892,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsCreateRequestTagsMap": {
+    "com.azure.powerbiembedded#CreateWorkspaceCollectionRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -929,10 +902,10 @@
       },
       "traits": {}
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsGetByName": {
+    "com.azure.powerbiembedded#GetWorkspaceCollectionByName": {
       "type": "operation",
       "input": {
-        "target": "com.azure.powerbiembedded#WorkspaceCollectionsGetByNameRequest"
+        "target": "com.azure.powerbiembedded#GetWorkspaceCollectionByNameRequest"
       },
       "output": {
         "target": "com.azure.powerbiembedded#WorkspaceCollection"
@@ -948,7 +921,7 @@
         "com.distilled.openapi#apiVersion": "2016-01-29"
       }
     },
-    "com.azure.powerbiembedded#WorkspaceCollectionsGetByNameRequest": {
+    "com.azure.powerbiembedded#GetWorkspaceCollectionByNameRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -985,40 +958,40 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsMigrate"
+          "target": "com.azure.powerbiembedded#MigrateWorkspaceCollection"
         },
         {
-          "target": "com.azure.powerbiembedded#WorkspacesList"
+          "target": "com.azure.powerbiembedded#ListWorkspaces"
         },
         {
           "target": "com.azure.powerbiembedded#GetAvailableOperations"
         },
         {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsRegenerateKey"
+          "target": "com.azure.powerbiembedded#RegenerateWorkspaceCollectionKey"
         },
         {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsGetAccessKeys"
+          "target": "com.azure.powerbiembedded#GetWorkspaceCollectionAccessKeys"
         },
         {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsListBySubscription"
+          "target": "com.azure.powerbiembedded#ListWorkspaceCollectionBySubscription"
         },
         {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsListByResourceGroup"
+          "target": "com.azure.powerbiembedded#ListWorkspaceCollectionByResourceGroup"
         },
         {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsCheckNameAvailability"
+          "target": "com.azure.powerbiembedded#CheckWorkspaceCollectionNameAvailability"
         },
         {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsDelete"
+          "target": "com.azure.powerbiembedded#DeleteWorkspaceCollection"
         },
         {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsUpdate"
+          "target": "com.azure.powerbiembedded#UpdateWorkspaceCollection"
         },
         {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsCreate"
+          "target": "com.azure.powerbiembedded#CreateWorkspaceCollection"
         },
         {
-          "target": "com.azure.powerbiembedded#WorkspaceCollectionsGetByName"
+          "target": "com.azure.powerbiembedded#GetWorkspaceCollectionByName"
         }
       ],
       "traits": {

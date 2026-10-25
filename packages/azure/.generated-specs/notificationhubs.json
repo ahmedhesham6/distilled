@@ -15,102 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.notificationhubs#PrivateEndpointConnectionsListGroupIds": "com.azure.notificationhubs#ListPrivateEndpointConnectionGroupIds",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsListGroupIdsRequest": "com.azure.notificationhubs#ListPrivateEndpointConnectionGroupIdsRequest",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsGetGroupId": "com.azure.notificationhubs#GetPrivateEndpointConnectionGroupId",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsGetGroupIdResponse": "com.azure.notificationhubs#GetPrivateEndpointConnectionGroupIdResponse",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsGetGroupIdRequest": "com.azure.notificationhubs#GetPrivateEndpointConnectionGroupIdRequest",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsList": "com.azure.notificationhubs#ListPrivateEndpointConnections",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsListRequest": "com.azure.notificationhubs#ListPrivateEndpointConnectionsRequest",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsDelete": "com.azure.notificationhubs#DeletePrivateEndpointConnection",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsDeleteResponse": "com.azure.notificationhubs#DeletePrivateEndpointConnectionResponse",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsDeleteRequest": "com.azure.notificationhubs#DeletePrivateEndpointConnectionRequest",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsUpdate": "com.azure.notificationhubs#UpdatePrivateEndpointConnection",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsUpdateResponse": "com.azure.notificationhubs#UpdatePrivateEndpointConnectionResponse",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsUpdateRequest": "com.azure.notificationhubs#UpdatePrivateEndpointConnectionRequest",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsGet": "com.azure.notificationhubs#GetPrivateEndpointConnection",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsGetResponse": "com.azure.notificationhubs#GetPrivateEndpointConnectionResponse",
-      "com.azure.notificationhubs#PrivateEndpointConnectionsGetRequest": "com.azure.notificationhubs#GetPrivateEndpointConnectionRequest",
-      "com.azure.notificationhubs#OperationsList": "com.azure.notificationhubs#ListOperations",
-      "com.azure.notificationhubs#OperationsListRequest": "com.azure.notificationhubs#ListOperationsRequest",
-      "com.azure.notificationhubs#NamespacesGetPnsCredentials": "com.azure.notificationhubs#GetNamespacePnsCredentials",
-      "com.azure.notificationhubs#NamespacesGetPnsCredentialsResponse": "com.azure.notificationhubs#GetNamespacePnsCredentialsResponse",
-      "com.azure.notificationhubs#NamespacesGetPnsCredentialsResponseTagsMap": "com.azure.notificationhubs#GetNamespacePnsCredentialsResponseTagsMap",
-      "com.azure.notificationhubs#NamespacesGetPnsCredentialsRequest": "com.azure.notificationhubs#GetNamespacePnsCredentialsRequest",
-      "com.azure.notificationhubs#NamespacesRegenerateKeys": "com.azure.notificationhubs#RegenerateNamespaceKeys",
-      "com.azure.notificationhubs#NamespacesRegenerateKeysRequest": "com.azure.notificationhubs#RegenerateNamespaceKeysRequest",
-      "com.azure.notificationhubs#NamespacesListKeys": "com.azure.notificationhubs#ListNamespaceKeys",
-      "com.azure.notificationhubs#NamespacesListKeysRequest": "com.azure.notificationhubs#ListNamespaceKeysRequest",
-      "com.azure.notificationhubs#NamespacesListAuthorizationRules": "com.azure.notificationhubs#ListNamespaceAuthorizationRules",
-      "com.azure.notificationhubs#NamespacesListAuthorizationRulesRequest": "com.azure.notificationhubs#ListNamespaceAuthorizationRulesRequest",
-      "com.azure.notificationhubs#NamespacesDeleteAuthorizationRule": "com.azure.notificationhubs#DeleteNamespaceAuthorizationRule",
-      "com.azure.notificationhubs#NamespacesDeleteAuthorizationRuleRequest": "com.azure.notificationhubs#DeleteNamespaceAuthorizationRuleRequest",
-      "com.azure.notificationhubs#NamespacesGetAuthorizationRule": "com.azure.notificationhubs#GetNamespaceAuthorizationRule",
-      "com.azure.notificationhubs#NamespacesGetAuthorizationRuleResponse": "com.azure.notificationhubs#GetNamespaceAuthorizationRuleResponse",
-      "com.azure.notificationhubs#NamespacesGetAuthorizationRuleResponseTagsMap": "com.azure.notificationhubs#GetNamespaceAuthorizationRuleResponseTagsMap",
-      "com.azure.notificationhubs#NamespacesGetAuthorizationRuleRequest": "com.azure.notificationhubs#GetNamespaceAuthorizationRuleRequest",
-      "com.azure.notificationhubs#NamespacesList": "com.azure.notificationhubs#ListNamespaces",
-      "com.azure.notificationhubs#NamespacesListRequest": "com.azure.notificationhubs#ListNamespacesRequest",
-      "com.azure.notificationhubs#NamespacesListAll": "com.azure.notificationhubs#ListNamespaceAll",
-      "com.azure.notificationhubs#NamespacesListAllRequest": "com.azure.notificationhubs#ListNamespaceAllRequest",
-      "com.azure.notificationhubs#NamespacesDelete": "com.azure.notificationhubs#DeleteNamespace",
-      "com.azure.notificationhubs#NamespacesDeleteRequest": "com.azure.notificationhubs#DeleteNamespaceRequest",
-      "com.azure.notificationhubs#NamespacesUpdate": "com.azure.notificationhubs#UpdateNamespace",
-      "com.azure.notificationhubs#NamespacesUpdateResponse": "com.azure.notificationhubs#UpdateNamespaceResponse",
-      "com.azure.notificationhubs#NamespacesUpdateResponseTagsMap": "com.azure.notificationhubs#UpdateNamespaceResponseTagsMap",
-      "com.azure.notificationhubs#NamespacesUpdateRequest": "com.azure.notificationhubs#UpdateNamespaceRequest",
-      "com.azure.notificationhubs#NamespacesUpdateRequestTagsMap": "com.azure.notificationhubs#UpdateNamespaceRequestTagsMap",
-      "com.azure.notificationhubs#NamespacesGet": "com.azure.notificationhubs#GetNamespace",
-      "com.azure.notificationhubs#NamespacesGetResponse": "com.azure.notificationhubs#GetNamespaceResponse",
-      "com.azure.notificationhubs#NamespacesGetResponseTagsMap": "com.azure.notificationhubs#GetNamespaceResponseTagsMap",
-      "com.azure.notificationhubs#NamespacesGetRequest": "com.azure.notificationhubs#GetNamespaceRequest",
-      "com.azure.notificationhubs#NamespacesCheckAvailability": "com.azure.notificationhubs#CheckNamespaceAvailability",
-      "com.azure.notificationhubs#NamespacesCheckAvailabilityResponse": "com.azure.notificationhubs#CheckNamespaceAvailabilityResponse",
-      "com.azure.notificationhubs#NamespacesCheckAvailabilityResponseTagsMap": "com.azure.notificationhubs#CheckNamespaceAvailabilityResponseTagsMap",
-      "com.azure.notificationhubs#NamespacesCheckAvailabilityRequest": "com.azure.notificationhubs#CheckNamespaceAvailabilityRequest",
-      "com.azure.notificationhubs#NamespacesCheckAvailabilityRequestTagsMap": "com.azure.notificationhubs#CheckNamespaceAvailabilityRequestTagsMap",
-      "com.azure.notificationhubs#NotificationHubsGetPnsCredentials": "com.azure.notificationhubs#GetNotificationHubPnsCredentials",
-      "com.azure.notificationhubs#NotificationHubsGetPnsCredentialsResponse": "com.azure.notificationhubs#GetNotificationHubPnsCredentialsResponse",
-      "com.azure.notificationhubs#NotificationHubsGetPnsCredentialsResponseTagsMap": "com.azure.notificationhubs#GetNotificationHubPnsCredentialsResponseTagsMap",
-      "com.azure.notificationhubs#NotificationHubsGetPnsCredentialsRequest": "com.azure.notificationhubs#GetNotificationHubPnsCredentialsRequest",
-      "com.azure.notificationhubs#NotificationHubsRegenerateKeys": "com.azure.notificationhubs#RegenerateNotificationHubKeys",
-      "com.azure.notificationhubs#NotificationHubsRegenerateKeysRequest": "com.azure.notificationhubs#RegenerateNotificationHubKeysRequest",
-      "com.azure.notificationhubs#NotificationHubsListKeys": "com.azure.notificationhubs#ListNotificationHubKeys",
-      "com.azure.notificationhubs#NotificationHubsListKeysRequest": "com.azure.notificationhubs#ListNotificationHubKeysRequest",
-      "com.azure.notificationhubs#NotificationHubsListAuthorizationRules": "com.azure.notificationhubs#ListNotificationHubAuthorizationRules",
-      "com.azure.notificationhubs#NotificationHubsListAuthorizationRulesRequest": "com.azure.notificationhubs#ListNotificationHubAuthorizationRulesRequest",
-      "com.azure.notificationhubs#NotificationHubsDeleteAuthorizationRule": "com.azure.notificationhubs#DeleteNotificationHubAuthorizationRule",
-      "com.azure.notificationhubs#NotificationHubsDeleteAuthorizationRuleRequest": "com.azure.notificationhubs#DeleteNotificationHubAuthorizationRuleRequest",
-      "com.azure.notificationhubs#NotificationHubsGetAuthorizationRule": "com.azure.notificationhubs#GetNotificationHubAuthorizationRule",
-      "com.azure.notificationhubs#NotificationHubsGetAuthorizationRuleResponse": "com.azure.notificationhubs#GetNotificationHubAuthorizationRuleResponse",
-      "com.azure.notificationhubs#NotificationHubsGetAuthorizationRuleResponseTagsMap": "com.azure.notificationhubs#GetNotificationHubAuthorizationRuleResponseTagsMap",
-      "com.azure.notificationhubs#NotificationHubsGetAuthorizationRuleRequest": "com.azure.notificationhubs#GetNotificationHubAuthorizationRuleRequest",
-      "com.azure.notificationhubs#NotificationHubsList": "com.azure.notificationhubs#ListNotificationHubs",
-      "com.azure.notificationhubs#NotificationHubsListRequest": "com.azure.notificationhubs#ListNotificationHubsRequest",
-      "com.azure.notificationhubs#NotificationHubsDelete": "com.azure.notificationhubs#DeleteNotificationHub",
-      "com.azure.notificationhubs#NotificationHubsDeleteRequest": "com.azure.notificationhubs#DeleteNotificationHubRequest",
-      "com.azure.notificationhubs#NotificationHubsUpdate": "com.azure.notificationhubs#UpdateNotificationHub",
-      "com.azure.notificationhubs#NotificationHubsUpdateResponse": "com.azure.notificationhubs#UpdateNotificationHubResponse",
-      "com.azure.notificationhubs#NotificationHubsUpdateResponseTagsMap": "com.azure.notificationhubs#UpdateNotificationHubResponseTagsMap",
-      "com.azure.notificationhubs#NotificationHubsUpdateRequest": "com.azure.notificationhubs#UpdateNotificationHubRequest",
-      "com.azure.notificationhubs#NotificationHubsUpdateRequestTagsMap": "com.azure.notificationhubs#UpdateNotificationHubRequestTagsMap",
-      "com.azure.notificationhubs#NotificationHubsGet": "com.azure.notificationhubs#GetNotificationHub",
-      "com.azure.notificationhubs#NotificationHubsGetResponse": "com.azure.notificationhubs#GetNotificationHubResponse",
-      "com.azure.notificationhubs#NotificationHubsGetResponseTagsMap": "com.azure.notificationhubs#GetNotificationHubResponseTagsMap",
-      "com.azure.notificationhubs#NotificationHubsGetRequest": "com.azure.notificationhubs#GetNotificationHubRequest",
-      "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailability": "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailability",
-      "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailabilityResponse": "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailabilityResponse",
-      "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailabilityResponseTagsMap": "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailabilityResponseTagsMap",
-      "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailabilityRequest": "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailabilityRequest",
-      "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailabilityRequestTagsMap": "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailabilityRequestTagsMap"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.notificationhubs#PrivateEndpointConnectionsListGroupIds": {
+    "com.azure.notificationhubs#ListPrivateEndpointConnectionGroupIds": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#PrivateEndpointConnectionsListGroupIdsRequest"
+        "target": "com.azure.notificationhubs#ListPrivateEndpointConnectionGroupIdsRequest"
       },
       "output": {
         "target": "com.azure.notificationhubs#PrivateLinkResourceListResult"
@@ -346,7 +257,7 @@
         "smithy.api#documentation": "The type of identity that created the resource."
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsListGroupIdsRequest": {
+    "com.azure.notificationhubs#ListPrivateEndpointConnectionGroupIdsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -378,13 +289,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsGetGroupId": {
+    "com.azure.notificationhubs#GetPrivateEndpointConnectionGroupId": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#PrivateEndpointConnectionsGetGroupIdRequest"
+        "target": "com.azure.notificationhubs#GetPrivateEndpointConnectionGroupIdRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#PrivateEndpointConnectionsGetGroupIdResponse"
+        "target": "com.azure.notificationhubs#GetPrivateEndpointConnectionGroupIdResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -397,7 +308,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsGetGroupIdResponse": {
+    "com.azure.notificationhubs#GetPrivateEndpointConnectionGroupIdResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -432,7 +343,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsGetGroupIdRequest": {
+    "com.azure.notificationhubs#GetPrivateEndpointConnectionGroupIdRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -472,10 +383,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsList": {
+    "com.azure.notificationhubs#ListPrivateEndpointConnections": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#PrivateEndpointConnectionsListRequest"
+        "target": "com.azure.notificationhubs#ListPrivateEndpointConnectionsRequest"
       },
       "output": {
         "target": "com.azure.notificationhubs#PrivateEndpointConnectionResourceListResult"
@@ -716,7 +627,7 @@
         "smithy.api#documentation": "State of Private Endpoint Connection."
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsListRequest": {
+    "com.azure.notificationhubs#ListPrivateEndpointConnectionsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -748,13 +659,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsDelete": {
+    "com.azure.notificationhubs#DeletePrivateEndpointConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#PrivateEndpointConnectionsDeleteRequest"
+        "target": "com.azure.notificationhubs#DeletePrivateEndpointConnectionRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#PrivateEndpointConnectionsDeleteResponse"
+        "target": "com.azure.notificationhubs#DeletePrivateEndpointConnectionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -767,7 +678,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsDeleteResponse": {
+    "com.azure.notificationhubs#DeletePrivateEndpointConnectionResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -781,7 +692,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsDeleteRequest": {
+    "com.azure.notificationhubs#DeletePrivateEndpointConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -821,13 +732,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsUpdate": {
+    "com.azure.notificationhubs#UpdatePrivateEndpointConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#PrivateEndpointConnectionsUpdateRequest"
+        "target": "com.azure.notificationhubs#UpdatePrivateEndpointConnectionRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#PrivateEndpointConnectionsUpdateResponse"
+        "target": "com.azure.notificationhubs#UpdatePrivateEndpointConnectionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -840,7 +751,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsUpdateResponse": {
+    "com.azure.notificationhubs#UpdatePrivateEndpointConnectionResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -875,7 +786,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsUpdateRequest": {
+    "com.azure.notificationhubs#UpdatePrivateEndpointConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -953,13 +864,13 @@
         "smithy.api#documentation": "Represents a Private Endpoint that is connected to Notification Hubs namespace using Private Endpoint Connection."
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsGet": {
+    "com.azure.notificationhubs#GetPrivateEndpointConnection": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#PrivateEndpointConnectionsGetRequest"
+        "target": "com.azure.notificationhubs#GetPrivateEndpointConnectionRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#PrivateEndpointConnectionsGetResponse"
+        "target": "com.azure.notificationhubs#GetPrivateEndpointConnectionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -972,7 +883,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsGetResponse": {
+    "com.azure.notificationhubs#GetPrivateEndpointConnectionResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1007,7 +918,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#PrivateEndpointConnectionsGetRequest": {
+    "com.azure.notificationhubs#GetPrivateEndpointConnectionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1047,10 +958,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#OperationsList": {
+    "com.azure.notificationhubs#ListOperations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#OperationsListRequest"
+        "target": "com.azure.notificationhubs#ListOperationsRequest"
       },
       "output": {
         "target": "com.azure.notificationhubs#OperationListResult"
@@ -1320,7 +1231,7 @@
         "smithy.api#documentation": "The object that represents the operation."
       }
     },
-    "com.azure.notificationhubs#OperationsListRequest": {
+    "com.azure.notificationhubs#ListOperationsRequest": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -1334,13 +1245,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesGetPnsCredentials": {
+    "com.azure.notificationhubs#GetNamespacePnsCredentials": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NamespacesGetPnsCredentialsRequest"
+        "target": "com.azure.notificationhubs#GetNamespacePnsCredentialsRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#NamespacesGetPnsCredentialsResponse"
+        "target": "com.azure.notificationhubs#GetNamespacePnsCredentialsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1353,7 +1264,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NamespacesGetPnsCredentialsResponse": {
+    "com.azure.notificationhubs#GetNamespacePnsCredentialsResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1390,7 +1301,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NamespacesGetPnsCredentialsResponseTagsMap",
+          "target": "com.azure.notificationhubs#GetNamespacePnsCredentialsResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Deprecated - only for compatibility."
           }
@@ -1400,7 +1311,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesGetPnsCredentialsResponseTagsMap": {
+    "com.azure.notificationhubs#GetNamespacePnsCredentialsResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1811,7 +1722,7 @@
         "smithy.api#documentation": "Description of a NotificationHub AdmCredential."
       }
     },
-    "com.azure.notificationhubs#NamespacesGetPnsCredentialsRequest": {
+    "com.azure.notificationhubs#GetNamespacePnsCredentialsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1843,10 +1754,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesRegenerateKeys": {
+    "com.azure.notificationhubs#RegenerateNamespaceKeys": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NamespacesRegenerateKeysRequest"
+        "target": "com.azure.notificationhubs#RegenerateNamespaceKeysRequest"
       },
       "output": {
         "target": "com.azure.notificationhubs#ResourceListKeys"
@@ -1900,7 +1811,7 @@
         "smithy.api#documentation": "Response for the POST request that returns Namespace or NotificationHub access keys (connection strings)."
       }
     },
-    "com.azure.notificationhubs#NamespacesRegenerateKeysRequest": {
+    "com.azure.notificationhubs#RegenerateNamespaceKeysRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1966,10 +1877,10 @@
         "smithy.api#documentation": "Type of Shared Access Policy Key (primary or secondary)."
       }
     },
-    "com.azure.notificationhubs#NamespacesListKeys": {
+    "com.azure.notificationhubs#ListNamespaceKeys": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NamespacesListKeysRequest"
+        "target": "com.azure.notificationhubs#ListNamespaceKeysRequest"
       },
       "output": {
         "target": "com.azure.notificationhubs#ResourceListKeys"
@@ -1985,7 +1896,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NamespacesListKeysRequest": {
+    "com.azure.notificationhubs#ListNamespaceKeysRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2025,10 +1936,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesListAuthorizationRules": {
+    "com.azure.notificationhubs#ListNamespaceAuthorizationRules": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NamespacesListAuthorizationRulesRequest"
+        "target": "com.azure.notificationhubs#ListNamespaceAuthorizationRulesRequest"
       },
       "output": {
         "target": "com.azure.notificationhubs#SharedAccessAuthorizationRuleListResult"
@@ -2237,7 +2148,7 @@
         "smithy.api#documentation": "Defines values for AccessRights."
       }
     },
-    "com.azure.notificationhubs#NamespacesListAuthorizationRulesRequest": {
+    "com.azure.notificationhubs#ListNamespaceAuthorizationRulesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2275,10 +2186,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesDeleteAuthorizationRule": {
+    "com.azure.notificationhubs#DeleteNamespaceAuthorizationRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NamespacesDeleteAuthorizationRuleRequest"
+        "target": "com.azure.notificationhubs#DeleteNamespaceAuthorizationRuleRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -2294,7 +2205,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NamespacesDeleteAuthorizationRuleRequest": {
+    "com.azure.notificationhubs#DeleteNamespaceAuthorizationRuleRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2515,13 +2426,13 @@
         "smithy.api#documentation": "Gets or sets the rights associated with the rule."
       }
     },
-    "com.azure.notificationhubs#NamespacesGetAuthorizationRule": {
+    "com.azure.notificationhubs#GetNamespaceAuthorizationRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NamespacesGetAuthorizationRuleRequest"
+        "target": "com.azure.notificationhubs#GetNamespaceAuthorizationRuleRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#NamespacesGetAuthorizationRuleResponse"
+        "target": "com.azure.notificationhubs#GetNamespaceAuthorizationRuleResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2534,7 +2445,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NamespacesGetAuthorizationRuleResponse": {
+    "com.azure.notificationhubs#GetNamespaceAuthorizationRuleResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -2571,7 +2482,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NamespacesGetAuthorizationRuleResponseTagsMap",
+          "target": "com.azure.notificationhubs#GetNamespaceAuthorizationRuleResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Deprecated - only for compatibility."
           }
@@ -2581,7 +2492,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesGetAuthorizationRuleResponseTagsMap": {
+    "com.azure.notificationhubs#GetNamespaceAuthorizationRuleResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -2593,7 +2504,7 @@
         "smithy.api#documentation": "Deprecated - only for compatibility."
       }
     },
-    "com.azure.notificationhubs#NamespacesGetAuthorizationRuleRequest": {
+    "com.azure.notificationhubs#GetNamespaceAuthorizationRuleRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2633,10 +2544,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesList": {
+    "com.azure.notificationhubs#ListNamespaces": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NamespacesListRequest"
+        "target": "com.azure.notificationhubs#ListNamespacesRequest"
       },
       "output": {
         "target": "com.azure.notificationhubs#NamespaceListResult"
@@ -3210,7 +3121,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.notificationhubs#NamespacesListRequest": {
+    "com.azure.notificationhubs#ListNamespacesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3254,10 +3165,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesListAll": {
+    "com.azure.notificationhubs#ListNamespaceAll": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NamespacesListAllRequest"
+        "target": "com.azure.notificationhubs#ListNamespaceAllRequest"
       },
       "output": {
         "target": "com.azure.notificationhubs#NamespaceListResult"
@@ -3280,7 +3191,7 @@
         }
       }
     },
-    "com.azure.notificationhubs#NamespacesListAllRequest": {
+    "com.azure.notificationhubs#ListNamespaceAllRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3316,10 +3227,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesDelete": {
+    "com.azure.notificationhubs#DeleteNamespace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NamespacesDeleteRequest"
+        "target": "com.azure.notificationhubs#DeleteNamespaceRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -3335,7 +3246,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NamespacesDeleteRequest": {
+    "com.azure.notificationhubs#DeleteNamespaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3367,13 +3278,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesUpdate": {
+    "com.azure.notificationhubs#UpdateNamespace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NamespacesUpdateRequest"
+        "target": "com.azure.notificationhubs#UpdateNamespaceRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#NamespacesUpdateResponse"
+        "target": "com.azure.notificationhubs#UpdateNamespaceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3386,7 +3297,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NamespacesUpdateResponse": {
+    "com.azure.notificationhubs#UpdateNamespaceResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -3414,7 +3325,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NamespacesUpdateResponseTagsMap",
+          "target": "com.azure.notificationhubs#UpdateNamespaceResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -3440,7 +3351,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesUpdateResponseTagsMap": {
+    "com.azure.notificationhubs#UpdateNamespaceResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3452,7 +3363,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.notificationhubs#NamespacesUpdateRequest": {
+    "com.azure.notificationhubs#UpdateNamespaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3486,14 +3397,14 @@
           "target": "com.azure.notificationhubs#NamespacePropertiesInput"
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NamespacesUpdateRequestTagsMap"
+          "target": "com.azure.notificationhubs#UpdateNamespaceRequestTagsMap"
         }
       },
       "traits": {
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesUpdateRequestTagsMap": {
+    "com.azure.notificationhubs#UpdateNamespaceRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3698,13 +3609,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.notificationhubs#NamespacesGet": {
+    "com.azure.notificationhubs#GetNamespace": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NamespacesGetRequest"
+        "target": "com.azure.notificationhubs#GetNamespaceRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#NamespacesGetResponse"
+        "target": "com.azure.notificationhubs#GetNamespaceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3717,7 +3628,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NamespacesGetResponse": {
+    "com.azure.notificationhubs#GetNamespaceResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -3745,7 +3656,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NamespacesGetResponseTagsMap",
+          "target": "com.azure.notificationhubs#GetNamespaceResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -3771,7 +3682,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesGetResponseTagsMap": {
+    "com.azure.notificationhubs#GetNamespaceResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3783,7 +3694,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.notificationhubs#NamespacesGetRequest": {
+    "com.azure.notificationhubs#GetNamespaceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3815,13 +3726,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesCheckAvailability": {
+    "com.azure.notificationhubs#CheckNamespaceAvailability": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NamespacesCheckAvailabilityRequest"
+        "target": "com.azure.notificationhubs#CheckNamespaceAvailabilityRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#NamespacesCheckAvailabilityResponse"
+        "target": "com.azure.notificationhubs#CheckNamespaceAvailabilityResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3834,7 +3745,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NamespacesCheckAvailabilityResponse": {
+    "com.azure.notificationhubs#CheckNamespaceAvailabilityResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -3874,7 +3785,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NamespacesCheckAvailabilityResponseTagsMap",
+          "target": "com.azure.notificationhubs#CheckNamespaceAvailabilityResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Deprecated - only for compatibility."
           }
@@ -3887,7 +3798,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesCheckAvailabilityResponseTagsMap": {
+    "com.azure.notificationhubs#CheckNamespaceAvailabilityResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3899,7 +3810,7 @@
         "smithy.api#documentation": "Deprecated - only for compatibility."
       }
     },
-    "com.azure.notificationhubs#NamespacesCheckAvailabilityRequest": {
+    "com.azure.notificationhubs#CheckNamespaceAvailabilityRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3924,7 +3835,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NamespacesCheckAvailabilityRequestTagsMap",
+          "target": "com.azure.notificationhubs#CheckNamespaceAvailabilityRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Gets or sets resource tags"
           }
@@ -3943,7 +3854,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NamespacesCheckAvailabilityRequestTagsMap": {
+    "com.azure.notificationhubs#CheckNamespaceAvailabilityRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3955,13 +3866,13 @@
         "smithy.api#documentation": "Gets or sets resource tags"
       }
     },
-    "com.azure.notificationhubs#NotificationHubsGetPnsCredentials": {
+    "com.azure.notificationhubs#GetNotificationHubPnsCredentials": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NotificationHubsGetPnsCredentialsRequest"
+        "target": "com.azure.notificationhubs#GetNotificationHubPnsCredentialsRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#NotificationHubsGetPnsCredentialsResponse"
+        "target": "com.azure.notificationhubs#GetNotificationHubPnsCredentialsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3974,7 +3885,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NotificationHubsGetPnsCredentialsResponse": {
+    "com.azure.notificationhubs#GetNotificationHubPnsCredentialsResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -4011,7 +3922,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NotificationHubsGetPnsCredentialsResponseTagsMap",
+          "target": "com.azure.notificationhubs#GetNotificationHubPnsCredentialsResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Deprecated - only for compatibility."
           }
@@ -4021,7 +3932,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsGetPnsCredentialsResponseTagsMap": {
+    "com.azure.notificationhubs#GetNotificationHubPnsCredentialsResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -4033,7 +3944,7 @@
         "smithy.api#documentation": "Deprecated - only for compatibility."
       }
     },
-    "com.azure.notificationhubs#NotificationHubsGetPnsCredentialsRequest": {
+    "com.azure.notificationhubs#GetNotificationHubPnsCredentialsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4073,10 +3984,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsRegenerateKeys": {
+    "com.azure.notificationhubs#RegenerateNotificationHubKeys": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NotificationHubsRegenerateKeysRequest"
+        "target": "com.azure.notificationhubs#RegenerateNotificationHubKeysRequest"
       },
       "output": {
         "target": "com.azure.notificationhubs#ResourceListKeys"
@@ -4092,7 +4003,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NotificationHubsRegenerateKeysRequest": {
+    "com.azure.notificationhubs#RegenerateNotificationHubKeysRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4146,10 +4057,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsListKeys": {
+    "com.azure.notificationhubs#ListNotificationHubKeys": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NotificationHubsListKeysRequest"
+        "target": "com.azure.notificationhubs#ListNotificationHubKeysRequest"
       },
       "output": {
         "target": "com.azure.notificationhubs#ResourceListKeys"
@@ -4165,7 +4076,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NotificationHubsListKeysRequest": {
+    "com.azure.notificationhubs#ListNotificationHubKeysRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4213,10 +4124,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsListAuthorizationRules": {
+    "com.azure.notificationhubs#ListNotificationHubAuthorizationRules": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NotificationHubsListAuthorizationRulesRequest"
+        "target": "com.azure.notificationhubs#ListNotificationHubAuthorizationRulesRequest"
       },
       "output": {
         "target": "com.azure.notificationhubs#SharedAccessAuthorizationRuleListResult"
@@ -4239,7 +4150,7 @@
         }
       }
     },
-    "com.azure.notificationhubs#NotificationHubsListAuthorizationRulesRequest": {
+    "com.azure.notificationhubs#ListNotificationHubAuthorizationRulesRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4285,10 +4196,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsDeleteAuthorizationRule": {
+    "com.azure.notificationhubs#DeleteNotificationHubAuthorizationRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NotificationHubsDeleteAuthorizationRuleRequest"
+        "target": "com.azure.notificationhubs#DeleteNotificationHubAuthorizationRuleRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -4304,7 +4215,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NotificationHubsDeleteAuthorizationRuleRequest": {
+    "com.azure.notificationhubs#DeleteNotificationHubAuthorizationRuleRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4505,13 +4416,13 @@
         "smithy.api#documentation": "Deprecated - only for compatibility."
       }
     },
-    "com.azure.notificationhubs#NotificationHubsGetAuthorizationRule": {
+    "com.azure.notificationhubs#GetNotificationHubAuthorizationRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NotificationHubsGetAuthorizationRuleRequest"
+        "target": "com.azure.notificationhubs#GetNotificationHubAuthorizationRuleRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#NotificationHubsGetAuthorizationRuleResponse"
+        "target": "com.azure.notificationhubs#GetNotificationHubAuthorizationRuleResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4524,7 +4435,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NotificationHubsGetAuthorizationRuleResponse": {
+    "com.azure.notificationhubs#GetNotificationHubAuthorizationRuleResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -4561,7 +4472,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NotificationHubsGetAuthorizationRuleResponseTagsMap",
+          "target": "com.azure.notificationhubs#GetNotificationHubAuthorizationRuleResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Deprecated - only for compatibility."
           }
@@ -4571,7 +4482,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsGetAuthorizationRuleResponseTagsMap": {
+    "com.azure.notificationhubs#GetNotificationHubAuthorizationRuleResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -4583,7 +4494,7 @@
         "smithy.api#documentation": "Deprecated - only for compatibility."
       }
     },
-    "com.azure.notificationhubs#NotificationHubsGetAuthorizationRuleRequest": {
+    "com.azure.notificationhubs#GetNotificationHubAuthorizationRuleRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4631,13 +4542,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsDebugSend": {
+    "com.azure.notificationhubs#SendNotificationHubsDebug": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NotificationHubsDebugSendRequest"
+        "target": "com.azure.notificationhubs#SendNotificationHubsDebugRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#NotificationHubsDebugSendResponse"
+        "target": "com.azure.notificationhubs#SendNotificationHubsDebugResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4650,7 +4561,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NotificationHubsDebugSendResponse": {
+    "com.azure.notificationhubs#SendNotificationHubsDebugResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -4687,7 +4598,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NotificationHubsDebugSendResponseTagsMap",
+          "target": "com.azure.notificationhubs#SendNotificationHubsDebugResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Deprecated - only for compatibility."
           }
@@ -4697,7 +4608,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsDebugSendResponseTagsMap": {
+    "com.azure.notificationhubs#SendNotificationHubsDebugResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -4776,7 +4687,7 @@
         "smithy.api#documentation": "Notification result for a single registration."
       }
     },
-    "com.azure.notificationhubs#NotificationHubsDebugSendRequest": {
+    "com.azure.notificationhubs#SendNotificationHubsDebugRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -4816,10 +4727,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsList": {
+    "com.azure.notificationhubs#ListNotificationHubs": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NotificationHubsListRequest"
+        "target": "com.azure.notificationhubs#ListNotificationHubsRequest"
       },
       "output": {
         "target": "com.azure.notificationhubs#NotificationHubListResult"
@@ -4996,7 +4907,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.notificationhubs#NotificationHubsListRequest": {
+    "com.azure.notificationhubs#ListNotificationHubsRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5048,10 +4959,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsDelete": {
+    "com.azure.notificationhubs#DeleteNotificationHub": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NotificationHubsDeleteRequest"
+        "target": "com.azure.notificationhubs#DeleteNotificationHubRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -5067,7 +4978,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NotificationHubsDeleteRequest": {
+    "com.azure.notificationhubs#DeleteNotificationHubRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5107,13 +5018,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsUpdate": {
+    "com.azure.notificationhubs#UpdateNotificationHub": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NotificationHubsUpdateRequest"
+        "target": "com.azure.notificationhubs#UpdateNotificationHubRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#NotificationHubsUpdateResponse"
+        "target": "com.azure.notificationhubs#UpdateNotificationHubResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -5126,7 +5037,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NotificationHubsUpdateResponse": {
+    "com.azure.notificationhubs#UpdateNotificationHubResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -5154,7 +5065,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NotificationHubsUpdateResponseTagsMap",
+          "target": "com.azure.notificationhubs#UpdateNotificationHubResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -5177,7 +5088,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsUpdateResponseTagsMap": {
+    "com.azure.notificationhubs#UpdateNotificationHubResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -5189,7 +5100,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.notificationhubs#NotificationHubsUpdateRequest": {
+    "com.azure.notificationhubs#UpdateNotificationHubRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5231,14 +5142,14 @@
           "target": "com.azure.notificationhubs#Sku"
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NotificationHubsUpdateRequestTagsMap"
+          "target": "com.azure.notificationhubs#UpdateNotificationHubRequestTagsMap"
         }
       },
       "traits": {
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsUpdateRequestTagsMap": {
+    "com.azure.notificationhubs#UpdateNotificationHubRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -5445,13 +5356,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.notificationhubs#NotificationHubsGet": {
+    "com.azure.notificationhubs#GetNotificationHub": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NotificationHubsGetRequest"
+        "target": "com.azure.notificationhubs#GetNotificationHubRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#NotificationHubsGetResponse"
+        "target": "com.azure.notificationhubs#GetNotificationHubResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -5464,7 +5375,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NotificationHubsGetResponse": {
+    "com.azure.notificationhubs#GetNotificationHubResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -5492,7 +5403,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NotificationHubsGetResponseTagsMap",
+          "target": "com.azure.notificationhubs#GetNotificationHubResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -5515,7 +5426,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsGetResponseTagsMap": {
+    "com.azure.notificationhubs#GetNotificationHubResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -5527,7 +5438,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.notificationhubs#NotificationHubsGetRequest": {
+    "com.azure.notificationhubs#GetNotificationHubRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5567,13 +5478,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailability": {
+    "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailability": {
       "type": "operation",
       "input": {
-        "target": "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailabilityRequest"
+        "target": "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailabilityRequest"
       },
       "output": {
-        "target": "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailabilityResponse"
+        "target": "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailabilityResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -5586,7 +5497,7 @@
         "com.distilled.openapi#apiVersion": "2023-09-01"
       }
     },
-    "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailabilityResponse": {
+    "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailabilityResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -5626,7 +5537,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailabilityResponseTagsMap",
+          "target": "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailabilityResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Deprecated - only for compatibility."
           }
@@ -5639,7 +5550,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailabilityResponseTagsMap": {
+    "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailabilityResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -5651,7 +5562,7 @@
         "smithy.api#documentation": "Deprecated - only for compatibility."
       }
     },
-    "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailabilityRequest": {
+    "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailabilityRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -5692,7 +5603,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailabilityRequestTagsMap",
+          "target": "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailabilityRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Gets or sets resource tags"
           }
@@ -5711,7 +5622,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailabilityRequestTagsMap": {
+    "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailabilityRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -5728,109 +5639,109 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.notificationhubs#PrivateEndpointConnectionsListGroupIds"
+          "target": "com.azure.notificationhubs#ListPrivateEndpointConnectionGroupIds"
         },
         {
-          "target": "com.azure.notificationhubs#PrivateEndpointConnectionsGetGroupId"
+          "target": "com.azure.notificationhubs#GetPrivateEndpointConnectionGroupId"
         },
         {
-          "target": "com.azure.notificationhubs#PrivateEndpointConnectionsList"
+          "target": "com.azure.notificationhubs#ListPrivateEndpointConnections"
         },
         {
-          "target": "com.azure.notificationhubs#PrivateEndpointConnectionsDelete"
+          "target": "com.azure.notificationhubs#DeletePrivateEndpointConnection"
         },
         {
-          "target": "com.azure.notificationhubs#PrivateEndpointConnectionsUpdate"
+          "target": "com.azure.notificationhubs#UpdatePrivateEndpointConnection"
         },
         {
-          "target": "com.azure.notificationhubs#PrivateEndpointConnectionsGet"
+          "target": "com.azure.notificationhubs#GetPrivateEndpointConnection"
         },
         {
-          "target": "com.azure.notificationhubs#OperationsList"
+          "target": "com.azure.notificationhubs#ListOperations"
         },
         {
-          "target": "com.azure.notificationhubs#NamespacesGetPnsCredentials"
+          "target": "com.azure.notificationhubs#GetNamespacePnsCredentials"
         },
         {
-          "target": "com.azure.notificationhubs#NamespacesRegenerateKeys"
+          "target": "com.azure.notificationhubs#RegenerateNamespaceKeys"
         },
         {
-          "target": "com.azure.notificationhubs#NamespacesListKeys"
+          "target": "com.azure.notificationhubs#ListNamespaceKeys"
         },
         {
-          "target": "com.azure.notificationhubs#NamespacesListAuthorizationRules"
+          "target": "com.azure.notificationhubs#ListNamespaceAuthorizationRules"
         },
         {
-          "target": "com.azure.notificationhubs#NamespacesDeleteAuthorizationRule"
+          "target": "com.azure.notificationhubs#DeleteNamespaceAuthorizationRule"
         },
         {
           "target": "com.azure.notificationhubs#NamespacesCreateOrUpdateAuthorizationRule"
         },
         {
-          "target": "com.azure.notificationhubs#NamespacesGetAuthorizationRule"
+          "target": "com.azure.notificationhubs#GetNamespaceAuthorizationRule"
         },
         {
-          "target": "com.azure.notificationhubs#NamespacesList"
+          "target": "com.azure.notificationhubs#ListNamespaces"
         },
         {
-          "target": "com.azure.notificationhubs#NamespacesListAll"
+          "target": "com.azure.notificationhubs#ListNamespaceAll"
         },
         {
-          "target": "com.azure.notificationhubs#NamespacesDelete"
+          "target": "com.azure.notificationhubs#DeleteNamespace"
         },
         {
-          "target": "com.azure.notificationhubs#NamespacesUpdate"
+          "target": "com.azure.notificationhubs#UpdateNamespace"
         },
         {
           "target": "com.azure.notificationhubs#NamespacesCreateOrUpdate"
         },
         {
-          "target": "com.azure.notificationhubs#NamespacesGet"
+          "target": "com.azure.notificationhubs#GetNamespace"
         },
         {
-          "target": "com.azure.notificationhubs#NamespacesCheckAvailability"
+          "target": "com.azure.notificationhubs#CheckNamespaceAvailability"
         },
         {
-          "target": "com.azure.notificationhubs#NotificationHubsGetPnsCredentials"
+          "target": "com.azure.notificationhubs#GetNotificationHubPnsCredentials"
         },
         {
-          "target": "com.azure.notificationhubs#NotificationHubsRegenerateKeys"
+          "target": "com.azure.notificationhubs#RegenerateNotificationHubKeys"
         },
         {
-          "target": "com.azure.notificationhubs#NotificationHubsListKeys"
+          "target": "com.azure.notificationhubs#ListNotificationHubKeys"
         },
         {
-          "target": "com.azure.notificationhubs#NotificationHubsListAuthorizationRules"
+          "target": "com.azure.notificationhubs#ListNotificationHubAuthorizationRules"
         },
         {
-          "target": "com.azure.notificationhubs#NotificationHubsDeleteAuthorizationRule"
+          "target": "com.azure.notificationhubs#DeleteNotificationHubAuthorizationRule"
         },
         {
           "target": "com.azure.notificationhubs#NotificationHubsCreateOrUpdateAuthorizationRule"
         },
         {
-          "target": "com.azure.notificationhubs#NotificationHubsGetAuthorizationRule"
+          "target": "com.azure.notificationhubs#GetNotificationHubAuthorizationRule"
         },
         {
-          "target": "com.azure.notificationhubs#NotificationHubsDebugSend"
+          "target": "com.azure.notificationhubs#SendNotificationHubsDebug"
         },
         {
-          "target": "com.azure.notificationhubs#NotificationHubsList"
+          "target": "com.azure.notificationhubs#ListNotificationHubs"
         },
         {
-          "target": "com.azure.notificationhubs#NotificationHubsDelete"
+          "target": "com.azure.notificationhubs#DeleteNotificationHub"
         },
         {
-          "target": "com.azure.notificationhubs#NotificationHubsUpdate"
+          "target": "com.azure.notificationhubs#UpdateNotificationHub"
         },
         {
           "target": "com.azure.notificationhubs#NotificationHubsCreateOrUpdate"
         },
         {
-          "target": "com.azure.notificationhubs#NotificationHubsGet"
+          "target": "com.azure.notificationhubs#GetNotificationHub"
         },
         {
-          "target": "com.azure.notificationhubs#NotificationHubsCheckNotificationHubAvailability"
+          "target": "com.azure.notificationhubs#CheckNotificationHubNotificationHubAvailability"
         }
       ],
       "traits": {

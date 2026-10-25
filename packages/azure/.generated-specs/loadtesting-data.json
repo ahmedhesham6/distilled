@@ -15,80 +15,7 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.loadtesting_data#TriggerAdministrationListTriggers": "com.azure.loadtesting_data#ListTriggerAdministrationTriggers",
-      "com.azure.loadtesting_data#TriggerAdministrationListTriggersRequest": "com.azure.loadtesting_data#ListTriggerAdministrationTriggersRequest",
-      "com.azure.loadtesting_data#TriggerAdministrationListTriggersRequestStates": "com.azure.loadtesting_data#ListTriggerAdministrationTriggersRequestStates",
-      "com.azure.loadtesting_data#LoadTestAdministrationGetServerMetricsConfig": "com.azure.loadtesting_data#GetLoadTestAdministrationServerMetricsConfig",
-      "com.azure.loadtesting_data#LoadTestAdministrationGetServerMetricsConfigRequest": "com.azure.loadtesting_data#GetLoadTestAdministrationServerMetricsConfigRequest",
-      "com.azure.loadtesting_data#LoadTestAdministrationDeleteTestFile": "com.azure.loadtesting_data#DeleteLoadTestAdministrationTestFile",
-      "com.azure.loadtesting_data#LoadTestAdministrationDeleteTestFileRequest": "com.azure.loadtesting_data#DeleteLoadTestAdministrationTestFileRequest",
-      "com.azure.loadtesting_data#LoadTestAdministrationUploadTestFile": "com.azure.loadtesting_data#UploadLoadTestAdministrationTestFile",
-      "com.azure.loadtesting_data#LoadTestAdministrationUploadTestFileRequest": "com.azure.loadtesting_data#UploadLoadTestAdministrationTestFileRequest",
-      "com.azure.loadtesting_data#LoadTestAdministrationUploadTestFileRequestFileType": "com.azure.loadtesting_data#UploadLoadTestAdministrationTestFileRequestFileType",
-      "com.azure.loadtesting_data#LoadTestAdministrationGetTestFile": "com.azure.loadtesting_data#GetLoadTestAdministrationTestFile",
-      "com.azure.loadtesting_data#LoadTestAdministrationGetTestFileRequest": "com.azure.loadtesting_data#GetLoadTestAdministrationTestFileRequest",
-      "com.azure.loadtesting_data#LoadTestAdministrationListTestFiles": "com.azure.loadtesting_data#ListLoadTestAdministrationTestFiles",
-      "com.azure.loadtesting_data#LoadTestAdministrationListTestFilesRequest": "com.azure.loadtesting_data#ListLoadTestAdministrationTestFilesRequest",
-      "com.azure.loadtesting_data#LoadTestAdministrationGetAppComponents": "com.azure.loadtesting_data#GetLoadTestAdministrationAppComponents",
-      "com.azure.loadtesting_data#LoadTestAdministrationGetAppComponentsRequest": "com.azure.loadtesting_data#GetLoadTestAdministrationAppComponentsRequest",
-      "com.azure.loadtesting_data#LoadTestAdministrationGenerateTestPlanRecommendations": "com.azure.loadtesting_data#GenerateLoadTestAdministrationTestPlanRecommendations",
-      "com.azure.loadtesting_data#LoadTestAdministrationGenerateTestPlanRecommendationsResponse": "com.azure.loadtesting_data#GenerateLoadTestAdministrationTestPlanRecommendationsResponse",
-      "com.azure.loadtesting_data#LoadTestAdministrationGenerateTestPlanRecommendationsRequest": "com.azure.loadtesting_data#GenerateLoadTestAdministrationTestPlanRecommendationsRequest",
-      "com.azure.loadtesting_data#LoadTestAdministrationCloneTest": "com.azure.loadtesting_data#CloneLoadTestAdministrationTest",
-      "com.azure.loadtesting_data#LoadTestAdministrationCloneTestResponse": "com.azure.loadtesting_data#CloneLoadTestAdministrationTestResponse",
-      "com.azure.loadtesting_data#LoadTestAdministrationCloneTestRequest": "com.azure.loadtesting_data#CloneLoadTestAdministrationTestRequest",
-      "com.azure.loadtesting_data#LoadTestAdministrationDeleteTest": "com.azure.loadtesting_data#DeleteLoadTestAdministrationTest",
-      "com.azure.loadtesting_data#LoadTestAdministrationDeleteTestRequest": "com.azure.loadtesting_data#DeleteLoadTestAdministrationTestRequest",
-      "com.azure.loadtesting_data#LoadTestAdministrationGetTest": "com.azure.loadtesting_data#GetLoadTestAdministrationTest",
-      "com.azure.loadtesting_data#LoadTestAdministrationGetTestRequest": "com.azure.loadtesting_data#GetLoadTestAdministrationTestRequest",
-      "com.azure.loadtesting_data#LoadTestAdministrationListTests": "com.azure.loadtesting_data#ListLoadTestAdministrationTests",
-      "com.azure.loadtesting_data#LoadTestAdministrationListTestsRequest": "com.azure.loadtesting_data#ListLoadTestAdministrationTestsRequest",
-      "com.azure.loadtesting_data#LoadTestRunGetServerMetricsConfig": "com.azure.loadtesting_data#GetLoadTestRunServerMetricsConfig",
-      "com.azure.loadtesting_data#LoadTestRunGetServerMetricsConfigRequest": "com.azure.loadtesting_data#GetLoadTestRunServerMetricsConfigRequest",
-      "com.azure.loadtesting_data#LoadTestRunListMetrics": "com.azure.loadtesting_data#ListLoadTestRunMetrics",
-      "com.azure.loadtesting_data#LoadTestRunListMetricsRequest": "com.azure.loadtesting_data#ListLoadTestRunMetricsRequest",
-      "com.azure.loadtesting_data#LoadTestRunListMetricsRequestFiltersList": "com.azure.loadtesting_data#ListLoadTestRunMetricsRequestFiltersList",
-      "com.azure.loadtesting_data#LoadTestRunListMetricsRequestInterval": "com.azure.loadtesting_data#ListLoadTestRunMetricsRequestInterval",
-      "com.azure.loadtesting_data#LoadTestRunListMetricNamespaces": "com.azure.loadtesting_data#ListLoadTestRunMetricNamespaces",
-      "com.azure.loadtesting_data#LoadTestRunListMetricNamespacesRequest": "com.azure.loadtesting_data#ListLoadTestRunMetricNamespacesRequest",
-      "com.azure.loadtesting_data#LoadTestRunListMetricDimensionValues": "com.azure.loadtesting_data#ListLoadTestRunMetricDimensionValues",
-      "com.azure.loadtesting_data#LoadTestRunListMetricDimensionValuesRequest": "com.azure.loadtesting_data#ListLoadTestRunMetricDimensionValuesRequest",
-      "com.azure.loadtesting_data#LoadTestRunListMetricDimensionValuesRequestInterval": "com.azure.loadtesting_data#ListLoadTestRunMetricDimensionValuesRequestInterval",
-      "com.azure.loadtesting_data#LoadTestRunListMetricDefinitions": "com.azure.loadtesting_data#ListLoadTestRunMetricDefinitions",
-      "com.azure.loadtesting_data#LoadTestRunListMetricDefinitionsRequest": "com.azure.loadtesting_data#ListLoadTestRunMetricDefinitionsRequest",
-      "com.azure.loadtesting_data#LoadTestRunGenerateInsights": "com.azure.loadtesting_data#GenerateLoadTestRunInsights",
-      "com.azure.loadtesting_data#LoadTestRunGenerateInsightsResponse": "com.azure.loadtesting_data#GenerateLoadTestRunInsightsResponse",
-      "com.azure.loadtesting_data#LoadTestRunGenerateInsightsRequest": "com.azure.loadtesting_data#GenerateLoadTestRunInsightsRequest",
-      "com.azure.loadtesting_data#LoadTestRunUpdateLatestInsights": "com.azure.loadtesting_data#UpdateLoadTestRunLatestInsights",
-      "com.azure.loadtesting_data#LoadTestRunUpdateLatestInsightsRequest": "com.azure.loadtesting_data#UpdateLoadTestRunLatestInsightsRequest",
-      "com.azure.loadtesting_data#LoadTestRunUpdateLatestInsightsRequestRowsMap": "com.azure.loadtesting_data#UpdateLoadTestRunLatestInsightsRequestRowsMap",
-      "com.azure.loadtesting_data#LoadTestRunUpdateLatestInsightsRequestRowsValueMap": "com.azure.loadtesting_data#UpdateLoadTestRunLatestInsightsRequestRowsValueMap",
-      "com.azure.loadtesting_data#LoadTestRunGetLatestInsights": "com.azure.loadtesting_data#GetLoadTestRunLatestInsights",
-      "com.azure.loadtesting_data#LoadTestRunGetLatestInsightsRequest": "com.azure.loadtesting_data#GetLoadTestRunLatestInsightsRequest",
-      "com.azure.loadtesting_data#LoadTestRunGetTestRunFile": "com.azure.loadtesting_data#GetLoadTestRunTestRunFile",
-      "com.azure.loadtesting_data#LoadTestRunGetTestRunFileRequest": "com.azure.loadtesting_data#GetLoadTestRunTestRunFileRequest",
-      "com.azure.loadtesting_data#LoadTestRunGetAppComponents": "com.azure.loadtesting_data#GetLoadTestRunAppComponents",
-      "com.azure.loadtesting_data#LoadTestRunGetAppComponentsRequest": "com.azure.loadtesting_data#GetLoadTestRunAppComponentsRequest",
-      "com.azure.loadtesting_data#LoadTestRunStopTestRun": "com.azure.loadtesting_data#StopLoadTestRunTestRun",
-      "com.azure.loadtesting_data#LoadTestRunStopTestRunRequest": "com.azure.loadtesting_data#StopLoadTestRunTestRunRequest",
-      "com.azure.loadtesting_data#LoadTestRunDeleteTestRun": "com.azure.loadtesting_data#DeleteLoadTestRunTestRun",
-      "com.azure.loadtesting_data#LoadTestRunDeleteTestRunRequest": "com.azure.loadtesting_data#DeleteLoadTestRunTestRunRequest",
-      "com.azure.loadtesting_data#LoadTestRunGetTestRun": "com.azure.loadtesting_data#GetLoadTestRunTestRun",
-      "com.azure.loadtesting_data#LoadTestRunGetTestRunRequest": "com.azure.loadtesting_data#GetLoadTestRunTestRunRequest",
-      "com.azure.loadtesting_data#LoadTestRunListTestRuns": "com.azure.loadtesting_data#ListLoadTestRunTestRuns",
-      "com.azure.loadtesting_data#LoadTestRunListTestRunsRequest": "com.azure.loadtesting_data#ListLoadTestRunTestRunsRequest",
-      "com.azure.loadtesting_data#LoadTestRunListTestRunsRequestTestIdsList": "com.azure.loadtesting_data#ListLoadTestRunTestRunsRequestTestIdsList",
-      "com.azure.loadtesting_data#LoadTestRunListTestRunsRequestCreatedByTypesList": "com.azure.loadtesting_data#ListLoadTestRunTestRunsRequestCreatedByTypesList",
-      "com.azure.loadtesting_data#OperationsGetStatus": "com.azure.loadtesting_data#GetOperationStatus",
-      "com.azure.loadtesting_data#OperationsGetStatusRequest": "com.azure.loadtesting_data#GetOperationStatusRequest",
-      "com.azure.loadtesting_data#NotificationRuleAdministrationDeleteNotificationRule": "com.azure.loadtesting_data#DeleteNotificationRuleAdministrationNotificationRule",
-      "com.azure.loadtesting_data#NotificationRuleAdministrationDeleteNotificationRuleRequest": "com.azure.loadtesting_data#DeleteNotificationRuleAdministrationNotificationRuleRequest",
-      "com.azure.loadtesting_data#NotificationRuleAdministrationGetNotificationRule": "com.azure.loadtesting_data#GetNotificationRuleAdministrationNotificationRule",
-      "com.azure.loadtesting_data#NotificationRuleAdministrationGetNotificationRuleRequest": "com.azure.loadtesting_data#GetNotificationRuleAdministrationNotificationRuleRequest",
-      "com.azure.loadtesting_data#NotificationRuleAdministrationListNotificationRules": "com.azure.loadtesting_data#ListNotificationRuleAdministrationNotificationRules",
-      "com.azure.loadtesting_data#NotificationRuleAdministrationListNotificationRulesRequest": "com.azure.loadtesting_data#ListNotificationRuleAdministrationNotificationRulesRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
     "com.azure.loadtesting_data#TriggerAdministrationDeleteTrigger": {
@@ -382,10 +309,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#TriggerAdministrationListTriggers": {
+    "com.azure.loadtesting_data#ListTriggerAdministrationTriggers": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#TriggerAdministrationListTriggersRequest"
+        "target": "com.azure.loadtesting_data#ListTriggerAdministrationTriggersRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#PagedTrigger"
@@ -441,7 +368,7 @@
         "smithy.api#documentation": "The Trigger items on this page"
       }
     },
-    "com.azure.loadtesting_data#TriggerAdministrationListTriggersRequest": {
+    "com.azure.loadtesting_data#ListTriggerAdministrationTriggersRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -459,7 +386,7 @@
           }
         },
         "states": {
-          "target": "com.azure.loadtesting_data#TriggerAdministrationListTriggersRequestStates",
+          "target": "com.azure.loadtesting_data#ListTriggerAdministrationTriggersRequestStates",
           "traits": {
             "smithy.api#httpQuery": "states",
             "smithy.api#documentation": "Filter triggers based on a comma separated list of states."
@@ -497,7 +424,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#TriggerAdministrationListTriggersRequestStates": {
+    "com.azure.loadtesting_data#ListTriggerAdministrationTriggersRequestStates": {
       "type": "enum",
       "members": {
         "ACTIVE": {
@@ -758,10 +685,10 @@
         "smithy.api#documentation": "Associated metric definition for particular metrics of the azure resource (\nRefer :\nhttps://learn.microsoft.com/en-us/rest/api/monitor/metric-definitions/list#metricdefinition)."
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationGetServerMetricsConfig": {
+    "com.azure.loadtesting_data#GetLoadTestAdministrationServerMetricsConfig": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationGetServerMetricsConfigRequest"
+        "target": "com.azure.loadtesting_data#GetLoadTestAdministrationServerMetricsConfigRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#TestServerMetricsConfiguration"
@@ -780,7 +707,7 @@
         "smithy.api#documentation": "List server metrics configuration for the given test.\n\nList server metrics configuration for the given test."
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationGetServerMetricsConfigRequest": {
+    "com.azure.loadtesting_data#GetLoadTestAdministrationServerMetricsConfigRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -803,10 +730,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationDeleteTestFile": {
+    "com.azure.loadtesting_data#DeleteLoadTestAdministrationTestFile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationDeleteTestFileRequest"
+        "target": "com.azure.loadtesting_data#DeleteLoadTestAdministrationTestFileRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -825,7 +752,7 @@
         "smithy.api#documentation": "Delete file by the file name for a test\n\nDelete file by the file name for a test"
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationDeleteTestFileRequest": {
+    "com.azure.loadtesting_data#DeleteLoadTestAdministrationTestFileRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -856,10 +783,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationUploadTestFile": {
+    "com.azure.loadtesting_data#UploadLoadTestAdministrationTestFile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationUploadTestFileRequest"
+        "target": "com.azure.loadtesting_data#UploadLoadTestAdministrationTestFileRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#TestFileInfo"
@@ -1017,7 +944,7 @@
         "smithy.api#documentation": "Types of file supported."
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationUploadTestFileRequest": {
+    "com.azure.loadtesting_data#UploadLoadTestAdministrationTestFileRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1044,7 +971,7 @@
           }
         },
         "fileType": {
-          "target": "com.azure.loadtesting_data#LoadTestAdministrationUploadTestFileRequestFileType",
+          "target": "com.azure.loadtesting_data#UploadLoadTestAdministrationTestFileRequestFileType",
           "traits": {
             "smithy.api#httpQuery": "fileType",
             "smithy.api#documentation": "File type"
@@ -1062,7 +989,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationUploadTestFileRequestFileType": {
+    "com.azure.loadtesting_data#UploadLoadTestAdministrationTestFileRequestFileType": {
       "type": "enum",
       "members": {
         "JMX_FILE": {
@@ -1116,10 +1043,10 @@
       },
       "traits": {}
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationGetTestFile": {
+    "com.azure.loadtesting_data#GetLoadTestAdministrationTestFile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationGetTestFileRequest"
+        "target": "com.azure.loadtesting_data#GetLoadTestAdministrationTestFileRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#TestFileInfo"
@@ -1138,7 +1065,7 @@
         "smithy.api#documentation": "Get all the files that are associated with a test.\n\nGet all the files that are associated with a test."
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationGetTestFileRequest": {
+    "com.azure.loadtesting_data#GetLoadTestAdministrationTestFileRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1169,10 +1096,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationListTestFiles": {
+    "com.azure.loadtesting_data#ListLoadTestAdministrationTestFiles": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationListTestFilesRequest"
+        "target": "com.azure.loadtesting_data#ListLoadTestAdministrationTestFilesRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#PagedTestFileInfo"
@@ -1228,7 +1155,7 @@
         "smithy.api#documentation": "The TestFileInfo items on this page"
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationListTestFilesRequest": {
+    "com.azure.loadtesting_data#ListLoadTestAdministrationTestFilesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1462,10 +1389,10 @@
         "smithy.api#documentation": "An Azure resource object (Refer azure generic resource model :https://learn.microsoft.com/en-us/rest/api/resources/resources/get-by-id#genericresource)"
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationGetAppComponents": {
+    "com.azure.loadtesting_data#GetLoadTestAdministrationAppComponents": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationGetAppComponentsRequest"
+        "target": "com.azure.loadtesting_data#GetLoadTestAdministrationAppComponentsRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#TestAppComponents"
@@ -1484,7 +1411,7 @@
         "smithy.api#documentation": "Get associated app component (collection of azure resources) for the given test.\n\nGet associated app component (collection of azure resources) for the given test."
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationGetAppComponentsRequest": {
+    "com.azure.loadtesting_data#GetLoadTestAdministrationAppComponentsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1507,13 +1434,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationGenerateTestPlanRecommendations": {
+    "com.azure.loadtesting_data#GenerateLoadTestAdministrationTestPlanRecommendations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationGenerateTestPlanRecommendationsRequest"
+        "target": "com.azure.loadtesting_data#GenerateLoadTestAdministrationTestPlanRecommendationsRequest"
       },
       "output": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationGenerateTestPlanRecommendationsResponse"
+        "target": "com.azure.loadtesting_data#GenerateLoadTestAdministrationTestPlanRecommendationsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1529,7 +1456,7 @@
         "smithy.api#documentation": "Generate load test plan recommendations.\n\nGenerate AI Recommendations to author a load test plan using the uploaded browser recording file."
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationGenerateTestPlanRecommendationsResponse": {
+    "com.azure.loadtesting_data#GenerateLoadTestAdministrationTestPlanRecommendationsResponse": {
       "type": "structure",
       "members": {
         "operationLocation": {
@@ -1544,7 +1471,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationGenerateTestPlanRecommendationsRequest": {
+    "com.azure.loadtesting_data#GenerateLoadTestAdministrationTestPlanRecommendationsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1567,13 +1494,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationCloneTest": {
+    "com.azure.loadtesting_data#CloneLoadTestAdministrationTest": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationCloneTestRequest"
+        "target": "com.azure.loadtesting_data#CloneLoadTestAdministrationTestRequest"
       },
       "output": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationCloneTestResponse"
+        "target": "com.azure.loadtesting_data#CloneLoadTestAdministrationTestResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1589,7 +1516,7 @@
         "smithy.api#documentation": "Clone a load test.\n\nClone the given test with optional overrides applied to the clone test."
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationCloneTestResponse": {
+    "com.azure.loadtesting_data#CloneLoadTestAdministrationTestResponse": {
       "type": "structure",
       "members": {
         "operationLocation": {
@@ -1604,7 +1531,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationCloneTestRequest": {
+    "com.azure.loadtesting_data#CloneLoadTestAdministrationTestRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1646,10 +1573,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationDeleteTest": {
+    "com.azure.loadtesting_data#DeleteLoadTestAdministrationTest": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationDeleteTestRequest"
+        "target": "com.azure.loadtesting_data#DeleteLoadTestAdministrationTestRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -1668,7 +1595,7 @@
         "smithy.api#documentation": "Delete a test by its test Id.\n\nDelete a test by its test Id."
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationDeleteTestRequest": {
+    "com.azure.loadtesting_data#DeleteLoadTestAdministrationTestRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3013,10 +2940,10 @@
         "smithy.api#documentation": "Action taken after the threshold is met. Default is ‘continue’."
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationGetTest": {
+    "com.azure.loadtesting_data#GetLoadTestAdministrationTest": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationGetTestRequest"
+        "target": "com.azure.loadtesting_data#GetLoadTestAdministrationTestRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#Test"
@@ -3035,7 +2962,7 @@
         "smithy.api#documentation": "Get load test details by test Id\n\nGet load test details by test Id"
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationGetTestRequest": {
+    "com.azure.loadtesting_data#GetLoadTestAdministrationTestRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3058,10 +2985,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationListTests": {
+    "com.azure.loadtesting_data#ListLoadTestAdministrationTests": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestAdministrationListTestsRequest"
+        "target": "com.azure.loadtesting_data#ListLoadTestAdministrationTestsRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#PagedTest"
@@ -3117,7 +3044,7 @@
         "smithy.api#documentation": "The Test items on this page"
       }
     },
-    "com.azure.loadtesting_data#LoadTestAdministrationListTestsRequest": {
+    "com.azure.loadtesting_data#ListLoadTestAdministrationTestsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3347,10 +3274,10 @@
         "smithy.api#documentation": "Associated metric definition for particular metrics of the azure resource (\nRefer :\nhttps://learn.microsoft.com/en-us/rest/api/monitor/metric-definitions/list#metricdefinition)."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunGetServerMetricsConfig": {
+    "com.azure.loadtesting_data#GetLoadTestRunServerMetricsConfig": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunGetServerMetricsConfigRequest"
+        "target": "com.azure.loadtesting_data#GetLoadTestRunServerMetricsConfigRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#TestRunServerMetricsConfiguration"
@@ -3369,7 +3296,7 @@
         "smithy.api#documentation": "Get associated server metrics configuration for the given test run.\n\nGet associated server metrics configuration for the given test run."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunGetServerMetricsConfigRequest": {
+    "com.azure.loadtesting_data#GetLoadTestRunServerMetricsConfigRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3392,10 +3319,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunListMetrics": {
+    "com.azure.loadtesting_data#ListLoadTestRunMetrics": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunListMetricsRequest"
+        "target": "com.azure.loadtesting_data#ListLoadTestRunMetricsRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#Metrics"
@@ -3529,7 +3456,7 @@
         "smithy.api#documentation": "Represents a metric value."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunListMetricsRequest": {
+    "com.azure.loadtesting_data#ListLoadTestRunMetricsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3563,7 +3490,7 @@
           }
         },
         "interval": {
-          "target": "com.azure.loadtesting_data#LoadTestRunListMetricsRequestInterval",
+          "target": "com.azure.loadtesting_data#ListLoadTestRunMetricsRequestInterval",
           "traits": {
             "smithy.api#httpQuery": "interval",
             "smithy.api#documentation": "The interval (i.e. timegrain) of the query."
@@ -3586,7 +3513,7 @@
           }
         },
         "filters": {
-          "target": "com.azure.loadtesting_data#LoadTestRunListMetricsRequestFiltersList",
+          "target": "com.azure.loadtesting_data#ListLoadTestRunMetricsRequestFiltersList",
           "traits": {
             "smithy.api#documentation": "Get metrics for specific dimension values. Example: Metric contains dimension\nlike SamplerName, Error. To retrieve all the time series data where SamplerName\nis equals to HTTPRequest1 or HTTPRequest2, the DimensionFilter value will be\n{\"SamplerName\", [\"HTTPRequest1\", \"HTTPRequest2\"}"
           }
@@ -3602,7 +3529,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunListMetricsRequestFiltersList": {
+    "com.azure.loadtesting_data#ListLoadTestRunMetricsRequestFiltersList": {
       "type": "list",
       "member": {
         "target": "com.azure.loadtesting_data#DimensionFilter"
@@ -3640,7 +3567,7 @@
         "smithy.api#documentation": "The dimension values. Maximum values can be 20."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunListMetricsRequestInterval": {
+    "com.azure.loadtesting_data#ListLoadTestRunMetricsRequestInterval": {
       "type": "enum",
       "members": {
         "PT5S": {
@@ -3676,10 +3603,10 @@
       },
       "traits": {}
     },
-    "com.azure.loadtesting_data#LoadTestRunListMetricNamespaces": {
+    "com.azure.loadtesting_data#ListLoadTestRunMetricNamespaces": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunListMetricNamespacesRequest"
+        "target": "com.azure.loadtesting_data#ListLoadTestRunMetricNamespacesRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#MetricNamespaceCollection"
@@ -3742,7 +3669,7 @@
         "smithy.api#documentation": "Metric namespace class specifies the metadata for a metric namespace."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunListMetricNamespacesRequest": {
+    "com.azure.loadtesting_data#ListLoadTestRunMetricNamespacesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3765,10 +3692,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunListMetricDimensionValues": {
+    "com.azure.loadtesting_data#ListLoadTestRunMetricDimensionValues": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunListMetricDimensionValuesRequest"
+        "target": "com.azure.loadtesting_data#ListLoadTestRunMetricDimensionValuesRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#DimensionValueList"
@@ -3829,7 +3756,7 @@
         "smithy.api#documentation": "The dimension value"
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunListMetricDimensionValuesRequest": {
+    "com.azure.loadtesting_data#ListLoadTestRunMetricDimensionValuesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3864,7 +3791,7 @@
           }
         },
         "interval": {
-          "target": "com.azure.loadtesting_data#LoadTestRunListMetricDimensionValuesRequestInterval",
+          "target": "com.azure.loadtesting_data#ListLoadTestRunMetricDimensionValuesRequestInterval",
           "traits": {
             "smithy.api#httpQuery": "interval",
             "smithy.api#documentation": "The interval (i.e. timegrain) of the query."
@@ -3897,7 +3824,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunListMetricDimensionValuesRequestInterval": {
+    "com.azure.loadtesting_data#ListLoadTestRunMetricDimensionValuesRequestInterval": {
       "type": "enum",
       "members": {
         "PT5S": {
@@ -3933,10 +3860,10 @@
       },
       "traits": {}
     },
-    "com.azure.loadtesting_data#LoadTestRunListMetricDefinitions": {
+    "com.azure.loadtesting_data#ListLoadTestRunMetricDefinitions": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunListMetricDefinitionsRequest"
+        "target": "com.azure.loadtesting_data#ListLoadTestRunMetricDefinitionsRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#MetricDefinitionCollection"
@@ -4276,7 +4203,7 @@
         "smithy.api#documentation": "The name and description"
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunListMetricDefinitionsRequest": {
+    "com.azure.loadtesting_data#ListLoadTestRunMetricDefinitionsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4307,13 +4234,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunGenerateInsights": {
+    "com.azure.loadtesting_data#GenerateLoadTestRunInsights": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunGenerateInsightsRequest"
+        "target": "com.azure.loadtesting_data#GenerateLoadTestRunInsightsRequest"
       },
       "output": {
-        "target": "com.azure.loadtesting_data#LoadTestRunGenerateInsightsResponse"
+        "target": "com.azure.loadtesting_data#GenerateLoadTestRunInsightsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4329,7 +4256,7 @@
         "smithy.api#documentation": "Generate insights for the test run.\n\nGenerate insights for the test run."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunGenerateInsightsResponse": {
+    "com.azure.loadtesting_data#GenerateLoadTestRunInsightsResponse": {
       "type": "structure",
       "members": {
         "operationLocation": {
@@ -4343,7 +4270,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunGenerateInsightsRequest": {
+    "com.azure.loadtesting_data#GenerateLoadTestRunInsightsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4366,10 +4293,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunUpdateLatestInsights": {
+    "com.azure.loadtesting_data#UpdateLoadTestRunLatestInsights": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunUpdateLatestInsightsRequest"
+        "target": "com.azure.loadtesting_data#UpdateLoadTestRunLatestInsightsRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#TestRunInsights"
@@ -4511,7 +4438,7 @@
         "smithy.api#documentation": "Represents a column of the test run insight"
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunUpdateLatestInsightsRequest": {
+    "com.azure.loadtesting_data#UpdateLoadTestRunLatestInsightsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4530,7 +4457,7 @@
           }
         },
         "rows": {
-          "target": "com.azure.loadtesting_data#LoadTestRunUpdateLatestInsightsRequestRowsMap",
+          "target": "com.azure.loadtesting_data#UpdateLoadTestRunLatestInsightsRequestRowsMap",
           "traits": {
             "smithy.api#documentation": "The rows of the insights."
           }
@@ -4540,19 +4467,19 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunUpdateLatestInsightsRequestRowsMap": {
+    "com.azure.loadtesting_data#UpdateLoadTestRunLatestInsightsRequestRowsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
       },
       "value": {
-        "target": "com.azure.loadtesting_data#LoadTestRunUpdateLatestInsightsRequestRowsValueMap"
+        "target": "com.azure.loadtesting_data#UpdateLoadTestRunLatestInsightsRequestRowsValueMap"
       },
       "traits": {
         "smithy.api#documentation": "The rows of the insights."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunUpdateLatestInsightsRequestRowsValueMap": {
+    "com.azure.loadtesting_data#UpdateLoadTestRunLatestInsightsRequestRowsValueMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -4562,10 +4489,10 @@
       },
       "traits": {}
     },
-    "com.azure.loadtesting_data#LoadTestRunGetLatestInsights": {
+    "com.azure.loadtesting_data#GetLoadTestRunLatestInsights": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunGetLatestInsightsRequest"
+        "target": "com.azure.loadtesting_data#GetLoadTestRunLatestInsightsRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#TestRunInsights"
@@ -4584,7 +4511,7 @@
         "smithy.api#documentation": "Get the latest insights for the test run.\n\nGet the latest insights for the test run."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunGetLatestInsightsRequest": {
+    "com.azure.loadtesting_data#GetLoadTestRunLatestInsightsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4607,10 +4534,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunGetTestRunFile": {
+    "com.azure.loadtesting_data#GetLoadTestRunTestRunFile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunGetTestRunFileRequest"
+        "target": "com.azure.loadtesting_data#GetLoadTestRunTestRunFileRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#TestRunFileInfo"
@@ -4674,7 +4601,7 @@
         "smithy.api#documentation": "Test run file info."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunGetTestRunFileRequest": {
+    "com.azure.loadtesting_data#GetLoadTestRunTestRunFileRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4825,10 +4752,10 @@
         "smithy.api#documentation": "Azure resource collection { resource id (fully qualified resource Id e.g\nsubscriptions/{subId}/resourceGroups/{rg}/providers/Microsoft.LoadTestService/loadtests/{resName})\n: resource object } "
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunGetAppComponents": {
+    "com.azure.loadtesting_data#GetLoadTestRunAppComponents": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunGetAppComponentsRequest"
+        "target": "com.azure.loadtesting_data#GetLoadTestRunAppComponentsRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#TestRunAppComponents"
@@ -4847,7 +4774,7 @@
         "smithy.api#documentation": "Get associated app component (collection of azure resources) for the given test\nrun.\n\nGet associated app component (collection of azure resources) for the given test\nrun."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunGetAppComponentsRequest": {
+    "com.azure.loadtesting_data#GetLoadTestRunAppComponentsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4870,10 +4797,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunStopTestRun": {
+    "com.azure.loadtesting_data#StopLoadTestRunTestRun": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunStopTestRunRequest"
+        "target": "com.azure.loadtesting_data#StopLoadTestRunTestRunRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#TestRun"
@@ -5660,7 +5587,7 @@
         "smithy.api#documentation": "Secrets can be stored in an Azure Key Vault or any other secret store. If the\nsecret is stored in an Azure Key Vault, the value should be the secret\nidentifier and the type should be AKV_SECRET_URI. If the secret is stored\nelsewhere, the secret value should be provided directly and the type should be\nSECRET_VALUE."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunStopTestRunRequest": {
+    "com.azure.loadtesting_data#StopLoadTestRunTestRunRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5683,10 +5610,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunDeleteTestRun": {
+    "com.azure.loadtesting_data#DeleteLoadTestRunTestRun": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunDeleteTestRunRequest"
+        "target": "com.azure.loadtesting_data#DeleteLoadTestRunTestRunRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -5705,7 +5632,7 @@
         "smithy.api#documentation": "Delete an existing load test run.\n\nDelete an existing load test run by providing the testRunId."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunDeleteTestRunRequest": {
+    "com.azure.loadtesting_data#DeleteLoadTestRunTestRunRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5870,10 +5797,10 @@
         "smithy.api#documentation": "Secrets can be stored in an Azure Key Vault or any other secret store. If the\nsecret is stored in an Azure Key Vault, the value should be the secret\nidentifier and the type should be AKV_SECRET_URI. If the secret is stored\nelsewhere, the secret value should be provided directly and the type should be\nSECRET_VALUE."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunGetTestRun": {
+    "com.azure.loadtesting_data#GetLoadTestRunTestRun": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunGetTestRunRequest"
+        "target": "com.azure.loadtesting_data#GetLoadTestRunTestRunRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#TestRun"
@@ -5892,7 +5819,7 @@
         "smithy.api#documentation": "Get test run details by test run Id.\n\nGet test run details by test run Id."
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunGetTestRunRequest": {
+    "com.azure.loadtesting_data#GetLoadTestRunTestRunRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5915,10 +5842,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunListTestRuns": {
+    "com.azure.loadtesting_data#ListLoadTestRunTestRuns": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#LoadTestRunListTestRunsRequest"
+        "target": "com.azure.loadtesting_data#ListLoadTestRunTestRunsRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#PagedTestRun"
@@ -5974,7 +5901,7 @@
         "smithy.api#documentation": "The TestRun items on this page"
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunListTestRunsRequest": {
+    "com.azure.loadtesting_data#ListLoadTestRunTestRunsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -6034,14 +5961,14 @@
           }
         },
         "createdByTypes": {
-          "target": "com.azure.loadtesting_data#LoadTestRunListTestRunsRequestCreatedByTypesList",
+          "target": "com.azure.loadtesting_data#ListLoadTestRunTestRunsRequestCreatedByTypesList",
           "traits": {
             "smithy.api#httpQuery": "createdByTypes",
             "smithy.api#documentation": "Comma separated list of type of entities that have created the test run."
           }
         },
         "testIds": {
-          "target": "com.azure.loadtesting_data#LoadTestRunListTestRunsRequestTestIdsList",
+          "target": "com.azure.loadtesting_data#ListLoadTestRunTestRunsRequestTestIdsList",
           "traits": {
             "smithy.api#httpQuery": "testIds",
             "smithy.api#documentation": "Comma-separated list of test IDs. If you are using testIds, do not send a value for testId."
@@ -6058,24 +5985,24 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#LoadTestRunListTestRunsRequestTestIdsList": {
+    "com.azure.loadtesting_data#ListLoadTestRunTestRunsRequestTestIdsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.loadtesting_data#LoadTestRunListTestRunsRequestCreatedByTypesList": {
+    "com.azure.loadtesting_data#ListLoadTestRunTestRunsRequestCreatedByTypesList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.loadtesting_data#OperationsGetStatus": {
+    "com.azure.loadtesting_data#GetOperationStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#OperationsGetStatusRequest"
+        "target": "com.azure.loadtesting_data#GetOperationStatusRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#OperationStatus"
@@ -6224,7 +6151,7 @@
         "smithy.api#documentation": "Kind of the long running operation."
       }
     },
-    "com.azure.loadtesting_data#OperationsGetStatusRequest": {
+    "com.azure.loadtesting_data#GetOperationStatusRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -6247,10 +6174,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#NotificationRuleAdministrationDeleteNotificationRule": {
+    "com.azure.loadtesting_data#DeleteNotificationRuleAdministrationNotificationRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#NotificationRuleAdministrationDeleteNotificationRuleRequest"
+        "target": "com.azure.loadtesting_data#DeleteNotificationRuleAdministrationNotificationRuleRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -6269,7 +6196,7 @@
         "smithy.api#documentation": "Delete a notification rule by its notification rule Id.\n\nDelete a notification rule by its notification rule Id."
       }
     },
-    "com.azure.loadtesting_data#NotificationRuleAdministrationDeleteNotificationRuleRequest": {
+    "com.azure.loadtesting_data#DeleteNotificationRuleAdministrationNotificationRuleRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -6448,10 +6375,10 @@
         "smithy.api#documentation": "The action groups to notify."
       }
     },
-    "com.azure.loadtesting_data#NotificationRuleAdministrationGetNotificationRule": {
+    "com.azure.loadtesting_data#GetNotificationRuleAdministrationNotificationRule": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#NotificationRuleAdministrationGetNotificationRuleRequest"
+        "target": "com.azure.loadtesting_data#GetNotificationRuleAdministrationNotificationRuleRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#NotificationRule"
@@ -6470,7 +6397,7 @@
         "smithy.api#documentation": "Get notification rule details by notification rule Id.\n\nGet notification rule details by notification rule Id."
       }
     },
-    "com.azure.loadtesting_data#NotificationRuleAdministrationGetNotificationRuleRequest": {
+    "com.azure.loadtesting_data#GetNotificationRuleAdministrationNotificationRuleRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -6493,10 +6420,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_data#NotificationRuleAdministrationListNotificationRules": {
+    "com.azure.loadtesting_data#ListNotificationRuleAdministrationNotificationRules": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_data#NotificationRuleAdministrationListNotificationRulesRequest"
+        "target": "com.azure.loadtesting_data#ListNotificationRuleAdministrationNotificationRulesRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_data#PagedNotificationRule"
@@ -6552,7 +6479,7 @@
         "smithy.api#documentation": "The NotificationRule items on this page"
       }
     },
-    "com.azure.loadtesting_data#NotificationRuleAdministrationListNotificationRulesRequest": {
+    "com.azure.loadtesting_data#ListNotificationRuleAdministrationNotificationRulesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -6622,115 +6549,115 @@
           "target": "com.azure.loadtesting_data#TriggerAdministrationGetTrigger"
         },
         {
-          "target": "com.azure.loadtesting_data#TriggerAdministrationListTriggers"
+          "target": "com.azure.loadtesting_data#ListTriggerAdministrationTriggers"
         },
         {
           "target": "com.azure.loadtesting_data#LoadTestAdministrationCreateOrUpdateServerMetricsConfig"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestAdministrationGetServerMetricsConfig"
+          "target": "com.azure.loadtesting_data#GetLoadTestAdministrationServerMetricsConfig"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestAdministrationDeleteTestFile"
+          "target": "com.azure.loadtesting_data#DeleteLoadTestAdministrationTestFile"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestAdministrationUploadTestFile"
+          "target": "com.azure.loadtesting_data#UploadLoadTestAdministrationTestFile"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestAdministrationGetTestFile"
+          "target": "com.azure.loadtesting_data#GetLoadTestAdministrationTestFile"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestAdministrationListTestFiles"
+          "target": "com.azure.loadtesting_data#ListLoadTestAdministrationTestFiles"
         },
         {
           "target": "com.azure.loadtesting_data#LoadTestAdministrationCreateOrUpdateAppComponents"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestAdministrationGetAppComponents"
+          "target": "com.azure.loadtesting_data#GetLoadTestAdministrationAppComponents"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestAdministrationGenerateTestPlanRecommendations"
+          "target": "com.azure.loadtesting_data#GenerateLoadTestAdministrationTestPlanRecommendations"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestAdministrationCloneTest"
+          "target": "com.azure.loadtesting_data#CloneLoadTestAdministrationTest"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestAdministrationDeleteTest"
+          "target": "com.azure.loadtesting_data#DeleteLoadTestAdministrationTest"
         },
         {
           "target": "com.azure.loadtesting_data#LoadTestAdministrationCreateOrUpdateTest"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestAdministrationGetTest"
+          "target": "com.azure.loadtesting_data#GetLoadTestAdministrationTest"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestAdministrationListTests"
+          "target": "com.azure.loadtesting_data#ListLoadTestAdministrationTests"
         },
         {
           "target": "com.azure.loadtesting_data#LoadTestRunCreateOrUpdateServerMetricsConfig"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunGetServerMetricsConfig"
+          "target": "com.azure.loadtesting_data#GetLoadTestRunServerMetricsConfig"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunListMetrics"
+          "target": "com.azure.loadtesting_data#ListLoadTestRunMetrics"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunListMetricNamespaces"
+          "target": "com.azure.loadtesting_data#ListLoadTestRunMetricNamespaces"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunListMetricDimensionValues"
+          "target": "com.azure.loadtesting_data#ListLoadTestRunMetricDimensionValues"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunListMetricDefinitions"
+          "target": "com.azure.loadtesting_data#ListLoadTestRunMetricDefinitions"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunGenerateInsights"
+          "target": "com.azure.loadtesting_data#GenerateLoadTestRunInsights"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunUpdateLatestInsights"
+          "target": "com.azure.loadtesting_data#UpdateLoadTestRunLatestInsights"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunGetLatestInsights"
+          "target": "com.azure.loadtesting_data#GetLoadTestRunLatestInsights"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunGetTestRunFile"
+          "target": "com.azure.loadtesting_data#GetLoadTestRunTestRunFile"
         },
         {
           "target": "com.azure.loadtesting_data#LoadTestRunCreateOrUpdateAppComponents"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunGetAppComponents"
+          "target": "com.azure.loadtesting_data#GetLoadTestRunAppComponents"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunStopTestRun"
+          "target": "com.azure.loadtesting_data#StopLoadTestRunTestRun"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunDeleteTestRun"
+          "target": "com.azure.loadtesting_data#DeleteLoadTestRunTestRun"
         },
         {
           "target": "com.azure.loadtesting_data#LoadTestRunCreateOrUpdateTestRun"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunGetTestRun"
+          "target": "com.azure.loadtesting_data#GetLoadTestRunTestRun"
         },
         {
-          "target": "com.azure.loadtesting_data#LoadTestRunListTestRuns"
+          "target": "com.azure.loadtesting_data#ListLoadTestRunTestRuns"
         },
         {
-          "target": "com.azure.loadtesting_data#OperationsGetStatus"
+          "target": "com.azure.loadtesting_data#GetOperationStatus"
         },
         {
-          "target": "com.azure.loadtesting_data#NotificationRuleAdministrationDeleteNotificationRule"
+          "target": "com.azure.loadtesting_data#DeleteNotificationRuleAdministrationNotificationRule"
         },
         {
           "target": "com.azure.loadtesting_data#NotificationRuleAdministrationCreateOrUpdateNotificationRule"
         },
         {
-          "target": "com.azure.loadtesting_data#NotificationRuleAdministrationGetNotificationRule"
+          "target": "com.azure.loadtesting_data#GetNotificationRuleAdministrationNotificationRule"
         },
         {
-          "target": "com.azure.loadtesting_data#NotificationRuleAdministrationListNotificationRules"
+          "target": "com.azure.loadtesting_data#ListNotificationRuleAdministrationNotificationRules"
         }
       ],
       "traits": {

@@ -15,37 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.edgemarketplace#PublishersListBySubscription": "com.azure.edgemarketplace#ListPublisherBySubscription",
-      "com.azure.edgemarketplace#PublishersListBySubscriptionRequest": "com.azure.edgemarketplace#ListPublisherBySubscriptionRequest",
-      "com.azure.edgemarketplace#OffersListBySubscription": "com.azure.edgemarketplace#ListOfferBySubscription",
-      "com.azure.edgemarketplace#OffersListBySubscriptionRequest": "com.azure.edgemarketplace#ListOfferBySubscriptionRequest",
-      "com.azure.edgemarketplace#OperationsList": "com.azure.edgemarketplace#ListOperations",
-      "com.azure.edgemarketplace#OperationsListResponse": "com.azure.edgemarketplace#ListOperationsResponse",
-      "com.azure.edgemarketplace#OperationsListResponseValueList": "com.azure.edgemarketplace#ListOperationsResponseValueList",
-      "com.azure.edgemarketplace#OperationsListRequest": "com.azure.edgemarketplace#ListOperationsRequest",
-      "com.azure.edgemarketplace#PublishersGet": "com.azure.edgemarketplace#GetPublisher",
-      "com.azure.edgemarketplace#PublishersGetResponse": "com.azure.edgemarketplace#GetPublisherResponse",
-      "com.azure.edgemarketplace#PublishersGetRequest": "com.azure.edgemarketplace#GetPublisherRequest",
-      "com.azure.edgemarketplace#PublishersList": "com.azure.edgemarketplace#ListPublishers",
-      "com.azure.edgemarketplace#PublishersListRequest": "com.azure.edgemarketplace#ListPublishersRequest",
-      "com.azure.edgemarketplace#OffersGetAccessToken": "com.azure.edgemarketplace#GetOfferAccessToken",
-      "com.azure.edgemarketplace#OffersGetAccessTokenRequest": "com.azure.edgemarketplace#GetOfferAccessTokenRequest",
-      "com.azure.edgemarketplace#OffersGenerateAccessToken": "com.azure.edgemarketplace#GenerateOfferAccessToken",
-      "com.azure.edgemarketplace#OffersGenerateAccessTokenResponse": "com.azure.edgemarketplace#GenerateOfferAccessTokenResponse",
-      "com.azure.edgemarketplace#OffersGenerateAccessTokenRequest": "com.azure.edgemarketplace#GenerateOfferAccessTokenRequest",
-      "com.azure.edgemarketplace#OffersGet": "com.azure.edgemarketplace#GetOffer",
-      "com.azure.edgemarketplace#OffersGetResponse": "com.azure.edgemarketplace#GetOfferResponse",
-      "com.azure.edgemarketplace#OffersGetRequest": "com.azure.edgemarketplace#GetOfferRequest",
-      "com.azure.edgemarketplace#OffersList": "com.azure.edgemarketplace#ListOffers",
-      "com.azure.edgemarketplace#OffersListRequest": "com.azure.edgemarketplace#ListOffersRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.edgemarketplace#PublishersListBySubscription": {
+    "com.azure.edgemarketplace#ListPublisherBySubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.edgemarketplace#PublishersListBySubscriptionRequest"
+        "target": "com.azure.edgemarketplace#ListPublisherBySubscriptionRequest"
       },
       "output": {
         "target": "com.azure.edgemarketplace#PublisherListResult"
@@ -284,7 +260,7 @@
         "smithy.api#documentation": "The type of identity that created the resource."
       }
     },
-    "com.azure.edgemarketplace#PublishersListBySubscriptionRequest": {
+    "com.azure.edgemarketplace#ListPublisherBySubscriptionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -306,10 +282,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.edgemarketplace#OffersListBySubscription": {
+    "com.azure.edgemarketplace#ListOfferBySubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.edgemarketplace#OffersListBySubscriptionRequest"
+        "target": "com.azure.edgemarketplace#ListOfferBySubscriptionRequest"
       },
       "output": {
         "target": "com.azure.edgemarketplace#OfferListResult"
@@ -857,7 +833,7 @@
         "smithy.api#documentation": "The offer publisher"
       }
     },
-    "com.azure.edgemarketplace#OffersListBySubscriptionRequest": {
+    "com.azure.edgemarketplace#ListOfferBySubscriptionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -879,13 +855,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.edgemarketplace#OperationsList": {
+    "com.azure.edgemarketplace#ListOperations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.edgemarketplace#OperationsListRequest"
+        "target": "com.azure.edgemarketplace#ListOperationsRequest"
       },
       "output": {
-        "target": "com.azure.edgemarketplace#OperationsListResponse"
+        "target": "com.azure.edgemarketplace#ListOperationsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -905,11 +881,11 @@
         }
       }
     },
-    "com.azure.edgemarketplace#OperationsListResponse": {
+    "com.azure.edgemarketplace#ListOperationsResponse": {
       "type": "structure",
       "members": {
         "value": {
-          "target": "com.azure.edgemarketplace#OperationsListResponseValueList",
+          "target": "com.azure.edgemarketplace#ListOperationsResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of operations supported by the resource provider"
           }
@@ -925,7 +901,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.edgemarketplace#OperationsListResponseValueList": {
+    "com.azure.edgemarketplace#ListOperationsResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.edgemarketplace#Operation"
@@ -1044,7 +1020,7 @@
         "smithy.api#documentation": "Localized display information for this particular operation."
       }
     },
-    "com.azure.edgemarketplace#OperationsListRequest": {
+    "com.azure.edgemarketplace#ListOperationsRequest": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -1058,13 +1034,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.edgemarketplace#PublishersGet": {
+    "com.azure.edgemarketplace#GetPublisher": {
       "type": "operation",
       "input": {
-        "target": "com.azure.edgemarketplace#PublishersGetRequest"
+        "target": "com.azure.edgemarketplace#GetPublisherRequest"
       },
       "output": {
-        "target": "com.azure.edgemarketplace#PublishersGetResponse"
+        "target": "com.azure.edgemarketplace#GetPublisherResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1077,7 +1053,7 @@
         "com.distilled.openapi#apiVersion": "2024-10-01"
       }
     },
-    "com.azure.edgemarketplace#PublishersGetResponse": {
+    "com.azure.edgemarketplace#GetPublisherResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1115,7 +1091,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.edgemarketplace#PublishersGetRequest": {
+    "com.azure.edgemarketplace#GetPublisherRequest": {
       "type": "structure",
       "members": {
         "resourceUri": {
@@ -1139,10 +1115,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.edgemarketplace#PublishersList": {
+    "com.azure.edgemarketplace#ListPublishers": {
       "type": "operation",
       "input": {
-        "target": "com.azure.edgemarketplace#PublishersListRequest"
+        "target": "com.azure.edgemarketplace#ListPublishersRequest"
       },
       "output": {
         "target": "com.azure.edgemarketplace#PublisherListResult"
@@ -1165,7 +1141,7 @@
         }
       }
     },
-    "com.azure.edgemarketplace#PublishersListRequest": {
+    "com.azure.edgemarketplace#ListPublishersRequest": {
       "type": "structure",
       "members": {
         "resourceUri": {
@@ -1222,10 +1198,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.edgemarketplace#OffersGetAccessToken": {
+    "com.azure.edgemarketplace#GetOfferAccessToken": {
       "type": "operation",
       "input": {
-        "target": "com.azure.edgemarketplace#OffersGetAccessTokenRequest"
+        "target": "com.azure.edgemarketplace#GetOfferAccessTokenRequest"
       },
       "output": {
         "target": "com.azure.edgemarketplace#DiskAccessToken"
@@ -1269,7 +1245,7 @@
         "smithy.api#documentation": "The disk access token"
       }
     },
-    "com.azure.edgemarketplace#OffersGetAccessTokenRequest": {
+    "com.azure.edgemarketplace#GetOfferAccessTokenRequest": {
       "type": "structure",
       "members": {
         "resourceUri": {
@@ -1300,13 +1276,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.edgemarketplace#OffersGenerateAccessToken": {
+    "com.azure.edgemarketplace#GenerateOfferAccessToken": {
       "type": "operation",
       "input": {
-        "target": "com.azure.edgemarketplace#OffersGenerateAccessTokenRequest"
+        "target": "com.azure.edgemarketplace#GenerateOfferAccessTokenRequest"
       },
       "output": {
-        "target": "com.azure.edgemarketplace#OffersGenerateAccessTokenResponse"
+        "target": "com.azure.edgemarketplace#GenerateOfferAccessTokenResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1319,7 +1295,7 @@
         "com.distilled.openapi#apiVersion": "2024-10-01"
       }
     },
-    "com.azure.edgemarketplace#OffersGenerateAccessTokenResponse": {
+    "com.azure.edgemarketplace#GenerateOfferAccessTokenResponse": {
       "type": "structure",
       "members": {
         "diskId": {
@@ -1362,7 +1338,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.edgemarketplace#OffersGenerateAccessTokenRequest": {
+    "com.azure.edgemarketplace#GenerateOfferAccessTokenRequest": {
       "type": "structure",
       "members": {
         "resourceUri": {
@@ -1435,13 +1411,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.edgemarketplace#OffersGet": {
+    "com.azure.edgemarketplace#GetOffer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.edgemarketplace#OffersGetRequest"
+        "target": "com.azure.edgemarketplace#GetOfferRequest"
       },
       "output": {
-        "target": "com.azure.edgemarketplace#OffersGetResponse"
+        "target": "com.azure.edgemarketplace#GetOfferResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1454,7 +1430,7 @@
         "com.distilled.openapi#apiVersion": "2024-10-01"
       }
     },
-    "com.azure.edgemarketplace#OffersGetResponse": {
+    "com.azure.edgemarketplace#GetOfferResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1492,7 +1468,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.edgemarketplace#OffersGetRequest": {
+    "com.azure.edgemarketplace#GetOfferRequest": {
       "type": "structure",
       "members": {
         "resourceUri": {
@@ -1516,10 +1492,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.edgemarketplace#OffersList": {
+    "com.azure.edgemarketplace#ListOffers": {
       "type": "operation",
       "input": {
-        "target": "com.azure.edgemarketplace#OffersListRequest"
+        "target": "com.azure.edgemarketplace#ListOffersRequest"
       },
       "output": {
         "target": "com.azure.edgemarketplace#OfferListResult"
@@ -1542,7 +1518,7 @@
         }
       }
     },
-    "com.azure.edgemarketplace#OffersListRequest": {
+    "com.azure.edgemarketplace#ListOffersRequest": {
       "type": "structure",
       "members": {
         "resourceUri": {
@@ -1604,31 +1580,31 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.edgemarketplace#PublishersListBySubscription"
+          "target": "com.azure.edgemarketplace#ListPublisherBySubscription"
         },
         {
-          "target": "com.azure.edgemarketplace#OffersListBySubscription"
+          "target": "com.azure.edgemarketplace#ListOfferBySubscription"
         },
         {
-          "target": "com.azure.edgemarketplace#OperationsList"
+          "target": "com.azure.edgemarketplace#ListOperations"
         },
         {
-          "target": "com.azure.edgemarketplace#PublishersGet"
+          "target": "com.azure.edgemarketplace#GetPublisher"
         },
         {
-          "target": "com.azure.edgemarketplace#PublishersList"
+          "target": "com.azure.edgemarketplace#ListPublishers"
         },
         {
-          "target": "com.azure.edgemarketplace#OffersGetAccessToken"
+          "target": "com.azure.edgemarketplace#GetOfferAccessToken"
         },
         {
-          "target": "com.azure.edgemarketplace#OffersGenerateAccessToken"
+          "target": "com.azure.edgemarketplace#GenerateOfferAccessToken"
         },
         {
-          "target": "com.azure.edgemarketplace#OffersGet"
+          "target": "com.azure.edgemarketplace#GetOffer"
         },
         {
-          "target": "com.azure.edgemarketplace#OffersList"
+          "target": "com.azure.edgemarketplace#ListOffers"
         }
       ],
       "traits": {

@@ -15,22 +15,7 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.keyvault_administration#RoleDefinitionsDelete": "com.azure.keyvault_administration#DeleteRoleDefinition",
-      "com.azure.keyvault_administration#RoleDefinitionsDeleteRequest": "com.azure.keyvault_administration#DeleteRoleDefinitionRequest",
-      "com.azure.keyvault_administration#RoleDefinitionsGet": "com.azure.keyvault_administration#GetRoleDefinition",
-      "com.azure.keyvault_administration#RoleDefinitionsGetRequest": "com.azure.keyvault_administration#GetRoleDefinitionRequest",
-      "com.azure.keyvault_administration#RoleDefinitionsList": "com.azure.keyvault_administration#ListRoleDefinitions",
-      "com.azure.keyvault_administration#RoleDefinitionsListRequest": "com.azure.keyvault_administration#ListRoleDefinitionsRequest",
-      "com.azure.keyvault_administration#RoleAssignmentsDelete": "com.azure.keyvault_administration#DeleteRoleAssignment",
-      "com.azure.keyvault_administration#RoleAssignmentsDeleteRequest": "com.azure.keyvault_administration#DeleteRoleAssignmentRequest",
-      "com.azure.keyvault_administration#RoleAssignmentsCreate": "com.azure.keyvault_administration#CreateRoleAssignment",
-      "com.azure.keyvault_administration#RoleAssignmentsCreateRequest": "com.azure.keyvault_administration#CreateRoleAssignmentRequest",
-      "com.azure.keyvault_administration#RoleAssignmentsGet": "com.azure.keyvault_administration#GetRoleAssignment",
-      "com.azure.keyvault_administration#RoleAssignmentsGetRequest": "com.azure.keyvault_administration#GetRoleAssignmentRequest",
-      "com.azure.keyvault_administration#RoleAssignmentsListForScope": "com.azure.keyvault_administration#ListRoleAssignmentForScope",
-      "com.azure.keyvault_administration#RoleAssignmentsListForScopeRequest": "com.azure.keyvault_administration#ListRoleAssignmentForScopeRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
     "com.azure.keyvault_administration#SelectiveKeyRestoreStatus": {
@@ -1398,10 +1383,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.keyvault_administration#RoleDefinitionsDelete": {
+    "com.azure.keyvault_administration#DeleteRoleDefinition": {
       "type": "operation",
       "input": {
-        "target": "com.azure.keyvault_administration#RoleDefinitionsDeleteRequest"
+        "target": "com.azure.keyvault_administration#DeleteRoleDefinitionRequest"
       },
       "output": {
         "target": "com.azure.keyvault_administration#RoleDefinition"
@@ -1842,7 +1827,7 @@
         "smithy.api#documentation": "The role definition type."
       }
     },
-    "com.azure.keyvault_administration#RoleDefinitionsDeleteRequest": {
+    "com.azure.keyvault_administration#DeleteRoleDefinitionRequest": {
       "type": "structure",
       "members": {
         "vaultBaseUrl": {
@@ -1935,10 +1920,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.keyvault_administration#RoleDefinitionsGet": {
+    "com.azure.keyvault_administration#GetRoleDefinition": {
       "type": "operation",
       "input": {
-        "target": "com.azure.keyvault_administration#RoleDefinitionsGetRequest"
+        "target": "com.azure.keyvault_administration#GetRoleDefinitionRequest"
       },
       "output": {
         "target": "com.azure.keyvault_administration#RoleDefinition"
@@ -1957,7 +1942,7 @@
         "smithy.api#documentation": "Get the specified role definition."
       }
     },
-    "com.azure.keyvault_administration#RoleDefinitionsGetRequest": {
+    "com.azure.keyvault_administration#GetRoleDefinitionRequest": {
       "type": "structure",
       "members": {
         "vaultBaseUrl": {
@@ -1989,10 +1974,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.keyvault_administration#RoleDefinitionsList": {
+    "com.azure.keyvault_administration#ListRoleDefinitions": {
       "type": "operation",
       "input": {
-        "target": "com.azure.keyvault_administration#RoleDefinitionsListRequest"
+        "target": "com.azure.keyvault_administration#ListRoleDefinitionsRequest"
       },
       "output": {
         "target": "com.azure.keyvault_administration#RoleDefinitionListResult"
@@ -2047,7 +2032,7 @@
         "smithy.api#documentation": "Role definition list."
       }
     },
-    "com.azure.keyvault_administration#RoleDefinitionsListRequest": {
+    "com.azure.keyvault_administration#ListRoleDefinitionsRequest": {
       "type": "structure",
       "members": {
         "vaultBaseUrl": {
@@ -2084,10 +2069,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.keyvault_administration#RoleAssignmentsDelete": {
+    "com.azure.keyvault_administration#DeleteRoleAssignment": {
       "type": "operation",
       "input": {
-        "target": "com.azure.keyvault_administration#RoleAssignmentsDeleteRequest"
+        "target": "com.azure.keyvault_administration#DeleteRoleAssignmentRequest"
       },
       "output": {
         "target": "com.azure.keyvault_administration#RoleAssignment"
@@ -2164,7 +2149,7 @@
         "smithy.api#documentation": "Role assignment properties with scope."
       }
     },
-    "com.azure.keyvault_administration#RoleAssignmentsDeleteRequest": {
+    "com.azure.keyvault_administration#DeleteRoleAssignmentRequest": {
       "type": "structure",
       "members": {
         "vaultBaseUrl": {
@@ -2196,10 +2181,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.keyvault_administration#RoleAssignmentsCreate": {
+    "com.azure.keyvault_administration#CreateRoleAssignment": {
       "type": "operation",
       "input": {
-        "target": "com.azure.keyvault_administration#RoleAssignmentsCreateRequest"
+        "target": "com.azure.keyvault_administration#CreateRoleAssignmentRequest"
       },
       "output": {
         "target": "com.azure.keyvault_administration#RoleAssignment"
@@ -2218,7 +2203,7 @@
         "smithy.api#documentation": "Creates a role assignment."
       }
     },
-    "com.azure.keyvault_administration#RoleAssignmentsCreateRequest": {
+    "com.azure.keyvault_administration#CreateRoleAssignmentRequest": {
       "type": "structure",
       "members": {
         "vaultBaseUrl": {
@@ -2279,10 +2264,10 @@
         "smithy.api#documentation": "Role assignment properties."
       }
     },
-    "com.azure.keyvault_administration#RoleAssignmentsGet": {
+    "com.azure.keyvault_administration#GetRoleAssignment": {
       "type": "operation",
       "input": {
-        "target": "com.azure.keyvault_administration#RoleAssignmentsGetRequest"
+        "target": "com.azure.keyvault_administration#GetRoleAssignmentRequest"
       },
       "output": {
         "target": "com.azure.keyvault_administration#RoleAssignment"
@@ -2301,7 +2286,7 @@
         "smithy.api#documentation": "Get the specified role assignment."
       }
     },
-    "com.azure.keyvault_administration#RoleAssignmentsGetRequest": {
+    "com.azure.keyvault_administration#GetRoleAssignmentRequest": {
       "type": "structure",
       "members": {
         "vaultBaseUrl": {
@@ -2333,10 +2318,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.keyvault_administration#RoleAssignmentsListForScope": {
+    "com.azure.keyvault_administration#ListRoleAssignmentForScope": {
       "type": "operation",
       "input": {
-        "target": "com.azure.keyvault_administration#RoleAssignmentsListForScopeRequest"
+        "target": "com.azure.keyvault_administration#ListRoleAssignmentForScopeRequest"
       },
       "output": {
         "target": "com.azure.keyvault_administration#RoleAssignmentListResult"
@@ -2391,7 +2376,7 @@
         "smithy.api#documentation": "Role assignment list."
       }
     },
-    "com.azure.keyvault_administration#RoleAssignmentsListForScopeRequest": {
+    "com.azure.keyvault_administration#ListRoleAssignmentForScopeRequest": {
       "type": "structure",
       "members": {
         "vaultBaseUrl": {
@@ -2484,28 +2469,28 @@
           "target": "com.azure.keyvault_administration#FullBackup"
         },
         {
-          "target": "com.azure.keyvault_administration#RoleDefinitionsDelete"
+          "target": "com.azure.keyvault_administration#DeleteRoleDefinition"
         },
         {
           "target": "com.azure.keyvault_administration#RoleDefinitionsCreateOrUpdate"
         },
         {
-          "target": "com.azure.keyvault_administration#RoleDefinitionsGet"
+          "target": "com.azure.keyvault_administration#GetRoleDefinition"
         },
         {
-          "target": "com.azure.keyvault_administration#RoleDefinitionsList"
+          "target": "com.azure.keyvault_administration#ListRoleDefinitions"
         },
         {
-          "target": "com.azure.keyvault_administration#RoleAssignmentsDelete"
+          "target": "com.azure.keyvault_administration#DeleteRoleAssignment"
         },
         {
-          "target": "com.azure.keyvault_administration#RoleAssignmentsCreate"
+          "target": "com.azure.keyvault_administration#CreateRoleAssignment"
         },
         {
-          "target": "com.azure.keyvault_administration#RoleAssignmentsGet"
+          "target": "com.azure.keyvault_administration#GetRoleAssignment"
         },
         {
-          "target": "com.azure.keyvault_administration#RoleAssignmentsListForScope"
+          "target": "com.azure.keyvault_administration#ListRoleAssignmentForScope"
         }
       ],
       "traits": {

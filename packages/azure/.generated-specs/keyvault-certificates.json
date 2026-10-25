@@ -14,7 +14,8 @@
         "id": "UnreferencedShape",
         "namespace": "*"
       }
-    ]
+    ],
+    "distilled.finalized": true
   },
   "shapes": {
     "com.azure.keyvault_certificates#RecoverDeletedCertificate": {
@@ -2876,7 +2877,6 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpLabel": {},
-            "smithy.api#required": {},
             "smithy.api#documentation": "The version of the certificate. This URI fragment is optional. If not specified, the latest version of the certificate is returned."
           }
         }

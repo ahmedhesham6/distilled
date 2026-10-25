@@ -15,27 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.keyvault_security_domain#HSMSecurityDomainUploadPending": "com.azure.keyvault_security_domain#UploadHSMSecurityDomainPending",
-      "com.azure.keyvault_security_domain#HSMSecurityDomainUploadPendingRequest": "com.azure.keyvault_security_domain#UploadHSMSecurityDomainPendingRequest",
-      "com.azure.keyvault_security_domain#HSMSecurityDomainUpload": "com.azure.keyvault_security_domain#UploadHSMSecurityDomain",
-      "com.azure.keyvault_security_domain#HSMSecurityDomainUploadResponse": "com.azure.keyvault_security_domain#UploadHSMSecurityDomainResponse",
-      "com.azure.keyvault_security_domain#HSMSecurityDomainUploadRequest": "com.azure.keyvault_security_domain#UploadHSMSecurityDomainRequest",
-      "com.azure.keyvault_security_domain#HSMSecurityDomainTransferKey": "com.azure.keyvault_security_domain#TransferHSMSecurityDomainKey",
-      "com.azure.keyvault_security_domain#HSMSecurityDomainTransferKeyRequest": "com.azure.keyvault_security_domain#TransferHSMSecurityDomainKeyRequest",
-      "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadPending": "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainPending",
-      "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadPendingRequest": "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainPendingRequest",
-      "com.azure.keyvault_security_domain#HSMSecurityDomainDownload": "com.azure.keyvault_security_domain#DownloadHSMSecurityDomain",
-      "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadResponse": "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainResponse",
-      "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadRequest": "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainRequest",
-      "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadRequestCertificatesList": "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainRequestCertificatesList"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.keyvault_security_domain#HSMSecurityDomainUploadPending": {
+    "com.azure.keyvault_security_domain#UploadHSMSecurityDomainPending": {
       "type": "operation",
       "input": {
-        "target": "com.azure.keyvault_security_domain#HSMSecurityDomainUploadPendingRequest"
+        "target": "com.azure.keyvault_security_domain#UploadHSMSecurityDomainPendingRequest"
       },
       "output": {
         "target": "com.azure.keyvault_security_domain#SecurityDomainOperationStatus"
@@ -100,7 +86,7 @@
         "smithy.api#documentation": "Operation status."
       }
     },
-    "com.azure.keyvault_security_domain#HSMSecurityDomainUploadPendingRequest": {
+    "com.azure.keyvault_security_domain#UploadHSMSecurityDomainPendingRequest": {
       "type": "structure",
       "members": {
         "vaultBaseUrl": {
@@ -115,13 +101,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.keyvault_security_domain#HSMSecurityDomainUpload": {
+    "com.azure.keyvault_security_domain#UploadHSMSecurityDomain": {
       "type": "operation",
       "input": {
-        "target": "com.azure.keyvault_security_domain#HSMSecurityDomainUploadRequest"
+        "target": "com.azure.keyvault_security_domain#UploadHSMSecurityDomainRequest"
       },
       "output": {
-        "target": "com.azure.keyvault_security_domain#HSMSecurityDomainUploadResponse"
+        "target": "com.azure.keyvault_security_domain#UploadHSMSecurityDomainResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -137,7 +123,7 @@
         "smithy.api#documentation": "Restore the provided Security Domain."
       }
     },
-    "com.azure.keyvault_security_domain#HSMSecurityDomainUploadResponse": {
+    "com.azure.keyvault_security_domain#UploadHSMSecurityDomainResponse": {
       "type": "structure",
       "members": {
         "azureAsyncOperation": {
@@ -159,7 +145,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.keyvault_security_domain#HSMSecurityDomainUploadRequest": {
+    "com.azure.keyvault_security_domain#UploadHSMSecurityDomainRequest": {
       "type": "structure",
       "members": {
         "vaultBaseUrl": {
@@ -181,10 +167,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.keyvault_security_domain#HSMSecurityDomainTransferKey": {
+    "com.azure.keyvault_security_domain#TransferHSMSecurityDomainKey": {
       "type": "operation",
       "input": {
-        "target": "com.azure.keyvault_security_domain#HSMSecurityDomainTransferKeyRequest"
+        "target": "com.azure.keyvault_security_domain#TransferHSMSecurityDomainKeyRequest"
       },
       "output": {
         "target": "com.azure.keyvault_security_domain#TransferKey"
@@ -319,7 +305,7 @@
         "smithy.api#documentation": "Supported key operations."
       }
     },
-    "com.azure.keyvault_security_domain#HSMSecurityDomainTransferKeyRequest": {
+    "com.azure.keyvault_security_domain#TransferHSMSecurityDomainKeyRequest": {
       "type": "structure",
       "members": {
         "vaultBaseUrl": {
@@ -334,10 +320,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadPending": {
+    "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainPending": {
       "type": "operation",
       "input": {
-        "target": "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadPendingRequest"
+        "target": "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainPendingRequest"
       },
       "output": {
         "target": "com.azure.keyvault_security_domain#SecurityDomainOperationStatus"
@@ -356,7 +342,7 @@
         "smithy.api#documentation": "Retrieves the Security Domain download operation status"
       }
     },
-    "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadPendingRequest": {
+    "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainPendingRequest": {
       "type": "structure",
       "members": {
         "vaultBaseUrl": {
@@ -371,13 +357,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.keyvault_security_domain#HSMSecurityDomainDownload": {
+    "com.azure.keyvault_security_domain#DownloadHSMSecurityDomain": {
       "type": "operation",
       "input": {
-        "target": "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadRequest"
+        "target": "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainRequest"
       },
       "output": {
-        "target": "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadResponse"
+        "target": "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -393,7 +379,7 @@
         "smithy.api#documentation": "Retrieves the Security Domain from the managed HSM. Calling this endpoint can be used to activate a provisioned managed HSM resource."
       }
     },
-    "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadResponse": {
+    "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainResponse": {
       "type": "structure",
       "members": {
         "azureAsyncOperation": {
@@ -415,7 +401,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadRequest": {
+    "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainRequest": {
       "type": "structure",
       "members": {
         "vaultBaseUrl": {
@@ -426,7 +412,7 @@
           }
         },
         "certificates": {
-          "target": "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadRequestCertificatesList",
+          "target": "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainRequestCertificatesList",
           "traits": {
             "smithy.api#documentation": "Certificates needed from customer.",
             "smithy.api#required": {}
@@ -443,7 +429,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadRequestCertificatesList": {
+    "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainRequestCertificatesList": {
       "type": "list",
       "member": {
         "target": "com.azure.keyvault_security_domain#SecurityDomainJsonWebKey"
@@ -457,19 +443,19 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.keyvault_security_domain#HSMSecurityDomainUploadPending"
+          "target": "com.azure.keyvault_security_domain#UploadHSMSecurityDomainPending"
         },
         {
-          "target": "com.azure.keyvault_security_domain#HSMSecurityDomainUpload"
+          "target": "com.azure.keyvault_security_domain#UploadHSMSecurityDomain"
         },
         {
-          "target": "com.azure.keyvault_security_domain#HSMSecurityDomainTransferKey"
+          "target": "com.azure.keyvault_security_domain#TransferHSMSecurityDomainKey"
         },
         {
-          "target": "com.azure.keyvault_security_domain#HSMSecurityDomainDownloadPending"
+          "target": "com.azure.keyvault_security_domain#DownloadHSMSecurityDomainPending"
         },
         {
-          "target": "com.azure.keyvault_security_domain#HSMSecurityDomainDownload"
+          "target": "com.azure.keyvault_security_domain#DownloadHSMSecurityDomain"
         }
       ],
       "traits": {

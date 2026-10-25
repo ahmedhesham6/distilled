@@ -15,19 +15,7 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.loadtesting_playwright#TestRunsList": "com.azure.loadtesting_playwright#ListTestRuns",
-      "com.azure.loadtesting_playwright#TestRunsListRequest": "com.azure.loadtesting_playwright#ListTestRunsRequest",
-      "com.azure.loadtesting_playwright#WorkspacesGetBrowsers": "com.azure.loadtesting_playwright#GetWorkspaceBrowsers",
-      "com.azure.loadtesting_playwright#WorkspacesGetBrowsersRequest": "com.azure.loadtesting_playwright#GetWorkspaceBrowsersRequest",
-      "com.azure.loadtesting_playwright#WorkspacesGetBrowsersRequestOs": "com.azure.loadtesting_playwright#GetWorkspaceBrowsersRequestOs",
-      "com.azure.loadtesting_playwright#AccessTokensDelete": "com.azure.loadtesting_playwright#DeleteAccessToken",
-      "com.azure.loadtesting_playwright#AccessTokensDeleteRequest": "com.azure.loadtesting_playwright#DeleteAccessTokenRequest",
-      "com.azure.loadtesting_playwright#AccessTokensGet": "com.azure.loadtesting_playwright#GetAccessToken",
-      "com.azure.loadtesting_playwright#AccessTokensGetRequest": "com.azure.loadtesting_playwright#GetAccessTokenRequest",
-      "com.azure.loadtesting_playwright#AccessTokensList": "com.azure.loadtesting_playwright#ListAccessTokens",
-      "com.azure.loadtesting_playwright#AccessTokensListRequest": "com.azure.loadtesting_playwright#ListAccessTokensRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
     "com.azure.loadtesting_playwright#TestRunsCreateOrUpdate": {
@@ -379,10 +367,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_playwright#TestRunsList": {
+    "com.azure.loadtesting_playwright#ListTestRuns": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_playwright#TestRunsListRequest"
+        "target": "com.azure.loadtesting_playwright#ListTestRunsRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_playwright#PagedTestRun"
@@ -438,7 +426,7 @@
         "smithy.api#documentation": "The TestRun items on this page"
       }
     },
-    "com.azure.loadtesting_playwright#TestRunsListRequest": {
+    "com.azure.loadtesting_playwright#ListTestRunsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -482,10 +470,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_playwright#WorkspacesGetBrowsers": {
+    "com.azure.loadtesting_playwright#GetWorkspaceBrowsers": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_playwright#WorkspacesGetBrowsersRequest"
+        "target": "com.azure.loadtesting_playwright#GetWorkspaceBrowsersRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -504,7 +492,7 @@
         "smithy.api#documentation": "Gets remote browsers for the specified workspace ID and redirects the client to execute Playwright scripts. Requires Bearer JWT access token provided by Entra ID or Playwright Service."
       }
     },
-    "com.azure.loadtesting_playwright#WorkspacesGetBrowsersRequest": {
+    "com.azure.loadtesting_playwright#GetWorkspaceBrowsersRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -524,7 +512,7 @@
           }
         },
         "os": {
-          "target": "com.azure.loadtesting_playwright#WorkspacesGetBrowsersRequestOs",
+          "target": "com.azure.loadtesting_playwright#GetWorkspaceBrowsersRequestOs",
           "traits": {
             "smithy.api#httpQuery": "os",
             "smithy.api#required": {},
@@ -557,7 +545,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_playwright#WorkspacesGetBrowsersRequestOs": {
+    "com.azure.loadtesting_playwright#GetWorkspaceBrowsersRequestOs": {
       "type": "enum",
       "members": {
         "LINUX": {
@@ -575,10 +563,10 @@
       },
       "traits": {}
     },
-    "com.azure.loadtesting_playwright#AccessTokensDelete": {
+    "com.azure.loadtesting_playwright#DeleteAccessToken": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_playwright#AccessTokensDeleteRequest"
+        "target": "com.azure.loadtesting_playwright#DeleteAccessTokenRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -597,7 +585,7 @@
         "smithy.api#documentation": "Deletes an access token for the workspace with the specified access token ID. Requires Bearer JWT access token provided by Entra ID."
       }
     },
-    "com.azure.loadtesting_playwright#AccessTokensDeleteRequest": {
+    "com.azure.loadtesting_playwright#DeleteAccessTokenRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -794,10 +782,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_playwright#AccessTokensGet": {
+    "com.azure.loadtesting_playwright#GetAccessToken": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_playwright#AccessTokensGetRequest"
+        "target": "com.azure.loadtesting_playwright#GetAccessTokenRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_playwright#AccessToken"
@@ -816,7 +804,7 @@
         "smithy.api#documentation": "Gets an access token for the workspace with the specified access token ID. Requires Bearer JWT access token provided by Entra ID."
       }
     },
-    "com.azure.loadtesting_playwright#AccessTokensGetRequest": {
+    "com.azure.loadtesting_playwright#GetAccessTokenRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -862,10 +850,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.loadtesting_playwright#AccessTokensList": {
+    "com.azure.loadtesting_playwright#ListAccessTokens": {
       "type": "operation",
       "input": {
-        "target": "com.azure.loadtesting_playwright#AccessTokensListRequest"
+        "target": "com.azure.loadtesting_playwright#ListAccessTokensRequest"
       },
       "output": {
         "target": "com.azure.loadtesting_playwright#PagedAccessToken"
@@ -921,7 +909,7 @@
         "smithy.api#documentation": "The AccessToken items on this page"
       }
     },
-    "com.azure.loadtesting_playwright#AccessTokensListRequest": {
+    "com.azure.loadtesting_playwright#ListAccessTokensRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -973,22 +961,22 @@
           "target": "com.azure.loadtesting_playwright#TestRunsCreateOrUpdate"
         },
         {
-          "target": "com.azure.loadtesting_playwright#TestRunsList"
+          "target": "com.azure.loadtesting_playwright#ListTestRuns"
         },
         {
-          "target": "com.azure.loadtesting_playwright#WorkspacesGetBrowsers"
+          "target": "com.azure.loadtesting_playwright#GetWorkspaceBrowsers"
         },
         {
-          "target": "com.azure.loadtesting_playwright#AccessTokensDelete"
+          "target": "com.azure.loadtesting_playwright#DeleteAccessToken"
         },
         {
           "target": "com.azure.loadtesting_playwright#AccessTokensCreateOrReplace"
         },
         {
-          "target": "com.azure.loadtesting_playwright#AccessTokensGet"
+          "target": "com.azure.loadtesting_playwright#GetAccessToken"
         },
         {
-          "target": "com.azure.loadtesting_playwright#AccessTokensList"
+          "target": "com.azure.loadtesting_playwright#ListAccessTokens"
         }
       ],
       "traits": {

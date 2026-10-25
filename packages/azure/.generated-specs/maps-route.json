@@ -15,58 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.maps_route#RoutePostSnapToRoadsBatch": "com.azure.maps_route#PostRouteSnapToRoadsBatch",
-      "com.azure.maps_route#RoutePostSnapToRoadsBatchRequest": "com.azure.maps_route#PostRouteSnapToRoadsBatchRequest",
-      "com.azure.maps_route#RoutePostSnapToRoadsBatchRequestBatchItemsList": "com.azure.maps_route#PostRouteSnapToRoadsBatchRequestBatchItemsList",
-      "com.azure.maps_route#RoutePostSnapToRoads": "com.azure.maps_route#PostRouteSnapToRoads",
-      "com.azure.maps_route#RoutePostSnapToRoadsRequest": "com.azure.maps_route#PostRouteSnapToRoadsRequest",
-      "com.azure.maps_route#RoutePostSnapToRoadsRequestTravelMode": "com.azure.maps_route#PostRouteSnapToRoadsRequestTravelMode",
-      "com.azure.maps_route#RoutePostSnapToRoadsRequestFeaturesList": "com.azure.maps_route#PostRouteSnapToRoadsRequestFeaturesList",
-      "com.azure.maps_route#RoutePostRouteRangeBatch": "com.azure.maps_route#PostRouteRouteRangeBatch",
-      "com.azure.maps_route#RoutePostRouteRangeBatchRequest": "com.azure.maps_route#PostRouteRouteRangeBatchRequest",
-      "com.azure.maps_route#RoutePostRouteRangeBatchRequestBatchItemsList": "com.azure.maps_route#PostRouteRouteRangeBatchRequestBatchItemsList",
-      "com.azure.maps_route#RoutePostRouteRange": "com.azure.maps_route#PostRouteRouteRange",
-      "com.azure.maps_route#RoutePostRouteRangeRequest": "com.azure.maps_route#PostRouteRouteRangeRequest",
-      "com.azure.maps_route#RouteGetRouteOperationsResult": "com.azure.maps_route#GetRouteRouteOperationsResult",
-      "com.azure.maps_route#RouteGetRouteOperationsResultRequest": "com.azure.maps_route#GetRouteRouteOperationsResultRequest",
-      "com.azure.maps_route#RouteGetRouteOperationsStatus": "com.azure.maps_route#GetRouteRouteOperationsStatus",
-      "com.azure.maps_route#RouteGetRouteOperationsStatusRequest": "com.azure.maps_route#GetRouteRouteOperationsStatusRequest",
-      "com.azure.maps_route#RoutePostRouteMatrixAsync": "com.azure.maps_route#PostRouteRouteMatrixAsync",
-      "com.azure.maps_route#RoutePostRouteMatrixAsyncResponse": "com.azure.maps_route#PostRouteRouteMatrixAsyncResponse",
-      "com.azure.maps_route#RoutePostRouteMatrixAsyncRequest": "com.azure.maps_route#PostRouteRouteMatrixAsyncRequest",
-      "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestAvoidList": "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestAvoidList",
-      "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestTraffic": "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestTraffic",
-      "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestOptimizeRoute": "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestOptimizeRoute",
-      "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestTravelMode": "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestTravelMode",
-      "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestFeaturesList": "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestFeaturesList",
-      "com.azure.maps_route#RoutePostRouteMatrix": "com.azure.maps_route#PostRouteRouteMatrix",
-      "com.azure.maps_route#RoutePostRouteMatrixRequest": "com.azure.maps_route#PostRouteRouteMatrixRequest",
-      "com.azure.maps_route#RoutePostRouteMatrixRequestAvoidList": "com.azure.maps_route#PostRouteRouteMatrixRequestAvoidList",
-      "com.azure.maps_route#RoutePostRouteMatrixRequestTraffic": "com.azure.maps_route#PostRouteRouteMatrixRequestTraffic",
-      "com.azure.maps_route#RoutePostRouteMatrixRequestOptimizeRoute": "com.azure.maps_route#PostRouteRouteMatrixRequestOptimizeRoute",
-      "com.azure.maps_route#RoutePostRouteMatrixRequestTravelMode": "com.azure.maps_route#PostRouteRouteMatrixRequestTravelMode",
-      "com.azure.maps_route#RoutePostRouteMatrixRequestFeaturesList": "com.azure.maps_route#PostRouteRouteMatrixRequestFeaturesList",
-      "com.azure.maps_route#RoutePostRouteDirectionsBatch": "com.azure.maps_route#PostRouteRouteDirectionsBatch",
-      "com.azure.maps_route#RoutePostRouteDirectionsBatchRequest": "com.azure.maps_route#PostRouteRouteDirectionsBatchRequest",
-      "com.azure.maps_route#RoutePostRouteDirectionsBatchRequestBatchItemsList": "com.azure.maps_route#PostRouteRouteDirectionsBatchRequestBatchItemsList",
-      "com.azure.maps_route#RoutePostRouteDirections": "com.azure.maps_route#PostRouteRouteDirections",
-      "com.azure.maps_route#RoutePostRouteDirectionsResponse": "com.azure.maps_route#PostRouteRouteDirectionsResponse",
-      "com.azure.maps_route#RoutePostRouteDirectionsResponseAlternativeRoutesList": "com.azure.maps_route#PostRouteRouteDirectionsResponseAlternativeRoutesList",
-      "com.azure.maps_route#RoutePostRouteDirectionsResponseFeaturesList": "com.azure.maps_route#PostRouteRouteDirectionsResponseFeaturesList",
-      "com.azure.maps_route#RoutePostRouteDirectionsRequest": "com.azure.maps_route#PostRouteRouteDirectionsRequest",
-      "com.azure.maps_route#RoutePostRouteDirectionsRequestRouteOutputOptionsList": "com.azure.maps_route#PostRouteRouteDirectionsRequestRouteOutputOptionsList",
-      "com.azure.maps_route#RoutePostRouteDirectionsRequestAvoidList": "com.azure.maps_route#PostRouteRouteDirectionsRequestAvoidList",
-      "com.azure.maps_route#RoutePostRouteDirectionsRequestOptimizeRoute": "com.azure.maps_route#PostRouteRouteDirectionsRequestOptimizeRoute",
-      "com.azure.maps_route#RoutePostRouteDirectionsRequestTravelMode": "com.azure.maps_route#PostRouteRouteDirectionsRequestTravelMode",
-      "com.azure.maps_route#RoutePostRouteDirectionsRequestFeaturesList": "com.azure.maps_route#PostRouteRouteDirectionsRequestFeaturesList"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.maps_route#RoutePostSnapToRoadsBatch": {
+    "com.azure.maps_route#PostRouteSnapToRoadsBatch": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_route#RoutePostSnapToRoadsBatchRequest"
+        "target": "com.azure.maps_route#PostRouteSnapToRoadsBatchRequest"
       },
       "output": {
         "target": "com.azure.maps_route#SnapToRoadsBatchResponse"
@@ -460,7 +415,7 @@
         "smithy.api#documentation": "Summary for the batch request"
       }
     },
-    "com.azure.maps_route#RoutePostSnapToRoadsBatchRequest": {
+    "com.azure.maps_route#PostRouteSnapToRoadsBatchRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -485,7 +440,7 @@
           }
         },
         "batchItems": {
-          "target": "com.azure.maps_route#RoutePostSnapToRoadsBatchRequestBatchItemsList",
+          "target": "com.azure.maps_route#PostRouteSnapToRoadsBatchRequestBatchItemsList",
           "traits": {
             "smithy.api#documentation": "The list of queries to process."
           }
@@ -495,7 +450,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_route#RoutePostSnapToRoadsBatchRequestBatchItemsList": {
+    "com.azure.maps_route#PostRouteSnapToRoadsBatchRequestBatchItemsList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#SnapToRoadsBatchRequestItem"
@@ -620,10 +575,10 @@
         "smithy.api#documentation": "The properties object is required in a valid GeoJSON but it can be empty since\nthe metadata is not used for snapping to road."
       }
     },
-    "com.azure.maps_route#RoutePostSnapToRoads": {
+    "com.azure.maps_route#PostRouteSnapToRoads": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_route#RoutePostSnapToRoadsRequest"
+        "target": "com.azure.maps_route#PostRouteSnapToRoadsRequest"
       },
       "output": {
         "target": "com.azure.maps_route#SnapToRoadsResponse"
@@ -674,7 +629,7 @@
         "smithy.api#documentation": "`GeoJSON` feature object that contains Geometry object and additional\nproperties. Refer to [RFC 7946, Section\n3.2](https://www.rfc-editor.org/rfc/rfc7946#section-3.2) for details."
       }
     },
-    "com.azure.maps_route#RoutePostSnapToRoadsRequest": {
+    "com.azure.maps_route#PostRouteSnapToRoadsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -706,7 +661,7 @@
           }
         },
         "features": {
-          "target": "com.azure.maps_route#RoutePostSnapToRoadsRequestFeaturesList",
+          "target": "com.azure.maps_route#PostRouteSnapToRoadsRequestFeaturesList",
           "traits": {
             "smithy.api#documentation": "A set of points to snap to road network. You can have a minimum of 2 points and\nmaximum of 5000 points and the two consecutive points must be within 6\nkilometer of each other and a total road distance of up to 100 kilometers.\nRefer to [RFC 7946](https://www.rfc-editor.org/rfc/rfc7946) for details on the\nGeoJSON format.\n\n`Note`: The API will not return a point object in the response for the GPS\npoint that cannot be snapped to a road network.",
             "smithy.api#required": {}
@@ -725,7 +680,7 @@
           }
         },
         "travelMode": {
-          "target": "com.azure.maps_route#RoutePostSnapToRoadsRequestTravelMode",
+          "target": "com.azure.maps_route#PostRouteSnapToRoadsRequestTravelMode",
           "traits": {
             "smithy.api#documentation": "Specifies the routing profile for snapping the points. If unspecified, the\ndefault mode is \"driving\", which optimizes the snapped points for driving\nroutes."
           }
@@ -735,7 +690,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_route#RoutePostSnapToRoadsRequestTravelMode": {
+    "com.azure.maps_route#PostRouteSnapToRoadsRequestTravelMode": {
       "type": "enum",
       "members": {
         "DRIVING": {
@@ -755,7 +710,7 @@
         "smithy.api#documentation": "Specifies the routing profile for snapping the points. If unspecified, the\ndefault mode is \"driving\", which optimizes the snapped points for driving\nroutes."
       }
     },
-    "com.azure.maps_route#RoutePostSnapToRoadsRequestFeaturesList": {
+    "com.azure.maps_route#PostRouteSnapToRoadsRequestFeaturesList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#InputSnapToRoadsFeaturesItem"
@@ -764,10 +719,10 @@
         "smithy.api#documentation": "A set of points to snap to road network. You can have a minimum of 2 points and\nmaximum of 5000 points and the two consecutive points must be within 6\nkilometer of each other and a total road distance of up to 100 kilometers.\nRefer to [RFC 7946](https://www.rfc-editor.org/rfc/rfc7946) for details on the\nGeoJSON format.\n\n`Note`: The API will not return a point object in the response for the GPS\npoint that cannot be snapped to a road network."
       }
     },
-    "com.azure.maps_route#RoutePostRouteRangeBatch": {
+    "com.azure.maps_route#PostRouteRouteRangeBatch": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_route#RoutePostRouteRangeBatchRequest"
+        "target": "com.azure.maps_route#PostRouteRouteRangeBatchRequest"
       },
       "output": {
         "target": "com.azure.maps_route#RouteRangeBatchResponse"
@@ -969,7 +924,7 @@
         "smithy.api#documentation": "Summary for the batch request"
       }
     },
-    "com.azure.maps_route#RoutePostRouteRangeBatchRequest": {
+    "com.azure.maps_route#PostRouteRouteRangeBatchRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -987,7 +942,7 @@
           }
         },
         "batchItems": {
-          "target": "com.azure.maps_route#RoutePostRouteRangeBatchRequestBatchItemsList",
+          "target": "com.azure.maps_route#PostRouteRouteRangeBatchRequestBatchItemsList",
           "traits": {
             "smithy.api#documentation": "The list of queries to process."
           }
@@ -997,7 +952,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_route#RoutePostRouteRangeBatchRequestBatchItemsList": {
+    "com.azure.maps_route#PostRouteRouteRangeBatchRequestBatchItemsList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#RouteRangeBatchRequestItem"
@@ -1434,10 +1389,10 @@
         "smithy.api#documentation": "A `Position` is an array of numbers with two or more elements. The first two\nelements are _longitude_ and _latitude_, precisely in that order.\n_Altitude/Elevation_ is an optional third element. Please refer to [RFC\n7946](https://tools.ietf.org/html/rfc7946#section-3.1.1) for details."
       }
     },
-    "com.azure.maps_route#RoutePostRouteRange": {
+    "com.azure.maps_route#PostRouteRouteRange": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_route#RoutePostRouteRangeRequest"
+        "target": "com.azure.maps_route#PostRouteRouteRangeRequest"
       },
       "output": {
         "target": "com.azure.maps_route#RouteRangeResponse"
@@ -1488,7 +1443,7 @@
         "smithy.api#documentation": "`GeoJSON` feature object that contains Geometry object and additional\nproperties. Refer to [RFC 7946, Section\n3.2](https://www.rfc-editor.org/rfc/rfc7946#section-3.2) for details."
       }
     },
-    "com.azure.maps_route#RoutePostRouteRangeRequest": {
+    "com.azure.maps_route#PostRouteRouteRangeRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1531,10 +1486,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_route#RouteGetRouteOperationsResult": {
+    "com.azure.maps_route#GetRouteRouteOperationsResult": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_route#RouteGetRouteOperationsResultRequest"
+        "target": "com.azure.maps_route#GetRouteRouteOperationsResultRequest"
       },
       "output": {
         "target": "com.azure.maps_route#RouteOperationResponse"
@@ -1585,7 +1540,7 @@
         "smithy.api#documentation": "Type of asynchronous operation"
       }
     },
-    "com.azure.maps_route#RouteGetRouteOperationsResultRequest": {
+    "com.azure.maps_route#GetRouteRouteOperationsResultRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1622,10 +1577,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_route#RouteGetRouteOperationsStatus": {
+    "com.azure.maps_route#GetRouteRouteOperationsStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_route#RouteGetRouteOperationsStatusRequest"
+        "target": "com.azure.maps_route#GetRouteRouteOperationsStatusRequest"
       },
       "output": {
         "target": "com.azure.maps_route#RouteOperation"
@@ -1743,7 +1698,7 @@
         "smithy.api#documentation": "Current status of the async operation."
       }
     },
-    "com.azure.maps_route#RouteGetRouteOperationsStatusRequest": {
+    "com.azure.maps_route#GetRouteRouteOperationsStatusRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1766,13 +1721,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixAsync": {
+    "com.azure.maps_route#PostRouteRouteMatrixAsync": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_route#RoutePostRouteMatrixAsyncRequest"
+        "target": "com.azure.maps_route#PostRouteRouteMatrixAsyncRequest"
       },
       "output": {
-        "target": "com.azure.maps_route#RoutePostRouteMatrixAsyncResponse"
+        "target": "com.azure.maps_route#PostRouteRouteMatrixAsyncResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1791,7 +1746,7 @@
         "smithy.api#documentation": "The `Route Matrix Async` API is an HTTP `POST` request that allows calculation\nof a matrix of route summaries for a set of routes defined by origin and\ndestination locations by using an asynchronous (async) request. For every given\norigin, the service calculates the cost of routing from that origin to every\ngiven destination. The set of origins and the set of destinations can be\nthought of as the column and row headers of a table and each cell in the table\ncontains the costs of routing from the origin to the destination for that cell.\nRoute Matrices can be calculated for driving, walking and truck routes.\n\nRoute Matrices are used in several different types of applications, most\ncommonly to solve the Traveling Salesman Problem (TSP) and Vehicle Routing\nProblem (VRP). For each origin-destination pair in the matrix, the travel time\nand distance are returned. You can use the computed costs to determine which\ndetailed routes to calculate using the Route Directions API.\n\n\nThe maximum size of a matrix for async request is **50000** (the number of\norigins multiplied by the number of destinations).\n\n\n### Submit Asynchronous Route Matrix Request\nThe Asynchronous API is appropriate for processing big volumes of relatively\ncomplex routing requests. When you make a request by using async request, by\ndefault the service returns a 202 response code along a URL in the\n`operation-Location` field of the response header with the Azure Maps geography\nendpoint {geography}.atlas.microsoft.com. This URL should be checked\nperiodically until the status is Succeeded.\n\n\nThe maximum size of a matrix for this API is **50000** (the number of origins\nmultiplied by the number of destinations). With that constraint in mind,\nexamples of possible matrix dimensions are: 500x100, 100x100, 280x170. 100x50\n(it does not need to be square).\n\n\nThe asynchronous responses are stored for **24** hours. The redirect URL\nreturns a 404 response if used after the expiration period.\n\n\n\n\n```\nPOST\nhttps://atlas.microsoft.com/route/matrix:async?api-version=2025-01-01&subscription-key={subscription-key}\n```\n\nHere's a typical sequence of asynchronous operations:\n1. Client sends a Route Matrix POST request to Azure Maps\n\n2. The server will respond with one of the following:\n\n> HTTP `202 Accepted` -  Route Matrix request has been accepted.\n\n> HTTP `Error` - There was an error processing your Route Matrix request.\nThis could either be a 400 Bad Request or any other Error status code.\n\n\n3. If the Matrix Route request was accepted successfully, the\n`operation-location` header in the response contains the URL to get the status\nof the request. This status URI looks like the following:\n\n```\n    GET\nhttps://atlas.microsoft.com/route/operations/{id}?api-version=2025-01-01?subscription-key={subscription-key}\n  ```\n\n\n4. Client issues a GET request on the resultUrl obtained in Step 3 to get the\nresults\n\n\n\n```\n    GET\nhttps://atlas.microsoft.com/route/operations/{id}/result?api-version=2025-01-01?subscription-key={subscription-key}\n   ```\n\n\n\n### API Limitations\nThe asynchronous processing of matrix is best suited for larger matrices that\nrequire heavy route calculation. The following limitation is applicable to the\nasynchronous requests. If none of the rows in the following table match the\nrequest's parameters, the request does not meet the requirements and will not\nbe processed.\n\nMax matrix size  | Max number of origins | Max number of destinations  | Additional limits\n-----------------|-----------------------|-----------------------------|-------------------\n2500             | 1000                  | 1000                        | All origins and destinations should be contained in an axis-aligned 400 km x 400 km bounding box. Otherwise some matrix cells will be resolved as OUT_OF_REGION.\n50,000           | 10,000                | 10,000                      | - `departAt` or `arriveAt` must be any.<br>- `traffic` must be historical.<br/>- `optimizeRoute` must be fastest.<br/>- `travelMode` must be either driving or truck. <br/>- No other parameters can be used explicitly."
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixAsyncResponse": {
+    "com.azure.maps_route#PostRouteRouteMatrixAsyncResponse": {
       "type": "structure",
       "members": {
         "operationLocation": {
@@ -1806,7 +1761,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixAsyncRequest": {
+    "com.azure.maps_route#PostRouteRouteMatrixAsyncRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -1831,7 +1786,7 @@
           }
         },
         "features": {
-          "target": "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestFeaturesList",
+          "target": "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestFeaturesList",
           "traits": {
             "smithy.api#documentation": "A set of origin and destination points passed as GeoJSON MultiPoint features\nfor the input matrix. Refer to [RFC\n7946](https://www.rfc-editor.org/rfc/rfc7946) for details on the GeoJSON\nformat.",
             "smithy.api#required": {}
@@ -1850,25 +1805,25 @@
           }
         },
         "travelMode": {
-          "target": "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestTravelMode",
+          "target": "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestTravelMode",
           "traits": {
             "smithy.api#documentation": "Specifies the travel profile to consider when calculating the matrix. If not\nspecified, the default value is \"driving\".\n\nExample: \"travelMode\":\"driving\""
           }
         },
         "optimizeRoute": {
-          "target": "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestOptimizeRoute",
+          "target": "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestOptimizeRoute",
           "traits": {
             "smithy.api#documentation": "Specifies the parameter to use to optimize the route. If not defined, the\ndefault is \"fastest\" which returns the route to minimize the travel time.\n\nExample: \"optimizeRoute\":\"shortest\""
           }
         },
         "traffic": {
-          "target": "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestTraffic",
+          "target": "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestTraffic",
           "traits": {
             "smithy.api#documentation": "Specifies how traffic is considered for computing routes.\n\nDefault value: `historical`"
           }
         },
         "avoid": {
-          "target": "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestAvoidList",
+          "target": "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestAvoidList",
           "traits": {
             "smithy.api#documentation": "Specifies restrictions that the route calculation should honor when determining\nthe route. Avoid supports multiple values in a request and is only supported\nfor the driving and truck travelMode."
           }
@@ -1955,7 +1910,7 @@
         "smithy.api#documentation": "Types of cargo that may be classified as hazardous materials and restricted\nfrom some roads. Available vehicleLoadType values are US Hazmat classes 1\nthrough 9, plus generic classifications for use in other countries. Values\nbeginning with USHazmat are for US routing while otherHazmat should be used for\nall other countries. vehicleLoadType supports multiple values in a request."
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestAvoidList": {
+    "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestAvoidList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#RouteMatrixAvoidEnum"
@@ -1984,7 +1939,7 @@
         "smithy.api#documentation": "Specifies restrictions that the route calculation should honor when determining\nthe route. Avoid supports multiple values in a request and is only supported\nfor the driving and truck travelMode."
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestTraffic": {
+    "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestTraffic": {
       "type": "enum",
       "members": {
         "HISTORICAL": {
@@ -2004,7 +1959,7 @@
         "smithy.api#documentation": "Specifies how traffic is considered for computing routes.\n\nDefault value: `historical`"
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestOptimizeRoute": {
+    "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestOptimizeRoute": {
       "type": "enum",
       "members": {
         "SHORTEST": {
@@ -2024,7 +1979,7 @@
         "smithy.api#documentation": "Specifies the parameter to use to optimize the route. If not defined, the\ndefault is \"fastest\" which returns the route to minimize the travel time.\n\nExample: \"optimizeRoute\":\"shortest\""
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestTravelMode": {
+    "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestTravelMode": {
       "type": "enum",
       "members": {
         "DRIVING": {
@@ -2050,7 +2005,7 @@
         "smithy.api#documentation": "Specifies the travel profile to consider when calculating the matrix. If not\nspecified, the default value is \"driving\".\n\nExample: \"travelMode\":\"driving\""
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixAsyncRequestFeaturesList": {
+    "com.azure.maps_route#PostRouteRouteMatrixAsyncRequestFeaturesList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#InputRouteMatrixFeaturesItem"
@@ -2160,10 +2115,10 @@
       },
       "traits": {}
     },
-    "com.azure.maps_route#RoutePostRouteMatrix": {
+    "com.azure.maps_route#PostRouteRouteMatrix": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_route#RoutePostRouteMatrixRequest"
+        "target": "com.azure.maps_route#PostRouteRouteMatrixRequest"
       },
       "output": {
         "target": "com.azure.maps_route#RouteMatrixResponse"
@@ -2338,7 +2293,7 @@
         "smithy.api#documentation": "The geometry object is null"
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixRequest": {
+    "com.azure.maps_route#PostRouteRouteMatrixRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -2363,7 +2318,7 @@
           }
         },
         "features": {
-          "target": "com.azure.maps_route#RoutePostRouteMatrixRequestFeaturesList",
+          "target": "com.azure.maps_route#PostRouteRouteMatrixRequestFeaturesList",
           "traits": {
             "smithy.api#documentation": "A set of origin and destination points passed as GeoJSON MultiPoint features\nfor the input matrix. Refer to [RFC\n7946](https://www.rfc-editor.org/rfc/rfc7946) for details on the GeoJSON\nformat.",
             "smithy.api#required": {}
@@ -2382,25 +2337,25 @@
           }
         },
         "travelMode": {
-          "target": "com.azure.maps_route#RoutePostRouteMatrixRequestTravelMode",
+          "target": "com.azure.maps_route#PostRouteRouteMatrixRequestTravelMode",
           "traits": {
             "smithy.api#documentation": "Specifies the travel profile to consider when calculating the matrix. If not\nspecified, the default value is \"driving\".\n\nExample: \"travelMode\":\"driving\""
           }
         },
         "optimizeRoute": {
-          "target": "com.azure.maps_route#RoutePostRouteMatrixRequestOptimizeRoute",
+          "target": "com.azure.maps_route#PostRouteRouteMatrixRequestOptimizeRoute",
           "traits": {
             "smithy.api#documentation": "Specifies the parameter to use to optimize the route. If not defined, the\ndefault is \"fastest\" which returns the route to minimize the travel time.\n\nExample: \"optimizeRoute\":\"fastest \""
           }
         },
         "traffic": {
-          "target": "com.azure.maps_route#RoutePostRouteMatrixRequestTraffic",
+          "target": "com.azure.maps_route#PostRouteRouteMatrixRequestTraffic",
           "traits": {
             "smithy.api#documentation": "Specifies how traffic is considered for computing routes.\n\nDefault value: `historical`"
           }
         },
         "avoid": {
-          "target": "com.azure.maps_route#RoutePostRouteMatrixRequestAvoidList",
+          "target": "com.azure.maps_route#PostRouteRouteMatrixRequestAvoidList",
           "traits": {
             "smithy.api#documentation": "Specifies restrictions that the route calculation should honor when determining\nthe route. Avoid supports multiple values in a request and is only supported\nfor the driving and truck travelMode."
           }
@@ -2416,7 +2371,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixRequestAvoidList": {
+    "com.azure.maps_route#PostRouteRouteMatrixRequestAvoidList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#RouteMatrixAvoidEnum"
@@ -2425,7 +2380,7 @@
         "smithy.api#documentation": "Specifies restrictions that the route calculation should honor when determining\nthe route. Avoid supports multiple values in a request and is only supported\nfor the driving and truck travelMode."
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixRequestTraffic": {
+    "com.azure.maps_route#PostRouteRouteMatrixRequestTraffic": {
       "type": "enum",
       "members": {
         "HISTORICAL": {
@@ -2445,7 +2400,7 @@
         "smithy.api#documentation": "Specifies how traffic is considered for computing routes.\n\nDefault value: `historical`"
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixRequestOptimizeRoute": {
+    "com.azure.maps_route#PostRouteRouteMatrixRequestOptimizeRoute": {
       "type": "enum",
       "members": {
         "FASTEST": {
@@ -2459,7 +2414,7 @@
         "smithy.api#documentation": "Specifies the parameter to use to optimize the route. If not defined, the\ndefault is \"fastest\" which returns the route to minimize the travel time.\n\nExample: \"optimizeRoute\":\"fastest \""
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixRequestTravelMode": {
+    "com.azure.maps_route#PostRouteRouteMatrixRequestTravelMode": {
       "type": "enum",
       "members": {
         "DRIVING": {
@@ -2485,7 +2440,7 @@
         "smithy.api#documentation": "Specifies the travel profile to consider when calculating the matrix. If not\nspecified, the default value is \"driving\".\n\nExample: \"travelMode\":\"driving\""
       }
     },
-    "com.azure.maps_route#RoutePostRouteMatrixRequestFeaturesList": {
+    "com.azure.maps_route#PostRouteRouteMatrixRequestFeaturesList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#InputRouteMatrixFeaturesItem"
@@ -2494,10 +2449,10 @@
         "smithy.api#documentation": "A set of origin and destination points passed as GeoJSON MultiPoint features\nfor the input matrix. Refer to [RFC\n7946](https://www.rfc-editor.org/rfc/rfc7946) for details on the GeoJSON\nformat."
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirectionsBatch": {
+    "com.azure.maps_route#PostRouteRouteDirectionsBatch": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_route#RoutePostRouteDirectionsBatchRequest"
+        "target": "com.azure.maps_route#PostRouteRouteDirectionsBatchRequest"
       },
       "output": {
         "target": "com.azure.maps_route#DirectionsBatchResponse"
@@ -2750,7 +2705,7 @@
         "smithy.api#documentation": "Summary for the batch request"
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirectionsBatchRequest": {
+    "com.azure.maps_route#PostRouteRouteDirectionsBatchRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -2775,7 +2730,7 @@
           }
         },
         "batchItems": {
-          "target": "com.azure.maps_route#RoutePostRouteDirectionsBatchRequestBatchItemsList",
+          "target": "com.azure.maps_route#PostRouteRouteDirectionsBatchRequestBatchItemsList",
           "traits": {
             "smithy.api#documentation": "The list of queries to process."
           }
@@ -2785,7 +2740,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirectionsBatchRequestBatchItemsList": {
+    "com.azure.maps_route#PostRouteRouteDirectionsBatchRequestBatchItemsList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#DirectionsBatchRequestItem"
@@ -3189,13 +3144,13 @@
         "smithy.api#documentation": "Waypoint type on the route. It can be a stop or an intermediate location that\nthe route must pass through."
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirections": {
+    "com.azure.maps_route#PostRouteRouteDirections": {
       "type": "operation",
       "input": {
-        "target": "com.azure.maps_route#RoutePostRouteDirectionsRequest"
+        "target": "com.azure.maps_route#PostRouteRouteDirectionsRequest"
       },
       "output": {
-        "target": "com.azure.maps_route#RoutePostRouteDirectionsResponse"
+        "target": "com.azure.maps_route#PostRouteRouteDirectionsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3214,7 +3169,7 @@
         "smithy.api#documentation": "Use to get the best route between an origin and destination for automobile,\ncommercial trucks and walking routes.\n\nThe `Route Directions` API is an HTTP `POST` request that returns the ideal\nroute between an origin and destination for automobile (driving), commercial\ntrucks and walking routes. The route passes through a series of waypoints if\nspecified. A waypoint is a geographical location defined by longitude and\nlatitude that is used for navigational purposes. The route considers factors\nsuch as current traffic and the typical road speeds on the requested day of the\nweek and time of day.\n\nThe API returns the distance, estimated travel time, and a representation of\nthe route geometry. More routing information such as an optimized waypoint\norder or turn by turn instructions is also available, depending on the\nparameters used.\n\nThe Route Directions considers local laws, vehicle dimensions, cargo type, max\nspeed, bridge and tunnel heights to calculate the truck specific routes and\navoid complex maneuvers and difficult roads. Not all trucks can travel the same\nroutes as other vehicles due to certain restrictions based on the vehicle\nprofile or cargo type. For example, highways often have separate speed limits\nfor trucks, some roads don't allow trucks with flammable or hazardous\nmaterials, and there can be height and weight restriction on bridges.\n\nUp to 150 waypoints and 10 viaWaypoints between any two waypoints is supported.\nEach set of waypoints creates a separate route Leg. ViaWaypoints define the\nroute path and can be used for route creation through specific locations, but\nthey don't create route Legs.\n\nFor information about routing availability in countries/regions, see [Azure\nMaps routing\ncoverage](https://learn.microsoft.com/azure/azure-maps/routing-coverage?pivots=latest)."
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirectionsResponse": {
+    "com.azure.maps_route#PostRouteRouteDirectionsResponse": {
       "type": "structure",
       "members": {
         "type": {
@@ -3224,13 +3179,13 @@
           }
         },
         "features": {
-          "target": "com.azure.maps_route#RoutePostRouteDirectionsResponseFeaturesList",
+          "target": "com.azure.maps_route#PostRouteRouteDirectionsResponseFeaturesList",
           "traits": {
             "smithy.api#documentation": "`GeoJSON` feature object that contains Geometry object and additional\nproperties. For more information, see [RFC 7946, Section\n3.2](https://www.rfc-editor.org/rfc/rfc7946#section-3.2)."
           }
         },
         "alternativeRoutes": {
-          "target": "com.azure.maps_route#RoutePostRouteDirectionsResponseAlternativeRoutesList",
+          "target": "com.azure.maps_route#PostRouteRouteDirectionsResponseAlternativeRoutesList",
           "traits": {
             "smithy.api#documentation": "Alternative route."
           }
@@ -3240,7 +3195,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirectionsResponseAlternativeRoutesList": {
+    "com.azure.maps_route#PostRouteRouteDirectionsResponseAlternativeRoutesList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#FeatureCollection"
@@ -3249,7 +3204,7 @@
         "smithy.api#documentation": "Alternative route."
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirectionsResponseFeaturesList": {
+    "com.azure.maps_route#PostRouteRouteDirectionsResponseFeaturesList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#FeaturesItem"
@@ -3258,7 +3213,7 @@
         "smithy.api#documentation": "`GeoJSON` feature object that contains Geometry object and additional\nproperties. For more information, see [RFC 7946, Section\n3.2](https://www.rfc-editor.org/rfc/rfc7946#section-3.2)."
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirectionsRequest": {
+    "com.azure.maps_route#PostRouteRouteDirectionsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3290,14 +3245,14 @@
           }
         },
         "features": {
-          "target": "com.azure.maps_route#RoutePostRouteDirectionsRequestFeaturesList",
+          "target": "com.azure.maps_route#PostRouteRouteDirectionsRequestFeaturesList",
           "traits": {
             "smithy.api#documentation": "Driving, walking, and truck routes are defined by a set of waypoints(stops) and\nviaWaypoints (intermediate locations that the route must pass through). You can\nhave a maximum of 150 waypoints, and a maximum of 10 viaWaypoints between each\nset of waypoints.\n\nA route must have a minimum of 2 waypoints and the start and end points of the\nroute cannot be viaWaypoints.\n\nBoth waypoint and viaWaypoint locations must be specified as a valid GeoJSON\nPoint feature object along with pointIndex that specifies the order of the\nlocations. For more information on the GeoJSON format, see [RFC\n7946](https://www.rfc-editor.org/rfc/rfc7946).",
             "smithy.api#required": {}
           }
         },
         "travelMode": {
-          "target": "com.azure.maps_route#RoutePostRouteDirectionsRequestTravelMode",
+          "target": "com.azure.maps_route#PostRouteRouteDirectionsRequestTravelMode",
           "traits": {
             "smithy.api#documentation": "The mode of travel for the requested route. If not defined, the default value\nis \"driving\" that returns the route optimized for cars.\n\n`Note`: For truck travelMode, the requested truck route may not be available\nfor the entire route. Where the truck route is not available for a particular\nsection, the travelMode element of the response for that section will be\n\"other\".\n\nExample: \"travelMode\":\"driving\""
           }
@@ -3315,7 +3270,7 @@
           }
         },
         "optimizeRoute": {
-          "target": "com.azure.maps_route#RoutePostRouteDirectionsRequestOptimizeRoute",
+          "target": "com.azure.maps_route#PostRouteRouteDirectionsRequestOptimizeRoute",
           "traits": {
             "smithy.api#documentation": "Specifies the parameter to use to optimize the route. If not defined, the\ndefault is \"fastestWithoutTraffic\" which returns the route to minimize the\ntravel time without using current traffic information.\n\nExample: \"optimizeRoute\":\"shortest\""
           }
@@ -3327,13 +3282,13 @@
           }
         },
         "avoid": {
-          "target": "com.azure.maps_route#RoutePostRouteDirectionsRequestAvoidList",
+          "target": "com.azure.maps_route#PostRouteRouteDirectionsRequestAvoidList",
           "traits": {
             "smithy.api#documentation": "Specifies restrictions that the route calculation should honor when determining\nthe route. Avoid supports multiple values in a request and is only supported\nfor the driving and truck travelMode.\n\nExample: \"avoid\": [\"limitedAccessHighways\", \"tollRoads\"]"
           }
         },
         "routeOutputOptions": {
-          "target": "com.azure.maps_route#RoutePostRouteDirectionsRequestRouteOutputOptionsList",
+          "target": "com.azure.maps_route#PostRouteRouteDirectionsRequestRouteOutputOptionsList",
           "traits": {
             "smithy.api#documentation": "Include the desired route information from the response. By default, the\nitinerary is included in the response.\n\nSupports multiple values such as \"routeOutputOptions\": [\"routePath\",\n\"itinerary\"]"
           }
@@ -3361,7 +3316,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirectionsRequestRouteOutputOptionsList": {
+    "com.azure.maps_route#PostRouteRouteDirectionsRequestRouteOutputOptionsList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#RouteOutputOptionEnum"
@@ -3370,7 +3325,7 @@
         "smithy.api#documentation": "Include the desired route information from the response. By default, the\nitinerary is included in the response.\n\nSupports multiple values such as \"routeOutputOptions\": [\"routePath\",\n\"itinerary\"]"
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirectionsRequestAvoidList": {
+    "com.azure.maps_route#PostRouteRouteDirectionsRequestAvoidList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#AvoidEnum"
@@ -3379,7 +3334,7 @@
         "smithy.api#documentation": "Specifies restrictions that the route calculation should honor when determining\nthe route. Avoid supports multiple values in a request and is only supported\nfor the driving and truck travelMode.\n\nExample: \"avoid\": [\"limitedAccessHighways\", \"tollRoads\"]"
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirectionsRequestOptimizeRoute": {
+    "com.azure.maps_route#PostRouteRouteDirectionsRequestOptimizeRoute": {
       "type": "enum",
       "members": {
         "SHORT": {
@@ -3411,7 +3366,7 @@
         "smithy.api#documentation": "Specifies the parameter to use to optimize the route. If not defined, the\ndefault is \"fastestWithoutTraffic\" which returns the route to minimize the\ntravel time without using current traffic information.\n\nExample: \"optimizeRoute\":\"shortest\""
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirectionsRequestTravelMode": {
+    "com.azure.maps_route#PostRouteRouteDirectionsRequestTravelMode": {
       "type": "enum",
       "members": {
         "DRIVING": {
@@ -3437,7 +3392,7 @@
         "smithy.api#documentation": "The mode of travel for the requested route. If not defined, the default value\nis \"driving\" that returns the route optimized for cars.\n\n`Note`: For truck travelMode, the requested truck route may not be available\nfor the entire route. Where the truck route is not available for a particular\nsection, the travelMode element of the response for that section will be\n\"other\".\n\nExample: \"travelMode\":\"driving\""
       }
     },
-    "com.azure.maps_route#RoutePostRouteDirectionsRequestFeaturesList": {
+    "com.azure.maps_route#PostRouteRouteDirectionsRequestFeaturesList": {
       "type": "list",
       "member": {
         "target": "com.azure.maps_route#InputWaypointFeaturesItem"
@@ -3451,34 +3406,34 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.maps_route#RoutePostSnapToRoadsBatch"
+          "target": "com.azure.maps_route#PostRouteSnapToRoadsBatch"
         },
         {
-          "target": "com.azure.maps_route#RoutePostSnapToRoads"
+          "target": "com.azure.maps_route#PostRouteSnapToRoads"
         },
         {
-          "target": "com.azure.maps_route#RoutePostRouteRangeBatch"
+          "target": "com.azure.maps_route#PostRouteRouteRangeBatch"
         },
         {
-          "target": "com.azure.maps_route#RoutePostRouteRange"
+          "target": "com.azure.maps_route#PostRouteRouteRange"
         },
         {
-          "target": "com.azure.maps_route#RouteGetRouteOperationsResult"
+          "target": "com.azure.maps_route#GetRouteRouteOperationsResult"
         },
         {
-          "target": "com.azure.maps_route#RouteGetRouteOperationsStatus"
+          "target": "com.azure.maps_route#GetRouteRouteOperationsStatus"
         },
         {
-          "target": "com.azure.maps_route#RoutePostRouteMatrixAsync"
+          "target": "com.azure.maps_route#PostRouteRouteMatrixAsync"
         },
         {
-          "target": "com.azure.maps_route#RoutePostRouteMatrix"
+          "target": "com.azure.maps_route#PostRouteRouteMatrix"
         },
         {
-          "target": "com.azure.maps_route#RoutePostRouteDirectionsBatch"
+          "target": "com.azure.maps_route#PostRouteRouteDirectionsBatch"
         },
         {
-          "target": "com.azure.maps_route#RoutePostRouteDirections"
+          "target": "com.azure.maps_route#PostRouteRouteDirections"
         }
       ],
       "traits": {

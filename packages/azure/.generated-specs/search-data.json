@@ -15,150 +15,16 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.search_data#KnowledgeRetrievalRetrieveStream": "com.azure.search_data#GetKnowledgeRetrievalStream",
-      "com.azure.search_data#KnowledgeRetrievalRetrieveStreamResponse": "com.azure.search_data#GetKnowledgeRetrievalStreamResponse",
-      "com.azure.search_data#KnowledgeRetrievalRetrieveStreamRequest": "com.azure.search_data#GetKnowledgeRetrievalStreamRequest",
-      "com.azure.search_data#KnowledgeRetrievalRetrieveStreamRequestKnowledgeSourceParamsList": "com.azure.search_data#GetKnowledgeRetrievalStreamRequestKnowledgeSourceParamsList",
-      "com.azure.search_data#KnowledgeRetrievalRetrieveStreamRequestIntentsList": "com.azure.search_data#GetKnowledgeRetrievalStreamRequestIntentsList",
-      "com.azure.search_data#KnowledgeRetrievalRetrieveStreamRequestMessagesList": "com.azure.search_data#GetKnowledgeRetrievalStreamRequestMessagesList",
-      "com.azure.search_data#IndexesListWithSelectedProperties": "com.azure.search_data#ListIndexWithSelectedProperties",
-      "com.azure.search_data#IndexesListWithSelectedPropertiesRequest": "com.azure.search_data#ListIndexWithSelectedPropertiesRequest",
-      "com.azure.search_data#IndexesListWithSelectedPropertiesRequestSearchType": "com.azure.search_data#ListIndexWithSelectedPropertiesRequestSearchType",
-      "com.azure.search_data#IndexesListWithSelectedPropertiesRequestSelectList": "com.azure.search_data#ListIndexWithSelectedPropertiesRequestSelectList",
-      "com.azure.search_data#SynonymMapsDelete": "com.azure.search_data#DeleteSynonymMap",
-      "com.azure.search_data#SynonymMapsDeleteRequest": "com.azure.search_data#DeleteSynonymMapRequest",
-      "com.azure.search_data#SynonymMapsGet": "com.azure.search_data#GetSynonymMap",
-      "com.azure.search_data#SynonymMapsGetRequest": "com.azure.search_data#GetSynonymMapRequest",
-      "com.azure.search_data#SynonymMapsCreate": "com.azure.search_data#CreateSynonymMap",
-      "com.azure.search_data#SynonymMapsCreateRequest": "com.azure.search_data#CreateSynonymMapRequest",
-      "com.azure.search_data#SynonymMapsCreateRequestFormat": "com.azure.search_data#CreateSynonymMapRequestFormat",
-      "com.azure.search_data#SynonymMapsList": "com.azure.search_data#ListSynonymMaps",
-      "com.azure.search_data#SynonymMapsListRequest": "com.azure.search_data#ListSynonymMapsRequest",
-      "com.azure.search_data#SynonymMapsListRequestSearchType": "com.azure.search_data#ListSynonymMapsRequestSearchType",
-      "com.azure.search_data#SynonymMapsListRequestSelectList": "com.azure.search_data#ListSynonymMapsRequestSelectList",
-      "com.azure.search_data#SkillsetsDelete": "com.azure.search_data#DeleteSkillset",
-      "com.azure.search_data#SkillsetsDeleteRequest": "com.azure.search_data#DeleteSkillsetRequest",
-      "com.azure.search_data#SkillsetsGet": "com.azure.search_data#GetSkillset",
-      "com.azure.search_data#SkillsetsGetRequest": "com.azure.search_data#GetSkillsetRequest",
-      "com.azure.search_data#SkillsetsCreate": "com.azure.search_data#CreateSkillset",
-      "com.azure.search_data#SkillsetsCreateRequest": "com.azure.search_data#CreateSkillsetRequest",
-      "com.azure.search_data#SkillsetsCreateRequestSkillsList": "com.azure.search_data#CreateSkillsetRequestSkillsList",
-      "com.azure.search_data#SkillsetsList": "com.azure.search_data#ListSkillsets",
-      "com.azure.search_data#SkillsetsListRequest": "com.azure.search_data#ListSkillsetsRequest",
-      "com.azure.search_data#SkillsetsListRequestSearchType": "com.azure.search_data#ListSkillsetsRequestSearchType",
-      "com.azure.search_data#SkillsetsListRequestSelectList": "com.azure.search_data#ListSkillsetsRequestSelectList",
-      "com.azure.search_data#KnowledgeSourcesGetStatus": "com.azure.search_data#GetKnowledgeSourceStatus",
-      "com.azure.search_data#KnowledgeSourcesGetStatusRequest": "com.azure.search_data#GetKnowledgeSourceStatusRequest",
-      "com.azure.search_data#KnowledgeSourcesDeleteFile": "com.azure.search_data#DeleteKnowledgeSourceFile",
-      "com.azure.search_data#KnowledgeSourcesDeleteFileRequest": "com.azure.search_data#DeleteKnowledgeSourceFileRequest",
-      "com.azure.search_data#KnowledgeSourcesUpdateFile": "com.azure.search_data#UpdateKnowledgeSourceFile",
-      "com.azure.search_data#KnowledgeSourcesUpdateFileRequest": "com.azure.search_data#UpdateKnowledgeSourceFileRequest",
-      "com.azure.search_data#KnowledgeSourcesUploadFileMultipart": "com.azure.search_data#UploadKnowledgeSourceFileMultipart",
-      "com.azure.search_data#KnowledgeSourcesUploadFileMultipartRequest": "com.azure.search_data#UploadKnowledgeSourceFileMultipartRequest",
-      "com.azure.search_data#KnowledgeSourcesListFiles": "com.azure.search_data#ListKnowledgeSourceFiles",
-      "com.azure.search_data#KnowledgeSourcesListFilesRequest": "com.azure.search_data#ListKnowledgeSourceFilesRequest",
-      "com.azure.search_data#KnowledgeSourcesListFilesRequestSearchType": "com.azure.search_data#ListKnowledgeSourceFilesRequestSearchType",
-      "com.azure.search_data#KnowledgeSourcesDelete": "com.azure.search_data#DeleteKnowledgeSource",
-      "com.azure.search_data#KnowledgeSourcesDeleteRequest": "com.azure.search_data#DeleteKnowledgeSourceRequest",
-      "com.azure.search_data#KnowledgeSourcesGet": "com.azure.search_data#GetKnowledgeSource",
-      "com.azure.search_data#KnowledgeSourcesGetRequest": "com.azure.search_data#GetKnowledgeSourceRequest",
-      "com.azure.search_data#KnowledgeSourcesCreate": "com.azure.search_data#CreateKnowledgeSource",
-      "com.azure.search_data#KnowledgeSourcesCreateRequest": "com.azure.search_data#CreateKnowledgeSourceRequest",
-      "com.azure.search_data#KnowledgeSourcesList": "com.azure.search_data#ListKnowledgeSources",
-      "com.azure.search_data#KnowledgeSourcesListRequest": "com.azure.search_data#ListKnowledgeSourcesRequest",
-      "com.azure.search_data#KnowledgeSourcesListRequestSearchType": "com.azure.search_data#ListKnowledgeSourcesRequestSearchType",
-      "com.azure.search_data#KnowledgeRetrievalRetrieve": "com.azure.search_data#GetKnowledgeRetrieval",
-      "com.azure.search_data#KnowledgeRetrievalRetrieveRequest": "com.azure.search_data#GetKnowledgeRetrievalRequest",
-      "com.azure.search_data#KnowledgeRetrievalRetrieveRequestKnowledgeSourceParamsList": "com.azure.search_data#GetKnowledgeRetrievalRequestKnowledgeSourceParamsList",
-      "com.azure.search_data#KnowledgeRetrievalRetrieveRequestIntentsList": "com.azure.search_data#GetKnowledgeRetrievalRequestIntentsList",
-      "com.azure.search_data#KnowledgeRetrievalRetrieveRequestMessagesList": "com.azure.search_data#GetKnowledgeRetrievalRequestMessagesList",
-      "com.azure.search_data#KnowledgeBasesDelete": "com.azure.search_data#DeleteKnowledgeBase",
-      "com.azure.search_data#KnowledgeBasesDeleteRequest": "com.azure.search_data#DeleteKnowledgeBaseRequest",
-      "com.azure.search_data#KnowledgeBasesGet": "com.azure.search_data#GetKnowledgeBase",
-      "com.azure.search_data#KnowledgeBasesGetRequest": "com.azure.search_data#GetKnowledgeBaseRequest",
-      "com.azure.search_data#KnowledgeBasesCreate": "com.azure.search_data#CreateKnowledgeBase",
-      "com.azure.search_data#KnowledgeBasesCreateRequest": "com.azure.search_data#CreateKnowledgeBaseRequest",
-      "com.azure.search_data#KnowledgeBasesCreateRequestModelsList": "com.azure.search_data#CreateKnowledgeBaseRequestModelsList",
-      "com.azure.search_data#KnowledgeBasesCreateRequestKnowledgeSourcesList": "com.azure.search_data#CreateKnowledgeBaseRequestKnowledgeSourcesList",
-      "com.azure.search_data#KnowledgeBasesList": "com.azure.search_data#ListKnowledgeBases",
-      "com.azure.search_data#KnowledgeBasesListRequest": "com.azure.search_data#ListKnowledgeBasesRequest",
-      "com.azure.search_data#KnowledgeBasesListRequestSearchType": "com.azure.search_data#ListKnowledgeBasesRequestSearchType",
-      "com.azure.search_data#IndexesGetStatistics": "com.azure.search_data#GetIndexStatistics",
-      "com.azure.search_data#IndexesGetStatisticsRequest": "com.azure.search_data#GetIndexStatisticsRequest",
-      "com.azure.search_data#DocumentsGet": "com.azure.search_data#GetDocument",
-      "com.azure.search_data#DocumentsGetResponse": "com.azure.search_data#GetDocumentResponse",
-      "com.azure.search_data#DocumentsGetRequest": "com.azure.search_data#GetDocumentRequest",
-      "com.azure.search_data#DocumentsGetRequestSelectList": "com.azure.search_data#GetDocumentRequestSelectList",
-      "com.azure.search_data#DocumentsIndex": "com.azure.search_data#ListDocuments",
-      "com.azure.search_data#DocumentsIndexRequest": "com.azure.search_data#ListDocumentsRequest",
-      "com.azure.search_data#DocumentsIndexRequestValueList": "com.azure.search_data#ListDocumentsRequestValueList",
-      "com.azure.search_data#IndexesDelete": "com.azure.search_data#DeleteIndex",
-      "com.azure.search_data#IndexesDeleteRequest": "com.azure.search_data#DeleteIndexRequest",
-      "com.azure.search_data#IndexesGet": "com.azure.search_data#GetIndex",
-      "com.azure.search_data#IndexesGetRequest": "com.azure.search_data#GetIndexRequest",
-      "com.azure.search_data#IndexesCreate": "com.azure.search_data#CreateIndex",
-      "com.azure.search_data#IndexesCreateRequest": "com.azure.search_data#CreateIndexRequest",
-      "com.azure.search_data#IndexesCreateRequestNormalizersList": "com.azure.search_data#CreateIndexRequestNormalizersList",
-      "com.azure.search_data#IndexesCreateRequestCharFiltersList": "com.azure.search_data#CreateIndexRequestCharFiltersList",
-      "com.azure.search_data#IndexesCreateRequestTokenFiltersList": "com.azure.search_data#CreateIndexRequestTokenFiltersList",
-      "com.azure.search_data#IndexesCreateRequestTokenizersList": "com.azure.search_data#CreateIndexRequestTokenizersList",
-      "com.azure.search_data#IndexesCreateRequestAnalyzersList": "com.azure.search_data#CreateIndexRequestAnalyzersList",
-      "com.azure.search_data#IndexesCreateRequestSuggestersList": "com.azure.search_data#CreateIndexRequestSuggestersList",
-      "com.azure.search_data#IndexesCreateRequestScoringProfilesList": "com.azure.search_data#CreateIndexRequestScoringProfilesList",
-      "com.azure.search_data#IndexesCreateRequestFieldsList": "com.azure.search_data#CreateIndexRequestFieldsList",
-      "com.azure.search_data#IndexesList": "com.azure.search_data#ListIndexes",
-      "com.azure.search_data#IndexesListRequest": "com.azure.search_data#ListIndexesRequest",
-      "com.azure.search_data#IndexesListRequestSearchType": "com.azure.search_data#ListIndexesRequestSearchType",
-      "com.azure.search_data#IndexersGetStatus": "com.azure.search_data#GetIndexerStatus",
-      "com.azure.search_data#IndexersGetStatusRequest": "com.azure.search_data#GetIndexerStatusRequest",
-      "com.azure.search_data#IndexersRun": "com.azure.search_data#RunIndexer",
-      "com.azure.search_data#IndexersRunRequest": "com.azure.search_data#RunIndexerRequest",
-      "com.azure.search_data#IndexersReset": "com.azure.search_data#ResetIndexer",
-      "com.azure.search_data#IndexersResetRequest": "com.azure.search_data#ResetIndexerRequest",
-      "com.azure.search_data#IndexersDelete": "com.azure.search_data#DeleteIndexer",
-      "com.azure.search_data#IndexersDeleteRequest": "com.azure.search_data#DeleteIndexerRequest",
-      "com.azure.search_data#IndexersGet": "com.azure.search_data#GetIndexer",
-      "com.azure.search_data#IndexersGetRequest": "com.azure.search_data#GetIndexerRequest",
-      "com.azure.search_data#IndexersCreate": "com.azure.search_data#CreateIndexer",
-      "com.azure.search_data#IndexersCreateRequest": "com.azure.search_data#CreateIndexerRequest",
-      "com.azure.search_data#IndexersCreateRequestOutputFieldMappingsList": "com.azure.search_data#CreateIndexerRequestOutputFieldMappingsList",
-      "com.azure.search_data#IndexersCreateRequestFieldMappingsList": "com.azure.search_data#CreateIndexerRequestFieldMappingsList",
-      "com.azure.search_data#IndexersList": "com.azure.search_data#ListIndexers",
-      "com.azure.search_data#IndexersListRequest": "com.azure.search_data#ListIndexersRequest",
-      "com.azure.search_data#IndexersListRequestSearchType": "com.azure.search_data#ListIndexersRequestSearchType",
-      "com.azure.search_data#IndexersListRequestSelectList": "com.azure.search_data#ListIndexersRequestSelectList",
-      "com.azure.search_data#DataSourcesDelete": "com.azure.search_data#DeleteDataSource",
-      "com.azure.search_data#DataSourcesDeleteRequest": "com.azure.search_data#DeleteDataSourceRequest",
-      "com.azure.search_data#DataSourcesGet": "com.azure.search_data#GetDataSource",
-      "com.azure.search_data#DataSourcesGetRequest": "com.azure.search_data#GetDataSourceRequest",
-      "com.azure.search_data#DataSourcesCreate": "com.azure.search_data#CreateDataSource",
-      "com.azure.search_data#DataSourcesCreateRequest": "com.azure.search_data#CreateDataSourceRequest",
-      "com.azure.search_data#DataSourcesCreateRequestIndexerPermissionOptionsList": "com.azure.search_data#CreateDataSourceRequestIndexerPermissionOptionsList",
-      "com.azure.search_data#DataSourcesList": "com.azure.search_data#ListDataSources",
-      "com.azure.search_data#DataSourcesListRequest": "com.azure.search_data#ListDataSourcesRequest",
-      "com.azure.search_data#DataSourcesListRequestSearchType": "com.azure.search_data#ListDataSourcesRequestSearchType",
-      "com.azure.search_data#DataSourcesListRequestSelectList": "com.azure.search_data#ListDataSourcesRequestSelectList",
-      "com.azure.search_data#AliasesDelete": "com.azure.search_data#DeleteAlias",
-      "com.azure.search_data#AliasesDeleteRequest": "com.azure.search_data#DeleteAliasRequest",
-      "com.azure.search_data#AliasesGet": "com.azure.search_data#GetAlias",
-      "com.azure.search_data#AliasesGetRequest": "com.azure.search_data#GetAliasRequest",
-      "com.azure.search_data#AliasesCreate": "com.azure.search_data#CreateAlias",
-      "com.azure.search_data#AliasesCreateRequest": "com.azure.search_data#CreateAliasRequest",
-      "com.azure.search_data#AliasesCreateRequestIndexesList": "com.azure.search_data#CreateAliasRequestIndexesList",
-      "com.azure.search_data#AliasesList": "com.azure.search_data#ListAliases",
-      "com.azure.search_data#AliasesListRequest": "com.azure.search_data#ListAliasesRequest",
-      "com.azure.search_data#AliasesListRequestSearchType": "com.azure.search_data#ListAliasesRequestSearchType"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.search_data#KnowledgeRetrievalRetrieveStream": {
+    "com.azure.search_data#GetKnowledgeRetrievalStream": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeRetrievalRetrieveStreamRequest"
+        "target": "com.azure.search_data#GetKnowledgeRetrievalStreamRequest"
       },
       "output": {
-        "target": "com.azure.search_data#KnowledgeRetrievalRetrieveStreamResponse"
+        "target": "com.azure.search_data#GetKnowledgeRetrievalStreamResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -177,7 +43,7 @@
         "smithy.api#documentation": "Retrieves relevant data from backing stores and streams progress and results as server-sent\nevents.\n\nProcess the response incrementally using server-sent event framing. Each event contains an\nevent name and a JSON-encoded data payload. The stream ends with either a `response.completed`\nevent or an `error` event. OpenAPI 2.0 represents the response body as a string, so generated\nclients may expose the raw response without typed event parsing. Do not deserialize the\ncomplete response body as a single JSON document."
       }
     },
-    "com.azure.search_data#KnowledgeRetrievalRetrieveStreamResponse": {
+    "com.azure.search_data#GetKnowledgeRetrievalStreamResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -192,7 +58,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.search_data#KnowledgeRetrievalRetrieveStreamRequest": {
+    "com.azure.search_data#GetKnowledgeRetrievalStreamRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -226,13 +92,13 @@
           }
         },
         "messages": {
-          "target": "com.azure.search_data#KnowledgeRetrievalRetrieveStreamRequestMessagesList",
+          "target": "com.azure.search_data#GetKnowledgeRetrievalStreamRequestMessagesList",
           "traits": {
             "smithy.api#documentation": "A list of chat message style input."
           }
         },
         "intents": {
-          "target": "com.azure.search_data#KnowledgeRetrievalRetrieveStreamRequestIntentsList",
+          "target": "com.azure.search_data#GetKnowledgeRetrievalStreamRequestIntentsList",
           "traits": {
             "smithy.api#documentation": "A list of intended queries to execute without model query planning."
           }
@@ -274,7 +140,7 @@
           }
         },
         "knowledgeSourceParams": {
-          "target": "com.azure.search_data#KnowledgeRetrievalRetrieveStreamRequestKnowledgeSourceParamsList",
+          "target": "com.azure.search_data#GetKnowledgeRetrievalStreamRequestKnowledgeSourceParamsList",
           "traits": {
             "smithy.api#documentation": "A list of runtime parameters for the knowledge sources."
           }
@@ -284,7 +150,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeRetrievalRetrieveStreamRequestKnowledgeSourceParamsList": {
+    "com.azure.search_data#GetKnowledgeRetrievalStreamRequestKnowledgeSourceParamsList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#KnowledgeSourceParams"
@@ -462,7 +328,7 @@
         "smithy.api#documentation": "The amount of effort to use during retrieval."
       }
     },
-    "com.azure.search_data#KnowledgeRetrievalRetrieveStreamRequestIntentsList": {
+    "com.azure.search_data#GetKnowledgeRetrievalStreamRequestIntentsList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#KnowledgeRetrievalIntent"
@@ -500,7 +366,7 @@
         "smithy.api#documentation": "The kind of knowledge base configuration to use."
       }
     },
-    "com.azure.search_data#KnowledgeRetrievalRetrieveStreamRequestMessagesList": {
+    "com.azure.search_data#GetKnowledgeRetrievalStreamRequestMessagesList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#KnowledgeBaseMessage"
@@ -574,10 +440,10 @@
         "smithy.api#documentation": "The type of message content."
       }
     },
-    "com.azure.search_data#IndexesListWithSelectedProperties": {
+    "com.azure.search_data#ListIndexWithSelectedProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexesListWithSelectedPropertiesRequest"
+        "target": "com.azure.search_data#ListIndexWithSelectedPropertiesRequest"
       },
       "output": {
         "target": "com.azure.search_data#ListIndexesSelectedResult"
@@ -2687,7 +2553,7 @@
         "smithy.api#documentation": "Defines the data type of a field in a search index."
       }
     },
-    "com.azure.search_data#IndexesListWithSelectedPropertiesRequest": {
+    "com.azure.search_data#ListIndexWithSelectedPropertiesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -2699,7 +2565,7 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#IndexesListWithSelectedPropertiesRequestSelectList",
+          "target": "com.azure.search_data#ListIndexWithSelectedPropertiesRequestSelectList",
           "traits": {
             "smithy.api#httpQuery": "$select",
             "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties."
@@ -2720,7 +2586,7 @@
           }
         },
         "searchType": {
-          "target": "com.azure.search_data#IndexesListWithSelectedPropertiesRequestSearchType",
+          "target": "com.azure.search_data#ListIndexWithSelectedPropertiesRequestSearchType",
           "traits": {
             "smithy.api#httpQuery": "searchType",
             "smithy.api#documentation": "Specifies how the search parameter is interpreted. Currently only 'prefix' is supported."
@@ -2744,7 +2610,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#IndexesListWithSelectedPropertiesRequestSearchType": {
+    "com.azure.search_data#ListIndexWithSelectedPropertiesRequestSearchType": {
       "type": "enum",
       "members": {
         "PREFIX": {
@@ -2756,17 +2622,17 @@
       },
       "traits": {}
     },
-    "com.azure.search_data#IndexesListWithSelectedPropertiesRequestSelectList": {
+    "com.azure.search_data#ListIndexWithSelectedPropertiesRequestSelectList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.search_data#SynonymMapsDelete": {
+    "com.azure.search_data#DeleteSynonymMap": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#SynonymMapsDeleteRequest"
+        "target": "com.azure.search_data#DeleteSynonymMapRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -2785,7 +2651,7 @@
         "smithy.api#documentation": "Deletes a synonym map."
       }
     },
-    "com.azure.search_data#SynonymMapsDeleteRequest": {
+    "com.azure.search_data#DeleteSynonymMapRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3006,10 +2872,10 @@
         "smithy.api#documentation": "The format of the synonym map. Only the 'solr' format is currently supported."
       }
     },
-    "com.azure.search_data#SynonymMapsGet": {
+    "com.azure.search_data#GetSynonymMap": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#SynonymMapsGetRequest"
+        "target": "com.azure.search_data#GetSynonymMapRequest"
       },
       "output": {
         "target": "com.azure.search_data#SynonymMap"
@@ -3028,7 +2894,7 @@
         "smithy.api#documentation": "Retrieves a synonym map definition."
       }
     },
-    "com.azure.search_data#SynonymMapsGetRequest": {
+    "com.azure.search_data#GetSynonymMapRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3059,10 +2925,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#SynonymMapsCreate": {
+    "com.azure.search_data#CreateSynonymMap": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#SynonymMapsCreateRequest"
+        "target": "com.azure.search_data#CreateSynonymMapRequest"
       },
       "output": {
         "target": "com.azure.search_data#SynonymMap"
@@ -3081,7 +2947,7 @@
         "smithy.api#documentation": "Creates a new synonym map."
       }
     },
-    "com.azure.search_data#SynonymMapsCreateRequest": {
+    "com.azure.search_data#CreateSynonymMapRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3107,7 +2973,7 @@
           }
         },
         "format": {
-          "target": "com.azure.search_data#SynonymMapsCreateRequestFormat",
+          "target": "com.azure.search_data#CreateSynonymMapRequestFormat",
           "traits": {
             "smithy.api#documentation": "The format of the synonym map. Only the 'solr' format is currently supported.",
             "smithy.api#required": {}
@@ -3139,7 +3005,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#SynonymMapsCreateRequestFormat": {
+    "com.azure.search_data#CreateSynonymMapRequestFormat": {
       "type": "enum",
       "members": {
         "SOLR": {
@@ -3153,10 +3019,10 @@
         "smithy.api#documentation": "The format of the synonym map. Only the 'solr' format is currently supported."
       }
     },
-    "com.azure.search_data#SynonymMapsList": {
+    "com.azure.search_data#ListSynonymMaps": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#SynonymMapsListRequest"
+        "target": "com.azure.search_data#ListSynonymMapsRequest"
       },
       "output": {
         "target": "com.azure.search_data#ListSynonymMapsResult"
@@ -3213,7 +3079,7 @@
         "smithy.api#documentation": "The synonym maps in the Search service."
       }
     },
-    "com.azure.search_data#SynonymMapsListRequest": {
+    "com.azure.search_data#ListSynonymMapsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -3225,7 +3091,7 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#SynonymMapsListRequestSelectList",
+          "target": "com.azure.search_data#ListSynonymMapsRequestSelectList",
           "traits": {
             "smithy.api#httpQuery": "$select",
             "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties."
@@ -3246,7 +3112,7 @@
           }
         },
         "searchType": {
-          "target": "com.azure.search_data#SynonymMapsListRequestSearchType",
+          "target": "com.azure.search_data#ListSynonymMapsRequestSearchType",
           "traits": {
             "smithy.api#httpQuery": "searchType",
             "smithy.api#documentation": "Specifies how the search parameter is interpreted. Currently only 'prefix' is supported."
@@ -3270,7 +3136,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#SynonymMapsListRequestSearchType": {
+    "com.azure.search_data#ListSynonymMapsRequestSearchType": {
       "type": "enum",
       "members": {
         "PREFIX": {
@@ -3282,17 +3148,17 @@
       },
       "traits": {}
     },
-    "com.azure.search_data#SynonymMapsListRequestSelectList": {
+    "com.azure.search_data#ListSynonymMapsRequestSelectList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.search_data#SkillsetsDelete": {
+    "com.azure.search_data#DeleteSkillset": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#SkillsetsDeleteRequest"
+        "target": "com.azure.search_data#DeleteSkillsetRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -3311,7 +3177,7 @@
         "smithy.api#documentation": "Deletes a skillset in a search service."
       }
     },
-    "com.azure.search_data#SkillsetsDeleteRequest": {
+    "com.azure.search_data#DeleteSkillsetRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4017,10 +3883,10 @@
         "smithy.api#documentation": "A list of skills in the skillset."
       }
     },
-    "com.azure.search_data#SkillsetsGet": {
+    "com.azure.search_data#GetSkillset": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#SkillsetsGetRequest"
+        "target": "com.azure.search_data#GetSkillsetRequest"
       },
       "output": {
         "target": "com.azure.search_data#SearchIndexerSkillset"
@@ -4039,7 +3905,7 @@
         "smithy.api#documentation": "Retrieves a skillset in a search service."
       }
     },
-    "com.azure.search_data#SkillsetsGetRequest": {
+    "com.azure.search_data#GetSkillsetRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4070,10 +3936,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#SkillsetsCreate": {
+    "com.azure.search_data#CreateSkillset": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#SkillsetsCreateRequest"
+        "target": "com.azure.search_data#CreateSkillsetRequest"
       },
       "output": {
         "target": "com.azure.search_data#SearchIndexerSkillset"
@@ -4092,7 +3958,7 @@
         "smithy.api#documentation": "Creates a new skillset in a search service."
       }
     },
-    "com.azure.search_data#SkillsetsCreateRequest": {
+    "com.azure.search_data#CreateSkillsetRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4124,7 +3990,7 @@
           }
         },
         "skills": {
-          "target": "com.azure.search_data#SkillsetsCreateRequestSkillsList",
+          "target": "com.azure.search_data#CreateSkillsetRequestSkillsList",
           "traits": {
             "smithy.api#documentation": "A list of skills in the skillset.",
             "smithy.api#required": {}
@@ -4167,7 +4033,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#SkillsetsCreateRequestSkillsList": {
+    "com.azure.search_data#CreateSkillsetRequestSkillsList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#SearchIndexerSkill"
@@ -4176,10 +4042,10 @@
         "smithy.api#documentation": "A list of skills in the skillset."
       }
     },
-    "com.azure.search_data#SkillsetsList": {
+    "com.azure.search_data#ListSkillsets": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#SkillsetsListRequest"
+        "target": "com.azure.search_data#ListSkillsetsRequest"
       },
       "output": {
         "target": "com.azure.search_data#ListSkillsetsResult"
@@ -4236,7 +4102,7 @@
         "smithy.api#documentation": "The skillsets defined in the Search service."
       }
     },
-    "com.azure.search_data#SkillsetsListRequest": {
+    "com.azure.search_data#ListSkillsetsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4248,7 +4114,7 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#SkillsetsListRequestSelectList",
+          "target": "com.azure.search_data#ListSkillsetsRequestSelectList",
           "traits": {
             "smithy.api#httpQuery": "$select",
             "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties."
@@ -4269,7 +4135,7 @@
           }
         },
         "searchType": {
-          "target": "com.azure.search_data#SkillsetsListRequestSearchType",
+          "target": "com.azure.search_data#ListSkillsetsRequestSearchType",
           "traits": {
             "smithy.api#httpQuery": "searchType",
             "smithy.api#documentation": "Specifies how the search parameter is interpreted. Currently only 'prefix' is supported."
@@ -4293,7 +4159,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#SkillsetsListRequestSearchType": {
+    "com.azure.search_data#ListSkillsetsRequestSearchType": {
       "type": "enum",
       "members": {
         "PREFIX": {
@@ -4305,7 +4171,7 @@
       },
       "traits": {}
     },
-    "com.azure.search_data#SkillsetsListRequestSelectList": {
+    "com.azure.search_data#ListSkillsetsRequestSelectList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -4564,10 +4430,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeSourcesGetStatus": {
+    "com.azure.search_data#GetKnowledgeSourceStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeSourcesGetStatusRequest"
+        "target": "com.azure.search_data#GetKnowledgeSourceStatusRequest"
       },
       "output": {
         "target": "com.azure.search_data#KnowledgeSourceStatus"
@@ -4864,7 +4730,7 @@
         "smithy.api#documentation": "The current synchronization status of the knowledge source."
       }
     },
-    "com.azure.search_data#KnowledgeSourcesGetStatusRequest": {
+    "com.azure.search_data#GetKnowledgeSourceStatusRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4895,10 +4761,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeSourcesDeleteFile": {
+    "com.azure.search_data#DeleteKnowledgeSourceFile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeSourcesDeleteFileRequest"
+        "target": "com.azure.search_data#DeleteKnowledgeSourceFileRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -4917,7 +4783,7 @@
         "smithy.api#documentation": "Deletes a file from a File knowledge source and removes all indexed content derived from it."
       }
     },
-    "com.azure.search_data#KnowledgeSourcesDeleteFileRequest": {
+    "com.azure.search_data#DeleteKnowledgeSourceFileRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -4956,10 +4822,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeSourcesUpdateFile": {
+    "com.azure.search_data#UpdateKnowledgeSourceFile": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeSourcesUpdateFileRequest"
+        "target": "com.azure.search_data#UpdateKnowledgeSourceFileRequest"
       },
       "output": {
         "target": "com.azure.search_data#KnowledgeSourceFile"
@@ -5129,7 +4995,7 @@
         "smithy.api#documentation": "Custom key/value metadata stored with the file. Returned but not searchable or filterable."
       }
     },
-    "com.azure.search_data#KnowledgeSourcesUpdateFileRequest": {
+    "com.azure.search_data#UpdateKnowledgeSourceFileRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5168,10 +5034,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeSourcesUploadFileMultipart": {
+    "com.azure.search_data#UploadKnowledgeSourceFileMultipart": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeSourcesUploadFileMultipartRequest"
+        "target": "com.azure.search_data#UploadKnowledgeSourceFileMultipartRequest"
       },
       "output": {
         "target": "com.azure.search_data#KnowledgeSourceFile"
@@ -5190,7 +5056,7 @@
         "smithy.api#documentation": "Uploads a file to a File knowledge source using multipart/form-data: a JSON 'metadata' part (file name and custom metadata) and a 'content' part with the raw file bytes."
       }
     },
-    "com.azure.search_data#KnowledgeSourcesUploadFileMultipartRequest": {
+    "com.azure.search_data#UploadKnowledgeSourceFileMultipartRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5221,10 +5087,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeSourcesListFiles": {
+    "com.azure.search_data#ListKnowledgeSourceFiles": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeSourcesListFilesRequest"
+        "target": "com.azure.search_data#ListKnowledgeSourceFilesRequest"
       },
       "output": {
         "target": "com.azure.search_data#ListKnowledgeSourceFilesResult"
@@ -5281,7 +5147,7 @@
         "smithy.api#documentation": "The list of files."
       }
     },
-    "com.azure.search_data#KnowledgeSourcesListFilesRequest": {
+    "com.azure.search_data#ListKnowledgeSourceFilesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5322,7 +5188,7 @@
           }
         },
         "searchType": {
-          "target": "com.azure.search_data#KnowledgeSourcesListFilesRequestSearchType",
+          "target": "com.azure.search_data#ListKnowledgeSourceFilesRequestSearchType",
           "traits": {
             "smithy.api#httpQuery": "searchType",
             "smithy.api#documentation": "Specifies how the search parameter is interpreted. Currently only 'prefix' is supported."
@@ -5346,7 +5212,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeSourcesListFilesRequestSearchType": {
+    "com.azure.search_data#ListKnowledgeSourceFilesRequestSearchType": {
       "type": "enum",
       "members": {
         "PREFIX": {
@@ -5358,10 +5224,10 @@
       },
       "traits": {}
     },
-    "com.azure.search_data#KnowledgeSourcesDelete": {
+    "com.azure.search_data#DeleteKnowledgeSource": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeSourcesDeleteRequest"
+        "target": "com.azure.search_data#DeleteKnowledgeSourceRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -5380,7 +5246,7 @@
         "smithy.api#documentation": "Deletes an existing knowledge source."
       }
     },
-    "com.azure.search_data#KnowledgeSourcesDeleteRequest": {
+    "com.azure.search_data#DeleteKnowledgeSourceRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5571,10 +5437,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeSourcesGet": {
+    "com.azure.search_data#GetKnowledgeSource": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeSourcesGetRequest"
+        "target": "com.azure.search_data#GetKnowledgeSourceRequest"
       },
       "output": {
         "target": "com.azure.search_data#KnowledgeSource"
@@ -5593,7 +5459,7 @@
         "smithy.api#documentation": "Retrieves a knowledge source definition."
       }
     },
-    "com.azure.search_data#KnowledgeSourcesGetRequest": {
+    "com.azure.search_data#GetKnowledgeSourceRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5624,10 +5490,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeSourcesCreate": {
+    "com.azure.search_data#CreateKnowledgeSource": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeSourcesCreateRequest"
+        "target": "com.azure.search_data#CreateKnowledgeSourceRequest"
       },
       "output": {
         "target": "com.azure.search_data#KnowledgeSource"
@@ -5646,7 +5512,7 @@
         "smithy.api#documentation": "Creates a new knowledge source."
       }
     },
-    "com.azure.search_data#KnowledgeSourcesCreateRequest": {
+    "com.azure.search_data#CreateKnowledgeSourceRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5703,10 +5569,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeSourcesList": {
+    "com.azure.search_data#ListKnowledgeSources": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeSourcesListRequest"
+        "target": "com.azure.search_data#ListKnowledgeSourcesRequest"
       },
       "output": {
         "target": "com.azure.search_data#ListKnowledgeSourcesResult"
@@ -5763,7 +5629,7 @@
         "smithy.api#documentation": "The knowledge sources in the service."
       }
     },
-    "com.azure.search_data#KnowledgeSourcesListRequest": {
+    "com.azure.search_data#ListKnowledgeSourcesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -5789,7 +5655,7 @@
           }
         },
         "searchType": {
-          "target": "com.azure.search_data#KnowledgeSourcesListRequestSearchType",
+          "target": "com.azure.search_data#ListKnowledgeSourcesRequestSearchType",
           "traits": {
             "smithy.api#httpQuery": "searchType",
             "smithy.api#documentation": "Specifies how the search parameter is interpreted. Currently only 'prefix' is supported."
@@ -5813,7 +5679,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeSourcesListRequestSearchType": {
+    "com.azure.search_data#ListKnowledgeSourcesRequestSearchType": {
       "type": "enum",
       "members": {
         "PREFIX": {
@@ -5825,10 +5691,10 @@
       },
       "traits": {}
     },
-    "com.azure.search_data#KnowledgeRetrievalRetrieve": {
+    "com.azure.search_data#GetKnowledgeRetrieval": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeRetrievalRetrieveRequest"
+        "target": "com.azure.search_data#GetKnowledgeRetrievalRequest"
       },
       "output": {
         "target": "com.azure.search_data#KnowledgeBaseRetrievalResponse"
@@ -6217,7 +6083,7 @@
         "smithy.api#documentation": "The response messages."
       }
     },
-    "com.azure.search_data#KnowledgeRetrievalRetrieveRequest": {
+    "com.azure.search_data#GetKnowledgeRetrievalRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -6251,13 +6117,13 @@
           }
         },
         "messages": {
-          "target": "com.azure.search_data#KnowledgeRetrievalRetrieveRequestMessagesList",
+          "target": "com.azure.search_data#GetKnowledgeRetrievalRequestMessagesList",
           "traits": {
             "smithy.api#documentation": "A list of chat message style input."
           }
         },
         "intents": {
-          "target": "com.azure.search_data#KnowledgeRetrievalRetrieveRequestIntentsList",
+          "target": "com.azure.search_data#GetKnowledgeRetrievalRequestIntentsList",
           "traits": {
             "smithy.api#documentation": "A list of intended queries to execute without model query planning."
           }
@@ -6299,7 +6165,7 @@
           }
         },
         "knowledgeSourceParams": {
-          "target": "com.azure.search_data#KnowledgeRetrievalRetrieveRequestKnowledgeSourceParamsList",
+          "target": "com.azure.search_data#GetKnowledgeRetrievalRequestKnowledgeSourceParamsList",
           "traits": {
             "smithy.api#documentation": "A list of runtime parameters for the knowledge sources."
           }
@@ -6309,7 +6175,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeRetrievalRetrieveRequestKnowledgeSourceParamsList": {
+    "com.azure.search_data#GetKnowledgeRetrievalRequestKnowledgeSourceParamsList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#KnowledgeSourceParams"
@@ -6318,7 +6184,7 @@
         "smithy.api#documentation": "A list of runtime parameters for the knowledge sources."
       }
     },
-    "com.azure.search_data#KnowledgeRetrievalRetrieveRequestIntentsList": {
+    "com.azure.search_data#GetKnowledgeRetrievalRequestIntentsList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#KnowledgeRetrievalIntent"
@@ -6327,7 +6193,7 @@
         "smithy.api#documentation": "A list of intended queries to execute without model query planning."
       }
     },
-    "com.azure.search_data#KnowledgeRetrievalRetrieveRequestMessagesList": {
+    "com.azure.search_data#GetKnowledgeRetrievalRequestMessagesList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#KnowledgeBaseMessage"
@@ -6336,10 +6202,10 @@
         "smithy.api#documentation": "A list of chat message style input."
       }
     },
-    "com.azure.search_data#KnowledgeBasesDelete": {
+    "com.azure.search_data#DeleteKnowledgeBase": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeBasesDeleteRequest"
+        "target": "com.azure.search_data#DeleteKnowledgeBaseRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -6358,7 +6224,7 @@
         "smithy.api#documentation": "Deletes a knowledge base."
       }
     },
-    "com.azure.search_data#KnowledgeBasesDeleteRequest": {
+    "com.azure.search_data#DeleteKnowledgeBaseRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -6701,10 +6567,10 @@
         "smithy.api#documentation": "Knowledge sources referenced by this knowledge base."
       }
     },
-    "com.azure.search_data#KnowledgeBasesGet": {
+    "com.azure.search_data#GetKnowledgeBase": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeBasesGetRequest"
+        "target": "com.azure.search_data#GetKnowledgeBaseRequest"
       },
       "output": {
         "target": "com.azure.search_data#KnowledgeBase"
@@ -6723,7 +6589,7 @@
         "smithy.api#documentation": "Retrieves a knowledge base definition."
       }
     },
-    "com.azure.search_data#KnowledgeBasesGetRequest": {
+    "com.azure.search_data#GetKnowledgeBaseRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -6754,10 +6620,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeBasesCreate": {
+    "com.azure.search_data#CreateKnowledgeBase": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeBasesCreateRequest"
+        "target": "com.azure.search_data#CreateKnowledgeBaseRequest"
       },
       "output": {
         "target": "com.azure.search_data#KnowledgeBase"
@@ -6776,7 +6642,7 @@
         "smithy.api#documentation": "Creates a new knowledge base."
       }
     },
-    "com.azure.search_data#KnowledgeBasesCreateRequest": {
+    "com.azure.search_data#CreateKnowledgeBaseRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -6802,14 +6668,14 @@
           }
         },
         "knowledgeSources": {
-          "target": "com.azure.search_data#KnowledgeBasesCreateRequestKnowledgeSourcesList",
+          "target": "com.azure.search_data#CreateKnowledgeBaseRequestKnowledgeSourcesList",
           "traits": {
             "smithy.api#documentation": "Knowledge sources referenced by this knowledge base.",
             "smithy.api#required": {}
           }
         },
         "models": {
-          "target": "com.azure.search_data#KnowledgeBasesCreateRequestModelsList",
+          "target": "com.azure.search_data#CreateKnowledgeBaseRequestModelsList",
           "traits": {
             "smithy.api#documentation": "Contains configuration options on how to connect to AI models."
           }
@@ -6869,7 +6735,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeBasesCreateRequestModelsList": {
+    "com.azure.search_data#CreateKnowledgeBaseRequestModelsList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#KnowledgeBaseModel"
@@ -6878,7 +6744,7 @@
         "smithy.api#documentation": "Contains configuration options on how to connect to AI models."
       }
     },
-    "com.azure.search_data#KnowledgeBasesCreateRequestKnowledgeSourcesList": {
+    "com.azure.search_data#CreateKnowledgeBaseRequestKnowledgeSourcesList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#KnowledgeSourceReference"
@@ -6887,10 +6753,10 @@
         "smithy.api#documentation": "Knowledge sources referenced by this knowledge base."
       }
     },
-    "com.azure.search_data#KnowledgeBasesList": {
+    "com.azure.search_data#ListKnowledgeBases": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#KnowledgeBasesListRequest"
+        "target": "com.azure.search_data#ListKnowledgeBasesRequest"
       },
       "output": {
         "target": "com.azure.search_data#ListKnowledgeBasesResult"
@@ -6947,7 +6813,7 @@
         "smithy.api#documentation": "The knowledge bases in the service."
       }
     },
-    "com.azure.search_data#KnowledgeBasesListRequest": {
+    "com.azure.search_data#ListKnowledgeBasesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -6973,7 +6839,7 @@
           }
         },
         "searchType": {
-          "target": "com.azure.search_data#KnowledgeBasesListRequestSearchType",
+          "target": "com.azure.search_data#ListKnowledgeBasesRequestSearchType",
           "traits": {
             "smithy.api#httpQuery": "searchType",
             "smithy.api#documentation": "Specifies how the search parameter is interpreted. Currently only 'prefix' is supported."
@@ -6997,7 +6863,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#KnowledgeBasesListRequestSearchType": {
+    "com.azure.search_data#ListKnowledgeBasesRequestSearchType": {
       "type": "enum",
       "members": {
         "PREFIX": {
@@ -7167,10 +7033,10 @@
       },
       "traits": {}
     },
-    "com.azure.search_data#IndexesGetStatistics": {
+    "com.azure.search_data#GetIndexStatistics": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexesGetStatisticsRequest"
+        "target": "com.azure.search_data#GetIndexStatisticsRequest"
       },
       "output": {
         "target": "com.azure.search_data#GetIndexStatisticsResult"
@@ -7218,7 +7084,7 @@
         "smithy.api#documentation": "Statistics for a given index. Statistics are collected periodically and are not guaranteed to always be up-to-date."
       }
     },
-    "com.azure.search_data#IndexesGetStatisticsRequest": {
+    "com.azure.search_data#GetIndexStatisticsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -7729,13 +7595,13 @@
         "smithy.api#documentation": "Defines the names of all tokenizers supported by the search engine."
       }
     },
-    "com.azure.search_data#DocumentsGet": {
+    "com.azure.search_data#GetDocument": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#DocumentsGetRequest"
+        "target": "com.azure.search_data#GetDocumentRequest"
       },
       "output": {
-        "target": "com.azure.search_data#DocumentsGetResponse"
+        "target": "com.azure.search_data#GetDocumentResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -7751,7 +7617,7 @@
         "smithy.api#documentation": "Retrieves a document from the index."
       }
     },
-    "com.azure.search_data#DocumentsGetResponse": {
+    "com.azure.search_data#GetDocumentResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -7778,7 +7644,7 @@
         "smithy.api#documentation": "A document retrieved via a document lookup operation."
       }
     },
-    "com.azure.search_data#DocumentsGetRequest": {
+    "com.azure.search_data#GetDocumentRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -7806,7 +7672,7 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#DocumentsGetRequestSelectList",
+          "target": "com.azure.search_data#GetDocumentRequestSelectList",
           "traits": {
             "smithy.api#httpQuery": "$select",
             "smithy.api#documentation": "List of field names to retrieve for the document; Any field not retrieved will be missing from the returned document."
@@ -7838,17 +7704,17 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#DocumentsGetRequestSelectList": {
+    "com.azure.search_data#GetDocumentRequestSelectList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.search_data#DocumentsSuggestGet": {
+    "com.azure.search_data#GetDocumentsSuggest": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#DocumentsSuggestGetRequest"
+        "target": "com.azure.search_data#GetDocumentsSuggestRequest"
       },
       "output": {
         "target": "com.azure.search_data#SuggestDocumentsResult"
@@ -7915,7 +7781,7 @@
         "com.distilled.openapi#additionalProperties": {}
       }
     },
-    "com.azure.search_data#DocumentsSuggestGetRequest": {
+    "com.azure.search_data#GetDocumentsSuggestRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -7986,21 +7852,21 @@
           }
         },
         "_orderby": {
-          "target": "com.azure.search_data#DocumentsSuggestGetRequestOrderbyList",
+          "target": "com.azure.search_data#GetDocumentsSuggestRequestOrderbyList",
           "traits": {
             "smithy.api#httpQuery": "$orderby",
             "smithy.api#documentation": "The list of OData $orderby expressions by which to sort the results. Each expression can be either a field name or a call to either the geo.distance() or the search.score() functions. Each expression can be followed by asc to indicate ascending, or desc to indicate descending. The default is ascending order. Ties will be broken by the match scores of documents. If no $orderby is specified, the default sort order is descending by document match score. There can be at most 32 $orderby clauses."
           }
         },
         "searchFields": {
-          "target": "com.azure.search_data#DocumentsSuggestGetRequestSearchFieldsList",
+          "target": "com.azure.search_data#GetDocumentsSuggestRequestSearchFieldsList",
           "traits": {
             "smithy.api#httpQuery": "searchFields",
             "smithy.api#documentation": "The list of field names to search for the specified search text. Target fields must be included in the specified suggester."
           }
         },
         "_select": {
-          "target": "com.azure.search_data#DocumentsSuggestGetRequestSelectList",
+          "target": "com.azure.search_data#GetDocumentsSuggestRequestSelectList",
           "traits": {
             "smithy.api#httpQuery": "$select",
             "smithy.api#documentation": "The list of fields to retrieve. If unspecified, only the key field will be included in the results."
@@ -8025,31 +7891,31 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#DocumentsSuggestGetRequestSelectList": {
+    "com.azure.search_data#GetDocumentsSuggestRequestSelectList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.search_data#DocumentsSuggestGetRequestSearchFieldsList": {
+    "com.azure.search_data#GetDocumentsSuggestRequestSearchFieldsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.search_data#DocumentsSuggestGetRequestOrderbyList": {
+    "com.azure.search_data#GetDocumentsSuggestRequestOrderbyList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.search_data#DocumentsSuggestPost": {
+    "com.azure.search_data#PostDocumentsSuggest": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#DocumentsSuggestPostRequest"
+        "target": "com.azure.search_data#PostDocumentsSuggestRequest"
       },
       "output": {
         "target": "com.azure.search_data#SuggestDocumentsResult"
@@ -8068,7 +7934,7 @@
         "smithy.api#documentation": "Suggests documents in the index that match the given partial query text."
       }
     },
-    "com.azure.search_data#DocumentsSuggestPostRequest": {
+    "com.azure.search_data#PostDocumentsSuggestRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -9316,10 +9182,10 @@
         "smithy.api#documentation": "The list of facet expressions to apply to the search query. Each facet expression contains a field name, optionally followed by a comma-separated list of name:value pairs."
       }
     },
-    "com.azure.search_data#DocumentsAutocompletePost": {
+    "com.azure.search_data#PostDocumentsAutocomplete": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#DocumentsAutocompletePostRequest"
+        "target": "com.azure.search_data#PostDocumentsAutocompleteRequest"
       },
       "output": {
         "target": "com.azure.search_data#AutocompleteResult"
@@ -9391,7 +9257,7 @@
         "smithy.api#documentation": "The result of Autocomplete requests."
       }
     },
-    "com.azure.search_data#DocumentsAutocompletePostRequest": {
+    "com.azure.search_data#PostDocumentsAutocompleteRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -9510,10 +9376,10 @@
         "smithy.api#documentation": "Specifies the mode for Autocomplete. The default is 'oneTerm'. Use 'twoTerms' to get shingles and 'oneTermWithContext' to use the current context in producing autocomplete terms."
       }
     },
-    "com.azure.search_data#DocumentsIndex": {
+    "com.azure.search_data#ListDocuments": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#DocumentsIndexRequest"
+        "target": "com.azure.search_data#ListDocumentsRequest"
       },
       "output": {
         "target": "com.azure.search_data#IndexDocumentsResult"
@@ -9591,7 +9457,7 @@
         "smithy.api#documentation": "Status of an indexing operation for a single document."
       }
     },
-    "com.azure.search_data#DocumentsIndexRequest": {
+    "com.azure.search_data#ListDocumentsRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -9618,7 +9484,7 @@
           }
         },
         "value": {
-          "target": "com.azure.search_data#DocumentsIndexRequestValueList",
+          "target": "com.azure.search_data#ListDocumentsRequestValueList",
           "traits": {
             "smithy.api#documentation": "The actions in the batch.",
             "smithy.api#required": {}
@@ -9629,7 +9495,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#DocumentsIndexRequestValueList": {
+    "com.azure.search_data#ListDocumentsRequestValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#IndexAction"
@@ -9686,10 +9552,10 @@
         "smithy.api#documentation": "The operation to perform on a document in an indexing batch."
       }
     },
-    "com.azure.search_data#DocumentsAutocompleteGet": {
+    "com.azure.search_data#GetDocumentsAutocomplete": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#DocumentsAutocompleteGetRequest"
+        "target": "com.azure.search_data#GetDocumentsAutocompleteRequest"
       },
       "output": {
         "target": "com.azure.search_data#AutocompleteResult"
@@ -9708,7 +9574,7 @@
         "smithy.api#documentation": "Autocompletes incomplete query terms based on input text and matching terms in the index."
       }
     },
-    "com.azure.search_data#DocumentsAutocompleteGetRequest": {
+    "com.azure.search_data#GetDocumentsAutocompleteRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -9744,7 +9610,7 @@
           }
         },
         "autocompleteMode": {
-          "target": "com.azure.search_data#DocumentsAutocompleteGetRequestAutocompleteMode",
+          "target": "com.azure.search_data#GetDocumentsAutocompleteRequestAutocompleteMode",
           "traits": {
             "smithy.api#httpQuery": "autocompleteMode",
             "smithy.api#documentation": "Specifies the mode for Autocomplete. The default is 'oneTerm'. Use 'twoTerms' to get shingles and 'oneTermWithContext' to use the current context while producing auto-completed terms."
@@ -9786,7 +9652,7 @@
           }
         },
         "searchFields": {
-          "target": "com.azure.search_data#DocumentsAutocompleteGetRequestSearchFieldsList",
+          "target": "com.azure.search_data#GetDocumentsAutocompleteRequestSearchFieldsList",
           "traits": {
             "smithy.api#httpQuery": "searchFields",
             "smithy.api#documentation": "The list of field names to consider when querying for auto-completed terms. Target fields must be included in the specified suggester."
@@ -9811,14 +9677,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#DocumentsAutocompleteGetRequestSearchFieldsList": {
+    "com.azure.search_data#GetDocumentsAutocompleteRequestSearchFieldsList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.search_data#DocumentsAutocompleteGetRequestAutocompleteMode": {
+    "com.azure.search_data#GetDocumentsAutocompleteRequestAutocompleteMode": {
       "type": "enum",
       "members": {
         "ONETERM": {
@@ -10364,10 +10230,10 @@
       },
       "traits": {}
     },
-    "com.azure.search_data#IndexesDelete": {
+    "com.azure.search_data#DeleteIndex": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexesDeleteRequest"
+        "target": "com.azure.search_data#DeleteIndexRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -10386,7 +10252,7 @@
         "smithy.api#documentation": "Deletes a search index and all the documents it contains. This operation is permanent, with no recovery option. Make sure you have a master copy of your index definition, data ingestion code, and a backup of the primary data source in case you need to re-build the index."
       }
     },
-    "com.azure.search_data#IndexesDeleteRequest": {
+    "com.azure.search_data#DeleteIndexRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -10904,10 +10770,10 @@
         "smithy.api#documentation": "The fields of the index."
       }
     },
-    "com.azure.search_data#IndexesGet": {
+    "com.azure.search_data#GetIndex": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexesGetRequest"
+        "target": "com.azure.search_data#GetIndexRequest"
       },
       "output": {
         "target": "com.azure.search_data#SearchIndex"
@@ -10926,7 +10792,7 @@
         "smithy.api#documentation": "Retrieves an index definition."
       }
     },
-    "com.azure.search_data#IndexesGetRequest": {
+    "com.azure.search_data#GetIndexRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -10957,10 +10823,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#IndexesCreate": {
+    "com.azure.search_data#CreateIndex": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexesCreateRequest"
+        "target": "com.azure.search_data#CreateIndexRequest"
       },
       "output": {
         "target": "com.azure.search_data#SearchIndex"
@@ -10979,7 +10845,7 @@
         "smithy.api#documentation": "Creates a new search index."
       }
     },
-    "com.azure.search_data#IndexesCreateRequest": {
+    "com.azure.search_data#CreateIndexRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -11011,14 +10877,14 @@
           }
         },
         "fields": {
-          "target": "com.azure.search_data#IndexesCreateRequestFieldsList",
+          "target": "com.azure.search_data#CreateIndexRequestFieldsList",
           "traits": {
             "smithy.api#documentation": "The fields of the index.",
             "smithy.api#required": {}
           }
         },
         "scoringProfiles": {
-          "target": "com.azure.search_data#IndexesCreateRequestScoringProfilesList",
+          "target": "com.azure.search_data#CreateIndexRequestScoringProfilesList",
           "traits": {
             "smithy.api#documentation": "The scoring profiles for the index."
           }
@@ -11037,37 +10903,37 @@
           }
         },
         "suggesters": {
-          "target": "com.azure.search_data#IndexesCreateRequestSuggestersList",
+          "target": "com.azure.search_data#CreateIndexRequestSuggestersList",
           "traits": {
             "smithy.api#documentation": "The suggesters for the index."
           }
         },
         "analyzers": {
-          "target": "com.azure.search_data#IndexesCreateRequestAnalyzersList",
+          "target": "com.azure.search_data#CreateIndexRequestAnalyzersList",
           "traits": {
             "smithy.api#documentation": "The analyzers for the index."
           }
         },
         "tokenizers": {
-          "target": "com.azure.search_data#IndexesCreateRequestTokenizersList",
+          "target": "com.azure.search_data#CreateIndexRequestTokenizersList",
           "traits": {
             "smithy.api#documentation": "The tokenizers for the index."
           }
         },
         "tokenFilters": {
-          "target": "com.azure.search_data#IndexesCreateRequestTokenFiltersList",
+          "target": "com.azure.search_data#CreateIndexRequestTokenFiltersList",
           "traits": {
             "smithy.api#documentation": "The token filters for the index."
           }
         },
         "charFilters": {
-          "target": "com.azure.search_data#IndexesCreateRequestCharFiltersList",
+          "target": "com.azure.search_data#CreateIndexRequestCharFiltersList",
           "traits": {
             "smithy.api#documentation": "The character filters for the index."
           }
         },
         "normalizers": {
-          "target": "com.azure.search_data#IndexesCreateRequestNormalizersList",
+          "target": "com.azure.search_data#CreateIndexRequestNormalizersList",
           "traits": {
             "smithy.api#documentation": "The normalizers for the index."
           }
@@ -11124,7 +10990,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#IndexesCreateRequestNormalizersList": {
+    "com.azure.search_data#CreateIndexRequestNormalizersList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#LexicalNormalizer"
@@ -11133,7 +10999,7 @@
         "smithy.api#documentation": "The normalizers for the index."
       }
     },
-    "com.azure.search_data#IndexesCreateRequestCharFiltersList": {
+    "com.azure.search_data#CreateIndexRequestCharFiltersList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#CharFilter"
@@ -11142,7 +11008,7 @@
         "smithy.api#documentation": "The character filters for the index."
       }
     },
-    "com.azure.search_data#IndexesCreateRequestTokenFiltersList": {
+    "com.azure.search_data#CreateIndexRequestTokenFiltersList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#TokenFilter"
@@ -11151,7 +11017,7 @@
         "smithy.api#documentation": "The token filters for the index."
       }
     },
-    "com.azure.search_data#IndexesCreateRequestTokenizersList": {
+    "com.azure.search_data#CreateIndexRequestTokenizersList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#LexicalTokenizer"
@@ -11160,7 +11026,7 @@
         "smithy.api#documentation": "The tokenizers for the index."
       }
     },
-    "com.azure.search_data#IndexesCreateRequestAnalyzersList": {
+    "com.azure.search_data#CreateIndexRequestAnalyzersList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#LexicalAnalyzer"
@@ -11169,7 +11035,7 @@
         "smithy.api#documentation": "The analyzers for the index."
       }
     },
-    "com.azure.search_data#IndexesCreateRequestSuggestersList": {
+    "com.azure.search_data#CreateIndexRequestSuggestersList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#SearchSuggester"
@@ -11178,7 +11044,7 @@
         "smithy.api#documentation": "The suggesters for the index."
       }
     },
-    "com.azure.search_data#IndexesCreateRequestScoringProfilesList": {
+    "com.azure.search_data#CreateIndexRequestScoringProfilesList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#ScoringProfile"
@@ -11187,7 +11053,7 @@
         "smithy.api#documentation": "The scoring profiles for the index."
       }
     },
-    "com.azure.search_data#IndexesCreateRequestFieldsList": {
+    "com.azure.search_data#CreateIndexRequestFieldsList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#SearchField"
@@ -11196,10 +11062,10 @@
         "smithy.api#documentation": "The fields of the index."
       }
     },
-    "com.azure.search_data#IndexesList": {
+    "com.azure.search_data#ListIndexes": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexesListRequest"
+        "target": "com.azure.search_data#ListIndexesRequest"
       },
       "output": {
         "target": "com.azure.search_data#ListIndexesResult"
@@ -11256,7 +11122,7 @@
         "smithy.api#documentation": "The indexes in the Search service."
       }
     },
-    "com.azure.search_data#IndexesListRequest": {
+    "com.azure.search_data#ListIndexesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -11282,7 +11148,7 @@
           }
         },
         "searchType": {
-          "target": "com.azure.search_data#IndexesListRequestSearchType",
+          "target": "com.azure.search_data#ListIndexesRequestSearchType",
           "traits": {
             "smithy.api#httpQuery": "searchType",
             "smithy.api#documentation": "Specifies how the search parameter is interpreted. Currently only 'prefix' is supported."
@@ -11306,7 +11172,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#IndexesListRequestSearchType": {
+    "com.azure.search_data#ListIndexesRequestSearchType": {
       "type": "enum",
       "members": {
         "PREFIX": {
@@ -11318,10 +11184,10 @@
       },
       "traits": {}
     },
-    "com.azure.search_data#IndexersGetStatus": {
+    "com.azure.search_data#GetIndexerStatus": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexersGetStatusRequest"
+        "target": "com.azure.search_data#GetIndexerStatusRequest"
       },
       "output": {
         "target": "com.azure.search_data#SearchIndexerStatus"
@@ -11694,7 +11560,7 @@
         "smithy.api#documentation": "Represents the overall indexer status."
       }
     },
-    "com.azure.search_data#IndexersGetStatusRequest": {
+    "com.azure.search_data#GetIndexerStatusRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -11725,10 +11591,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#IndexersRun": {
+    "com.azure.search_data#RunIndexer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexersRunRequest"
+        "target": "com.azure.search_data#RunIndexerRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -11747,7 +11613,7 @@
         "smithy.api#documentation": "Runs an indexer on-demand."
       }
     },
-    "com.azure.search_data#IndexersRunRequest": {
+    "com.azure.search_data#RunIndexerRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -11861,10 +11727,10 @@
         "smithy.api#documentation": "Options with various types of permission data to index."
       }
     },
-    "com.azure.search_data#IndexersReset": {
+    "com.azure.search_data#ResetIndexer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexersResetRequest"
+        "target": "com.azure.search_data#ResetIndexerRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -11883,7 +11749,7 @@
         "smithy.api#documentation": "Resets the change tracking state associated with an indexer."
       }
     },
-    "com.azure.search_data#IndexersResetRequest": {
+    "com.azure.search_data#ResetIndexerRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -11914,10 +11780,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#IndexersDelete": {
+    "com.azure.search_data#DeleteIndexer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexersDeleteRequest"
+        "target": "com.azure.search_data#DeleteIndexerRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -11936,7 +11802,7 @@
         "smithy.api#documentation": "Deletes an indexer."
       }
     },
-    "com.azure.search_data#IndexersDeleteRequest": {
+    "com.azure.search_data#DeleteIndexerRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -12704,10 +12570,10 @@
         "smithy.api#documentation": "Defines mappings between fields in the data source and corresponding target fields in the index."
       }
     },
-    "com.azure.search_data#IndexersGet": {
+    "com.azure.search_data#GetIndexer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexersGetRequest"
+        "target": "com.azure.search_data#GetIndexerRequest"
       },
       "output": {
         "target": "com.azure.search_data#SearchIndexer"
@@ -12726,7 +12592,7 @@
         "smithy.api#documentation": "Retrieves an indexer definition."
       }
     },
-    "com.azure.search_data#IndexersGetRequest": {
+    "com.azure.search_data#GetIndexerRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -12757,10 +12623,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#IndexersCreate": {
+    "com.azure.search_data#CreateIndexer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexersCreateRequest"
+        "target": "com.azure.search_data#CreateIndexerRequest"
       },
       "output": {
         "target": "com.azure.search_data#SearchIndexer"
@@ -12779,7 +12645,7 @@
         "smithy.api#documentation": "Creates a new indexer."
       }
     },
-    "com.azure.search_data#IndexersCreateRequest": {
+    "com.azure.search_data#CreateIndexerRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -12845,13 +12711,13 @@
           }
         },
         "fieldMappings": {
-          "target": "com.azure.search_data#IndexersCreateRequestFieldMappingsList",
+          "target": "com.azure.search_data#CreateIndexerRequestFieldMappingsList",
           "traits": {
             "smithy.api#documentation": "Defines mappings between fields in the data source and corresponding target fields in the index."
           }
         },
         "outputFieldMappings": {
-          "target": "com.azure.search_data#IndexersCreateRequestOutputFieldMappingsList",
+          "target": "com.azure.search_data#CreateIndexerRequestOutputFieldMappingsList",
           "traits": {
             "smithy.api#documentation": "Output field mappings are applied after enrichment and immediately before indexing."
           }
@@ -12882,7 +12748,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#IndexersCreateRequestOutputFieldMappingsList": {
+    "com.azure.search_data#CreateIndexerRequestOutputFieldMappingsList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#FieldMapping"
@@ -12891,7 +12757,7 @@
         "smithy.api#documentation": "Output field mappings are applied after enrichment and immediately before indexing."
       }
     },
-    "com.azure.search_data#IndexersCreateRequestFieldMappingsList": {
+    "com.azure.search_data#CreateIndexerRequestFieldMappingsList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#FieldMapping"
@@ -12900,10 +12766,10 @@
         "smithy.api#documentation": "Defines mappings between fields in the data source and corresponding target fields in the index."
       }
     },
-    "com.azure.search_data#IndexersList": {
+    "com.azure.search_data#ListIndexers": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#IndexersListRequest"
+        "target": "com.azure.search_data#ListIndexersRequest"
       },
       "output": {
         "target": "com.azure.search_data#ListIndexersResult"
@@ -12960,7 +12826,7 @@
         "smithy.api#documentation": "The indexers in the Search service."
       }
     },
-    "com.azure.search_data#IndexersListRequest": {
+    "com.azure.search_data#ListIndexersRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -12972,7 +12838,7 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#IndexersListRequestSelectList",
+          "target": "com.azure.search_data#ListIndexersRequestSelectList",
           "traits": {
             "smithy.api#httpQuery": "$select",
             "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties."
@@ -12993,7 +12859,7 @@
           }
         },
         "searchType": {
-          "target": "com.azure.search_data#IndexersListRequestSearchType",
+          "target": "com.azure.search_data#ListIndexersRequestSearchType",
           "traits": {
             "smithy.api#httpQuery": "searchType",
             "smithy.api#documentation": "Specifies how the search parameter is interpreted. Currently only 'prefix' is supported."
@@ -13017,7 +12883,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#IndexersListRequestSearchType": {
+    "com.azure.search_data#ListIndexersRequestSearchType": {
       "type": "enum",
       "members": {
         "PREFIX": {
@@ -13029,17 +12895,17 @@
       },
       "traits": {}
     },
-    "com.azure.search_data#IndexersListRequestSelectList": {
+    "com.azure.search_data#ListIndexersRequestSelectList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.search_data#DataSourcesDelete": {
+    "com.azure.search_data#DeleteDataSource": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#DataSourcesDeleteRequest"
+        "target": "com.azure.search_data#DeleteDataSourceRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -13058,7 +12924,7 @@
         "smithy.api#documentation": "Deletes a datasource."
       }
     },
-    "com.azure.search_data#DataSourcesDeleteRequest": {
+    "com.azure.search_data#DeleteDataSourceRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -13501,10 +13367,10 @@
         "smithy.api#documentation": "Ingestion options with various types of permission data."
       }
     },
-    "com.azure.search_data#DataSourcesGet": {
+    "com.azure.search_data#GetDataSource": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#DataSourcesGetRequest"
+        "target": "com.azure.search_data#GetDataSourceRequest"
       },
       "output": {
         "target": "com.azure.search_data#SearchIndexerDataSource"
@@ -13523,7 +13389,7 @@
         "smithy.api#documentation": "Retrieves a datasource definition."
       }
     },
-    "com.azure.search_data#DataSourcesGetRequest": {
+    "com.azure.search_data#GetDataSourceRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -13554,10 +13420,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#DataSourcesCreate": {
+    "com.azure.search_data#CreateDataSource": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#DataSourcesCreateRequest"
+        "target": "com.azure.search_data#CreateDataSourceRequest"
       },
       "output": {
         "target": "com.azure.search_data#SearchIndexerDataSource"
@@ -13576,7 +13442,7 @@
         "smithy.api#documentation": "Creates a new datasource."
       }
     },
-    "com.azure.search_data#DataSourcesCreateRequest": {
+    "com.azure.search_data#CreateDataSourceRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -13636,7 +13502,7 @@
           }
         },
         "indexerPermissionOptions": {
-          "target": "com.azure.search_data#DataSourcesCreateRequestIndexerPermissionOptionsList",
+          "target": "com.azure.search_data#CreateDataSourceRequestIndexerPermissionOptionsList",
           "traits": {
             "smithy.api#documentation": "Ingestion options with various types of permission data.",
             "com.distilled.openapi#nullable": {}
@@ -13675,7 +13541,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#DataSourcesCreateRequestIndexerPermissionOptionsList": {
+    "com.azure.search_data#CreateDataSourceRequestIndexerPermissionOptionsList": {
       "type": "list",
       "member": {
         "target": "com.azure.search_data#IndexerPermissionOption"
@@ -13684,10 +13550,10 @@
         "smithy.api#documentation": "Ingestion options with various types of permission data."
       }
     },
-    "com.azure.search_data#DataSourcesList": {
+    "com.azure.search_data#ListDataSources": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#DataSourcesListRequest"
+        "target": "com.azure.search_data#ListDataSourcesRequest"
       },
       "output": {
         "target": "com.azure.search_data#ListDataSourcesResult"
@@ -13744,7 +13610,7 @@
         "smithy.api#documentation": "The datasources in the Search service."
       }
     },
-    "com.azure.search_data#DataSourcesListRequest": {
+    "com.azure.search_data#ListDataSourcesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -13756,7 +13622,7 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#DataSourcesListRequestSelectList",
+          "target": "com.azure.search_data#ListDataSourcesRequestSelectList",
           "traits": {
             "smithy.api#httpQuery": "$select",
             "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties."
@@ -13777,7 +13643,7 @@
           }
         },
         "searchType": {
-          "target": "com.azure.search_data#DataSourcesListRequestSearchType",
+          "target": "com.azure.search_data#ListDataSourcesRequestSearchType",
           "traits": {
             "smithy.api#httpQuery": "searchType",
             "smithy.api#documentation": "Specifies how the search parameter is interpreted. Currently only 'prefix' is supported."
@@ -13801,7 +13667,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#DataSourcesListRequestSearchType": {
+    "com.azure.search_data#ListDataSourcesRequestSearchType": {
       "type": "enum",
       "members": {
         "PREFIX": {
@@ -13813,17 +13679,17 @@
       },
       "traits": {}
     },
-    "com.azure.search_data#DataSourcesListRequestSelectList": {
+    "com.azure.search_data#ListDataSourcesRequestSelectList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.search_data#AliasesDelete": {
+    "com.azure.search_data#DeleteAlias": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#AliasesDeleteRequest"
+        "target": "com.azure.search_data#DeleteAliasRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -13842,7 +13708,7 @@
         "smithy.api#documentation": "Deletes a search alias and its associated mapping to an index. This operation is permanent, with no recovery option. The mapped index is untouched by this operation."
       }
     },
-    "com.azure.search_data#AliasesDeleteRequest": {
+    "com.azure.search_data#DeleteAliasRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -14025,10 +13891,10 @@
         "smithy.api#documentation": "The name of the index this alias maps to. Only one index name may be specified."
       }
     },
-    "com.azure.search_data#AliasesGet": {
+    "com.azure.search_data#GetAlias": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#AliasesGetRequest"
+        "target": "com.azure.search_data#GetAliasRequest"
       },
       "output": {
         "target": "com.azure.search_data#SearchAlias"
@@ -14047,7 +13913,7 @@
         "smithy.api#documentation": "Retrieves an alias definition."
       }
     },
-    "com.azure.search_data#AliasesGetRequest": {
+    "com.azure.search_data#GetAliasRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -14078,10 +13944,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#AliasesCreate": {
+    "com.azure.search_data#CreateAlias": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#AliasesCreateRequest"
+        "target": "com.azure.search_data#CreateAliasRequest"
       },
       "output": {
         "target": "com.azure.search_data#SearchAlias"
@@ -14100,7 +13966,7 @@
         "smithy.api#documentation": "Creates a new search alias."
       }
     },
-    "com.azure.search_data#AliasesCreateRequest": {
+    "com.azure.search_data#CreateAliasRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -14126,7 +13992,7 @@
           }
         },
         "indexes": {
-          "target": "com.azure.search_data#AliasesCreateRequestIndexesList",
+          "target": "com.azure.search_data#CreateAliasRequestIndexesList",
           "traits": {
             "smithy.api#documentation": "The name of the index this alias maps to. Only one index name may be specified.",
             "smithy.api#required": {}
@@ -14144,7 +14010,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#AliasesCreateRequestIndexesList": {
+    "com.azure.search_data#CreateAliasRequestIndexesList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
@@ -14153,10 +14019,10 @@
         "smithy.api#documentation": "The name of the index this alias maps to. Only one index name may be specified."
       }
     },
-    "com.azure.search_data#AliasesList": {
+    "com.azure.search_data#ListAliases": {
       "type": "operation",
       "input": {
-        "target": "com.azure.search_data#AliasesListRequest"
+        "target": "com.azure.search_data#ListAliasesRequest"
       },
       "output": {
         "target": "com.azure.search_data#ListAliasesResult"
@@ -14213,7 +14079,7 @@
         "smithy.api#documentation": "The aliases in the Search service."
       }
     },
-    "com.azure.search_data#AliasesListRequest": {
+    "com.azure.search_data#ListAliasesRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -14239,7 +14105,7 @@
           }
         },
         "searchType": {
-          "target": "com.azure.search_data#AliasesListRequestSearchType",
+          "target": "com.azure.search_data#ListAliasesRequestSearchType",
           "traits": {
             "smithy.api#httpQuery": "searchType",
             "smithy.api#documentation": "Specifies how the search parameter is interpreted. Currently only 'prefix' is supported."
@@ -14263,7 +14129,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.search_data#AliasesListRequestSearchType": {
+    "com.azure.search_data#ListAliasesRequestSearchType": {
       "type": "enum",
       "members": {
         "PREFIX": {
@@ -14280,121 +14146,121 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.search_data#KnowledgeRetrievalRetrieveStream"
+          "target": "com.azure.search_data#GetKnowledgeRetrievalStream"
         },
         {
-          "target": "com.azure.search_data#IndexesListWithSelectedProperties"
+          "target": "com.azure.search_data#ListIndexWithSelectedProperties"
         },
         {
-          "target": "com.azure.search_data#SynonymMapsDelete"
+          "target": "com.azure.search_data#DeleteSynonymMap"
         },
         {
           "target": "com.azure.search_data#SynonymMapsCreateOrUpdate"
         },
         {
-          "target": "com.azure.search_data#SynonymMapsGet"
+          "target": "com.azure.search_data#GetSynonymMap"
         },
         {
-          "target": "com.azure.search_data#SynonymMapsCreate"
+          "target": "com.azure.search_data#CreateSynonymMap"
         },
         {
-          "target": "com.azure.search_data#SynonymMapsList"
+          "target": "com.azure.search_data#ListSynonymMaps"
         },
         {
-          "target": "com.azure.search_data#SkillsetsDelete"
+          "target": "com.azure.search_data#DeleteSkillset"
         },
         {
           "target": "com.azure.search_data#SkillsetsCreateOrUpdate"
         },
         {
-          "target": "com.azure.search_data#SkillsetsGet"
+          "target": "com.azure.search_data#GetSkillset"
         },
         {
-          "target": "com.azure.search_data#SkillsetsCreate"
+          "target": "com.azure.search_data#CreateSkillset"
         },
         {
-          "target": "com.azure.search_data#SkillsetsList"
+          "target": "com.azure.search_data#ListSkillsets"
         },
         {
           "target": "com.azure.search_data#GetServiceStatistics"
         },
         {
-          "target": "com.azure.search_data#KnowledgeSourcesGetStatus"
+          "target": "com.azure.search_data#GetKnowledgeSourceStatus"
         },
         {
-          "target": "com.azure.search_data#KnowledgeSourcesDeleteFile"
+          "target": "com.azure.search_data#DeleteKnowledgeSourceFile"
         },
         {
-          "target": "com.azure.search_data#KnowledgeSourcesUpdateFile"
+          "target": "com.azure.search_data#UpdateKnowledgeSourceFile"
         },
         {
-          "target": "com.azure.search_data#KnowledgeSourcesUploadFileMultipart"
+          "target": "com.azure.search_data#UploadKnowledgeSourceFileMultipart"
         },
         {
-          "target": "com.azure.search_data#KnowledgeSourcesListFiles"
+          "target": "com.azure.search_data#ListKnowledgeSourceFiles"
         },
         {
-          "target": "com.azure.search_data#KnowledgeSourcesDelete"
+          "target": "com.azure.search_data#DeleteKnowledgeSource"
         },
         {
           "target": "com.azure.search_data#KnowledgeSourcesCreateOrUpdate"
         },
         {
-          "target": "com.azure.search_data#KnowledgeSourcesGet"
+          "target": "com.azure.search_data#GetKnowledgeSource"
         },
         {
-          "target": "com.azure.search_data#KnowledgeSourcesCreate"
+          "target": "com.azure.search_data#CreateKnowledgeSource"
         },
         {
-          "target": "com.azure.search_data#KnowledgeSourcesList"
+          "target": "com.azure.search_data#ListKnowledgeSources"
         },
         {
-          "target": "com.azure.search_data#KnowledgeRetrievalRetrieve"
+          "target": "com.azure.search_data#GetKnowledgeRetrieval"
         },
         {
-          "target": "com.azure.search_data#KnowledgeBasesDelete"
+          "target": "com.azure.search_data#DeleteKnowledgeBase"
         },
         {
           "target": "com.azure.search_data#KnowledgeBasesCreateOrUpdate"
         },
         {
-          "target": "com.azure.search_data#KnowledgeBasesGet"
+          "target": "com.azure.search_data#GetKnowledgeBase"
         },
         {
-          "target": "com.azure.search_data#KnowledgeBasesCreate"
+          "target": "com.azure.search_data#CreateKnowledgeBase"
         },
         {
-          "target": "com.azure.search_data#KnowledgeBasesList"
+          "target": "com.azure.search_data#ListKnowledgeBases"
         },
         {
           "target": "com.azure.search_data#GetIndexStatsSummary"
         },
         {
-          "target": "com.azure.search_data#IndexesGetStatistics"
+          "target": "com.azure.search_data#GetIndexStatistics"
         },
         {
           "target": "com.azure.search_data#IndexesAnalyze"
         },
         {
-          "target": "com.azure.search_data#DocumentsGet"
+          "target": "com.azure.search_data#GetDocument"
         },
         {
-          "target": "com.azure.search_data#DocumentsSuggestGet"
+          "target": "com.azure.search_data#GetDocumentsSuggest"
         },
         {
-          "target": "com.azure.search_data#DocumentsSuggestPost"
+          "target": "com.azure.search_data#PostDocumentsSuggest"
         },
         {
           "target": "com.azure.search_data#DocumentsSearchPost"
         },
         {
-          "target": "com.azure.search_data#DocumentsAutocompletePost"
+          "target": "com.azure.search_data#PostDocumentsAutocomplete"
         },
         {
-          "target": "com.azure.search_data#DocumentsIndex"
+          "target": "com.azure.search_data#ListDocuments"
         },
         {
-          "target": "com.azure.search_data#DocumentsAutocompleteGet"
+          "target": "com.azure.search_data#GetDocumentsAutocomplete"
         },
         {
           "target": "com.azure.search_data#DocumentsCount"
@@ -14403,76 +14269,76 @@
           "target": "com.azure.search_data#DocumentsSearchGet"
         },
         {
-          "target": "com.azure.search_data#IndexesDelete"
+          "target": "com.azure.search_data#DeleteIndex"
         },
         {
           "target": "com.azure.search_data#IndexesCreateOrUpdate"
         },
         {
-          "target": "com.azure.search_data#IndexesGet"
+          "target": "com.azure.search_data#GetIndex"
         },
         {
-          "target": "com.azure.search_data#IndexesCreate"
+          "target": "com.azure.search_data#CreateIndex"
         },
         {
-          "target": "com.azure.search_data#IndexesList"
+          "target": "com.azure.search_data#ListIndexes"
         },
         {
-          "target": "com.azure.search_data#IndexersGetStatus"
+          "target": "com.azure.search_data#GetIndexerStatus"
         },
         {
-          "target": "com.azure.search_data#IndexersRun"
+          "target": "com.azure.search_data#RunIndexer"
         },
         {
           "target": "com.azure.search_data#IndexersResync"
         },
         {
-          "target": "com.azure.search_data#IndexersReset"
+          "target": "com.azure.search_data#ResetIndexer"
         },
         {
-          "target": "com.azure.search_data#IndexersDelete"
+          "target": "com.azure.search_data#DeleteIndexer"
         },
         {
           "target": "com.azure.search_data#IndexersCreateOrUpdate"
         },
         {
-          "target": "com.azure.search_data#IndexersGet"
+          "target": "com.azure.search_data#GetIndexer"
         },
         {
-          "target": "com.azure.search_data#IndexersCreate"
+          "target": "com.azure.search_data#CreateIndexer"
         },
         {
-          "target": "com.azure.search_data#IndexersList"
+          "target": "com.azure.search_data#ListIndexers"
         },
         {
-          "target": "com.azure.search_data#DataSourcesDelete"
+          "target": "com.azure.search_data#DeleteDataSource"
         },
         {
           "target": "com.azure.search_data#DataSourcesCreateOrUpdate"
         },
         {
-          "target": "com.azure.search_data#DataSourcesGet"
+          "target": "com.azure.search_data#GetDataSource"
         },
         {
-          "target": "com.azure.search_data#DataSourcesCreate"
+          "target": "com.azure.search_data#CreateDataSource"
         },
         {
-          "target": "com.azure.search_data#DataSourcesList"
+          "target": "com.azure.search_data#ListDataSources"
         },
         {
-          "target": "com.azure.search_data#AliasesDelete"
+          "target": "com.azure.search_data#DeleteAlias"
         },
         {
           "target": "com.azure.search_data#AliasesCreateOrUpdate"
         },
         {
-          "target": "com.azure.search_data#AliasesGet"
+          "target": "com.azure.search_data#GetAlias"
         },
         {
-          "target": "com.azure.search_data#AliasesCreate"
+          "target": "com.azure.search_data#CreateAlias"
         },
         {
-          "target": "com.azure.search_data#AliasesList"
+          "target": "com.azure.search_data#ListAliases"
         }
       ],
       "traits": {

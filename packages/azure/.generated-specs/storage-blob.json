@@ -15,193 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.storage_blob#BlobSetTags": "com.azure.storage_blob#SetBlobTags",
-      "com.azure.storage_blob#BlobSetTagsRequest": "com.azure.storage_blob#SetBlobTagsRequest",
-      "com.azure.storage_blob#BlobSetTagsRequestBlobTagSetList": "com.azure.storage_blob#SetBlobTagsRequestBlobTagSetList",
-      "com.azure.storage_blob#BlobGetTags": "com.azure.storage_blob#GetBlobTags",
-      "com.azure.storage_blob#BlobGetTagsRequest": "com.azure.storage_blob#GetBlobTagsRequest",
-      "com.azure.storage_blob#AppendBlobSeal": "com.azure.storage_blob#SealAppendBlob",
-      "com.azure.storage_blob#AppendBlobSealResponse": "com.azure.storage_blob#SealAppendBlobResponse",
-      "com.azure.storage_blob#AppendBlobSealRequest": "com.azure.storage_blob#SealAppendBlobRequest",
-      "com.azure.storage_blob#PageBlobCopyIncremental": "com.azure.storage_blob#CopyPageBlobIncremental",
-      "com.azure.storage_blob#PageBlobCopyIncrementalResponse": "com.azure.storage_blob#CopyPageBlobIncrementalResponse",
-      "com.azure.storage_blob#PageBlobCopyIncrementalRequest": "com.azure.storage_blob#CopyPageBlobIncrementalRequest",
-      "com.azure.storage_blob#PageBlobUpdateSequenceNumber": "com.azure.storage_blob#UpdatePageBlobSequenceNumber",
-      "com.azure.storage_blob#PageBlobUpdateSequenceNumberResponse": "com.azure.storage_blob#UpdatePageBlobSequenceNumberResponse",
-      "com.azure.storage_blob#PageBlobUpdateSequenceNumberRequest": "com.azure.storage_blob#UpdatePageBlobSequenceNumberRequest",
-      "com.azure.storage_blob#PageBlobUpdateSequenceNumberRequestXMsSequenceNumberAction": "com.azure.storage_blob#UpdatePageBlobSequenceNumberRequestXMsSequenceNumberAction",
-      "com.azure.storage_blob#PageBlobResize": "com.azure.storage_blob#ResizePageBlob",
-      "com.azure.storage_blob#PageBlobResizeResponse": "com.azure.storage_blob#ResizePageBlobResponse",
-      "com.azure.storage_blob#PageBlobResizeRequest": "com.azure.storage_blob#ResizePageBlobRequest",
-      "com.azure.storage_blob#PageBlobResizeRequestXMsEncryptionAlgorithm": "com.azure.storage_blob#ResizePageBlobRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_blob#PageBlobGetPageRangesDiff": "com.azure.storage_blob#GetPageBlobPageRangesDiff",
-      "com.azure.storage_blob#PageBlobGetPageRangesDiffRequest": "com.azure.storage_blob#GetPageBlobPageRangesDiffRequest",
-      "com.azure.storage_blob#PageBlobGetPageRanges": "com.azure.storage_blob#GetPageBlobPageRanges",
-      "com.azure.storage_blob#PageBlobGetPageRangesRequest": "com.azure.storage_blob#GetPageBlobPageRangesRequest",
-      "com.azure.storage_blob#PageBlobUploadPagesFromURL": "com.azure.storage_blob#UploadPageBlobPagesFromURL",
-      "com.azure.storage_blob#PageBlobUploadPagesFromURLResponse": "com.azure.storage_blob#UploadPageBlobPagesFromURLResponse",
-      "com.azure.storage_blob#PageBlobUploadPagesFromURLRequest": "com.azure.storage_blob#UploadPageBlobPagesFromURLRequest",
-      "com.azure.storage_blob#PageBlobUploadPagesFromURLRequestXMsSourceEncryptionAlgorithm": "com.azure.storage_blob#UploadPageBlobPagesFromURLRequestXMsSourceEncryptionAlgorithm",
-      "com.azure.storage_blob#PageBlobUploadPagesFromURLRequestXMsFileRequestIntent": "com.azure.storage_blob#UploadPageBlobPagesFromURLRequestXMsFileRequestIntent",
-      "com.azure.storage_blob#PageBlobUploadPagesFromURLRequestXMsEncryptionAlgorithm": "com.azure.storage_blob#UploadPageBlobPagesFromURLRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_blob#PageBlobClearPages": "com.azure.storage_blob#ClearPageBlobPages",
-      "com.azure.storage_blob#PageBlobClearPagesResponse": "com.azure.storage_blob#ClearPageBlobPagesResponse",
-      "com.azure.storage_blob#PageBlobClearPagesRequest": "com.azure.storage_blob#ClearPageBlobPagesRequest",
-      "com.azure.storage_blob#PageBlobClearPagesRequestXMsEncryptionAlgorithm": "com.azure.storage_blob#ClearPageBlobPagesRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_blob#PageBlobUploadPages": "com.azure.storage_blob#UploadPageBlobPages",
-      "com.azure.storage_blob#PageBlobUploadPagesResponse": "com.azure.storage_blob#UploadPageBlobPagesResponse",
-      "com.azure.storage_blob#PageBlobUploadPagesRequest": "com.azure.storage_blob#UploadPageBlobPagesRequest",
-      "com.azure.storage_blob#PageBlobUploadPagesRequestXMsEncryptionAlgorithm": "com.azure.storage_blob#UploadPageBlobPagesRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_blob#BlobGetAccountInfo": "com.azure.storage_blob#GetBlobAccountInfo",
-      "com.azure.storage_blob#BlobGetAccountInfoRequest": "com.azure.storage_blob#GetBlobAccountInfoRequest",
-      "com.azure.storage_blob#BlobSetTier": "com.azure.storage_blob#SetBlobTier",
-      "com.azure.storage_blob#BlobSetTierRequest": "com.azure.storage_blob#SetBlobTierRequest",
-      "com.azure.storage_blob#BlobSetTierRequestXMsRehydratePriority": "com.azure.storage_blob#SetBlobTierRequestXMsRehydratePriority",
-      "com.azure.storage_blob#BlobSetTierRequestXMsAccessTier": "com.azure.storage_blob#SetBlobTierRequestXMsAccessTier",
-      "com.azure.storage_blob#BlobCopyFromURL": "com.azure.storage_blob#CopyBlobFromURL",
-      "com.azure.storage_blob#BlobCopyFromURLResponse": "com.azure.storage_blob#CopyBlobFromURLResponse",
-      "com.azure.storage_blob#BlobCopyFromURLRequest": "com.azure.storage_blob#CopyBlobFromURLRequest",
-      "com.azure.storage_blob#BlobCopyFromURLRequestXMsFileRequestIntent": "com.azure.storage_blob#CopyBlobFromURLRequestXMsFileRequestIntent",
-      "com.azure.storage_blob#BlobCopyFromURLRequestXMsCopySourceTagOption": "com.azure.storage_blob#CopyBlobFromURLRequestXMsCopySourceTagOption",
-      "com.azure.storage_blob#BlobCopyFromURLRequestXMsImmutabilityPolicyMode": "com.azure.storage_blob#CopyBlobFromURLRequestXMsImmutabilityPolicyMode",
-      "com.azure.storage_blob#BlobCopyFromURLRequestXMsAccessTier": "com.azure.storage_blob#CopyBlobFromURLRequestXMsAccessTier",
-      "com.azure.storage_blob#BlobCreateSnapshot": "com.azure.storage_blob#CreateBlobSnapshot",
-      "com.azure.storage_blob#BlobCreateSnapshotResponse": "com.azure.storage_blob#CreateBlobSnapshotResponse",
-      "com.azure.storage_blob#BlobCreateSnapshotRequest": "com.azure.storage_blob#CreateBlobSnapshotRequest",
-      "com.azure.storage_blob#BlobCreateSnapshotRequestXMsEncryptionAlgorithm": "com.azure.storage_blob#CreateBlobSnapshotRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_blob#BlobRenewLease": "com.azure.storage_blob#RenewBlobLease",
-      "com.azure.storage_blob#BlobRenewLeaseResponse": "com.azure.storage_blob#RenewBlobLeaseResponse",
-      "com.azure.storage_blob#BlobRenewLeaseRequest": "com.azure.storage_blob#RenewBlobLeaseRequest",
-      "com.azure.storage_blob#BlobSetMetadata": "com.azure.storage_blob#SetBlobMetadata",
-      "com.azure.storage_blob#BlobSetMetadataResponse": "com.azure.storage_blob#SetBlobMetadataResponse",
-      "com.azure.storage_blob#BlobSetMetadataRequest": "com.azure.storage_blob#SetBlobMetadataRequest",
-      "com.azure.storage_blob#BlobSetMetadataRequestXMsEncryptionAlgorithm": "com.azure.storage_blob#SetBlobMetadataRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_blob#BlobSetLegalHold": "com.azure.storage_blob#SetBlobLegalHold",
-      "com.azure.storage_blob#BlobSetLegalHoldRequest": "com.azure.storage_blob#SetBlobLegalHoldRequest",
-      "com.azure.storage_blob#BlobDeleteImmutabilityPolicy": "com.azure.storage_blob#DeleteBlobImmutabilityPolicy",
-      "com.azure.storage_blob#BlobDeleteImmutabilityPolicyRequest": "com.azure.storage_blob#DeleteBlobImmutabilityPolicyRequest",
-      "com.azure.storage_blob#BlobSetImmutabilityPolicy": "com.azure.storage_blob#SetBlobImmutabilityPolicy",
-      "com.azure.storage_blob#BlobSetImmutabilityPolicyRequest": "com.azure.storage_blob#SetBlobImmutabilityPolicyRequest",
-      "com.azure.storage_blob#BlobSetImmutabilityPolicyRequestXMsImmutabilityPolicyMode": "com.azure.storage_blob#SetBlobImmutabilityPolicyRequestXMsImmutabilityPolicyMode",
-      "com.azure.storage_blob#BlobSetHTTPHeaders": "com.azure.storage_blob#SetBlobHTTPHeaders",
-      "com.azure.storage_blob#BlobSetHTTPHeadersResponse": "com.azure.storage_blob#SetBlobHTTPHeadersResponse",
-      "com.azure.storage_blob#BlobSetHTTPHeadersRequest": "com.azure.storage_blob#SetBlobHTTPHeadersRequest",
-      "com.azure.storage_blob#BlobSetExpiry": "com.azure.storage_blob#SetBlobExpiry",
-      "com.azure.storage_blob#BlobSetExpiryResponse": "com.azure.storage_blob#SetBlobExpiryResponse",
-      "com.azure.storage_blob#BlobSetExpiryRequest": "com.azure.storage_blob#SetBlobExpiryRequest",
-      "com.azure.storage_blob#BlobSetExpiryRequestXMsExpiryOption": "com.azure.storage_blob#SetBlobExpiryRequestXMsExpiryOption",
-      "com.azure.storage_blob#BlobUndelete": "com.azure.storage_blob#UndeleteBlob",
-      "com.azure.storage_blob#BlobUndeleteRequest": "com.azure.storage_blob#UndeleteBlobRequest",
-      "com.azure.storage_blob#BlockBlobPutBlobFromUrl": "com.azure.storage_blob#PutBlockBlobBlobFromUrl",
-      "com.azure.storage_blob#BlockBlobPutBlobFromUrlResponse": "com.azure.storage_blob#PutBlockBlobBlobFromUrlResponse",
-      "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequest": "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequest",
-      "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsSourceEncryptionAlgorithm": "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsSourceEncryptionAlgorithm",
-      "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsFileRequestIntent": "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsFileRequestIntent",
-      "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsCopySourceTagOption": "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsCopySourceTagOption",
-      "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsAccessTier": "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsAccessTier",
-      "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsEncryptionAlgorithm": "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_blob#BlockBlobUpload": "com.azure.storage_blob#UploadBlockBlob",
-      "com.azure.storage_blob#BlockBlobUploadResponse": "com.azure.storage_blob#UploadBlockBlobResponse",
-      "com.azure.storage_blob#BlockBlobUploadRequest": "com.azure.storage_blob#UploadBlockBlobRequest",
-      "com.azure.storage_blob#BlockBlobUploadRequestXMsImmutabilityPolicyMode": "com.azure.storage_blob#UploadBlockBlobRequestXMsImmutabilityPolicyMode",
-      "com.azure.storage_blob#BlockBlobUploadRequestXMsAccessTier": "com.azure.storage_blob#UploadBlockBlobRequestXMsAccessTier",
-      "com.azure.storage_blob#BlockBlobUploadRequestXMsEncryptionAlgorithm": "com.azure.storage_blob#UploadBlockBlobRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_blob#AppendBlobCreate": "com.azure.storage_blob#CreateAppendBlob",
-      "com.azure.storage_blob#AppendBlobCreateResponse": "com.azure.storage_blob#CreateAppendBlobResponse",
-      "com.azure.storage_blob#AppendBlobCreateRequest": "com.azure.storage_blob#CreateAppendBlobRequest",
-      "com.azure.storage_blob#AppendBlobCreateRequestXMsImmutabilityPolicyMode": "com.azure.storage_blob#CreateAppendBlobRequestXMsImmutabilityPolicyMode",
-      "com.azure.storage_blob#AppendBlobCreateRequestXMsEncryptionAlgorithm": "com.azure.storage_blob#CreateAppendBlobRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_blob#PageBlobCreate": "com.azure.storage_blob#CreatePageBlob",
-      "com.azure.storage_blob#PageBlobCreateResponse": "com.azure.storage_blob#CreatePageBlobResponse",
-      "com.azure.storage_blob#PageBlobCreateRequest": "com.azure.storage_blob#CreatePageBlobRequest",
-      "com.azure.storage_blob#PageBlobCreateRequestXMsImmutabilityPolicyMode": "com.azure.storage_blob#CreatePageBlobRequestXMsImmutabilityPolicyMode",
-      "com.azure.storage_blob#PageBlobCreateRequestXMsEncryptionAlgorithm": "com.azure.storage_blob#CreatePageBlobRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_blob#PageBlobCreateRequestXMsAccessTier": "com.azure.storage_blob#CreatePageBlobRequestXMsAccessTier",
-      "com.azure.storage_blob#BlobGetProperties": "com.azure.storage_blob#GetBlobProperties",
-      "com.azure.storage_blob#BlobGetPropertiesRequest": "com.azure.storage_blob#GetBlobPropertiesRequest",
-      "com.azure.storage_blob#BlobGetPropertiesRequestXMsEncryptionAlgorithm": "com.azure.storage_blob#GetBlobPropertiesRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_blob#BlobDelete": "com.azure.storage_blob#DeleteBlob",
-      "com.azure.storage_blob#BlobDeleteRequest": "com.azure.storage_blob#DeleteBlobRequest",
-      "com.azure.storage_blob#BlobDeleteRequestXMsDeleteSnapshots": "com.azure.storage_blob#DeleteBlobRequestXMsDeleteSnapshots",
-      "com.azure.storage_blob#BlobDeleteRequestDeletetype": "com.azure.storage_blob#DeleteBlobRequestDeletetype",
-      "com.azure.storage_blob#BlobDownload": "com.azure.storage_blob#DownloadBlob",
-      "com.azure.storage_blob#BlobDownloadResponse": "com.azure.storage_blob#DownloadBlobResponse",
-      "com.azure.storage_blob#BlobDownloadRequest": "com.azure.storage_blob#DownloadBlobRequest",
-      "com.azure.storage_blob#BlobDownloadRequestXMsEncryptionAlgorithm": "com.azure.storage_blob#DownloadBlobRequestXMsEncryptionAlgorithm",
-      "com.azure.storage_blob#ContainerGetAccountInfo": "com.azure.storage_blob#GetContainerAccountInfo",
-      "com.azure.storage_blob#ContainerGetAccountInfoRequest": "com.azure.storage_blob#GetContainerAccountInfoRequest",
-      "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrow": "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrow",
-      "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrowResponse": "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrowResponse",
-      "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrowRequest": "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrowRequest",
-      "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrowRequestIncludeList": "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrowRequestIncludeList",
-      "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrowRequestIncludeItem": "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrowRequestIncludeItem",
-      "com.azure.storage_blob#ContainerListBlobHierarchySegment": "com.azure.storage_blob#ListContainerBlobHierarchySegment",
-      "com.azure.storage_blob#ContainerListBlobHierarchySegmentRequest": "com.azure.storage_blob#ListContainerBlobHierarchySegmentRequest",
-      "com.azure.storage_blob#ContainerListBlobHierarchySegmentRequestIncludeList": "com.azure.storage_blob#ListContainerBlobHierarchySegmentRequestIncludeList",
-      "com.azure.storage_blob#ContainerListBlobHierarchySegmentRequestIncludeItem": "com.azure.storage_blob#ListContainerBlobHierarchySegmentRequestIncludeItem",
-      "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrow": "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrow",
-      "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrowResponse": "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrowResponse",
-      "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrowRequest": "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrowRequest",
-      "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrowRequestIncludeList": "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrowRequestIncludeList",
-      "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrowRequestIncludeItem": "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrowRequestIncludeItem",
-      "com.azure.storage_blob#ContainerListBlobFlatSegment": "com.azure.storage_blob#ListContainerBlobFlatSegment",
-      "com.azure.storage_blob#ContainerListBlobFlatSegmentRequest": "com.azure.storage_blob#ListContainerBlobFlatSegmentRequest",
-      "com.azure.storage_blob#ContainerListBlobFlatSegmentRequestIncludeList": "com.azure.storage_blob#ListContainerBlobFlatSegmentRequestIncludeList",
-      "com.azure.storage_blob#ContainerListBlobFlatSegmentRequestIncludeItem": "com.azure.storage_blob#ListContainerBlobFlatSegmentRequestIncludeItem",
-      "com.azure.storage_blob#ContainerRenewLease": "com.azure.storage_blob#RenewContainerLease",
-      "com.azure.storage_blob#ContainerRenewLeaseResponse": "com.azure.storage_blob#RenewContainerLeaseResponse",
-      "com.azure.storage_blob#ContainerRenewLeaseRequest": "com.azure.storage_blob#RenewContainerLeaseRequest",
-      "com.azure.storage_blob#ContainerSubmitBatch": "com.azure.storage_blob#SubmitContainerBatch",
-      "com.azure.storage_blob#ContainerSubmitBatchRequest": "com.azure.storage_blob#SubmitContainerBatchRequest",
-      "com.azure.storage_blob#ContainerRename": "com.azure.storage_blob#RenameContainer",
-      "com.azure.storage_blob#ContainerRenameRequest": "com.azure.storage_blob#RenameContainerRequest",
-      "com.azure.storage_blob#ContainerRestore": "com.azure.storage_blob#RestoreContainer",
-      "com.azure.storage_blob#ContainerRestoreRequest": "com.azure.storage_blob#RestoreContainerRequest",
-      "com.azure.storage_blob#ContainerSetAccessPolicy": "com.azure.storage_blob#SetContainerAccessPolicy",
-      "com.azure.storage_blob#ContainerSetAccessPolicyResponse": "com.azure.storage_blob#SetContainerAccessPolicyResponse",
-      "com.azure.storage_blob#ContainerSetAccessPolicyRequest": "com.azure.storage_blob#SetContainerAccessPolicyRequest",
-      "com.azure.storage_blob#ContainerSetAccessPolicyRequestXMsBlobPublicAccess": "com.azure.storage_blob#SetContainerAccessPolicyRequestXMsBlobPublicAccess",
-      "com.azure.storage_blob#ContainerGetAccessPolicy": "com.azure.storage_blob#GetContainerAccessPolicy",
-      "com.azure.storage_blob#ContainerGetAccessPolicyResponse": "com.azure.storage_blob#GetContainerAccessPolicyResponse",
-      "com.azure.storage_blob#ContainerGetAccessPolicyRequest": "com.azure.storage_blob#GetContainerAccessPolicyRequest",
-      "com.azure.storage_blob#ContainerSetMetadata": "com.azure.storage_blob#SetContainerMetadata",
-      "com.azure.storage_blob#ContainerSetMetadataResponse": "com.azure.storage_blob#SetContainerMetadataResponse",
-      "com.azure.storage_blob#ContainerSetMetadataRequest": "com.azure.storage_blob#SetContainerMetadataRequest",
-      "com.azure.storage_blob#ContainerDelete": "com.azure.storage_blob#DeleteContainer",
-      "com.azure.storage_blob#ContainerDeleteRequest": "com.azure.storage_blob#DeleteContainerRequest",
-      "com.azure.storage_blob#ContainerCreate": "com.azure.storage_blob#CreateContainer",
-      "com.azure.storage_blob#ContainerCreateResponse": "com.azure.storage_blob#CreateContainerResponse",
-      "com.azure.storage_blob#ContainerCreateRequest": "com.azure.storage_blob#CreateContainerRequest",
-      "com.azure.storage_blob#ContainerCreateRequestXMsBlobPublicAccess": "com.azure.storage_blob#CreateContainerRequestXMsBlobPublicAccess",
-      "com.azure.storage_blob#ContainerGetProperties": "com.azure.storage_blob#GetContainerProperties",
-      "com.azure.storage_blob#ContainerGetPropertiesResponse": "com.azure.storage_blob#GetContainerPropertiesResponse",
-      "com.azure.storage_blob#ContainerGetPropertiesRequest": "com.azure.storage_blob#GetContainerPropertiesRequest",
-      "com.azure.storage_blob#ServiceSubmitBatch": "com.azure.storage_blob#SubmitServiceBatch",
-      "com.azure.storage_blob#ServiceSubmitBatchResponse": "com.azure.storage_blob#SubmitServiceBatchResponse",
-      "com.azure.storage_blob#ServiceSubmitBatchRequest": "com.azure.storage_blob#SubmitServiceBatchRequest",
-      "com.azure.storage_blob#ServiceGetAccountInfo": "com.azure.storage_blob#GetServiceAccountInfo",
-      "com.azure.storage_blob#ServiceGetAccountInfoRequest": "com.azure.storage_blob#GetServiceAccountInfoRequest",
-      "com.azure.storage_blob#ServiceGetUserDelegationKey": "com.azure.storage_blob#GetServiceUserDelegationKey",
-      "com.azure.storage_blob#ServiceGetUserDelegationKeyRequest": "com.azure.storage_blob#GetServiceUserDelegationKeyRequest",
-      "com.azure.storage_blob#ServiceListContainersSegment": "com.azure.storage_blob#ListServiceContainersSegment",
-      "com.azure.storage_blob#ServiceListContainersSegmentRequest": "com.azure.storage_blob#ListServiceContainersSegmentRequest",
-      "com.azure.storage_blob#ServiceListContainersSegmentRequestIncludeList": "com.azure.storage_blob#ListServiceContainersSegmentRequestIncludeList",
-      "com.azure.storage_blob#ServiceListContainersSegmentRequestIncludeItem": "com.azure.storage_blob#ListServiceContainersSegmentRequestIncludeItem",
-      "com.azure.storage_blob#ServiceGetStatistics": "com.azure.storage_blob#GetServiceStatistics",
-      "com.azure.storage_blob#ServiceGetStatisticsRequest": "com.azure.storage_blob#GetServiceStatisticsRequest",
-      "com.azure.storage_blob#ServiceSetProperties": "com.azure.storage_blob#SetServiceProperties",
-      "com.azure.storage_blob#ServiceSetPropertiesRequest": "com.azure.storage_blob#SetServicePropertiesRequest",
-      "com.azure.storage_blob#ServiceSetPropertiesRequestCorsList": "com.azure.storage_blob#SetServicePropertiesRequestCorsList",
-      "com.azure.storage_blob#ServiceGetProperties": "com.azure.storage_blob#GetServiceProperties",
-      "com.azure.storage_blob#ServiceGetPropertiesRequest": "com.azure.storage_blob#GetServicePropertiesRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.storage_blob#BlobSetTags": {
+    "com.azure.storage_blob#SetBlobTags": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobSetTagsRequest"
+        "target": "com.azure.storage_blob#SetBlobTagsRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#SetBlobTagsResponse"
@@ -262,7 +82,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobSetTagsRequest": {
+    "com.azure.storage_blob#SetBlobTagsRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -367,7 +187,7 @@
           }
         },
         "BlobTagSet": {
-          "target": "com.azure.storage_blob#BlobSetTagsRequestBlobTagSetList",
+          "target": "com.azure.storage_blob#SetBlobTagsRequestBlobTagSetList",
           "traits": {
             "smithy.api#required": {},
             "smithy.api#xmlName": "TagSet",
@@ -379,7 +199,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobSetTagsRequestBlobTagSetList": {
+    "com.azure.storage_blob#SetBlobTagsRequestBlobTagSetList": {
       "type": "list",
       "member": {
         "target": "com.azure.storage_blob#BlobTag"
@@ -404,10 +224,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobGetTags": {
+    "com.azure.storage_blob#GetBlobTags": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobGetTagsRequest"
+        "target": "com.azure.storage_blob#GetBlobTagsRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#GetBlobTagsResponse"
@@ -483,7 +303,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobGetTagsRequest": {
+    "com.azure.storage_blob#GetBlobTagsRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1204,13 +1024,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#AppendBlobSeal": {
+    "com.azure.storage_blob#SealAppendBlob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#AppendBlobSealRequest"
+        "target": "com.azure.storage_blob#SealAppendBlobRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#AppendBlobSealResponse"
+        "target": "com.azure.storage_blob#SealAppendBlobResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1231,7 +1051,7 @@
         "smithy.api#documentation": "The Seal operation seals the Append Blob to make it read-only. Seal is supported only on version 2019-12-12 version or later."
       }
     },
-    "com.azure.storage_blob#AppendBlobSealResponse": {
+    "com.azure.storage_blob#SealAppendBlobResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -1288,7 +1108,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#AppendBlobSealRequest": {
+    "com.azure.storage_blob#SealAppendBlobRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1760,13 +1580,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#AppendBlobAppendBlock": {
+    "com.azure.storage_blob#BlockAppendBlobAppend": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#AppendBlobAppendBlockRequest"
+        "target": "com.azure.storage_blob#BlockAppendBlobAppendRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#AppendBlobAppendBlockResponse"
+        "target": "com.azure.storage_blob#BlockAppendBlobAppendResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1787,7 +1607,7 @@
         "smithy.api#documentation": "The Append Block operation commits a new block of data to the end of an existing append blob. The Append Block operation is permitted only if the blob was created with x-ms-blob-type set to AppendBlob. Append Block is supported only on version 2015-02-21 version or later."
       }
     },
-    "com.azure.storage_blob#AppendBlobAppendBlockResponse": {
+    "com.azure.storage_blob#BlockAppendBlobAppendResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -1893,7 +1713,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#AppendBlobAppendBlockRequest": {
+    "com.azure.storage_blob#BlockAppendBlobAppendRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -1977,7 +1797,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#AppendBlobAppendBlockRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#BlockAppendBlobAppendRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -2058,7 +1878,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#AppendBlobAppendBlockRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#BlockAppendBlobAppendRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -2070,13 +1890,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#PageBlobCopyIncremental": {
+    "com.azure.storage_blob#CopyPageBlobIncremental": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#PageBlobCopyIncrementalRequest"
+        "target": "com.azure.storage_blob#CopyPageBlobIncrementalRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#PageBlobCopyIncrementalResponse"
+        "target": "com.azure.storage_blob#CopyPageBlobIncrementalResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2097,7 +1917,7 @@
         "smithy.api#documentation": "The Copy Incremental operation copies a snapshot of the source page blob to a destination page blob. The snapshot is copied such that only the differential changes between the previously copied snapshot are transferred to the destination. The copied snapshots are complete copies of the original snapshot and can be read or copied from as usual. This API is supported since REST version 2016-05-31."
       }
     },
-    "com.azure.storage_blob#PageBlobCopyIncrementalResponse": {
+    "com.azure.storage_blob#CopyPageBlobIncrementalResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -2161,7 +1981,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#PageBlobCopyIncrementalRequest": {
+    "com.azure.storage_blob#CopyPageBlobIncrementalRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -2250,13 +2070,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#PageBlobUpdateSequenceNumber": {
+    "com.azure.storage_blob#UpdatePageBlobSequenceNumber": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#PageBlobUpdateSequenceNumberRequest"
+        "target": "com.azure.storage_blob#UpdatePageBlobSequenceNumberRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#PageBlobUpdateSequenceNumberResponse"
+        "target": "com.azure.storage_blob#UpdatePageBlobSequenceNumberResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2277,7 +2097,7 @@
         "smithy.api#documentation": "Update the sequence number of the blob"
       }
     },
-    "com.azure.storage_blob#PageBlobUpdateSequenceNumberResponse": {
+    "com.azure.storage_blob#UpdatePageBlobSequenceNumberResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -2334,7 +2154,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#PageBlobUpdateSequenceNumberRequest": {
+    "com.azure.storage_blob#UpdatePageBlobSequenceNumberRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -2411,7 +2231,7 @@
           }
         },
         "xMsSequenceNumberAction": {
-          "target": "com.azure.storage_blob#PageBlobUpdateSequenceNumberRequestXMsSequenceNumberAction",
+          "target": "com.azure.storage_blob#UpdatePageBlobSequenceNumberRequestXMsSequenceNumberAction",
           "traits": {
             "smithy.api#httpHeader": "x-ms-sequence-number-action",
             "smithy.api#required": {},
@@ -2437,7 +2257,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#PageBlobUpdateSequenceNumberRequestXMsSequenceNumberAction": {
+    "com.azure.storage_blob#UpdatePageBlobSequenceNumberRequestXMsSequenceNumberAction": {
       "type": "enum",
       "members": {
         "MAX": {
@@ -2461,13 +2281,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#PageBlobResize": {
+    "com.azure.storage_blob#ResizePageBlob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#PageBlobResizeRequest"
+        "target": "com.azure.storage_blob#ResizePageBlobRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#PageBlobResizeResponse"
+        "target": "com.azure.storage_blob#ResizePageBlobResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2488,7 +2308,7 @@
         "smithy.api#documentation": "Resize the Blob"
       }
     },
-    "com.azure.storage_blob#PageBlobResizeResponse": {
+    "com.azure.storage_blob#ResizePageBlobResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -2545,7 +2365,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#PageBlobResizeRequest": {
+    "com.azure.storage_blob#ResizePageBlobRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -2601,7 +2421,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#PageBlobResizeRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#ResizePageBlobRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -2669,7 +2489,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#PageBlobResizeRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#ResizePageBlobRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -2681,10 +2501,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#PageBlobGetPageRangesDiff": {
+    "com.azure.storage_blob#GetPageBlobPageRangesDiff": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#PageBlobGetPageRangesDiffRequest"
+        "target": "com.azure.storage_blob#GetPageBlobPageRangesDiffRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#GetPageBlobPageRangesDiffResponse"
@@ -2838,7 +2658,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#PageBlobGetPageRangesDiffRequest": {
+    "com.azure.storage_blob#GetPageBlobPageRangesDiffRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -2968,10 +2788,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#PageBlobGetPageRanges": {
+    "com.azure.storage_blob#GetPageBlobPageRanges": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#PageBlobGetPageRangesRequest"
+        "target": "com.azure.storage_blob#GetPageBlobPageRangesRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#GetPageBlobPageRangesResponse"
@@ -3075,7 +2895,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#PageBlobGetPageRangesRequest": {
+    "com.azure.storage_blob#GetPageBlobPageRangesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -3191,13 +3011,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#PageBlobUploadPagesFromURL": {
+    "com.azure.storage_blob#UploadPageBlobPagesFromURL": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#PageBlobUploadPagesFromURLRequest"
+        "target": "com.azure.storage_blob#UploadPageBlobPagesFromURLRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#PageBlobUploadPagesFromURLResponse"
+        "target": "com.azure.storage_blob#UploadPageBlobPagesFromURLResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3221,7 +3041,7 @@
         "smithy.api#documentation": "The Upload Pages operation writes a range of pages to a page blob where the contents are read from a URL"
       }
     },
-    "com.azure.storage_blob#PageBlobUploadPagesFromURLResponse": {
+    "com.azure.storage_blob#UploadPageBlobPagesFromURLResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -3306,7 +3126,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#PageBlobUploadPagesFromURLRequest": {
+    "com.azure.storage_blob#UploadPageBlobPagesFromURLRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -3393,7 +3213,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#PageBlobUploadPagesFromURLRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#UploadPageBlobPagesFromURLRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -3512,7 +3332,7 @@
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_blob#PageBlobUploadPagesFromURLRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_blob#UploadPageBlobPagesFromURLRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -3533,7 +3353,7 @@
           }
         },
         "xMsSourceEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#PageBlobUploadPagesFromURLRequestXMsSourceEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#UploadPageBlobPagesFromURLRequestXMsSourceEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-source-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the source encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-source-encryption-key is provided."
@@ -3544,7 +3364,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#PageBlobUploadPagesFromURLRequestXMsSourceEncryptionAlgorithm": {
+    "com.azure.storage_blob#UploadPageBlobPagesFromURLRequestXMsSourceEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -3556,7 +3376,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#PageBlobUploadPagesFromURLRequestXMsFileRequestIntent": {
+    "com.azure.storage_blob#UploadPageBlobPagesFromURLRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -3568,7 +3388,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#PageBlobUploadPagesFromURLRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#UploadPageBlobPagesFromURLRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -3580,13 +3400,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#PageBlobClearPages": {
+    "com.azure.storage_blob#ClearPageBlobPages": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#PageBlobClearPagesRequest"
+        "target": "com.azure.storage_blob#ClearPageBlobPagesRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#PageBlobClearPagesResponse"
+        "target": "com.azure.storage_blob#ClearPageBlobPagesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3610,7 +3430,7 @@
         "smithy.api#documentation": "The Clear Pages operation clears a set of pages from a page blob"
       }
     },
-    "com.azure.storage_blob#PageBlobClearPagesResponse": {
+    "com.azure.storage_blob#ClearPageBlobPagesResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -3681,7 +3501,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#PageBlobClearPagesRequest": {
+    "com.azure.storage_blob#ClearPageBlobPagesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -3744,7 +3564,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#PageBlobClearPagesRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#ClearPageBlobPagesRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -3825,7 +3645,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#PageBlobClearPagesRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#ClearPageBlobPagesRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -3837,13 +3657,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#PageBlobUploadPages": {
+    "com.azure.storage_blob#UploadPageBlobPages": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#PageBlobUploadPagesRequest"
+        "target": "com.azure.storage_blob#UploadPageBlobPagesRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#PageBlobUploadPagesResponse"
+        "target": "com.azure.storage_blob#UploadPageBlobPagesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3867,7 +3687,7 @@
         "smithy.api#documentation": "The Upload Pages operation writes a range of pages to a page blob"
       }
     },
-    "com.azure.storage_blob#PageBlobUploadPagesResponse": {
+    "com.azure.storage_blob#UploadPageBlobPagesResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -3966,7 +3786,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#PageBlobUploadPagesRequest": {
+    "com.azure.storage_blob#UploadPageBlobPagesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -4043,7 +3863,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#PageBlobUploadPagesRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#UploadPageBlobPagesRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -4145,7 +3965,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#PageBlobUploadPagesRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#UploadPageBlobPagesRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -4157,13 +3977,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobCommitBlockList": {
+    "com.azure.storage_blob#ListBlockBlobCommitBlock": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlockBlobCommitBlockListRequest"
+        "target": "com.azure.storage_blob#ListBlockBlobCommitBlockRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#BlockBlobCommitBlockListResponse"
+        "target": "com.azure.storage_blob#ListBlockBlobCommitBlockResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -4185,7 +4005,7 @@
         "smithy.api#documentation": "The Commit Block List operation writes a blob by specifying the list of block IDs that make up the blob. In order to be written as part of a blob, a block must have been successfully written to the server in a prior Put Block operation. You can call Put Block List to update a blob by uploading only those blocks that have changed, then committing the new and existing blocks together. You can do this by specifying whether to commit a block from the committed block list or from the uncommitted block list, or to commit the most recently uploaded version of the block, whichever list it may belong to."
       }
     },
-    "com.azure.storage_blob#BlockBlobCommitBlockListResponse": {
+    "com.azure.storage_blob#ListBlockBlobCommitBlockResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -4277,7 +4097,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlockBlobCommitBlockListRequest": {
+    "com.azure.storage_blob#ListBlockBlobCommitBlockRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -4389,7 +4209,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#BlockBlobCommitBlockListRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#ListBlockBlobCommitBlockRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -4403,7 +4223,7 @@
           }
         },
         "xMsAccessTier": {
-          "target": "com.azure.storage_blob#BlockBlobCommitBlockListRequestXMsAccessTier",
+          "target": "com.azure.storage_blob#ListBlockBlobCommitBlockRequestXMsAccessTier",
           "traits": {
             "smithy.api#httpHeader": "x-ms-access-tier",
             "smithy.api#documentation": "Optional. Indicates the tier to be set on the blob."
@@ -4466,7 +4286,7 @@
           }
         },
         "xMsImmutabilityPolicyMode": {
-          "target": "com.azure.storage_blob#BlockBlobCommitBlockListRequestXMsImmutabilityPolicyMode",
+          "target": "com.azure.storage_blob#ListBlockBlobCommitBlockRequestXMsImmutabilityPolicyMode",
           "traits": {
             "smithy.api#httpHeader": "x-ms-immutability-policy-mode",
             "smithy.api#documentation": "Specifies the immutability policy mode to set on the blob."
@@ -4480,19 +4300,19 @@
           }
         },
         "Committed": {
-          "target": "com.azure.storage_blob#BlockBlobCommitBlockListRequestCommittedList",
+          "target": "com.azure.storage_blob#ListBlockBlobCommitBlockRequestCommittedList",
           "traits": {
             "smithy.api#xmlFlattened": {}
           }
         },
         "Uncommitted": {
-          "target": "com.azure.storage_blob#BlockBlobCommitBlockListRequestUncommittedList",
+          "target": "com.azure.storage_blob#ListBlockBlobCommitBlockRequestUncommittedList",
           "traits": {
             "smithy.api#xmlFlattened": {}
           }
         },
         "Latest": {
-          "target": "com.azure.storage_blob#BlockBlobCommitBlockListRequestLatestList",
+          "target": "com.azure.storage_blob#ListBlockBlobCommitBlockRequestLatestList",
           "traits": {
             "smithy.api#xmlFlattened": {}
           }
@@ -4509,28 +4329,28 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlockBlobCommitBlockListRequestLatestList": {
+    "com.azure.storage_blob#ListBlockBlobCommitBlockRequestLatestList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobCommitBlockListRequestUncommittedList": {
+    "com.azure.storage_blob#ListBlockBlobCommitBlockRequestUncommittedList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobCommitBlockListRequestCommittedList": {
+    "com.azure.storage_blob#ListBlockBlobCommitBlockRequestCommittedList": {
       "type": "list",
       "member": {
         "target": "smithy.api#String"
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobCommitBlockListRequestXMsImmutabilityPolicyMode": {
+    "com.azure.storage_blob#ListBlockBlobCommitBlockRequestXMsImmutabilityPolicyMode": {
       "type": "enum",
       "members": {
         "UNLOCKED": {
@@ -4548,7 +4368,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobCommitBlockListRequestXMsAccessTier": {
+    "com.azure.storage_blob#ListBlockBlobCommitBlockRequestXMsAccessTier": {
       "type": "enum",
       "members": {
         "P4": {
@@ -4650,7 +4470,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobCommitBlockListRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#ListBlockBlobCommitBlockRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -5456,10 +5276,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobGetAccountInfo": {
+    "com.azure.storage_blob#GetBlobAccountInfo": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobGetAccountInfoRequest"
+        "target": "com.azure.storage_blob#GetBlobAccountInfoRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#GetBlobAccountInfoResponse"
@@ -5541,7 +5361,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobGetAccountInfoRequest": {
+    "com.azure.storage_blob#GetBlobAccountInfoRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -5587,10 +5407,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobSetTier": {
+    "com.azure.storage_blob#SetBlobTier": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobSetTierRequest"
+        "target": "com.azure.storage_blob#SetBlobTierRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#SetBlobTierResponse"
@@ -5643,7 +5463,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobSetTierRequest": {
+    "com.azure.storage_blob#SetBlobTierRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -5692,7 +5512,7 @@
           }
         },
         "xMsAccessTier": {
-          "target": "com.azure.storage_blob#BlobSetTierRequestXMsAccessTier",
+          "target": "com.azure.storage_blob#SetBlobTierRequestXMsAccessTier",
           "traits": {
             "smithy.api#httpHeader": "x-ms-access-tier",
             "smithy.api#required": {},
@@ -5700,7 +5520,7 @@
           }
         },
         "xMsRehydratePriority": {
-          "target": "com.azure.storage_blob#BlobSetTierRequestXMsRehydratePriority",
+          "target": "com.azure.storage_blob#SetBlobTierRequestXMsRehydratePriority",
           "traits": {
             "smithy.api#httpHeader": "x-ms-rehydrate-priority",
             "smithy.api#documentation": "Optional: Indicates the priority with which to rehydrate an archived blob."
@@ -5732,7 +5552,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobSetTierRequestXMsRehydratePriority": {
+    "com.azure.storage_blob#SetBlobTierRequestXMsRehydratePriority": {
       "type": "enum",
       "members": {
         "HIGH": {
@@ -5750,7 +5570,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobSetTierRequestXMsAccessTier": {
+    "com.azure.storage_blob#SetBlobTierRequestXMsAccessTier": {
       "type": "enum",
       "members": {
         "P4": {
@@ -5979,13 +5799,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobCopyFromURL": {
+    "com.azure.storage_blob#CopyBlobFromURL": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobCopyFromURLRequest"
+        "target": "com.azure.storage_blob#CopyBlobFromURLRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#BlobCopyFromURLResponse"
+        "target": "com.azure.storage_blob#CopyBlobFromURLResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6006,7 +5826,7 @@
         "smithy.api#documentation": "The Copy From URL operation copies a blob or an internet resource to a new blob. It will not return a response until the copy is complete."
       }
     },
-    "com.azure.storage_blob#BlobCopyFromURLResponse": {
+    "com.azure.storage_blob#CopyBlobFromURLResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -6098,7 +5918,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobCopyFromURLRequest": {
+    "com.azure.storage_blob#CopyBlobFromURLRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -6133,7 +5953,7 @@
           }
         },
         "xMsAccessTier": {
-          "target": "com.azure.storage_blob#BlobCopyFromURLRequestXMsAccessTier",
+          "target": "com.azure.storage_blob#CopyBlobFromURLRequestXMsAccessTier",
           "traits": {
             "smithy.api#httpHeader": "x-ms-access-tier",
             "smithy.api#documentation": "Optional. Indicates the tier to be set on the blob."
@@ -6246,7 +6066,7 @@
           }
         },
         "xMsImmutabilityPolicyMode": {
-          "target": "com.azure.storage_blob#BlobCopyFromURLRequestXMsImmutabilityPolicyMode",
+          "target": "com.azure.storage_blob#CopyBlobFromURLRequestXMsImmutabilityPolicyMode",
           "traits": {
             "smithy.api#httpHeader": "x-ms-immutability-policy-mode",
             "smithy.api#documentation": "Specifies the immutability policy mode to set on the blob."
@@ -6274,14 +6094,14 @@
           }
         },
         "xMsCopySourceTagOption": {
-          "target": "com.azure.storage_blob#BlobCopyFromURLRequestXMsCopySourceTagOption",
+          "target": "com.azure.storage_blob#CopyBlobFromURLRequestXMsCopySourceTagOption",
           "traits": {
             "smithy.api#httpHeader": "x-ms-copy-source-tag-option",
             "smithy.api#documentation": "Optional, default 'replace'.  Indicates if source tags should be copied or replaced with the tags specified by x-ms-tags."
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_blob#BlobCopyFromURLRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_blob#CopyBlobFromURLRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -6299,7 +6119,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobCopyFromURLRequestXMsFileRequestIntent": {
+    "com.azure.storage_blob#CopyBlobFromURLRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -6311,7 +6131,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobCopyFromURLRequestXMsCopySourceTagOption": {
+    "com.azure.storage_blob#CopyBlobFromURLRequestXMsCopySourceTagOption": {
       "type": "enum",
       "members": {
         "REPLACE": {
@@ -6329,7 +6149,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobCopyFromURLRequestXMsImmutabilityPolicyMode": {
+    "com.azure.storage_blob#CopyBlobFromURLRequestXMsImmutabilityPolicyMode": {
       "type": "enum",
       "members": {
         "UNLOCKED": {
@@ -6347,7 +6167,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobCopyFromURLRequestXMsAccessTier": {
+    "com.azure.storage_blob#CopyBlobFromURLRequestXMsAccessTier": {
       "type": "enum",
       "members": {
         "P4": {
@@ -6869,13 +6689,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobCreateSnapshot": {
+    "com.azure.storage_blob#CreateBlobSnapshot": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobCreateSnapshotRequest"
+        "target": "com.azure.storage_blob#CreateBlobSnapshotRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#BlobCreateSnapshotResponse"
+        "target": "com.azure.storage_blob#CreateBlobSnapshotResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6896,7 +6716,7 @@
         "smithy.api#documentation": "The Create Snapshot operation creates a read-only snapshot of a blob"
       }
     },
-    "com.azure.storage_blob#BlobCreateSnapshotResponse": {
+    "com.azure.storage_blob#CreateBlobSnapshotResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -6967,7 +6787,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobCreateSnapshotRequest": {
+    "com.azure.storage_blob#CreateBlobSnapshotRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -7016,7 +6836,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#BlobCreateSnapshotRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#CreateBlobSnapshotRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -7090,7 +6910,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobCreateSnapshotRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#CreateBlobSnapshotRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -7461,13 +7281,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobRenewLease": {
+    "com.azure.storage_blob#RenewBlobLease": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobRenewLeaseRequest"
+        "target": "com.azure.storage_blob#RenewBlobLeaseRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#BlobRenewLeaseResponse"
+        "target": "com.azure.storage_blob#RenewBlobLeaseResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -7491,7 +7311,7 @@
         "smithy.api#documentation": "[Update] The Lease Blob operation establishes and manages a lock on a blob for write and delete operations"
       }
     },
-    "com.azure.storage_blob#BlobRenewLeaseResponse": {
+    "com.azure.storage_blob#RenewBlobLeaseResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -7548,7 +7368,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobRenewLeaseRequest": {
+    "com.azure.storage_blob#RenewBlobLeaseRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -7988,13 +7808,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobSetMetadata": {
+    "com.azure.storage_blob#SetBlobMetadata": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobSetMetadataRequest"
+        "target": "com.azure.storage_blob#SetBlobMetadataRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#BlobSetMetadataResponse"
+        "target": "com.azure.storage_blob#SetBlobMetadataResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8015,7 +7835,7 @@
         "smithy.api#documentation": "The Set Blob Metadata operation sets user-defined metadata for the specified blob as one or more name-value pairs"
       }
     },
-    "com.azure.storage_blob#BlobSetMetadataResponse": {
+    "com.azure.storage_blob#SetBlobMetadataResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -8093,7 +7913,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobSetMetadataRequest": {
+    "com.azure.storage_blob#SetBlobMetadataRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -8149,7 +7969,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#BlobSetMetadataRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#SetBlobMetadataRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -8216,7 +8036,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobSetMetadataRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#SetBlobMetadataRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -8228,10 +8048,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobSetLegalHold": {
+    "com.azure.storage_blob#SetBlobLegalHold": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobSetLegalHoldRequest"
+        "target": "com.azure.storage_blob#SetBlobLegalHoldRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#SetBlobLegalHoldResponse"
@@ -8298,7 +8118,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobSetLegalHoldRequest": {
+    "com.azure.storage_blob#SetBlobLegalHoldRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -8366,10 +8186,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobDeleteImmutabilityPolicy": {
+    "com.azure.storage_blob#DeleteBlobImmutabilityPolicy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobDeleteImmutabilityPolicyRequest"
+        "target": "com.azure.storage_blob#DeleteBlobImmutabilityPolicyRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#DeleteBlobImmutabilityPolicyResponse"
@@ -8429,7 +8249,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobDeleteImmutabilityPolicyRequest": {
+    "com.azure.storage_blob#DeleteBlobImmutabilityPolicyRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -8489,10 +8309,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobSetImmutabilityPolicy": {
+    "com.azure.storage_blob#SetBlobImmutabilityPolicy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobSetImmutabilityPolicyRequest"
+        "target": "com.azure.storage_blob#SetBlobImmutabilityPolicyRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#SetBlobImmutabilityPolicyResponse"
@@ -8566,7 +8386,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobSetImmutabilityPolicyRequest": {
+    "com.azure.storage_blob#SetBlobImmutabilityPolicyRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -8636,7 +8456,7 @@
           }
         },
         "xMsImmutabilityPolicyMode": {
-          "target": "com.azure.storage_blob#BlobSetImmutabilityPolicyRequestXMsImmutabilityPolicyMode",
+          "target": "com.azure.storage_blob#SetBlobImmutabilityPolicyRequestXMsImmutabilityPolicyMode",
           "traits": {
             "smithy.api#httpHeader": "x-ms-immutability-policy-mode",
             "smithy.api#documentation": "Specifies the immutability policy mode to set on the blob."
@@ -8647,7 +8467,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobSetImmutabilityPolicyRequestXMsImmutabilityPolicyMode": {
+    "com.azure.storage_blob#SetBlobImmutabilityPolicyRequestXMsImmutabilityPolicyMode": {
       "type": "enum",
       "members": {
         "UNLOCKED": {
@@ -8665,13 +8485,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobSetHTTPHeaders": {
+    "com.azure.storage_blob#SetBlobHTTPHeaders": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobSetHTTPHeadersRequest"
+        "target": "com.azure.storage_blob#SetBlobHTTPHeadersRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#BlobSetHTTPHeadersResponse"
+        "target": "com.azure.storage_blob#SetBlobHTTPHeadersResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8692,7 +8512,7 @@
         "smithy.api#documentation": "The Set HTTP Headers operation sets system properties on the blob"
       }
     },
-    "com.azure.storage_blob#BlobSetHTTPHeadersResponse": {
+    "com.azure.storage_blob#SetBlobHTTPHeadersResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -8749,7 +8569,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobSetHTTPHeadersRequest": {
+    "com.azure.storage_blob#SetBlobHTTPHeadersRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -8879,13 +8699,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobSetExpiry": {
+    "com.azure.storage_blob#SetBlobExpiry": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobSetExpiryRequest"
+        "target": "com.azure.storage_blob#SetBlobExpiryRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#BlobSetExpiryResponse"
+        "target": "com.azure.storage_blob#SetBlobExpiryResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -8906,7 +8726,7 @@
         "smithy.api#documentation": "Sets the time a blob will expire and be deleted."
       }
     },
-    "com.azure.storage_blob#BlobSetExpiryResponse": {
+    "com.azure.storage_blob#SetBlobExpiryResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -8956,7 +8776,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobSetExpiryRequest": {
+    "com.azure.storage_blob#SetBlobExpiryRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -8998,7 +8818,7 @@
           }
         },
         "xMsExpiryOption": {
-          "target": "com.azure.storage_blob#BlobSetExpiryRequestXMsExpiryOption",
+          "target": "com.azure.storage_blob#SetBlobExpiryRequestXMsExpiryOption",
           "traits": {
             "smithy.api#httpHeader": "x-ms-expiry-option",
             "smithy.api#required": {},
@@ -9017,7 +8837,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobSetExpiryRequestXMsExpiryOption": {
+    "com.azure.storage_blob#SetBlobExpiryRequestXMsExpiryOption": {
       "type": "enum",
       "members": {
         "NEVEREXPIRE": {
@@ -9047,10 +8867,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobUndelete": {
+    "com.azure.storage_blob#UndeleteBlob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobUndeleteRequest"
+        "target": "com.azure.storage_blob#UndeleteBlobRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#UndeleteBlobResponse"
@@ -9110,7 +8930,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobUndeleteRequest": {
+    "com.azure.storage_blob#UndeleteBlobRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -9156,13 +8976,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlockBlobPutBlobFromUrl": {
+    "com.azure.storage_blob#PutBlockBlobBlobFromUrl": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequest"
+        "target": "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#BlockBlobPutBlobFromUrlResponse"
+        "target": "com.azure.storage_blob#PutBlockBlobBlobFromUrlResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -9183,7 +9003,7 @@
         "smithy.api#documentation": "The Put Blob from URL operation creates a new Block Blob where the contents of the blob are read from a given URL.  This API is supported beginning with the 2020-04-08 version. Partial updates are not supported with Put Blob from URL; the content of an existing blob is overwritten with the content of the new blob.  To perform partial updates to a block blob’s contents using a source URL, use the Put Block from URL API in conjunction with Put Block List."
       }
     },
-    "com.azure.storage_blob#BlockBlobPutBlobFromUrlResponse": {
+    "com.azure.storage_blob#PutBlockBlobBlobFromUrlResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -9275,7 +9095,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequest": {
+    "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -9380,7 +9200,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -9394,7 +9214,7 @@
           }
         },
         "xMsAccessTier": {
-          "target": "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsAccessTier",
+          "target": "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsAccessTier",
           "traits": {
             "smithy.api#httpHeader": "x-ms-access-tier",
             "smithy.api#documentation": "Optional. Indicates the tier to be set on the blob."
@@ -9514,14 +9334,14 @@
           }
         },
         "xMsCopySourceTagOption": {
-          "target": "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsCopySourceTagOption",
+          "target": "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsCopySourceTagOption",
           "traits": {
             "smithy.api#httpHeader": "x-ms-copy-source-tag-option",
             "smithy.api#documentation": "Optional, default 'replace'.  Indicates if source tags should be copied or replaced with the tags specified by x-ms-tags."
           }
         },
         "xMsFileRequestIntent": {
-          "target": "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsFileRequestIntent",
+          "target": "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsFileRequestIntent",
           "traits": {
             "smithy.api#httpHeader": "x-ms-file-request-intent",
             "smithy.api#documentation": "Valid value is backup"
@@ -9542,7 +9362,7 @@
           }
         },
         "xMsSourceEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsSourceEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsSourceEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-source-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the source encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-source-encryption-key is provided."
@@ -9560,7 +9380,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsSourceEncryptionAlgorithm": {
+    "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsSourceEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -9572,7 +9392,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsFileRequestIntent": {
+    "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsFileRequestIntent": {
       "type": "enum",
       "members": {
         "BACKUP": {
@@ -9584,7 +9404,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsCopySourceTagOption": {
+    "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsCopySourceTagOption": {
       "type": "enum",
       "members": {
         "REPLACE": {
@@ -9602,7 +9422,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsAccessTier": {
+    "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsAccessTier": {
       "type": "enum",
       "members": {
         "P4": {
@@ -9704,7 +9524,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobPutBlobFromUrlRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#PutBlockBlobBlobFromUrlRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -9716,13 +9536,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobUpload": {
+    "com.azure.storage_blob#UploadBlockBlob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlockBlobUploadRequest"
+        "target": "com.azure.storage_blob#UploadBlockBlobRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#BlockBlobUploadResponse"
+        "target": "com.azure.storage_blob#UploadBlockBlobResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -9743,7 +9563,7 @@
         "smithy.api#documentation": "The Upload Block Blob operation updates the content of an existing block blob. Updating an existing block blob overwrites any existing metadata on the blob. Partial updates are not supported with Put Blob; the content of the existing blob is overwritten with the content of the new blob. To perform a partial update of the content of a block blob, use the Put Block List operation."
       }
     },
-    "com.azure.storage_blob#BlockBlobUploadResponse": {
+    "com.azure.storage_blob#UploadBlockBlobResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -9842,7 +9662,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlockBlobUploadRequest": {
+    "com.azure.storage_blob#UploadBlockBlobRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -9947,7 +9767,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#BlockBlobUploadRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#UploadBlockBlobRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -9961,7 +9781,7 @@
           }
         },
         "xMsAccessTier": {
-          "target": "com.azure.storage_blob#BlockBlobUploadRequestXMsAccessTier",
+          "target": "com.azure.storage_blob#UploadBlockBlobRequestXMsAccessTier",
           "traits": {
             "smithy.api#httpHeader": "x-ms-access-tier",
             "smithy.api#documentation": "Optional. Indicates the tier to be set on the blob."
@@ -10024,7 +9844,7 @@
           }
         },
         "xMsImmutabilityPolicyMode": {
-          "target": "com.azure.storage_blob#BlockBlobUploadRequestXMsImmutabilityPolicyMode",
+          "target": "com.azure.storage_blob#UploadBlockBlobRequestXMsImmutabilityPolicyMode",
           "traits": {
             "smithy.api#httpHeader": "x-ms-immutability-policy-mode",
             "smithy.api#documentation": "Specifies the immutability policy mode to set on the blob."
@@ -10077,7 +9897,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlockBlobUploadRequestXMsImmutabilityPolicyMode": {
+    "com.azure.storage_blob#UploadBlockBlobRequestXMsImmutabilityPolicyMode": {
       "type": "enum",
       "members": {
         "UNLOCKED": {
@@ -10095,7 +9915,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobUploadRequestXMsAccessTier": {
+    "com.azure.storage_blob#UploadBlockBlobRequestXMsAccessTier": {
       "type": "enum",
       "members": {
         "P4": {
@@ -10197,7 +10017,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlockBlobUploadRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#UploadBlockBlobRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -10209,13 +10029,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#AppendBlobCreate": {
+    "com.azure.storage_blob#CreateAppendBlob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#AppendBlobCreateRequest"
+        "target": "com.azure.storage_blob#CreateAppendBlobRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#AppendBlobCreateResponse"
+        "target": "com.azure.storage_blob#CreateAppendBlobResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -10236,7 +10056,7 @@
         "smithy.api#documentation": "The Create Append Blob operation creates a new append blob."
       }
     },
-    "com.azure.storage_blob#AppendBlobCreateResponse": {
+    "com.azure.storage_blob#CreateAppendBlobResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -10321,7 +10141,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#AppendBlobCreateRequest": {
+    "com.azure.storage_blob#CreateAppendBlobRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -10419,7 +10239,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#AppendBlobCreateRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#CreateAppendBlobRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -10489,7 +10309,7 @@
           }
         },
         "xMsImmutabilityPolicyMode": {
-          "target": "com.azure.storage_blob#AppendBlobCreateRequestXMsImmutabilityPolicyMode",
+          "target": "com.azure.storage_blob#CreateAppendBlobRequestXMsImmutabilityPolicyMode",
           "traits": {
             "smithy.api#httpHeader": "x-ms-immutability-policy-mode",
             "smithy.api#documentation": "Specifies the immutability policy mode to set on the blob."
@@ -10514,7 +10334,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#AppendBlobCreateRequestXMsImmutabilityPolicyMode": {
+    "com.azure.storage_blob#CreateAppendBlobRequestXMsImmutabilityPolicyMode": {
       "type": "enum",
       "members": {
         "UNLOCKED": {
@@ -10532,7 +10352,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#AppendBlobCreateRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#CreateAppendBlobRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -10544,13 +10364,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#PageBlobCreate": {
+    "com.azure.storage_blob#CreatePageBlob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#PageBlobCreateRequest"
+        "target": "com.azure.storage_blob#CreatePageBlobRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#PageBlobCreateResponse"
+        "target": "com.azure.storage_blob#CreatePageBlobResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -10571,7 +10391,7 @@
         "smithy.api#documentation": "The Create operation creates a new page blob."
       }
     },
-    "com.azure.storage_blob#PageBlobCreateResponse": {
+    "com.azure.storage_blob#CreatePageBlobResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -10656,7 +10476,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#PageBlobCreateRequest": {
+    "com.azure.storage_blob#CreatePageBlobRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -10691,7 +10511,7 @@
           }
         },
         "xMsAccessTier": {
-          "target": "com.azure.storage_blob#PageBlobCreateRequestXMsAccessTier",
+          "target": "com.azure.storage_blob#CreatePageBlobRequestXMsAccessTier",
           "traits": {
             "smithy.api#httpHeader": "x-ms-access-tier",
             "smithy.api#documentation": "Optional. Indicates the tier to be set on the page blob."
@@ -10761,7 +10581,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#PageBlobCreateRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#CreatePageBlobRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -10846,7 +10666,7 @@
           }
         },
         "xMsImmutabilityPolicyMode": {
-          "target": "com.azure.storage_blob#PageBlobCreateRequestXMsImmutabilityPolicyMode",
+          "target": "com.azure.storage_blob#CreatePageBlobRequestXMsImmutabilityPolicyMode",
           "traits": {
             "smithy.api#httpHeader": "x-ms-immutability-policy-mode",
             "smithy.api#documentation": "Specifies the immutability policy mode to set on the blob."
@@ -10871,7 +10691,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#PageBlobCreateRequestXMsImmutabilityPolicyMode": {
+    "com.azure.storage_blob#CreatePageBlobRequestXMsImmutabilityPolicyMode": {
       "type": "enum",
       "members": {
         "UNLOCKED": {
@@ -10889,7 +10709,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#PageBlobCreateRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#CreatePageBlobRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -10901,7 +10721,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#PageBlobCreateRequestXMsAccessTier": {
+    "com.azure.storage_blob#CreatePageBlobRequestXMsAccessTier": {
       "type": "enum",
       "members": {
         "P4": {
@@ -10973,10 +10793,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobGetProperties": {
+    "com.azure.storage_blob#GetBlobProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobGetPropertiesRequest"
+        "target": "com.azure.storage_blob#GetBlobPropertiesRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#GetBlobPropertiesResponse"
@@ -11354,7 +11174,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobGetPropertiesRequest": {
+    "com.azure.storage_blob#GetBlobPropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -11424,7 +11244,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#BlobGetPropertiesRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#GetBlobPropertiesRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -11477,7 +11297,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobGetPropertiesRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#GetBlobPropertiesRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -11489,10 +11309,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobDelete": {
+    "com.azure.storage_blob#DeleteBlob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobDeleteRequest"
+        "target": "com.azure.storage_blob#DeleteBlobRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#DeleteBlobResponse"
@@ -11549,7 +11369,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobDeleteRequest": {
+    "com.azure.storage_blob#DeleteBlobRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -11598,7 +11418,7 @@
           }
         },
         "deletetype": {
-          "target": "com.azure.storage_blob#BlobDeleteRequestDeletetype",
+          "target": "com.azure.storage_blob#DeleteBlobRequestDeletetype",
           "traits": {
             "smithy.api#httpQuery": "deletetype",
             "smithy.api#documentation": "Optional.  Only possible value is 'permanent', which specifies to permanently delete a blob if blob soft delete is enabled."
@@ -11612,7 +11432,7 @@
           }
         },
         "xMsDeleteSnapshots": {
-          "target": "com.azure.storage_blob#BlobDeleteRequestXMsDeleteSnapshots",
+          "target": "com.azure.storage_blob#DeleteBlobRequestXMsDeleteSnapshots",
           "traits": {
             "smithy.api#httpHeader": "x-ms-delete-snapshots",
             "smithy.api#documentation": "Required if the blob has associated snapshots. Specify one of the following two options: include: Delete the base blob and all of its snapshots. only: Delete only the blob's snapshots and not the blob itself"
@@ -11679,7 +11499,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobDeleteRequestXMsDeleteSnapshots": {
+    "com.azure.storage_blob#DeleteBlobRequestXMsDeleteSnapshots": {
       "type": "enum",
       "members": {
         "INCLUDE": {
@@ -11697,7 +11517,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobDeleteRequestDeletetype": {
+    "com.azure.storage_blob#DeleteBlobRequestDeletetype": {
       "type": "enum",
       "members": {
         "PERMANENT": {
@@ -11709,13 +11529,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#BlobDownload": {
+    "com.azure.storage_blob#DownloadBlob": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#BlobDownloadRequest"
+        "target": "com.azure.storage_blob#DownloadBlobRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#BlobDownloadResponse"
+        "target": "com.azure.storage_blob#DownloadBlobResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -11733,7 +11553,7 @@
         "smithy.api#documentation": "The Download operation reads or downloads a blob from the system, including its metadata and properties. You can also call Download to read a snapshot."
       }
     },
-    "com.azure.storage_blob#BlobDownloadResponse": {
+    "com.azure.storage_blob#DownloadBlobResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -12097,7 +11917,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#BlobDownloadRequest": {
+    "com.azure.storage_blob#DownloadBlobRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -12195,7 +12015,7 @@
           }
         },
         "xMsEncryptionAlgorithm": {
-          "target": "com.azure.storage_blob#BlobDownloadRequestXMsEncryptionAlgorithm",
+          "target": "com.azure.storage_blob#DownloadBlobRequestXMsEncryptionAlgorithm",
           "traits": {
             "smithy.api#httpHeader": "x-ms-encryption-algorithm",
             "smithy.api#documentation": "The algorithm used to produce the encryption key hash. Currently, the only accepted value is \"AES256\". Must be provided if the x-ms-encryption-key header is provided."
@@ -12248,7 +12068,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#BlobDownloadRequestXMsEncryptionAlgorithm": {
+    "com.azure.storage_blob#DownloadBlobRequestXMsEncryptionAlgorithm": {
       "type": "enum",
       "members": {
         "AES256": {
@@ -12260,10 +12080,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerGetAccountInfo": {
+    "com.azure.storage_blob#GetContainerAccountInfo": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerGetAccountInfoRequest"
+        "target": "com.azure.storage_blob#GetContainerAccountInfoRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#GetContainerAccountInfoResponse"
@@ -12345,7 +12165,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerGetAccountInfoRequest": {
+    "com.azure.storage_blob#GetContainerAccountInfoRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -12383,13 +12203,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrow": {
+    "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrow": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrowRequest"
+        "target": "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrowRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrowResponse"
+        "target": "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrowResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -12414,7 +12234,7 @@
         "smithy.api#documentation": "[Update] The List Blobs operation returns a list of the blobs under the specified container. This operation is for Apache Arrow use case so response is returned as raw to be deserialized by the client."
       }
     },
-    "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrowResponse": {
+    "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrowResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -12464,7 +12284,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrowRequest": {
+    "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrowRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -12513,7 +12333,7 @@
           }
         },
         "include": {
-          "target": "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrowRequestIncludeList",
+          "target": "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrowRequestIncludeList",
           "traits": {
             "smithy.api#httpQuery": "include",
             "smithy.api#documentation": "Include this parameter to specify one or more datasets to include in the response."
@@ -12552,14 +12372,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrowRequestIncludeList": {
+    "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrowRequestIncludeList": {
       "type": "list",
       "member": {
-        "target": "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrowRequestIncludeItem"
+        "target": "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrowRequestIncludeItem"
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrowRequestIncludeItem": {
+    "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrowRequestIncludeItem": {
       "type": "enum",
       "members": {
         "COPY": {
@@ -12625,10 +12445,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerListBlobHierarchySegment": {
+    "com.azure.storage_blob#ListContainerBlobHierarchySegment": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerListBlobHierarchySegmentRequest"
+        "target": "com.azure.storage_blob#ListContainerBlobHierarchySegmentRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#ListContainerBlobHierarchySegmentResponse"
@@ -12783,15 +12603,11 @@
         },
         "Deleted": {
           "target": "smithy.api#Boolean",
-          "traits": {
-            "smithy.api#required": {}
-          }
+          "traits": {}
         },
         "Snapshot": {
           "target": "smithy.api#String",
-          "traits": {
-            "smithy.api#required": {}
-          }
+          "traits": {}
         },
         "VersionId": {
           "target": "smithy.api#String",
@@ -13419,7 +13235,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerListBlobHierarchySegmentRequest": {
+    "com.azure.storage_blob#ListContainerBlobHierarchySegmentRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -13468,7 +13284,7 @@
           }
         },
         "include": {
-          "target": "com.azure.storage_blob#ContainerListBlobHierarchySegmentRequestIncludeList",
+          "target": "com.azure.storage_blob#ListContainerBlobHierarchySegmentRequestIncludeList",
           "traits": {
             "smithy.api#httpQuery": "include",
             "smithy.api#documentation": "Include this parameter to specify one or more datasets to include in the response."
@@ -13500,14 +13316,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerListBlobHierarchySegmentRequestIncludeList": {
+    "com.azure.storage_blob#ListContainerBlobHierarchySegmentRequestIncludeList": {
       "type": "list",
       "member": {
-        "target": "com.azure.storage_blob#ContainerListBlobHierarchySegmentRequestIncludeItem"
+        "target": "com.azure.storage_blob#ListContainerBlobHierarchySegmentRequestIncludeItem"
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerListBlobHierarchySegmentRequestIncludeItem": {
+    "com.azure.storage_blob#ListContainerBlobHierarchySegmentRequestIncludeItem": {
       "type": "enum",
       "members": {
         "COPY": {
@@ -13573,13 +13389,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrow": {
+    "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrow": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrowRequest"
+        "target": "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrowRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrowResponse"
+        "target": "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrowResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -13604,7 +13420,7 @@
         "smithy.api#documentation": "The List Blobs operation returns a list of the blobs under the specified container. This operation is for Apache Arrow use case so response is returned as raw to be deserialized by the client."
       }
     },
-    "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrowResponse": {
+    "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrowResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -13654,7 +13470,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrowRequest": {
+    "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrowRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -13695,7 +13511,7 @@
           }
         },
         "include": {
-          "target": "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrowRequestIncludeList",
+          "target": "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrowRequestIncludeList",
           "traits": {
             "smithy.api#httpQuery": "include",
             "smithy.api#documentation": "Include this parameter to specify one or more datasets to include in the response."
@@ -13734,14 +13550,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrowRequestIncludeList": {
+    "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrowRequestIncludeList": {
       "type": "list",
       "member": {
-        "target": "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrowRequestIncludeItem"
+        "target": "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrowRequestIncludeItem"
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrowRequestIncludeItem": {
+    "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrowRequestIncludeItem": {
       "type": "enum",
       "members": {
         "COPY": {
@@ -13807,10 +13623,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerListBlobFlatSegment": {
+    "com.azure.storage_blob#ListContainerBlobFlatSegment": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerListBlobFlatSegmentRequest"
+        "target": "com.azure.storage_blob#ListContainerBlobFlatSegmentRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#ListContainerBlobFlatSegmentResponse"
@@ -13943,7 +13759,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerListBlobFlatSegmentRequest": {
+    "com.azure.storage_blob#ListContainerBlobFlatSegmentRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -13984,7 +13800,7 @@
           }
         },
         "include": {
-          "target": "com.azure.storage_blob#ContainerListBlobFlatSegmentRequestIncludeList",
+          "target": "com.azure.storage_blob#ListContainerBlobFlatSegmentRequestIncludeList",
           "traits": {
             "smithy.api#httpQuery": "include",
             "smithy.api#documentation": "Include this parameter to specify one or more datasets to include in the response."
@@ -14016,14 +13832,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerListBlobFlatSegmentRequestIncludeList": {
+    "com.azure.storage_blob#ListContainerBlobFlatSegmentRequestIncludeList": {
       "type": "list",
       "member": {
-        "target": "com.azure.storage_blob#ContainerListBlobFlatSegmentRequestIncludeItem"
+        "target": "com.azure.storage_blob#ListContainerBlobFlatSegmentRequestIncludeItem"
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerListBlobFlatSegmentRequestIncludeItem": {
+    "com.azure.storage_blob#ListContainerBlobFlatSegmentRequestIncludeItem": {
       "type": "enum",
       "members": {
         "COPY": {
@@ -14392,13 +14208,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerRenewLease": {
+    "com.azure.storage_blob#RenewContainerLease": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerRenewLeaseRequest"
+        "target": "com.azure.storage_blob#RenewContainerLeaseRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#ContainerRenewLeaseResponse"
+        "target": "com.azure.storage_blob#RenewContainerLeaseResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -14423,7 +14239,7 @@
         "smithy.api#documentation": "[Update] establishes and manages a lock on a container for delete operations. The lock duration can be 15 to 60 seconds, or can be infinite"
       }
     },
-    "com.azure.storage_blob#ContainerRenewLeaseResponse": {
+    "com.azure.storage_blob#RenewContainerLeaseResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -14480,7 +14296,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerRenewLeaseRequest": {
+    "com.azure.storage_blob#RenewContainerLeaseRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -15054,10 +14870,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerSubmitBatch": {
+    "com.azure.storage_blob#SubmitContainerBatch": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerSubmitBatchRequest"
+        "target": "com.azure.storage_blob#SubmitContainerBatchRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#SubmitContainerBatchResponse"
@@ -15118,7 +14934,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerSubmitBatchRequest": {
+    "com.azure.storage_blob#SubmitContainerBatchRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -15171,10 +14987,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerRename": {
+    "com.azure.storage_blob#RenameContainer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerRenameRequest"
+        "target": "com.azure.storage_blob#RenameContainerRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#RenameContainerResponse"
@@ -15235,7 +15051,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerRenameRequest": {
+    "com.azure.storage_blob#RenameContainerRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -15288,10 +15104,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerRestore": {
+    "com.azure.storage_blob#RestoreContainer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerRestoreRequest"
+        "target": "com.azure.storage_blob#RestoreContainerRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#RestoreContainerResponse"
@@ -15352,7 +15168,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerRestoreRequest": {
+    "com.azure.storage_blob#RestoreContainerRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -15404,13 +15220,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerSetAccessPolicy": {
+    "com.azure.storage_blob#SetContainerAccessPolicy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerSetAccessPolicyRequest"
+        "target": "com.azure.storage_blob#SetContainerAccessPolicyRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#ContainerSetAccessPolicyResponse"
+        "target": "com.azure.storage_blob#SetContainerAccessPolicyResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -15433,7 +15249,7 @@
         "smithy.api#documentation": "sets the permissions for the specified container. The permissions indicate whether blobs in a container may be accessed publicly."
       }
     },
-    "com.azure.storage_blob#ContainerSetAccessPolicyResponse": {
+    "com.azure.storage_blob#SetContainerAccessPolicyResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -15483,7 +15299,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerSetAccessPolicyRequest": {
+    "com.azure.storage_blob#SetContainerAccessPolicyRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -15517,7 +15333,7 @@
           }
         },
         "xMsBlobPublicAccess": {
-          "target": "com.azure.storage_blob#ContainerSetAccessPolicyRequestXMsBlobPublicAccess",
+          "target": "com.azure.storage_blob#SetContainerAccessPolicyRequestXMsBlobPublicAccess",
           "traits": {
             "smithy.api#httpHeader": "x-ms-blob-public-access",
             "smithy.api#documentation": "Specifies whether data in the container may be accessed publicly and the level of access"
@@ -15612,7 +15428,7 @@
         "smithy.api#documentation": "An Access policy"
       }
     },
-    "com.azure.storage_blob#ContainerSetAccessPolicyRequestXMsBlobPublicAccess": {
+    "com.azure.storage_blob#SetContainerAccessPolicyRequestXMsBlobPublicAccess": {
       "type": "enum",
       "members": {
         "CONTAINER": {
@@ -15630,13 +15446,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerGetAccessPolicy": {
+    "com.azure.storage_blob#GetContainerAccessPolicy": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerGetAccessPolicyRequest"
+        "target": "com.azure.storage_blob#GetContainerAccessPolicyRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#ContainerGetAccessPolicyResponse"
+        "target": "com.azure.storage_blob#GetContainerAccessPolicyResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -15658,7 +15474,7 @@
         "smithy.api#documentation": "gets the permissions for the specified container. The permissions indicate whether container data may be accessed publicly."
       }
     },
-    "com.azure.storage_blob#ContainerGetAccessPolicyResponse": {
+    "com.azure.storage_blob#GetContainerAccessPolicyResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -15675,7 +15491,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerGetAccessPolicyRequest": {
+    "com.azure.storage_blob#GetContainerAccessPolicyRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -15720,13 +15536,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerSetMetadata": {
+    "com.azure.storage_blob#SetContainerMetadata": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerSetMetadataRequest"
+        "target": "com.azure.storage_blob#SetContainerMetadataRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#ContainerSetMetadataResponse"
+        "target": "com.azure.storage_blob#SetContainerMetadataResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -15748,7 +15564,7 @@
         "smithy.api#documentation": "operation sets one or more user-defined name-value pairs for the specified container."
       }
     },
-    "com.azure.storage_blob#ContainerSetMetadataResponse": {
+    "com.azure.storage_blob#SetContainerMetadataResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -15798,7 +15614,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerSetMetadataRequest": {
+    "com.azure.storage_blob#SetContainerMetadataRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -15857,10 +15673,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerDelete": {
+    "com.azure.storage_blob#DeleteContainer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerDeleteRequest"
+        "target": "com.azure.storage_blob#DeleteContainerRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#DeleteContainerResponse"
@@ -15920,7 +15736,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerDeleteRequest": {
+    "com.azure.storage_blob#DeleteContainerRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -15979,13 +15795,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerCreate": {
+    "com.azure.storage_blob#CreateContainer": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerCreateRequest"
+        "target": "com.azure.storage_blob#CreateContainerRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#ContainerCreateResponse"
+        "target": "com.azure.storage_blob#CreateContainerResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -16006,7 +15822,7 @@
         "smithy.api#documentation": "creates a new container under the specified account. If the container with the same name already exists, the operation fails"
       }
     },
-    "com.azure.storage_blob#ContainerCreateResponse": {
+    "com.azure.storage_blob#CreateContainerResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -16056,7 +15872,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerCreateRequest": {
+    "com.azure.storage_blob#CreateContainerRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -16083,7 +15899,7 @@
           }
         },
         "xMsBlobPublicAccess": {
-          "target": "com.azure.storage_blob#ContainerCreateRequestXMsBlobPublicAccess",
+          "target": "com.azure.storage_blob#CreateContainerRequestXMsBlobPublicAccess",
           "traits": {
             "smithy.api#httpHeader": "x-ms-blob-public-access",
             "smithy.api#documentation": "Specifies whether data in the container may be accessed publicly and the level of access"
@@ -16122,7 +15938,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ContainerCreateRequestXMsBlobPublicAccess": {
+    "com.azure.storage_blob#CreateContainerRequestXMsBlobPublicAccess": {
       "type": "enum",
       "members": {
         "CONTAINER": {
@@ -16140,13 +15956,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ContainerGetProperties": {
+    "com.azure.storage_blob#GetContainerProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ContainerGetPropertiesRequest"
+        "target": "com.azure.storage_blob#GetContainerPropertiesRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#ContainerGetPropertiesResponse"
+        "target": "com.azure.storage_blob#GetContainerPropertiesResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -16167,7 +15983,7 @@
         "smithy.api#documentation": "returns all user-defined metadata and system properties for the specified container. The data returned does not include the container's list of blobs"
       }
     },
-    "com.azure.storage_blob#ContainerGetPropertiesResponse": {
+    "com.azure.storage_blob#GetContainerPropertiesResponse": {
       "type": "structure",
       "members": {
         "eTag": {
@@ -16286,7 +16102,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ContainerGetPropertiesRequest": {
+    "com.azure.storage_blob#GetContainerPropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -16502,13 +16318,13 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ServiceSubmitBatch": {
+    "com.azure.storage_blob#SubmitServiceBatch": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ServiceSubmitBatchRequest"
+        "target": "com.azure.storage_blob#SubmitServiceBatchRequest"
       },
       "output": {
-        "target": "com.azure.storage_blob#ServiceSubmitBatchResponse"
+        "target": "com.azure.storage_blob#SubmitServiceBatchResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -16529,7 +16345,7 @@
         "smithy.api#documentation": "The Batch operation allows multiple API calls to be embedded into a single HTTP request."
       }
     },
-    "com.azure.storage_blob#ServiceSubmitBatchResponse": {
+    "com.azure.storage_blob#SubmitServiceBatchResponse": {
       "type": "structure",
       "members": {
         "body": {
@@ -16565,7 +16381,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ServiceSubmitBatchRequest": {
+    "com.azure.storage_blob#SubmitServiceBatchRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -16610,10 +16426,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ServiceGetAccountInfo": {
+    "com.azure.storage_blob#GetServiceAccountInfo": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ServiceGetAccountInfoRequest"
+        "target": "com.azure.storage_blob#GetServiceAccountInfoRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#GetServiceAccountInfoResponse"
@@ -16695,7 +16511,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ServiceGetAccountInfoRequest": {
+    "com.azure.storage_blob#GetServiceAccountInfoRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -16725,10 +16541,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ServiceGetUserDelegationKey": {
+    "com.azure.storage_blob#GetServiceUserDelegationKey": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ServiceGetUserDelegationKeyRequest"
+        "target": "com.azure.storage_blob#GetServiceUserDelegationKeyRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#GetServiceUserDelegationKeyResponse"
@@ -16846,7 +16662,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ServiceGetUserDelegationKeyRequest": {
+    "com.azure.storage_blob#GetServiceUserDelegationKeyRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -16896,10 +16712,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ServiceListContainersSegment": {
+    "com.azure.storage_blob#ListServiceContainersSegment": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ServiceListContainersSegmentRequest"
+        "target": "com.azure.storage_blob#ListServiceContainersSegmentRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#ListServiceContainersSegmentResponse"
@@ -17124,7 +16940,7 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ServiceListContainersSegmentRequest": {
+    "com.azure.storage_blob#ListServiceContainersSegmentRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -17157,7 +16973,7 @@
           }
         },
         "include": {
-          "target": "com.azure.storage_blob#ServiceListContainersSegmentRequestIncludeList",
+          "target": "com.azure.storage_blob#ListServiceContainersSegmentRequestIncludeList",
           "traits": {
             "smithy.api#httpQuery": "include",
             "smithy.api#documentation": "Include this parameter to specify that the container's metadata be returned as part of the response body."
@@ -17182,14 +16998,14 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ServiceListContainersSegmentRequestIncludeList": {
+    "com.azure.storage_blob#ListServiceContainersSegmentRequestIncludeList": {
       "type": "list",
       "member": {
-        "target": "com.azure.storage_blob#ServiceListContainersSegmentRequestIncludeItem"
+        "target": "com.azure.storage_blob#ListServiceContainersSegmentRequestIncludeItem"
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ServiceListContainersSegmentRequestIncludeItem": {
+    "com.azure.storage_blob#ListServiceContainersSegmentRequestIncludeItem": {
       "type": "enum",
       "members": {
         "METADATA": {
@@ -17213,10 +17029,10 @@
       },
       "traits": {}
     },
-    "com.azure.storage_blob#ServiceGetStatistics": {
+    "com.azure.storage_blob#GetServiceStatistics": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ServiceGetStatisticsRequest"
+        "target": "com.azure.storage_blob#GetServiceStatisticsRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#GetServiceStatisticsResponse"
@@ -17330,7 +17146,7 @@
         "smithy.api#documentation": "The status of the secondary location"
       }
     },
-    "com.azure.storage_blob#ServiceGetStatisticsRequest": {
+    "com.azure.storage_blob#GetServiceStatisticsRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -17360,10 +17176,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.storage_blob#ServiceSetProperties": {
+    "com.azure.storage_blob#SetServiceProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ServiceSetPropertiesRequest"
+        "target": "com.azure.storage_blob#SetServicePropertiesRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#SetServicePropertiesResponse"
@@ -17418,7 +17234,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.storage_blob#ServiceSetPropertiesRequest": {
+    "com.azure.storage_blob#SetServicePropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -17456,7 +17272,7 @@
           "traits": {}
         },
         "Cors": {
-          "target": "com.azure.storage_blob#ServiceSetPropertiesRequestCorsList",
+          "target": "com.azure.storage_blob#SetServicePropertiesRequestCorsList",
           "traits": {
             "smithy.api#documentation": "The set of CORS rules.",
             "com.azure.protocols#xmlItemName": "CorsRule"
@@ -17541,7 +17357,7 @@
         "smithy.api#documentation": "the retention policy which determines how long the associated data should persist"
       }
     },
-    "com.azure.storage_blob#ServiceSetPropertiesRequestCorsList": {
+    "com.azure.storage_blob#SetServicePropertiesRequestCorsList": {
       "type": "list",
       "member": {
         "target": "com.azure.storage_blob#CorsRule"
@@ -17666,10 +17482,10 @@
         "smithy.api#documentation": "Azure Analytics Logging settings."
       }
     },
-    "com.azure.storage_blob#ServiceGetProperties": {
+    "com.azure.storage_blob#GetServiceProperties": {
       "type": "operation",
       "input": {
-        "target": "com.azure.storage_blob#ServiceGetPropertiesRequest"
+        "target": "com.azure.storage_blob#GetServicePropertiesRequest"
       },
       "output": {
         "target": "com.azure.storage_blob#GetServicePropertiesResponse"
@@ -17766,7 +17582,7 @@
         "smithy.api#documentation": "The set of CORS rules."
       }
     },
-    "com.azure.storage_blob#ServiceGetPropertiesRequest": {
+    "com.azure.storage_blob#GetServicePropertiesRequest": {
       "type": "structure",
       "members": {
         "url": {
@@ -17801,49 +17617,49 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.storage_blob#BlobSetTags"
+          "target": "com.azure.storage_blob#SetBlobTags"
         },
         {
-          "target": "com.azure.storage_blob#BlobGetTags"
+          "target": "com.azure.storage_blob#GetBlobTags"
         },
         {
           "target": "com.azure.storage_blob#BlobQuery"
         },
         {
-          "target": "com.azure.storage_blob#AppendBlobSeal"
+          "target": "com.azure.storage_blob#SealAppendBlob"
         },
         {
           "target": "com.azure.storage_blob#AppendBlobAppendBlockFromUrl"
         },
         {
-          "target": "com.azure.storage_blob#AppendBlobAppendBlock"
+          "target": "com.azure.storage_blob#BlockAppendBlobAppend"
         },
         {
-          "target": "com.azure.storage_blob#PageBlobCopyIncremental"
+          "target": "com.azure.storage_blob#CopyPageBlobIncremental"
         },
         {
-          "target": "com.azure.storage_blob#PageBlobUpdateSequenceNumber"
+          "target": "com.azure.storage_blob#UpdatePageBlobSequenceNumber"
         },
         {
-          "target": "com.azure.storage_blob#PageBlobResize"
+          "target": "com.azure.storage_blob#ResizePageBlob"
         },
         {
-          "target": "com.azure.storage_blob#PageBlobGetPageRangesDiff"
+          "target": "com.azure.storage_blob#GetPageBlobPageRangesDiff"
         },
         {
-          "target": "com.azure.storage_blob#PageBlobGetPageRanges"
+          "target": "com.azure.storage_blob#GetPageBlobPageRanges"
         },
         {
-          "target": "com.azure.storage_blob#PageBlobUploadPagesFromURL"
+          "target": "com.azure.storage_blob#UploadPageBlobPagesFromURL"
         },
         {
-          "target": "com.azure.storage_blob#PageBlobClearPages"
+          "target": "com.azure.storage_blob#ClearPageBlobPages"
         },
         {
-          "target": "com.azure.storage_blob#PageBlobUploadPages"
+          "target": "com.azure.storage_blob#UploadPageBlobPages"
         },
         {
-          "target": "com.azure.storage_blob#BlockBlobCommitBlockList"
+          "target": "com.azure.storage_blob#ListBlockBlobCommitBlock"
         },
         {
           "target": "com.azure.storage_blob#BlockBlobGetBlockList"
@@ -17855,22 +17671,22 @@
           "target": "com.azure.storage_blob#BlockBlobStageBlock"
         },
         {
-          "target": "com.azure.storage_blob#BlobGetAccountInfo"
+          "target": "com.azure.storage_blob#GetBlobAccountInfo"
         },
         {
-          "target": "com.azure.storage_blob#BlobSetTier"
+          "target": "com.azure.storage_blob#SetBlobTier"
         },
         {
           "target": "com.azure.storage_blob#BlobAbortCopyFromURL"
         },
         {
-          "target": "com.azure.storage_blob#BlobCopyFromURL"
+          "target": "com.azure.storage_blob#CopyBlobFromURL"
         },
         {
           "target": "com.azure.storage_blob#BlobStartCopyFromURL"
         },
         {
-          "target": "com.azure.storage_blob#BlobCreateSnapshot"
+          "target": "com.azure.storage_blob#CreateBlobSnapshot"
         },
         {
           "target": "com.azure.storage_blob#BlobBreakLease"
@@ -17879,7 +17695,7 @@
           "target": "com.azure.storage_blob#BlobChangeLease"
         },
         {
-          "target": "com.azure.storage_blob#BlobRenewLease"
+          "target": "com.azure.storage_blob#RenewBlobLease"
         },
         {
           "target": "com.azure.storage_blob#BlobReleaseLease"
@@ -17888,61 +17704,61 @@
           "target": "com.azure.storage_blob#BlobAcquireLease"
         },
         {
-          "target": "com.azure.storage_blob#BlobSetMetadata"
+          "target": "com.azure.storage_blob#SetBlobMetadata"
         },
         {
-          "target": "com.azure.storage_blob#BlobSetLegalHold"
+          "target": "com.azure.storage_blob#SetBlobLegalHold"
         },
         {
-          "target": "com.azure.storage_blob#BlobDeleteImmutabilityPolicy"
+          "target": "com.azure.storage_blob#DeleteBlobImmutabilityPolicy"
         },
         {
-          "target": "com.azure.storage_blob#BlobSetImmutabilityPolicy"
+          "target": "com.azure.storage_blob#SetBlobImmutabilityPolicy"
         },
         {
-          "target": "com.azure.storage_blob#BlobSetHTTPHeaders"
+          "target": "com.azure.storage_blob#SetBlobHTTPHeaders"
         },
         {
-          "target": "com.azure.storage_blob#BlobSetExpiry"
+          "target": "com.azure.storage_blob#SetBlobExpiry"
         },
         {
-          "target": "com.azure.storage_blob#BlobUndelete"
+          "target": "com.azure.storage_blob#UndeleteBlob"
         },
         {
-          "target": "com.azure.storage_blob#BlockBlobPutBlobFromUrl"
+          "target": "com.azure.storage_blob#PutBlockBlobBlobFromUrl"
         },
         {
-          "target": "com.azure.storage_blob#BlockBlobUpload"
+          "target": "com.azure.storage_blob#UploadBlockBlob"
         },
         {
-          "target": "com.azure.storage_blob#AppendBlobCreate"
+          "target": "com.azure.storage_blob#CreateAppendBlob"
         },
         {
-          "target": "com.azure.storage_blob#PageBlobCreate"
+          "target": "com.azure.storage_blob#CreatePageBlob"
         },
         {
-          "target": "com.azure.storage_blob#BlobGetProperties"
+          "target": "com.azure.storage_blob#GetBlobProperties"
         },
         {
-          "target": "com.azure.storage_blob#BlobDelete"
+          "target": "com.azure.storage_blob#DeleteBlob"
         },
         {
-          "target": "com.azure.storage_blob#BlobDownload"
+          "target": "com.azure.storage_blob#DownloadBlob"
         },
         {
-          "target": "com.azure.storage_blob#ContainerGetAccountInfo"
+          "target": "com.azure.storage_blob#GetContainerAccountInfo"
         },
         {
-          "target": "com.azure.storage_blob#ContainerListBlobHierarchySegmentApacheArrow"
+          "target": "com.azure.storage_blob#ListContainerBlobHierarchySegmentApacheArrow"
         },
         {
-          "target": "com.azure.storage_blob#ContainerListBlobHierarchySegment"
+          "target": "com.azure.storage_blob#ListContainerBlobHierarchySegment"
         },
         {
-          "target": "com.azure.storage_blob#ContainerListBlobFlatSegmentApacheArrow"
+          "target": "com.azure.storage_blob#ListContainerBlobFlatSegmentApacheArrow"
         },
         {
-          "target": "com.azure.storage_blob#ContainerListBlobFlatSegment"
+          "target": "com.azure.storage_blob#ListContainerBlobFlatSegment"
         },
         {
           "target": "com.azure.storage_blob#ContainerChangeLease"
@@ -17951,7 +17767,7 @@
           "target": "com.azure.storage_blob#ContainerBreakLease"
         },
         {
-          "target": "com.azure.storage_blob#ContainerRenewLease"
+          "target": "com.azure.storage_blob#RenewContainerLease"
         },
         {
           "target": "com.azure.storage_blob#ContainerReleaseLease"
@@ -17963,55 +17779,55 @@
           "target": "com.azure.storage_blob#ContainerFilterBlobs"
         },
         {
-          "target": "com.azure.storage_blob#ContainerSubmitBatch"
+          "target": "com.azure.storage_blob#SubmitContainerBatch"
         },
         {
-          "target": "com.azure.storage_blob#ContainerRename"
+          "target": "com.azure.storage_blob#RenameContainer"
         },
         {
-          "target": "com.azure.storage_blob#ContainerRestore"
+          "target": "com.azure.storage_blob#RestoreContainer"
         },
         {
-          "target": "com.azure.storage_blob#ContainerSetAccessPolicy"
+          "target": "com.azure.storage_blob#SetContainerAccessPolicy"
         },
         {
-          "target": "com.azure.storage_blob#ContainerGetAccessPolicy"
+          "target": "com.azure.storage_blob#GetContainerAccessPolicy"
         },
         {
-          "target": "com.azure.storage_blob#ContainerSetMetadata"
+          "target": "com.azure.storage_blob#SetContainerMetadata"
         },
         {
-          "target": "com.azure.storage_blob#ContainerDelete"
+          "target": "com.azure.storage_blob#DeleteContainer"
         },
         {
-          "target": "com.azure.storage_blob#ContainerCreate"
+          "target": "com.azure.storage_blob#CreateContainer"
         },
         {
-          "target": "com.azure.storage_blob#ContainerGetProperties"
+          "target": "com.azure.storage_blob#GetContainerProperties"
         },
         {
           "target": "com.azure.storage_blob#ServiceFilterBlobs"
         },
         {
-          "target": "com.azure.storage_blob#ServiceSubmitBatch"
+          "target": "com.azure.storage_blob#SubmitServiceBatch"
         },
         {
-          "target": "com.azure.storage_blob#ServiceGetAccountInfo"
+          "target": "com.azure.storage_blob#GetServiceAccountInfo"
         },
         {
-          "target": "com.azure.storage_blob#ServiceGetUserDelegationKey"
+          "target": "com.azure.storage_blob#GetServiceUserDelegationKey"
         },
         {
-          "target": "com.azure.storage_blob#ServiceListContainersSegment"
+          "target": "com.azure.storage_blob#ListServiceContainersSegment"
         },
         {
-          "target": "com.azure.storage_blob#ServiceGetStatistics"
+          "target": "com.azure.storage_blob#GetServiceStatistics"
         },
         {
-          "target": "com.azure.storage_blob#ServiceSetProperties"
+          "target": "com.azure.storage_blob#SetServiceProperties"
         },
         {
-          "target": "com.azure.storage_blob#ServiceGetProperties"
+          "target": "com.azure.storage_blob#GetServiceProperties"
         }
       ],
       "traits": {

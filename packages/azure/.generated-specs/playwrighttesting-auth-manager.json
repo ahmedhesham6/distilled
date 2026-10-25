@@ -15,25 +15,13 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.playwrighttesting_auth_manager#AccountsGetBrowsers": "com.azure.playwrighttesting_auth_manager#GetAccountBrowsers",
-      "com.azure.playwrighttesting_auth_manager#AccountsGetBrowsersRequest": "com.azure.playwrighttesting_auth_manager#GetAccountBrowsersRequest",
-      "com.azure.playwrighttesting_auth_manager#AccountsGetBrowsersRequestOs": "com.azure.playwrighttesting_auth_manager#GetAccountBrowsersRequestOs",
-      "com.azure.playwrighttesting_auth_manager#AccessTokensDelete": "com.azure.playwrighttesting_auth_manager#DeleteAccessToken",
-      "com.azure.playwrighttesting_auth_manager#AccessTokensDeleteRequest": "com.azure.playwrighttesting_auth_manager#DeleteAccessTokenRequest",
-      "com.azure.playwrighttesting_auth_manager#AccessTokensGet": "com.azure.playwrighttesting_auth_manager#GetAccessToken",
-      "com.azure.playwrighttesting_auth_manager#AccessTokensGetRequest": "com.azure.playwrighttesting_auth_manager#GetAccessTokenRequest",
-      "com.azure.playwrighttesting_auth_manager#AccessTokensList": "com.azure.playwrighttesting_auth_manager#ListAccessTokens",
-      "com.azure.playwrighttesting_auth_manager#AccessTokensListRequest": "com.azure.playwrighttesting_auth_manager#ListAccessTokensRequest",
-      "com.azure.playwrighttesting_auth_manager#AccountsGet": "com.azure.playwrighttesting_auth_manager#GetAccount",
-      "com.azure.playwrighttesting_auth_manager#AccountsGetRequest": "com.azure.playwrighttesting_auth_manager#GetAccountRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.playwrighttesting_auth_manager#AccountsGetBrowsers": {
+    "com.azure.playwrighttesting_auth_manager#GetAccountBrowsers": {
       "type": "operation",
       "input": {
-        "target": "com.azure.playwrighttesting_auth_manager#AccountsGetBrowsersRequest"
+        "target": "com.azure.playwrighttesting_auth_manager#GetAccountBrowsersRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -49,7 +37,7 @@
         "smithy.api#documentation": "Gets remote browsers corresponding to given account id and redirects the client for running Playwright tests. Authorization required is Bearer JWT Access token provided by EntraID or Microsoft Playwright Testing Service."
       }
     },
-    "com.azure.playwrighttesting_auth_manager#AccountsGetBrowsersRequest": {
+    "com.azure.playwrighttesting_auth_manager#GetAccountBrowsersRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -76,7 +64,7 @@
           }
         },
         "os": {
-          "target": "com.azure.playwrighttesting_auth_manager#AccountsGetBrowsersRequestOs",
+          "target": "com.azure.playwrighttesting_auth_manager#GetAccountBrowsersRequestOs",
           "traits": {
             "smithy.api#httpQuery": "os",
             "smithy.api#documentation": "The os provided by client for remote test runs."
@@ -94,7 +82,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.playwrighttesting_auth_manager#AccountsGetBrowsersRequestOs": {
+    "com.azure.playwrighttesting_auth_manager#GetAccountBrowsersRequestOs": {
       "type": "enum",
       "members": {
         "LINUX": {
@@ -112,10 +100,10 @@
       },
       "traits": {}
     },
-    "com.azure.playwrighttesting_auth_manager#AccessTokensDelete": {
+    "com.azure.playwrighttesting_auth_manager#DeleteAccessToken": {
       "type": "operation",
       "input": {
-        "target": "com.azure.playwrighttesting_auth_manager#AccessTokensDeleteRequest"
+        "target": "com.azure.playwrighttesting_auth_manager#DeleteAccessTokenRequest"
       },
       "output": {
         "target": "smithy.api#Unit"
@@ -131,7 +119,7 @@
         "smithy.api#documentation": "Deletes an access-token for the account with given access-token id. Authorization required is Bearer JWT Access token provided by EntraID."
       }
     },
-    "com.azure.playwrighttesting_auth_manager#AccessTokensDeleteRequest": {
+    "com.azure.playwrighttesting_auth_manager#DeleteAccessTokenRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -311,10 +299,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.playwrighttesting_auth_manager#AccessTokensGet": {
+    "com.azure.playwrighttesting_auth_manager#GetAccessToken": {
       "type": "operation",
       "input": {
-        "target": "com.azure.playwrighttesting_auth_manager#AccessTokensGetRequest"
+        "target": "com.azure.playwrighttesting_auth_manager#GetAccessTokenRequest"
       },
       "output": {
         "target": "com.azure.playwrighttesting_auth_manager#AccessToken"
@@ -330,7 +318,7 @@
         "smithy.api#documentation": "Gets an access-token for the account with given access-token id. Authorization required is Bearer JWT Access token provided by EntraID."
       }
     },
-    "com.azure.playwrighttesting_auth_manager#AccessTokensGetRequest": {
+    "com.azure.playwrighttesting_auth_manager#GetAccessTokenRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -369,10 +357,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.playwrighttesting_auth_manager#AccessTokensList": {
+    "com.azure.playwrighttesting_auth_manager#ListAccessTokens": {
       "type": "operation",
       "input": {
-        "target": "com.azure.playwrighttesting_auth_manager#AccessTokensListRequest"
+        "target": "com.azure.playwrighttesting_auth_manager#ListAccessTokensRequest"
       },
       "output": {
         "target": "com.azure.playwrighttesting_auth_manager#PagedAccessToken"
@@ -425,7 +413,7 @@
         "smithy.api#documentation": "The AccessToken items on this page"
       }
     },
-    "com.azure.playwrighttesting_auth_manager#AccessTokensListRequest": {
+    "com.azure.playwrighttesting_auth_manager#ListAccessTokensRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -462,10 +450,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.playwrighttesting_auth_manager#AccountsGet": {
+    "com.azure.playwrighttesting_auth_manager#GetAccount": {
       "type": "operation",
       "input": {
-        "target": "com.azure.playwrighttesting_auth_manager#AccountsGetRequest"
+        "target": "com.azure.playwrighttesting_auth_manager#GetAccountRequest"
       },
       "output": {
         "target": "com.azure.playwrighttesting_auth_manager#MicrosoftPlaywrightTestingSharedAccount"
@@ -707,7 +695,7 @@
         "smithy.api#documentation": "The account state."
       }
     },
-    "com.azure.playwrighttesting_auth_manager#AccountsGetRequest": {
+    "com.azure.playwrighttesting_auth_manager#GetAccountRequest": {
       "type": "structure",
       "members": {
         "endpoint": {
@@ -743,22 +731,22 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.playwrighttesting_auth_manager#AccountsGetBrowsers"
+          "target": "com.azure.playwrighttesting_auth_manager#GetAccountBrowsers"
         },
         {
-          "target": "com.azure.playwrighttesting_auth_manager#AccessTokensDelete"
+          "target": "com.azure.playwrighttesting_auth_manager#DeleteAccessToken"
         },
         {
           "target": "com.azure.playwrighttesting_auth_manager#AccessTokensCreateOrReplace"
         },
         {
-          "target": "com.azure.playwrighttesting_auth_manager#AccessTokensGet"
+          "target": "com.azure.playwrighttesting_auth_manager#GetAccessToken"
         },
         {
-          "target": "com.azure.playwrighttesting_auth_manager#AccessTokensList"
+          "target": "com.azure.playwrighttesting_auth_manager#ListAccessTokens"
         },
         {
-          "target": "com.azure.playwrighttesting_auth_manager#AccountsGet"
+          "target": "com.azure.playwrighttesting_auth_manager#GetAccount"
         }
       ],
       "traits": {

@@ -15,101 +15,16 @@
         "namespace": "*"
       }
     ],
-    "distilled.rename": {
-      "com.azure.gcpconnector#BigQueryDatasetsDelete": "com.azure.gcpconnector#DeleteBigQueryDataset",
-      "com.azure.gcpconnector#BigQueryDatasetsDeleteResponse": "com.azure.gcpconnector#DeleteBigQueryDatasetResponse",
-      "com.azure.gcpconnector#BigQueryDatasetsDeleteRequest": "com.azure.gcpconnector#DeleteBigQueryDatasetRequest",
-      "com.azure.gcpconnector#BigQueryDatasetsUpdate": "com.azure.gcpconnector#UpdateBigQueryDataset",
-      "com.azure.gcpconnector#BigQueryDatasetsUpdateResponse": "com.azure.gcpconnector#UpdateBigQueryDatasetResponse",
-      "com.azure.gcpconnector#BigQueryDatasetsUpdateResponseTagsMap": "com.azure.gcpconnector#UpdateBigQueryDatasetResponseTagsMap",
-      "com.azure.gcpconnector#BigQueryDatasetsUpdateRequest": "com.azure.gcpconnector#UpdateBigQueryDatasetRequest",
-      "com.azure.gcpconnector#BigQueryDatasetsUpdateRequestTagsMap": "com.azure.gcpconnector#UpdateBigQueryDatasetRequestTagsMap",
-      "com.azure.gcpconnector#BigQueryDatasetsGet": "com.azure.gcpconnector#GetBigQueryDataset",
-      "com.azure.gcpconnector#BigQueryDatasetsGetResponse": "com.azure.gcpconnector#GetBigQueryDatasetResponse",
-      "com.azure.gcpconnector#BigQueryDatasetsGetResponseTagsMap": "com.azure.gcpconnector#GetBigQueryDatasetResponseTagsMap",
-      "com.azure.gcpconnector#BigQueryDatasetsGetRequest": "com.azure.gcpconnector#GetBigQueryDatasetRequest",
-      "com.azure.gcpconnector#BigQueryDatasetsListByResourceGroup": "com.azure.gcpconnector#ListBigQueryDatasetByResourceGroup",
-      "com.azure.gcpconnector#BigQueryDatasetsListByResourceGroupRequest": "com.azure.gcpconnector#ListBigQueryDatasetByResourceGroupRequest",
-      "com.azure.gcpconnector#BigQueryDatasetsListBySubscription": "com.azure.gcpconnector#ListBigQueryDatasetBySubscription",
-      "com.azure.gcpconnector#BigQueryDatasetsListBySubscriptionRequest": "com.azure.gcpconnector#ListBigQueryDatasetBySubscriptionRequest",
-      "com.azure.gcpconnector#CloudFunctionsDelete": "com.azure.gcpconnector#DeleteCloudFunction",
-      "com.azure.gcpconnector#CloudFunctionsDeleteResponse": "com.azure.gcpconnector#DeleteCloudFunctionResponse",
-      "com.azure.gcpconnector#CloudFunctionsDeleteRequest": "com.azure.gcpconnector#DeleteCloudFunctionRequest",
-      "com.azure.gcpconnector#CloudFunctionsUpdate": "com.azure.gcpconnector#UpdateCloudFunction",
-      "com.azure.gcpconnector#CloudFunctionsUpdateResponse": "com.azure.gcpconnector#UpdateCloudFunctionResponse",
-      "com.azure.gcpconnector#CloudFunctionsUpdateResponseTagsMap": "com.azure.gcpconnector#UpdateCloudFunctionResponseTagsMap",
-      "com.azure.gcpconnector#CloudFunctionsUpdateRequest": "com.azure.gcpconnector#UpdateCloudFunctionRequest",
-      "com.azure.gcpconnector#CloudFunctionsUpdateRequestTagsMap": "com.azure.gcpconnector#UpdateCloudFunctionRequestTagsMap",
-      "com.azure.gcpconnector#CloudFunctionsGet": "com.azure.gcpconnector#GetCloudFunction",
-      "com.azure.gcpconnector#CloudFunctionsGetResponse": "com.azure.gcpconnector#GetCloudFunctionResponse",
-      "com.azure.gcpconnector#CloudFunctionsGetResponseTagsMap": "com.azure.gcpconnector#GetCloudFunctionResponseTagsMap",
-      "com.azure.gcpconnector#CloudFunctionsGetRequest": "com.azure.gcpconnector#GetCloudFunctionRequest",
-      "com.azure.gcpconnector#CloudFunctionsListByResourceGroup": "com.azure.gcpconnector#ListCloudFunctionByResourceGroup",
-      "com.azure.gcpconnector#CloudFunctionsListByResourceGroupRequest": "com.azure.gcpconnector#ListCloudFunctionByResourceGroupRequest",
-      "com.azure.gcpconnector#CloudFunctionsListBySubscription": "com.azure.gcpconnector#ListCloudFunctionBySubscription",
-      "com.azure.gcpconnector#CloudFunctionsListBySubscriptionRequest": "com.azure.gcpconnector#ListCloudFunctionBySubscriptionRequest",
-      "com.azure.gcpconnector#ComputeInstancesDelete": "com.azure.gcpconnector#DeleteComputeInstance",
-      "com.azure.gcpconnector#ComputeInstancesDeleteResponse": "com.azure.gcpconnector#DeleteComputeInstanceResponse",
-      "com.azure.gcpconnector#ComputeInstancesDeleteRequest": "com.azure.gcpconnector#DeleteComputeInstanceRequest",
-      "com.azure.gcpconnector#ComputeInstancesGet": "com.azure.gcpconnector#GetComputeInstance",
-      "com.azure.gcpconnector#ComputeInstancesGetResponse": "com.azure.gcpconnector#GetComputeInstanceResponse",
-      "com.azure.gcpconnector#ComputeInstancesGetRequest": "com.azure.gcpconnector#GetComputeInstanceRequest",
-      "com.azure.gcpconnector#ComputeInstancesList": "com.azure.gcpconnector#ListComputeInstances",
-      "com.azure.gcpconnector#ComputeInstancesListRequest": "com.azure.gcpconnector#ListComputeInstancesRequest",
-      "com.azure.gcpconnector#ContainerClustersDelete": "com.azure.gcpconnector#DeleteContainerCluster",
-      "com.azure.gcpconnector#ContainerClustersDeleteResponse": "com.azure.gcpconnector#DeleteContainerClusterResponse",
-      "com.azure.gcpconnector#ContainerClustersDeleteRequest": "com.azure.gcpconnector#DeleteContainerClusterRequest",
-      "com.azure.gcpconnector#ContainerClustersGet": "com.azure.gcpconnector#GetContainerCluster",
-      "com.azure.gcpconnector#ContainerClustersGetResponse": "com.azure.gcpconnector#GetContainerClusterResponse",
-      "com.azure.gcpconnector#ContainerClustersGetRequest": "com.azure.gcpconnector#GetContainerClusterRequest",
-      "com.azure.gcpconnector#ContainerClustersList": "com.azure.gcpconnector#ListContainerClusters",
-      "com.azure.gcpconnector#ContainerClustersListRequest": "com.azure.gcpconnector#ListContainerClustersRequest",
-      "com.azure.gcpconnector#OperationsList": "com.azure.gcpconnector#ListOperations",
-      "com.azure.gcpconnector#OperationsListResponse": "com.azure.gcpconnector#ListOperationsResponse",
-      "com.azure.gcpconnector#OperationsListResponseValueList": "com.azure.gcpconnector#ListOperationsResponseValueList",
-      "com.azure.gcpconnector#OperationsListRequest": "com.azure.gcpconnector#ListOperationsRequest",
-      "com.azure.gcpconnector#SQLAdminInstancesDelete": "com.azure.gcpconnector#DeleteSQLAdminInstance",
-      "com.azure.gcpconnector#SQLAdminInstancesDeleteResponse": "com.azure.gcpconnector#DeleteSQLAdminInstanceResponse",
-      "com.azure.gcpconnector#SQLAdminInstancesDeleteRequest": "com.azure.gcpconnector#DeleteSQLAdminInstanceRequest",
-      "com.azure.gcpconnector#SQLAdminInstancesUpdate": "com.azure.gcpconnector#UpdateSQLAdminInstance",
-      "com.azure.gcpconnector#SQLAdminInstancesUpdateResponse": "com.azure.gcpconnector#UpdateSQLAdminInstanceResponse",
-      "com.azure.gcpconnector#SQLAdminInstancesUpdateResponseTagsMap": "com.azure.gcpconnector#UpdateSQLAdminInstanceResponseTagsMap",
-      "com.azure.gcpconnector#SQLAdminInstancesUpdateRequest": "com.azure.gcpconnector#UpdateSQLAdminInstanceRequest",
-      "com.azure.gcpconnector#SQLAdminInstancesUpdateRequestTagsMap": "com.azure.gcpconnector#UpdateSQLAdminInstanceRequestTagsMap",
-      "com.azure.gcpconnector#SQLAdminInstancesGet": "com.azure.gcpconnector#GetSQLAdminInstance",
-      "com.azure.gcpconnector#SQLAdminInstancesGetResponse": "com.azure.gcpconnector#GetSQLAdminInstanceResponse",
-      "com.azure.gcpconnector#SQLAdminInstancesGetResponseTagsMap": "com.azure.gcpconnector#GetSQLAdminInstanceResponseTagsMap",
-      "com.azure.gcpconnector#SQLAdminInstancesGetRequest": "com.azure.gcpconnector#GetSQLAdminInstanceRequest",
-      "com.azure.gcpconnector#SQLAdminInstancesListByResourceGroup": "com.azure.gcpconnector#ListSQLAdminInstanceByResourceGroup",
-      "com.azure.gcpconnector#SQLAdminInstancesListByResourceGroupRequest": "com.azure.gcpconnector#ListSQLAdminInstanceByResourceGroupRequest",
-      "com.azure.gcpconnector#SQLAdminInstancesListBySubscription": "com.azure.gcpconnector#ListSQLAdminInstanceBySubscription",
-      "com.azure.gcpconnector#SQLAdminInstancesListBySubscriptionRequest": "com.azure.gcpconnector#ListSQLAdminInstanceBySubscriptionRequest",
-      "com.azure.gcpconnector#StorageBucketsDelete": "com.azure.gcpconnector#DeleteStorageBucket",
-      "com.azure.gcpconnector#StorageBucketsDeleteResponse": "com.azure.gcpconnector#DeleteStorageBucketResponse",
-      "com.azure.gcpconnector#StorageBucketsDeleteRequest": "com.azure.gcpconnector#DeleteStorageBucketRequest",
-      "com.azure.gcpconnector#StorageBucketsUpdate": "com.azure.gcpconnector#UpdateStorageBucket",
-      "com.azure.gcpconnector#StorageBucketsUpdateResponse": "com.azure.gcpconnector#UpdateStorageBucketResponse",
-      "com.azure.gcpconnector#StorageBucketsUpdateResponseTagsMap": "com.azure.gcpconnector#UpdateStorageBucketResponseTagsMap",
-      "com.azure.gcpconnector#StorageBucketsUpdateRequest": "com.azure.gcpconnector#UpdateStorageBucketRequest",
-      "com.azure.gcpconnector#StorageBucketsUpdateRequestTagsMap": "com.azure.gcpconnector#UpdateStorageBucketRequestTagsMap",
-      "com.azure.gcpconnector#StorageBucketsGet": "com.azure.gcpconnector#GetStorageBucket",
-      "com.azure.gcpconnector#StorageBucketsGetResponse": "com.azure.gcpconnector#GetStorageBucketResponse",
-      "com.azure.gcpconnector#StorageBucketsGetResponseTagsMap": "com.azure.gcpconnector#GetStorageBucketResponseTagsMap",
-      "com.azure.gcpconnector#StorageBucketsGetRequest": "com.azure.gcpconnector#GetStorageBucketRequest",
-      "com.azure.gcpconnector#StorageBucketsListByResourceGroup": "com.azure.gcpconnector#ListStorageBucketByResourceGroup",
-      "com.azure.gcpconnector#StorageBucketsListByResourceGroupRequest": "com.azure.gcpconnector#ListStorageBucketByResourceGroupRequest",
-      "com.azure.gcpconnector#StorageBucketsListBySubscription": "com.azure.gcpconnector#ListStorageBucketBySubscription",
-      "com.azure.gcpconnector#StorageBucketsListBySubscriptionRequest": "com.azure.gcpconnector#ListStorageBucketBySubscriptionRequest"
-    }
+    "distilled.finalized": true
   },
   "shapes": {
-    "com.azure.gcpconnector#BigQueryDatasetsDelete": {
+    "com.azure.gcpconnector#DeleteBigQueryDataset": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#BigQueryDatasetsDeleteRequest"
+        "target": "com.azure.gcpconnector#DeleteBigQueryDatasetRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#BigQueryDatasetsDeleteResponse"
+        "target": "com.azure.gcpconnector#DeleteBigQueryDatasetResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -122,7 +37,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsDeleteResponse": {
+    "com.azure.gcpconnector#DeleteBigQueryDatasetResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -144,7 +59,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsDeleteRequest": {
+    "com.azure.gcpconnector#DeleteBigQueryDatasetRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -176,13 +91,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsUpdate": {
+    "com.azure.gcpconnector#UpdateBigQueryDataset": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#BigQueryDatasetsUpdateRequest"
+        "target": "com.azure.gcpconnector#UpdateBigQueryDatasetRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#BigQueryDatasetsUpdateResponse"
+        "target": "com.azure.gcpconnector#UpdateBigQueryDatasetResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -195,7 +110,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsUpdateResponse": {
+    "com.azure.gcpconnector#UpdateBigQueryDatasetResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -223,7 +138,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.gcpconnector#BigQueryDatasetsUpdateResponseTagsMap",
+          "target": "com.azure.gcpconnector#UpdateBigQueryDatasetResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -952,7 +867,7 @@
         "smithy.api#documentation": "The labels associated with this dataset"
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsUpdateResponseTagsMap": {
+    "com.azure.gcpconnector#UpdateBigQueryDatasetResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1072,7 +987,7 @@
         "smithy.api#documentation": "The type of identity that created the resource."
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsUpdateRequest": {
+    "com.azure.gcpconnector#UpdateBigQueryDatasetRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1100,7 +1015,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.gcpconnector#BigQueryDatasetsUpdateRequestTagsMap",
+          "target": "com.azure.gcpconnector#UpdateBigQueryDatasetRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1110,7 +1025,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsUpdateRequestTagsMap": {
+    "com.azure.gcpconnector#UpdateBigQueryDatasetRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1355,13 +1270,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsGet": {
+    "com.azure.gcpconnector#GetBigQueryDataset": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#BigQueryDatasetsGetRequest"
+        "target": "com.azure.gcpconnector#GetBigQueryDatasetRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#BigQueryDatasetsGetResponse"
+        "target": "com.azure.gcpconnector#GetBigQueryDatasetResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1374,7 +1289,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsGetResponse": {
+    "com.azure.gcpconnector#GetBigQueryDatasetResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1402,7 +1317,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.gcpconnector#BigQueryDatasetsGetResponseTagsMap",
+          "target": "com.azure.gcpconnector#GetBigQueryDatasetResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -1425,7 +1340,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsGetResponseTagsMap": {
+    "com.azure.gcpconnector#GetBigQueryDatasetResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -1437,7 +1352,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsGetRequest": {
+    "com.azure.gcpconnector#GetBigQueryDatasetRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1469,10 +1384,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsListByResourceGroup": {
+    "com.azure.gcpconnector#ListBigQueryDatasetByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#BigQueryDatasetsListByResourceGroupRequest"
+        "target": "com.azure.gcpconnector#ListBigQueryDatasetByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.gcpconnector#BigQueryDatasetListResult"
@@ -1588,7 +1503,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsListByResourceGroupRequest": {
+    "com.azure.gcpconnector#ListBigQueryDatasetByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1618,10 +1533,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsListBySubscription": {
+    "com.azure.gcpconnector#ListBigQueryDatasetBySubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#BigQueryDatasetsListBySubscriptionRequest"
+        "target": "com.azure.gcpconnector#ListBigQueryDatasetBySubscriptionRequest"
       },
       "output": {
         "target": "com.azure.gcpconnector#BigQueryDatasetListResult"
@@ -1644,7 +1559,7 @@
         }
       }
     },
-    "com.azure.gcpconnector#BigQueryDatasetsListBySubscriptionRequest": {
+    "com.azure.gcpconnector#ListBigQueryDatasetBySubscriptionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1666,13 +1581,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsDelete": {
+    "com.azure.gcpconnector#DeleteCloudFunction": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#CloudFunctionsDeleteRequest"
+        "target": "com.azure.gcpconnector#DeleteCloudFunctionRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#CloudFunctionsDeleteResponse"
+        "target": "com.azure.gcpconnector#DeleteCloudFunctionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1685,7 +1600,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsDeleteResponse": {
+    "com.azure.gcpconnector#DeleteCloudFunctionResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -1707,7 +1622,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsDeleteRequest": {
+    "com.azure.gcpconnector#DeleteCloudFunctionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -1739,13 +1654,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsUpdate": {
+    "com.azure.gcpconnector#UpdateCloudFunction": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#CloudFunctionsUpdateRequest"
+        "target": "com.azure.gcpconnector#UpdateCloudFunctionRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#CloudFunctionsUpdateResponse"
+        "target": "com.azure.gcpconnector#UpdateCloudFunctionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1758,7 +1673,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsUpdateResponse": {
+    "com.azure.gcpconnector#UpdateCloudFunctionResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -1786,7 +1701,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.gcpconnector#CloudFunctionsUpdateResponseTagsMap",
+          "target": "com.azure.gcpconnector#UpdateCloudFunctionResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -2870,7 +2785,7 @@
         "smithy.api#documentation": "BuildConfig.dockerRegistry values, as defined by the Google Cloud API."
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsUpdateResponseTagsMap": {
+    "com.azure.gcpconnector#UpdateCloudFunctionResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -2882,7 +2797,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsUpdateRequest": {
+    "com.azure.gcpconnector#UpdateCloudFunctionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -2910,7 +2825,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.gcpconnector#CloudFunctionsUpdateRequestTagsMap",
+          "target": "com.azure.gcpconnector#UpdateCloudFunctionRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -2920,7 +2835,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsUpdateRequestTagsMap": {
+    "com.azure.gcpconnector#UpdateCloudFunctionRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3165,13 +3080,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsGet": {
+    "com.azure.gcpconnector#GetCloudFunction": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#CloudFunctionsGetRequest"
+        "target": "com.azure.gcpconnector#GetCloudFunctionRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#CloudFunctionsGetResponse"
+        "target": "com.azure.gcpconnector#GetCloudFunctionResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3184,7 +3099,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsGetResponse": {
+    "com.azure.gcpconnector#GetCloudFunctionResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -3212,7 +3127,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.gcpconnector#CloudFunctionsGetResponseTagsMap",
+          "target": "com.azure.gcpconnector#GetCloudFunctionResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -3235,7 +3150,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsGetResponseTagsMap": {
+    "com.azure.gcpconnector#GetCloudFunctionResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -3247,7 +3162,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsGetRequest": {
+    "com.azure.gcpconnector#GetCloudFunctionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3279,10 +3194,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsListByResourceGroup": {
+    "com.azure.gcpconnector#ListCloudFunctionByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#CloudFunctionsListByResourceGroupRequest"
+        "target": "com.azure.gcpconnector#ListCloudFunctionByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.gcpconnector#CloudFunctionListResult"
@@ -3398,7 +3313,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsListByResourceGroupRequest": {
+    "com.azure.gcpconnector#ListCloudFunctionByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3428,10 +3343,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsListBySubscription": {
+    "com.azure.gcpconnector#ListCloudFunctionBySubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#CloudFunctionsListBySubscriptionRequest"
+        "target": "com.azure.gcpconnector#ListCloudFunctionBySubscriptionRequest"
       },
       "output": {
         "target": "com.azure.gcpconnector#CloudFunctionListResult"
@@ -3454,7 +3369,7 @@
         }
       }
     },
-    "com.azure.gcpconnector#CloudFunctionsListBySubscriptionRequest": {
+    "com.azure.gcpconnector#ListCloudFunctionBySubscriptionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -3476,13 +3391,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#ComputeInstancesDelete": {
+    "com.azure.gcpconnector#DeleteComputeInstance": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#ComputeInstancesDeleteRequest"
+        "target": "com.azure.gcpconnector#DeleteComputeInstanceRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#ComputeInstancesDeleteResponse"
+        "target": "com.azure.gcpconnector#DeleteComputeInstanceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -3495,7 +3410,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#ComputeInstancesDeleteResponse": {
+    "com.azure.gcpconnector#DeleteComputeInstanceResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -3517,7 +3432,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#ComputeInstancesDeleteRequest": {
+    "com.azure.gcpconnector#DeleteComputeInstanceRequest": {
       "type": "structure",
       "members": {
         "resourceUri": {
@@ -6050,13 +5965,13 @@
         "smithy.api#documentation": "GCP Tags"
       }
     },
-    "com.azure.gcpconnector#ComputeInstancesGet": {
+    "com.azure.gcpconnector#GetComputeInstance": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#ComputeInstancesGetRequest"
+        "target": "com.azure.gcpconnector#GetComputeInstanceRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#ComputeInstancesGetResponse"
+        "target": "com.azure.gcpconnector#GetComputeInstanceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6069,7 +5984,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#ComputeInstancesGetResponse": {
+    "com.azure.gcpconnector#GetComputeInstanceResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -6107,7 +6022,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#ComputeInstancesGetRequest": {
+    "com.azure.gcpconnector#GetComputeInstanceRequest": {
       "type": "structure",
       "members": {
         "resourceUri": {
@@ -6123,10 +6038,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#ComputeInstancesList": {
+    "com.azure.gcpconnector#ListComputeInstances": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#ComputeInstancesListRequest"
+        "target": "com.azure.gcpconnector#ListComputeInstancesRequest"
       },
       "output": {
         "target": "com.azure.gcpconnector#ComputeInstanceListResult"
@@ -6217,7 +6132,7 @@
         "smithy.api#documentation": "A Microsoft.GCPConnector resource"
       }
     },
-    "com.azure.gcpconnector#ComputeInstancesListRequest": {
+    "com.azure.gcpconnector#ListComputeInstancesRequest": {
       "type": "structure",
       "members": {
         "resourceUri": {
@@ -6239,13 +6154,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#ContainerClustersDelete": {
+    "com.azure.gcpconnector#DeleteContainerCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#ContainerClustersDeleteRequest"
+        "target": "com.azure.gcpconnector#DeleteContainerClusterRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#ContainerClustersDeleteResponse"
+        "target": "com.azure.gcpconnector#DeleteContainerClusterResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -6258,7 +6173,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#ContainerClustersDeleteResponse": {
+    "com.azure.gcpconnector#DeleteContainerClusterResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -6280,7 +6195,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#ContainerClustersDeleteRequest": {
+    "com.azure.gcpconnector#DeleteContainerClusterRequest": {
       "type": "structure",
       "members": {
         "resourceUri": {
@@ -11919,13 +11834,13 @@
         "smithy.api#documentation": "GCP Tags"
       }
     },
-    "com.azure.gcpconnector#ContainerClustersGet": {
+    "com.azure.gcpconnector#GetContainerCluster": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#ContainerClustersGetRequest"
+        "target": "com.azure.gcpconnector#GetContainerClusterRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#ContainerClustersGetResponse"
+        "target": "com.azure.gcpconnector#GetContainerClusterResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -11938,7 +11853,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#ContainerClustersGetResponse": {
+    "com.azure.gcpconnector#GetContainerClusterResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -11976,7 +11891,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#ContainerClustersGetRequest": {
+    "com.azure.gcpconnector#GetContainerClusterRequest": {
       "type": "structure",
       "members": {
         "resourceUri": {
@@ -11992,10 +11907,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#ContainerClustersList": {
+    "com.azure.gcpconnector#ListContainerClusters": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#ContainerClustersListRequest"
+        "target": "com.azure.gcpconnector#ListContainerClustersRequest"
       },
       "output": {
         "target": "com.azure.gcpconnector#ContainerClusterListResult"
@@ -12086,7 +12001,7 @@
         "smithy.api#documentation": "A Microsoft.GCPConnector resource"
       }
     },
-    "com.azure.gcpconnector#ContainerClustersListRequest": {
+    "com.azure.gcpconnector#ListContainerClustersRequest": {
       "type": "structure",
       "members": {
         "resourceUri": {
@@ -12108,13 +12023,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#OperationsList": {
+    "com.azure.gcpconnector#ListOperations": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#OperationsListRequest"
+        "target": "com.azure.gcpconnector#ListOperationsRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#OperationsListResponse"
+        "target": "com.azure.gcpconnector#ListOperationsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -12134,11 +12049,11 @@
         }
       }
     },
-    "com.azure.gcpconnector#OperationsListResponse": {
+    "com.azure.gcpconnector#ListOperationsResponse": {
       "type": "structure",
       "members": {
         "value": {
-          "target": "com.azure.gcpconnector#OperationsListResponseValueList",
+          "target": "com.azure.gcpconnector#ListOperationsResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of operations supported by the resource provider"
           }
@@ -12154,7 +12069,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#OperationsListResponseValueList": {
+    "com.azure.gcpconnector#ListOperationsResponseValueList": {
       "type": "list",
       "member": {
         "target": "com.azure.gcpconnector#Operation"
@@ -12273,7 +12188,7 @@
         "smithy.api#documentation": "Localized display information for this particular operation."
       }
     },
-    "com.azure.gcpconnector#OperationsListRequest": {
+    "com.azure.gcpconnector#ListOperationsRequest": {
       "type": "structure",
       "members": {
         "nextLink": {
@@ -12287,13 +12202,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesDelete": {
+    "com.azure.gcpconnector#DeleteSQLAdminInstance": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#SQLAdminInstancesDeleteRequest"
+        "target": "com.azure.gcpconnector#DeleteSQLAdminInstanceRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#SQLAdminInstancesDeleteResponse"
+        "target": "com.azure.gcpconnector#DeleteSQLAdminInstanceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -12306,7 +12221,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesDeleteResponse": {
+    "com.azure.gcpconnector#DeleteSQLAdminInstanceResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -12328,7 +12243,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesDeleteRequest": {
+    "com.azure.gcpconnector#DeleteSQLAdminInstanceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -12360,13 +12275,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesUpdate": {
+    "com.azure.gcpconnector#UpdateSQLAdminInstance": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#SQLAdminInstancesUpdateRequest"
+        "target": "com.azure.gcpconnector#UpdateSQLAdminInstanceRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#SQLAdminInstancesUpdateResponse"
+        "target": "com.azure.gcpconnector#UpdateSQLAdminInstanceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -12379,7 +12294,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesUpdateResponse": {
+    "com.azure.gcpconnector#UpdateSQLAdminInstanceResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -12407,7 +12322,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.gcpconnector#SQLAdminInstancesUpdateResponseTagsMap",
+          "target": "com.azure.gcpconnector#UpdateSQLAdminInstanceResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -14130,7 +14045,7 @@
         "smithy.api#documentation": "Disk encryption configuration."
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesUpdateResponseTagsMap": {
+    "com.azure.gcpconnector#UpdateSQLAdminInstanceResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -14142,7 +14057,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesUpdateRequest": {
+    "com.azure.gcpconnector#UpdateSQLAdminInstanceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -14170,7 +14085,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.gcpconnector#SQLAdminInstancesUpdateRequestTagsMap",
+          "target": "com.azure.gcpconnector#UpdateSQLAdminInstanceRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -14180,7 +14095,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesUpdateRequestTagsMap": {
+    "com.azure.gcpconnector#UpdateSQLAdminInstanceRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -14425,13 +14340,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesGet": {
+    "com.azure.gcpconnector#GetSQLAdminInstance": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#SQLAdminInstancesGetRequest"
+        "target": "com.azure.gcpconnector#GetSQLAdminInstanceRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#SQLAdminInstancesGetResponse"
+        "target": "com.azure.gcpconnector#GetSQLAdminInstanceResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -14444,7 +14359,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesGetResponse": {
+    "com.azure.gcpconnector#GetSQLAdminInstanceResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -14472,7 +14387,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.gcpconnector#SQLAdminInstancesGetResponseTagsMap",
+          "target": "com.azure.gcpconnector#GetSQLAdminInstanceResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -14495,7 +14410,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesGetResponseTagsMap": {
+    "com.azure.gcpconnector#GetSQLAdminInstanceResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -14507,7 +14422,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesGetRequest": {
+    "com.azure.gcpconnector#GetSQLAdminInstanceRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -14539,10 +14454,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesListByResourceGroup": {
+    "com.azure.gcpconnector#ListSQLAdminInstanceByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#SQLAdminInstancesListByResourceGroupRequest"
+        "target": "com.azure.gcpconnector#ListSQLAdminInstanceByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.gcpconnector#SQLAdminInstanceListResult"
@@ -14658,7 +14573,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesListByResourceGroupRequest": {
+    "com.azure.gcpconnector#ListSQLAdminInstanceByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -14688,10 +14603,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesListBySubscription": {
+    "com.azure.gcpconnector#ListSQLAdminInstanceBySubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#SQLAdminInstancesListBySubscriptionRequest"
+        "target": "com.azure.gcpconnector#ListSQLAdminInstanceBySubscriptionRequest"
       },
       "output": {
         "target": "com.azure.gcpconnector#SQLAdminInstanceListResult"
@@ -14714,7 +14629,7 @@
         }
       }
     },
-    "com.azure.gcpconnector#SQLAdminInstancesListBySubscriptionRequest": {
+    "com.azure.gcpconnector#ListSQLAdminInstanceBySubscriptionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -14736,13 +14651,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#StorageBucketsDelete": {
+    "com.azure.gcpconnector#DeleteStorageBucket": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#StorageBucketsDeleteRequest"
+        "target": "com.azure.gcpconnector#DeleteStorageBucketRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#StorageBucketsDeleteResponse"
+        "target": "com.azure.gcpconnector#DeleteStorageBucketResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -14755,7 +14670,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#StorageBucketsDeleteResponse": {
+    "com.azure.gcpconnector#DeleteStorageBucketResponse": {
       "type": "structure",
       "members": {
         "location": {
@@ -14777,7 +14692,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#StorageBucketsDeleteRequest": {
+    "com.azure.gcpconnector#DeleteStorageBucketRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -14809,13 +14724,13 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#StorageBucketsUpdate": {
+    "com.azure.gcpconnector#UpdateStorageBucket": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#StorageBucketsUpdateRequest"
+        "target": "com.azure.gcpconnector#UpdateStorageBucketRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#StorageBucketsUpdateResponse"
+        "target": "com.azure.gcpconnector#UpdateStorageBucketResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -14828,7 +14743,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#StorageBucketsUpdateResponse": {
+    "com.azure.gcpconnector#UpdateStorageBucketResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -14856,7 +14771,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.gcpconnector#StorageBucketsUpdateResponseTagsMap",
+          "target": "com.azure.gcpconnector#UpdateStorageBucketResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -15946,7 +15861,7 @@
         "smithy.api#documentation": "The project team associated with the entity, if any."
       }
     },
-    "com.azure.gcpconnector#StorageBucketsUpdateResponseTagsMap": {
+    "com.azure.gcpconnector#UpdateStorageBucketResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -15958,7 +15873,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#StorageBucketsUpdateRequest": {
+    "com.azure.gcpconnector#UpdateStorageBucketRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -15986,7 +15901,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.gcpconnector#StorageBucketsUpdateRequestTagsMap",
+          "target": "com.azure.gcpconnector#UpdateStorageBucketRequestTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -15996,7 +15911,7 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#StorageBucketsUpdateRequestTagsMap": {
+    "com.azure.gcpconnector#UpdateStorageBucketRequestTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -16241,13 +16156,13 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#StorageBucketsGet": {
+    "com.azure.gcpconnector#GetStorageBucket": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#StorageBucketsGetRequest"
+        "target": "com.azure.gcpconnector#GetStorageBucketRequest"
       },
       "output": {
-        "target": "com.azure.gcpconnector#StorageBucketsGetResponse"
+        "target": "com.azure.gcpconnector#GetStorageBucketResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -16260,7 +16175,7 @@
         "com.distilled.openapi#apiVersion": "2027-01-01"
       }
     },
-    "com.azure.gcpconnector#StorageBucketsGetResponse": {
+    "com.azure.gcpconnector#GetStorageBucketResponse": {
       "type": "structure",
       "members": {
         "id": {
@@ -16288,7 +16203,7 @@
           }
         },
         "tags": {
-          "target": "com.azure.gcpconnector#StorageBucketsGetResponseTagsMap",
+          "target": "com.azure.gcpconnector#GetStorageBucketResponseTagsMap",
           "traits": {
             "smithy.api#documentation": "Resource tags."
           }
@@ -16311,7 +16226,7 @@
         "smithy.api#output": {}
       }
     },
-    "com.azure.gcpconnector#StorageBucketsGetResponseTagsMap": {
+    "com.azure.gcpconnector#GetStorageBucketResponseTagsMap": {
       "type": "map",
       "key": {
         "target": "smithy.api#String"
@@ -16323,7 +16238,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#StorageBucketsGetRequest": {
+    "com.azure.gcpconnector#GetStorageBucketRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -16355,10 +16270,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#StorageBucketsListByResourceGroup": {
+    "com.azure.gcpconnector#ListStorageBucketByResourceGroup": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#StorageBucketsListByResourceGroupRequest"
+        "target": "com.azure.gcpconnector#ListStorageBucketByResourceGroupRequest"
       },
       "output": {
         "target": "com.azure.gcpconnector#StorageBucketListResult"
@@ -16474,7 +16389,7 @@
         "smithy.api#documentation": "Resource tags."
       }
     },
-    "com.azure.gcpconnector#StorageBucketsListByResourceGroupRequest": {
+    "com.azure.gcpconnector#ListStorageBucketByResourceGroupRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -16504,10 +16419,10 @@
         "smithy.api#input": {}
       }
     },
-    "com.azure.gcpconnector#StorageBucketsListBySubscription": {
+    "com.azure.gcpconnector#ListStorageBucketBySubscription": {
       "type": "operation",
       "input": {
-        "target": "com.azure.gcpconnector#StorageBucketsListBySubscriptionRequest"
+        "target": "com.azure.gcpconnector#ListStorageBucketBySubscriptionRequest"
       },
       "output": {
         "target": "com.azure.gcpconnector#StorageBucketListResult"
@@ -16530,7 +16445,7 @@
         }
       }
     },
-    "com.azure.gcpconnector#StorageBucketsListBySubscriptionRequest": {
+    "com.azure.gcpconnector#ListStorageBucketBySubscriptionRequest": {
       "type": "structure",
       "members": {
         "subscriptionId": {
@@ -16557,103 +16472,103 @@
       "version": "1.0",
       "operations": [
         {
-          "target": "com.azure.gcpconnector#BigQueryDatasetsDelete"
+          "target": "com.azure.gcpconnector#DeleteBigQueryDataset"
         },
         {
-          "target": "com.azure.gcpconnector#BigQueryDatasetsUpdate"
+          "target": "com.azure.gcpconnector#UpdateBigQueryDataset"
         },
         {
           "target": "com.azure.gcpconnector#BigQueryDatasetsCreateOrReplace"
         },
         {
-          "target": "com.azure.gcpconnector#BigQueryDatasetsGet"
+          "target": "com.azure.gcpconnector#GetBigQueryDataset"
         },
         {
-          "target": "com.azure.gcpconnector#BigQueryDatasetsListByResourceGroup"
+          "target": "com.azure.gcpconnector#ListBigQueryDatasetByResourceGroup"
         },
         {
-          "target": "com.azure.gcpconnector#BigQueryDatasetsListBySubscription"
+          "target": "com.azure.gcpconnector#ListBigQueryDatasetBySubscription"
         },
         {
-          "target": "com.azure.gcpconnector#CloudFunctionsDelete"
+          "target": "com.azure.gcpconnector#DeleteCloudFunction"
         },
         {
-          "target": "com.azure.gcpconnector#CloudFunctionsUpdate"
+          "target": "com.azure.gcpconnector#UpdateCloudFunction"
         },
         {
           "target": "com.azure.gcpconnector#CloudFunctionsCreateOrReplace"
         },
         {
-          "target": "com.azure.gcpconnector#CloudFunctionsGet"
+          "target": "com.azure.gcpconnector#GetCloudFunction"
         },
         {
-          "target": "com.azure.gcpconnector#CloudFunctionsListByResourceGroup"
+          "target": "com.azure.gcpconnector#ListCloudFunctionByResourceGroup"
         },
         {
-          "target": "com.azure.gcpconnector#CloudFunctionsListBySubscription"
+          "target": "com.azure.gcpconnector#ListCloudFunctionBySubscription"
         },
         {
-          "target": "com.azure.gcpconnector#ComputeInstancesDelete"
+          "target": "com.azure.gcpconnector#DeleteComputeInstance"
         },
         {
           "target": "com.azure.gcpconnector#ComputeInstancesCreateOrReplace"
         },
         {
-          "target": "com.azure.gcpconnector#ComputeInstancesGet"
+          "target": "com.azure.gcpconnector#GetComputeInstance"
         },
         {
-          "target": "com.azure.gcpconnector#ComputeInstancesList"
+          "target": "com.azure.gcpconnector#ListComputeInstances"
         },
         {
-          "target": "com.azure.gcpconnector#ContainerClustersDelete"
+          "target": "com.azure.gcpconnector#DeleteContainerCluster"
         },
         {
           "target": "com.azure.gcpconnector#ContainerClustersCreateOrReplace"
         },
         {
-          "target": "com.azure.gcpconnector#ContainerClustersGet"
+          "target": "com.azure.gcpconnector#GetContainerCluster"
         },
         {
-          "target": "com.azure.gcpconnector#ContainerClustersList"
+          "target": "com.azure.gcpconnector#ListContainerClusters"
         },
         {
-          "target": "com.azure.gcpconnector#OperationsList"
+          "target": "com.azure.gcpconnector#ListOperations"
         },
         {
-          "target": "com.azure.gcpconnector#SQLAdminInstancesDelete"
+          "target": "com.azure.gcpconnector#DeleteSQLAdminInstance"
         },
         {
-          "target": "com.azure.gcpconnector#SQLAdminInstancesUpdate"
+          "target": "com.azure.gcpconnector#UpdateSQLAdminInstance"
         },
         {
           "target": "com.azure.gcpconnector#SQLAdminInstancesCreateOrReplace"
         },
         {
-          "target": "com.azure.gcpconnector#SQLAdminInstancesGet"
+          "target": "com.azure.gcpconnector#GetSQLAdminInstance"
         },
         {
-          "target": "com.azure.gcpconnector#SQLAdminInstancesListByResourceGroup"
+          "target": "com.azure.gcpconnector#ListSQLAdminInstanceByResourceGroup"
         },
         {
-          "target": "com.azure.gcpconnector#SQLAdminInstancesListBySubscription"
+          "target": "com.azure.gcpconnector#ListSQLAdminInstanceBySubscription"
         },
         {
-          "target": "com.azure.gcpconnector#StorageBucketsDelete"
+          "target": "com.azure.gcpconnector#DeleteStorageBucket"
         },
         {
-          "target": "com.azure.gcpconnector#StorageBucketsUpdate"
+          "target": "com.azure.gcpconnector#UpdateStorageBucket"
         },
         {
           "target": "com.azure.gcpconnector#StorageBucketsCreateOrReplace"
         },
         {
-          "target": "com.azure.gcpconnector#StorageBucketsGet"
+          "target": "com.azure.gcpconnector#GetStorageBucket"
         },
         {
-          "target": "com.azure.gcpconnector#StorageBucketsListByResourceGroup"
+          "target": "com.azure.gcpconnector#ListStorageBucketByResourceGroup"
         },
         {
-          "target": "com.azure.gcpconnector#StorageBucketsListBySubscription"
+          "target": "com.azure.gcpconnector#ListStorageBucketBySubscription"
         }
       ],
       "traits": {
