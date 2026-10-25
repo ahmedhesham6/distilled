@@ -3982,4 +3982,5 @@ export type AzureApiError =
   | DevBoxNotFound
   | EnvironmentNotFound
   | EnvironmentDefinitionNotFound
-  | InvalidPoolName;
+  | InvalidPoolName
+  | WorkflowTriggerResetNotSupported;

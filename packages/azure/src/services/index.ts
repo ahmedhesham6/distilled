@@ -138,6 +138,7 @@ export * as dns from "./dns.ts";
 export * as dnsresolver from "./dnsresolver.ts";
 export * as domainregistration from "./domainregistration.ts";
 export * as domainservices from "./domainservices.ts";
+export * as durabletask_data from "./durabletask-data.ts";
 export * as durabletask from "./durabletask.ts";
 export * as edge from "./edge.ts";
 export * as edgemarketplace from "./edgemarketplace.ts";
