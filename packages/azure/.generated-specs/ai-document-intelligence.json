@@ -1677,17 +1677,17 @@
           }
         },
         "features": {
-          "target": "com.azure.ai_document_intelligence#DocumentModelsAnalyzeDocumentRequestFeaturesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "features",
-            "smithy.api#documentation": "List of optional analysis features."
+            "smithy.api#documentation": "List of optional analysis features. Comma-separated (`ocrHighResolution`, `languages`, `barcodes`, `formulas`, `keyValuePairs`, `styleFont`, `queryFields`)."
           }
         },
         "queryFields": {
-          "target": "com.azure.ai_document_intelligence#DocumentModelsAnalyzeDocumentRequestQueryFieldsList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "queryFields",
-            "smithy.api#documentation": "List of additional fields to extract.  Ex. \"NumberOfGuests,StoreNumber\""
+            "smithy.api#documentation": "List of additional fields to extract.  Ex. \"NumberOfGuests,StoreNumber\" Comma-separated."
           }
         },
         "outputContentFormat": {
@@ -1698,10 +1698,10 @@
           }
         },
         "output": {
-          "target": "com.azure.ai_document_intelligence#DocumentModelsAnalyzeDocumentRequestOutputList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "output",
-            "smithy.api#documentation": "Additional outputs to generate during analysis."
+            "smithy.api#documentation": "Additional outputs to generate during analysis. Comma-separated (`pdf`, `figures`)."
           }
         },
         "urlSource": {
@@ -5622,17 +5622,17 @@
           }
         },
         "features": {
-          "target": "com.azure.ai_document_intelligence#DocumentModelsAnalyzeBatchDocumentsRequestFeaturesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "features",
-            "smithy.api#documentation": "List of optional analysis features."
+            "smithy.api#documentation": "List of optional analysis features. Comma-separated (`ocrHighResolution`, `languages`, `barcodes`, `formulas`, `keyValuePairs`, `styleFont`, `queryFields`)."
           }
         },
         "queryFields": {
-          "target": "com.azure.ai_document_intelligence#DocumentModelsAnalyzeBatchDocumentsRequestQueryFieldsList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "queryFields",
-            "smithy.api#documentation": "List of additional fields to extract.  Ex. \"NumberOfGuests,StoreNumber\""
+            "smithy.api#documentation": "List of additional fields to extract.  Ex. \"NumberOfGuests,StoreNumber\" Comma-separated."
           }
         },
         "outputContentFormat": {
@@ -5643,10 +5643,10 @@
           }
         },
         "output": {
-          "target": "com.azure.ai_document_intelligence#DocumentModelsAnalyzeBatchDocumentsRequestOutputList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "output",
-            "smithy.api#documentation": "Additional outputs to generate during analysis."
+            "smithy.api#documentation": "Additional outputs to generate during analysis. Comma-separated (`pdf`, `figures`)."
           }
         },
         "azureBlobSource": {
@@ -5899,17 +5899,17 @@
           }
         },
         "features": {
-          "target": "com.azure.ai_document_intelligence#DocumentModelsAnalyzeDocumentFromStreamRequestFeaturesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "features",
-            "smithy.api#documentation": "List of optional analysis features."
+            "smithy.api#documentation": "List of optional analysis features. Comma-separated (`ocrHighResolution`, `languages`, `barcodes`, `formulas`, `keyValuePairs`, `styleFont`, `queryFields`)."
           }
         },
         "queryFields": {
-          "target": "com.azure.ai_document_intelligence#DocumentModelsAnalyzeDocumentFromStreamRequestQueryFieldsList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "queryFields",
-            "smithy.api#documentation": "List of additional fields to extract.  Ex. \"NumberOfGuests,StoreNumber\""
+            "smithy.api#documentation": "List of additional fields to extract.  Ex. \"NumberOfGuests,StoreNumber\" Comma-separated."
           }
         },
         "outputContentFormat": {
@@ -5920,10 +5920,10 @@
           }
         },
         "output": {
-          "target": "com.azure.ai_document_intelligence#DocumentModelsAnalyzeDocumentFromStreamRequestOutputList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "output",
-            "smithy.api#documentation": "Additional outputs to generate during analysis."
+            "smithy.api#documentation": "Additional outputs to generate during analysis. Comma-separated (`pdf`, `figures`)."
           }
         },
         "body": {

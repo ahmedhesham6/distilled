@@ -11,7 +11,6 @@ const __s: any[] = [];
 
 export type { AzureOpError, AzureOpContext };
 
-export type AddPersonGroupOperationLargePersonGroupPersonFaceRequestTargetFaceList = Array<number>;
 export type AddPersonGroupOperationLargePersonGroupPersonFaceRequestDetectionModel =
   | "detection_01"
   | "detection_02"
@@ -23,8 +22,8 @@ export interface AddPersonGroupOperationLargePersonGroupPersonFaceRequest {
   largePersonGroupId: string;
   /** ID of the person. */
   personId: string;
-  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. */
-  targetFace?: AddPersonGroupOperationLargePersonGroupPersonFaceRequestTargetFaceList;
+  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated. */
+  targetFace?: string;
   /** The 'detectionModel' associated with the detected faceIds. Supported 'detectionModel' values include 'detection_01', 'detection_02' and 'detection_03'. The default value is 'detection_01'. */
   detectionModel?:
     | AddPersonGroupOperationLargePersonGroupPersonFaceRequestDetectionModel
@@ -38,8 +37,6 @@ export interface AddFaceResult {
   /** Persisted Face ID of the added face, which is persisted and will not expire. Different from faceId which is created in "Detect" and will expire in 24 hours after the detection call. */
   persistedFaceId: string;
 }
-export type AddPersonGroupOperationLargePersonGroupPersonFaceFromUrlRequestTargetFaceList =
-  Array<number>;
 export type AddPersonGroupOperationLargePersonGroupPersonFaceFromUrlRequestDetectionModel =
   | "detection_01"
   | "detection_02"
@@ -51,8 +48,8 @@ export interface AddPersonGroupOperationLargePersonGroupPersonFaceFromUrlRequest
   largePersonGroupId: string;
   /** ID of the person. */
   personId: string;
-  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. */
-  targetFace?: AddPersonGroupOperationLargePersonGroupPersonFaceFromUrlRequestTargetFaceList;
+  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated. */
+  targetFace?: string;
   /** The 'detectionModel' associated with the detected faceIds. Supported 'detectionModel' values include 'detection_01', 'detection_02' and 'detection_03'. The default value is 'detection_01'. */
   detectionModel?:
     | AddPersonGroupOperationLargePersonGroupPersonFaceFromUrlRequestDetectionModel
@@ -62,7 +59,6 @@ export interface AddPersonGroupOperationLargePersonGroupPersonFaceFromUrlRequest
   /** URL of input image. */
   url: string;
 }
-export type AddPersonGroupOperationPersonGroupPersonFaceRequestTargetFaceList = Array<number>;
 export type AddPersonGroupOperationPersonGroupPersonFaceRequestDetectionModel =
   | "detection_01"
   | "detection_02"
@@ -74,8 +70,8 @@ export interface AddPersonGroupOperationPersonGroupPersonFaceRequest {
   personGroupId: string;
   /** ID of the person. */
   personId: string;
-  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. */
-  targetFace?: AddPersonGroupOperationPersonGroupPersonFaceRequestTargetFaceList;
+  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated. */
+  targetFace?: string;
   /** The 'detectionModel' associated with the detected faceIds. Supported 'detectionModel' values include 'detection_01', 'detection_02' and 'detection_03'. The default value is 'detection_01'. */
   detectionModel?:
     | AddPersonGroupOperationPersonGroupPersonFaceRequestDetectionModel
@@ -84,8 +80,6 @@ export interface AddPersonGroupOperationPersonGroupPersonFaceRequest {
   userData?: string;
   body: string;
 }
-export type AddPersonGroupOperationPersonGroupPersonFaceFromUrlRequestTargetFaceList =
-  Array<number>;
 export type AddPersonGroupOperationPersonGroupPersonFaceFromUrlRequestDetectionModel =
   | "detection_01"
   | "detection_02"
@@ -97,8 +91,8 @@ export interface AddPersonGroupOperationPersonGroupPersonFaceFromUrlRequest {
   personGroupId: string;
   /** ID of the person. */
   personId: string;
-  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. */
-  targetFace?: AddPersonGroupOperationPersonGroupPersonFaceFromUrlRequestTargetFaceList;
+  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated. */
+  targetFace?: string;
   /** The 'detectionModel' associated with the detected faceIds. Supported 'detectionModel' values include 'detection_01', 'detection_02' and 'detection_03'. The default value is 'detection_01'. */
   detectionModel?:
     | AddPersonGroupOperationPersonGroupPersonFaceFromUrlRequestDetectionModel
@@ -344,23 +338,6 @@ export type FaceDetectionOperationsDetectRequestRecognitionModel =
   | "recognition_02"
   | "recognition_03"
   | "recognition_04";
-export type FaceDetectionOperationsDetectRequestReturnFaceAttributesItem =
-  | "headPose"
-  | "glasses"
-  | "occlusion"
-  | "accessories"
-  | "blur"
-  | "exposure"
-  | "noise"
-  | "mask"
-  | "qualityForRecognition"
-  | "age"
-  | "smile"
-  | "facialHair"
-  | "hair";
-export type FaceDetectionOperationsDetectRequestReturnFaceAttributesList = Array<
-  FaceDetectionOperationsDetectRequestReturnFaceAttributesItem | (string & {})
->;
 export interface FaceDetectionOperationsDetectRequest {
   /** Supported Cognitive Services endpoints (protocol and hostname, for example: https://{resource-name}.cognitiveservices.azure.com). */
   endpoint: string;
@@ -370,8 +347,8 @@ export interface FaceDetectionOperationsDetectRequest {
   recognitionModel?: FaceDetectionOperationsDetectRequestRecognitionModel | (string & {});
   /** Return faceIds of the detected faces or not. The default value is true. */
   returnFaceId?: boolean;
-  /** Analyze and return the one or more specified face attributes in the comma-separated string like 'returnFaceAttributes=headPose,glasses'. Face attribute analysis has additional computational and time cost. */
-  returnFaceAttributes?: FaceDetectionOperationsDetectRequestReturnFaceAttributesList;
+  /** Analyze and return the one or more specified face attributes in the comma-separated string like 'returnFaceAttributes=headPose,glasses'. Face attribute analysis has additional computational and time cost. Comma-separated (`headPose`, `glasses`, `occlusion`, `accessories`, `blur`, `exposure`, `noise`, `mask`, `qualityForRecognition`, `age`, `smile`, `facialHair`, `hair`). */
+  returnFaceAttributes?: string;
   /** Return face landmarks of the detected faces or not. The default value is false. */
   returnFaceLandmarks?: boolean;
   /** Return 'recognitionModel' or not. The default value is false. This is only applicable when returnFaceId = true. */
@@ -609,23 +586,6 @@ export type FaceDetectionOperationsDetectFromSessionImageIdRequestRecognitionMod
   | "recognition_02"
   | "recognition_03"
   | "recognition_04";
-export type FaceDetectionOperationsDetectFromSessionImageIdRequestReturnFaceAttributesItem =
-  | "headPose"
-  | "glasses"
-  | "occlusion"
-  | "accessories"
-  | "blur"
-  | "exposure"
-  | "noise"
-  | "mask"
-  | "qualityForRecognition"
-  | "age"
-  | "smile"
-  | "facialHair"
-  | "hair";
-export type FaceDetectionOperationsDetectFromSessionImageIdRequestReturnFaceAttributesList = Array<
-  FaceDetectionOperationsDetectFromSessionImageIdRequestReturnFaceAttributesItem | (string & {})
->;
 export interface FaceDetectionOperationsDetectFromSessionImageIdRequest {
   /** Supported Cognitive Services endpoints (protocol and hostname, for example: https://{resource-name}.cognitiveservices.azure.com). */
   endpoint: string;
@@ -639,8 +599,8 @@ export interface FaceDetectionOperationsDetectFromSessionImageIdRequest {
     | (string & {});
   /** Return faceIds of the detected faces or not. The default value is true. */
   returnFaceId?: boolean;
-  /** Analyze and return the one or more specified face attributes in the comma-separated string like 'returnFaceAttributes=headPose,glasses'. Face attribute analysis has additional computational and time cost. */
-  returnFaceAttributes?: FaceDetectionOperationsDetectFromSessionImageIdRequestReturnFaceAttributesList;
+  /** Analyze and return the one or more specified face attributes in the comma-separated string like 'returnFaceAttributes=headPose,glasses'. Face attribute analysis has additional computational and time cost. Comma-separated (`headPose`, `glasses`, `occlusion`, `accessories`, `blur`, `exposure`, `noise`, `mask`, `qualityForRecognition`, `age`, `smile`, `facialHair`, `hair`). */
+  returnFaceAttributes?: string;
   /** Return face landmarks of the detected faces or not. The default value is false. */
   returnFaceLandmarks?: boolean;
   /** Return 'recognitionModel' or not. The default value is false. This is only applicable when returnFaceId = true. */
@@ -663,23 +623,6 @@ export type FaceDetectionOperationsDetectFromUrlRequestRecognitionModel =
   | "recognition_02"
   | "recognition_03"
   | "recognition_04";
-export type FaceDetectionOperationsDetectFromUrlRequestReturnFaceAttributesItem =
-  | "headPose"
-  | "glasses"
-  | "occlusion"
-  | "accessories"
-  | "blur"
-  | "exposure"
-  | "noise"
-  | "mask"
-  | "qualityForRecognition"
-  | "age"
-  | "smile"
-  | "facialHair"
-  | "hair";
-export type FaceDetectionOperationsDetectFromUrlRequestReturnFaceAttributesList = Array<
-  FaceDetectionOperationsDetectFromUrlRequestReturnFaceAttributesItem | (string & {})
->;
 export interface FaceDetectionOperationsDetectFromUrlRequest {
   /** Supported Cognitive Services endpoints (protocol and hostname, for example: https://{resource-name}.cognitiveservices.azure.com). */
   endpoint: string;
@@ -689,8 +632,8 @@ export interface FaceDetectionOperationsDetectFromUrlRequest {
   recognitionModel?: FaceDetectionOperationsDetectFromUrlRequestRecognitionModel | (string & {});
   /** Return faceIds of the detected faces or not. The default value is true. */
   returnFaceId?: boolean;
-  /** Analyze and return the one or more specified face attributes in the comma-separated string like 'returnFaceAttributes=headPose,glasses'. Face attribute analysis has additional computational and time cost. */
-  returnFaceAttributes?: FaceDetectionOperationsDetectFromUrlRequestReturnFaceAttributesList;
+  /** Analyze and return the one or more specified face attributes in the comma-separated string like 'returnFaceAttributes=headPose,glasses'. Face attribute analysis has additional computational and time cost. Comma-separated (`headPose`, `glasses`, `occlusion`, `accessories`, `blur`, `exposure`, `noise`, `mask`, `qualityForRecognition`, `age`, `smile`, `facialHair`, `hair`). */
+  returnFaceAttributes?: string;
   /** Return face landmarks of the detected faces or not. The default value is false. */
   returnFaceLandmarks?: boolean;
   /** Return 'recognitionModel' or not. The default value is false. This is only applicable when returnFaceId = true. */
@@ -703,7 +646,6 @@ export interface FaceDetectionOperationsDetectFromUrlRequest {
 export type FaceDetectionOperationsDetectFromUrlResponseBodyList = Array<FaceDetectionResult>;
 export type FaceDetectionOperationsDetectFromUrlResponse =
   FaceDetectionOperationsDetectFromUrlResponseBodyList;
-export type FaceListOperationsAddFaceListFaceRequestTargetFaceList = Array<number>;
 export type FaceListOperationsAddFaceListFaceRequestDetectionModel =
   | "detection_01"
   | "detection_02"
@@ -713,15 +655,14 @@ export interface FaceListOperationsAddFaceListFaceRequest {
   endpoint: string;
   /** Valid character is letter in lower case or digit or '-' or '_', maximum length is 64. */
   faceListId: string;
-  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. */
-  targetFace?: FaceListOperationsAddFaceListFaceRequestTargetFaceList;
+  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated. */
+  targetFace?: string;
   /** The 'detectionModel' associated with the detected faceIds. Supported 'detectionModel' values include 'detection_01', 'detection_02' and 'detection_03'. The default value is 'detection_01'. */
   detectionModel?: FaceListOperationsAddFaceListFaceRequestDetectionModel | (string & {});
   /** User-provided data attached to the face. The size limit is 1K. */
   userData?: string;
   body: string;
 }
-export type FaceListOperationsAddFaceListFaceFromUrlRequestTargetFaceList = Array<number>;
 export type FaceListOperationsAddFaceListFaceFromUrlRequestDetectionModel =
   | "detection_01"
   | "detection_02"
@@ -731,8 +672,8 @@ export interface FaceListOperationsAddFaceListFaceFromUrlRequest {
   endpoint: string;
   /** Valid character is letter in lower case or digit or '-' or '_', maximum length is 64. */
   faceListId: string;
-  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. */
-  targetFace?: FaceListOperationsAddFaceListFaceFromUrlRequestTargetFaceList;
+  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated. */
+  targetFace?: string;
   /** The 'detectionModel' associated with the detected faceIds. Supported 'detectionModel' values include 'detection_01', 'detection_02' and 'detection_03'. The default value is 'detection_01'. */
   detectionModel?: FaceListOperationsAddFaceListFaceFromUrlRequestDetectionModel | (string & {});
   /** User-provided data attached to the face. The size limit is 1K. */
@@ -740,7 +681,6 @@ export interface FaceListOperationsAddFaceListFaceFromUrlRequest {
   /** URL of input image. */
   url: string;
 }
-export type FaceListOperationsAddLargeFaceListFaceRequestTargetFaceList = Array<number>;
 export type FaceListOperationsAddLargeFaceListFaceRequestDetectionModel =
   | "detection_01"
   | "detection_02"
@@ -750,15 +690,14 @@ export interface FaceListOperationsAddLargeFaceListFaceRequest {
   endpoint: string;
   /** Valid character is letter in lower case or digit or '-' or '_', maximum length is 64. */
   largeFaceListId: string;
-  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. */
-  targetFace?: FaceListOperationsAddLargeFaceListFaceRequestTargetFaceList;
+  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated. */
+  targetFace?: string;
   /** The 'detectionModel' associated with the detected faceIds. Supported 'detectionModel' values include 'detection_01', 'detection_02' and 'detection_03'. The default value is 'detection_01'. */
   detectionModel?: FaceListOperationsAddLargeFaceListFaceRequestDetectionModel | (string & {});
   /** User-provided data attached to the face. The size limit is 1K. */
   userData?: string;
   body: string;
 }
-export type FaceListOperationsAddLargeFaceListFaceFromUrlRequestTargetFaceList = Array<number>;
 export type FaceListOperationsAddLargeFaceListFaceFromUrlRequestDetectionModel =
   | "detection_01"
   | "detection_02"
@@ -768,8 +707,8 @@ export interface FaceListOperationsAddLargeFaceListFaceFromUrlRequest {
   endpoint: string;
   /** Valid character is letter in lower case or digit or '-' or '_', maximum length is 64. */
   largeFaceListId: string;
-  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. */
-  targetFace?: FaceListOperationsAddLargeFaceListFaceFromUrlRequestTargetFaceList;
+  /** A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated. */
+  targetFace?: string;
   /** The 'detectionModel' associated with the detected faceIds. Supported 'detectionModel' values include 'detection_01', 'detection_02' and 'detection_03'. The default value is 'detection_01'. */
   detectionModel?:
     | FaceListOperationsAddLargeFaceListFaceFromUrlRequestDetectionModel
@@ -1630,7 +1569,7 @@ export const AddPersonGroupOperationLargePersonGroupPersonFace: API.OperationMet
     __c0,
     0,
   ) as any as S.Schema<AddPersonGroupOperationLargePersonGroupPersonFaceRequest>,
-  output: __S(33, __c1, 1) as any as S.Schema<AddFaceResult>,
+  output: __S(32, __c1, 0) as any as S.Schema<AddFaceResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1649,7 +1588,7 @@ export const AddPersonGroupOperationLargePersonGroupPersonFaceFromUrl: API.Opera
     __c2,
     0,
   ) as any as S.Schema<AddPersonGroupOperationLargePersonGroupPersonFaceFromUrlRequest>,
-  output: __S(33, __c1, 1) as any as S.Schema<AddFaceResult>,
+  output: __S(32, __c1, 0) as any as S.Schema<AddFaceResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1664,7 +1603,7 @@ export const AddPersonGroupOperationPersonGroupPersonFace: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(448, __c14, 0) as any as S.Schema<AddPersonGroupOperationPersonGroupPersonFaceRequest>,
-  output: __S(33, __c1, 1) as any as S.Schema<AddFaceResult>,
+  output: __S(32, __c1, 0) as any as S.Schema<AddFaceResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1683,7 +1622,7 @@ export const AddPersonGroupOperationPersonGroupPersonFaceFromUrl: API.OperationM
     __c27,
     0,
   ) as any as S.Schema<AddPersonGroupOperationPersonGroupPersonFaceFromUrlRequest>,
-  output: __S(33, __c1, 1) as any as S.Schema<AddFaceResult>,
+  output: __S(32, __c1, 0) as any as S.Schema<AddFaceResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1930,7 +1869,7 @@ export const FaceDetectionOperationsDetect: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(288, __c9, 0) as any as S.Schema<FaceDetectionOperationsDetectRequest>,
-  output: __S(338, __c10, 18) as any as S.Schema<FaceDetectionOperationsDetectResponse>,
+  output: __S(337, __c10, 17) as any as S.Schema<FaceDetectionOperationsDetectResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1950,9 +1889,9 @@ export const FaceDetectionOperationsDetectFromSessionImageId: API.OperationMetho
     0,
   ) as any as S.Schema<FaceDetectionOperationsDetectFromSessionImageIdRequest>,
   output: __S(
-    338,
+    337,
     __c10,
-    18,
+    17,
   ) as any as S.Schema<FaceDetectionOperationsDetectFromSessionImageIdResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
@@ -1968,7 +1907,7 @@ export const FaceDetectionOperationsDetectFromUrl: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(384, __c12, 0) as any as S.Schema<FaceDetectionOperationsDetectFromUrlRequest>,
-  output: __S(338, __c10, 18) as any as S.Schema<FaceDetectionOperationsDetectFromUrlResponse>,
+  output: __S(337, __c10, 17) as any as S.Schema<FaceDetectionOperationsDetectFromUrlResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1983,7 +1922,7 @@ export const FaceListOperationsAddFaceListFace: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(416, __c13, 0) as any as S.Schema<FaceListOperationsAddFaceListFaceRequest>,
-  output: __S(33, __c1, 1) as any as S.Schema<AddFaceResult>,
+  output: __S(32, __c1, 0) as any as S.Schema<AddFaceResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1998,7 +1937,7 @@ export const FaceListOperationsAddFaceListFaceFromUrl: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(480, __c15, 0) as any as S.Schema<FaceListOperationsAddFaceListFaceFromUrlRequest>,
-  output: __S(33, __c1, 1) as any as S.Schema<AddFaceResult>,
+  output: __S(32, __c1, 0) as any as S.Schema<AddFaceResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -2013,7 +1952,7 @@ export const FaceListOperationsAddLargeFaceListFace: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(512, __c16, 0) as any as S.Schema<FaceListOperationsAddLargeFaceListFaceRequest>,
-  output: __S(33, __c1, 1) as any as S.Schema<AddFaceResult>,
+  output: __S(32, __c1, 0) as any as S.Schema<AddFaceResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -2032,7 +1971,7 @@ export const FaceListOperationsAddLargeFaceListFaceFromUrl: API.OperationMethod<
     __c17,
     0,
   ) as any as S.Schema<FaceListOperationsAddLargeFaceListFaceFromUrlRequest>,
-  output: __S(33, __c1, 1) as any as S.Schema<AddFaceResult>,
+  output: __S(32, __c1, 0) as any as S.Schema<AddFaceResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -3005,7 +2944,7 @@ function __c0(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           largePersonGroupId: S.String.pipe(T.Label()),
           personId: S.String.pipe(T.Label()),
-          targetFace: S.optional(__S(32, __c1, 0).pipe(T.Query())),
+          targetFace: S.optional(S.String.pipe(T.Query())),
           detectionModel: S.optional(S.String.pipe(T.Query())),
           userData: S.optional(S.String.pipe(T.Query())),
           body: S.String.pipe(T.HttpBody()),
@@ -3025,8 +2964,6 @@ function __c0(j: number): any {
 function __c1(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(S.Number);
-    case 1:
       return S.suspend(() =>
         S.Struct({
           persistedFaceId: S.String,
@@ -3042,7 +2979,7 @@ function __c2(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           largePersonGroupId: S.String.pipe(T.Label()),
           personId: S.String.pipe(T.Label()),
-          targetFace: S.optional(__S(32, __c1, 0).pipe(T.Query())),
+          targetFace: S.optional(S.String.pipe(T.Query())),
           detectionModel: S.optional(S.String.pipe(T.Query())),
           userData: S.optional(S.String.pipe(T.Query())),
           url: S.String,
@@ -3194,7 +3131,7 @@ function __c9(j: number): any {
           detectionModel: S.optional(S.String.pipe(T.Query())),
           recognitionModel: S.optional(S.String.pipe(T.Query())),
           returnFaceId: S.optional(S.Boolean.pipe(T.Query())),
-          returnFaceAttributes: S.optional(__S(320, __c10, 0).pipe(T.Query())),
+          returnFaceAttributes: S.optional(S.String.pipe(T.Query())),
           returnFaceLandmarks: S.optional(S.Boolean.pipe(T.Query())),
           returnRecognitionModel: S.optional(S.Boolean.pipe(T.Query())),
           faceIdTimeToLive: S.optional(S.Number.pipe(T.Query())),
@@ -3215,47 +3152,45 @@ function __c9(j: number): any {
 function __c10(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(S.String);
-    case 1:
       return S.suspend(() =>
         S.Struct({
           x: S.Number,
           y: S.Number,
         }),
       ).annotate({ identifier: "LandmarkCoordinate" });
-    case 2:
+    case 1:
       return S.suspend(() =>
         S.Struct({
-          pupilLeft: __S(321, __c10, 1),
-          pupilRight: __S(321, __c10, 1),
-          noseTip: __S(321, __c10, 1),
-          mouthLeft: __S(321, __c10, 1),
-          mouthRight: __S(321, __c10, 1),
-          eyebrowLeftOuter: __S(321, __c10, 1),
-          eyebrowLeftInner: __S(321, __c10, 1),
-          eyeLeftOuter: __S(321, __c10, 1),
-          eyeLeftTop: __S(321, __c10, 1),
-          eyeLeftBottom: __S(321, __c10, 1),
-          eyeLeftInner: __S(321, __c10, 1),
-          eyebrowRightInner: __S(321, __c10, 1),
-          eyebrowRightOuter: __S(321, __c10, 1),
-          eyeRightInner: __S(321, __c10, 1),
-          eyeRightTop: __S(321, __c10, 1),
-          eyeRightBottom: __S(321, __c10, 1),
-          eyeRightOuter: __S(321, __c10, 1),
-          noseRootLeft: __S(321, __c10, 1),
-          noseRootRight: __S(321, __c10, 1),
-          noseLeftAlarTop: __S(321, __c10, 1),
-          noseRightAlarTop: __S(321, __c10, 1),
-          noseLeftAlarOutTip: __S(321, __c10, 1),
-          noseRightAlarOutTip: __S(321, __c10, 1),
-          upperLipTop: __S(321, __c10, 1),
-          upperLipBottom: __S(321, __c10, 1),
-          underLipTop: __S(321, __c10, 1),
-          underLipBottom: __S(321, __c10, 1),
+          pupilLeft: __S(320, __c10, 0),
+          pupilRight: __S(320, __c10, 0),
+          noseTip: __S(320, __c10, 0),
+          mouthLeft: __S(320, __c10, 0),
+          mouthRight: __S(320, __c10, 0),
+          eyebrowLeftOuter: __S(320, __c10, 0),
+          eyebrowLeftInner: __S(320, __c10, 0),
+          eyeLeftOuter: __S(320, __c10, 0),
+          eyeLeftTop: __S(320, __c10, 0),
+          eyeLeftBottom: __S(320, __c10, 0),
+          eyeLeftInner: __S(320, __c10, 0),
+          eyebrowRightInner: __S(320, __c10, 0),
+          eyebrowRightOuter: __S(320, __c10, 0),
+          eyeRightInner: __S(320, __c10, 0),
+          eyeRightTop: __S(320, __c10, 0),
+          eyeRightBottom: __S(320, __c10, 0),
+          eyeRightOuter: __S(320, __c10, 0),
+          noseRootLeft: __S(320, __c10, 0),
+          noseRootRight: __S(320, __c10, 0),
+          noseLeftAlarTop: __S(320, __c10, 0),
+          noseRightAlarTop: __S(320, __c10, 0),
+          noseLeftAlarOutTip: __S(320, __c10, 0),
+          noseRightAlarOutTip: __S(320, __c10, 0),
+          upperLipTop: __S(320, __c10, 0),
+          upperLipBottom: __S(320, __c10, 0),
+          underLipTop: __S(320, __c10, 0),
+          underLipBottom: __S(320, __c10, 0),
         }),
       ).annotate({ identifier: "FaceLandmarks" });
-    case 3:
+    case 2:
       return S.suspend(() =>
         S.Struct({
           moustache: S.Number,
@@ -3263,7 +3198,7 @@ function __c10(j: number): any {
           sideburns: S.Number,
         }),
       ).annotate({ identifier: "FacialHair" });
-    case 4:
+    case 3:
       return S.suspend(() =>
         S.Struct({
           pitch: S.Number,
@@ -3271,24 +3206,24 @@ function __c10(j: number): any {
           yaw: S.Number,
         }),
       ).annotate({ identifier: "HeadPose" });
-    case 5:
+    case 4:
       return S.suspend(() =>
         S.Struct({
           color: S.String,
           confidence: S.Number,
         }),
       ).annotate({ identifier: "HairColor" });
+    case 5:
+      return S.Array(__S(324, __c10, 4));
     case 6:
-      return S.Array(__S(325, __c10, 5));
-    case 7:
       return S.suspend(() =>
         S.Struct({
           bald: S.Number,
           invisible: S.Boolean,
-          hairColor: __S(326, __c10, 6),
+          hairColor: __S(325, __c10, 5),
         }),
       ).annotate({ identifier: "HairProperties" });
-    case 8:
+    case 7:
       return S.suspend(() =>
         S.Struct({
           foreheadOccluded: S.Boolean,
@@ -3296,75 +3231,75 @@ function __c10(j: number): any {
           mouthOccluded: S.Boolean,
         }),
       ).annotate({ identifier: "OcclusionProperties" });
-    case 9:
+    case 8:
       return S.suspend(() =>
         S.Struct({
           type: S.String,
           confidence: S.Number,
         }),
       ).annotate({ identifier: "AccessoryItem" });
+    case 9:
+      return S.Array(__S(328, __c10, 8));
     case 10:
-      return S.Array(__S(329, __c10, 9));
-    case 11:
       return S.suspend(() =>
         S.Struct({
           blurLevel: S.String,
           value: S.Number,
         }),
       ).annotate({ identifier: "BlurProperties" });
-    case 12:
+    case 11:
       return S.suspend(() =>
         S.Struct({
           exposureLevel: S.String,
           value: S.Number,
         }),
       ).annotate({ identifier: "ExposureProperties" });
-    case 13:
+    case 12:
       return S.suspend(() =>
         S.Struct({
           noiseLevel: S.String,
           value: S.Number,
         }),
       ).annotate({ identifier: "NoiseProperties" });
-    case 14:
+    case 13:
       return S.suspend(() =>
         S.Struct({
           noseAndMouthCovered: S.Boolean,
           type: S.String,
         }),
       ).annotate({ identifier: "MaskProperties" });
-    case 15:
+    case 14:
       return S.suspend(() =>
         S.Struct({
           age: S.optional(S.Number),
           smile: S.optional(S.Number),
-          facialHair: S.optional(__S(323, __c10, 3)),
+          facialHair: S.optional(__S(322, __c10, 2)),
           glasses: S.optional(S.String),
-          headPose: S.optional(__S(324, __c10, 4)),
-          hair: S.optional(__S(327, __c10, 7)),
-          occlusion: S.optional(__S(328, __c10, 8)),
-          accessories: S.optional(__S(330, __c10, 10)),
-          blur: S.optional(__S(331, __c10, 11)),
-          exposure: S.optional(__S(332, __c10, 12)),
-          noise: S.optional(__S(333, __c10, 13)),
-          mask: S.optional(__S(334, __c10, 14)),
+          headPose: S.optional(__S(323, __c10, 3)),
+          hair: S.optional(__S(326, __c10, 6)),
+          occlusion: S.optional(__S(327, __c10, 7)),
+          accessories: S.optional(__S(329, __c10, 9)),
+          blur: S.optional(__S(330, __c10, 10)),
+          exposure: S.optional(__S(331, __c10, 11)),
+          noise: S.optional(__S(332, __c10, 12)),
+          mask: S.optional(__S(333, __c10, 13)),
           qualityForRecognition: S.optional(S.String),
         }),
       ).annotate({ identifier: "FaceAttributes" });
-    case 16:
+    case 15:
       return S.suspend(() =>
         S.Struct({
           faceId: S.optional(S.String),
           recognitionModel: S.optional(S.String),
           faceRectangle: __S(1408, __c44, 0),
-          faceLandmarks: S.optional(__S(322, __c10, 2)),
-          faceAttributes: S.optional(__S(335, __c10, 15)),
+          faceLandmarks: S.optional(__S(321, __c10, 1)),
+          faceAttributes: S.optional(__S(334, __c10, 14)),
         }),
       ).annotate({ identifier: "FaceDetectionResult" });
+    case 16:
+      return S.Array(__S(335, __c10, 15));
     case 17:
-      return S.Array(__S(336, __c10, 16));
-    case 18:
-      return S.suspend(() => __S(337, __c10, 17).pipe(T.RawResponseRoot())).annotate({
+      return S.suspend(() => __S(336, __c10, 16).pipe(T.RawResponseRoot())).annotate({
         identifier: "FaceDetectionOperationsDetectResponse",
       });
   }
@@ -3378,7 +3313,7 @@ function __c11(j: number): any {
           detectionModel: S.optional(S.String.pipe(T.Query())),
           recognitionModel: S.optional(S.String.pipe(T.Query())),
           returnFaceId: S.optional(S.Boolean.pipe(T.Query())),
-          returnFaceAttributes: S.optional(__S(320, __c10, 0).pipe(T.Query())),
+          returnFaceAttributes: S.optional(S.String.pipe(T.Query())),
           returnFaceLandmarks: S.optional(S.Boolean.pipe(T.Query())),
           returnRecognitionModel: S.optional(S.Boolean.pipe(T.Query())),
           faceIdTimeToLive: S.optional(S.Number.pipe(T.Query())),
@@ -3405,7 +3340,7 @@ function __c12(j: number): any {
           detectionModel: S.optional(S.String.pipe(T.Query())),
           recognitionModel: S.optional(S.String.pipe(T.Query())),
           returnFaceId: S.optional(S.Boolean.pipe(T.Query())),
-          returnFaceAttributes: S.optional(__S(320, __c10, 0).pipe(T.Query())),
+          returnFaceAttributes: S.optional(S.String.pipe(T.Query())),
           returnFaceLandmarks: S.optional(S.Boolean.pipe(T.Query())),
           returnRecognitionModel: S.optional(S.Boolean.pipe(T.Query())),
           faceIdTimeToLive: S.optional(S.Number.pipe(T.Query())),
@@ -3430,7 +3365,7 @@ function __c13(j: number): any {
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
           faceListId: S.String.pipe(T.Label()),
-          targetFace: S.optional(__S(32, __c1, 0).pipe(T.Query())),
+          targetFace: S.optional(S.String.pipe(T.Query())),
           detectionModel: S.optional(S.String.pipe(T.Query())),
           userData: S.optional(S.String.pipe(T.Query())),
           body: S.String.pipe(T.HttpBody()),
@@ -3455,7 +3390,7 @@ function __c14(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           personGroupId: S.String.pipe(T.Label()),
           personId: S.String.pipe(T.Label()),
-          targetFace: S.optional(__S(32, __c1, 0).pipe(T.Query())),
+          targetFace: S.optional(S.String.pipe(T.Query())),
           detectionModel: S.optional(S.String.pipe(T.Query())),
           userData: S.optional(S.String.pipe(T.Query())),
           body: S.String.pipe(T.HttpBody()),
@@ -3479,7 +3414,7 @@ function __c15(j: number): any {
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
           faceListId: S.String.pipe(T.Label()),
-          targetFace: S.optional(__S(32, __c1, 0).pipe(T.Query())),
+          targetFace: S.optional(S.String.pipe(T.Query())),
           detectionModel: S.optional(S.String.pipe(T.Query())),
           userData: S.optional(S.String.pipe(T.Query())),
           url: S.String,
@@ -3503,7 +3438,7 @@ function __c16(j: number): any {
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
           largeFaceListId: S.String.pipe(T.Label()),
-          targetFace: S.optional(__S(32, __c1, 0).pipe(T.Query())),
+          targetFace: S.optional(S.String.pipe(T.Query())),
           detectionModel: S.optional(S.String.pipe(T.Query())),
           userData: S.optional(S.String.pipe(T.Query())),
           body: S.String.pipe(T.HttpBody()),
@@ -3527,7 +3462,7 @@ function __c17(j: number): any {
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
           largeFaceListId: S.String.pipe(T.Label()),
-          targetFace: S.optional(__S(32, __c1, 0).pipe(T.Query())),
+          targetFace: S.optional(S.String.pipe(T.Query())),
           detectionModel: S.optional(S.String.pipe(T.Query())),
           userData: S.optional(S.String.pipe(T.Query())),
           url: S.String,
@@ -3728,7 +3663,7 @@ function __c27(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           personGroupId: S.String.pipe(T.Label()),
           personId: S.String.pipe(T.Label()),
-          targetFace: S.optional(__S(32, __c1, 0).pipe(T.Query())),
+          targetFace: S.optional(S.String.pipe(T.Query())),
           detectionModel: S.optional(S.String.pipe(T.Query())),
           userData: S.optional(S.String.pipe(T.Query())),
           url: S.String,

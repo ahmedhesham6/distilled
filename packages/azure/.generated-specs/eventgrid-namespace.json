@@ -35,7 +35,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2024-06-01"
+          "apiVersion": "2024-06-01",
+          "jsonContentType": "application/cloudevents-batch+json; charset=utf-8"
         },
         "smithy.api#documentation": "Publish a batch of Cloud Events to a namespace topic."
       }
@@ -892,7 +893,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2024-06-01"
+          "apiVersion": "2024-06-01",
+          "jsonContentType": "application/cloudevents+json; charset=utf-8"
         },
         "smithy.api#documentation": "Publish a single Cloud Event to a namespace topic."
       }

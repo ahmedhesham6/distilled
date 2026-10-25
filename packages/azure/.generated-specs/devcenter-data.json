@@ -1763,7 +1763,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-02-01"
+          "apiVersion": "2025-02-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Partially updates an environment."
       }

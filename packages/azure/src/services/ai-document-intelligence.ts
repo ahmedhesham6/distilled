@@ -231,23 +231,7 @@ export type DocumentModelsAnalyzeBatchDocumentsRequestStringIndexType =
   | "textElements"
   | "unicodeCodePoint"
   | "utf16CodeUnit";
-export type DocumentModelsAnalyzeBatchDocumentsRequestFeaturesItem =
-  | "ocrHighResolution"
-  | "languages"
-  | "barcodes"
-  | "formulas"
-  | "keyValuePairs"
-  | "styleFont"
-  | "queryFields";
-export type DocumentModelsAnalyzeBatchDocumentsRequestFeaturesList = Array<
-  DocumentModelsAnalyzeBatchDocumentsRequestFeaturesItem | (string & {})
->;
-export type DocumentModelsAnalyzeBatchDocumentsRequestQueryFieldsList = Array<string>;
 export type DocumentModelsAnalyzeBatchDocumentsRequestOutputContentFormat = "text" | "markdown";
-export type DocumentModelsAnalyzeBatchDocumentsRequestOutputItem = "pdf" | "figures";
-export type DocumentModelsAnalyzeBatchDocumentsRequestOutputList = Array<
-  DocumentModelsAnalyzeBatchDocumentsRequestOutputItem | (string & {})
->;
 export interface DocumentModelsAnalyzeBatchDocumentsRequest {
   /** The Document Intelligence service endpoint. */
   endpoint: string;
@@ -259,16 +243,16 @@ export interface DocumentModelsAnalyzeBatchDocumentsRequest {
   locale?: string;
   /** Method used to compute string offset and length. */
   stringIndexType?: DocumentModelsAnalyzeBatchDocumentsRequestStringIndexType | (string & {});
-  /** List of optional analysis features. */
-  features?: DocumentModelsAnalyzeBatchDocumentsRequestFeaturesList;
-  /** List of additional fields to extract. Ex. "NumberOfGuests,StoreNumber" */
-  queryFields?: DocumentModelsAnalyzeBatchDocumentsRequestQueryFieldsList;
+  /** List of optional analysis features. Comma-separated (`ocrHighResolution`, `languages`, `barcodes`, `formulas`, `keyValuePairs`, `styleFont`, `queryFields`). */
+  features?: string;
+  /** List of additional fields to extract. Ex. "NumberOfGuests,StoreNumber" Comma-separated. */
+  queryFields?: string;
   /** Format of the analyze result top-level content. */
   outputContentFormat?:
     | DocumentModelsAnalyzeBatchDocumentsRequestOutputContentFormat
     | (string & {});
-  /** Additional outputs to generate during analysis. */
-  output?: DocumentModelsAnalyzeBatchDocumentsRequestOutputList;
+  /** Additional outputs to generate during analysis. Comma-separated (`pdf`, `figures`). */
+  output?: string;
   /** Azure Blob Storage location containing the batch documents. Either azureBlobSource or azureBlobFileListSource must be specified. */
   azureBlobSource?: AzureBlobContentSource;
   /** Azure Blob Storage file list specifying the batch documents. Either azureBlobSource or azureBlobFileListSource must be specified. */
@@ -290,23 +274,7 @@ export type DocumentModelsAnalyzeDocumentRequestStringIndexType =
   | "textElements"
   | "unicodeCodePoint"
   | "utf16CodeUnit";
-export type DocumentModelsAnalyzeDocumentRequestFeaturesItem =
-  | "ocrHighResolution"
-  | "languages"
-  | "barcodes"
-  | "formulas"
-  | "keyValuePairs"
-  | "styleFont"
-  | "queryFields";
-export type DocumentModelsAnalyzeDocumentRequestFeaturesList = Array<
-  DocumentModelsAnalyzeDocumentRequestFeaturesItem | (string & {})
->;
-export type DocumentModelsAnalyzeDocumentRequestQueryFieldsList = Array<string>;
 export type DocumentModelsAnalyzeDocumentRequestOutputContentFormat = "text" | "markdown";
-export type DocumentModelsAnalyzeDocumentRequestOutputItem = "pdf" | "figures";
-export type DocumentModelsAnalyzeDocumentRequestOutputList = Array<
-  DocumentModelsAnalyzeDocumentRequestOutputItem | (string & {})
->;
 export interface DocumentModelsAnalyzeDocumentRequest {
   /** The Document Intelligence service endpoint. */
   endpoint: string;
@@ -318,14 +286,14 @@ export interface DocumentModelsAnalyzeDocumentRequest {
   locale?: string;
   /** Method used to compute string offset and length. */
   stringIndexType?: DocumentModelsAnalyzeDocumentRequestStringIndexType | (string & {});
-  /** List of optional analysis features. */
-  features?: DocumentModelsAnalyzeDocumentRequestFeaturesList;
-  /** List of additional fields to extract. Ex. "NumberOfGuests,StoreNumber" */
-  queryFields?: DocumentModelsAnalyzeDocumentRequestQueryFieldsList;
+  /** List of optional analysis features. Comma-separated (`ocrHighResolution`, `languages`, `barcodes`, `formulas`, `keyValuePairs`, `styleFont`, `queryFields`). */
+  features?: string;
+  /** List of additional fields to extract. Ex. "NumberOfGuests,StoreNumber" Comma-separated. */
+  queryFields?: string;
   /** Format of the analyze result top-level content. */
   outputContentFormat?: DocumentModelsAnalyzeDocumentRequestOutputContentFormat | (string & {});
-  /** Additional outputs to generate during analysis. */
-  output?: DocumentModelsAnalyzeDocumentRequestOutputList;
+  /** Additional outputs to generate during analysis. Comma-separated (`pdf`, `figures`). */
+  output?: string;
   /** Document URL to analyze. Either urlSource or base64Source must be specified. */
   urlSource?: string;
   /** Base64 encoding of the document to analyze. Either urlSource or base64Source must be specified. */
@@ -341,23 +309,7 @@ export type DocumentModelsAnalyzeDocumentFromStreamRequestStringIndexType =
   | "textElements"
   | "unicodeCodePoint"
   | "utf16CodeUnit";
-export type DocumentModelsAnalyzeDocumentFromStreamRequestFeaturesItem =
-  | "ocrHighResolution"
-  | "languages"
-  | "barcodes"
-  | "formulas"
-  | "keyValuePairs"
-  | "styleFont"
-  | "queryFields";
-export type DocumentModelsAnalyzeDocumentFromStreamRequestFeaturesList = Array<
-  DocumentModelsAnalyzeDocumentFromStreamRequestFeaturesItem | (string & {})
->;
-export type DocumentModelsAnalyzeDocumentFromStreamRequestQueryFieldsList = Array<string>;
 export type DocumentModelsAnalyzeDocumentFromStreamRequestOutputContentFormat = "text" | "markdown";
-export type DocumentModelsAnalyzeDocumentFromStreamRequestOutputItem = "pdf" | "figures";
-export type DocumentModelsAnalyzeDocumentFromStreamRequestOutputList = Array<
-  DocumentModelsAnalyzeDocumentFromStreamRequestOutputItem | (string & {})
->;
 export interface DocumentModelsAnalyzeDocumentFromStreamRequest {
   /** The Document Intelligence service endpoint. */
   endpoint: string;
@@ -369,16 +321,16 @@ export interface DocumentModelsAnalyzeDocumentFromStreamRequest {
   locale?: string;
   /** Method used to compute string offset and length. */
   stringIndexType?: DocumentModelsAnalyzeDocumentFromStreamRequestStringIndexType | (string & {});
-  /** List of optional analysis features. */
-  features?: DocumentModelsAnalyzeDocumentFromStreamRequestFeaturesList;
-  /** List of additional fields to extract. Ex. "NumberOfGuests,StoreNumber" */
-  queryFields?: DocumentModelsAnalyzeDocumentFromStreamRequestQueryFieldsList;
+  /** List of optional analysis features. Comma-separated (`ocrHighResolution`, `languages`, `barcodes`, `formulas`, `keyValuePairs`, `styleFont`, `queryFields`). */
+  features?: string;
+  /** List of additional fields to extract. Ex. "NumberOfGuests,StoreNumber" Comma-separated. */
+  queryFields?: string;
   /** Format of the analyze result top-level content. */
   outputContentFormat?:
     | DocumentModelsAnalyzeDocumentFromStreamRequestOutputContentFormat
     | (string & {});
-  /** Additional outputs to generate during analysis. */
-  output?: DocumentModelsAnalyzeDocumentFromStreamRequestOutputList;
+  /** Additional outputs to generate during analysis. Comma-separated (`pdf`, `figures`). */
+  output?: string;
   body: string;
 }
 export interface DocumentModelsAnalyzeDocumentFromStreamResponse {
@@ -1637,8 +1589,8 @@ export const DeleteDocumentClassifierClassifier: API.OperationMethod<
   DeleteDocumentClassifierClassifierError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(704, __c22, 0) as any as S.Schema<DeleteDocumentClassifierClassifierRequest>,
-  output: __S(736, __c23, 0) as any as S.Schema<DeleteDocumentClassifierClassifierResponse>,
+  input: __S(672, __c21, 0) as any as S.Schema<DeleteDocumentClassifierClassifierRequest>,
+  output: __S(704, __c22, 0) as any as S.Schema<DeleteDocumentClassifierClassifierResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1652,8 +1604,8 @@ export const DeleteDocumentModelAnalyzeBatchResult: API.OperationMethod<
   DeleteDocumentModelAnalyzeBatchResultError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(1248, __c39, 0) as any as S.Schema<DeleteDocumentModelAnalyzeBatchResultRequest>,
-  output: __S(736, __c23, 0) as any as S.Schema<DeleteDocumentModelAnalyzeBatchResultResponse>,
+  input: __S(1216, __c38, 0) as any as S.Schema<DeleteDocumentModelAnalyzeBatchResultRequest>,
+  output: __S(704, __c22, 0) as any as S.Schema<DeleteDocumentModelAnalyzeBatchResultResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1667,8 +1619,8 @@ export const DeleteDocumentModelAnalyzeResult: API.OperationMethod<
   DeleteDocumentModelAnalyzeResultError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(1408, __c44, 0) as any as S.Schema<DeleteDocumentModelAnalyzeResultRequest>,
-  output: __S(736, __c23, 0) as any as S.Schema<DeleteDocumentModelAnalyzeResultResponse>,
+  input: __S(1376, __c43, 0) as any as S.Schema<DeleteDocumentModelAnalyzeResultRequest>,
+  output: __S(704, __c22, 0) as any as S.Schema<DeleteDocumentModelAnalyzeResultResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1682,8 +1634,8 @@ export const DeleteDocumentModelModel: API.OperationMethod<
   DeleteDocumentModelModelError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(1440, __c45, 0) as any as S.Schema<DeleteDocumentModelModelRequest>,
-  output: __S(736, __c23, 0) as any as S.Schema<DeleteDocumentModelModelResponse>,
+  input: __S(1408, __c44, 0) as any as S.Schema<DeleteDocumentModelModelRequest>,
+  output: __S(704, __c22, 0) as any as S.Schema<DeleteDocumentModelModelResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1697,8 +1649,8 @@ export const DocumentClassifiersAuthorizeClassifierCopy: API.OperationMethod<
   DocumentClassifiersAuthorizeClassifierCopyError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(1472, __c46, 0) as any as S.Schema<DocumentClassifiersAuthorizeClassifierCopyRequest>,
-  output: __S(1473, __c46, 1) as any as S.Schema<ClassifierCopyAuthorization>,
+  input: __S(1440, __c45, 0) as any as S.Schema<DocumentClassifiersAuthorizeClassifierCopyRequest>,
+  output: __S(1441, __c45, 1) as any as S.Schema<ClassifierCopyAuthorization>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1712,7 +1664,7 @@ export const DocumentClassifiersBuildClassifier: API.OperationMethod<
   DocumentClassifiersBuildClassifierError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(1536, __c48, 0) as any as S.Schema<DocumentClassifiersBuildClassifierRequest>,
+  input: __S(1504, __c47, 0) as any as S.Schema<DocumentClassifiersBuildClassifierRequest>,
   output: __S(32, __c1, 0) as any as S.Schema<DocumentClassifiersBuildClassifierResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
@@ -1727,7 +1679,7 @@ export const DocumentClassifiersClassifyDocument: API.OperationMethod<
   DocumentClassifiersClassifyDocumentError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(1632, __c51, 0) as any as S.Schema<DocumentClassifiersClassifyDocumentRequest>,
+  input: __S(1600, __c50, 0) as any as S.Schema<DocumentClassifiersClassifyDocumentRequest>,
   output: __S(32, __c1, 0) as any as S.Schema<DocumentClassifiersClassifyDocumentResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
@@ -1743,8 +1695,8 @@ export const DocumentClassifiersClassifyDocumentFromStream: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(
-    1664,
-    __c52,
+    1632,
+    __c51,
     0,
   ) as any as S.Schema<DocumentClassifiersClassifyDocumentFromStreamRequest>,
   output: __S(
@@ -1780,7 +1732,7 @@ export const DocumentModelsAnalyzeDocument: API.OperationMethod<
   DocumentModelsAnalyzeDocumentError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(192, __c6, 0) as any as S.Schema<DocumentModelsAnalyzeDocumentRequest>,
+  input: __S(128, __c4, 0) as any as S.Schema<DocumentModelsAnalyzeDocumentRequest>,
   output: __S(32, __c1, 0) as any as S.Schema<DocumentModelsAnalyzeDocumentResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
@@ -1795,7 +1747,7 @@ export const DocumentModelsAnalyzeDocumentFromStream: API.OperationMethod<
   DocumentModelsAnalyzeDocumentFromStreamError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(224, __c7, 0) as any as S.Schema<DocumentModelsAnalyzeDocumentFromStreamRequest>,
+  input: __S(160, __c5, 0) as any as S.Schema<DocumentModelsAnalyzeDocumentFromStreamRequest>,
   output: __S(32, __c1, 0) as any as S.Schema<DocumentModelsAnalyzeDocumentFromStreamResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
@@ -1810,8 +1762,8 @@ export const DocumentModelsAuthorizeModelCopy: API.OperationMethod<
   DocumentModelsAuthorizeModelCopyError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(256, __c8, 0) as any as S.Schema<DocumentModelsAuthorizeModelCopyRequest>,
-  output: __S(257, __c8, 1) as any as S.Schema<ModelCopyAuthorization>,
+  input: __S(192, __c6, 0) as any as S.Schema<DocumentModelsAuthorizeModelCopyRequest>,
+  output: __S(193, __c6, 1) as any as S.Schema<ModelCopyAuthorization>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1825,7 +1777,7 @@ export const DocumentModelsBuildModel: API.OperationMethod<
   DocumentModelsBuildModelError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(288, __c9, 0) as any as S.Schema<DocumentModelsBuildModelRequest>,
+  input: __S(224, __c7, 0) as any as S.Schema<DocumentModelsBuildModelRequest>,
   output: __S(32, __c1, 0) as any as S.Schema<DocumentModelsBuildModelResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
@@ -1840,7 +1792,7 @@ export const DocumentModelsComposeModel: API.OperationMethod<
   DocumentModelsComposeModelError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(320, __c10, 0) as any as S.Schema<DocumentModelsComposeModelRequest>,
+  input: __S(256, __c8, 0) as any as S.Schema<DocumentModelsComposeModelRequest>,
   output: __S(32, __c1, 0) as any as S.Schema<DocumentModelsComposeModelResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
@@ -1855,8 +1807,8 @@ export const GetDocumentClassifierClassifier: API.OperationMethod<
   GetDocumentClassifierClassifierError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(384, __c12, 0) as any as S.Schema<GetDocumentClassifierClassifierRequest>,
-  output: __S(448, __c14, 0) as any as S.Schema<DocumentClassifierDetails>,
+  input: __S(352, __c11, 0) as any as S.Schema<GetDocumentClassifierClassifierRequest>,
+  output: __S(416, __c13, 0) as any as S.Schema<DocumentClassifierDetails>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1870,8 +1822,8 @@ export const GetDocumentClassifierClassifyResult: API.OperationMethod<
   GetDocumentClassifierClassifyResultError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(480, __c15, 0) as any as S.Schema<GetDocumentClassifierClassifyResultRequest>,
-  output: __S(587, __c18, 11) as any as S.Schema<AnalyzeOperation>,
+  input: __S(448, __c14, 0) as any as S.Schema<GetDocumentClassifierClassifyResultRequest>,
+  output: __S(555, __c17, 11) as any as S.Schema<AnalyzeOperation>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1885,8 +1837,8 @@ export const GetDocumentModelAnalyzeBatchResult: API.OperationMethod<
   GetDocumentModelAnalyzeBatchResultError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(608, __c19, 0) as any as S.Schema<GetDocumentModelAnalyzeBatchResultRequest>,
-  output: __S(643, __c20, 3) as any as S.Schema<AnalyzeBatchOperation>,
+  input: __S(576, __c18, 0) as any as S.Schema<GetDocumentModelAnalyzeBatchResultRequest>,
+  output: __S(611, __c19, 3) as any as S.Schema<AnalyzeBatchOperation>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1900,8 +1852,8 @@ export const GetDocumentModelAnalyzeResult: API.OperationMethod<
   GetDocumentModelAnalyzeResultError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(672, __c21, 0) as any as S.Schema<GetDocumentModelAnalyzeResultRequest>,
-  output: __S(587, __c18, 11) as any as S.Schema<AnalyzeOperation>,
+  input: __S(640, __c20, 0) as any as S.Schema<GetDocumentModelAnalyzeResultRequest>,
+  output: __S(555, __c17, 11) as any as S.Schema<AnalyzeOperation>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1915,8 +1867,8 @@ export const GetDocumentModelAnalyzeResultFigure: API.OperationMethod<
   GetDocumentModelAnalyzeResultFigureError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(768, __c24, 0) as any as S.Schema<GetDocumentModelAnalyzeResultFigureRequest>,
-  output: __S(800, __c25, 0) as any as S.Schema<GetDocumentModelAnalyzeResultFigureResponse>,
+  input: __S(736, __c23, 0) as any as S.Schema<GetDocumentModelAnalyzeResultFigureRequest>,
+  output: __S(768, __c24, 0) as any as S.Schema<GetDocumentModelAnalyzeResultFigureResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1930,8 +1882,8 @@ export const GetDocumentModelAnalyzeResultPdf: API.OperationMethod<
   GetDocumentModelAnalyzeResultPdfError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(832, __c26, 0) as any as S.Schema<GetDocumentModelAnalyzeResultPdfRequest>,
-  output: __S(800, __c25, 0) as any as S.Schema<GetDocumentModelAnalyzeResultPdfResponse>,
+  input: __S(800, __c25, 0) as any as S.Schema<GetDocumentModelAnalyzeResultPdfRequest>,
+  output: __S(768, __c24, 0) as any as S.Schema<GetDocumentModelAnalyzeResultPdfResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1945,8 +1897,8 @@ export const GetDocumentModelModel: API.OperationMethod<
   GetDocumentModelModelError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(864, __c27, 0) as any as S.Schema<GetDocumentModelModelRequest>,
-  output: __S(896, __c28, 0) as any as S.Schema<DocumentModelDetails>,
+  input: __S(832, __c26, 0) as any as S.Schema<GetDocumentModelModelRequest>,
+  output: __S(864, __c27, 0) as any as S.Schema<DocumentModelDetails>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1961,13 +1913,13 @@ export const GetMiscellaneousOperationDocumentClassifierBuildOperation: API.Oper
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(
-    928,
-    __c29,
+    896,
+    __c28,
     0,
   ) as any as S.Schema<GetMiscellaneousOperationDocumentClassifierBuildOperationRequest>,
   output: __S(
-    960,
-    __c30,
+    928,
+    __c29,
     0,
   ) as any as S.Schema<GetMiscellaneousOperationDocumentClassifierBuildOperationResponse>,
   errors: [UnknownAzureError],
@@ -1984,13 +1936,13 @@ export const GetMiscellaneousOperationDocumentModelBuildOperation: API.Operation
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(
-    992,
-    __c31,
+    960,
+    __c30,
     0,
   ) as any as S.Schema<GetMiscellaneousOperationDocumentModelBuildOperationRequest>,
   output: __S(
-    1024,
-    __c32,
+    992,
+    __c31,
     0,
   ) as any as S.Schema<GetMiscellaneousOperationDocumentModelBuildOperationResponse>,
   errors: [UnknownAzureError],
@@ -2007,13 +1959,13 @@ export const GetMiscellaneousOperationDocumentModelComposeOperation: API.Operati
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(
-    1056,
-    __c33,
+    1024,
+    __c32,
     0,
   ) as any as S.Schema<GetMiscellaneousOperationDocumentModelComposeOperationRequest>,
   output: __S(
-    1024,
-    __c32,
+    992,
+    __c31,
     0,
   ) as any as S.Schema<GetMiscellaneousOperationDocumentModelComposeOperationResponse>,
   errors: [UnknownAzureError],
@@ -2029,8 +1981,8 @@ export const GetMiscellaneousOperationOperation: API.OperationMethod<
   GetMiscellaneousOperationOperationError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(1088, __c34, 0) as any as S.Schema<GetMiscellaneousOperationOperationRequest>,
-  output: __S(1120, __c35, 0) as any as S.Schema<DocumentIntelligenceOperationDetails>,
+  input: __S(1056, __c33, 0) as any as S.Schema<GetMiscellaneousOperationOperationRequest>,
+  output: __S(1088, __c34, 0) as any as S.Schema<DocumentIntelligenceOperationDetails>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -2044,8 +1996,8 @@ export const GetMiscellaneousOperationResourceDetails: API.OperationMethod<
   GetMiscellaneousOperationResourceDetailsError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(1152, __c36, 0) as any as S.Schema<GetMiscellaneousOperationResourceDetailsRequest>,
-  output: __S(1154, __c36, 2) as any as S.Schema<DocumentIntelligenceResourceDetails>,
+  input: __S(1120, __c35, 0) as any as S.Schema<GetMiscellaneousOperationResourceDetailsRequest>,
+  output: __S(1122, __c35, 2) as any as S.Schema<DocumentIntelligenceResourceDetails>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -2060,8 +2012,8 @@ export const ListDocumentClassifierClassifiers: API.PaginatedOperationMethod<
   AzureOpContext,
   DocumentClassifierDetails
 > = /*@__PURE__*/ API.makePaginated(() => ({
-  input: __S(1184, __c37, 0) as any as S.Schema<ListDocumentClassifierClassifiersRequest>,
-  output: __S(1186, __c37, 2) as any as S.Schema<PagedDocumentClassifierDetails>,
+  input: __S(1152, __c36, 0) as any as S.Schema<ListDocumentClassifierClassifiersRequest>,
+  output: __S(1154, __c36, 2) as any as S.Schema<PagedDocumentClassifierDetails>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -2082,8 +2034,8 @@ export const ListDocumentModelAnalyzeBatchResults: API.PaginatedOperationMethod<
   AzureOpContext,
   AnalyzeBatchOperation
 > = /*@__PURE__*/ API.makePaginated(() => ({
-  input: __S(1216, __c38, 0) as any as S.Schema<ListDocumentModelAnalyzeBatchResultsRequest>,
-  output: __S(1218, __c38, 2) as any as S.Schema<PagedAnalyzeBatchOperation>,
+  input: __S(1184, __c37, 0) as any as S.Schema<ListDocumentModelAnalyzeBatchResultsRequest>,
+  output: __S(1186, __c37, 2) as any as S.Schema<PagedAnalyzeBatchOperation>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -2104,8 +2056,8 @@ export const ListDocumentModelModels: API.PaginatedOperationMethod<
   AzureOpContext,
   DocumentModelDetails
 > = /*@__PURE__*/ API.makePaginated(() => ({
-  input: __S(1280, __c40, 0) as any as S.Schema<ListDocumentModelModelsRequest>,
-  output: __S(1282, __c40, 2) as any as S.Schema<PagedDocumentModelDetails>,
+  input: __S(1248, __c39, 0) as any as S.Schema<ListDocumentModelModelsRequest>,
+  output: __S(1250, __c39, 2) as any as S.Schema<PagedDocumentModelDetails>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -2126,8 +2078,8 @@ export const ListMiscellaneousOperationOperations: API.PaginatedOperationMethod<
   AzureOpContext,
   DocumentIntelligenceOperationDetails
 > = /*@__PURE__*/ API.makePaginated(() => ({
-  input: __S(1312, __c41, 0) as any as S.Schema<ListMiscellaneousOperationOperationsRequest>,
-  output: __S(1314, __c41, 2) as any as S.Schema<PagedDocumentIntelligenceOperationDetails>,
+  input: __S(1280, __c40, 0) as any as S.Schema<ListMiscellaneousOperationOperationsRequest>,
+  output: __S(1282, __c40, 2) as any as S.Schema<PagedDocumentIntelligenceOperationDetails>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -2148,13 +2100,13 @@ export const MiscellaneousOperationsGetDocumentClassifierCopyToOperation: API.Op
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(
-    1344,
-    __c42,
+    1312,
+    __c41,
     0,
   ) as any as S.Schema<MiscellaneousOperationsGetDocumentClassifierCopyToOperationRequest>,
   output: __S(
-    960,
-    __c30,
+    928,
+    __c29,
     0,
   ) as any as S.Schema<MiscellaneousOperationsGetDocumentClassifierCopyToOperationResponse>,
   errors: [UnknownAzureError],
@@ -2171,13 +2123,13 @@ export const MiscellaneousOperationsGetDocumentModelCopyToOperation: API.Operati
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(
-    1376,
-    __c43,
+    1344,
+    __c42,
     0,
   ) as any as S.Schema<MiscellaneousOperationsGetDocumentModelCopyToOperationRequest>,
   output: __S(
-    1024,
-    __c32,
+    992,
+    __c31,
     0,
   ) as any as S.Schema<MiscellaneousOperationsGetDocumentModelCopyToOperationResponse>,
   errors: [UnknownAzureError],
@@ -2261,12 +2213,12 @@ function __c3(j: number): any {
           pages: S.optional(S.String.pipe(T.Query())),
           locale: S.optional(S.String.pipe(T.Query())),
           stringIndexType: S.optional(S.String.pipe(T.Query())),
-          features: S.optional(__S(160, __c5, 0).pipe(T.Query())),
-          queryFields: S.optional(__S(128, __c4, 0).pipe(T.Query())),
+          features: S.optional(S.String.pipe(T.Query())),
+          queryFields: S.optional(S.String.pipe(T.Query())),
           outputContentFormat: S.optional(S.String.pipe(T.Query())),
-          output: S.optional(__S(160, __c5, 0).pipe(T.Query())),
-          azureBlobSource: S.optional(__S(1568, __c49, 0)),
-          azureBlobFileListSource: S.optional(__S(1569, __c49, 1)),
+          output: S.optional(S.String.pipe(T.Query())),
+          azureBlobSource: S.optional(__S(1536, __c48, 0)),
+          azureBlobFileListSource: S.optional(__S(1537, __c48, 1)),
           resultContainerUrl: S.String,
           resultPrefix: S.optional(S.String),
           overwriteExisting: S.optional(S.Boolean),
@@ -2287,18 +2239,6 @@ function __c3(j: number): any {
 function __c4(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(S.String);
-  }
-}
-function __c5(j: number): any {
-  switch (j) {
-    case 0:
-      return S.Array(S.String);
-  }
-}
-function __c6(j: number): any {
-  switch (j) {
-    case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
@@ -2306,10 +2246,10 @@ function __c6(j: number): any {
           pages: S.optional(S.String.pipe(T.Query())),
           locale: S.optional(S.String.pipe(T.Query())),
           stringIndexType: S.optional(S.String.pipe(T.Query())),
-          features: S.optional(__S(160, __c5, 0).pipe(T.Query())),
-          queryFields: S.optional(__S(128, __c4, 0).pipe(T.Query())),
+          features: S.optional(S.String.pipe(T.Query())),
+          queryFields: S.optional(S.String.pipe(T.Query())),
           outputContentFormat: S.optional(S.String.pipe(T.Query())),
-          output: S.optional(__S(160, __c5, 0).pipe(T.Query())),
+          output: S.optional(S.String.pipe(T.Query())),
           urlSource: S.optional(S.String),
           base64Source: S.optional(S.String),
         }).pipe(
@@ -2326,7 +2266,7 @@ function __c6(j: number): any {
       ).annotate({ identifier: "DocumentModelsAnalyzeDocumentRequest" });
   }
 }
-function __c7(j: number): any {
+function __c5(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2336,10 +2276,10 @@ function __c7(j: number): any {
           pages: S.optional(S.String.pipe(T.Query())),
           locale: S.optional(S.String.pipe(T.Query())),
           stringIndexType: S.optional(S.String.pipe(T.Query())),
-          features: S.optional(__S(160, __c5, 0).pipe(T.Query())),
-          queryFields: S.optional(__S(128, __c4, 0).pipe(T.Query())),
+          features: S.optional(S.String.pipe(T.Query())),
+          queryFields: S.optional(S.String.pipe(T.Query())),
           outputContentFormat: S.optional(S.String.pipe(T.Query())),
-          output: S.optional(__S(160, __c5, 0).pipe(T.Query())),
+          output: S.optional(S.String.pipe(T.Query())),
           body: S.String.pipe(T.HttpBody()),
         }).pipe(
           T.Http({
@@ -2355,7 +2295,7 @@ function __c7(j: number): any {
       ).annotate({ identifier: "DocumentModelsAnalyzeDocumentFromStreamRequest" });
   }
 }
-function __c8(j: number): any {
+function __c6(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2363,7 +2303,7 @@ function __c8(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           modelId: S.String,
           description: S.optional(S.String),
-          tags: S.optional(__S(1504, __c47, 0)),
+          tags: S.optional(__S(1472, __c46, 0)),
         }).pipe(
           T.Http({
             method: "POST",
@@ -2389,7 +2329,7 @@ function __c8(j: number): any {
       ).annotate({ identifier: "ModelCopyAuthorization" });
   }
 }
-function __c9(j: number): any {
+function __c7(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2398,9 +2338,9 @@ function __c9(j: number): any {
           modelId: S.String,
           description: S.optional(S.String),
           buildMode: S.String,
-          azureBlobSource: S.optional(__S(1568, __c49, 0)),
-          azureBlobFileListSource: S.optional(__S(1569, __c49, 1)),
-          tags: S.optional(__S(1504, __c47, 0)),
+          azureBlobSource: S.optional(__S(1536, __c48, 0)),
+          azureBlobFileListSource: S.optional(__S(1537, __c48, 1)),
+          tags: S.optional(__S(1472, __c46, 0)),
           maxTrainingHours: S.optional(S.Number),
           allowOverwrite: S.optional(S.Boolean),
         }).pipe(
@@ -2417,7 +2357,7 @@ function __c9(j: number): any {
       ).annotate({ identifier: "DocumentModelsBuildModelRequest" });
   }
 }
-function __c10(j: number): any {
+function __c8(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2427,8 +2367,8 @@ function __c10(j: number): any {
           description: S.optional(S.String),
           classifierId: S.String,
           split: S.optional(S.String),
-          docTypes: __S(357, __c11, 5),
-          tags: S.optional(__S(1504, __c47, 0)),
+          docTypes: __S(326, __c10, 6),
+          tags: S.optional(__S(1472, __c46, 0)),
         }).pipe(
           T.Http({
             method: "POST",
@@ -2443,12 +2383,18 @@ function __c10(j: number): any {
       ).annotate({ identifier: "DocumentModelsComposeModelRequest" });
   }
 }
-function __c11(j: number): any {
+function __c9(j: number): any {
+  switch (j) {
+    case 0:
+      return S.Array(S.String);
+  }
+}
+function __c10(j: number): any {
   switch (j) {
     case 0:
       return S.Record(
         S.String,
-        /*@__PURE__*/ S.suspend(() => __S(353, __c11, 1)),
+        /*@__PURE__*/ S.suspend(() => __S(321, __c10, 1)),
       );
     case 1:
       return S.suspend(() =>
@@ -2456,33 +2402,35 @@ function __c11(j: number): any {
           type: S.String,
           description: S.optional(S.String),
           example: S.optional(S.String),
-          items: S.optional(__S(353, __c11, 1)),
-          properties: S.optional(__S(352, __c11, 0)),
+          items: S.optional(__S(321, __c10, 1)),
+          properties: S.optional(__S(320, __c10, 0)),
         }),
       ).annotate({ identifier: "DocumentFieldSchema" });
     case 2:
-      return S.Record(S.String, __S(353, __c11, 1));
+      return S.Record(S.String, __S(321, __c10, 1));
     case 3:
       return S.Record(S.String, S.Number);
     case 4:
+      return S.Array(S.String);
+    case 5:
       return S.suspend(() =>
         S.Struct({
           description: S.optional(S.String),
           buildMode: S.optional(S.String),
-          fieldSchema: S.optional(__S(354, __c11, 2)),
-          fieldConfidence: S.optional(__S(355, __c11, 3)),
+          fieldSchema: S.optional(__S(322, __c10, 2)),
+          fieldConfidence: S.optional(__S(323, __c10, 3)),
           modelId: S.optional(S.String),
           confidenceThreshold: S.optional(S.Number),
-          features: S.optional(__S(160, __c5, 0)),
-          queryFields: S.optional(__S(128, __c4, 0)),
+          features: S.optional(__S(324, __c10, 4)),
+          queryFields: S.optional(__S(288, __c9, 0)),
           maxDocumentsToAnalyze: S.optional(S.Number),
         }),
       ).annotate({ identifier: "DocumentTypeDetails" });
-    case 5:
-      return S.Record(S.String, __S(356, __c11, 4));
+    case 6:
+      return S.Record(S.String, __S(325, __c10, 5));
   }
 }
-function __c12(j: number): any {
+function __c11(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2504,7 +2452,7 @@ function __c12(j: number): any {
       ).annotate({ identifier: "GetDocumentClassifierClassifierRequest" });
   }
 }
-function __c13(j: number): any {
+function __c12(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2515,10 +2463,10 @@ function __c13(j: number): any {
         }),
       ).annotate({ identifier: "DocumentIntelligenceWarning" });
     case 1:
-      return S.Array(__S(416, __c13, 0));
+      return S.Array(__S(384, __c12, 0));
   }
 }
-function __c14(j: number): any {
+function __c13(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2530,13 +2478,13 @@ function __c14(j: number): any {
           modifiedDateTime: S.optional(S.String),
           apiVersion: S.String,
           baseClassifierId: S.optional(S.String),
-          docTypes: __S(1601, __c50, 1),
-          warnings: S.optional(__S(417, __c13, 1)),
+          docTypes: __S(1569, __c49, 1),
+          warnings: S.optional(__S(385, __c12, 1)),
         }),
       ).annotate({ identifier: "DocumentClassifierDetails" });
   }
 }
-function __c15(j: number): any {
+function __c14(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2558,16 +2506,16 @@ function __c15(j: number): any {
       ).annotate({ identifier: "GetDocumentClassifierClassifyResultRequest" });
   }
 }
-function __c16(j: number): any {
+function __c15(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(/*@__PURE__*/ S.suspend(() => __S(514, __c16, 2)));
+      return S.Array(/*@__PURE__*/ S.suspend(() => __S(482, __c15, 2)));
     case 1:
       return S.suspend(() =>
         S.Struct({
           code: S.optional(S.String),
           message: S.optional(S.String),
-          innererror: S.optional(__S(513, __c16, 1)),
+          innererror: S.optional(__S(481, __c15, 1)),
         }),
       ).annotate({ identifier: "DocumentIntelligenceInnerError" });
     case 2:
@@ -2576,13 +2524,13 @@ function __c16(j: number): any {
           code: S.String,
           message: S.String,
           target: S.optional(S.String),
-          details: S.optional(__S(512, __c16, 0)),
-          innererror: S.optional(__S(513, __c16, 1)),
+          details: S.optional(__S(480, __c15, 0)),
+          innererror: S.optional(__S(481, __c15, 1)),
         }),
       ).annotate({ identifier: "DocumentIntelligenceError" });
   }
 }
-function __c17(j: number): any {
+function __c16(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2592,53 +2540,53 @@ function __c17(j: number): any {
         }),
       ).annotate({ identifier: "DocumentSpan" });
     case 1:
-      return S.Array(__S(544, __c17, 0));
+      return S.Array(__S(512, __c16, 0));
     case 2:
       return S.Array(S.Number);
     case 3:
       return S.suspend(() =>
         S.Struct({
           content: S.String,
-          polygon: S.optional(__S(546, __c17, 2)),
-          span: __S(544, __c17, 0),
+          polygon: S.optional(__S(514, __c16, 2)),
+          span: __S(512, __c16, 0),
           confidence: S.Number,
         }),
       ).annotate({ identifier: "DocumentWord" });
     case 4:
-      return S.Array(__S(547, __c17, 3));
+      return S.Array(__S(515, __c16, 3));
     case 5:
       return S.suspend(() =>
         S.Struct({
           state: S.String,
-          polygon: S.optional(__S(546, __c17, 2)),
-          span: __S(544, __c17, 0),
+          polygon: S.optional(__S(514, __c16, 2)),
+          span: __S(512, __c16, 0),
           confidence: S.Number,
         }),
       ).annotate({ identifier: "DocumentSelectionMark" });
     case 6:
-      return S.Array(__S(549, __c17, 5));
+      return S.Array(__S(517, __c16, 5));
     case 7:
       return S.suspend(() =>
         S.Struct({
           content: S.String,
-          polygon: S.optional(__S(546, __c17, 2)),
-          spans: __S(545, __c17, 1),
+          polygon: S.optional(__S(514, __c16, 2)),
+          spans: __S(513, __c16, 1),
         }),
       ).annotate({ identifier: "DocumentLine" });
     case 8:
-      return S.Array(__S(551, __c17, 7));
+      return S.Array(__S(519, __c16, 7));
     case 9:
       return S.suspend(() =>
         S.Struct({
           kind: S.String,
           value: S.String,
-          polygon: S.optional(__S(546, __c17, 2)),
-          span: __S(544, __c17, 0),
+          polygon: S.optional(__S(514, __c16, 2)),
+          span: __S(512, __c16, 0),
           confidence: S.Number,
         }),
       ).annotate({ identifier: "DocumentBarcode" });
     case 10:
-      return S.Array(__S(553, __c17, 9));
+      return S.Array(__S(521, __c16, 9));
     case 11:
       return S.suspend(() =>
         S.Struct({
@@ -2647,36 +2595,36 @@ function __c17(j: number): any {
           width: S.optional(S.Number),
           height: S.optional(S.Number),
           unit: S.optional(S.String),
-          spans: __S(545, __c17, 1),
-          words: S.optional(__S(548, __c17, 4)),
-          selectionMarks: S.optional(__S(550, __c17, 6)),
-          lines: S.optional(__S(552, __c17, 8)),
-          barcodes: S.optional(__S(554, __c17, 10)),
-          formulas: S.optional(__S(554, __c17, 10)),
+          spans: __S(513, __c16, 1),
+          words: S.optional(__S(516, __c16, 4)),
+          selectionMarks: S.optional(__S(518, __c16, 6)),
+          lines: S.optional(__S(520, __c16, 8)),
+          barcodes: S.optional(__S(522, __c16, 10)),
+          formulas: S.optional(__S(522, __c16, 10)),
         }),
       ).annotate({ identifier: "DocumentPage" });
     case 12:
-      return S.Array(__S(555, __c17, 11));
+      return S.Array(__S(523, __c16, 11));
     case 13:
       return S.suspend(() =>
         S.Struct({
           pageNumber: S.Number,
-          polygon: __S(546, __c17, 2),
+          polygon: __S(514, __c16, 2),
         }),
       ).annotate({ identifier: "BoundingRegion" });
     case 14:
-      return S.Array(__S(557, __c17, 13));
+      return S.Array(__S(525, __c16, 13));
     case 15:
       return S.suspend(() =>
         S.Struct({
           role: S.optional(S.String),
           content: S.String,
-          boundingRegions: S.optional(__S(558, __c17, 14)),
-          spans: __S(545, __c17, 1),
+          boundingRegions: S.optional(__S(526, __c16, 14)),
+          spans: __S(513, __c16, 1),
         }),
       ).annotate({ identifier: "DocumentParagraph" });
     case 16:
-      return S.Array(__S(559, __c17, 15));
+      return S.Array(__S(527, __c16, 15));
     case 17:
       return S.suspend(() =>
         S.Struct({
@@ -2686,78 +2634,78 @@ function __c17(j: number): any {
           rowSpan: S.optional(S.Number),
           columnSpan: S.optional(S.Number),
           content: S.String,
-          boundingRegions: S.optional(__S(558, __c17, 14)),
-          spans: __S(545, __c17, 1),
-          elements: S.optional(__S(128, __c4, 0)),
+          boundingRegions: S.optional(__S(526, __c16, 14)),
+          spans: __S(513, __c16, 1),
+          elements: S.optional(__S(288, __c9, 0)),
         }),
       ).annotate({ identifier: "DocumentTableCell" });
     case 18:
-      return S.Array(__S(561, __c17, 17));
+      return S.Array(__S(529, __c16, 17));
     case 19:
       return S.suspend(() =>
         S.Struct({
           content: S.String,
-          boundingRegions: S.optional(__S(558, __c17, 14)),
-          spans: __S(545, __c17, 1),
-          elements: S.optional(__S(128, __c4, 0)),
+          boundingRegions: S.optional(__S(526, __c16, 14)),
+          spans: __S(513, __c16, 1),
+          elements: S.optional(__S(288, __c9, 0)),
         }),
       ).annotate({ identifier: "DocumentCaption" });
     case 20:
-      return S.Array(__S(563, __c17, 19));
+      return S.Array(__S(531, __c16, 19));
     case 21:
       return S.suspend(() =>
         S.Struct({
           rowCount: S.Number,
           columnCount: S.Number,
-          cells: __S(562, __c17, 18),
-          boundingRegions: S.optional(__S(558, __c17, 14)),
-          spans: __S(545, __c17, 1),
-          caption: S.optional(__S(563, __c17, 19)),
-          footnotes: S.optional(__S(564, __c17, 20)),
+          cells: __S(530, __c16, 18),
+          boundingRegions: S.optional(__S(526, __c16, 14)),
+          spans: __S(513, __c16, 1),
+          caption: S.optional(__S(531, __c16, 19)),
+          footnotes: S.optional(__S(532, __c16, 20)),
         }),
       ).annotate({ identifier: "DocumentTable" });
     case 22:
-      return S.Array(__S(565, __c17, 21));
+      return S.Array(__S(533, __c16, 21));
     case 23:
       return S.suspend(() =>
         S.Struct({
-          boundingRegions: S.optional(__S(558, __c17, 14)),
-          spans: __S(545, __c17, 1),
-          elements: S.optional(__S(128, __c4, 0)),
-          caption: S.optional(__S(563, __c17, 19)),
-          footnotes: S.optional(__S(564, __c17, 20)),
+          boundingRegions: S.optional(__S(526, __c16, 14)),
+          spans: __S(513, __c16, 1),
+          elements: S.optional(__S(288, __c9, 0)),
+          caption: S.optional(__S(531, __c16, 19)),
+          footnotes: S.optional(__S(532, __c16, 20)),
           id: S.optional(S.String),
         }),
       ).annotate({ identifier: "DocumentFigure" });
     case 24:
-      return S.Array(__S(567, __c17, 23));
+      return S.Array(__S(535, __c16, 23));
     case 25:
       return S.suspend(() =>
         S.Struct({
-          spans: __S(545, __c17, 1),
-          elements: S.optional(__S(128, __c4, 0)),
+          spans: __S(513, __c16, 1),
+          elements: S.optional(__S(288, __c9, 0)),
         }),
       ).annotate({ identifier: "DocumentSection" });
     case 26:
-      return S.Array(__S(569, __c17, 25));
+      return S.Array(__S(537, __c16, 25));
     case 27:
       return S.suspend(() =>
         S.Struct({
           content: S.String,
-          boundingRegions: S.optional(__S(558, __c17, 14)),
-          spans: __S(545, __c17, 1),
+          boundingRegions: S.optional(__S(526, __c16, 14)),
+          spans: __S(513, __c16, 1),
         }),
       ).annotate({ identifier: "DocumentKeyValueElement" });
     case 28:
       return S.suspend(() =>
         S.Struct({
-          key: __S(571, __c17, 27),
-          value: S.optional(__S(571, __c17, 27)),
+          key: __S(539, __c16, 27),
+          value: S.optional(__S(539, __c16, 27)),
           confidence: S.Number,
         }),
       ).annotate({ identifier: "DocumentKeyValuePair" });
     case 29:
-      return S.Array(__S(572, __c17, 28));
+      return S.Array(__S(540, __c16, 28));
     case 30:
       return S.suspend(() =>
         S.Struct({
@@ -2767,32 +2715,32 @@ function __c17(j: number): any {
           fontWeight: S.optional(S.String),
           color: S.optional(S.String),
           backgroundColor: S.optional(S.String),
-          spans: __S(545, __c17, 1),
+          spans: __S(513, __c16, 1),
           confidence: S.Number,
         }),
       ).annotate({ identifier: "DocumentStyle" });
     case 31:
-      return S.Array(__S(574, __c17, 30));
+      return S.Array(__S(542, __c16, 30));
   }
 }
-function __c18(j: number): any {
+function __c17(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           locale: S.String,
-          spans: __S(545, __c17, 1),
+          spans: __S(513, __c16, 1),
           confidence: S.Number,
         }),
       ).annotate({ identifier: "DocumentLanguage" });
     case 1:
-      return S.Array(__S(576, __c18, 0));
+      return S.Array(__S(544, __c17, 0));
     case 2:
-      return S.Array(/*@__PURE__*/ S.suspend(() => __S(582, __c18, 6)));
+      return S.Array(/*@__PURE__*/ S.suspend(() => __S(550, __c17, 6)));
     case 3:
       return S.Record(
         S.String,
-        /*@__PURE__*/ S.suspend(() => __S(582, __c18, 6)),
+        /*@__PURE__*/ S.suspend(() => __S(550, __c17, 6)),
       );
     case 4:
       return S.suspend(() =>
@@ -2834,32 +2782,32 @@ function __c18(j: number): any {
           valueSelectionMark: S.optional(S.String),
           valueSignature: S.optional(S.String),
           valueCountryRegion: S.optional(S.String),
-          valueArray: S.optional(__S(578, __c18, 2)),
-          valueObject: S.optional(__S(579, __c18, 3)),
-          valueCurrency: S.optional(__S(580, __c18, 4)),
-          valueAddress: S.optional(__S(581, __c18, 5)),
+          valueArray: S.optional(__S(546, __c17, 2)),
+          valueObject: S.optional(__S(547, __c17, 3)),
+          valueCurrency: S.optional(__S(548, __c17, 4)),
+          valueAddress: S.optional(__S(549, __c17, 5)),
           valueBoolean: S.optional(S.Boolean),
-          valueSelectionGroup: S.optional(__S(128, __c4, 0)),
+          valueSelectionGroup: S.optional(__S(288, __c9, 0)),
           content: S.optional(S.String),
-          boundingRegions: S.optional(__S(558, __c17, 14)),
-          spans: S.optional(__S(545, __c17, 1)),
+          boundingRegions: S.optional(__S(526, __c16, 14)),
+          spans: S.optional(__S(513, __c16, 1)),
           confidence: S.optional(S.Number),
         }),
       ).annotate({ identifier: "DocumentField" });
     case 7:
-      return S.Record(S.String, __S(582, __c18, 6));
+      return S.Record(S.String, __S(550, __c17, 6));
     case 8:
       return S.suspend(() =>
         S.Struct({
           docType: S.String,
-          boundingRegions: S.optional(__S(558, __c17, 14)),
-          spans: __S(545, __c17, 1),
-          fields: S.optional(__S(583, __c18, 7)),
+          boundingRegions: S.optional(__S(526, __c16, 14)),
+          spans: __S(513, __c16, 1),
+          fields: S.optional(__S(551, __c17, 7)),
           confidence: S.Number,
         }),
       ).annotate({ identifier: "AnalyzedDocument" });
     case 9:
-      return S.Array(__S(584, __c18, 8));
+      return S.Array(__S(552, __c17, 8));
     case 10:
       return S.suspend(() =>
         S.Struct({
@@ -2868,16 +2816,16 @@ function __c18(j: number): any {
           stringIndexType: S.String,
           contentFormat: S.optional(S.String),
           content: S.String,
-          pages: __S(556, __c17, 12),
-          paragraphs: S.optional(__S(560, __c17, 16)),
-          tables: S.optional(__S(566, __c17, 22)),
-          figures: S.optional(__S(568, __c17, 24)),
-          sections: S.optional(__S(570, __c17, 26)),
-          keyValuePairs: S.optional(__S(573, __c17, 29)),
-          styles: S.optional(__S(575, __c17, 31)),
-          languages: S.optional(__S(577, __c18, 1)),
-          documents: S.optional(__S(585, __c18, 9)),
-          warnings: S.optional(__S(417, __c13, 1)),
+          pages: __S(524, __c16, 12),
+          paragraphs: S.optional(__S(528, __c16, 16)),
+          tables: S.optional(__S(534, __c16, 22)),
+          figures: S.optional(__S(536, __c16, 24)),
+          sections: S.optional(__S(538, __c16, 26)),
+          keyValuePairs: S.optional(__S(541, __c16, 29)),
+          styles: S.optional(__S(543, __c16, 31)),
+          languages: S.optional(__S(545, __c17, 1)),
+          documents: S.optional(__S(553, __c17, 9)),
+          warnings: S.optional(__S(385, __c12, 1)),
         }),
       ).annotate({ identifier: "AnalyzeResult" });
     case 11:
@@ -2886,13 +2834,13 @@ function __c18(j: number): any {
           status: S.String,
           createdDateTime: S.String,
           lastUpdatedDateTime: S.String,
-          error: S.optional(__S(514, __c16, 2)),
-          analyzeResult: S.optional(__S(586, __c18, 10)),
+          error: S.optional(__S(482, __c15, 2)),
+          analyzeResult: S.optional(__S(554, __c17, 10)),
         }),
       ).annotate({ identifier: "AnalyzeOperation" });
   }
 }
-function __c19(j: number): any {
+function __c18(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2914,7 +2862,7 @@ function __c19(j: number): any {
       ).annotate({ identifier: "GetDocumentModelAnalyzeBatchResultRequest" });
   }
 }
-function __c20(j: number): any {
+function __c19(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2922,18 +2870,18 @@ function __c20(j: number): any {
           status: S.String,
           sourceUrl: S.String,
           resultUrl: S.optional(S.String),
-          error: S.optional(__S(514, __c16, 2)),
+          error: S.optional(__S(482, __c15, 2)),
         }),
       ).annotate({ identifier: "AnalyzeBatchOperationDetail" });
     case 1:
-      return S.Array(__S(640, __c20, 0));
+      return S.Array(__S(608, __c19, 0));
     case 2:
       return S.suspend(() =>
         S.Struct({
           succeededCount: S.Number,
           failedCount: S.Number,
           skippedCount: S.Number,
-          details: S.optional(__S(641, __c20, 1)),
+          details: S.optional(__S(609, __c19, 1)),
         }),
       ).annotate({ identifier: "AnalyzeBatchResult" });
     case 3:
@@ -2944,13 +2892,13 @@ function __c20(j: number): any {
           createdDateTime: S.String,
           lastUpdatedDateTime: S.String,
           percentCompleted: S.optional(S.Number),
-          error: S.optional(__S(514, __c16, 2)),
-          result: S.optional(__S(642, __c20, 2)),
+          error: S.optional(__S(482, __c15, 2)),
+          result: S.optional(__S(610, __c19, 2)),
         }),
       ).annotate({ identifier: "AnalyzeBatchOperation" });
   }
 }
-function __c21(j: number): any {
+function __c20(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2972,7 +2920,7 @@ function __c21(j: number): any {
       ).annotate({ identifier: "GetDocumentModelAnalyzeResultRequest" });
   }
 }
-function __c22(j: number): any {
+function __c21(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2994,7 +2942,7 @@ function __c22(j: number): any {
       ).annotate({ identifier: "DeleteDocumentClassifierClassifierRequest" });
   }
 }
-function __c23(j: number): any {
+function __c22(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() => S.Struct({})).annotate({
@@ -3002,7 +2950,7 @@ function __c23(j: number): any {
       });
   }
 }
-function __c24(j: number): any {
+function __c23(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3025,7 +2973,7 @@ function __c24(j: number): any {
       ).annotate({ identifier: "GetDocumentModelAnalyzeResultFigureRequest" });
   }
 }
-function __c25(j: number): any {
+function __c24(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() => S.Unknown.pipe(T.RawResponseRoot())).annotate({
@@ -3033,7 +2981,7 @@ function __c25(j: number): any {
       });
   }
 }
-function __c26(j: number): any {
+function __c25(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3055,7 +3003,7 @@ function __c26(j: number): any {
       ).annotate({ identifier: "GetDocumentModelAnalyzeResultPdfRequest" });
   }
 }
-function __c27(j: number): any {
+function __c26(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3077,7 +3025,7 @@ function __c27(j: number): any {
       ).annotate({ identifier: "GetDocumentModelModelRequest" });
   }
 }
-function __c28(j: number): any {
+function __c27(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3088,20 +3036,20 @@ function __c28(j: number): any {
           expirationDateTime: S.optional(S.String),
           modifiedDateTime: S.optional(S.String),
           apiVersion: S.optional(S.String),
-          tags: S.optional(__S(1504, __c47, 0)),
+          tags: S.optional(__S(1472, __c46, 0)),
           buildMode: S.optional(S.String),
-          azureBlobSource: S.optional(__S(1568, __c49, 0)),
-          azureBlobFileListSource: S.optional(__S(1569, __c49, 1)),
+          azureBlobSource: S.optional(__S(1536, __c48, 0)),
+          azureBlobFileListSource: S.optional(__S(1537, __c48, 1)),
           classifierId: S.optional(S.String),
           split: S.optional(S.String),
-          docTypes: S.optional(__S(357, __c11, 5)),
-          warnings: S.optional(__S(417, __c13, 1)),
+          docTypes: S.optional(__S(326, __c10, 6)),
+          warnings: S.optional(__S(385, __c12, 1)),
           trainingHours: S.optional(S.Number),
         }),
       ).annotate({ identifier: "DocumentModelDetails" });
   }
 }
-function __c29(j: number): any {
+function __c28(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3125,7 +3073,7 @@ function __c29(j: number): any {
       });
   }
 }
-function __c30(j: number): any {
+function __c29(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3138,16 +3086,16 @@ function __c30(j: number): any {
           kind: S.String,
           resourceLocation: S.String,
           apiVersion: S.optional(S.String),
-          tags: S.optional(__S(1504, __c47, 0)),
-          error: S.optional(__S(514, __c16, 2)),
-          result: S.optional(__S(448, __c14, 0)),
+          tags: S.optional(__S(1472, __c46, 0)),
+          error: S.optional(__S(482, __c15, 2)),
+          result: S.optional(__S(416, __c13, 0)),
         }),
       ).annotate({
         identifier: "GetMiscellaneousOperationDocumentClassifierBuildOperationResponse",
       });
   }
 }
-function __c31(j: number): any {
+function __c30(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3169,7 +3117,7 @@ function __c31(j: number): any {
       ).annotate({ identifier: "GetMiscellaneousOperationDocumentModelBuildOperationRequest" });
   }
 }
-function __c32(j: number): any {
+function __c31(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3182,14 +3130,14 @@ function __c32(j: number): any {
           kind: S.String,
           resourceLocation: S.String,
           apiVersion: S.optional(S.String),
-          tags: S.optional(__S(1504, __c47, 0)),
-          error: S.optional(__S(514, __c16, 2)),
-          result: S.optional(__S(896, __c28, 0)),
+          tags: S.optional(__S(1472, __c46, 0)),
+          error: S.optional(__S(482, __c15, 2)),
+          result: S.optional(__S(864, __c27, 0)),
         }),
       ).annotate({ identifier: "GetMiscellaneousOperationDocumentModelBuildOperationResponse" });
   }
 }
-function __c33(j: number): any {
+function __c32(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3211,7 +3159,7 @@ function __c33(j: number): any {
       ).annotate({ identifier: "GetMiscellaneousOperationDocumentModelComposeOperationRequest" });
   }
 }
-function __c34(j: number): any {
+function __c33(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3233,7 +3181,7 @@ function __c34(j: number): any {
       ).annotate({ identifier: "GetMiscellaneousOperationOperationRequest" });
   }
 }
-function __c35(j: number): any {
+function __c34(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3246,13 +3194,13 @@ function __c35(j: number): any {
           kind: S.String,
           resourceLocation: S.String,
           apiVersion: S.optional(S.String),
-          tags: S.optional(__S(1504, __c47, 0)),
-          error: S.optional(__S(514, __c16, 2)),
+          tags: S.optional(__S(1472, __c46, 0)),
+          error: S.optional(__S(482, __c15, 2)),
         }),
       ).annotate({ identifier: "DocumentIntelligenceOperationDetails" });
   }
 }
-function __c36(j: number): any {
+function __c35(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3280,12 +3228,12 @@ function __c36(j: number): any {
     case 2:
       return S.suspend(() =>
         S.Struct({
-          customDocumentModels: __S(1153, __c36, 1),
+          customDocumentModels: __S(1121, __c35, 1),
         }),
       ).annotate({ identifier: "DocumentIntelligenceResourceDetails" });
   }
 }
-function __c37(j: number): any {
+function __c36(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3307,17 +3255,17 @@ function __c37(j: number): any {
         ),
       ).annotate({ identifier: "ListDocumentClassifierClassifiersRequest" });
     case 1:
-      return S.Array(__S(448, __c14, 0));
+      return S.Array(__S(416, __c13, 0));
     case 2:
       return S.suspend(() =>
         S.Struct({
-          value: __S(1185, __c37, 1),
+          value: __S(1153, __c36, 1),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "PagedDocumentClassifierDetails" });
   }
 }
-function __c38(j: number): any {
+function __c37(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3339,17 +3287,17 @@ function __c38(j: number): any {
         ),
       ).annotate({ identifier: "ListDocumentModelAnalyzeBatchResultsRequest" });
     case 1:
-      return S.Array(__S(643, __c20, 3));
+      return S.Array(__S(611, __c19, 3));
     case 2:
       return S.suspend(() =>
         S.Struct({
-          value: __S(1217, __c38, 1),
+          value: __S(1185, __c37, 1),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "PagedAnalyzeBatchOperation" });
   }
 }
-function __c39(j: number): any {
+function __c38(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3371,7 +3319,7 @@ function __c39(j: number): any {
       ).annotate({ identifier: "DeleteDocumentModelAnalyzeBatchResultRequest" });
   }
 }
-function __c40(j: number): any {
+function __c39(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3393,17 +3341,17 @@ function __c40(j: number): any {
         ),
       ).annotate({ identifier: "ListDocumentModelModelsRequest" });
     case 1:
-      return S.Array(__S(896, __c28, 0));
+      return S.Array(__S(864, __c27, 0));
     case 2:
       return S.suspend(() =>
         S.Struct({
-          value: __S(1281, __c40, 1),
+          value: __S(1249, __c39, 1),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "PagedDocumentModelDetails" });
   }
 }
-function __c41(j: number): any {
+function __c40(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3425,17 +3373,17 @@ function __c41(j: number): any {
         ),
       ).annotate({ identifier: "ListMiscellaneousOperationOperationsRequest" });
     case 1:
-      return S.Array(__S(1120, __c35, 0));
+      return S.Array(__S(1088, __c34, 0));
     case 2:
       return S.suspend(() =>
         S.Struct({
-          value: __S(1313, __c41, 1),
+          value: __S(1281, __c40, 1),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "PagedDocumentIntelligenceOperationDetails" });
   }
 }
-function __c42(j: number): any {
+function __c41(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3459,7 +3407,7 @@ function __c42(j: number): any {
       });
   }
 }
-function __c43(j: number): any {
+function __c42(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3481,7 +3429,7 @@ function __c43(j: number): any {
       ).annotate({ identifier: "MiscellaneousOperationsGetDocumentModelCopyToOperationRequest" });
   }
 }
-function __c44(j: number): any {
+function __c43(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3503,7 +3451,7 @@ function __c44(j: number): any {
       ).annotate({ identifier: "DeleteDocumentModelAnalyzeResultRequest" });
   }
 }
-function __c45(j: number): any {
+function __c44(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3525,7 +3473,7 @@ function __c45(j: number): any {
       ).annotate({ identifier: "DeleteDocumentModelModelRequest" });
   }
 }
-function __c46(j: number): any {
+function __c45(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3533,7 +3481,7 @@ function __c46(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           classifierId: S.String,
           description: S.optional(S.String),
-          tags: S.optional(__S(1504, __c47, 0)),
+          tags: S.optional(__S(1472, __c46, 0)),
         }).pipe(
           T.Http({
             method: "POST",
@@ -3559,13 +3507,13 @@ function __c46(j: number): any {
       ).annotate({ identifier: "ClassifierCopyAuthorization" });
   }
 }
-function __c47(j: number): any {
+function __c46(j: number): any {
   switch (j) {
     case 0:
       return S.Record(S.String, S.String);
   }
 }
-function __c48(j: number): any {
+function __c47(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3574,7 +3522,7 @@ function __c48(j: number): any {
           classifierId: S.String,
           description: S.optional(S.String),
           baseClassifierId: S.optional(S.String),
-          docTypes: __S(1601, __c50, 1),
+          docTypes: __S(1569, __c49, 1),
           allowOverwrite: S.optional(S.Boolean),
         }).pipe(
           T.Http({
@@ -3590,7 +3538,7 @@ function __c48(j: number): any {
       ).annotate({ identifier: "DocumentClassifiersBuildClassifierRequest" });
   }
 }
-function __c49(j: number): any {
+function __c48(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3608,21 +3556,21 @@ function __c49(j: number): any {
       ).annotate({ identifier: "AzureBlobFileListContentSource" });
   }
 }
-function __c50(j: number): any {
+function __c49(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           sourceKind: S.optional(S.String),
-          azureBlobSource: S.optional(__S(1568, __c49, 0)),
-          azureBlobFileListSource: S.optional(__S(1569, __c49, 1)),
+          azureBlobSource: S.optional(__S(1536, __c48, 0)),
+          azureBlobFileListSource: S.optional(__S(1537, __c48, 1)),
         }),
       ).annotate({ identifier: "ClassifierDocumentTypeDetails" });
     case 1:
-      return S.Record(S.String, __S(1600, __c50, 0));
+      return S.Record(S.String, __S(1568, __c49, 0));
   }
 }
-function __c51(j: number): any {
+function __c50(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3648,7 +3596,7 @@ function __c51(j: number): any {
       ).annotate({ identifier: "DocumentClassifiersClassifyDocumentRequest" });
   }
 }
-function __c52(j: number): any {
+function __c51(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>

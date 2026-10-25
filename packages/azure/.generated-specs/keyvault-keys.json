@@ -590,7 +590,12 @@
           "outputToken": "nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#KeyListResult": {
       "type": "structure",
@@ -721,7 +726,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Updates the rotation policy for a key.\n\nSet specified members in the key policy. Leave others as undefined. This operation requires the keys/update permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#KeyRotationPolicy": {
       "type": "structure",
@@ -936,7 +946,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Lists the policy for a key.\n\nThe GetKeyRotationPolicy operation returns the specified key policy resources in the specified key vault. This operation requires the keys/get permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#GetKeyRotationPolicyRequest": {
       "type": "structure",
@@ -981,7 +996,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Creates a new key version, stores it, then returns key parameters, attributes and policy to the client.\n\nThe operation will rotate the key based on the key policy. It requires the keys/rotate permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#RotateKeyRequest": {
       "type": "structure",
@@ -1235,7 +1255,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Requests that a backup of the specified key be downloaded to the client.\n\nThe Key Backup operation exports a key from Azure Key Vault in a protected form. Note that this operation does NOT return key material in a form that can be used outside the Azure Key Vault system, the returned key material is either protected to a Azure Key Vault HSM or to Azure Key Vault itself. The intent of this operation is to allow a client to GENERATE a key in one Azure Key Vault instance, BACKUP the key, and then RESTORE it into another Azure Key Vault instance. The BACKUP operation may be used to export, in protected form, any key type from Azure Key Vault. Individual versions of a key cannot be backed up. BACKUP / RESTORE can be performed within geographical boundaries only; meaning that a BACKUP from one geographical area cannot be restored to another geographical area. For example, a backup from the US geographical area cannot be restored in an EU geographical area. This operation requires the key/backup permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#BackupKeyResult": {
       "type": "structure",
@@ -1294,7 +1319,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Wraps a symmetric key using a specified key.\n\nThe WRAP operation supports encryption of a symmetric key using a key encryption key that has previously been stored in an Azure Key Vault. The WRAP operation is only strictly necessary for symmetric keys stored in Azure Key Vault since protection with an asymmetric key can be performed using the public portion of the key. This operation is supported for asymmetric keys as a convenience for callers that have a key-reference but do not have access to the public key material. This operation requires the keys/wrapKey permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#KeyOperationResult": {
       "type": "structure",
@@ -1527,7 +1557,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Verifies a signature using a specified key.\n\nThe VERIFY operation is applicable to symmetric keys stored in Azure Key Vault. VERIFY is not strictly necessary for asymmetric keys stored in Azure Key Vault since signature verification can be performed using the public portion of the key but this operation is supported as a convenience for callers that only have a key-reference and not the public portion of the key. This operation requires the keys/verify permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#KeyVerifyResult": {
       "type": "structure",
@@ -1707,7 +1742,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Unwraps a symmetric key using the specified key that was initially used for wrapping that key.\n\nThe UNWRAP operation supports decryption of a symmetric key using the target key encryption key. This operation is the reverse of the WRAP operation. The UNWRAP operation applies to asymmetric and symmetric keys stored in Azure Key Vault since it uses the private portion of the key. This operation requires the keys/unwrapKey permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#UnwrapKeyRequest": {
       "type": "structure",
@@ -1792,7 +1832,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Creates a signature from a digest using the specified key.\n\nThe SIGN operation is applicable to asymmetric and symmetric keys stored in Azure Key Vault since this operation uses the private portion of the key. This operation requires the keys/sign permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#SignRequest": {
       "type": "structure",
@@ -1859,7 +1904,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Creates a new 256 bit AES key within the trusted execution environment and wraps this key using a specified key.\n\nThe SECURE WRAP operation creates a new 256 bit AES key within the trusted execution environment(TEE) and encrypts the same with a key encryption key that has previously been stored in an Azure Key Vault. The WRAP operation is only strictly necessary for symmetric keys stored in Azure Key Vault since protection with an asymmetric key can be performed using the public portion of the key. This operation is supported for asymmetric keys as a convenience for callers that have a key-reference but do not have access to the public key material. This operation requires the keys/wrapKey permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#SecureKeyOperationResult": {
       "type": "structure",
@@ -2010,7 +2060,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Securely unwraps a previously wrapped symmetric key using a specified key, ensuring TEE attestation via Microsoft Azure Attestation (MAA) before unwrapping.\n\nThe SECURE UNWRAP operation supports decryption of a symmetric key using the target key encryption key. This operation is the reverse of the SECURE WRAP operation. The SECURE UNWRAP operation applies to asymmetric and symmetric keys stored in Azure Key Vault since it uses the private portion of the key. This operation requires the keys/unwrapKey permission.\nThe SECURE UNWRAP operation ensures that MAA (Microsoft Azure Attestation Service) is used to attest the TEE (Trusted Execution Environment) before the key is unwrapped."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#SecureunwrapkeyRequest": {
       "type": "structure",
@@ -2084,7 +2139,15 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Releases a key.\n\nThe release key operation is applicable to all key types. The target key must be marked exportable. This operation requires the keys/release permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        },
+        {
+          "target": "com.azure.keyvault_keys#KeyReleaseAttestationRejected"
+        }
+      ]
     },
     "com.azure.keyvault_keys#KeyReleaseResult": {
       "type": "structure",
@@ -2196,7 +2259,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Encrypts an arbitrary sequence of bytes using an encryption key that is stored in a key vault.\n\nThe ENCRYPT operation encrypts an arbitrary sequence of bytes using an encryption key that is stored in Azure Key Vault. Note that the ENCRYPT operation only supports a single block of data, the size of which is dependent on the target key and the encryption algorithm to be used. The ENCRYPT operation is only strictly necessary for symmetric keys stored in Azure Key Vault since protection with an asymmetric key can be performed using public portion of the key. This operation is supported for asymmetric keys as a convenience for callers that have a key-reference but do not have access to the public key material. This operation requires the keys/encrypt permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#EncryptRequest": {
       "type": "structure",
@@ -2281,7 +2349,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Decrypts a single block of encrypted data.\n\nThe DECRYPT operation decrypts a well-formed block of ciphertext using the target encryption key and specified algorithm. This operation is the reverse of the ENCRYPT operation; only a single block of data may be decrypted, the size of this block is dependent on the target key and the algorithm to be used. The DECRYPT operation applies to asymmetric and symmetric keys stored in Azure Key Vault since it uses the private portion of the key. This operation requires the keys/decrypt permission. Microsoft recommends not to use CBC algorithms for decryption without first ensuring the integrity of the ciphertext using an HMAC, for example. See https://learn.microsoft.com/dotnet/standard/security/vulnerabilities-cbc-mode for more information."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#DecryptRequest": {
       "type": "structure",
@@ -2366,7 +2439,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Gets the public part of a stored key along with its attestation blob.\n\nThe get key attestation operation returns the key along with its attestation blob. This operation requires the keys/get permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#GetKeyAttestationRequest": {
       "type": "structure",
@@ -2418,7 +2496,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "The update key operation changes specified attributes of a stored key and can be applied to any key type and key version stored in Azure Key Vault.\n\nIn order to perform this operation, the key must already exist in the Key Vault. Note: The cryptographic material of a key itself cannot be changed. This operation requires the keys/update permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#UpdateKeyRequest": {
       "type": "structure",
@@ -2516,7 +2599,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Gets the public part of a stored key.\n\nThe get key operation is applicable to all key types. If the requested key is symmetric, then no key material is released in the response. This operation requires the keys/get permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#GetKeyRequest": {
       "type": "structure",
@@ -2568,7 +2656,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Deletes a key of any type from storage in Azure Key Vault.\n\nThe delete key operation cannot be used to remove individual versions of a key. This operation removes the cryptographic material associated with the key, which means the key is not usable for Sign/Verify, Wrap/Unwrap or Encrypt/Decrypt operations. This operation requires the keys/delete permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#DeletedKeyBundle": {
       "type": "structure",
@@ -2826,7 +2919,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Recovers the deleted key to its latest version.\n\nThe Recover Deleted Key operation is applicable for deleted keys in soft-delete enabled vaults. It recovers the deleted key back to its latest version under /keys. An attempt to recover an non-deleted key will return an error. Consider this the inverse of the delete operation on soft-delete enabled vaults. This operation requires the keys/recover permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#RecoverDeletedKeyRequest": {
       "type": "structure",
@@ -2871,7 +2969,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Permanently deletes the specified key.\n\nThe Purge Deleted Key operation is applicable for soft-delete enabled vaults. While the operation can be invoked on any vault, it will return an error if invoked on a non soft-delete enabled vault. This operation requires the keys/purge permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#PurgeDeletedKeyRequest": {
       "type": "structure",
@@ -2916,7 +3019,12 @@
           "apiVersion": "2026-04-01"
         },
         "smithy.api#documentation": "Gets the public part of a deleted key.\n\nThe Get Deleted Key operation is applicable for soft-delete enabled vaults. While the operation can be invoked on any vault, it will return an error if invoked on a non soft-delete enabled vault. This operation requires the keys/get permission."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.keyvault_keys#KeyVaultKeyNotFound"
+        }
+      ]
     },
     "com.azure.keyvault_keys#GetDeletedKeyRequest": {
       "type": "structure",
@@ -3188,6 +3296,66 @@
           ]
         },
         "com.azure.protocols#audience": "https://vault.azure.net/.default"
+      }
+    },
+    "com.azure.keyvault_keys#KeyVaultKeyNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The Key Vault error code (`KeyNotFound`)."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The key, the key version, or the deleted key does not exist (HTTP 404 `KeyNotFound`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/error/code": "KeyNotFound"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.keyvault_keys#KeyReleaseAttestationRejected": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The Key Vault error code (`Forbidden`)."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 403,
+        "smithy.api#documentation": "The release `target` attestation token cannot be verified against the key's release policy (HTTP 403).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 403,
+            "message": {
+              "includes": "attestation statement cannot be verified"
+            }
+          }
+        ]
       }
     }
   }

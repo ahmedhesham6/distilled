@@ -19,6 +19,22 @@ export type AnalyzeTextTaskKind =
   | "KeyPhraseExtraction"
   | "LanguageDetection"
   | "EntityLinking";
+/** Contains an input document to be analyzed by the service. */
+export interface MultiLanguageInput {
+  /** A unique, non-empty document identifier. */
+  id: string;
+  /** The input text to process. */
+  text: string;
+  /** (Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default. (Following only applies to 2023-04-15-preview and above) For Auto Language Detection, use \"auto\". If not set, use \"en\" for English as default. */
+  language?: string;
+}
+/** The input documents to be analyzed. */
+export type MultiLanguageAnalysisInputDocumentsList = Array<MultiLanguageInput>;
+/** Collection of input documents to be analyzed by the service. */
+export interface MultiLanguageAnalysisInput {
+  /** The input documents to be analyzed. */
+  documents?: MultiLanguageAnalysisInputDocumentsList;
+}
 export interface AnalyzeTextRequest {
   /** Supported Cognitive Services endpoint (e.g., https://<resource-name>.api.cognitiveservices.azure.com). */
   endpoint: string;
@@ -26,6 +42,10 @@ export interface AnalyzeTextRequest {
   showStats?: boolean;
   /** The kind of task to perform. */
   kind: AnalyzeTextTaskKind | (string & {});
+  /** The input documents to analyze. */
+  analysisInput: MultiLanguageAnalysisInput;
+  /** Task parameters for `kind` (e.g. `{ modelVersion, opinionMining }` for SentimentAnalysis, `{ piiCategories, domain }` for PiiEntityRecognition). */
+  parameters?: unknown;
 }
 /** The kind of the response object returned by the analyze-text task. */
 export type AnalyzeTextTaskResultsKind =
@@ -39,6 +59,8 @@ export type AnalyzeTextTaskResultsKind =
 export interface AnalyzeTextTaskResult {
   /** The kind of task result. */
   kind: AnalyzeTextTaskResultsKind;
+  /** Results for `kind`: `{ documents, errors, modelVersion, statistics? }`; each document's shape depends on the task (e.g. `sentiment` + `confidenceScores`, `entities`, `keyPhrases`, `detectedLanguage`). */
+  results?: unknown;
 }
 export interface AnalyzeTextCancelJobRequest {
   /** Supported Cognitive Services endpoint (e.g., https://<resource-name>.api.cognitiveservices.azure.com). */
@@ -162,6 +184,8 @@ export interface AnalyzeTextLROResult {
   taskName?: string;
   /** Kind of the task. */
   kind: AnalyzeTextLROResultsKind;
+  /** Results of the task: `{ documents, errors, modelVersion }`; each document's shape depends on `kind`. */
+  results?: unknown;
 }
 /** Enumerable of Analyze text job results. */
 export type TasksItemsList = Array<AnalyzeTextLROResult>;
@@ -212,22 +236,6 @@ export interface AnalyzeTextJobState {
   /** if showStats=true was specified in the request this field will contain information about the request payload. */
   statistics?: RequestStatistics;
 }
-/** Contains an input document to be analyzed by the service. */
-export interface MultiLanguageInput {
-  /** A unique, non-empty document identifier. */
-  id: string;
-  /** The input text to process. */
-  text: string;
-  /** (Optional) This is the 2 letter ISO 639-1 representation of a language. For example, use \"en\" for English; \"es\" for Spanish etc. If not set, use \"en\" for English as default. (Following only applies to 2023-04-15-preview and above) For Auto Language Detection, use \"auto\". If not set, use \"en\" for English as default. */
-  language?: string;
-}
-/** The input documents to be analyzed. */
-export type MultiLanguageAnalysisInputDocumentsList = Array<MultiLanguageInput>;
-/** Collection of input documents to be analyzed by the service. */
-export interface MultiLanguageAnalysisInput {
-  /** The input documents to be analyzed. */
-  documents?: MultiLanguageAnalysisInputDocumentsList;
-}
 /** The kind of the long running analyze text tasks supported. */
 export type AnalyzeTextLROTaskKind =
   | "SentimentAnalysis"
@@ -247,6 +255,8 @@ export interface AnalyzeTextLROTask {
   taskName?: string;
   /** The kind of task to perform. */
   kind: AnalyzeTextLROTaskKind | (string & {});
+  /** Task parameters for `kind` (e.g. `{ sentenceCount }` for ExtractiveSummarization). */
+  parameters?: unknown;
 }
 /** List of tasks to be performed as part of the LRO. */
 export type AnalyzeTextSubmitJobRequestTasksList = Array<AnalyzeTextLROTask>;
@@ -289,8 +299,8 @@ export const AnalyzeTextCancelJob: API.OperationMethod<
   AnalyzeTextCancelJobError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(16, __c1, 0) as any as S.Schema<AnalyzeTextCancelJobRequest>,
-  output: __S(32, __c2, 0) as any as S.Schema<AnalyzeTextCancelJobResponse>,
+  input: __S(32, __c2, 0) as any as S.Schema<AnalyzeTextCancelJobRequest>,
+  output: __S(48, __c3, 0) as any as S.Schema<AnalyzeTextCancelJobResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -304,8 +314,8 @@ export const AnalyzeTextJobStatus: API.OperationMethod<
   AnalyzeTextJobStatusError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(48, __c3, 0) as any as S.Schema<AnalyzeTextJobStatusRequest>,
-  output: __S(58, __c3, 10) as any as S.Schema<AnalyzeTextJobState>,
+  input: __S(64, __c4, 0) as any as S.Schema<AnalyzeTextJobStatusRequest>,
+  output: __S(74, __c4, 10) as any as S.Schema<AnalyzeTextJobState>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -319,8 +329,8 @@ export const AnalyzeTextSubmitJob: API.OperationMethod<
   AnalyzeTextSubmitJobError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(69, __c4, 5) as any as S.Schema<AnalyzeTextSubmitJobRequest>,
-  output: __S(32, __c2, 0) as any as S.Schema<AnalyzeTextSubmitJobResponse>,
+  input: __S(82, __c5, 2) as any as S.Schema<AnalyzeTextSubmitJobRequest>,
+  output: __S(48, __c3, 0) as any as S.Schema<AnalyzeTextSubmitJobResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -335,6 +345,8 @@ function __c0(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           showStats: S.optional(S.Boolean.pipe(T.Query())),
           kind: S.String,
+          analysisInput: __S(18, __c1, 2),
+          parameters: S.optional(S.Unknown),
         }).pipe(
           T.Http({
             method: "POST",
@@ -351,11 +363,32 @@ function __c0(j: number): any {
       return S.suspend(() =>
         S.Struct({
           kind: S.String,
+          results: S.optional(S.Unknown),
         }),
       ).annotate({ identifier: "AnalyzeTextTaskResult" });
   }
 }
 function __c1(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          id: S.String,
+          text: S.String,
+          language: S.optional(S.String),
+        }),
+      ).annotate({ identifier: "MultiLanguageInput" });
+    case 1:
+      return S.Array(__S(16, __c1, 0));
+    case 2:
+      return S.suspend(() =>
+        S.Struct({
+          documents: S.optional(__S(17, __c1, 1)),
+        }),
+      ).annotate({ identifier: "MultiLanguageAnalysisInput" });
+  }
+}
+function __c2(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -376,7 +409,7 @@ function __c1(j: number): any {
       ).annotate({ identifier: "AnalyzeTextCancelJobRequest" });
   }
 }
-function __c2(j: number): any {
+function __c3(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -386,7 +419,7 @@ function __c2(j: number): any {
       ).annotate({ identifier: "AnalyzeTextCancelJobResponse" });
   }
 }
-function __c3(j: number): any {
+function __c4(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -409,7 +442,7 @@ function __c3(j: number): any {
         ),
       ).annotate({ identifier: "AnalyzeTextJobStatusRequest" });
     case 1:
-      return S.Array(/*@__PURE__*/ S.suspend(() => __S(52, __c3, 4)));
+      return S.Array(/*@__PURE__*/ S.suspend(() => __S(68, __c4, 4)));
     case 2:
       return S.Record(S.String, S.String);
     case 3:
@@ -417,9 +450,9 @@ function __c3(j: number): any {
         S.Struct({
           code: S.String,
           message: S.String,
-          details: S.optional(__S(50, __c3, 2)),
+          details: S.optional(__S(66, __c4, 2)),
           target: S.optional(S.String),
-          innererror: S.optional(__S(51, __c3, 3)),
+          innererror: S.optional(__S(67, __c4, 3)),
         }),
       ).annotate({ identifier: "InnerErrorModel" });
     case 4:
@@ -428,12 +461,12 @@ function __c3(j: number): any {
           code: S.String,
           message: S.String,
           target: S.optional(S.String),
-          details: S.optional(__S(49, __c3, 1)),
-          innererror: S.optional(__S(51, __c3, 3)),
+          details: S.optional(__S(65, __c4, 1)),
+          innererror: S.optional(__S(67, __c4, 3)),
         }),
       ).annotate({ identifier: "Error" });
     case 5:
-      return S.Array(__S(52, __c3, 4));
+      return S.Array(__S(68, __c4, 4));
     case 6:
       return S.suspend(() =>
         S.Struct({
@@ -441,10 +474,11 @@ function __c3(j: number): any {
           status: S.String,
           taskName: S.optional(S.String),
           kind: S.String,
+          results: S.optional(S.Unknown),
         }),
       ).annotate({ identifier: "AnalyzeTextLROResult" });
     case 7:
-      return S.Array(__S(54, __c3, 6));
+      return S.Array(__S(70, __c4, 6));
     case 8:
       return S.suspend(() =>
         S.Struct({
@@ -452,7 +486,7 @@ function __c3(j: number): any {
           failed: S.Number,
           inProgress: S.Number,
           total: S.Number,
-          items: S.optional(__S(55, __c3, 7)),
+          items: S.optional(__S(71, __c4, 7)),
         }),
       ).annotate({ identifier: "Tasks" });
     case 9:
@@ -473,48 +507,33 @@ function __c3(j: number): any {
           jobId: S.String,
           lastUpdatedDateTime: S.String,
           status: S.String,
-          errors: S.optional(__S(53, __c3, 5)),
+          errors: S.optional(__S(69, __c4, 5)),
           nextLink: S.optional(S.String),
-          tasks: __S(56, __c3, 8),
-          statistics: S.optional(__S(57, __c3, 9)),
+          tasks: __S(72, __c4, 8),
+          statistics: S.optional(__S(73, __c4, 9)),
         }),
       ).annotate({ identifier: "AnalyzeTextJobState" });
   }
 }
-function __c4(j: number): any {
+function __c5(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
-          id: S.String,
-          text: S.String,
-          language: S.optional(S.String),
-        }),
-      ).annotate({ identifier: "MultiLanguageInput" });
-    case 1:
-      return S.Array(__S(64, __c4, 0));
-    case 2:
-      return S.suspend(() =>
-        S.Struct({
-          documents: S.optional(__S(65, __c4, 1)),
-        }),
-      ).annotate({ identifier: "MultiLanguageAnalysisInput" });
-    case 3:
-      return S.suspend(() =>
-        S.Struct({
           taskName: S.optional(S.String),
           kind: S.String,
+          parameters: S.optional(S.Unknown),
         }),
       ).annotate({ identifier: "AnalyzeTextLROTask" });
-    case 4:
-      return S.Array(__S(67, __c4, 3));
-    case 5:
+    case 1:
+      return S.Array(__S(80, __c5, 0));
+    case 2:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
           displayName: S.optional(S.String),
-          analysisInput: __S(66, __c4, 2),
-          tasks: __S(68, __c4, 4),
+          analysisInput: __S(18, __c1, 2),
+          tasks: __S(81, __c5, 1),
           cancelAfter: S.optional(S.Number),
         }).pipe(
           T.Http({

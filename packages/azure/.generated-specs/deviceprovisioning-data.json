@@ -596,7 +596,7 @@
           "uri": "/registrations/{id}/query",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Gets the registration state of devices in this enrollmentGroup.\n\nGets the registration state of devices in this enrollmentGroup."
       }
@@ -761,7 +761,7 @@
           "uri": "/registrations/{id}",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Deletes the device registration\n\nDeletes the device registration"
       }
@@ -811,7 +811,7 @@
           "uri": "/registrations/{id}",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Gets the device registration state.\n\nGets the device registration state."
       }
@@ -854,7 +854,7 @@
           "uri": "/enrollments/query",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Query the device enrollment records.\n\nQuery the device enrollment records."
       }
@@ -1492,7 +1492,7 @@
           "uri": "/enrollments/{id}/attestationmechanism",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Get the attestation mechanism in the device enrollment record.\n\nGet the attestation mechanism in the device enrollment record."
       }
@@ -1535,7 +1535,7 @@
           "uri": "/enrollments/{id}",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Delete a device enrollment record.\n\nDelete a device enrollment record."
       }
@@ -1585,7 +1585,7 @@
           "uri": "/enrollments/{id}",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Create or update a device enrollment record.\n\nCreate or update a device enrollment record."
       }
@@ -1762,7 +1762,7 @@
           "uri": "/enrollments/{id}",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Get a device enrollment record.\n\nGet a device enrollment record."
       }
@@ -1805,7 +1805,7 @@
           "uri": "/enrollments",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Bulk device enrollment operation with maximum of 10 enrollments.\n\nBulk device enrollment operation with maximum of 10 enrollments."
       }
@@ -2089,7 +2089,7 @@
           "uri": "/enrollmentGroups/query",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Query the device enrollment groups.\n\nQuery the device enrollment groups."
       }
@@ -2302,7 +2302,7 @@
           "uri": "/enrollmentGroups/{id}/attestationmechanism",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Get the attestation mechanism in the device enrollment group record.\n\nGet the attestation mechanism in the device enrollment group record."
       }
@@ -2345,7 +2345,7 @@
           "uri": "/enrollmentGroups/{id}",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Delete a device enrollment group.\n\nDelete a device enrollment group."
       }
@@ -2395,7 +2395,7 @@
           "uri": "/enrollmentGroups/{id}",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Create or update a device enrollment group.\n\nCreate or update a device enrollment group."
       }
@@ -2560,7 +2560,7 @@
           "uri": "/enrollmentGroups/{id}",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Get a device enrollment group.\n\nGet a device enrollment group."
       }
@@ -2603,7 +2603,7 @@
           "uri": "/enrollmentGroups",
           "code": 200,
           "host": "https://{dpsName}.azure-devices-provisioning.net",
-          "apiVersion": "2026-11-01"
+          "apiVersion": "2021-10-01"
         },
         "smithy.api#documentation": "Bulk device enrollment group operation with maximum of 10 groups.\n\nBulk device enrollment group operation with maximum of 10 groups."
       }

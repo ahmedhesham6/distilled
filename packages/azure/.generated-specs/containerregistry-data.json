@@ -35,7 +35,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2021-07-01"
+          "apiVersion": "2021-07-01",
+          "emptyBody": true
         },
         "smithy.api#documentation": "Initiate a resumable blob upload with an empty request body."
       }
@@ -320,6 +321,13 @@
           "traits": {
             "smithy.api#httpHeader": "Location"
           }
+        },
+        "dockerContentDigest": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Docker-Content-Digest",
+            "smithy.api#documentation": "Digest of the content the registry stored or returned."
+          }
         }
       },
       "traits": {
@@ -352,10 +360,20 @@
             "smithy.api#documentation": "A tag or a digest, pointing to a specific image"
           }
         },
-        "schemaVersion": {
-          "target": "smithy.api#Integer",
+        "payload": {
+          "target": "smithy.api#Blob",
           "traits": {
-            "smithy.api#documentation": "Schema version"
+            "smithy.api#httpPayload": {},
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The manifest document, as the exact bytes whose digest the registry stores."
+          }
+        },
+        "contentType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Content-Type",
+            "smithy.api#required": {},
+            "smithy.api#documentation": "Media type of the manifest, e.g. `application/vnd.oci.image.manifest.v1+json`."
           }
         }
       },
@@ -380,7 +398,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2021-07-01"
+          "apiVersion": "2021-07-01",
+          "accept": "application/vnd.oci.image.manifest.v1+json, application/vnd.oci.image.index.v1+json, application/vnd.docker.distribution.manifest.v2+json, application/vnd.docker.distribution.manifest.list.v2+json"
         },
         "smithy.api#documentation": "Get the manifest identified by `name` and `reference` where `reference` can be\na tag or digest."
       }
@@ -458,6 +477,13 @@
           "target": "com.azure.containerregistry_data#GetContainerRegistryManifestResponseSignaturesList",
           "traits": {
             "smithy.api#documentation": "(V1) Image signature"
+          }
+        },
+        "dockerContentDigest": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Docker-Content-Digest",
+            "smithy.api#documentation": "Digest of the content the registry stored or returned."
           }
         }
       },
@@ -906,7 +932,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2021-07-01"
+          "apiVersion": "2021-07-01",
+          "emptyBody": true
         },
         "smithy.api#documentation": "Mount a blob identified by the `mount` parameter from another repository."
       }
@@ -1097,9 +1124,9 @@
       "type": "structure",
       "members": {
         "body": {
-          "target": "smithy.api#Document",
+          "target": "smithy.api#Blob",
           "traits": {
-            "com.distilled.openapi#rawResponse": {},
+            "smithy.api#httpPayload": {},
             "smithy.api#required": {}
           }
         }
@@ -2745,7 +2772,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2021-07-01"
+          "apiVersion": "2021-07-01",
+          "bodyMediaType": "application/octet-stream"
         },
         "smithy.api#documentation": "Upload a stream of data without completing the upload."
       }
@@ -2784,7 +2812,7 @@
           }
         },
         "body": {
-          "target": "smithy.api#String",
+          "target": "smithy.api#Blob",
           "traits": {
             "smithy.api#httpPayload": {},
             "smithy.api#required": {}
@@ -2812,7 +2840,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2021-07-01"
+          "apiVersion": "2021-07-01",
+          "bodyMediaType": "application/octet-stream"
         },
         "smithy.api#documentation": "Complete the upload, providing all the data in the body, if necessary. A\nrequest without a body will just complete the upload with previously uploaded\ncontent."
       }
@@ -2825,6 +2854,13 @@
           "traits": {
             "smithy.api#httpHeader": "Location",
             "smithy.api#documentation": "Provided location for blob"
+          }
+        },
+        "dockerContentDigest": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Docker-Content-Digest",
+            "smithy.api#documentation": "Digest of the content the registry stored or returned."
           }
         }
       },
@@ -2859,7 +2895,7 @@
           }
         },
         "body": {
-          "target": "smithy.api#String",
+          "target": "smithy.api#Blob",
           "traits": {
             "smithy.api#httpPayload": {}
           }

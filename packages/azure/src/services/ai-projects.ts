@@ -146,6 +146,10 @@ export type CredentialType = "ApiKey" | "AAD" | "SAS" | "CustomKeys" | "None";
 export interface BaseCredentials {
   /** The type of credential used by the connection */
   type: CredentialType;
+  /** For `type: "ApiKey"`: the API key. */
+  key?: string;
+  /** For `type: "SAS"`: the SAS token. */
+  SAS?: string;
 }
 /** Metadata of the connection */
 export type ConnectionMetadataMap = { [key: string]: string | undefined };
@@ -1044,6 +1048,8 @@ function __c18(j: number): any {
       return S.suspend(() =>
         S.Struct({
           type: S.String,
+          key: S.optional(S.String),
+          SAS: S.optional(S.String),
         }),
       ).annotate({ identifier: "BaseCredentials" });
     case 1:

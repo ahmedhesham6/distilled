@@ -1456,6 +1456,18 @@
             "smithy.api#documentation": "The type of credential used by the connection",
             "smithy.api#required": {}
           }
+        },
+        "key": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"ApiKey\"`: the API key."
+          }
+        },
+        "SAS": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"SAS\"`: the SAS token."
+          }
         }
       },
       "traits": {

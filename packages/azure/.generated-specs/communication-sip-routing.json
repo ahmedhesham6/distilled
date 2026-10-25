@@ -35,7 +35,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2023-03-01"
+          "apiVersion": "2023-03-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Updates SIP configuration for resource."
       }

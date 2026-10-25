@@ -1223,7 +1223,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2023-10-31"
+          "apiVersion": "2023-10-31",
+          "jsonContentType": "application/json-patch+json"
         },
         "smithy.api#documentation": "Updates a component on a digital twin.\nStatus codes:\n* 204 No Content\n* 400 Bad Request\n  * InvalidArgument - The digital twin id, component path, or payload is invalid.\n  * JsonPatchInvalid - The JSON Patch provided is invalid.\n  * ValidationFailed - Applying the patch results in an invalid digital twin.\n* 404 Not Found\n  * DigitalTwinNotFound - The digital twin was not found.\n* 412 Precondition Failed\n  * PreconditionFailed - The precondition check (If-Match or If-None-Match) failed."
       }
@@ -1482,6 +1483,14 @@
             "smithy.api#httpHeader": "Telemetry-Source-Time",
             "smithy.api#documentation": "An RFC 3339 timestamp that identifies the time the telemetry was measured."
           }
+        },
+        "body": {
+          "target": "com.azure.digitaltwins_data#Telemetry",
+          "traits": {
+            "smithy.api#httpPayload": {},
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The telemetry message."
+          }
         }
       },
       "traits": {
@@ -1556,6 +1565,14 @@
           "traits": {
             "smithy.api#httpHeader": "Telemetry-Source-Time",
             "smithy.api#documentation": "An RFC 3339 timestamp that identifies the time the telemetry was measured."
+          }
+        },
+        "body": {
+          "target": "com.azure.digitaltwins_data#Telemetry",
+          "traits": {
+            "smithy.api#httpPayload": {},
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The telemetry message."
           }
         }
       },
@@ -1901,7 +1918,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2023-10-31"
+          "apiVersion": "2023-10-31",
+          "jsonContentType": "application/json-patch+json"
         },
         "smithy.api#documentation": "Updates the properties on a relationship between two digital twins.\nStatus codes:\n* 204 No Content\n* 400 Bad Request\n  * InvalidArgument - The digital twin id or relationship id is invalid.\n  * InvalidRelationship - The relationship is invalid.\n  * JsonPatchInvalid - The JSON Patch provided is invalid.\n  * ValidationFailed - The relationship content is invalid.\n* 404 Not Found\n  * DigitalTwinNotFound - The digital twin was not found.\n  * RelationshipNotFound - The relationship was not found.\n* 409 Conflict\n  * RelationshipAlreadyExists - The relationship already exists.\n* 412 Precondition Failed\n  * PreconditionFailed - The precondition check (If-Match or If-None-Match) failed."
       }
@@ -2083,6 +2101,14 @@
           "traits": {
             "smithy.api#httpHeader": "If-None-Match",
             "smithy.api#documentation": "Only perform the operation if the entity does not already exist."
+          }
+        },
+        "body": {
+          "target": "com.azure.digitaltwins_data#Relationship",
+          "traits": {
+            "smithy.api#httpPayload": {},
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The relationship: `$relationshipName`, `$targetId`, and its property values."
           }
         }
       },
@@ -2269,7 +2295,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2023-10-31"
+          "apiVersion": "2023-10-31",
+          "jsonContentType": "application/json-patch+json"
         },
         "smithy.api#documentation": "Updates a digital twin.\nStatus codes:\n* 204 No Content\n* 400 Bad Request\n  * InvalidArgument - The digital twin id or payload is invalid.\n  * JsonPatchInvalid - The JSON Patch provided is invalid.\n  * ValidationFailed - Applying the patch results in an invalid digital twin.\n* 404 Not Found\n  * DigitalTwinNotFound - The digital twin was not found.\n* 412 Precondition Failed\n  * PreconditionFailed - The precondition check (If-Match or If-None-Match) failed."
       }
@@ -2435,6 +2462,14 @@
           "traits": {
             "smithy.api#httpHeader": "If-None-Match",
             "smithy.api#documentation": "Only perform the operation if the entity does not already exist."
+          }
+        },
+        "body": {
+          "target": "com.azure.digitaltwins_data#DigitalTwin",
+          "traits": {
+            "smithy.api#httpPayload": {},
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The digital twin: `$metadata.$model` plus its property values."
           }
         }
       },
@@ -2707,7 +2742,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2023-10-31"
+          "apiVersion": "2023-10-31",
+          "jsonContentType": "application/json-patch+json"
         },
         "smithy.api#documentation": "Updates the metadata for a model.\nStatus codes:\n* 204 No Content\n* 400 Bad Request\n  * InvalidArgument - The model id is invalid.\n  * JsonPatchInvalid - The JSON Patch provided is invalid.\n  * MissingArgument - The model id was not provided.\n* 404 Not Found\n  * ModelNotFound - The model was not found.\n* 409 Conflict\n  * ModelReferencesNotDecommissioned - The model refers to models that are not decommissioned."
       }
@@ -3227,6 +3263,18 @@
           ]
         },
         "com.azure.protocols#audience": "https://digitaltwins.azure.net/.default"
+      }
+    },
+    "com.azure.digitaltwins_data#Telemetry": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "smithy.api#Document"
+      },
+      "traits": {
+        "smithy.api#documentation": "Telemetry message: a JSON object matching the twin's (or component's) DTDL telemetry."
       }
     }
   }

@@ -474,8 +474,8 @@ export interface BlobPropertiesInternal {
 /** An Azure Storage blob */
 export interface BlobItemInternal {
   Name: string;
-  Deleted: boolean;
-  Snapshot: string;
+  Deleted?: boolean;
+  Snapshot?: string;
   VersionId?: string;
   IsCurrentVersion?: boolean;
   Properties: BlobPropertiesInternal;
@@ -531,10 +531,10 @@ export interface ListFileSystemPathsRequest {
 }
 export interface Path {
   name?: string;
-  isDirectory?: boolean;
+  isDirectory?: string;
   lastModified?: string;
   eTag?: string;
-  contentLength?: number;
+  contentLength?: string;
   owner?: string;
   group?: string;
   permissions?: string;
@@ -2300,8 +2300,8 @@ function __c17(j: number): any {
       return S.suspend(() =>
         S.Struct({
           Name: S.String,
-          Deleted: S.Boolean,
-          Snapshot: S.String,
+          Deleted: S.optional(S.Boolean),
+          Snapshot: S.optional(S.String),
           VersionId: S.optional(S.String),
           IsCurrentVersion: S.optional(S.Boolean),
           Properties: __S(276, __c17, 4),
@@ -2373,10 +2373,10 @@ function __c18(j: number): any {
       return S.suspend(() =>
         S.Struct({
           name: S.optional(S.String),
-          isDirectory: S.optional(S.Boolean),
+          isDirectory: S.optional(S.String),
           lastModified: S.optional(S.String),
-          eTag: S.optional(S.String),
-          contentLength: S.optional(S.Number),
+          eTag: S.optional(S.String.pipe(T.Body("etag"))),
+          contentLength: S.optional(S.String),
           owner: S.optional(S.String),
           group: S.optional(S.String),
           permissions: S.optional(S.String),
@@ -2433,7 +2433,7 @@ function __c19(j: number): any {
         S.Struct({
           name: S.optional(S.String),
           lastModified: S.optional(S.String),
-          eTag: S.optional(S.String),
+          eTag: S.optional(S.String.pipe(T.Body("etag"))),
         }),
       ).annotate({ identifier: "FileSystem" });
     case 2:

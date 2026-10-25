@@ -28,6 +28,8 @@ export interface AddDeleteJobResponse {
   operationLocation?: string;
 }
 export type AddDigitalTwinRequestIfNoneMatch = "*";
+/** Digital twin */
+export type DigitalTwin = { [key: string]: unknown | undefined };
 export interface AddDigitalTwinRequest {
   /** The service endpoint URL. */
   endpoint: string;
@@ -39,9 +41,9 @@ export interface AddDigitalTwinRequest {
   tracestate?: string;
   /** Only perform the operation if the entity does not already exist. */
   ifNoneMatch?: AddDigitalTwinRequestIfNoneMatch | (string & {});
+  /** The digital twin: `$metadata.$model` plus its property values. */
+  body: DigitalTwin;
 }
-/** Digital twin */
-export type DigitalTwin = { [key: string]: unknown | undefined };
 export type AddDigitalTwinResponse = DigitalTwin;
 export type AddDigitalTwinModelRequestBodyList = Array<unknown>;
 export interface AddDigitalTwinModelRequest {
@@ -76,6 +78,8 @@ export interface DigitalTwinsModelData {
 export type NonPagedDigitalTwinsModelDataCollection = Array<DigitalTwinsModelData>;
 export type AddDigitalTwinModelResponse = NonPagedDigitalTwinsModelDataCollection;
 export type AddDigitalTwinRelationshipRequestIfNoneMatch = "*";
+/** Digital twin relationship */
+export type Relationship = { [key: string]: unknown | undefined };
 export interface AddDigitalTwinRelationshipRequest {
   /** The service endpoint URL. */
   endpoint: string;
@@ -89,9 +93,9 @@ export interface AddDigitalTwinRelationshipRequest {
   tracestate?: string;
   /** Only perform the operation if the entity does not already exist. */
   ifNoneMatch?: AddDigitalTwinRelationshipRequestIfNoneMatch | (string & {});
+  /** The relationship: `$relationshipName`, `$targetId`, and its property values. */
+  body: Relationship;
 }
-/** Digital twin relationship */
-export type Relationship = { [key: string]: unknown | undefined };
 export type AddDigitalTwinRelationshipResponse = Relationship;
 export interface AddEventRouteRequest {
   /** The service endpoint URL. */
@@ -521,6 +525,8 @@ export interface QueryResult {
   /** A token which can be used to construct a new QuerySpecification to retrieve the next set of results. */
   continuationToken?: string;
 }
+/** Telemetry message: a JSON object matching the twin's (or component's) DTDL telemetry. */
+export type Telemetry = { [key: string]: unknown | undefined };
 export interface SendDigitalTwinComponentTelemetryRequest {
   /** The service endpoint URL. */
   endpoint: string;
@@ -536,6 +542,8 @@ export interface SendDigitalTwinComponentTelemetryRequest {
   messageId: string;
   /** An RFC 3339 timestamp that identifies the time the telemetry was measured. */
   telemetrySourceTime?: string;
+  /** The telemetry message. */
+  body: Telemetry;
 }
 export interface SendDigitalTwinComponentTelemetryResponse {}
 export interface SendDigitalTwinTelemetryRequest {
@@ -551,6 +559,8 @@ export interface SendDigitalTwinTelemetryRequest {
   messageId: string;
   /** An RFC 3339 timestamp that identifies the time the telemetry was measured. */
   telemetrySourceTime?: string;
+  /** The telemetry message. */
+  body: Telemetry;
 }
 export interface SendDigitalTwinTelemetryResponse {}
 export type UpdateDigitalTwinRequestBodyList = Array<unknown>;
@@ -648,7 +658,7 @@ export const AddDigitalTwin: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(4, __c1, 0) as any as S.Schema<AddDigitalTwinRequest>,
-  output: __S(9, __c2, 1) as any as S.Schema<AddDigitalTwinResponse>,
+  output: __S(8, __c2, 0) as any as S.Schema<AddDigitalTwinResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -662,8 +672,8 @@ export const AddDigitalTwinModel: API.OperationMethod<
   AddDigitalTwinModelError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(60, __c15, 0) as any as S.Schema<AddDigitalTwinModelRequest>,
-  output: __S(61, __c15, 1) as any as S.Schema<AddDigitalTwinModelResponse>,
+  input: __S(64, __c16, 0) as any as S.Schema<AddDigitalTwinModelRequest>,
+  output: __S(65, __c16, 1) as any as S.Schema<AddDigitalTwinModelResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -677,8 +687,8 @@ export const AddDigitalTwinRelationship: API.OperationMethod<
   AddDigitalTwinRelationshipError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(120, __c30, 0) as any as S.Schema<AddDigitalTwinRelationshipRequest>,
-  output: __S(9, __c2, 1) as any as S.Schema<AddDigitalTwinRelationshipResponse>,
+  input: __S(124, __c31, 0) as any as S.Schema<AddDigitalTwinRelationshipRequest>,
+  output: __S(8, __c2, 0) as any as S.Schema<AddDigitalTwinRelationshipResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -692,8 +702,8 @@ export const AddEventRoute: API.OperationMethod<
   AddEventRouteError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(132, __c33, 0) as any as S.Schema<AddEventRouteRequest>,
-  output: __S(136, __c34, 0) as any as S.Schema<AddEventRouteResponse>,
+  input: __S(136, __c34, 0) as any as S.Schema<AddEventRouteRequest>,
+  output: __S(140, __c35, 0) as any as S.Schema<AddEventRouteResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -707,8 +717,8 @@ export const AddImportJob: API.OperationMethod<
   AddImportJobError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(141, __c35, 1) as any as S.Schema<AddImportJobRequest>,
-  output: __S(148, __c37, 0) as any as S.Schema<ImportJob>,
+  input: __S(145, __c36, 1) as any as S.Schema<AddImportJobRequest>,
+  output: __S(152, __c38, 0) as any as S.Schema<ImportJob>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -722,8 +732,8 @@ export const CancelImportJob: API.OperationMethod<
   CancelImportJobError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(152, __c38, 0) as any as S.Schema<CancelImportJobRequest>,
-  output: __S(148, __c37, 0) as any as S.Schema<ImportJob>,
+  input: __S(156, __c39, 0) as any as S.Schema<CancelImportJobRequest>,
+  output: __S(152, __c38, 0) as any as S.Schema<ImportJob>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -737,8 +747,8 @@ export const DeleteDigitalTwin: API.OperationMethod<
   DeleteDigitalTwinError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(156, __c39, 0) as any as S.Schema<DeleteDigitalTwinRequest>,
-  output: __S(136, __c34, 0) as any as S.Schema<DeleteDigitalTwinResponse>,
+  input: __S(160, __c40, 0) as any as S.Schema<DeleteDigitalTwinRequest>,
+  output: __S(140, __c35, 0) as any as S.Schema<DeleteDigitalTwinResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -752,8 +762,8 @@ export const DeleteDigitalTwinModel: API.OperationMethod<
   DeleteDigitalTwinModelError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(160, __c40, 0) as any as S.Schema<DeleteDigitalTwinModelRequest>,
-  output: __S(136, __c34, 0) as any as S.Schema<DeleteDigitalTwinModelResponse>,
+  input: __S(164, __c41, 0) as any as S.Schema<DeleteDigitalTwinModelRequest>,
+  output: __S(140, __c35, 0) as any as S.Schema<DeleteDigitalTwinModelResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -767,8 +777,8 @@ export const DeleteDigitalTwinRelationship: API.OperationMethod<
   DeleteDigitalTwinRelationshipError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(164, __c41, 0) as any as S.Schema<DeleteDigitalTwinRelationshipRequest>,
-  output: __S(136, __c34, 0) as any as S.Schema<DeleteDigitalTwinRelationshipResponse>,
+  input: __S(168, __c42, 0) as any as S.Schema<DeleteDigitalTwinRelationshipRequest>,
+  output: __S(140, __c35, 0) as any as S.Schema<DeleteDigitalTwinRelationshipResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -782,8 +792,8 @@ export const DeleteEventRoute: API.OperationMethod<
   DeleteEventRouteError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(12, __c3, 0) as any as S.Schema<DeleteEventRouteRequest>,
-  output: __S(136, __c34, 0) as any as S.Schema<DeleteEventRouteResponse>,
+  input: __S(16, __c4, 0) as any as S.Schema<DeleteEventRouteRequest>,
+  output: __S(140, __c35, 0) as any as S.Schema<DeleteEventRouteResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -797,8 +807,8 @@ export const DeleteImportJob: API.OperationMethod<
   DeleteImportJobError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(16, __c4, 0) as any as S.Schema<DeleteImportJobRequest>,
-  output: __S(136, __c34, 0) as any as S.Schema<DeleteImportJobResponse>,
+  input: __S(20, __c5, 0) as any as S.Schema<DeleteImportJobRequest>,
+  output: __S(140, __c35, 0) as any as S.Schema<DeleteImportJobResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -812,8 +822,8 @@ export const GetDeleteJobById: API.OperationMethod<
   GetDeleteJobByIdError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(20, __c5, 0) as any as S.Schema<GetDeleteJobByIdRequest>,
-  output: __S(24, __c6, 0) as any as S.Schema<DeleteJob>,
+  input: __S(24, __c6, 0) as any as S.Schema<GetDeleteJobByIdRequest>,
+  output: __S(28, __c7, 0) as any as S.Schema<DeleteJob>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -827,8 +837,8 @@ export const GetDigitalTwinById: API.OperationMethod<
   GetDigitalTwinByIdError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(28, __c7, 0) as any as S.Schema<GetDigitalTwinByIdRequest>,
-  output: __S(9, __c2, 1) as any as S.Schema<GetDigitalTwinByIdResponse>,
+  input: __S(32, __c8, 0) as any as S.Schema<GetDigitalTwinByIdRequest>,
+  output: __S(8, __c2, 0) as any as S.Schema<GetDigitalTwinByIdResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -842,8 +852,8 @@ export const GetDigitalTwinComponent: API.OperationMethod<
   GetDigitalTwinComponentError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(32, __c8, 0) as any as S.Schema<GetDigitalTwinComponentRequest>,
-  output: __S(9, __c2, 1) as any as S.Schema<GetDigitalTwinComponentResponse>,
+  input: __S(36, __c9, 0) as any as S.Schema<GetDigitalTwinComponentRequest>,
+  output: __S(8, __c2, 0) as any as S.Schema<GetDigitalTwinComponentResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -857,8 +867,8 @@ export const GetDigitalTwinModelById: API.OperationMethod<
   GetDigitalTwinModelByIdError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(36, __c9, 0) as any as S.Schema<GetDigitalTwinModelByIdRequest>,
-  output: __S(65, __c16, 1) as any as S.Schema<DigitalTwinsModelData>,
+  input: __S(40, __c10, 0) as any as S.Schema<GetDigitalTwinModelByIdRequest>,
+  output: __S(69, __c17, 1) as any as S.Schema<DigitalTwinsModelData>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -872,8 +882,8 @@ export const GetDigitalTwinRelationshipById: API.OperationMethod<
   GetDigitalTwinRelationshipByIdError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(40, __c10, 0) as any as S.Schema<GetDigitalTwinRelationshipByIdRequest>,
-  output: __S(9, __c2, 1) as any as S.Schema<GetDigitalTwinRelationshipByIdResponse>,
+  input: __S(44, __c11, 0) as any as S.Schema<GetDigitalTwinRelationshipByIdRequest>,
+  output: __S(8, __c2, 0) as any as S.Schema<GetDigitalTwinRelationshipByIdResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -887,8 +897,8 @@ export const GetEventRouteById: API.OperationMethod<
   GetEventRouteByIdError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(44, __c11, 0) as any as S.Schema<GetEventRouteByIdRequest>,
-  output: __S(48, __c12, 0) as any as S.Schema<EventRoute>,
+  input: __S(48, __c12, 0) as any as S.Schema<GetEventRouteByIdRequest>,
+  output: __S(52, __c13, 0) as any as S.Schema<EventRoute>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -902,8 +912,8 @@ export const GetImportJobById: API.OperationMethod<
   GetImportJobByIdError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(52, __c13, 0) as any as S.Schema<GetImportJobByIdRequest>,
-  output: __S(148, __c37, 0) as any as S.Schema<ImportJob>,
+  input: __S(56, __c14, 0) as any as S.Schema<GetImportJobByIdRequest>,
+  output: __S(152, __c38, 0) as any as S.Schema<ImportJob>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -918,8 +928,8 @@ export const ListDeleteJobs: API.PaginatedOperationMethod<
   AzureOpContext,
   DeleteJob
 > = /*@__PURE__*/ API.makePaginated(() => ({
-  input: __S(56, __c14, 0) as any as S.Schema<ListDeleteJobsRequest>,
-  output: __S(58, __c14, 2) as any as S.Schema<DeleteJobCollection>,
+  input: __S(60, __c15, 0) as any as S.Schema<ListDeleteJobsRequest>,
+  output: __S(62, __c15, 2) as any as S.Schema<DeleteJobCollection>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -940,8 +950,8 @@ export const ListDigitalTwinIncomingRelationships: API.PaginatedOperationMethod<
   AzureOpContext,
   IncomingRelationship
 > = /*@__PURE__*/ API.makePaginated(() => ({
-  input: __S(76, __c19, 0) as any as S.Schema<ListDigitalTwinIncomingRelationshipsRequest>,
-  output: __S(79, __c19, 3) as any as S.Schema<IncomingRelationshipCollection>,
+  input: __S(80, __c20, 0) as any as S.Schema<ListDigitalTwinIncomingRelationshipsRequest>,
+  output: __S(83, __c20, 3) as any as S.Schema<IncomingRelationshipCollection>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -962,8 +972,8 @@ export const ListDigitalTwinModels: API.PaginatedOperationMethod<
   AzureOpContext,
   DigitalTwinsModelData
 > = /*@__PURE__*/ API.makePaginated(() => ({
-  input: __S(81, __c20, 1) as any as S.Schema<ListDigitalTwinModelsRequest>,
-  output: __S(82, __c20, 2) as any as S.Schema<PagedDigitalTwinsModelDataCollection>,
+  input: __S(85, __c21, 1) as any as S.Schema<ListDigitalTwinModelsRequest>,
+  output: __S(86, __c21, 2) as any as S.Schema<PagedDigitalTwinsModelDataCollection>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -984,8 +994,8 @@ export const ListDigitalTwinRelationships: API.PaginatedOperationMethod<
   AzureOpContext,
   unknown
 > = /*@__PURE__*/ API.makePaginated(() => ({
-  input: __S(84, __c21, 0) as any as S.Schema<ListDigitalTwinRelationshipsRequest>,
-  output: __S(85, __c21, 1) as any as S.Schema<RelationshipCollection>,
+  input: __S(88, __c22, 0) as any as S.Schema<ListDigitalTwinRelationshipsRequest>,
+  output: __S(89, __c22, 1) as any as S.Schema<RelationshipCollection>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1006,8 +1016,8 @@ export const ListEventRoutes: API.PaginatedOperationMethod<
   AzureOpContext,
   EventRoute
 > = /*@__PURE__*/ API.makePaginated(() => ({
-  input: __S(88, __c22, 0) as any as S.Schema<ListEventRoutesRequest>,
-  output: __S(90, __c22, 2) as any as S.Schema<EventRouteCollection>,
+  input: __S(92, __c23, 0) as any as S.Schema<ListEventRoutesRequest>,
+  output: __S(94, __c23, 2) as any as S.Schema<EventRouteCollection>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1028,8 +1038,8 @@ export const ListImportJobs: API.PaginatedOperationMethod<
   AzureOpContext,
   ImportJob
 > = /*@__PURE__*/ API.makePaginated(() => ({
-  input: __S(92, __c23, 0) as any as S.Schema<ListImportJobsRequest>,
-  output: __S(94, __c23, 2) as any as S.Schema<ImportJobCollection>,
+  input: __S(96, __c24, 0) as any as S.Schema<ListImportJobsRequest>,
+  output: __S(98, __c24, 2) as any as S.Schema<ImportJobCollection>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1049,8 +1059,8 @@ export const QueryQueryTwins: API.OperationMethod<
   QueryQueryTwinsError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(96, __c24, 0) as any as S.Schema<QueryQueryTwinsRequest>,
-  output: __S(97, __c24, 1) as any as S.Schema<QueryResult>,
+  input: __S(100, __c25, 0) as any as S.Schema<QueryQueryTwinsRequest>,
+  output: __S(101, __c25, 1) as any as S.Schema<QueryResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1064,8 +1074,8 @@ export const SendDigitalTwinComponentTelemetry: API.OperationMethod<
   SendDigitalTwinComponentTelemetryError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(100, __c25, 0) as any as S.Schema<SendDigitalTwinComponentTelemetryRequest>,
-  output: __S(136, __c34, 0) as any as S.Schema<SendDigitalTwinComponentTelemetryResponse>,
+  input: __S(104, __c26, 0) as any as S.Schema<SendDigitalTwinComponentTelemetryRequest>,
+  output: __S(140, __c35, 0) as any as S.Schema<SendDigitalTwinComponentTelemetryResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1079,8 +1089,8 @@ export const SendDigitalTwinTelemetry: API.OperationMethod<
   SendDigitalTwinTelemetryError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(104, __c26, 0) as any as S.Schema<SendDigitalTwinTelemetryRequest>,
-  output: __S(136, __c34, 0) as any as S.Schema<SendDigitalTwinTelemetryResponse>,
+  input: __S(108, __c27, 0) as any as S.Schema<SendDigitalTwinTelemetryRequest>,
+  output: __S(140, __c35, 0) as any as S.Schema<SendDigitalTwinTelemetryResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1094,8 +1104,8 @@ export const UpdateDigitalTwin: API.OperationMethod<
   UpdateDigitalTwinError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(108, __c27, 0) as any as S.Schema<UpdateDigitalTwinRequest>,
-  output: __S(112, __c28, 0) as any as S.Schema<UpdateDigitalTwinResponse>,
+  input: __S(112, __c28, 0) as any as S.Schema<UpdateDigitalTwinRequest>,
+  output: __S(116, __c29, 0) as any as S.Schema<UpdateDigitalTwinResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1109,8 +1119,8 @@ export const UpdateDigitalTwinComponent: API.OperationMethod<
   UpdateDigitalTwinComponentError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(116, __c29, 0) as any as S.Schema<UpdateDigitalTwinComponentRequest>,
-  output: __S(112, __c28, 0) as any as S.Schema<UpdateDigitalTwinComponentResponse>,
+  input: __S(120, __c30, 0) as any as S.Schema<UpdateDigitalTwinComponentRequest>,
+  output: __S(116, __c29, 0) as any as S.Schema<UpdateDigitalTwinComponentResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1124,8 +1134,8 @@ export const UpdateDigitalTwinModel: API.OperationMethod<
   UpdateDigitalTwinModelError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(124, __c31, 0) as any as S.Schema<UpdateDigitalTwinModelRequest>,
-  output: __S(136, __c34, 0) as any as S.Schema<UpdateDigitalTwinModelResponse>,
+  input: __S(128, __c32, 0) as any as S.Schema<UpdateDigitalTwinModelRequest>,
+  output: __S(140, __c35, 0) as any as S.Schema<UpdateDigitalTwinModelResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1139,8 +1149,8 @@ export const UpdateDigitalTwinRelationship: API.OperationMethod<
   UpdateDigitalTwinRelationshipError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(128, __c32, 0) as any as S.Schema<UpdateDigitalTwinRelationshipRequest>,
-  output: __S(112, __c28, 0) as any as S.Schema<UpdateDigitalTwinRelationshipResponse>,
+  input: __S(132, __c33, 0) as any as S.Schema<UpdateDigitalTwinRelationshipRequest>,
+  output: __S(116, __c29, 0) as any as S.Schema<UpdateDigitalTwinRelationshipResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1187,6 +1197,7 @@ function __c1(j: number): any {
           traceparent: S.optional(S.String.pipe(T.Header())),
           tracestate: S.optional(S.String.pipe(T.Header())),
           ifNoneMatch: S.optional(S.String.pipe(T.Header("If-None-Match"))),
+          body: __S(12, __c3, 0).pipe(T.HttpBody()),
         }).pipe(
           T.Http({
             method: "PUT",
@@ -1204,14 +1215,18 @@ function __c1(j: number): any {
 function __c2(j: number): any {
   switch (j) {
     case 0:
-      return S.Record(S.String, S.Unknown);
-    case 1:
-      return S.suspend(() => __S(8, __c2, 0).pipe(T.RawResponseRoot())).annotate({
+      return S.suspend(() => __S(12, __c3, 0).pipe(T.RawResponseRoot())).annotate({
         identifier: "AddDigitalTwinResponse",
       });
   }
 }
 function __c3(j: number): any {
+  switch (j) {
+    case 0:
+      return S.Record(S.String, S.Unknown);
+  }
+}
+function __c4(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1234,7 +1249,7 @@ function __c3(j: number): any {
       ).annotate({ identifier: "DeleteEventRouteRequest" });
   }
 }
-function __c4(j: number): any {
+function __c5(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1257,7 +1272,7 @@ function __c4(j: number): any {
       ).annotate({ identifier: "DeleteImportJobRequest" });
   }
 }
-function __c5(j: number): any {
+function __c6(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1280,7 +1295,7 @@ function __c5(j: number): any {
       ).annotate({ identifier: "GetDeleteJobByIdRequest" });
   }
 }
-function __c6(j: number): any {
+function __c7(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1290,12 +1305,12 @@ function __c6(j: number): any {
           createdDateTime: S.optional(S.String),
           finishedDateTime: S.optional(S.String),
           purgeDateTime: S.optional(S.String),
-          error: S.optional(__S(146, __c36, 2)),
+          error: S.optional(__S(150, __c37, 2)),
         }),
       ).annotate({ identifier: "DeleteJob" });
   }
 }
-function __c7(j: number): any {
+function __c8(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1318,7 +1333,7 @@ function __c7(j: number): any {
       ).annotate({ identifier: "GetDigitalTwinByIdRequest" });
   }
 }
-function __c8(j: number): any {
+function __c9(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1342,7 +1357,7 @@ function __c8(j: number): any {
       ).annotate({ identifier: "GetDigitalTwinComponentRequest" });
   }
 }
-function __c9(j: number): any {
+function __c10(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1366,7 +1381,7 @@ function __c9(j: number): any {
       ).annotate({ identifier: "GetDigitalTwinModelByIdRequest" });
   }
 }
-function __c10(j: number): any {
+function __c11(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1390,7 +1405,7 @@ function __c10(j: number): any {
       ).annotate({ identifier: "GetDigitalTwinRelationshipByIdRequest" });
   }
 }
-function __c11(j: number): any {
+function __c12(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1413,7 +1428,7 @@ function __c11(j: number): any {
       ).annotate({ identifier: "GetEventRouteByIdRequest" });
   }
 }
-function __c12(j: number): any {
+function __c13(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1425,7 +1440,7 @@ function __c12(j: number): any {
       ).annotate({ identifier: "EventRoute" });
   }
 }
-function __c13(j: number): any {
+function __c14(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1448,7 +1463,7 @@ function __c13(j: number): any {
       ).annotate({ identifier: "GetImportJobByIdRequest" });
   }
 }
-function __c14(j: number): any {
+function __c15(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1472,17 +1487,17 @@ function __c14(j: number): any {
         ),
       ).annotate({ identifier: "ListDeleteJobsRequest" });
     case 1:
-      return S.Array(__S(24, __c6, 0));
+      return S.Array(__S(28, __c7, 0));
     case 2:
       return S.suspend(() =>
         S.Struct({
-          value: __S(57, __c14, 1),
+          value: __S(61, __c15, 1),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "DeleteJobCollection" });
   }
 }
-function __c15(j: number): any {
+function __c16(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1490,7 +1505,7 @@ function __c15(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           traceparent: S.optional(S.String.pipe(T.Header())),
           tracestate: S.optional(S.String.pipe(T.Header())),
-          body: __S(72, __c18, 0).pipe(T.HttpBody()),
+          body: __S(76, __c19, 0).pipe(T.HttpBody()),
         }).pipe(
           T.Http({
             method: "POST",
@@ -1504,20 +1519,20 @@ function __c15(j: number): any {
         ),
       ).annotate({ identifier: "AddDigitalTwinModelRequest" });
     case 1:
-      return S.suspend(() => __S(68, __c17, 0).pipe(T.RawResponseRoot())).annotate({
+      return S.suspend(() => __S(72, __c18, 0).pipe(T.RawResponseRoot())).annotate({
         identifier: "AddDigitalTwinModelResponse",
       });
   }
 }
-function __c16(j: number): any {
+function __c17(j: number): any {
   switch (j) {
     case 0:
       return S.Record(S.String, S.String);
     case 1:
       return S.suspend(() =>
         S.Struct({
-          displayName: S.optional(__S(64, __c16, 0)),
-          description: S.optional(__S(64, __c16, 0)),
+          displayName: S.optional(__S(68, __c17, 0)),
+          description: S.optional(__S(68, __c17, 0)),
           id: S.String,
           uploadTime: S.optional(S.String),
           decommissioned: S.optional(S.Boolean),
@@ -1526,19 +1541,19 @@ function __c16(j: number): any {
       ).annotate({ identifier: "DigitalTwinsModelData" });
   }
 }
-function __c17(j: number): any {
+function __c18(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(__S(65, __c16, 1));
+      return S.Array(__S(69, __c17, 1));
   }
 }
-function __c18(j: number): any {
+function __c19(j: number): any {
   switch (j) {
     case 0:
       return S.Array(S.Unknown);
   }
 }
-function __c19(j: number): any {
+function __c20(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1571,17 +1586,17 @@ function __c19(j: number): any {
         }),
       ).annotate({ identifier: "IncomingRelationship" });
     case 2:
-      return S.Array(__S(77, __c19, 1));
+      return S.Array(__S(81, __c20, 1));
     case 3:
       return S.suspend(() =>
         S.Struct({
-          value: __S(78, __c19, 2),
+          value: __S(82, __c20, 2),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "IncomingRelationshipCollection" });
   }
 }
-function __c20(j: number): any {
+function __c21(j: number): any {
   switch (j) {
     case 0:
       return S.Array(S.String);
@@ -1589,7 +1604,7 @@ function __c20(j: number): any {
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
-          dependenciesFor: S.optional(__S(80, __c20, 0).pipe(T.Query())),
+          dependenciesFor: S.optional(__S(84, __c21, 0).pipe(T.Query())),
           includeModelDefinition: S.optional(S.Boolean.pipe(T.Query())),
           traceparent: S.optional(S.String.pipe(T.Header())),
           tracestate: S.optional(S.String.pipe(T.Header())),
@@ -1611,13 +1626,13 @@ function __c20(j: number): any {
     case 2:
       return S.suspend(() =>
         S.Struct({
-          value: __S(68, __c17, 0),
+          value: __S(72, __c18, 0),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "PagedDigitalTwinsModelDataCollection" });
   }
 }
-function __c21(j: number): any {
+function __c22(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1644,13 +1659,13 @@ function __c21(j: number): any {
     case 1:
       return S.suspend(() =>
         S.Struct({
-          value: __S(72, __c18, 0),
+          value: __S(76, __c19, 0),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "RelationshipCollection" });
   }
 }
-function __c22(j: number): any {
+function __c23(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1674,17 +1689,17 @@ function __c22(j: number): any {
         ),
       ).annotate({ identifier: "ListEventRoutesRequest" });
     case 1:
-      return S.Array(__S(48, __c12, 0));
+      return S.Array(__S(52, __c13, 0));
     case 2:
       return S.suspend(() =>
         S.Struct({
-          value: __S(89, __c22, 1),
+          value: __S(93, __c23, 1),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "EventRouteCollection" });
   }
 }
-function __c23(j: number): any {
+function __c24(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1708,17 +1723,17 @@ function __c23(j: number): any {
         ),
       ).annotate({ identifier: "ListImportJobsRequest" });
     case 1:
-      return S.Array(__S(148, __c37, 0));
+      return S.Array(__S(152, __c38, 0));
     case 2:
       return S.suspend(() =>
         S.Struct({
-          value: __S(93, __c23, 1),
+          value: __S(97, __c24, 1),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "ImportJobCollection" });
   }
 }
-function __c24(j: number): any {
+function __c25(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1744,13 +1759,13 @@ function __c24(j: number): any {
     case 1:
       return S.suspend(() =>
         S.Struct({
-          value: __S(72, __c18, 0),
+          value: __S(76, __c19, 0),
           continuationToken: S.optional(S.String),
         }),
       ).annotate({ identifier: "QueryResult" });
   }
 }
-function __c25(j: number): any {
+function __c26(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1762,6 +1777,7 @@ function __c25(j: number): any {
           tracestate: S.optional(S.String.pipe(T.Header())),
           messageId: S.String.pipe(T.Header("Message-Id")),
           telemetrySourceTime: S.optional(S.String.pipe(T.Header("Telemetry-Source-Time"))),
+          body: __S(12, __c3, 0).pipe(T.HttpBody()),
         }).pipe(
           T.Http({
             method: "POST",
@@ -1776,7 +1792,7 @@ function __c25(j: number): any {
       ).annotate({ identifier: "SendDigitalTwinComponentTelemetryRequest" });
   }
 }
-function __c26(j: number): any {
+function __c27(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1787,6 +1803,7 @@ function __c26(j: number): any {
           tracestate: S.optional(S.String.pipe(T.Header())),
           messageId: S.String.pipe(T.Header("Message-Id")),
           telemetrySourceTime: S.optional(S.String.pipe(T.Header("Telemetry-Source-Time"))),
+          body: __S(12, __c3, 0).pipe(T.HttpBody()),
         }).pipe(
           T.Http({
             method: "POST",
@@ -1801,7 +1818,7 @@ function __c26(j: number): any {
       ).annotate({ identifier: "SendDigitalTwinTelemetryRequest" });
   }
 }
-function __c27(j: number): any {
+function __c28(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1811,7 +1828,7 @@ function __c27(j: number): any {
           traceparent: S.optional(S.String.pipe(T.Header())),
           tracestate: S.optional(S.String.pipe(T.Header())),
           ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
-          body: __S(72, __c18, 0).pipe(T.HttpBody()),
+          body: __S(76, __c19, 0).pipe(T.HttpBody()),
         }).pipe(
           T.Http({
             method: "PATCH",
@@ -1820,13 +1837,14 @@ function __c27(j: number): any {
             host: "{endpoint}",
             hostRaw: ["endpoint"],
             apiVersion: "2023-10-31",
+            jsonContentType: "application/json-patch+json",
             audience: "https://digitaltwins.azure.net/.default",
           }),
         ),
       ).annotate({ identifier: "UpdateDigitalTwinRequest" });
   }
 }
-function __c28(j: number): any {
+function __c29(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1836,7 +1854,7 @@ function __c28(j: number): any {
       ).annotate({ identifier: "UpdateDigitalTwinResponse" });
   }
 }
-function __c29(j: number): any {
+function __c30(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1847,7 +1865,7 @@ function __c29(j: number): any {
           traceparent: S.optional(S.String.pipe(T.Header())),
           tracestate: S.optional(S.String.pipe(T.Header())),
           ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
-          body: __S(72, __c18, 0).pipe(T.HttpBody()),
+          body: __S(76, __c19, 0).pipe(T.HttpBody()),
         }).pipe(
           T.Http({
             method: "PATCH",
@@ -1856,13 +1874,14 @@ function __c29(j: number): any {
             host: "{endpoint}",
             hostRaw: ["endpoint"],
             apiVersion: "2023-10-31",
+            jsonContentType: "application/json-patch+json",
             audience: "https://digitaltwins.azure.net/.default",
           }),
         ),
       ).annotate({ identifier: "UpdateDigitalTwinComponentRequest" });
   }
 }
-function __c30(j: number): any {
+function __c31(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1873,6 +1892,7 @@ function __c30(j: number): any {
           traceparent: S.optional(S.String.pipe(T.Header())),
           tracestate: S.optional(S.String.pipe(T.Header())),
           ifNoneMatch: S.optional(S.String.pipe(T.Header("If-None-Match"))),
+          body: __S(12, __c3, 0).pipe(T.HttpBody()),
         }).pipe(
           T.Http({
             method: "PUT",
@@ -1887,7 +1907,7 @@ function __c30(j: number): any {
       ).annotate({ identifier: "AddDigitalTwinRelationshipRequest" });
   }
 }
-function __c31(j: number): any {
+function __c32(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1896,7 +1916,7 @@ function __c31(j: number): any {
           id: S.String.pipe(T.Label()),
           traceparent: S.optional(S.String.pipe(T.Header())),
           tracestate: S.optional(S.String.pipe(T.Header())),
-          body: __S(72, __c18, 0).pipe(T.HttpBody()),
+          body: __S(76, __c19, 0).pipe(T.HttpBody()),
         }).pipe(
           T.Http({
             method: "PATCH",
@@ -1905,13 +1925,14 @@ function __c31(j: number): any {
             host: "{endpoint}",
             hostRaw: ["endpoint"],
             apiVersion: "2023-10-31",
+            jsonContentType: "application/json-patch+json",
             audience: "https://digitaltwins.azure.net/.default",
           }),
         ),
       ).annotate({ identifier: "UpdateDigitalTwinModelRequest" });
   }
 }
-function __c32(j: number): any {
+function __c33(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1922,7 +1943,7 @@ function __c32(j: number): any {
           traceparent: S.optional(S.String.pipe(T.Header())),
           tracestate: S.optional(S.String.pipe(T.Header())),
           ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
-          body: __S(72, __c18, 0).pipe(T.HttpBody()),
+          body: __S(76, __c19, 0).pipe(T.HttpBody()),
         }).pipe(
           T.Http({
             method: "PATCH",
@@ -1931,13 +1952,14 @@ function __c32(j: number): any {
             host: "{endpoint}",
             hostRaw: ["endpoint"],
             apiVersion: "2023-10-31",
+            jsonContentType: "application/json-patch+json",
             audience: "https://digitaltwins.azure.net/.default",
           }),
         ),
       ).annotate({ identifier: "UpdateDigitalTwinRelationshipRequest" });
   }
 }
-function __c33(j: number): any {
+function __c34(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1962,18 +1984,18 @@ function __c33(j: number): any {
       ).annotate({ identifier: "AddEventRouteRequest" });
   }
 }
-function __c34(j: number): any {
+function __c35(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() => S.Struct({})).annotate({ identifier: "AddEventRouteResponse" });
   }
 }
-function __c35(j: number): any {
+function __c36(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
-          innererror: S.optional(__S(144, __c36, 0)),
+          innererror: S.optional(__S(148, __c37, 0)),
         }),
       ).annotate({ identifier: "ErrorInput" });
     case 1:
@@ -1985,7 +2007,7 @@ function __c35(j: number): any {
           tracestate: S.optional(S.String.pipe(T.Header())),
           inputBlobUri: S.String,
           outputBlobUri: S.String,
-          error: S.optional(__S(140, __c35, 0)),
+          error: S.optional(__S(144, __c36, 0)),
         }).pipe(
           T.Http({
             method: "PUT",
@@ -2000,29 +2022,29 @@ function __c35(j: number): any {
       ).annotate({ identifier: "AddImportJobRequest" });
   }
 }
-function __c36(j: number): any {
+function __c37(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           code: S.optional(S.String),
-          innererror: S.optional(__S(144, __c36, 0)),
+          innererror: S.optional(__S(148, __c37, 0)),
         }),
       ).annotate({ identifier: "InnerError" });
     case 1:
-      return S.Array(/*@__PURE__*/ S.suspend(() => __S(146, __c36, 2)));
+      return S.Array(/*@__PURE__*/ S.suspend(() => __S(150, __c37, 2)));
     case 2:
       return S.suspend(() =>
         S.Struct({
           code: S.optional(S.String),
           message: S.optional(S.String),
-          details: S.optional(__S(145, __c36, 1)),
-          innererror: S.optional(__S(144, __c36, 0)),
+          details: S.optional(__S(149, __c37, 1)),
+          innererror: S.optional(__S(148, __c37, 0)),
         }),
       ).annotate({ identifier: "Error" });
   }
 }
-function __c37(j: number): any {
+function __c38(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2035,12 +2057,12 @@ function __c37(j: number): any {
           lastActionDateTime: S.optional(S.String),
           finishedDateTime: S.optional(S.String),
           purgeDateTime: S.optional(S.String),
-          error: S.optional(__S(146, __c36, 2)),
+          error: S.optional(__S(150, __c37, 2)),
         }),
       ).annotate({ identifier: "ImportJob" });
   }
 }
-function __c38(j: number): any {
+function __c39(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2063,7 +2085,7 @@ function __c38(j: number): any {
       ).annotate({ identifier: "CancelImportJobRequest" });
   }
 }
-function __c39(j: number): any {
+function __c40(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2087,7 +2109,7 @@ function __c39(j: number): any {
       ).annotate({ identifier: "DeleteDigitalTwinRequest" });
   }
 }
-function __c40(j: number): any {
+function __c41(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2110,7 +2132,7 @@ function __c40(j: number): any {
       ).annotate({ identifier: "DeleteDigitalTwinModelRequest" });
   }
 }
-function __c41(j: number): any {
+function __c42(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>

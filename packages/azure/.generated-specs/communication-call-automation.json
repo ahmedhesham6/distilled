@@ -38,7 +38,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Resume recording the call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#RecordingNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#ResumeCallRecordingRecordingRequest": {
       "type": "structure",
@@ -84,7 +89,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Pause recording the call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#RecordingNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#PauseCallRecordingRecordingRequest": {
       "type": "structure",
@@ -130,7 +140,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Stop recording the call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#RecordingNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#StopCallRecordingRecordingRequest": {
       "type": "structure",
@@ -176,7 +191,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Get call recording properties."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#RecordingNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#RecordingStateResponse": {
       "type": "structure",
@@ -279,7 +299,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Start recording the call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#StartCallRecordingRecordingRequest": {
       "type": "structure",
@@ -818,7 +843,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Get participant from a call.\n\nGet participant from a call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#CallParticipant": {
       "type": "structure",
@@ -881,7 +911,7 @@
         "target": "com.azure.communication_call_automation#MoveCallConnectionParticipantsRequest"
       },
       "output": {
-        "target": "smithy.api#Unit"
+        "target": "com.azure.communication_call_automation#MoveParticipantsResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -895,7 +925,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Move a participant to the call.\n\nMove a participant to the call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#MoveCallConnectionParticipantsRequest": {
       "type": "structure",
@@ -976,7 +1011,7 @@
         "target": "com.azure.communication_call_automation#CallConnectionCancelAddParticipantRequest"
       },
       "output": {
-        "target": "smithy.api#Unit"
+        "target": "com.azure.communication_call_automation#CancelAddParticipantResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -990,7 +1025,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Cancel add participant operation.\n\nCancel add participant operation."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#CallConnectionCancelAddParticipantRequest": {
       "type": "structure",
@@ -1069,7 +1109,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Mute participants from the call using identifier.\n\nMute participants from the call using identifier."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#MuteParticipantsResult": {
       "type": "structure",
@@ -1151,7 +1196,7 @@
         "target": "com.azure.communication_call_automation#RemoveCallConnectionParticipantRequest"
       },
       "output": {
-        "target": "smithy.api#Unit"
+        "target": "com.azure.communication_call_automation#RemoveParticipantResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1165,7 +1210,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Remove a participant from the call using identifier.\n\nRemove a participant from the call using identifier."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#RemoveCallConnectionParticipantRequest": {
       "type": "structure",
@@ -1229,7 +1279,7 @@
         "target": "com.azure.communication_call_automation#AddCallConnectionParticipantRequest"
       },
       "output": {
-        "target": "smithy.api#Unit"
+        "target": "com.azure.communication_call_automation#AddParticipantResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -1243,7 +1293,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Add a participant to the call.\n\nAdd a participant to the call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#AddCallConnectionParticipantRequest": {
       "type": "structure",
@@ -1559,7 +1614,12 @@
           "outputToken": "nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#GetParticipantsResponse": {
       "type": "structure",
@@ -1641,7 +1701,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Stops media streaming in the call\n\nStops media streaming in the call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#StopCallMediaMediaStreamingRequest": {
       "type": "structure",
@@ -1699,7 +1764,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Starts media streaming in the call\n\nStarts media streaming in the call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#StartCallMediaMediaStreamingRequest": {
       "type": "structure",
@@ -1757,7 +1827,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Unhold participants from the call using identifier.\n\nUnhold participants from the call using identifier."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#CallMediaUnholdRequest": {
       "type": "structure",
@@ -1821,7 +1896,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Hold participant from the call using identifier.\n\nHold participant from the call using identifier."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#CallMediaHoldRequest": {
       "type": "structure",
@@ -2013,7 +2093,7 @@
         "target": "com.azure.communication_call_automation#SendCallMediaDtmfTonesRequest"
       },
       "output": {
-        "target": "smithy.api#Unit"
+        "target": "com.azure.communication_call_automation#SendDtmfTonesResult"
       },
       "traits": {
         "smithy.api#http": {
@@ -2027,7 +2107,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Send dtmf tones.\n\nSend dtmf tones."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#SendCallMediaDtmfTonesRequest": {
       "type": "structure",
@@ -2225,7 +2310,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Stop continuous Dtmf recognition by unsubscribing to tones."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#StopCallMediaContinuousDtmfRecognitionRequest": {
       "type": "structure",
@@ -2289,7 +2379,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Start continuous Dtmf recognition by subscribing to tones."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#StartCallMediaContinuousDtmfRecognitionRequest": {
       "type": "structure",
@@ -2353,7 +2448,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Recognize media from call.\n\nRecognize media from call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#CallMediaRecognizeRequest": {
       "type": "structure",
@@ -2617,7 +2717,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Cancel all media operations in a call.\n\nCancel all media operations in a call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#CancelCallMediaAllMediaOperationsRequest": {
       "type": "structure",
@@ -2663,7 +2768,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "UpdateTranscription Api.\n\nAPI to change transcription language."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#UpdateCallMediaTranscriptionRequest": {
       "type": "structure",
@@ -2733,7 +2843,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Stops transcription in the call.\n\nStops transcription in the call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#StopCallMediaTranscriptionRequest": {
       "type": "structure",
@@ -2791,7 +2906,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Starts transcription in the call\n\nStarts transcription in the call"
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#StartCallMediaTranscriptionRequest": {
       "type": "structure",
@@ -2861,7 +2981,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Plays audio to participants in the call.\n\nPlays audio to participants in the call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#CallMediaPlayRequest": {
       "type": "structure",
@@ -2958,7 +3083,7 @@
         "target": "com.azure.communication_call_automation#TransferCallConnectionToParticipantRequest"
       },
       "output": {
-        "target": "smithy.api#Unit"
+        "target": "com.azure.communication_call_automation#TransferCallResponse"
       },
       "traits": {
         "smithy.api#http": {
@@ -2972,7 +3097,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Transfer the call to a participant.\n\nTransfer the call to a participant."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#TransferCallConnectionToParticipantRequest": {
       "type": "structure",
@@ -3059,7 +3189,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Terminate a call using CallConnectionId.\n\nTerminate a call using CallConnectionId."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#TerminateCallConnectionCallRequest": {
       "type": "structure",
@@ -3119,7 +3254,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Hang up call automation service from the call. This will make call automation service leave the call, but does not terminate if there are more than 1 caller in the call.\n\nHang up call automation service from the call. This will make call automation service leave the call, but does not terminate if there are more than 1 caller in the call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#CallConnectionHangupCallRequest": {
       "type": "structure",
@@ -3165,7 +3305,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Get the detail properties of an ongoing call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#CallConnectionNotFound"
+        }
+      ]
     },
     "com.azure.communication_call_automation#CallConnectionProperties": {
       "type": "structure",
@@ -3660,7 +3805,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Reject the call.\n\nReject the call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#InvalidIncomingCallContext"
+        }
+      ]
     },
     "com.azure.communication_call_automation#RejectCallRequest": {
       "type": "structure",
@@ -3748,7 +3898,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Redirect a call.\n\nRedirect a call."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#InvalidIncomingCallContext"
+        }
+      ]
     },
     "com.azure.communication_call_automation#RedirectCallRequest": {
       "type": "structure",
@@ -3813,7 +3968,12 @@
           "apiVersion": "2026-03-12"
         },
         "smithy.api#documentation": "Answer a Call.\n\nAnswer a call using the IncomingCallContext from Event Grid."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_call_automation#InvalidIncomingCallContext"
+        }
+      ]
     },
     "com.azure.communication_call_automation#AnswerCallRequest": {
       "type": "structure",
@@ -4102,6 +4262,210 @@
           ]
         },
         "com.azure.protocols#audience": "https://communication.azure.com/.default"
+      }
+    },
+    "com.azure.communication_call_automation#CallConnectionNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The call connection does not exist or the call ended (HTTP 404).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404
+          }
+        ]
+      }
+    },
+    "com.azure.communication_call_automation#InvalidIncomingCallContext": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 400,
+        "smithy.api#documentation": "The incoming call context is not valid or expired (HTTP 400, code 8523).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 400,
+            "body": {
+              "/error/code": "8523"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.communication_call_automation#RecordingNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The recording does not exist (HTTP 404).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404
+          }
+        ]
+      }
+    },
+    "com.azure.communication_call_automation#MoveParticipantsResponseParticipantsList": {
+      "type": "list",
+      "member": {
+        "target": "com.azure.communication_call_automation#CallParticipant"
+      }
+    },
+    "com.azure.communication_call_automation#AddParticipantResponse": {
+      "type": "structure",
+      "members": {
+        "participant": {
+          "target": "com.azure.communication_call_automation#CallParticipant",
+          "traits": {
+            "smithy.api#documentation": "The participant being invited."
+          }
+        },
+        "operationContext": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The operation context passed with the request."
+          }
+        },
+        "invitationId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Invitation ID used to cancel the add participant action."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "The AddCallConnectionParticipant response (HTTP 202 body)."
+      }
+    },
+    "com.azure.communication_call_automation#TransferCallResponse": {
+      "type": "structure",
+      "members": {
+        "operationContext": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The operation context passed with the request."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "The TransferCallConnectionToParticipant response (HTTP 202 body)."
+      }
+    },
+    "com.azure.communication_call_automation#RemoveParticipantResponse": {
+      "type": "structure",
+      "members": {
+        "operationContext": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The operation context passed with the request."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "The RemoveCallConnectionParticipant response (HTTP 202 body)."
+      }
+    },
+    "com.azure.communication_call_automation#CancelAddParticipantResponse": {
+      "type": "structure",
+      "members": {
+        "invitationId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Invitation ID of the cancelled add participant action."
+          }
+        },
+        "operationContext": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The operation context passed with the request."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "The CallConnectionCancelAddParticipant response (HTTP 202 body)."
+      }
+    },
+    "com.azure.communication_call_automation#MoveParticipantsResponse": {
+      "type": "structure",
+      "members": {
+        "participants": {
+          "target": "com.azure.communication_call_automation#MoveParticipantsResponseParticipantsList",
+          "traits": {
+            "smithy.api#documentation": "The participants moved into the call."
+          }
+        },
+        "operationContext": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The operation context passed with the request."
+          }
+        },
+        "fromCall": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The call the participants moved from."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "The MoveCallConnectionParticipants response (HTTP 202 body)."
+      }
+    },
+    "com.azure.communication_call_automation#SendDtmfTonesResult": {
+      "type": "structure",
+      "members": {
+        "operationContext": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The operation context passed with the request."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "The SendCallMediaDtmfTones response (HTTP 202 body)."
       }
     }
   }

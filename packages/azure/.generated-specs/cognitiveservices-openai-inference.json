@@ -570,7 +570,7 @@
           }
         },
         "file": {
-          "target": "smithy.api#String",
+          "target": "smithy.api#Document",
           "traits": {
             "smithy.api#documentation": "The audio file to translate.",
             "smithy.api#required": {}
@@ -700,7 +700,7 @@
           }
         },
         "file": {
-          "target": "smithy.api#String",
+          "target": "smithy.api#Document",
           "traits": {
             "smithy.api#documentation": "The audio file object to transcribe.",
             "smithy.api#required": {}

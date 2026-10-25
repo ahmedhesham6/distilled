@@ -81,7 +81,8 @@
           "hostRaw": [
             "ledgerEndpoint"
           ],
-          "apiVersion": "2026-02-23"
+          "apiVersion": "2026-02-23",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Adds a user or updates a user's fields.\n\nA JSON merge patch is applied for existing users"
       }
@@ -746,7 +747,8 @@
           "hostRaw": [
             "ledgerEndpoint"
           ],
-          "apiVersion": "2026-02-23"
+          "apiVersion": "2026-02-23",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Runtime options for user defined endpoints.\n\nUpdates the runtime options."
       }
@@ -1985,6 +1987,13 @@
             "smithy.api#documentation": "The collection identifier of the ledger entry.",
             "smithy.api#required": {}
           }
+        },
+        "transactionId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "x-ms-ccf-transaction-id",
+            "smithy.api#documentation": "Transaction ID of the write (`x-ms-ccf-transaction-id`); poll GetTransactionStatus until it is `Committed`."
+          }
         }
       },
       "traits": {
@@ -2237,7 +2246,8 @@
           "hostRaw": [
             "ledgerEndpoint"
           ],
-          "apiVersion": "2026-02-23"
+          "apiVersion": "2026-02-23",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Patch replaces the allowed action on existing roles,if the desire is to remove\nan existing action, the role must be deleted and recreated.\n\nUser defined roles allow users to define and manage app specific AuthZ policy."
       }
@@ -2514,7 +2524,8 @@
           "hostRaw": [
             "ledgerEndpoint"
           ],
-          "apiVersion": "2026-02-23"
+          "apiVersion": "2026-02-23",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Adds a user or updates a user's fields.\n\nA JSON merge patch is applied for existing users"
       }

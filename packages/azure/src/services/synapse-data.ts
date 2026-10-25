@@ -11,6 +11,33 @@ const __s: any[] = [];
 
 export type { AzureOpError, AzureOpContext };
 
+export interface CreateRoleAssignmentRequest {
+  /** The workspace development endpoint, for example `https://myworkspace.dev.azuresynapse.net`. */
+  endpoint: string;
+  /** Synapse role assignment ID (a GUID the caller chooses). */
+  roleAssignmentId: string;
+  /** Synapse role definition ID. */
+  roleId: string;
+  /** Object ID of the Microsoft Entra principal. */
+  principalId: string;
+  /** Scope of the assignment, e.g. `workspaces/{workspaceName}`. */
+  scope: string;
+  /** Type of the principal: `User`, `Group` or `ServicePrincipal`. */
+  principalType?: string;
+}
+/** A Synapse RBAC role assignment. */
+export interface RoleAssignmentDetails {
+  /** Role assignment ID. */
+  id?: string;
+  /** Synapse role definition ID. */
+  roleDefinitionId?: string;
+  /** Object ID of the Microsoft Entra principal. */
+  principalId?: string;
+  /** Scope of the assignment, e.g. `workspaces/{workspaceName}`. */
+  scope?: string;
+  /** Type of the principal: `User`, `Group` or `ServicePrincipal`. */
+  principalType?: string;
+}
 export type DeleteArtifactForDBRequestArtifactType =
   | "DATABASE"
   | "TABLE"
@@ -58,6 +85,15 @@ export interface DeleteDatabaseRequest {
   databaseName: string;
 }
 export interface DeleteDatabaseResponse {}
+export interface DeleteRoleAssignmentByIdRequest {
+  /** The workspace development endpoint, for example `https://myworkspace.dev.azuresynapse.net`. */
+  endpoint: string;
+  /** Synapse role assignment ID (a GUID the caller chooses). */
+  roleAssignmentId: string;
+  /** Scope of the assignment. */
+  scope?: string;
+}
+export interface DeleteRoleAssignmentByIdResponse {}
 /** DDL type. */
 export type DDLType = "CREATE" | "ALTER" | "DROP";
 /** Artifact type. */
@@ -98,7 +134,7 @@ export interface SyMSAPIDDLResponse {
   entityType: ArtifactType;
   publishStatus: PublishStatus;
   /** Object id maintained by Origin Catalog. */
-  originObjectId: string;
+  originObjectId?: string;
   /** Object id maintained by SyMS. */
   objectId: string;
   /** Object version maintained by SyMS. */
@@ -180,6 +216,12 @@ export interface GetDatabaseResponse {
   /** Entity Resource Id. */
   id?: string;
   properties: unknown;
+}
+export interface GetRoleAssignmentByIdRequest {
+  /** The workspace development endpoint, for example `https://myworkspace.dev.azuresynapse.net`. */
+  endpoint: string;
+  /** Synapse role assignment ID (a GUID the caller chooses). */
+  roleAssignmentId: string;
 }
 export interface GetSyMSOperationStatusRequest {
   /** The workspace development endpoint, for example `https://myworkspace.dev.azuresynapse.net`. */
@@ -296,6 +338,24 @@ export interface ListPartitionInfosForViewRequest {
   /** Max page size. */
   maxPageSize?: number;
 }
+export interface ListRoleAssignmentsRequest {
+  /** The workspace development endpoint, for example `https://myworkspace.dev.azuresynapse.net`. */
+  endpoint: string;
+  /** Only assignments of this Synapse role. */
+  roleId?: string;
+  /** Only assignments of this principal. */
+  principalId?: string;
+  /** Only assignments at this scope. */
+  scope?: string;
+}
+export type RoleAssignmentDetailsList = Array<RoleAssignmentDetails>;
+/** A page of Synapse RBAC role assignments. */
+export interface RoleAssignmentDetailsListResponse {
+  /** Number of assignments on this page. */
+  count?: number;
+  /** The role assignments. */
+  value?: RoleAssignmentDetailsList;
+}
 export type PutArtifactInDBRequestArtifactType =
   | "DATABASE"
   | "TABLE"
@@ -356,6 +416,21 @@ export interface PutDatabaseRequest {
   type: ArtifactType | (string & {});
   properties: unknown;
 }
+export type CreateRoleAssignmentError = AzureOpError;
+/** Create a Synapse RBAC role assignment. Assigns a Synapse role to a principal at a workspace (or item) scope. */
+export const CreateRoleAssignment: API.OperationMethod<
+  CreateRoleAssignmentRequest,
+  RoleAssignmentDetails,
+  CreateRoleAssignmentError,
+  AzureOpContext
+> = /*@__PURE__*/ API.make(() => ({
+  input: __S(0, __c0, 0) as any as S.Schema<CreateRoleAssignmentRequest>,
+  output: __S(4, __c1, 0) as any as S.Schema<RoleAssignmentDetails>,
+  errors: [UnknownAzureError],
+  protocol: AzureProtocol,
+  retry: Retry.Retry,
+}));
+
 export type DeleteArtifactForDBError = AzureOpError;
 /** Delete an artifact in a Database. Delete an artifact in a Database */
 export const DeleteArtifactForDB: API.OperationMethod<
@@ -364,8 +439,8 @@ export const DeleteArtifactForDB: API.OperationMethod<
   DeleteArtifactForDBError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(0, __c0, 0) as any as S.Schema<DeleteArtifactForDBRequest>,
-  output: __S(4, __c1, 0) as any as S.Schema<DeleteArtifactForDBResponse>,
+  input: __S(8, __c2, 0) as any as S.Schema<DeleteArtifactForDBRequest>,
+  output: __S(12, __c3, 0) as any as S.Schema<DeleteArtifactForDBResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -379,8 +454,8 @@ export const DeleteArtifactFromSchema: API.OperationMethod<
   DeleteArtifactFromSchemaError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(8, __c2, 0) as any as S.Schema<DeleteArtifactFromSchemaRequest>,
-  output: __S(4, __c1, 0) as any as S.Schema<DeleteArtifactFromSchemaResponse>,
+  input: __S(60, __c15, 0) as any as S.Schema<DeleteArtifactFromSchemaRequest>,
+  output: __S(12, __c3, 0) as any as S.Schema<DeleteArtifactFromSchemaResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -394,8 +469,23 @@ export const DeleteDatabase: API.OperationMethod<
   DeleteDatabaseError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(48, __c12, 0) as any as S.Schema<DeleteDatabaseRequest>,
-  output: __S(4, __c1, 0) as any as S.Schema<DeleteDatabaseResponse>,
+  input: __S(76, __c19, 0) as any as S.Schema<DeleteDatabaseRequest>,
+  output: __S(12, __c3, 0) as any as S.Schema<DeleteDatabaseResponse>,
+  errors: [UnknownAzureError],
+  protocol: AzureProtocol,
+  retry: Retry.Retry,
+}));
+
+export type DeleteRoleAssignmentByIdError = AzureOpError;
+/** Delete a Synapse RBAC role assignment. Answers 404 `RoleAssignmentNotFound` once it is gone. */
+export const DeleteRoleAssignmentById: API.OperationMethod<
+  DeleteRoleAssignmentByIdRequest,
+  DeleteRoleAssignmentByIdResponse,
+  DeleteRoleAssignmentByIdError,
+  AzureOpContext
+> = /*@__PURE__*/ API.make(() => ({
+  input: __S(80, __c20, 0) as any as S.Schema<DeleteRoleAssignmentByIdRequest>,
+  output: __S(12, __c3, 0) as any as S.Schema<DeleteRoleAssignmentByIdResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -409,8 +499,8 @@ export const ExecuteChange: API.OperationMethod<
   ExecuteChangeError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(52, __c13, 0) as any as S.Schema<ExecuteChangeRequest>,
-  output: __S(54, __c13, 2) as any as S.Schema<SyMSAPIDDLResponses>,
+  input: __S(84, __c21, 0) as any as S.Schema<ExecuteChangeRequest>,
+  output: __S(86, __c21, 2) as any as S.Schema<SyMSAPIDDLResponses>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -424,8 +514,8 @@ export const ExecuteChangeWithValidation: API.OperationMethod<
   ExecuteChangeWithValidationError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(64, __c16, 0) as any as S.Schema<ExecuteChangeWithValidationRequest>,
-  output: __S(4, __c1, 0) as any as S.Schema<ExecuteChangeWithValidationResponse>,
+  input: __S(96, __c24, 0) as any as S.Schema<ExecuteChangeWithValidationRequest>,
+  output: __S(12, __c3, 0) as any as S.Schema<ExecuteChangeWithValidationResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -439,8 +529,8 @@ export const GetArtifactFromDB: API.OperationMethod<
   GetArtifactFromDBError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(68, __c17, 0) as any as S.Schema<GetArtifactFromDBRequest>,
-  output: __S(72, __c18, 0) as any as S.Schema<MDEntity>,
+  input: __S(100, __c25, 0) as any as S.Schema<GetArtifactFromDBRequest>,
+  output: __S(104, __c26, 0) as any as S.Schema<MDEntity>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -454,8 +544,8 @@ export const GetArtifactFromSchema: API.OperationMethod<
   GetArtifactFromSchemaError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(76, __c19, 0) as any as S.Schema<GetArtifactFromSchemaRequest>,
-  output: __S(72, __c18, 0) as any as S.Schema<MDEntity>,
+  input: __S(108, __c27, 0) as any as S.Schema<GetArtifactFromSchemaRequest>,
+  output: __S(104, __c26, 0) as any as S.Schema<MDEntity>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -469,8 +559,23 @@ export const GetDatabase: API.OperationMethod<
   GetDatabaseError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(80, __c20, 0) as any as S.Schema<GetDatabaseRequest>,
-  output: __S(81, __c20, 1) as any as S.Schema<GetDatabaseResponse>,
+  input: __S(112, __c28, 0) as any as S.Schema<GetDatabaseRequest>,
+  output: __S(113, __c28, 1) as any as S.Schema<GetDatabaseResponse>,
+  errors: [UnknownAzureError],
+  protocol: AzureProtocol,
+  retry: Retry.Retry,
+}));
+
+export type GetRoleAssignmentByIdError = AzureOpError;
+/** Get a Synapse RBAC role assignment. Answers 404 `RoleAssignmentNotFound` for an unknown ID. */
+export const GetRoleAssignmentById: API.OperationMethod<
+  GetRoleAssignmentByIdRequest,
+  RoleAssignmentDetails,
+  GetRoleAssignmentByIdError,
+  AzureOpContext
+> = /*@__PURE__*/ API.make(() => ({
+  input: __S(16, __c4, 0) as any as S.Schema<GetRoleAssignmentByIdRequest>,
+  output: __S(4, __c1, 0) as any as S.Schema<RoleAssignmentDetails>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -484,8 +589,8 @@ export const GetSyMSOperationStatus: API.OperationMethod<
   GetSyMSOperationStatusError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(84, __c21, 0) as any as S.Schema<GetSyMSOperationStatusRequest>,
-  output: __S(89, __c22, 1) as any as S.Schema<QueryArtifactsResponse>,
+  input: __S(20, __c5, 0) as any as S.Schema<GetSyMSOperationStatusRequest>,
+  output: __S(25, __c6, 1) as any as S.Schema<QueryArtifactsResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -499,8 +604,8 @@ export const ListArtifacts: API.OperationMethod<
   ListArtifactsError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(92, __c23, 0) as any as S.Schema<ListArtifactsRequest>,
-  output: __S(89, __c22, 1) as any as S.Schema<QueryArtifactsResponse>,
+  input: __S(28, __c7, 0) as any as S.Schema<ListArtifactsRequest>,
+  output: __S(25, __c6, 1) as any as S.Schema<QueryArtifactsResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -514,8 +619,8 @@ export const ListArtifactsInSchemaByType: API.OperationMethod<
   ListArtifactsInSchemaByTypeError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(12, __c3, 0) as any as S.Schema<ListArtifactsInSchemaByTypeRequest>,
-  output: __S(89, __c22, 1) as any as S.Schema<QueryArtifactsResponse>,
+  input: __S(32, __c8, 0) as any as S.Schema<ListArtifactsInSchemaByTypeRequest>,
+  output: __S(25, __c6, 1) as any as S.Schema<QueryArtifactsResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -529,8 +634,8 @@ export const ListDatabases: API.OperationMethod<
   ListDatabasesError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(16, __c4, 0) as any as S.Schema<ListDatabasesRequest>,
-  output: __S(89, __c22, 1) as any as S.Schema<QueryArtifactsResponse>,
+  input: __S(36, __c9, 0) as any as S.Schema<ListDatabasesRequest>,
+  output: __S(25, __c6, 1) as any as S.Schema<QueryArtifactsResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -544,8 +649,8 @@ export const ListPartitionInfosForSchemaAndTable: API.OperationMethod<
   ListPartitionInfosForSchemaAndTableError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(20, __c5, 0) as any as S.Schema<ListPartitionInfosForSchemaAndTableRequest>,
-  output: __S(89, __c22, 1) as any as S.Schema<QueryArtifactsResponse>,
+  input: __S(40, __c10, 0) as any as S.Schema<ListPartitionInfosForSchemaAndTableRequest>,
+  output: __S(25, __c6, 1) as any as S.Schema<QueryArtifactsResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -559,8 +664,8 @@ export const ListPartitionInfosForSchemaAndView: API.OperationMethod<
   ListPartitionInfosForSchemaAndViewError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(24, __c6, 0) as any as S.Schema<ListPartitionInfosForSchemaAndViewRequest>,
-  output: __S(89, __c22, 1) as any as S.Schema<QueryArtifactsResponse>,
+  input: __S(44, __c11, 0) as any as S.Schema<ListPartitionInfosForSchemaAndViewRequest>,
+  output: __S(25, __c6, 1) as any as S.Schema<QueryArtifactsResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -574,8 +679,8 @@ export const ListPartitionInfosForTable: API.OperationMethod<
   ListPartitionInfosForTableError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(28, __c7, 0) as any as S.Schema<ListPartitionInfosForTableRequest>,
-  output: __S(89, __c22, 1) as any as S.Schema<QueryArtifactsResponse>,
+  input: __S(48, __c12, 0) as any as S.Schema<ListPartitionInfosForTableRequest>,
+  output: __S(25, __c6, 1) as any as S.Schema<QueryArtifactsResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -589,8 +694,23 @@ export const ListPartitionInfosForView: API.OperationMethod<
   ListPartitionInfosForViewError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(32, __c8, 0) as any as S.Schema<ListPartitionInfosForViewRequest>,
-  output: __S(89, __c22, 1) as any as S.Schema<QueryArtifactsResponse>,
+  input: __S(52, __c13, 0) as any as S.Schema<ListPartitionInfosForViewRequest>,
+  output: __S(25, __c6, 1) as any as S.Schema<QueryArtifactsResponse>,
+  errors: [UnknownAzureError],
+  protocol: AzureProtocol,
+  retry: Retry.Retry,
+}));
+
+export type ListRoleAssignmentsError = AzureOpError;
+/** List Synapse RBAC role assignments. Answers `{ count, value }`; filter by role, principal or scope. */
+export const ListRoleAssignments: API.OperationMethod<
+  ListRoleAssignmentsRequest,
+  RoleAssignmentDetailsListResponse,
+  ListRoleAssignmentsError,
+  AzureOpContext
+> = /*@__PURE__*/ API.make(() => ({
+  input: __S(56, __c14, 0) as any as S.Schema<ListRoleAssignmentsRequest>,
+  output: __S(58, __c14, 2) as any as S.Schema<RoleAssignmentDetailsListResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -604,8 +724,8 @@ export const PutArtifactInDB: API.OperationMethod<
   PutArtifactInDBError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(36, __c9, 0) as any as S.Schema<PutArtifactInDBRequest>,
-  output: __S(56, __c14, 0) as any as S.Schema<SyMSAPIDDLResponse>,
+  input: __S(64, __c16, 0) as any as S.Schema<PutArtifactInDBRequest>,
+  output: __S(88, __c22, 0) as any as S.Schema<SyMSAPIDDLResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -619,8 +739,8 @@ export const PutArtifactInSchema: API.OperationMethod<
   PutArtifactInSchemaError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(40, __c10, 0) as any as S.Schema<PutArtifactInSchemaRequest>,
-  output: __S(56, __c14, 0) as any as S.Schema<SyMSAPIDDLResponse>,
+  input: __S(68, __c17, 0) as any as S.Schema<PutArtifactInSchemaRequest>,
+  output: __S(88, __c22, 0) as any as S.Schema<SyMSAPIDDLResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -634,8 +754,8 @@ export const PutDatabase: API.OperationMethod<
   PutDatabaseError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(44, __c11, 0) as any as S.Schema<PutDatabaseRequest>,
-  output: __S(56, __c14, 0) as any as S.Schema<SyMSAPIDDLResponse>,
+  input: __S(72, __c18, 0) as any as S.Schema<PutDatabaseRequest>,
+  output: __S(88, __c22, 0) as any as S.Schema<SyMSAPIDDLResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -643,6 +763,45 @@ export const PutDatabase: API.OperationMethod<
 
 // Schema builders: each runs one schema initializer, on that schema's first use.
 function __c0(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          endpoint: S.String.pipe(T.HostLabel()),
+          roleAssignmentId: S.String.pipe(T.Label()),
+          roleId: S.String,
+          principalId: S.String,
+          scope: S.String,
+          principalType: S.optional(S.String),
+        }).pipe(
+          T.Http({
+            method: "PUT",
+            uri: "/roleAssignments/{roleAssignmentId}",
+            code: 200,
+            host: "{endpoint}",
+            hostRaw: ["endpoint"],
+            apiVersion: "2020-12-01",
+            audience: "https://dev.azuresynapse.net/.default",
+          }),
+        ),
+      ).annotate({ identifier: "CreateRoleAssignmentRequest" });
+  }
+}
+function __c1(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          id: S.optional(S.String),
+          roleDefinitionId: S.optional(S.String),
+          principalId: S.optional(S.String),
+          scope: S.optional(S.String),
+          principalType: S.optional(S.String),
+        }),
+      ).annotate({ identifier: "RoleAssignmentDetails" });
+  }
+}
+function __c2(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -665,26 +824,44 @@ function __c0(j: number): any {
       ).annotate({ identifier: "DeleteArtifactForDBRequest" });
   }
 }
-function __c1(j: number): any {
+function __c3(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() => S.Struct({})).annotate({ identifier: "DeleteArtifactForDBResponse" });
   }
 }
-function __c2(j: number): any {
+function __c4(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
-          databaseName: S.String.pipe(T.Label()),
-          schemaName: S.String.pipe(T.Label()),
-          artifactType: S.String.pipe(T.Label()),
-          artifactName: S.String.pipe(T.Label()),
+          roleAssignmentId: S.String.pipe(T.Label()),
         }).pipe(
           T.Http({
-            method: "DELETE",
-            uri: "/databases/{databaseName}/schemas/{schemaName}/{artifactType}s/{artifactName}",
+            method: "GET",
+            uri: "/roleAssignments/{roleAssignmentId}",
+            code: 200,
+            host: "{endpoint}",
+            hostRaw: ["endpoint"],
+            apiVersion: "2020-12-01",
+            audience: "https://dev.azuresynapse.net/.default",
+          }),
+        ),
+      ).annotate({ identifier: "GetRoleAssignmentByIdRequest" });
+  }
+}
+function __c5(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          endpoint: S.String.pipe(T.HostLabel()),
+          operationId: S.String.pipe(T.Label()),
+        }).pipe(
+          T.Http({
+            method: "GET",
+            uri: "/databases/operations/{operationId}",
             code: 200,
             host: "{endpoint}",
             hostRaw: ["endpoint"],
@@ -692,10 +869,47 @@ function __c2(j: number): any {
             audience: "https://dev.azuresynapse.net/.default",
           }),
         ),
-      ).annotate({ identifier: "DeleteArtifactFromSchemaRequest" });
+      ).annotate({ identifier: "GetSyMSOperationStatusRequest" });
   }
 }
-function __c3(j: number): any {
+function __c6(j: number): any {
+  switch (j) {
+    case 0:
+      return S.Array(S.Unknown);
+    case 1:
+      return S.suspend(() =>
+        S.Struct({
+          items: S.optional(__S(24, __c6, 0)),
+          continuationToken: S.optional(S.String),
+        }),
+      ).annotate({ identifier: "QueryArtifactsResponse" });
+  }
+}
+function __c7(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          endpoint: S.String.pipe(T.HostLabel()),
+          databaseName: S.String.pipe(T.Label()),
+          artifactType: S.String.pipe(T.Label()),
+          continuationToken: S.optional(S.String.pipe(T.Query())),
+          maxPageSize: S.optional(S.Number.pipe(T.Query())),
+        }).pipe(
+          T.Http({
+            method: "GET",
+            uri: "/databases/{databaseName}/{artifactType}s",
+            code: 200,
+            host: "{endpoint}",
+            hostRaw: ["endpoint"],
+            apiVersion: "2021-04-01",
+            audience: "https://dev.azuresynapse.net/.default",
+          }),
+        ),
+      ).annotate({ identifier: "ListArtifactsRequest" });
+  }
+}
+function __c8(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -720,7 +934,7 @@ function __c3(j: number): any {
       ).annotate({ identifier: "ListArtifactsInSchemaByTypeRequest" });
   }
 }
-function __c4(j: number): any {
+function __c9(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -742,7 +956,7 @@ function __c4(j: number): any {
       ).annotate({ identifier: "ListDatabasesRequest" });
   }
 }
-function __c5(j: number): any {
+function __c10(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -767,7 +981,7 @@ function __c5(j: number): any {
       ).annotate({ identifier: "ListPartitionInfosForSchemaAndTableRequest" });
   }
 }
-function __c6(j: number): any {
+function __c11(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -792,7 +1006,7 @@ function __c6(j: number): any {
       ).annotate({ identifier: "ListPartitionInfosForSchemaAndViewRequest" });
   }
 }
-function __c7(j: number): any {
+function __c12(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -816,7 +1030,7 @@ function __c7(j: number): any {
       ).annotate({ identifier: "ListPartitionInfosForTableRequest" });
   }
 }
-function __c8(j: number): any {
+function __c13(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -840,7 +1054,63 @@ function __c8(j: number): any {
       ).annotate({ identifier: "ListPartitionInfosForViewRequest" });
   }
 }
-function __c9(j: number): any {
+function __c14(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          endpoint: S.String.pipe(T.HostLabel()),
+          roleId: S.optional(S.String.pipe(T.Query())),
+          principalId: S.optional(S.String.pipe(T.Query())),
+          scope: S.optional(S.String.pipe(T.Query())),
+        }).pipe(
+          T.Http({
+            method: "GET",
+            uri: "/roleAssignments",
+            code: 200,
+            host: "{endpoint}",
+            hostRaw: ["endpoint"],
+            apiVersion: "2020-12-01",
+            audience: "https://dev.azuresynapse.net/.default",
+          }),
+        ),
+      ).annotate({ identifier: "ListRoleAssignmentsRequest" });
+    case 1:
+      return S.Array(__S(4, __c1, 0));
+    case 2:
+      return S.suspend(() =>
+        S.Struct({
+          count: S.optional(S.Number),
+          value: S.optional(__S(57, __c14, 1)),
+        }),
+      ).annotate({ identifier: "RoleAssignmentDetailsListResponse" });
+  }
+}
+function __c15(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          endpoint: S.String.pipe(T.HostLabel()),
+          databaseName: S.String.pipe(T.Label()),
+          schemaName: S.String.pipe(T.Label()),
+          artifactType: S.String.pipe(T.Label()),
+          artifactName: S.String.pipe(T.Label()),
+        }).pipe(
+          T.Http({
+            method: "DELETE",
+            uri: "/databases/{databaseName}/schemas/{schemaName}/{artifactType}s/{artifactName}",
+            code: 200,
+            host: "{endpoint}",
+            hostRaw: ["endpoint"],
+            apiVersion: "2021-04-01",
+            audience: "https://dev.azuresynapse.net/.default",
+          }),
+        ),
+      ).annotate({ identifier: "DeleteArtifactFromSchemaRequest" });
+  }
+}
+function __c16(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -868,7 +1138,7 @@ function __c9(j: number): any {
       ).annotate({ identifier: "PutArtifactInDBRequest" });
   }
 }
-function __c10(j: number): any {
+function __c17(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -895,7 +1165,7 @@ function __c10(j: number): any {
       ).annotate({ identifier: "PutArtifactInSchemaRequest" });
   }
 }
-function __c11(j: number): any {
+function __c18(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -919,7 +1189,7 @@ function __c11(j: number): any {
       ).annotate({ identifier: "PutDatabaseRequest" });
   }
 }
-function __c12(j: number): any {
+function __c19(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -940,13 +1210,35 @@ function __c12(j: number): any {
       ).annotate({ identifier: "DeleteDatabaseRequest" });
   }
 }
-function __c13(j: number): any {
+function __c20(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
-          ddls: __S(62, __c15, 2),
+          roleAssignmentId: S.String.pipe(T.Label()),
+          scope: S.optional(S.String.pipe(T.Query())),
+        }).pipe(
+          T.Http({
+            method: "DELETE",
+            uri: "/roleAssignments/{roleAssignmentId}",
+            code: 200,
+            host: "{endpoint}",
+            hostRaw: ["endpoint"],
+            apiVersion: "2020-12-01",
+            audience: "https://dev.azuresynapse.net/.default",
+          }),
+        ),
+      ).annotate({ identifier: "DeleteRoleAssignmentByIdRequest" });
+  }
+}
+function __c21(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          endpoint: S.String.pipe(T.HostLabel()),
+          ddls: __S(94, __c23, 2),
         }).pipe(
           T.Http({
             method: "POST",
@@ -960,32 +1252,32 @@ function __c13(j: number): any {
         ),
       ).annotate({ identifier: "ExecuteChangeRequest" });
     case 1:
-      return S.Array(__S(56, __c14, 0));
+      return S.Array(__S(88, __c22, 0));
     case 2:
       return S.suspend(() =>
         S.Struct({
-          syMsApiDdlResponse: __S(53, __c13, 1),
+          syMsApiDdlResponse: __S(85, __c21, 1).pipe(T.Body("SyMSAPIDDLResponseArr")),
         }),
       ).annotate({ identifier: "SyMSAPIDDLResponses" });
   }
 }
-function __c14(j: number): any {
+function __c22(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
-          ddlType: S.String,
-          entityName: S.String,
-          entityType: S.String,
-          publishStatus: S.String,
-          originObjectId: S.String,
-          objectId: S.String,
-          objectVersion: S.Number,
+          ddlType: S.String.pipe(T.Body("DDLType")),
+          entityName: S.String.pipe(T.Body("EntityName")),
+          entityType: S.String.pipe(T.Body("EntityType")),
+          publishStatus: S.String.pipe(T.Body("PublishStatus")),
+          originObjectId: S.optional(S.String.pipe(T.Body("OriginObjectId"))),
+          objectId: S.String.pipe(T.Body("ObjectId")),
+          objectVersion: S.Number.pipe(T.Body("ObjectVersion")),
         }),
       ).annotate({ identifier: "SyMSAPIDDLResponse" });
   }
 }
-function __c15(j: number): any {
+function __c23(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -999,22 +1291,22 @@ function __c15(j: number): any {
       return S.suspend(() =>
         S.Struct({
           actionType: S.String,
-          oldEntity: S.optional(__S(60, __c15, 0)),
-          newEntity: S.optional(__S(60, __c15, 0)),
+          oldEntity: S.optional(__S(92, __c23, 0)),
+          newEntity: S.optional(__S(92, __c23, 0)),
         }),
       ).annotate({ identifier: "DDLPayloadInput" });
     case 2:
-      return S.Array(__S(61, __c15, 1));
+      return S.Array(__S(93, __c23, 1));
   }
 }
-function __c16(j: number): any {
+function __c24(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
           validationType: S.String.pipe(T.Query()),
-          ddls: __S(62, __c15, 2),
+          ddls: __S(94, __c23, 2),
         }).pipe(
           T.Http({
             method: "POST",
@@ -1029,7 +1321,7 @@ function __c16(j: number): any {
       ).annotate({ identifier: "ExecuteChangeWithValidationRequest" });
   }
 }
-function __c17(j: number): any {
+function __c25(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1052,7 +1344,7 @@ function __c17(j: number): any {
       ).annotate({ identifier: "GetArtifactFromDBRequest" });
   }
 }
-function __c18(j: number): any {
+function __c26(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1065,7 +1357,7 @@ function __c18(j: number): any {
       ).annotate({ identifier: "MDEntity" });
   }
 }
-function __c19(j: number): any {
+function __c27(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1089,7 +1381,7 @@ function __c19(j: number): any {
       ).annotate({ identifier: "GetArtifactFromSchemaRequest" });
   }
 }
-function __c20(j: number): any {
+function __c28(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1117,64 +1409,6 @@ function __c20(j: number): any {
           properties: S.Unknown,
         }),
       ).annotate({ identifier: "GetDatabaseResponse" });
-  }
-}
-function __c21(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.Struct({
-          endpoint: S.String.pipe(T.HostLabel()),
-          operationId: S.String.pipe(T.Label()),
-        }).pipe(
-          T.Http({
-            method: "GET",
-            uri: "/databases/operations/{operationId}",
-            code: 200,
-            host: "{endpoint}",
-            hostRaw: ["endpoint"],
-            apiVersion: "2021-04-01",
-            audience: "https://dev.azuresynapse.net/.default",
-          }),
-        ),
-      ).annotate({ identifier: "GetSyMSOperationStatusRequest" });
-  }
-}
-function __c22(j: number): any {
-  switch (j) {
-    case 0:
-      return S.Array(S.Unknown);
-    case 1:
-      return S.suspend(() =>
-        S.Struct({
-          items: S.optional(__S(88, __c22, 0)),
-          continuationToken: S.optional(S.String),
-        }),
-      ).annotate({ identifier: "QueryArtifactsResponse" });
-  }
-}
-function __c23(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.Struct({
-          endpoint: S.String.pipe(T.HostLabel()),
-          databaseName: S.String.pipe(T.Label()),
-          artifactType: S.String.pipe(T.Label()),
-          continuationToken: S.optional(S.String.pipe(T.Query())),
-          maxPageSize: S.optional(S.Number.pipe(T.Query())),
-        }).pipe(
-          T.Http({
-            method: "GET",
-            uri: "/databases/{databaseName}/{artifactType}s",
-            code: 200,
-            host: "{endpoint}",
-            hostRaw: ["endpoint"],
-            apiVersion: "2021-04-01",
-            audience: "https://dev.azuresynapse.net/.default",
-          }),
-        ),
-      ).annotate({ identifier: "ListArtifactsRequest" });
   }
 }
 // Schema table: entry i is schema j of builder f, made on first reach.

@@ -11,29 +11,17 @@ const __s: any[] = [];
 
 export type { AzureOpError, AzureOpContext };
 
-export type AnalyzeFromImageDataRequestFeaturesItem =
-  | "tags"
-  | "caption"
-  | "denseCaptions"
-  | "objects"
-  | "read"
-  | "smartCrops"
-  | "people";
-export type AnalyzeFromImageDataRequestFeaturesList = Array<
-  AnalyzeFromImageDataRequestFeaturesItem | (string & {})
->;
-export type AnalyzeFromImageDataRequestSmartcropsAspectRatiosList = Array<number>;
 export interface AnalyzeFromImageDataRequest {
   /** Azure AI Computer Vision endpoint (protocol and hostname, for example: https://<resource-name>.cognitiveservices.azure.com). */
   endpoint: string;
-  /** A list of visual features to analyze. Seven visual features are supported: Caption, DenseCaptions, Read (OCR), Tags, Objects, SmartCrops, and People. At least one visual feature must be specified. */
-  features: AnalyzeFromImageDataRequestFeaturesList;
+  /** A list of visual features to analyze. Seven visual features are supported: Caption, DenseCaptions, Read (OCR), Tags, Objects, SmartCrops, and People. At least one visual feature must be specified. Comma-separated (`tags`, `caption`, `denseCaptions`, `objects`, `read`, `smartCrops`, `people`). */
+  features: string;
   /** The desired language for result generation (a two-letter language code). If this option is not specified, the default value 'en' is used (English). See https://aka.ms/cv-languages for a list of supported languages. */
   language?: string;
   /** Boolean flag for enabling gender-neutral captioning for Caption and Dense Captions features. By default captions may contain gender terms (for example: 'man', 'woman', or 'boy', 'girl'). If you set this to "true", those will be replaced with gender-neutral terms (for example: 'person' or 'child'). */
   gender_neutral_caption?: boolean;
-  /** A list of aspect ratios to use for smart cropping. Aspect ratios are calculated by dividing the target crop width in pixels by the height in pixels. Supported values are between 0.75 and 1.8 (inclusive). If this parameter is not specified, the service will return one crop region with an aspect ratio it sees fit between 0.5 and 2.0 (inclusive). */
-  smartcrops_aspect_ratios?: AnalyzeFromImageDataRequestSmartcropsAspectRatiosList;
+  /** A list of aspect ratios to use for smart cropping. Aspect ratios are calculated by dividing the target crop width in pixels by the height in pixels. Supported values are between 0.75 and 1.8 (inclusive). If this parameter is not specified, the service will return one crop region with an aspect ratio it sees fit between 0.5 and 2.0 (inclusive). Comma-separated. */
+  smartcrops_aspect_ratios?: string;
   /** The version of cloud AI-model used for analysis. The format is the following: 'latest' (default value) or 'YYYY-MM-DD' or 'YYYY-MM-DD-preview', where 'YYYY', 'MM', 'DD' are the year, month and day associated with the model. This is not commonly set, as the default always gives the latest AI model with recent improvements. If however you would like to make sure analysis results do not change over time, set this value to a specific model version. */
   model_version?: string;
   body: string;
@@ -203,29 +191,17 @@ export interface ImageAnalysisResult {
   /** A list of content tags in the analyzed image. */
   tagsResult?: TagsResult;
 }
-export type AnalyzeFromUrlRequestFeaturesItem =
-  | "tags"
-  | "caption"
-  | "denseCaptions"
-  | "objects"
-  | "read"
-  | "smartCrops"
-  | "people";
-export type AnalyzeFromUrlRequestFeaturesList = Array<
-  AnalyzeFromUrlRequestFeaturesItem | (string & {})
->;
-export type AnalyzeFromUrlRequestSmartcropsAspectRatiosList = Array<number>;
 export interface AnalyzeFromUrlRequest {
   /** Azure AI Computer Vision endpoint (protocol and hostname, for example: https://<resource-name>.cognitiveservices.azure.com). */
   endpoint: string;
-  /** A list of visual features to analyze. Seven visual features are supported: Caption, DenseCaptions, Read (OCR), Tags, Objects, SmartCrops, and People. At least one visual feature must be specified. */
-  features: AnalyzeFromUrlRequestFeaturesList;
+  /** A list of visual features to analyze. Seven visual features are supported: Caption, DenseCaptions, Read (OCR), Tags, Objects, SmartCrops, and People. At least one visual feature must be specified. Comma-separated (`tags`, `caption`, `denseCaptions`, `objects`, `read`, `smartCrops`, `people`). */
+  features: string;
   /** The desired language for result generation (a two-letter language code). If this option is not specified, the default value 'en' is used (English). See https://aka.ms/cv-languages for a list of supported languages. */
   language?: string;
   /** Boolean flag for enabling gender-neutral captioning for Caption and Dense Captions features. By default captions may contain gender terms (for example: 'man', 'woman', or 'boy', 'girl'). If you set this to "true", those will be replaced with gender-neutral terms (for example: 'person' or 'child'). */
   gender_neutral_caption?: boolean;
-  /** A list of aspect ratios to use for smart cropping. Aspect ratios are calculated by dividing the target crop width in pixels by the height in pixels. Supported values are between 0.75 and 1.8 (inclusive). If this parameter is not specified, the service will return one crop region with an aspect ratio it sees fit between 0.5 and 2.0 (inclusive). */
-  smartcrops_aspect_ratios?: AnalyzeFromUrlRequestSmartcropsAspectRatiosList;
+  /** A list of aspect ratios to use for smart cropping. Aspect ratios are calculated by dividing the target crop width in pixels by the height in pixels. Supported values are between 0.75 and 1.8 (inclusive). If this parameter is not specified, the service will return one crop region with an aspect ratio it sees fit between 0.5 and 2.0 (inclusive). Comma-separated. */
+  smartcrops_aspect_ratios?: string;
   /** The version of cloud AI-model used for analysis. The format is the following: 'latest' (default value) or 'YYYY-MM-DD' or 'YYYY-MM-DD-preview', where 'YYYY', 'MM', 'DD' are the year, month and day associated with the model. This is not commonly set, as the default always gives the latest AI model with recent improvements. If however you would like to make sure analysis results do not change over time, set this value to a specific model version. */
   model_version?: string;
   /** Publicly reachable URL of an image to analyze. */
@@ -240,7 +216,7 @@ export const AnalyzeFromImageData: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(0, __c0, 0) as any as S.Schema<AnalyzeFromImageDataRequest>,
-  output: __S(61, __c1, 29) as any as S.Schema<ImageAnalysisResult>,
+  output: __S(59, __c1, 27) as any as S.Schema<ImageAnalysisResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -255,7 +231,7 @@ export const AnalyzeFromUrl: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(64, __c2, 0) as any as S.Schema<AnalyzeFromUrlRequest>,
-  output: __S(61, __c1, 29) as any as S.Schema<ImageAnalysisResult>,
+  output: __S(59, __c1, 27) as any as S.Schema<ImageAnalysisResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -268,12 +244,10 @@ function __c0(j: number): any {
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
-          features: __S(32, __c1, 0).pipe(T.Query()),
+          features: S.String.pipe(T.Query()),
           language: S.optional(S.String.pipe(T.Query())),
           gender_neutral_caption: S.optional(S.Boolean.pipe(T.Query("gender-neutral-caption"))),
-          smartcrops_aspect_ratios: S.optional(
-            __S(33, __c1, 1).pipe(T.Query("smartcrops-aspect-ratios")),
-          ),
+          smartcrops_aspect_ratios: S.optional(S.String.pipe(T.Query("smartcrops-aspect-ratios"))),
           model_version: S.optional(S.String.pipe(T.Query("model-version"))),
           body: S.String.pipe(T.HttpBody()),
         }).pipe(
@@ -293,17 +267,13 @@ function __c0(j: number): any {
 function __c1(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(S.String);
-    case 1:
-      return S.Array(S.Number);
-    case 2:
       return S.suspend(() =>
         S.Struct({
           confidence: S.Number,
           text: S.String,
         }),
       ).annotate({ identifier: "CaptionResult" });
-    case 3:
+    case 1:
       return S.suspend(() =>
         S.Struct({
           x: S.Number,
@@ -312,144 +282,144 @@ function __c1(j: number): any {
           h: S.Number,
         }),
       ).annotate({ identifier: "ImageBoundingBox" });
-    case 4:
+    case 2:
       return S.suspend(() =>
         S.Struct({
           confidence: S.Number,
           text: S.String,
-          boundingBox: __S(35, __c1, 3),
+          boundingBox: __S(33, __c1, 1),
         }),
       ).annotate({ identifier: "DenseCaption" });
-    case 5:
-      return S.Array(__S(36, __c1, 4));
-    case 6:
+    case 3:
+      return S.Array(__S(34, __c1, 2));
+    case 4:
       return S.suspend(() =>
         S.Struct({
-          values: __S(37, __c1, 5),
+          values: __S(35, __c1, 3),
         }),
       ).annotate({ identifier: "DenseCaptionsResult" });
-    case 7:
+    case 5:
       return S.suspend(() =>
         S.Struct({
           height: S.Number,
           width: S.Number,
         }),
       ).annotate({ identifier: "ImageMetadata" });
-    case 8:
+    case 6:
       return S.suspend(() =>
         S.Struct({
           confidence: S.Number,
           name: S.String,
         }),
       ).annotate({ identifier: "DetectedTag" });
+    case 7:
+      return S.Array(__S(38, __c1, 6));
+    case 8:
+      return S.suspend(() =>
+        S.Struct({
+          boundingBox: __S(33, __c1, 1),
+          tags: __S(39, __c1, 7),
+        }),
+      ).annotate({ identifier: "DetectedObject" });
     case 9:
       return S.Array(__S(40, __c1, 8));
     case 10:
       return S.suspend(() =>
         S.Struct({
-          boundingBox: __S(35, __c1, 3),
-          tags: __S(41, __c1, 9),
-        }),
-      ).annotate({ identifier: "DetectedObject" });
-    case 11:
-      return S.Array(__S(42, __c1, 10));
-    case 12:
-      return S.suspend(() =>
-        S.Struct({
-          values: __S(43, __c1, 11),
+          values: __S(41, __c1, 9),
         }),
       ).annotate({ identifier: "ObjectsResult" });
-    case 13:
+    case 11:
       return S.suspend(() =>
         S.Struct({
-          boundingBox: __S(35, __c1, 3),
+          boundingBox: __S(33, __c1, 1),
           confidence: S.Number,
         }),
       ).annotate({ identifier: "DetectedPerson" });
-    case 14:
-      return S.Array(__S(45, __c1, 13));
-    case 15:
+    case 12:
+      return S.Array(__S(43, __c1, 11));
+    case 13:
       return S.suspend(() =>
         S.Struct({
-          values: __S(46, __c1, 14),
+          values: __S(44, __c1, 12),
         }),
       ).annotate({ identifier: "PeopleResult" });
-    case 16:
+    case 14:
       return S.suspend(() =>
         S.Struct({
           x: S.Number,
           y: S.Number,
         }),
       ).annotate({ identifier: "ImagePoint" });
+    case 15:
+      return S.Array(__S(46, __c1, 14));
+    case 16:
+      return S.suspend(() =>
+        S.Struct({
+          text: S.String,
+          boundingPolygon: __S(47, __c1, 15),
+          confidence: S.Number,
+        }),
+      ).annotate({ identifier: "DetectedTextWord" });
     case 17:
       return S.Array(__S(48, __c1, 16));
     case 18:
       return S.suspend(() =>
         S.Struct({
           text: S.String,
-          boundingPolygon: __S(49, __c1, 17),
-          confidence: S.Number,
+          boundingPolygon: __S(47, __c1, 15),
+          words: __S(49, __c1, 17),
         }),
-      ).annotate({ identifier: "DetectedTextWord" });
+      ).annotate({ identifier: "DetectedTextLine" });
     case 19:
       return S.Array(__S(50, __c1, 18));
     case 20:
       return S.suspend(() =>
         S.Struct({
-          text: S.String,
-          boundingPolygon: __S(49, __c1, 17),
-          words: __S(51, __c1, 19),
+          lines: __S(51, __c1, 19),
         }),
-      ).annotate({ identifier: "DetectedTextLine" });
+      ).annotate({ identifier: "DetectedTextBlock" });
     case 21:
       return S.Array(__S(52, __c1, 20));
     case 22:
       return S.suspend(() =>
         S.Struct({
-          lines: __S(53, __c1, 21),
-        }),
-      ).annotate({ identifier: "DetectedTextBlock" });
-    case 23:
-      return S.Array(__S(54, __c1, 22));
-    case 24:
-      return S.suspend(() =>
-        S.Struct({
-          blocks: __S(55, __c1, 23),
+          blocks: __S(53, __c1, 21),
         }),
       ).annotate({ identifier: "ReadResult" });
-    case 25:
+    case 23:
       return S.suspend(() =>
         S.Struct({
           aspectRatio: S.Number,
-          boundingBox: __S(35, __c1, 3),
+          boundingBox: __S(33, __c1, 1),
         }),
       ).annotate({ identifier: "CropRegion" });
+    case 24:
+      return S.Array(__S(55, __c1, 23));
+    case 25:
+      return S.suspend(() =>
+        S.Struct({
+          values: __S(56, __c1, 24),
+        }),
+      ).annotate({ identifier: "SmartCropsResult" });
     case 26:
-      return S.Array(__S(57, __c1, 25));
+      return S.suspend(() =>
+        S.Struct({
+          values: __S(39, __c1, 7),
+        }),
+      ).annotate({ identifier: "TagsResult" });
     case 27:
       return S.suspend(() =>
         S.Struct({
-          values: __S(58, __c1, 26),
-        }),
-      ).annotate({ identifier: "SmartCropsResult" });
-    case 28:
-      return S.suspend(() =>
-        S.Struct({
-          values: __S(41, __c1, 9),
-        }),
-      ).annotate({ identifier: "TagsResult" });
-    case 29:
-      return S.suspend(() =>
-        S.Struct({
-          captionResult: S.optional(__S(34, __c1, 2)),
-          denseCaptionsResult: S.optional(__S(38, __c1, 6)),
-          metadata: __S(39, __c1, 7),
+          captionResult: S.optional(__S(32, __c1, 0)),
+          denseCaptionsResult: S.optional(__S(36, __c1, 4)),
+          metadata: __S(37, __c1, 5),
           modelVersion: S.String,
-          objectsResult: S.optional(__S(44, __c1, 12)),
-          peopleResult: S.optional(__S(47, __c1, 15)),
-          readResult: S.optional(__S(56, __c1, 24)),
-          smartCropsResult: S.optional(__S(59, __c1, 27)),
-          tagsResult: S.optional(__S(60, __c1, 28)),
+          objectsResult: S.optional(__S(42, __c1, 10)),
+          peopleResult: S.optional(__S(45, __c1, 13)),
+          readResult: S.optional(__S(54, __c1, 22)),
+          smartCropsResult: S.optional(__S(57, __c1, 25)),
+          tagsResult: S.optional(__S(58, __c1, 26)),
         }),
       ).annotate({ identifier: "ImageAnalysisResult" });
   }
@@ -460,12 +430,10 @@ function __c2(j: number): any {
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
-          features: __S(32, __c1, 0).pipe(T.Query()),
+          features: S.String.pipe(T.Query()),
           language: S.optional(S.String.pipe(T.Query())),
           gender_neutral_caption: S.optional(S.Boolean.pipe(T.Query("gender-neutral-caption"))),
-          smartcrops_aspect_ratios: S.optional(
-            __S(33, __c1, 1).pipe(T.Query("smartcrops-aspect-ratios")),
-          ),
+          smartcrops_aspect_ratios: S.optional(S.String.pipe(T.Query("smartcrops-aspect-ratios"))),
           model_version: S.optional(S.String.pipe(T.Query("model-version"))),
           url: S.String,
         }).pipe(

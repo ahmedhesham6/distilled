@@ -774,7 +774,7 @@ export interface CreateTranscriptionRequest {
   endpoint: string;
   deploymentId: string;
   /** The audio file object to transcribe. */
-  file: string;
+  file: unknown;
   /** An optional text to guide the model's style or continue a previous audio segment. The prompt should match the audio language. */
   prompt?: string;
   response_format?: AudioResponseFormat | (string & {});
@@ -834,7 +834,7 @@ export interface CreateTranslationRequest {
   endpoint: string;
   deploymentId: string;
   /** The audio file to translate. */
-  file: string;
+  file: unknown;
   /** An optional text to guide the model's style or continue a previous audio segment. The prompt should be in English. */
   prompt?: string;
   response_format?: AudioResponseFormat | (string & {});
@@ -1315,7 +1315,7 @@ function __c6(j: number): any {
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
           deploymentId: S.String.pipe(T.Label()),
-          file: S.String,
+          file: S.Unknown,
           prompt: S.optional(S.String),
           response_format: S.optional(S.String),
           temperature: S.optional(S.Number),
@@ -1345,7 +1345,7 @@ function __c7(j: number): any {
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
           deploymentId: S.String.pipe(T.Label()),
-          file: S.String,
+          file: S.Unknown,
           prompt: S.optional(S.String),
           response_format: S.optional(S.String),
           temperature: S.optional(S.Number),

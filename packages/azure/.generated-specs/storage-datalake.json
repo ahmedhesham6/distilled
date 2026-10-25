@@ -3469,15 +3469,11 @@
         },
         "Deleted": {
           "target": "smithy.api#Boolean",
-          "traits": {
-            "smithy.api#required": {}
-          }
+          "traits": {}
         },
         "Snapshot": {
           "target": "smithy.api#String",
-          "traits": {
-            "smithy.api#required": {}
-          }
+          "traits": {}
         },
         "VersionId": {
           "target": "smithy.api#String",
@@ -3922,16 +3918,19 @@
           "target": "smithy.api#String"
         },
         "isDirectory": {
-          "target": "smithy.api#Boolean"
+          "target": "smithy.api#String"
         },
         "lastModified": {
           "target": "smithy.api#String"
         },
         "eTag": {
-          "target": "smithy.api#String"
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#jsonName": "etag"
+          }
         },
         "contentLength": {
-          "target": "smithy.api#Integer"
+          "target": "smithy.api#String"
         },
         "owner": {
           "target": "smithy.api#String"
@@ -4616,7 +4615,10 @@
           "target": "smithy.api#String"
         },
         "eTag": {
-          "target": "smithy.api#String"
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#jsonName": "etag"
+          }
         }
       },
       "traits": {}

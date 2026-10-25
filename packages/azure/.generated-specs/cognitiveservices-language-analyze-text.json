@@ -290,6 +290,12 @@
             "smithy.api#documentation": "Kind of the task.",
             "smithy.api#required": {}
           }
+        },
+        "results": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Results of the task: `{ documents, errors, modelVersion }`; each document's shape depends on `kind`."
+          }
         }
       },
       "traits": {
@@ -886,6 +892,12 @@
             "smithy.api#documentation": "The kind of task to perform.",
             "smithy.api#required": {}
           }
+        },
+        "parameters": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Task parameters for `kind` (e.g. `{ sentenceCount }` for ExtractiveSummarization)."
+          }
         }
       },
       "traits": {
@@ -1048,6 +1060,12 @@
             "smithy.api#documentation": "The kind of task result.",
             "smithy.api#required": {}
           }
+        },
+        "results": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Results for `kind`: `{ documents, errors, modelVersion, statistics? }`; each document's shape depends on the task (e.g. `sentiment` + `confidenceScores`, `entities`, `keyPhrases`, `detectedLanguage`)."
+          }
         }
       },
       "traits": {
@@ -1121,6 +1139,19 @@
           "traits": {
             "smithy.api#documentation": "The kind of task to perform.",
             "smithy.api#required": {}
+          }
+        },
+        "analysisInput": {
+          "target": "com.azure.cognitiveservices_language_analyze_text#MultiLanguageAnalysisInput",
+          "traits": {
+            "smithy.api#documentation": "The input documents to analyze.",
+            "smithy.api#required": {}
+          }
+        },
+        "parameters": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Task parameters for `kind` (e.g. `{ modelVersion, opinionMining }` for SentimentAnalysis, `{ piiCategories, domain }` for PiiEntityRecognition)."
           }
         }
       },

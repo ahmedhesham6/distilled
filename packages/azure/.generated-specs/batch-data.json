@@ -45,7 +45,12 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchAccountListSupportedImagesResult": {
       "type": "structure",
@@ -328,7 +333,12 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchPoolListUsageMetricsResult": {
       "type": "structure",
@@ -505,10 +515,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Updates the properties of the specified Pool.\n\nThis fully replaces all the updatable properties of the Pool. For example, if\nthe Pool has a StartTask associated with it and if StartTask is not specified\nwith this request, then the Batch service will remove the existing StartTask."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPoolNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#ReplacePoolPoolPropertiesResponse": {
       "type": "structure",
@@ -1077,7 +1096,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Stops an ongoing resize operation on the Pool.\n\nThis does not restore the Pool to its previous state before the resize\noperation: it only stops any further changes being made, and the Pool maintains\nits current state. After stopping, the Pool stabilizes at the number of Compute\nNodes it was at when the stop operation was done. During the stop operation,\nthe Pool allocation state changes first to stopping and then to steady. A\nresize operation need not be an explicit resize Pool request; this API can also\nbe used to halt the initial sizing of the Pool when it is created."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPoolNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#PoolsStopPoolResizeResponse": {
       "type": "structure",
@@ -1191,10 +1218,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Changes the number of Compute Nodes that are assigned to a Pool.\n\nYou can only resize a Pool when its allocation state is steady. If the Pool is\nalready resizing, the request fails with status code 409. When you resize a\nPool, the Pool's allocation state changes from steady to resizing. You cannot\nresize Pools which are configured for automatic scaling. If you try to do this,\nthe Batch service returns an error 409. If you resize a Pool downwards, the\nBatch service chooses which Compute Nodes to remove. To remove specific Compute\nNodes, use the Pool remove Compute Nodes API instead."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPoolNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#ResizePoolPoolResponse": {
       "type": "structure",
@@ -1364,10 +1400,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Removes Compute Nodes from the specified Pool.\n\nThis operation can only run when the allocation state of the Pool is steady.\nWhen this operation runs, the allocation state changes from steady to resizing.\nEach request may remove up to 100 nodes."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPoolNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#RemovePoolNodesResponse": {
       "type": "structure",
@@ -1512,7 +1557,12 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Deletes a user Account from the specified Compute Node.\n\nYou can delete a user Account to a Compute Node only when it is in the idle or\nrunning state. Before you can remotely login to a Compute Node you must configure \naccess ports for SSH and RDP. For more information, see https://learn.microsoft.com/azure/batch/pool-endpoint-configuration"
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#DeleteNodeNodeUserRequest": {
       "type": "structure",
@@ -1599,10 +1649,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Updates the password and expiration time of a user Account on the specified Compute Node.\n\nThis operation replaces of all the updatable properties of the Account. For\nexample, if the expiryTime element is not specified, the current value is\nreplaced with the default value, not left unmodified. You can update a user\nAccount on a Compute Node only when it is in the idle or running state."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#ReplaceNodeNodeUserResponse": {
       "type": "structure",
@@ -1723,10 +1779,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Adds a user Account to the specified Compute Node.\n\nYou can add a user Account to a Compute Node only when it is in the idle or \nrunning state. Before you can remotely login to a Compute Node you must configure access ports for SSH and RDP. For more information, see https://learn.microsoft.com/azure/batch/pool-endpoint-configuration"
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#CreateNodeNodeUserResponse": {
       "type": "structure",
@@ -1852,10 +1914,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Upload Azure Batch service log files from the specified Compute Node to Azure\nBlob Storage.\n\nThis is for gathering Azure Batch service log files in an automated fashion\nfrom Compute Nodes if you are experiencing an error and wish to escalate to\nAzure support. The Azure Batch service log files should be shared with Azure\nsupport to aid in debugging issues with the Batch service."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#UploadBatchServiceLogsResult": {
       "type": "structure",
@@ -1992,7 +2060,12 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Starts the specified Compute Node.\n\nYou can start a Compute Node only if it has been deallocated."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#StartNodeNodeResponse": {
       "type": "structure",
@@ -2089,7 +2162,12 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Gets the settings required for remote login to a Compute Node.\n\nBefore you can remotely login to a Compute Node using the remote login settings, you must create a user Account on the Compute Node and configure access ports for SSH and RDP. For more information, see https://learn.microsoft.com/azure/batch/pool-endpoint-configuration"
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchNodeRemoteLoginSettings": {
       "type": "structure",
@@ -2209,10 +2287,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Reinstalls the operating system on the specified Compute Node.\n\nYou can reinstall the operating system on a Compute Node only if it is in an\nidle or running state. This API can be invoked only on Pools created with the\ncloud service configuration property."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#NodesReimageNodeResponse": {
       "type": "structure",
@@ -2344,10 +2428,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Restarts the specified Compute Node.\n\nYou can restart a Compute Node only if it is in an idle or running state."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#RebootNodeNodeResponse": {
       "type": "structure",
@@ -2482,7 +2572,12 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Gets the properties of the specified Compute Node file."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#GetNodeNodeFilePropertiesRequest": {
       "type": "structure",
@@ -2586,7 +2681,12 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Deletes the specified file from the Compute Node.\n\nDeletes the specified file from the Compute Node."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#DeleteNodeNodeFileRequest": {
       "type": "structure",
@@ -2683,7 +2783,12 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Returns the content of the specified Compute Node file."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#GetNodeNodeFileResponse": {
       "type": "structure",
@@ -2816,7 +2921,12 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchNodeFileListResult": {
       "type": "structure",
@@ -3034,7 +3144,12 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Gets information about the specified Compute Node Extension.\n\nGets information about the specified Compute Node Extension."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#GetNodeNodeExtensionResponse": {
       "type": "structure",
@@ -3385,7 +3500,12 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchNodeVMExtensionListResult": {
       "type": "structure",
@@ -3557,7 +3677,12 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Enables Task scheduling on the specified Compute Node.\n\nYou can enable Task scheduling on a Compute Node only if its current scheduling\nstate is disabled"
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#EnableNodeNodeSchedulingResponse": {
       "type": "structure",
@@ -3651,10 +3776,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Disables Task scheduling on the specified Compute Node.\n\nYou can disable Task scheduling on a Compute Node only if its current\nscheduling state is enabled."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#DisableNodeNodeSchedulingResponse": {
       "type": "structure",
@@ -3780,10 +3911,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Deallocates the specified Compute Node.\n\nYou can deallocate a Compute Node only if it is in an idle or running state."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#NodesDeallocateNodeResponse": {
       "type": "structure",
@@ -3918,7 +4055,12 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Gets information about the specified Compute Node.\n\nGets information about the specified Compute Node."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#GetNodeNodeResponse": {
       "type": "structure",
@@ -4860,7 +5002,15 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPoolNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchNodeListResult": {
       "type": "structure",
@@ -5160,10 +5310,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Gets the result of evaluating an automatic scaling formula on the Pool.\n\nThis API is primarily for validating an autoscale formula, as it simply returns\nthe result without applying the formula to the Pool. The Pool must have auto\nscaling enabled in order to evaluate a formula."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPoolNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#ScalePoolsEvaluatePoolAutoResponse": {
       "type": "structure",
@@ -5311,10 +5470,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Enables automatic scaling for a Pool.\n\nYou cannot enable automatic scaling on a Pool if a resize operation is in\nprogress on the Pool. If automatic scaling of the Pool is currently disabled,\nyou must specify a valid autoscale formula as part of the request. If automatic\nscaling of the Pool is already enabled, you may specify a new autoscale formula\nand/or a new evaluation interval. You cannot call this API for the same Pool\nmore than once every 30 seconds."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPoolNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#EnablePoolPoolAutoScaleResponse": {
       "type": "structure",
@@ -5443,7 +5611,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Disables automatic scaling for a Pool.\n\nDisables automatic scaling for a Pool."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPoolNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#DisablePoolPoolAutoScaleResponse": {
       "type": "structure",
@@ -5532,7 +5708,12 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Gets basic properties of a Pool."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#PoolsPoolExistsRequest": {
       "type": "structure",
@@ -5634,7 +5815,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Deletes a Pool from the specified Account.\n\nWhen you request that a Pool be deleted, the following actions occur: the Pool\nstate is set to deleting; any ongoing resize operation on the Pool are stopped;\nthe Batch service starts resizing the Pool to zero Compute Nodes; any Tasks\nrunning on existing Compute Nodes are terminated and requeued (as if a resize\nPool operation had been requested with the default requeue option); finally,\nthe Pool is removed from the system. Because running Tasks are requeued, the\nuser can rerun these Tasks by updating their Job to target a different Pool.\nThe Tasks can then run on the new Pool. If you want to override the requeue\nbehavior, then you should call resize Pool explicitly to shrink the Pool to\nzero size before deleting the Pool. If you call an Update, Patch or Delete API\non a Pool in the deleting state, it will fail with HTTP status code 409 with\nerror code PoolBeingDeleted."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPoolNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#DeletePoolPoolRequest": {
       "type": "structure",
@@ -5733,10 +5922,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Updates the properties of the specified Pool.\n\nThis only replaces the Pool properties specified in the request. For example,\nif the Pool has a StartTask associated with it, and a request does not specify\na StartTask element, then the Pool keeps the existing StartTask."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPoolNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#UpdatePoolPoolResponse": {
       "type": "structure",
@@ -7636,7 +7834,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Gets information about the specified Pool."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPoolNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#GetPoolPoolResponse": {
       "type": "structure",
@@ -8682,10 +8888,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Creates a Pool to the specified Account.\n\nWhen naming Pools, avoid including sensitive information such as user names or\nsecret project names. This information may appear in telemetry logs accessible\nto Microsoft Support engineers."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#CreatePoolPoolResponse": {
       "type": "structure",
@@ -9031,7 +9243,12 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchPoolListResult": {
       "type": "structure",
@@ -9411,7 +9628,12 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchPoolNodeCountsListResult": {
       "type": "structure",
@@ -9688,7 +9910,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Terminates a Job Schedule.\n\nTerminates a Job Schedule."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobScheduleNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#TerminateJobScheduleJobScheduleResponse": {
       "type": "structure",
@@ -9819,7 +10049,15 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobScheduleNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchJobListResult": {
       "type": "structure",
@@ -11177,7 +11415,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Enables a Job Schedule.\n\nEnables a Job Schedule."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobScheduleNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#EnableJobScheduleJobScheduleResponse": {
       "type": "structure",
@@ -11294,7 +11540,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Disables a Job Schedule.\n\nNo new Jobs will be created until the Job Schedule is enabled again."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobScheduleNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#DisableJobScheduleJobScheduleResponse": {
       "type": "structure",
@@ -11411,7 +11665,12 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Checks the specified Job Schedule exists.\n\nChecks the specified Job Schedule exists."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#JobSchedulesJobScheduleExistsRequest": {
       "type": "structure",
@@ -11513,7 +11772,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Deletes a Job Schedule from the specified Account.\n\nWhen you delete a Job Schedule, this also deletes all Jobs and Tasks under that\nschedule. When Tasks are deleted, all the files in their working directories on\nthe Compute Nodes are also deleted (the retention period is ignored). The Job\nSchedule statistics are no longer accessible once the Job Schedule is deleted,\nthough they are still counted towards Account lifetime statistics."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobScheduleNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#DeleteJobScheduleJobScheduleRequest": {
       "type": "structure",
@@ -11619,10 +11886,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Updates the properties of the specified Job Schedule.\n\nThis replaces only the Job Schedule properties specified in the request. For\nexample, if the schedule property is not specified with this request, then the\nBatch service will keep the existing schedule. Changes to a Job Schedule only\nimpact Jobs created by the schedule after the update has taken place; currently\nrunning Jobs are unaffected."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobScheduleNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#UpdateJobScheduleJobScheduleResponse": {
       "type": "structure",
@@ -12423,10 +12699,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Updates the properties of the specified Job Schedule.\n\nThis fully replaces all the updatable properties of the Job Schedule. For\nexample, if the schedule property is not specified with this request, then the\nBatch service will remove the existing schedule. Changes to a Job Schedule only\nimpact Jobs created by the schedule after the update has taken place; currently\nrunning Jobs are unaffected."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobScheduleNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#ReplaceJobScheduleJobScheduleResponse": {
       "type": "structure",
@@ -12900,7 +13185,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Gets information about the specified Job Schedule."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobScheduleNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#GetJobScheduleJobScheduleResponse": {
       "type": "structure",
@@ -13458,10 +13751,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Creates a Job Schedule to the specified Account.\n\nCreates a Job Schedule to the specified Account."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#CreateJobScheduleJobScheduleResponse": {
       "type": "structure",
@@ -13591,7 +13890,12 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchJobScheduleListResult": {
       "type": "structure",
@@ -13846,10 +14150,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Terminates the specified Job, marking it as completed.\n\nWhen a Terminate Job request is received, the Batch service sets the Job to the\nterminating state. The Batch service then terminates any running Tasks\nassociated with the Job and runs any required Job release Tasks. Then the Job\nmoves into the completed state. If there are any Tasks in the Job in the active\nstate, they will remain in the active state. Once a Job is terminated, new\nTasks cannot be added and any remaining active Tasks will not be scheduled."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#TerminateJobJobResponse": {
       "type": "structure",
@@ -13979,7 +14292,18 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Terminates the specified Task.\n\nWhen the Task has been terminated, it moves to the completed state. For\nmulti-instance Tasks, the terminate Task operation applies synchronously to the\nprimary task; subtasks are then terminated asynchronously in the background."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchTaskNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#TerminateTaskTaskResponse": {
       "type": "structure",
@@ -14111,7 +14435,18 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchTaskNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchTaskListSubtasksResult": {
       "type": "structure",
@@ -14400,7 +14735,18 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Reactivates a Task, allowing it to run again even if its retry count has been\nexhausted.\n\nReactivation makes a Task eligible to be retried again up to its maximum retry\ncount. The Task's state is changed to active. As the Task is no longer in the\ncompleted state, any previous exit code or failure information is no longer\navailable after reactivation. Each time a Task is reactivated, its retry count\nis reset to 0. Reactivation will fail for Tasks that are not completed or that\npreviously completed successfully (with an exit code of 0). Additionally, it\nwill fail if the Job has completed (or is terminating or deleting)."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchTaskNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#TasksReactivateTaskResponse": {
       "type": "structure",
@@ -14525,7 +14871,18 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Gets the properties of the specified Task file."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchTaskNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#GetTaskTaskFilePropertiesRequest": {
       "type": "structure",
@@ -14629,7 +14986,18 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Deletes the specified Task file from the Compute Node where the Task ran.\n\nDeletes the specified Task file from the Compute Node where the Task ran."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchTaskNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#DeleteTaskTaskFileRequest": {
       "type": "structure",
@@ -14726,7 +15094,18 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Returns the content of the specified Task file."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchTaskNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#GetTaskTaskFileResponse": {
       "type": "structure",
@@ -14859,7 +15238,18 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchTaskNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#ListTaskTaskFilesRequest": {
       "type": "structure",
@@ -14968,7 +15358,18 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Deletes a Task from the specified Job.\n\nWhen a Task is deleted, all of the files in its directory on the Compute Node\nwhere it ran are also deleted (regardless of the retention time). For\nmulti-instance Tasks, the delete Task operation applies synchronously to the\nprimary task; subtasks and their files are then deleted asynchronously in the\nbackground."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchTaskNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#DeleteTaskTaskRequest": {
       "type": "structure",
@@ -15075,10 +15476,22 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Updates the properties of the specified Task."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchTaskNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#ReplaceTaskTaskResponse": {
       "type": "structure",
@@ -15209,7 +15622,18 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Gets information about the specified Task.\n\nFor multi-instance Tasks, information such as affinityId, executionInfo and\nnodeInfo refer to the primary Task. Use the list subtasks API to retrieve\ninformation about subtasks."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchTaskNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#GetTaskTaskResponse": {
       "type": "structure",
@@ -15929,10 +16353,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Creates a Task to the specified Job.\n\nThe maximum lifetime of a Task from addition to completion is 180 days. If a\nTask has not completed within 180 days of being added it will be terminated by\nthe Batch service and left in whatever state it was in at that time."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#CreateTaskTaskResponse": {
       "type": "structure",
@@ -16156,7 +16589,15 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchTaskListResult": {
       "type": "structure",
@@ -16487,7 +16928,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Gets the Task counts for the specified Job.\n\nTask counts provide a count of the Tasks by active, running or completed Task\nstate, and a count of Tasks which succeeded or failed. Tasks in the preparing\nstate are counted as running. Note that the numbers returned may not always be\nup to date. If you need exact task counts, use a list query."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchTaskCountsResult": {
       "type": "structure",
@@ -16683,7 +17132,15 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchJobPreparationAndReleaseTaskStatusListResult": {
       "type": "structure",
@@ -17047,7 +17504,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Enables the specified Job, allowing new Tasks to run.\n\nWhen you call this API, the Batch service sets a disabled Job to the enabling\nstate. After the this operation is completed, the Job moves to the active\nstate, and scheduling of new Tasks under the Job resumes. The Batch service\ndoes not allow a Task to remain in the active state for more than 180 days.\nTherefore, if you enable a Job containing active Tasks which were added more\nthan 180 days ago, those Tasks will not run."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#EnableJobJobResponse": {
       "type": "structure",
@@ -17161,10 +17626,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Disables the specified Job, preventing new Tasks from running.\n\nThe Batch Service immediately moves the Job to the disabling state. Batch then\nuses the disableTasks parameter to determine what to do with the currently\nrunning Tasks of the Job. The Job remains in the disabling state until the\ndisable operation is completed and all Tasks have been dealt with according to\nthe disableTasks option; the Job then moves to the disabled state. No new Tasks\nare started under the Job until it moves back to active state. If you try to\ndisable a Job that is in any state other than active, disabling, or disabled,\nthe request fails with status code 409."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#DisableJobJobResponse": {
       "type": "structure",
@@ -17311,10 +17785,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Adds a collection of Tasks to the specified Job.\n\nNote that each Task must have a unique ID. The Batch service may not return the\nresults for each Task in the same order the Tasks were submitted in this\nrequest. If the server times out or the connection is closed during the\nrequest, the request may have been partially or fully processed, or not at all.\nIn such cases, the user should re-issue the request. Note that it is up to the\nuser to correctly handle failures when re-issuing a request. For example, you\nshould use the same Task IDs during a retry so that if the prior operation\nsucceeded, the retry will not create extra Tasks unexpectedly. If the response\ncontains any Tasks which failed to add, a client can retry the request. In a\nretry, it is most efficient to resubmit only Tasks that failed to add, and to\nomit Tasks that were successfully added on the first attempt. The maximum\nlifetime of a Task from addition to completion is 180 days. If a Task has not\ncompleted within 180 days of being added it will be terminated by the Batch\nservice and left in whatever state it was in at that time."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchCreateTaskCollectionResult": {
       "type": "structure",
@@ -17473,7 +17956,7 @@
         "SUCCESS": {
           "target": "smithy.api#Unit",
           "traits": {
-            "smithy.api#enumValue": "success"
+            "smithy.api#enumValue": "Success"
           }
         },
         "CLIENTERROR": {
@@ -17717,7 +18200,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Deletes a Job.\n\nDeleting a Job also deletes all Tasks that are part of that Job, and all Job\nstatistics. This also overrides the retention period for Task data; that is, if\nthe Job contains Tasks which are still retained on Compute Nodes, the Batch\nservices deletes those Tasks' working directories and all their contents.  When\na Delete Job request is received, the Batch service sets the Job to the\ndeleting state. All update operations on a Job that is in deleting state will\nfail with status code 409 (Conflict), with additional information indicating\nthat the Job is being deleted."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#DeleteJobJobRequest": {
       "type": "structure",
@@ -17823,10 +18314,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Updates the properties of the specified Job.\n\nThis replaces only the Job properties specified in the request. For example, if\nthe Job has constraints, and a request does not specify the constraints\nelement, then the Job keeps the existing constraints."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#UpdateJobJobResponse": {
       "type": "structure",
@@ -17997,10 +18497,19 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Updates the properties of the specified Job.\n\nThis fully replaces all the updatable properties of the Job. For example, if\nthe Job has constraints associated with it and if constraints is not specified\nwith this request, then the Batch service will remove the existing constraints."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#ReplaceJobJobResponse": {
       "type": "structure",
@@ -18169,7 +18678,15 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Gets information about the specified Job.\n\nGets information about the specified Job."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchJobNotFound"
+        },
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#GetJobJobResponse": {
       "type": "structure",
@@ -18476,10 +18993,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-06-01"
+          "apiVersion": "2025-06-01",
+          "jsonContentType": "application/json; odata=minimalmetadata"
         },
         "smithy.api#documentation": "Creates a Job to the specified Account.\n\nThe Batch service supports two ways to control the work done as part of a Job.\nIn the first approach, the user specifies a Job Manager Task. The Batch service\nlaunches this Task when it is ready to start the Job. The Job Manager Task\ncontrols all other Tasks that run under this Job, by using the Task APIs. In\nthe second approach, the user directly controls the execution of Tasks under an\nactive Job, by using the Task APIs. Also note: when naming Jobs, avoid\nincluding sensitive information such as user names or secret project names.\nThis information may appear in telemetry logs accessible to Microsoft Support\nengineers."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#CreateJobJobResponse": {
       "type": "structure",
@@ -18683,7 +19206,12 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#ListJobJobsRequest": {
       "type": "structure",
@@ -18797,7 +19325,12 @@
           "apiVersion": "2025-06-01"
         },
         "smithy.api#documentation": "Gets information about the specified Application.\n\nThis operation returns only Applications and versions that are available for\nuse on Compute Nodes; that is, that can be used in an Package reference. For\nadministrator information about Applications and versions that are not yet\navailable to Compute Nodes, use the Azure portal or the Azure Resource Manager\nAPI."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#GetApplicationApplicationResponse": {
       "type": "structure",
@@ -18924,7 +19457,12 @@
           "outputToken": "odata_nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.batch_data#BatchPermissionDenied"
+        }
+      ]
     },
     "com.azure.batch_data#BatchApplicationListResult": {
       "type": "structure",
@@ -19283,6 +19821,153 @@
           ]
         },
         "com.azure.protocols#audience": "https://batch.core.windows.net/.default"
+      }
+    },
+    "com.azure.batch_data#BatchJobNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The job does not exist, or finished deleting (HTTP 404 `JobNotFound`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/code": "JobNotFound"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.batch_data#BatchTaskNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The task does not exist in the job (HTTP 404 `TaskNotFound`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/code": "TaskNotFound"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.batch_data#BatchJobScheduleNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The job schedule does not exist, or finished deleting (HTTP 404 `JobScheduleNotFound`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/code": "JobScheduleNotFound"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.batch_data#BatchPoolNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The pool does not exist in the account (HTTP 404 `PoolNotFound`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/code": "PoolNotFound"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.batch_data#BatchPermissionDenied": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 403,
+        "smithy.api#documentation": "The caller's Entra identity has no role granting this operation on the account, or a new role assignment has not propagated yet (HTTP 403).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 403
+          }
+        ]
       }
     }
   }

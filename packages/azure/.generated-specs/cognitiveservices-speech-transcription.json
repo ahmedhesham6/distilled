@@ -35,7 +35,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-10-15"
+          "apiVersion": "2025-10-15",
+          "contentType": "multipart"
         },
         "smithy.api#documentation": "Transcribes the provided audio stream."
       }
@@ -216,6 +217,19 @@
             "smithy.api#documentation": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://westus.api.cognitive.microsoft.com).",
             "com.azure.protocols#hostLabel": {}
           }
+        },
+        "definition": {
+          "target": "com.azure.cognitiveservices_speech_transcription#TranscriptionOptions",
+          "traits": {
+            "smithy.api#required": {},
+            "smithy.api#documentation": "Transcription options, sent as the JSON `definition` part."
+          }
+        },
+        "audio": {
+          "target": "smithy.api#Blob",
+          "traits": {
+            "smithy.api#documentation": "Audio file bytes (under 2 hours and 250 MB); optional when `definition.audioUrl` is set."
+          }
         }
       },
       "traits": {
@@ -243,6 +257,129 @@
           ]
         },
         "com.azure.protocols#audience": "https://cognitiveservices.azure.com/.default"
+      }
+    },
+    "com.azure.cognitiveservices_speech_transcription#TranscriptionLocalesList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#String"
+      },
+      "traits": {}
+    },
+    "com.azure.cognitiveservices_speech_transcription#TranscriptionChannelsList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#Integer"
+      },
+      "traits": {}
+    },
+    "com.azure.cognitiveservices_speech_transcription#TranscriptionPhrasesList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#String"
+      },
+      "traits": {}
+    },
+    "com.azure.cognitiveservices_speech_transcription#TranscriptionPromptList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#String"
+      },
+      "traits": {}
+    },
+    "com.azure.cognitiveservices_speech_transcription#TranscriptionDiarizationOptions": {
+      "type": "structure",
+      "members": {
+        "enabled": {
+          "target": "smithy.api#Boolean"
+        },
+        "maxSpeakers": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "Hint for the maximum number of speakers (2-35)."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "Speaker diarization settings; set them to enable diarization."
+      }
+    },
+    "com.azure.cognitiveservices_speech_transcription#PhraseListProperties": {
+      "type": "structure",
+      "members": {
+        "phrases": {
+          "target": "com.azure.cognitiveservices_speech_transcription#TranscriptionPhrasesList"
+        },
+        "biasingWeight": {
+          "target": "smithy.api#Float",
+          "traits": {
+            "smithy.api#documentation": "Biasing weight (0.0-2.0)."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "Phrase list properties for transcription."
+      }
+    },
+    "com.azure.cognitiveservices_speech_transcription#EnhancedModeProperties": {
+      "type": "structure",
+      "members": {
+        "enabled": {
+          "target": "smithy.api#Boolean"
+        },
+        "task": {
+          "target": "smithy.api#String"
+        },
+        "targetLanguage": {
+          "target": "smithy.api#String"
+        },
+        "prompt": {
+          "target": "com.azure.cognitiveservices_speech_transcription#TranscriptionPromptList"
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "Enhanced mode properties for transcription."
+      }
+    },
+    "com.azure.cognitiveservices_speech_transcription#TranscriptionOptions": {
+      "type": "structure",
+      "members": {
+        "audioUrl": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "URL of the audio to transcribe; send it instead of the `audio` part."
+          }
+        },
+        "locales": {
+          "target": "com.azure.cognitiveservices_speech_transcription#TranscriptionLocalesList",
+          "traits": {
+            "smithy.api#documentation": "Candidate locales of the audio (e.g. `en-US`); omit to detect the language."
+          }
+        },
+        "profanityFilterMode": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`None`, `Removed`, `Tags`, or `Masked` (default)."
+          }
+        },
+        "diarization": {
+          "target": "com.azure.cognitiveservices_speech_transcription#TranscriptionDiarizationOptions"
+        },
+        "channels": {
+          "target": "com.azure.cognitiveservices_speech_transcription#TranscriptionChannelsList",
+          "traits": {
+            "smithy.api#documentation": "0-based channels to transcribe separately (at most two)."
+          }
+        },
+        "phraseList": {
+          "target": "com.azure.cognitiveservices_speech_transcription#PhraseListProperties"
+        },
+        "enhancedMode": {
+          "target": "com.azure.cognitiveservices_speech_transcription#EnhancedModeProperties"
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "Metadata for a transcription request."
       }
     }
   }

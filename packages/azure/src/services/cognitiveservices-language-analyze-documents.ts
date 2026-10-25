@@ -125,6 +125,8 @@ export interface AnalyzeDocumentsLROResult {
   taskName?: string;
   /** Kind of the task. */
   kind: AnalyzeDocumentsLROResultsKind;
+  /** Results of the task: `{ documents, errors, modelVersion }`, each document with its `source` and `targets` locations. */
+  results?: unknown;
 }
 /** Enumerable of Analyze documents job results. */
 export type TasksItemsList = Array<AnalyzeDocumentsLROResult>;
@@ -213,6 +215,8 @@ export interface AnalyzeDocumentsLROTask {
   taskName?: string;
   /** The kind of task to perform. */
   kind: AnalyzeDocumentsLROTaskKind | (string & {});
+  /** Task parameters for `kind` (e.g. `{ piiCategories, redactionPolicy }` for PiiEntityRecognition). */
+  parameters?: unknown;
 }
 /** List of tasks to be performed as part of the LRO. */
 export type AnalyzeDocumentsSubmitJobRequestTasksList = Array<AnalyzeDocumentsLROTask>;
@@ -292,6 +296,7 @@ function __c0(j: number): any {
             code: 200,
             host: "{endpoint}/language",
             apiVersion: "2026-05-01",
+            hostRaw: ["endpoint"],
             audience: "https://cognitiveservices.azure.com/.default",
           }),
         ),
@@ -325,6 +330,7 @@ function __c2(j: number): any {
             code: 200,
             host: "{endpoint}/language",
             apiVersion: "2026-05-01",
+            hostRaw: ["endpoint"],
             audience: "https://cognitiveservices.azure.com/.default",
           }),
         ),
@@ -362,6 +368,7 @@ function __c2(j: number): any {
           status: S.String,
           taskName: S.optional(S.String),
           kind: S.String,
+          results: S.optional(S.Unknown),
         }),
       ).annotate({ identifier: "AnalyzeDocumentsLROResult" });
     case 7:
@@ -433,6 +440,7 @@ function __c3(j: number): any {
         S.Struct({
           taskName: S.optional(S.String),
           kind: S.String,
+          parameters: S.optional(S.Unknown),
         }),
       ).annotate({ identifier: "AnalyzeDocumentsLROTask" });
     case 5:
@@ -452,6 +460,7 @@ function __c3(j: number): any {
             code: 200,
             host: "{endpoint}/language",
             apiVersion: "2026-05-01",
+            hostRaw: ["endpoint"],
             audience: "https://cognitiveservices.azure.com/.default",
           }),
         ),

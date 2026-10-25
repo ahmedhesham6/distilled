@@ -29,7 +29,7 @@
       "traits": {
         "smithy.api#http": {
           "method": "POST",
-          "uri": "/",
+          "uri": "/api/events",
           "code": 200,
           "host": "https://{topicHostname}",
           "hostRaw": [
@@ -81,13 +81,14 @@
       "traits": {
         "smithy.api#http": {
           "method": "POST",
-          "uri": "/",
+          "uri": "/api/events",
           "code": 200,
           "host": "https://{topicHostname}",
           "hostRaw": [
             "topicHostname"
           ],
-          "apiVersion": "2018-01-01"
+          "apiVersion": "2018-01-01",
+          "jsonContentType": "application/cloudevents-batch+json; charset=utf-8"
         },
         "smithy.api#documentation": "Publishes a batch of events to an Azure Event Grid topic."
       }
@@ -213,7 +214,7 @@
       "traits": {
         "smithy.api#http": {
           "method": "POST",
-          "uri": "/",
+          "uri": "/api/events",
           "code": 200,
           "host": "https://{topicHostname}",
           "hostRaw": [

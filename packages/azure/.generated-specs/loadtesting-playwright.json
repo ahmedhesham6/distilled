@@ -35,7 +35,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-09-01"
+          "apiVersion": "2025-09-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Creates or updates a test run for the workspace with the specified test run ID. Requires Bearer JWT access token provided by Entra ID or Playwright Service."
       }
@@ -43,13 +44,6 @@
     "com.azure.loadtesting_playwright#TestRun": {
       "type": "structure",
       "members": {
-        "id": {
-          "target": "smithy.api#String",
-          "traits": {
-            "smithy.api#documentation": "The test run ID in GUID format.",
-            "smithy.api#required": {}
-          }
-        },
         "displayName": {
           "target": "smithy.api#String",
           "traits": {
@@ -86,6 +80,13 @@
           "target": "com.azure.loadtesting_playwright#RunSummary",
           "traits": {
             "smithy.api#documentation": "The test run summary.",
+            "smithy.api#required": {}
+          }
+        },
+        "runId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The test run ID in GUID format.",
             "smithy.api#required": {}
           }
         }
@@ -991,7 +992,7 @@
             }
           ]
         },
-        "com.azure.protocols#audience": "https://playwright.microsoft.com/.default"
+        "com.azure.protocols#audience": "https://management.core.windows.net/.default"
       }
     }
   }

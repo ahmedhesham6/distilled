@@ -87,8 +87,6 @@ export interface GetRenderCopyrightForWorldRequest {
   xMsClientId?: string;
 }
 export type GetRenderCopyrightFromBoundingBoxRequestFormat = "json" | "xml";
-export type GetRenderCopyrightFromBoundingBoxRequestMincoordinatesList = Array<number>;
-export type GetRenderCopyrightFromBoundingBoxRequestMaxcoordinatesList = Array<number>;
 export type GetRenderCopyrightFromBoundingBoxRequestText = "yes" | "no";
 export interface GetRenderCopyrightFromBoundingBoxRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
@@ -96,9 +94,9 @@ export interface GetRenderCopyrightFromBoundingBoxRequest {
   /** Desired format of the response. Value can be either _json_ or _xml_. */
   format: GetRenderCopyrightFromBoundingBoxRequestFormat | (string & {});
   /** Minimum coordinates (south-west point) of bounding box in latitude longitude coordinate system. E.g. 52.41064,4.84228 */
-  mincoordinates: GetRenderCopyrightFromBoundingBoxRequestMincoordinatesList;
+  mincoordinates: string;
   /** Maximum coordinates (north-east point) of bounding box in latitude longitude coordinate system. E.g. 52.41064,4.84228 */
-  maxcoordinates: GetRenderCopyrightFromBoundingBoxRequestMaxcoordinatesList;
+  maxcoordinates: string;
   /** Yes/no value to exclude textual data from response. Only images and country/region names will be in response. */
   text?: GetRenderCopyrightFromBoundingBoxRequestText | (string & {});
   /** Indicates the account intended for use with the Microsoft Entra ID security model. This unique ID for the Azure Maps account can be obtained from the [Azure Maps management plane Account API](/rest/api/maps-management/accounts). For more information on using Microsoft Entra ID security in Azure Maps, see [Manage authentication in Azure Maps](/azure/azure-maps/how-to-manage-authentication). */
@@ -127,7 +125,6 @@ export type GetRenderMapAttributionRequestTilesetId =
   | "microsoft.traffic.delay.main"
   | "microsoft.traffic.reduced.main"
   | "microsoft.traffic.incident";
-export type GetRenderMapAttributionRequestBoundsList = Array<number>;
 export interface GetRenderMapAttributionRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
   endpoint?: string;
@@ -136,7 +133,7 @@ export interface GetRenderMapAttributionRequest {
   /** Zoom level for the desired map attribution. */
   zoom: number;
   /** The string that represents the rectangular area of a bounding box. The bounds parameter is defined by the 4 bounding box coordinates, with WGS84 longitude and latitude of the southwest corner followed by WGS84 longitude and latitude of the northeast corner. The string is presented in the following format: `[SouthwestCorner_Longitude, SouthwestCorner_Latitude, NortheastCorner_Longitude, NortheastCorner_Latitude]`. */
-  bounds: GetRenderMapAttributionRequestBoundsList;
+  bounds: string;
   /** Indicates the account intended for use with the Microsoft Entra ID security model. This unique ID for the Azure Maps account can be obtained from the [Azure Maps management plane Account API](/rest/api/maps-management/accounts). For more information on using Microsoft Entra ID security in Azure Maps, see [Manage authentication in Azure Maps](/azure/azure-maps/how-to-manage-authentication). */
   xMsClientId?: string;
 }
@@ -161,14 +158,15 @@ export interface GetRenderMapStateTileRequest {
   /** Indicates the account intended for use with the Microsoft Entra ID security model. This unique ID for the Azure Maps account can be obtained from the [Azure Maps management plane Account API](/rest/api/maps-management/accounts). For more information on using Microsoft Entra ID security in Azure Maps, see [Manage authentication in Azure Maps](/azure/azure-maps/how-to-manage-authentication). */
   xMsClientId?: string;
 }
-export type GetRenderMapStateTileResponse = string;
+export interface GetRenderMapStateTileResponse {
+  /** The state tile bytes (vector `pbf`). */
+  body: Uint8Array;
+}
 export type GetRenderMapStaticImageRequestTilesetId =
   | "microsoft.base.road"
   | "microsoft.base.darkgrey"
   | "microsoft.imagery";
 export type GetRenderMapStaticImageRequestTrafficLayer = "microsoft.traffic.relative.main" | "none";
-export type GetRenderMapStaticImageRequestCenterList = Array<number>;
-export type GetRenderMapStaticImageRequestBboxList = Array<number>;
 export type GetRenderMapStaticImageRequestView =
   | "AE"
   | "AR"
@@ -201,9 +199,9 @@ export interface GetRenderMapStaticImageRequest {
   /** Desired zoom level of the map. Support zoom value range from 0-20 (inclusive) for tilesetId being microsoft.base.road or microsoft.base.darkgrey. Support zoom value range from 0-19 (inclusive) for tilesetId being microsoft.imagery. Default value is 12.<br><br>For more information, see [Zoom Levels and Tile Grid](https://docs.microsoft.com/azure/location-based-services/zoom-levels-and-tile-grid). */
   zoom?: number;
   /** Coordinates of the center point in double. Format: 'lon,lat'. Longitude range: -180 to 180. Latitude range: -90 to 90. Note: Either center or bbox are required parameters. They are mutually exclusive. */
-  center?: GetRenderMapStaticImageRequestCenterList;
+  center?: string;
   /** A bounding box is defined by two latitudes and two longitudes that represent the four sides of a rectangular area on the Earth. Format : 'minLon, minLat, maxLon, maxLat' (in double). Note: Either bbox or center are required parameters. They are mutually exclusive. bbox shouldn't be used with height or width. The maximum and minimum allowed ranges for Lat and Lon are defined for each zoom level in the table at the top of this page. */
-  bbox?: GetRenderMapStaticImageRequestBboxList;
+  bbox?: string;
   /** Height of the resulting image in pixels. Range from 80 to 1500. Default is 512. It shouldn't be used with bbox. */
   height?: number;
   /** Width of the resulting image in pixels. Range from 80 to 2000. Default is 512. It should not be used with bbox. */
@@ -219,7 +217,10 @@ export interface GetRenderMapStaticImageRequest {
   /** Indicates the account intended for use with the Microsoft Entra ID security model. This unique ID for the Azure Maps account can be obtained from the [Azure Maps management plane Account API](/rest/api/maps-management/accounts). For more information on using Microsoft Entra ID security in Azure Maps, see [Manage authentication in Azure Maps](/azure/azure-maps/how-to-manage-authentication). */
   xMsClientId?: string;
 }
-export type GetRenderMapStaticImageResponse = unknown;
+export interface GetRenderMapStaticImageResponse {
+  /** The image bytes (PNG). */
+  body: Uint8Array;
+}
 export type GetRenderMapTileRequestTilesetId =
   | "microsoft.base"
   | "microsoft.base.labels"
@@ -286,7 +287,10 @@ export interface GetRenderMapTileRequest {
   /** Indicates the account intended for use with the Microsoft Entra ID security model. This unique ID for the Azure Maps account can be obtained from the [Azure Maps management plane Account API](/rest/api/maps-management/accounts). For more information on using Microsoft Entra ID security in Azure Maps, see [Manage authentication in Azure Maps](/azure/azure-maps/how-to-manage-authentication). */
   xMsClientId?: string;
 }
-export type GetRenderMapTileResponse = string;
+export interface GetRenderMapTileResponse {
+  /** The tile bytes, in the format the tileset serves (PNG, JPEG, or vector `pbf`). */
+  body: Uint8Array;
+}
 export type GetRenderMapTilesetRequestTilesetId =
   | "microsoft.base"
   | "microsoft.base.labels"
@@ -429,8 +433,8 @@ export const GetRenderMapAttribution: API.OperationMethod<
   GetRenderMapAttributionError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(28, __c7, 0) as any as S.Schema<GetRenderMapAttributionRequest>,
-  output: __S(29, __c7, 1) as any as S.Schema<MapAttribution>,
+  input: __S(24, __c6, 0) as any as S.Schema<GetRenderMapAttributionRequest>,
+  output: __S(25, __c6, 1) as any as S.Schema<MapAttribution>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -444,8 +448,8 @@ export const GetRenderMapStateTile: API.OperationMethod<
   GetRenderMapStateTileError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(32, __c8, 0) as any as S.Schema<GetRenderMapStateTileRequest>,
-  output: __S(36, __c9, 0) as any as S.Schema<GetRenderMapStateTileResponse>,
+  input: __S(28, __c7, 0) as any as S.Schema<GetRenderMapStateTileRequest>,
+  output: __S(32, __c8, 0) as any as S.Schema<GetRenderMapStateTileResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -459,8 +463,8 @@ export const GetRenderMapStaticImage: API.OperationMethod<
   GetRenderMapStaticImageError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(40, __c10, 0) as any as S.Schema<GetRenderMapStaticImageRequest>,
-  output: __S(41, __c10, 1) as any as S.Schema<GetRenderMapStaticImageResponse>,
+  input: __S(36, __c9, 0) as any as S.Schema<GetRenderMapStaticImageRequest>,
+  output: __S(32, __c8, 0) as any as S.Schema<GetRenderMapStaticImageResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -474,8 +478,8 @@ export const GetRenderMapTile: API.OperationMethod<
   GetRenderMapTileError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(44, __c11, 0) as any as S.Schema<GetRenderMapTileRequest>,
-  output: __S(36, __c9, 0) as any as S.Schema<GetRenderMapTileResponse>,
+  input: __S(40, __c10, 0) as any as S.Schema<GetRenderMapTileRequest>,
+  output: __S(32, __c8, 0) as any as S.Schema<GetRenderMapTileResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -489,8 +493,8 @@ export const GetRenderMapTileset: API.OperationMethod<
   GetRenderMapTilesetError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(48, __c12, 0) as any as S.Schema<GetRenderMapTilesetRequest>,
-  output: __S(49, __c12, 1) as any as S.Schema<MapTileset>,
+  input: __S(44, __c11, 0) as any as S.Schema<GetRenderMapTilesetRequest>,
+  output: __S(46, __c11, 2) as any as S.Schema<MapTileset>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -619,8 +623,8 @@ function __c5(j: number): any {
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
-          mincoordinates: __S(24, __c6, 0).pipe(T.Query()),
-          maxcoordinates: __S(24, __c6, 0).pipe(T.Query()),
+          mincoordinates: S.String.pipe(T.Query()),
+          maxcoordinates: S.String.pipe(T.Query()),
           text: S.optional(S.String.pipe(T.Query())),
           xMsClientId: S.optional(S.String.pipe(T.Header("x-ms-client-id"))),
         }).pipe(
@@ -641,18 +645,12 @@ function __c5(j: number): any {
 function __c6(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(S.Number);
-  }
-}
-function __c7(j: number): any {
-  switch (j) {
-    case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           tilesetId: S.String.pipe(T.Query()),
           zoom: S.Number.pipe(T.Query()),
-          bounds: __S(24, __c6, 0).pipe(T.Query()),
+          bounds: S.String.pipe(T.Query()),
           xMsClientId: S.optional(S.String.pipe(T.Header("x-ms-client-id"))),
         }).pipe(
           T.Http({
@@ -675,7 +673,7 @@ function __c7(j: number): any {
       ).annotate({ identifier: "MapAttribution" });
   }
 }
-function __c8(j: number): any {
+function __c7(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -701,15 +699,17 @@ function __c8(j: number): any {
       ).annotate({ identifier: "GetRenderMapStateTileRequest" });
   }
 }
-function __c9(j: number): any {
+function __c8(j: number): any {
   switch (j) {
     case 0:
-      return S.suspend(() => S.String.pipe(T.RawResponseRoot())).annotate({
-        identifier: "GetRenderMapStateTileResponse",
-      });
+      return S.suspend(() =>
+        S.Struct({
+          body: S.instanceOf(Uint8Array).pipe(T.HttpBody()),
+        }),
+      ).annotate({ identifier: "GetRenderMapStateTileResponse" });
   }
 }
-function __c10(j: number): any {
+function __c9(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -718,8 +718,8 @@ function __c10(j: number): any {
           tilesetId: S.optional(S.String.pipe(T.Query())),
           trafficLayer: S.optional(S.String.pipe(T.Query())),
           zoom: S.optional(S.Number.pipe(T.Query())),
-          center: S.optional(__S(24, __c6, 0).pipe(T.Query())),
-          bbox: S.optional(__S(24, __c6, 0).pipe(T.Query())),
+          center: S.optional(S.String.pipe(T.Query())),
+          bbox: S.optional(S.String.pipe(T.Query())),
           height: S.optional(S.Number.pipe(T.Query())),
           width: S.optional(S.Number.pipe(T.Query())),
           language: S.optional(S.String.pipe(T.Query())),
@@ -740,13 +740,9 @@ function __c10(j: number): any {
           }),
         ),
       ).annotate({ identifier: "GetRenderMapStaticImageRequest" });
-    case 1:
-      return S.suspend(() => S.Unknown.pipe(T.RawResponseRoot())).annotate({
-        identifier: "GetRenderMapStaticImageResponse",
-      });
   }
 }
-function __c11(j: number): any {
+function __c10(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -776,7 +772,7 @@ function __c11(j: number): any {
       ).annotate({ identifier: "GetRenderMapTileRequest" });
   }
 }
-function __c12(j: number): any {
+function __c11(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -798,6 +794,8 @@ function __c12(j: number): any {
         ),
       ).annotate({ identifier: "GetRenderMapTilesetRequest" });
     case 1:
+      return S.Array(S.Number);
+    case 2:
       return S.suspend(() =>
         S.Struct({
           tilejson: S.optional(S.String),
@@ -813,8 +811,8 @@ function __c12(j: number): any {
           data: S.optional(__S(12, __c3, 0)),
           minzoom: S.optional(S.Number),
           maxzoom: S.optional(S.Number),
-          bounds: S.optional(__S(24, __c6, 0)),
-          center: S.optional(__S(24, __c6, 0)),
+          bounds: S.optional(__S(45, __c11, 1)),
+          center: S.optional(__S(45, __c11, 1)),
         }),
       ).annotate({ identifier: "MapTileset" });
   }

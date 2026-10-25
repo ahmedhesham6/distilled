@@ -311,6 +311,12 @@
             "smithy.api#documentation": "discriminator kind",
             "smithy.api#required": {}
           }
+        },
+        "results": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Results of the task: `{ conversations, errors, modelVersion }`; each conversation's shape depends on `kind`."
+          }
         }
       },
       "traits": {
@@ -833,6 +839,12 @@
             "smithy.api#documentation": "Enumeration of supported analysis tasks on a collection of conversations.",
             "smithy.api#required": {}
           }
+        },
+        "parameters": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Task parameters for `kind` (e.g. `{ summaryAspects }` for ConversationalSummarizationTask)."
+          }
         }
       },
       "traits": {
@@ -911,6 +923,13 @@
           "target": "com.azure.cognitiveservices_language_analyze_conversations#ConversationDomain",
           "traits": {
             "smithy.api#documentation": "domain"
+          }
+        },
+        "conversationItems": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "The conversation's items: `[{ id, participantId, text, role? }]` for text, `[{ id, participantId, itn, maskedItn, text, lexical, audioTimings? }]` for transcripts.",
+            "smithy.api#required": {}
           }
         }
       },
@@ -995,6 +1014,12 @@
             "smithy.api#documentation": "The base class of a conversation input task result.",
             "smithy.api#required": {}
           }
+        },
+        "result": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "The prediction for the conversation item: `{ query, prediction }`."
+          }
         }
       },
       "traits": {
@@ -1030,6 +1055,20 @@
           "target": "com.azure.cognitiveservices_language_analyze_conversations#AnalyzeConversationTaskKind",
           "traits": {
             "smithy.api#documentation": "The base class of a conversation input task.",
+            "smithy.api#required": {}
+          }
+        },
+        "analysisInput": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "The conversation item to analyze, e.g. `{ conversationItem: { id, participantId, text } }`.",
+            "smithy.api#required": {}
+          }
+        },
+        "parameters": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "Task parameters, e.g. `{ projectName, deploymentName, stringIndexType }` for a Conversation (CLU) task.",
             "smithy.api#required": {}
           }
         }

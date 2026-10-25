@@ -38,7 +38,12 @@
           "apiVersion": "2026-09-23"
         },
         "smithy.api#documentation": "Exchange an Entra ID access token of a Teams user for a new Communication Identity access token with a matching expiration time.\n\nExchange an Entra ID access token of a Teams user for a new Communication Identity access token with a matching expiration time."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_identity#TeamsAccessTokenInvalid"
+        }
+      ]
     },
     "com.azure.communication_identity#CommunicationIdentityAccessToken": {
       "type": "structure",
@@ -119,7 +124,15 @@
           "apiVersion": "2026-09-23"
         },
         "smithy.api#documentation": "Revoke all access tokens for the specific identity.\n\nRevoke all access tokens for the specific identity."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_identity#IdentityNotFound"
+        },
+        {
+          "target": "com.azure.communication_identity#IdentityNotOwned"
+        }
+      ]
     },
     "com.azure.communication_identity#RevokeIdentityOperationAccessTokensRequest": {
       "type": "structure",
@@ -165,7 +178,15 @@
           "apiVersion": "2026-09-23"
         },
         "smithy.api#documentation": "Issue a new token for an identity.\n\nIssue a new token for an identity."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_identity#IdentityNotFound"
+        },
+        {
+          "target": "com.azure.communication_identity#IdentityNotOwned"
+        }
+      ]
     },
     "com.azure.communication_identity#IdentityOperationsIssueAccessTokenRequest": {
       "type": "structure",
@@ -271,7 +292,15 @@
           "apiVersion": "2026-09-23"
         },
         "smithy.api#documentation": "Delete the identity, revoke all tokens for the identity and delete all associated data.\n\nDelete the identity, revoke all tokens for the identity and delete all associated data."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_identity#IdentityNotFound"
+        },
+        {
+          "target": "com.azure.communication_identity#IdentityNotOwned"
+        }
+      ]
     },
     "com.azure.communication_identity#DeleteIdentityOperationRequest": {
       "type": "structure",
@@ -606,7 +635,12 @@
           "apiVersion": "2026-09-23"
         },
         "smithy.api#documentation": "Get Teams Phone access assignment by object id.\n\nGet Teams Phone access assignment by object id."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_identity#TeamsExtensionAssignmentNotFound"
+        }
+      ]
     },
     "com.azure.communication_identity#GetTeamsExtensionOperationAssignmentRequest": {
       "type": "structure",
@@ -660,7 +694,12 @@
           "apiVersion": "2026-09-23"
         },
         "smithy.api#documentation": "Exchanges a Teams Phone token for an ACS user access token.\n\nExchanges a Teams Phone token for an ACS user access token."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_identity#TeamsAccessTokenInvalid"
+        }
+      ]
     },
     "com.azure.communication_identity#TeamsExtensionOperationsExchangeTokenRequest": {
       "type": "structure",
@@ -742,6 +781,126 @@
           ]
         },
         "com.azure.protocols#audience": "https://communication.azure.com/.default"
+      }
+    },
+    "com.azure.communication_identity#IdentityNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The Communication Services identity does not exist or was deleted (HTTP 404 `IdentityNotFound`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/error/code": "IdentityNotFound"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.communication_identity#IdentityNotOwned": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 401,
+        "smithy.api#documentation": "The identity belongs to another Communication Services resource (HTTP 401 `IdentityNotOwned`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 401,
+            "body": {
+              "/error/code": "IdentityNotOwned"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.communication_identity#TeamsAccessTokenInvalid": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 401,
+        "smithy.api#documentation": "The Teams user or Teams Phone token to exchange is not valid (HTTP 401 `InvalidAccessToken`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 401,
+            "body": {
+              "/error/code": "InvalidAccessToken"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.communication_identity#TeamsExtensionAssignmentNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The Entra object has no Teams Phone extensibility assignment on the resource (HTTP 404 `TeamsExtensionAssignmentNotFound`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/error/code": "TeamsExtensionAssignmentNotFound"
+            }
+          }
+        ]
       }
     }
   }

@@ -211,6 +211,12 @@
             "smithy.api#documentation": "The object type.",
             "smithy.api#required": {}
           }
+        },
+        "static": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"static\"`: the chunk size and overlap."
+          }
         }
       },
       "traits": {
@@ -435,6 +441,12 @@
           "traits": {
             "smithy.api#documentation": "The object type.",
             "smithy.api#required": {}
+          }
+        },
+        "static": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"static\"`: the chunk size and overlap."
           }
         }
       },
@@ -2407,6 +2419,42 @@
             "smithy.api#documentation": "The object type.",
             "smithy.api#required": {}
           }
+        },
+        "function": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"function\"`: the function definition."
+          }
+        },
+        "file_search": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"file_search\"`: file search options."
+          }
+        },
+        "azure_function": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"azure_function\"`: the Azure Function definition."
+          }
+        },
+        "bing_grounding": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"bing_grounding\"`: Bing grounding search parameters."
+          }
+        },
+        "connected_agent": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"connected_agent\"`: the connected agent."
+          }
+        },
+        "openapi": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"openapi\"`: the OpenAPI function definition."
+          }
         }
       },
       "traits": {
@@ -2443,6 +2491,12 @@
           "traits": {
             "smithy.api#documentation": "The object type.",
             "smithy.api#required": {}
+          }
+        },
+        "submit_tool_outputs": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"submit_tool_outputs\"`: the tool calls the run waits for."
           }
         }
       },
@@ -3166,6 +3220,18 @@
             "smithy.api#documentation": "The object type.",
             "smithy.api#required": {}
           }
+        },
+        "message_creation": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"message_creation\"`: the message the step created."
+          }
+        },
+        "tool_calls": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"tool_calls\"`: the tool calls the step made."
+          }
         }
       },
       "traits": {
@@ -3280,10 +3346,10 @@
           }
         },
         "include__": {
-          "target": "com.azure.ai_agents#GetRunStepRunStepRequestIncludeList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "include[]",
-            "smithy.api#documentation": "A list of additional fields to include in the response.\nCurrently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content."
+            "smithy.api#documentation": "A list of additional fields to include in the response.\nCurrently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content. Comma-separated (`step_details.tool_calls[*].file_search.results[*].content`)."
           }
         }
       },
@@ -3397,10 +3463,10 @@
           }
         },
         "include__": {
-          "target": "com.azure.ai_agents#ListRunStepRunStepsRequestIncludeList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "include[]",
-            "smithy.api#documentation": "A list of additional fields to include in the response.\nCurrently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content."
+            "smithy.api#documentation": "A list of additional fields to include in the response.\nCurrently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content. Comma-separated (`step_details.tool_calls[*].file_search.results[*].content`)."
           }
         },
         "limit": {
@@ -3696,10 +3762,10 @@
           }
         },
         "include__": {
-          "target": "com.azure.ai_agents#CreateRunRunRequestIncludeList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "include[]",
-            "smithy.api#documentation": "A list of additional fields to include in the response.\nCurrently the only supported value is `step_details.tool_calls[*].file_search.results[*].content`\nto fetch the file search result content."
+            "smithy.api#documentation": "A list of additional fields to include in the response.\nCurrently the only supported value is `step_details.tool_calls[*].file_search.results[*].content`\nto fetch the file search result content. Comma-separated (`step_details.tool_calls[*].file_search.results[*].content`)."
           }
         },
         "assistant_id": {
@@ -4175,6 +4241,18 @@
           "traits": {
             "smithy.api#documentation": "The object type.",
             "smithy.api#required": {}
+          }
+        },
+        "text": {
+          "target": "com.azure.ai_agents#MessageTextDetails",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"text\"`: the text and its annotations."
+          }
+        },
+        "image_file": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "For `type: \"image_file\"`: the image file reference."
           }
         }
       },
@@ -6389,6 +6467,27 @@
           ]
         },
         "com.azure.protocols#audience": "https://ai.azure.com/.default"
+      }
+    },
+    "com.azure.ai_agents#MessageTextDetails": {
+      "type": "structure",
+      "members": {
+        "value": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The text data.",
+            "smithy.api#required": {}
+          }
+        },
+        "annotations": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "A list of annotations associated with this text."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "The text and associated annotations for a single item of agent thread message content."
       }
     }
   }

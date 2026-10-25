@@ -80,7 +80,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2026-04-01"
+          "apiVersion": "2026-04-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Create a new trigger or update an existing trigger.\n\nCreate a new trigger or update an existing trigger by providing the trigger Id."
       }
@@ -471,7 +472,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2026-04-01"
+          "apiVersion": "2026-04-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Configure server metrics for a test\n\nConfigure server metrics for a test"
       }
@@ -800,7 +802,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2026-04-01"
+          "apiVersion": "2026-04-01",
+          "bodyMediaType": "application/octet-stream"
         },
         "smithy.api#documentation": "Upload input file for a given test Id. File size can't be more than 50 MB.\nExisting file with same name for the given test will be overwritten. File\nshould be provided in the request body as application/octet-stream.\n\nUpload input file for a given test Id. File size can't be more than 50 MB.\nExisting file with same name for the given test will be overwritten. File\nshould be provided in the request body as application/octet-stream."
       }
@@ -1201,7 +1204,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2026-04-01"
+          "apiVersion": "2026-04-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Add an app component to a test.\n\nAdd an app component to a test by providing the resource Id, name and type."
       }
@@ -1635,7 +1639,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2026-04-01"
+          "apiVersion": "2026-04-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Create a new test or update an existing test by providing the test Id.\n\nCreate a new test or update an existing test by providing the test Id."
       }
@@ -3117,7 +3122,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2026-04-01"
+          "apiVersion": "2026-04-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Configure server metrics for a test run\n\nConfigure server metrics for a test run"
       }
@@ -4310,7 +4316,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2026-04-01"
+          "apiVersion": "2026-04-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Update the latest insights for the test run.\n\nUpdate the latest insights for the test run."
       }
@@ -4649,7 +4656,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2026-04-01"
+          "apiVersion": "2026-04-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Add an app component to a test run.\n\nAdd an app component to a test run by providing the resource Id, name and type."
       }
@@ -5672,7 +5680,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2026-04-01"
+          "apiVersion": "2026-04-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Create and start a new test run with the given test run Id.\n\nCreate and start a new test run with the given test run Id."
       }
@@ -6236,7 +6245,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2026-04-01"
+          "apiVersion": "2026-04-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Create a new notification rule or update an existing notification rule.\n\nCreate a new notification rule or update an existing notification rule by providing the notification rule Id."
       }

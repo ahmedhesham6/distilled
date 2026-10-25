@@ -35,10 +35,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-03-13"
+          "apiVersion": "2025-03-13",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Update participants in a room."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_rooms#RoomNotFound"
+        }
+      ]
     },
     "com.azure.communication_rooms#UpdateParticipantResponse": {
       "type": "structure",
@@ -168,7 +174,12 @@
           "outputToken": "nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_rooms#RoomNotFound"
+        }
+      ]
     },
     "com.azure.communication_rooms#ParticipantsCollection": {
       "type": "structure",
@@ -271,7 +282,12 @@
           "apiVersion": "2025-03-13"
         },
         "smithy.api#documentation": "Delete a room."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_rooms#RoomNotFound"
+        }
+      ]
     },
     "com.azure.communication_rooms#DeleteRoomRequest": {
       "type": "structure",
@@ -314,10 +330,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2025-03-13"
+          "apiVersion": "2025-03-13",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Update a room with given changes."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_rooms#RoomNotFound"
+        }
+      ]
     },
     "com.azure.communication_rooms#RoomModel": {
       "type": "structure",
@@ -424,7 +446,12 @@
           "apiVersion": "2025-03-13"
         },
         "smithy.api#documentation": "Retrieves an existing room by id."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_rooms#RoomNotFound"
+        }
+      ]
     },
     "com.azure.communication_rooms#GetRoomRequest": {
       "type": "structure",
@@ -658,6 +685,36 @@
           ]
         },
         "com.azure.protocols#audience": "https://communication.azure.com/.default"
+      }
+    },
+    "com.azure.communication_rooms#RoomNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The room does not exist (HTTP 404 `NotFound`, \"Meeting is not found in DB\").",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/error/code": "NotFound"
+            }
+          }
+        ]
       }
     }
   }

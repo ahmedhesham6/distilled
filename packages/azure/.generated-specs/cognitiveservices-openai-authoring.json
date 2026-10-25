@@ -419,9 +419,11 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2024-10-21"
+          "apiVersion": "2024-10-21",
+          "contentType": "multipart"
         },
-        "smithy.api#documentation": "Adds a Part to an Upload object, where each Part represents a segment of the file you are uploading.\r\nEach Part can be up to the standard size limit for file upload, based on the File Purpose. You can continue adding Parts until reaching the Upload size limit of 9 GB."
+        "smithy.api#documentation": "Adds a Part to an Upload object, where each Part represents a segment of the file you are uploading.\r\nEach Part can be up to the standard size limit for file upload, based on the File Purpose. You can continue adding Parts until reaching the Upload size limit of 9 GB.",
+        "com.distilled.openapi#contentType": "multipart"
       }
     },
     "com.azure.cognitiveservices_openai_authoring#UploadPartResource": {
@@ -468,6 +470,13 @@
             "smithy.api#httpLabel": {},
             "smithy.api#required": {},
             "smithy.api#documentation": "The identifier of the upload."
+          }
+        },
+        "data": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The chunk of bytes for this part (a Blob or File)."
           }
         }
       },
@@ -572,6 +581,13 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#required": {}
+          }
+        },
+        "purpose": {
+          "target": "com.azure.cognitiveservices_openai_authoring#Purpose",
+          "traits": {
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The intended purpose of the uploaded file."
           }
         }
       },
@@ -2082,9 +2098,11 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2024-10-21"
+          "apiVersion": "2024-10-21",
+          "contentType": "multipart"
         },
-        "smithy.api#documentation": "Creates a new file entity by uploading data from a local machine. Uploaded files can, for example, be used for training or evaluating fine-tuned models."
+        "smithy.api#documentation": "Creates a new file entity by uploading data from a local machine. Uploaded files can, for example, be used for training or evaluating fine-tuned models.",
+        "com.distilled.openapi#contentType": "multipart"
       }
     },
     "com.azure.cognitiveservices_openai_authoring#UploadFileResponse": {
@@ -2155,6 +2173,20 @@
             "smithy.api#required": {},
             "smithy.api#documentation": "Supported Cognitive Services endpoints (protocol and hostname, for example: https://aoairesource.openai.azure.com. Replace \"aoairesource\" with your Azure OpenAI account name).",
             "com.azure.protocols#hostLabel": {}
+          }
+        },
+        "purpose": {
+          "target": "com.azure.cognitiveservices_openai_authoring#Purpose",
+          "traits": {
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The intended purpose of the uploaded file: \"fine-tune\" for fine-tuning, \"batch\" for batch requests."
+          }
+        },
+        "file": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The file to upload: a File (its name is the uploaded filename, e.g. training.jsonl) or a Blob."
           }
         }
       },

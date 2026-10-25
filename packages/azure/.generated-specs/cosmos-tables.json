@@ -723,7 +723,15 @@
           }
         },
         "smithy.api#documentation": "Deletes an existing table."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.cosmos_tables#TableNotFound"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TablePermissionDenied"
+        }
+      ]
     },
     "com.azure.cosmos_tables#DeleteTableRequest": {
       "type": "structure",
@@ -784,7 +792,18 @@
           }
         },
         "smithy.api#documentation": "Creates a new table under the given account."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.cosmos_tables#TableAlreadyExists"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TableBeingDeleted"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TablePermissionDenied"
+        }
+      ]
     },
     "com.azure.cosmos_tables#TableResponse": {
       "type": "structure",
@@ -941,7 +960,12 @@
           }
         },
         "smithy.api#documentation": "Queries tables under the given account."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.cosmos_tables#TablePermissionDenied"
+        }
+      ]
     },
     "com.azure.cosmos_tables#TableQueryResponse": {
       "type": "structure",
@@ -957,6 +981,13 @@
           "target": "com.azure.cosmos_tables#TableQueryResponseValueList",
           "traits": {
             "smithy.api#documentation": "The requested list of tables."
+          }
+        },
+        "xMsContinuationNextTableName": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "x-ms-continuation-NextTableName",
+            "smithy.api#documentation": "Continuation token: pass it as `NextTableName` to read the next page. Absent on the last page."
           }
         }
       },
@@ -1118,7 +1149,18 @@
           }
         },
         "smithy.api#documentation": "Insert entity in a table."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.cosmos_tables#TableEntityAlreadyExists"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TableNotFound"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TablePermissionDenied"
+        }
+      ]
     },
     "com.azure.cosmos_tables#InsertTableEntityResponse": {
       "type": "structure",
@@ -1283,7 +1325,21 @@
           }
         },
         "smithy.api#documentation": "Deletes the specified entity in a table."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.cosmos_tables#TableEntityNotFound"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TableEntityConditionNotMet"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TableNotFound"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TablePermissionDenied"
+        }
+      ]
     },
     "com.azure.cosmos_tables#DeleteTableEntityRequest": {
       "type": "structure",
@@ -1357,7 +1413,7 @@
       },
       "traits": {
         "smithy.api#http": {
-          "method": "PATCH",
+          "method": "MERGE",
           "uri": "/{table}(PartitionKey='{partitionKey}',RowKey='{rowKey}')",
           "code": 200,
           "host": "{url}",
@@ -1375,7 +1431,21 @@
           }
         },
         "smithy.api#documentation": "Merge entity in a table."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.cosmos_tables#TableEntityNotFound"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TableEntityConditionNotMet"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TableNotFound"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TablePermissionDenied"
+        }
+      ]
     },
     "com.azure.cosmos_tables#MergeTableEntityResponse": {
       "type": "structure",
@@ -1497,7 +1567,21 @@
           }
         },
         "smithy.api#documentation": "Update entity in a table."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.cosmos_tables#TableEntityNotFound"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TableEntityConditionNotMet"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TableNotFound"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TablePermissionDenied"
+        }
+      ]
     },
     "com.azure.cosmos_tables#UpdateTableEntityResponse": {
       "type": "structure",
@@ -1619,7 +1703,18 @@
           }
         },
         "smithy.api#documentation": "Retrieve a single entity."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.cosmos_tables#TableEntityNotFound"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TableNotFound"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TablePermissionDenied"
+        }
+      ]
     },
     "com.azure.cosmos_tables#TableQueryEntityWithPartitionAndRowKeyResponse": {
       "type": "structure",
@@ -1773,7 +1868,15 @@
           }
         },
         "smithy.api#documentation": "Queries entities under the given table."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.cosmos_tables#TableNotFound"
+        },
+        {
+          "target": "com.azure.cosmos_tables#TablePermissionDenied"
+        }
+      ]
     },
     "com.azure.cosmos_tables#TableEntityQueryResponse": {
       "type": "structure",
@@ -1789,6 +1892,20 @@
           "target": "com.azure.cosmos_tables#TableEntityQueryResponseValueList",
           "traits": {
             "smithy.api#documentation": "List of table entities."
+          }
+        },
+        "xMsContinuationNextPartitionKey": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "x-ms-continuation-NextPartitionKey",
+            "smithy.api#documentation": "Continuation token: pass it as `NextPartitionKey` to read the next page. Absent on the last page."
+          }
+        },
+        "xMsContinuationNextRowKey": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "x-ms-continuation-NextRowKey",
+            "smithy.api#documentation": "Continuation token: pass it as `NextRowKey` to read the next page."
           }
         }
       },
@@ -1979,6 +2096,192 @@
           ]
         },
         "com.azure.protocols#audience": "https://cosmos.azure.com/.default"
+      }
+    },
+    "com.azure.cosmos_tables#TableEntityNotFound": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The entity does not exist (HTTP 404 `ResourceNotFound` in the `odata.error` body).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/odata.error/code": "ResourceNotFound"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.cosmos_tables#TableNotFound": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The table does not exist (HTTP 404 `TableNotFound`; Delete Table answers `ResourceNotFound`). Entity operations list `TableEntityNotFound` first, so their `ResourceNotFound` is the missing entity.",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/odata.error/code": "TableNotFound"
+            }
+          },
+          {
+            "status": 404,
+            "body": {
+              "/odata.error/code": "ResourceNotFound"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.cosmos_tables#TableEntityAlreadyExists": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 409,
+        "smithy.api#documentation": "An entity with the same PartitionKey and RowKey already exists (HTTP 409 `EntityAlreadyExists`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 409,
+            "body": {
+              "/odata.error/code": "EntityAlreadyExists"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.cosmos_tables#TableEntityConditionNotMet": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 412,
+        "smithy.api#documentation": "The entity's ETag does not match the request's If-Match (HTTP 412 `UpdateConditionNotSatisfied`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 412,
+            "body": {
+              "/odata.error/code": "UpdateConditionNotSatisfied"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.cosmos_tables#TableAlreadyExists": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 409,
+        "smithy.api#documentation": "A table with the same name already exists (HTTP 409 `TableAlreadyExists`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 409,
+            "body": {
+              "/odata.error/code": "TableAlreadyExists"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.cosmos_tables#TableBeingDeleted": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 409,
+        "smithy.api#documentation": "A table with the same name is still being deleted (HTTP 409 `TableBeingDeleted`); retry after a delay.",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 409,
+            "body": {
+              "/odata.error/code": "TableBeingDeleted"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.cosmos_tables#TablePermissionDenied": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        },
+        "body": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "The `odata.error` body; Cosmos DB names the missing data action in its message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 403,
+        "smithy.api#documentation": "The principal lacks the data role for the operation: Azure Table storage answers HTTP 403 `AuthorizationPermissionMismatch`, Cosmos DB for Table HTTP 403 `Forbidden`. Seen for a few minutes after a role assignment while it propagates.",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 403,
+            "body": {
+              "/odata.error/code": "AuthorizationPermissionMismatch"
+            }
+          },
+          {
+            "status": 403,
+            "body": {
+              "/odata.error/code": "Forbidden"
+            }
+          }
+        ]
       }
     }
   }

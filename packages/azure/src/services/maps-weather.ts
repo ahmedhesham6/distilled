@@ -12,7 +12,6 @@ const __s: any[] = [];
 export type { AzureOpError, AzureOpContext };
 
 export type GetWeatherAirQualityDailyForecastsRequestFormat = "json";
-export type GetWeatherAirQualityDailyForecastsRequestQueryList = Array<number>;
 export type GetWeatherAirQualityDailyForecastsRequestDuration = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 export interface GetWeatherAirQualityDailyForecastsRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
@@ -22,7 +21,7 @@ export interface GetWeatherAirQualityDailyForecastsRequest {
   /** Language in which search results should be returned. Should be one of supported IETF language tags, case insensitive. When data in specified language is not available for a specific field, default language is used. Please refer to [Supported Languages](https://docs.microsoft.com/azure/azure-maps/supported-languages) for details. */
   language?: string;
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherAirQualityDailyForecastsRequestQueryList;
+  query: string;
   /** Defines the duration for the air quality forecast, with options ranging from 1 to 7 days. The default duration is 1 day. */
   duration?: GetWeatherAirQualityDailyForecastsRequestDuration | (number & {});
   /** Indicates the account intended for use with the Microsoft Entra ID security model. This unique ID for the Azure Maps account can be obtained from the [Azure Maps management plane Account API](/rest/api/maps-management/accounts). For more information on using Microsoft Entra ID security in Azure Maps, see [Manage authentication in Azure Maps](/azure/azure-maps/how-to-manage-authentication). */
@@ -63,7 +62,6 @@ export interface DailyAirQualityForecastResult {
   nextLink?: string;
 }
 export type GetWeatherAirQualityHourlyForecastsRequestFormat = "json";
-export type GetWeatherAirQualityHourlyForecastsRequestQueryList = Array<number>;
 export type GetWeatherAirQualityHourlyForecastsRequestDuration = 1 | 12 | 24 | 48 | 72 | 96;
 export interface GetWeatherAirQualityHourlyForecastsRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
@@ -73,7 +71,7 @@ export interface GetWeatherAirQualityHourlyForecastsRequest {
   /** Language in which search results should be returned. Should be one of supported IETF language tags, case insensitive. When data in specified language is not available for a specific field, default language is used. Please refer to [Supported Languages](https://docs.microsoft.com/azure/azure-maps/supported-languages) for details. */
   language?: string;
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherAirQualityHourlyForecastsRequestQueryList;
+  query: string;
   /** Defines the duration, in hours, for the air quality forecast. Available values are 1, 12, 24, 48, 72, and 96. The default value is 1 hour. */
   duration?: GetWeatherAirQualityHourlyForecastsRequestDuration | (number & {});
   /** Boolean value that returns detailed information about each pollutant. By default is True. */
@@ -162,7 +160,6 @@ export interface AirQualityResult {
   nextLink?: string;
 }
 export type GetWeatherCurrentAirQualityRequestFormat = "json";
-export type GetWeatherCurrentAirQualityRequestQueryList = Array<number>;
 export interface GetWeatherCurrentAirQualityRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
   endpoint?: string;
@@ -171,14 +168,13 @@ export interface GetWeatherCurrentAirQualityRequest {
   /** Language in which search results should be returned. Should be one of supported IETF language tags, case insensitive. When data in specified language is not available for a specific field, default language is used. Please refer to [Supported Languages](https://docs.microsoft.com/azure/azure-maps/supported-languages) for details. */
   language?: string;
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherCurrentAirQualityRequestQueryList;
+  query: string;
   /** Boolean value that returns detailed information about each pollutant. By default is True. */
   pollutants?: boolean;
   /** Indicates the account intended for use with the Microsoft Entra ID security model. This unique ID for the Azure Maps account can be obtained from the [Azure Maps management plane Account API](/rest/api/maps-management/accounts). For more information on using Microsoft Entra ID security in Azure Maps, see [Manage authentication in Azure Maps](/azure/azure-maps/how-to-manage-authentication). */
   xMsClientId?: string;
 }
 export type GetWeatherCurrentConditionsRequestFormat = "json";
-export type GetWeatherCurrentConditionsRequestQueryList = Array<number>;
 export type GetWeatherCurrentConditionsRequestUnit = "imperial" | "metric";
 export interface GetWeatherCurrentConditionsRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
@@ -186,7 +182,7 @@ export interface GetWeatherCurrentConditionsRequest {
   /** Desired format of the response. Only `json` format is supported. */
   format: GetWeatherCurrentConditionsRequestFormat | (string & {});
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherCurrentConditionsRequestQueryList;
+  query: string;
   /** Specifies to return the data in either metric units or imperial units. Default value is metric. */
   unit?: GetWeatherCurrentConditionsRequestUnit | (string & {});
   /** Return full details for the current conditions. Available values are * `true` - Returns full details. By default all details are returned. * `false` - Returns a truncated version of the current condition data, which includes observation date time, weather phrase, icon code, precipitation indicator flag, and temperature. */
@@ -357,7 +353,6 @@ export interface CurrentConditionsResult {
   results?: CurrentConditionsResultResultsList;
 }
 export type GetWeatherDailyForecastRequestFormat = "json";
-export type GetWeatherDailyForecastRequestQueryList = Array<number>;
 export type GetWeatherDailyForecastRequestUnit = "imperial" | "metric";
 export interface GetWeatherDailyForecastRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
@@ -365,7 +360,7 @@ export interface GetWeatherDailyForecastRequest {
   /** Desired format of the response. Only `json` format is supported. */
   format: GetWeatherDailyForecastRequestFormat | (string & {});
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherDailyForecastRequestQueryList;
+  query: string;
   /** Specifies to return the data in either metric units or imperial units. Default value is metric. */
   unit?: GetWeatherDailyForecastRequestUnit | (string & {});
   /** Specifies for how many days the daily forecast responses are returned. Available values are * `1` - Return forecast data for the next day. Returned by default. * `5` - Return forecast data for the next 5 days. * `10` - Return forecast data for the next 10 days. * `25` - Return forecast data for the next 25 days. * `45` - Return forecast data for the next 45 days. */
@@ -514,7 +509,6 @@ export interface DailyForecastResult {
   forecasts?: DailyForecastResultForecastsList;
 }
 export type GetWeatherDailyHistoricalActualsRequestFormat = "json";
-export type GetWeatherDailyHistoricalActualsRequestQueryList = Array<number>;
 export type GetWeatherDailyHistoricalActualsRequestUnit = "imperial" | "metric";
 export interface GetWeatherDailyHistoricalActualsRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
@@ -522,7 +516,7 @@ export interface GetWeatherDailyHistoricalActualsRequest {
   /** Desired format of the response. Only `json` format is supported. */
   format: GetWeatherDailyHistoricalActualsRequestFormat | (string & {});
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherDailyHistoricalActualsRequestQueryList;
+  query: string;
   /** Start date in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, for example, 2019-10-27. The date range supported is 1 to 31 calendar days, so be sure to specify a startDate and endDate that does not exceed a maximum of 31 days (i.e.: startDate=2012-01-01&endDate=2012-01-31). */
   startDate: string;
   /** End date in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, for example, 2019-10-28. The date range supported is 1 to 31 calendar days, so be sure to specify a startDate and endDate that does not exceed a maximum of 31 days (i.e.: startDate=2012-01-01&endDate=2012-01-31). */
@@ -566,7 +560,6 @@ export interface DailyHistoricalActualsResult {
   nextLink?: string;
 }
 export type GetWeatherDailyHistoricalNormalsRequestFormat = "json";
-export type GetWeatherDailyHistoricalNormalsRequestQueryList = Array<number>;
 export type GetWeatherDailyHistoricalNormalsRequestUnit = "imperial" | "metric";
 export interface GetWeatherDailyHistoricalNormalsRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
@@ -574,7 +567,7 @@ export interface GetWeatherDailyHistoricalNormalsRequest {
   /** Desired format of the response. Only `json` format is supported. */
   format: GetWeatherDailyHistoricalNormalsRequestFormat | (string & {});
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherDailyHistoricalNormalsRequestQueryList;
+  query: string;
   /** Start date in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, for example, 2019-10-27. The date range supported is 1 to 31 calendar days, so be sure to specify a startDate and endDate that does not exceed a maximum of 31 days (i.e.: startDate=2012-01-01&endDate=2012-01-31). */
   startDate: string;
   /** End date in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, for example, 2019-10-28. The date range supported is 1 to 31 calendar days, so be sure to specify a startDate and endDate that does not exceed a maximum of 31 days (i.e.: startDate=2012-01-01&endDate=2012-01-31). */
@@ -605,7 +598,6 @@ export interface DailyHistoricalNormalsResult {
   nextLink?: string;
 }
 export type GetWeatherDailyHistoricalRecordsRequestFormat = "json";
-export type GetWeatherDailyHistoricalRecordsRequestQueryList = Array<number>;
 export type GetWeatherDailyHistoricalRecordsRequestUnit = "imperial" | "metric";
 export interface GetWeatherDailyHistoricalRecordsRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
@@ -613,7 +605,7 @@ export interface GetWeatherDailyHistoricalRecordsRequest {
   /** Desired format of the response. Only `json` format is supported. */
   format: GetWeatherDailyHistoricalRecordsRequestFormat | (string & {});
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherDailyHistoricalRecordsRequestQueryList;
+  query: string;
   /** Start date in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, for example, 2019-10-27. The date range supported is 1 to 31 calendar days, so be sure to specify a startDate and endDate that does not exceed a maximum of 31 days (i.e.: startDate=2012-01-01&endDate=2012-01-31). */
   startDate: string;
   /** End date in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, for example, 2019-10-28. The date range supported is 1 to 31 calendar days, so be sure to specify a startDate and endDate that does not exceed a maximum of 31 days (i.e.: startDate=2012-01-01&endDate=2012-01-31). */
@@ -669,14 +661,13 @@ export interface DailyHistoricalRecordsResult {
   nextLink?: string;
 }
 export type GetWeatherDailyIndicesRequestFormat = "json";
-export type GetWeatherDailyIndicesRequestQueryList = Array<number>;
 export interface GetWeatherDailyIndicesRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
   endpoint?: string;
   /** Desired format of the response. Only `json` format is supported. */
   format: GetWeatherDailyIndicesRequestFormat | (string & {});
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherDailyIndicesRequestQueryList;
+  query: string;
   /** Language in which search results should be returned. Should be one of supported IETF language tags, case insensitive. When data in specified language is not available for a specific field, default language is used. Please refer to [Supported Languages](https://docs.microsoft.com/azure/azure-maps/supported-languages) for details. */
   language?: string;
   /** Specifies for how many days the daily indices are returned. By default, the indices data for the current day will be returned. When requesting future indices data, the current day is included in the response as day 1. Available values are * `1` - Return daily index data for the current day. Default value. * `5` - Return 5 days of daily index data starting from the current day. * `10` - Return 10 days of daily index data starting from the current day. * `15` - Return 15 days of daily index data starting from the current day. */
@@ -715,7 +706,6 @@ export interface DailyIndicesResult {
   results?: DailyIndicesResultResultsList;
 }
 export type GetWeatherHourlyForecastRequestFormat = "json";
-export type GetWeatherHourlyForecastRequestQueryList = Array<number>;
 export type GetWeatherHourlyForecastRequestUnit = "imperial" | "metric";
 export interface GetWeatherHourlyForecastRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
@@ -723,7 +713,7 @@ export interface GetWeatherHourlyForecastRequest {
   /** Desired format of the response. Only `json` format is supported. */
   format: GetWeatherHourlyForecastRequestFormat | (string & {});
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherHourlyForecastRequestQueryList;
+  query: string;
   /** Specifies to return the data in either metric units or imperial units. Default value is metric. */
   unit?: GetWeatherHourlyForecastRequestUnit | (string & {});
   /** Time frame of the returned weather forecast. By default, the forecast data for next hour will be returned. Available values are * `1` - Return forecast data for the next hour. Default value. * `12` - Return hourly forecast for next 12 hours. * `24` - Return hourly forecast for next 24 hours. * `72` - Return hourly forecast for next 72 hours (3 days). * `120` - Return hourly forecast for next 120 hours (5 days). * `240` - Return hourly forecast for next 240 hours (10 days). */
@@ -794,14 +784,13 @@ export interface HourlyForecastResult {
   forecasts?: HourlyForecastResultForecastsList;
 }
 export type GetWeatherMinuteForecastRequestFormat = "json";
-export type GetWeatherMinuteForecastRequestQueryList = Array<number>;
 export interface GetWeatherMinuteForecastRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
   endpoint?: string;
   /** Desired format of the response. Only `json` format is supported. */
   format: GetWeatherMinuteForecastRequestFormat | (string & {});
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherMinuteForecastRequestQueryList;
+  query: string;
   /** Specifies time interval in minutes for the returned weather forecast. Supported values are * `1` - Retrieve forecast for 1-minute intervals. Returned by default. * `5` - Retrieve forecasts for 5-minute intervals. * `15` - Retrieve forecasts for 15-minute intervals. */
   interval?: number;
   /** Language in which search results should be returned. Should be one of supported IETF language tags, case insensitive. When data in specified language is not available for a specific field, default language is used. Please refer to [Supported Languages](https://docs.microsoft.com/azure/azure-maps/supported-languages) for details. */
@@ -887,7 +876,6 @@ export interface MinuteForecastResult {
   intervals?: MinuteForecastResultIntervalsList;
 }
 export type GetWeatherQuarterDayForecastRequestFormat = "json";
-export type GetWeatherQuarterDayForecastRequestQueryList = Array<number>;
 export type GetWeatherQuarterDayForecastRequestUnit = "imperial" | "metric";
 export interface GetWeatherQuarterDayForecastRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
@@ -895,7 +883,7 @@ export interface GetWeatherQuarterDayForecastRequest {
   /** Desired format of the response. Only `json` format is supported. */
   format: GetWeatherQuarterDayForecastRequestFormat | (string & {});
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherQuarterDayForecastRequestQueryList;
+  query: string;
   /** Specifies to return the data in either metric units or imperial units. Default value is metric. */
   unit?: GetWeatherQuarterDayForecastRequestUnit | (string & {});
   /** Specifies for how many days the quester-day forecast responses are returned. Supported values are: * `1` - Return forecast data for the next day. Returned by default. * `5` - Return forecast data for the next 5 days. * `10` - Return forecast data for next 10 days. * `15` - Return forecast data for the next 15 days. */
@@ -964,14 +952,13 @@ export interface QuarterDayForecastResult {
   forecasts?: QuarterDayForecastResultForecastsList;
 }
 export type GetWeatherSevereWeatherAlertsRequestFormat = "json";
-export type GetWeatherSevereWeatherAlertsRequestQueryList = Array<number>;
 export interface GetWeatherSevereWeatherAlertsRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
   endpoint?: string;
   /** Desired format of the response. Only `json` format is supported. */
   format: GetWeatherSevereWeatherAlertsRequestFormat | (string & {});
   /** The applicable query specified as a comma separated string composed by latitude followed by longitude e.g. "47.641268,-122.125679". Weather information is generally available for locations on land, bodies of water surrounded by land, and areas of the ocean that are within approximately 50 nautical miles of a coastline. */
-  query: GetWeatherSevereWeatherAlertsRequestQueryList;
+  query: string;
   /** Language in which search results should be returned. Should be one of supported IETF language tags, case insensitive. When data in specified language is not available for a specific field, default language is used. Please refer to [Supported Languages](https://docs.microsoft.com/azure/azure-maps/supported-languages) for details. */
   language?: string;
   /** Return full details for the severe weather alerts. Available values are * `true` - Returns full details. By default all details are returned. * `false` - Returns a truncated version of the alerts data, which excludes the area-specific full description of alert details (`alertDetails`). */
@@ -1456,8 +1443,8 @@ export const GetWeatherAirQualityHourlyForecasts: API.OperationMethod<
   GetWeatherAirQualityHourlyForecastsError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(32, __c2, 0) as any as S.Schema<GetWeatherAirQualityHourlyForecastsRequest>,
-  output: __S(52, __c3, 4) as any as S.Schema<AirQualityResult>,
+  input: __S(16, __c1, 0) as any as S.Schema<GetWeatherAirQualityHourlyForecastsRequest>,
+  output: __S(36, __c2, 4) as any as S.Schema<AirQualityResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1471,8 +1458,8 @@ export const GetWeatherCurrentAirQuality: API.OperationMethod<
   GetWeatherCurrentAirQualityError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(224, __c14, 0) as any as S.Schema<GetWeatherCurrentAirQualityRequest>,
-  output: __S(52, __c3, 4) as any as S.Schema<AirQualityResult>,
+  input: __S(208, __c13, 0) as any as S.Schema<GetWeatherCurrentAirQualityRequest>,
+  output: __S(36, __c2, 4) as any as S.Schema<AirQualityResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1486,8 +1473,8 @@ export const GetWeatherCurrentConditions: API.OperationMethod<
   GetWeatherCurrentConditionsError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(240, __c15, 0) as any as S.Schema<GetWeatherCurrentConditionsRequest>,
-  output: __S(246, __c15, 6) as any as S.Schema<CurrentConditionsResult>,
+  input: __S(224, __c14, 0) as any as S.Schema<GetWeatherCurrentConditionsRequest>,
+  output: __S(230, __c14, 6) as any as S.Schema<CurrentConditionsResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1501,8 +1488,8 @@ export const GetWeatherDailyForecast: API.OperationMethod<
   GetWeatherDailyForecastError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(288, __c18, 0) as any as S.Schema<GetWeatherDailyForecastRequest>,
-  output: __S(297, __c18, 9) as any as S.Schema<DailyForecastResult>,
+  input: __S(272, __c17, 0) as any as S.Schema<GetWeatherDailyForecastRequest>,
+  output: __S(281, __c17, 9) as any as S.Schema<DailyForecastResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1516,8 +1503,8 @@ export const GetWeatherDailyHistoricalActuals: API.OperationMethod<
   GetWeatherDailyHistoricalActualsError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(320, __c20, 0) as any as S.Schema<GetWeatherDailyHistoricalActualsRequest>,
-  output: __S(323, __c20, 3) as any as S.Schema<DailyHistoricalActualsResult>,
+  input: __S(304, __c19, 0) as any as S.Schema<GetWeatherDailyHistoricalActualsRequest>,
+  output: __S(307, __c19, 3) as any as S.Schema<DailyHistoricalActualsResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1531,8 +1518,8 @@ export const GetWeatherDailyHistoricalNormals: API.OperationMethod<
   GetWeatherDailyHistoricalNormalsError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(352, __c22, 0) as any as S.Schema<GetWeatherDailyHistoricalNormalsRequest>,
-  output: __S(355, __c22, 3) as any as S.Schema<DailyHistoricalNormalsResult>,
+  input: __S(336, __c21, 0) as any as S.Schema<GetWeatherDailyHistoricalNormalsRequest>,
+  output: __S(339, __c21, 3) as any as S.Schema<DailyHistoricalNormalsResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1546,8 +1533,8 @@ export const GetWeatherDailyHistoricalRecords: API.OperationMethod<
   GetWeatherDailyHistoricalRecordsError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(368, __c23, 0) as any as S.Schema<GetWeatherDailyHistoricalRecordsRequest>,
-  output: __S(374, __c23, 6) as any as S.Schema<DailyHistoricalRecordsResult>,
+  input: __S(352, __c22, 0) as any as S.Schema<GetWeatherDailyHistoricalRecordsRequest>,
+  output: __S(358, __c22, 6) as any as S.Schema<DailyHistoricalRecordsResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1561,8 +1548,8 @@ export const GetWeatherDailyIndices: API.OperationMethod<
   GetWeatherDailyIndicesError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(384, __c24, 0) as any as S.Schema<GetWeatherDailyIndicesRequest>,
-  output: __S(387, __c24, 3) as any as S.Schema<DailyIndicesResult>,
+  input: __S(368, __c23, 0) as any as S.Schema<GetWeatherDailyIndicesRequest>,
+  output: __S(371, __c23, 3) as any as S.Schema<DailyIndicesResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1576,8 +1563,8 @@ export const GetWeatherHourlyForecast: API.OperationMethod<
   GetWeatherHourlyForecastError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(400, __c25, 0) as any as S.Schema<GetWeatherHourlyForecastRequest>,
-  output: __S(403, __c25, 3) as any as S.Schema<HourlyForecastResult>,
+  input: __S(384, __c24, 0) as any as S.Schema<GetWeatherHourlyForecastRequest>,
+  output: __S(387, __c24, 3) as any as S.Schema<HourlyForecastResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1591,8 +1578,8 @@ export const GetWeatherMinuteForecast: API.OperationMethod<
   GetWeatherMinuteForecastError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(80, __c5, 0) as any as S.Schema<GetWeatherMinuteForecastRequest>,
-  output: __S(87, __c5, 7) as any as S.Schema<MinuteForecastResult>,
+  input: __S(64, __c4, 0) as any as S.Schema<GetWeatherMinuteForecastRequest>,
+  output: __S(71, __c4, 7) as any as S.Schema<MinuteForecastResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1606,8 +1593,8 @@ export const GetWeatherQuarterDayForecast: API.OperationMethod<
   GetWeatherQuarterDayForecastError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(96, __c6, 0) as any as S.Schema<GetWeatherQuarterDayForecastRequest>,
-  output: __S(99, __c6, 3) as any as S.Schema<QuarterDayForecastResult>,
+  input: __S(80, __c5, 0) as any as S.Schema<GetWeatherQuarterDayForecastRequest>,
+  output: __S(83, __c5, 3) as any as S.Schema<QuarterDayForecastResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1621,8 +1608,8 @@ export const GetWeatherSevereWeatherAlerts: API.OperationMethod<
   GetWeatherSevereWeatherAlertsError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(112, __c7, 0) as any as S.Schema<GetWeatherSevereWeatherAlertsRequest>,
-  output: __S(119, __c7, 7) as any as S.Schema<SevereWeatherAlertsResult>,
+  input: __S(96, __c6, 0) as any as S.Schema<GetWeatherSevereWeatherAlertsRequest>,
+  output: __S(103, __c6, 7) as any as S.Schema<SevereWeatherAlertsResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1636,8 +1623,8 @@ export const GetWeatherTropicalStormActive: API.OperationMethod<
   GetWeatherTropicalStormActiveError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(128, __c8, 0) as any as S.Schema<GetWeatherTropicalStormActiveRequest>,
-  output: __S(131, __c8, 3) as any as S.Schema<ActiveStormResult>,
+  input: __S(112, __c7, 0) as any as S.Schema<GetWeatherTropicalStormActiveRequest>,
+  output: __S(115, __c7, 3) as any as S.Schema<ActiveStormResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1651,8 +1638,8 @@ export const GetWeatherTropicalStormForecast: API.OperationMethod<
   GetWeatherTropicalStormForecastError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(144, __c9, 0) as any as S.Schema<GetWeatherTropicalStormForecastRequest>,
-  output: __S(148, __c9, 4) as any as S.Schema<StormForecastResult>,
+  input: __S(128, __c8, 0) as any as S.Schema<GetWeatherTropicalStormForecastRequest>,
+  output: __S(132, __c8, 4) as any as S.Schema<StormForecastResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1666,8 +1653,8 @@ export const GetWeatherTropicalStormLocations: API.OperationMethod<
   GetWeatherTropicalStormLocationsError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(176, __c11, 0) as any as S.Schema<GetWeatherTropicalStormLocationsRequest>,
-  output: __S(179, __c11, 3) as any as S.Schema<StormLocationsResult>,
+  input: __S(160, __c10, 0) as any as S.Schema<GetWeatherTropicalStormLocationsRequest>,
+  output: __S(163, __c10, 3) as any as S.Schema<StormLocationsResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1681,8 +1668,8 @@ export const GetWeatherWeatherAlongRoute: API.OperationMethod<
   GetWeatherWeatherAlongRouteError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(192, __c12, 0) as any as S.Schema<GetWeatherWeatherAlongRouteRequest>,
-  output: __S(203, __c12, 11) as any as S.Schema<WeatherAlongRouteResult>,
+  input: __S(176, __c11, 0) as any as S.Schema<GetWeatherWeatherAlongRouteRequest>,
+  output: __S(187, __c11, 11) as any as S.Schema<WeatherAlongRouteResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1696,8 +1683,8 @@ export const WeatherGetTropicalStormSearch: API.OperationMethod<
   WeatherGetTropicalStormSearchError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(208, __c13, 0) as any as S.Schema<WeatherGetTropicalStormSearchRequest>,
-  output: __S(211, __c13, 3) as any as S.Schema<StormSearchResult>,
+  input: __S(192, __c12, 0) as any as S.Schema<WeatherGetTropicalStormSearchRequest>,
+  output: __S(195, __c12, 3) as any as S.Schema<StormSearchResult>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1712,7 +1699,7 @@ function __c0(j: number): any {
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
           language: S.optional(S.String.pipe(T.Query())),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           duration: S.optional(S.Number.pipe(T.Query())),
           xMsClientId: S.optional(S.String.pipe(T.Header("x-ms-client-id"))),
         }).pipe(
@@ -1754,18 +1741,12 @@ function __c0(j: number): any {
 function __c1(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(S.Number);
-  }
-}
-function __c2(j: number): any {
-  switch (j) {
-    case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
           language: S.optional(S.String.pipe(T.Query())),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           duration: S.optional(S.Number.pipe(T.Query())),
           pollutants: S.optional(S.Boolean.pipe(T.Query())),
           xMsClientId: S.optional(S.String.pipe(T.Header("x-ms-client-id"))),
@@ -1784,7 +1765,7 @@ function __c2(j: number): any {
       ).annotate({ identifier: "GetWeatherAirQualityHourlyForecastsRequest" });
   }
 }
-function __c3(j: number): any {
+function __c2(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1793,11 +1774,11 @@ function __c3(j: number): any {
           name: S.optional(S.String),
           index: S.optional(S.Number),
           globalIndex: S.optional(S.Number),
-          concentration: S.optional(__S(64, __c4, 0)),
+          concentration: S.optional(__S(48, __c3, 0)),
         }),
       ).annotate({ identifier: "Pollutant" });
     case 1:
-      return S.Array(__S(48, __c3, 0));
+      return S.Array(__S(32, __c2, 0));
     case 2:
       return S.suspend(() =>
         S.Struct({
@@ -1808,21 +1789,21 @@ function __c3(j: number): any {
           category: S.optional(S.String),
           categoryColor: S.optional(S.String),
           description: S.optional(S.String),
-          pollutants: S.optional(__S(49, __c3, 1)),
+          pollutants: S.optional(__S(33, __c2, 1)),
         }),
       ).annotate({ identifier: "AirQuality" });
     case 3:
-      return S.Array(__S(50, __c3, 2));
+      return S.Array(__S(34, __c2, 2));
     case 4:
       return S.suspend(() =>
         S.Struct({
-          results: S.optional(__S(51, __c3, 3)),
+          results: S.optional(__S(35, __c2, 3)),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "AirQualityResult" });
   }
 }
-function __c4(j: number): any {
+function __c3(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1834,14 +1815,14 @@ function __c4(j: number): any {
       ).annotate({ identifier: "WeatherValue" });
   }
 }
-function __c5(j: number): any {
+function __c4(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           interval: S.optional(S.Number.pipe(T.Query())),
           language: S.optional(S.String.pipe(T.Query())),
           xMsClientId: S.optional(S.String.pipe(T.Header("x-ms-client-id"))),
@@ -1881,7 +1862,7 @@ function __c5(j: number): any {
         }),
       ).annotate({ identifier: "IntervalSummary" });
     case 3:
-      return S.Array(__S(82, __c5, 2));
+      return S.Array(__S(66, __c4, 2));
     case 4:
       return S.suspend(() =>
         S.Struct({
@@ -1899,33 +1880,33 @@ function __c5(j: number): any {
           dbz: S.optional(S.Number),
           shortPhrase: S.optional(S.String),
           threshold: S.optional(S.String),
-          color: S.optional(__S(84, __c5, 4)),
-          simplifiedColor: S.optional(__S(84, __c5, 4)),
+          color: S.optional(__S(68, __c4, 4)),
+          simplifiedColor: S.optional(__S(68, __c4, 4)),
           precipitationType: S.optional(S.String),
           iconCode: S.optional(S.Number),
           cloudCover: S.optional(S.Number),
         }),
       ).annotate({ identifier: "ForecastInterval" });
     case 6:
-      return S.Array(__S(85, __c5, 5));
+      return S.Array(__S(69, __c4, 5));
     case 7:
       return S.suspend(() =>
         S.Struct({
-          summary: S.optional(__S(81, __c5, 1)),
-          intervalSummaries: S.optional(__S(83, __c5, 3)),
-          intervals: S.optional(__S(86, __c5, 6)),
+          summary: S.optional(__S(65, __c4, 1)),
+          intervalSummaries: S.optional(__S(67, __c4, 3)),
+          intervals: S.optional(__S(70, __c4, 6)),
         }),
       ).annotate({ identifier: "MinuteForecastResult" });
   }
 }
-function __c6(j: number): any {
+function __c5(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           unit: S.optional(S.String.pipe(T.Query())),
           duration: S.optional(S.Number.pipe(T.Query())),
           language: S.optional(S.String.pipe(T.Query())),
@@ -1952,43 +1933,43 @@ function __c6(j: number): any {
           iconCode: S.optional(S.Number),
           iconPhrase: S.optional(S.String),
           phrase: S.optional(S.String),
-          temperature: S.optional(__S(256, __c16, 0)),
-          realFeelTemperature: S.optional(__S(256, __c16, 0)),
-          dewPoint: S.optional(__S(64, __c4, 0)),
+          temperature: S.optional(__S(240, __c15, 0)),
+          realFeelTemperature: S.optional(__S(240, __c15, 0)),
+          dewPoint: S.optional(__S(48, __c3, 0)),
           relativeHumidity: S.optional(S.Number),
-          wind: S.optional(__S(273, __c17, 1)),
-          windGust: S.optional(__S(273, __c17, 1)),
-          visibility: S.optional(__S(64, __c4, 0)),
+          wind: S.optional(__S(257, __c16, 1)),
+          windGust: S.optional(__S(257, __c16, 1)),
+          visibility: S.optional(__S(48, __c3, 0)),
           cloudCover: S.optional(S.Number),
           hasPrecipitation: S.optional(S.Boolean),
           precipitationType: S.optional(S.String),
           precipitationIntensity: S.optional(S.String),
           precipitationProbability: S.optional(S.Number),
           thunderstormProbability: S.optional(S.Number),
-          totalLiquid: S.optional(__S(64, __c4, 0)),
-          rain: S.optional(__S(64, __c4, 0)),
-          snow: S.optional(__S(64, __c4, 0)),
-          ice: S.optional(__S(64, __c4, 0)),
+          totalLiquid: S.optional(__S(48, __c3, 0)),
+          rain: S.optional(__S(48, __c3, 0)),
+          snow: S.optional(__S(48, __c3, 0)),
+          ice: S.optional(__S(48, __c3, 0)),
         }),
       ).annotate({ identifier: "QuarterDayForecast" });
     case 2:
-      return S.Array(__S(97, __c6, 1));
+      return S.Array(__S(81, __c5, 1));
     case 3:
       return S.suspend(() =>
         S.Struct({
-          forecasts: S.optional(__S(98, __c6, 2)),
+          forecasts: S.optional(__S(82, __c5, 2)),
         }),
       ).annotate({ identifier: "QuarterDayForecastResult" });
   }
 }
-function __c7(j: number): any {
+function __c6(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           language: S.optional(S.String.pipe(T.Query())),
           details: S.optional(S.String.pipe(T.Query())),
           xMsClientId: S.optional(S.String.pipe(T.Header("x-ms-client-id"))),
@@ -2026,19 +2007,19 @@ function __c7(j: number): any {
           summary: S.optional(S.String),
           startTime: S.optional(S.String),
           endTime: S.optional(S.String),
-          latestStatus: S.optional(__S(114, __c7, 2)),
+          latestStatus: S.optional(__S(98, __c6, 2)),
           alertDetails: S.optional(S.String),
           alertDetailsLanguageCode: S.optional(S.String),
         }),
       ).annotate({ identifier: "AlertArea" });
     case 4:
-      return S.Array(__S(115, __c7, 3));
+      return S.Array(__S(99, __c6, 3));
     case 5:
       return S.suspend(() =>
         S.Struct({
           countryCode: S.optional(S.String),
           alertId: S.optional(S.Number),
-          description: S.optional(__S(113, __c7, 1)),
+          description: S.optional(__S(97, __c6, 1)),
           category: S.optional(S.String),
           priority: S.optional(S.Number),
           class: S.optional(S.String),
@@ -2046,20 +2027,20 @@ function __c7(j: number): any {
           source: S.optional(S.String),
           sourceId: S.optional(S.Number),
           disclaimer: S.optional(S.String),
-          alertAreas: S.optional(__S(116, __c7, 4)),
+          alertAreas: S.optional(__S(100, __c6, 4)),
         }),
       ).annotate({ identifier: "SevereWeatherAlert" });
     case 6:
-      return S.Array(__S(117, __c7, 5));
+      return S.Array(__S(101, __c6, 5));
     case 7:
       return S.suspend(() =>
         S.Struct({
-          results: S.optional(__S(118, __c7, 6)),
+          results: S.optional(__S(102, __c6, 6)),
         }),
       ).annotate({ identifier: "SevereWeatherAlertsResult" });
   }
 }
-function __c8(j: number): any {
+function __c7(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2092,17 +2073,17 @@ function __c8(j: number): any {
         }),
       ).annotate({ identifier: "ActiveStorm" });
     case 2:
-      return S.Array(__S(129, __c8, 1));
+      return S.Array(__S(113, __c7, 1));
     case 3:
       return S.suspend(() =>
         S.Struct({
-          results: S.optional(__S(130, __c8, 2)),
+          results: S.optional(__S(114, __c7, 2)),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "ActiveStormResult" });
   }
 }
-function __c9(j: number): any {
+function __c8(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2133,13 +2114,13 @@ function __c9(j: number): any {
     case 1:
       return S.suspend(() =>
         S.Struct({
-          left: S.optional(__S(160, __c10, 0)),
-          right: S.optional(__S(160, __c10, 0)),
+          left: S.optional(__S(144, __c9, 0)),
+          right: S.optional(__S(144, __c9, 0)),
           beginDateTime: S.optional(S.String),
           endDateTime: S.optional(S.String),
           beginStatus: S.optional(S.String),
           endStatus: S.optional(S.String),
-          geometry: S.optional(__S(161, __c10, 1)),
+          geometry: S.optional(__S(145, __c9, 1)),
         }),
       ).annotate({ identifier: "WeatherWindow" });
     case 2:
@@ -2147,26 +2128,26 @@ function __c9(j: number): any {
         S.Struct({
           dateTime: S.optional(S.String),
           initializedDateTime: S.optional(S.String),
-          location: S.optional(__S(160, __c10, 0)),
-          maxWindGust: S.optional(__S(64, __c4, 0)),
-          sustainedWind: S.optional(__S(64, __c4, 0)),
+          location: S.optional(__S(144, __c9, 0)),
+          maxWindGust: S.optional(__S(48, __c3, 0)),
+          sustainedWind: S.optional(__S(48, __c3, 0)),
           status: S.optional(S.String),
-          window: S.optional(__S(145, __c9, 1)),
-          windRadiiSummary: S.optional(__S(165, __c10, 5)),
+          window: S.optional(__S(129, __c8, 1)),
+          windRadiiSummary: S.optional(__S(149, __c9, 5)),
         }),
       ).annotate({ identifier: "StormForecast" });
     case 3:
-      return S.Array(__S(146, __c9, 2));
+      return S.Array(__S(130, __c8, 2));
     case 4:
       return S.suspend(() =>
         S.Struct({
-          results: S.optional(__S(147, __c9, 3)),
+          results: S.optional(__S(131, __c8, 3)),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "StormForecastResult" });
   }
 }
-function __c10(j: number): any {
+function __c9(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2190,21 +2171,21 @@ function __c10(j: number): any {
         }),
       ).annotate({ identifier: "RadiusSector" });
     case 3:
-      return S.Array(__S(162, __c10, 2));
+      return S.Array(__S(146, __c9, 2));
     case 4:
       return S.suspend(() =>
         S.Struct({
           dateTime: S.optional(S.String),
-          windSpeed: S.optional(__S(64, __c4, 0)),
-          radiusSectorData: S.optional(__S(163, __c10, 3)),
-          radiiGeometry: S.optional(__S(161, __c10, 1)),
+          windSpeed: S.optional(__S(48, __c3, 0)),
+          radiusSectorData: S.optional(__S(147, __c9, 3)),
+          radiiGeometry: S.optional(__S(145, __c9, 1)),
         }),
       ).annotate({ identifier: "StormWindRadiiSummary" });
     case 5:
-      return S.Array(__S(164, __c10, 4));
+      return S.Array(__S(148, __c9, 4));
   }
 }
-function __c11(j: number): any {
+function __c10(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2236,30 +2217,30 @@ function __c11(j: number): any {
       return S.suspend(() =>
         S.Struct({
           dateTime: S.optional(S.String),
-          location: S.optional(__S(160, __c10, 0)),
-          maxWindGust: S.optional(__S(64, __c4, 0)),
-          sustainedWind: S.optional(__S(64, __c4, 0)),
-          minimumPressure: S.optional(__S(64, __c4, 0)),
-          movement: S.optional(__S(273, __c17, 1)),
+          location: S.optional(__S(144, __c9, 0)),
+          maxWindGust: S.optional(__S(48, __c3, 0)),
+          sustainedWind: S.optional(__S(48, __c3, 0)),
+          minimumPressure: S.optional(__S(48, __c3, 0)),
+          movement: S.optional(__S(257, __c16, 1)),
           status: S.optional(S.String),
           isSubtropical: S.optional(S.Boolean),
           hasTropicalPotential: S.optional(S.Boolean),
           isPostTropical: S.optional(S.Boolean),
-          windRadiiSummary: S.optional(__S(165, __c10, 5)),
+          windRadiiSummary: S.optional(__S(149, __c9, 5)),
         }),
       ).annotate({ identifier: "StormLocation" });
     case 2:
-      return S.Array(__S(177, __c11, 1));
+      return S.Array(__S(161, __c10, 1));
     case 3:
       return S.suspend(() =>
         S.Struct({
-          results: S.optional(__S(178, __c11, 2)),
+          results: S.optional(__S(162, __c10, 2)),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "StormLocationsResult" });
   }
 }
-function __c12(j: number): any {
+function __c11(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2291,19 +2272,19 @@ function __c12(j: number): any {
         }),
       ).annotate({ identifier: "HazardDetail" });
     case 2:
-      return S.Array(__S(193, __c12, 1));
+      return S.Array(__S(177, __c11, 1));
     case 3:
       return S.suspend(() =>
         S.Struct({
           maxHazardIndex: S.optional(S.Number),
-          hazardDetails: S.optional(__S(194, __c12, 2)),
+          hazardDetails: S.optional(__S(178, __c11, 2)),
         }),
       ).annotate({ identifier: "WeatherHazards" });
     case 4:
       return S.suspend(() =>
         S.Struct({
           iconCode: S.optional(S.Number),
-          hazards: S.optional(__S(195, __c12, 3)),
+          hazards: S.optional(__S(179, __c11, 3)),
         }),
       ).annotate({ identifier: "WeatherAlongRouteSummary" });
     case 5:
@@ -2330,7 +2311,7 @@ function __c12(j: number): any {
         }),
       ).annotate({ identifier: "WeatherNotification" });
     case 8:
-      return S.Array(__S(199, __c12, 7));
+      return S.Array(__S(183, __c11, 7));
     case 9:
       return S.suspend(() =>
         S.Struct({
@@ -2338,28 +2319,28 @@ function __c12(j: number): any {
           shortPhrase: S.optional(S.String),
           isDayTime: S.optional(S.Boolean),
           cloudCover: S.optional(S.Number),
-          temperature: S.optional(__S(64, __c4, 0)),
-          wind: S.optional(__S(273, __c17, 1)),
-          windGust: S.optional(__S(273, __c17, 1)),
-          precipitation: S.optional(__S(197, __c12, 5)),
+          temperature: S.optional(__S(48, __c3, 0)),
+          wind: S.optional(__S(257, __c16, 1)),
+          windGust: S.optional(__S(257, __c16, 1)),
+          precipitation: S.optional(__S(181, __c11, 5)),
           lightningCount: S.optional(S.Number),
-          sunGlare: S.optional(__S(198, __c12, 6)),
-          hazards: S.optional(__S(195, __c12, 3)),
-          notifications: S.optional(__S(200, __c12, 8)),
+          sunGlare: S.optional(__S(182, __c11, 6)),
+          hazards: S.optional(__S(179, __c11, 3)),
+          notifications: S.optional(__S(184, __c11, 8)),
         }),
       ).annotate({ identifier: "WaypointForecast" });
     case 10:
-      return S.Array(__S(201, __c12, 9));
+      return S.Array(__S(185, __c11, 9));
     case 11:
       return S.suspend(() =>
         S.Struct({
-          summary: S.optional(__S(196, __c12, 4)),
-          waypoints: S.optional(__S(202, __c12, 10)),
+          summary: S.optional(__S(180, __c11, 4)),
+          waypoints: S.optional(__S(186, __c11, 10)),
         }),
       ).annotate({ identifier: "WeatherAlongRouteResult" });
   }
 }
-function __c13(j: number): any {
+function __c12(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2396,17 +2377,17 @@ function __c13(j: number): any {
         }),
       ).annotate({ identifier: "StormSearchResultItem" });
     case 2:
-      return S.Array(__S(209, __c13, 1));
+      return S.Array(__S(193, __c12, 1));
     case 3:
       return S.suspend(() =>
         S.Struct({
-          results: S.optional(__S(210, __c13, 2)),
+          results: S.optional(__S(194, __c12, 2)),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "StormSearchResult" });
   }
 }
-function __c14(j: number): any {
+function __c13(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2414,7 +2395,7 @@ function __c14(j: number): any {
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
           language: S.optional(S.String.pipe(T.Query())),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           pollutants: S.optional(S.Boolean.pipe(T.Query())),
           xMsClientId: S.optional(S.String.pipe(T.Header("x-ms-client-id"))),
         }).pipe(
@@ -2432,14 +2413,14 @@ function __c14(j: number): any {
       ).annotate({ identifier: "GetWeatherCurrentAirQualityRequest" });
   }
 }
-function __c15(j: number): any {
+function __c14(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           unit: S.optional(S.String.pipe(T.Query())),
           details: S.optional(S.String.pipe(T.Query())),
           duration: S.optional(S.Number.pipe(T.Query())),
@@ -2468,21 +2449,21 @@ function __c15(j: number): any {
     case 2:
       return S.suspend(() =>
         S.Struct({
-          pastHour: S.optional(__S(64, __c4, 0)),
-          past3Hours: S.optional(__S(64, __c4, 0)),
-          past6Hours: S.optional(__S(64, __c4, 0)),
-          past9Hours: S.optional(__S(64, __c4, 0)),
-          past12Hours: S.optional(__S(64, __c4, 0)),
-          past18Hours: S.optional(__S(64, __c4, 0)),
-          past24Hours: S.optional(__S(64, __c4, 0)),
+          pastHour: S.optional(__S(48, __c3, 0)),
+          past3Hours: S.optional(__S(48, __c3, 0)),
+          past6Hours: S.optional(__S(48, __c3, 0)),
+          past9Hours: S.optional(__S(48, __c3, 0)),
+          past12Hours: S.optional(__S(48, __c3, 0)),
+          past18Hours: S.optional(__S(48, __c3, 0)),
+          past24Hours: S.optional(__S(48, __c3, 0)),
         }),
       ).annotate({ identifier: "PrecipitationSummary" });
     case 3:
       return S.suspend(() =>
         S.Struct({
-          past6Hours: S.optional(__S(256, __c16, 0)),
-          past12Hours: S.optional(__S(256, __c16, 0)),
-          past24Hours: S.optional(__S(256, __c16, 0)),
+          past6Hours: S.optional(__S(240, __c15, 0)),
+          past12Hours: S.optional(__S(240, __c15, 0)),
+          past24Hours: S.optional(__S(240, __c15, 0)),
         }),
       ).annotate({ identifier: "TemperatureSummary" });
     case 4:
@@ -2493,51 +2474,51 @@ function __c15(j: number): any {
           iconCode: S.optional(S.Number),
           hasPrecipitation: S.optional(S.Boolean),
           isDayTime: S.optional(S.Boolean),
-          temperature: S.optional(__S(64, __c4, 0)),
-          realFeelTemperature: S.optional(__S(64, __c4, 0)),
-          realFeelTemperatureShade: S.optional(__S(64, __c4, 0)),
+          temperature: S.optional(__S(48, __c3, 0)),
+          realFeelTemperature: S.optional(__S(48, __c3, 0)),
+          realFeelTemperatureShade: S.optional(__S(48, __c3, 0)),
           relativeHumidity: S.optional(S.Number),
-          dewPoint: S.optional(__S(64, __c4, 0)),
-          wind: S.optional(__S(273, __c17, 1)),
-          windGust: S.optional(__S(273, __c17, 1)),
+          dewPoint: S.optional(__S(48, __c3, 0)),
+          wind: S.optional(__S(257, __c16, 1)),
+          windGust: S.optional(__S(257, __c16, 1)),
           uvIndex: S.optional(S.Number),
           uvIndexPhrase: S.optional(S.String),
-          visibility: S.optional(__S(64, __c4, 0)),
+          visibility: S.optional(__S(48, __c3, 0)),
           obstructionsToVisibility: S.optional(S.String),
           cloudCover: S.optional(S.Number),
-          ceiling: S.optional(__S(64, __c4, 0)),
-          pressure: S.optional(__S(64, __c4, 0)),
-          pressureTendency: S.optional(__S(241, __c15, 1)),
-          pastTwentyFourHourTemperatureDeparture: S.optional(__S(64, __c4, 0)),
-          apparentTemperature: S.optional(__S(64, __c4, 0)),
-          windChillTemperature: S.optional(__S(64, __c4, 0)),
-          wetBulbTemperature: S.optional(__S(64, __c4, 0)),
-          precipitationSummary: S.optional(__S(242, __c15, 2)),
-          temperatureSummary: S.optional(__S(243, __c15, 3)),
+          ceiling: S.optional(__S(48, __c3, 0)),
+          pressure: S.optional(__S(48, __c3, 0)),
+          pressureTendency: S.optional(__S(225, __c14, 1)),
+          pastTwentyFourHourTemperatureDeparture: S.optional(__S(48, __c3, 0)),
+          apparentTemperature: S.optional(__S(48, __c3, 0)),
+          windChillTemperature: S.optional(__S(48, __c3, 0)),
+          wetBulbTemperature: S.optional(__S(48, __c3, 0)),
+          precipitationSummary: S.optional(__S(226, __c14, 2)),
+          temperatureSummary: S.optional(__S(227, __c14, 3)),
         }),
       ).annotate({ identifier: "CurrentConditions" });
     case 5:
-      return S.Array(__S(244, __c15, 4));
+      return S.Array(__S(228, __c14, 4));
     case 6:
       return S.suspend(() =>
         S.Struct({
-          results: S.optional(__S(245, __c15, 5)),
+          results: S.optional(__S(229, __c14, 5)),
         }),
       ).annotate({ identifier: "CurrentConditionsResult" });
   }
 }
-function __c16(j: number): any {
+function __c15(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
-          minimum: S.optional(__S(64, __c4, 0)),
-          maximum: S.optional(__S(64, __c4, 0)),
+          minimum: S.optional(__S(48, __c3, 0)),
+          maximum: S.optional(__S(48, __c3, 0)),
         }),
       ).annotate({ identifier: "PastHoursTemperature" });
   }
 }
-function __c17(j: number): any {
+function __c16(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2549,20 +2530,20 @@ function __c17(j: number): any {
     case 1:
       return S.suspend(() =>
         S.Struct({
-          direction: S.optional(__S(272, __c17, 0)),
-          speed: S.optional(__S(64, __c4, 0)),
+          direction: S.optional(__S(256, __c16, 0)),
+          speed: S.optional(__S(48, __c3, 0)),
         }),
       ).annotate({ identifier: "WindDetails" });
   }
 }
-function __c18(j: number): any {
+function __c17(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           unit: S.optional(S.String.pipe(T.Query())),
           duration: S.optional(S.Number.pipe(T.Query())),
           language: S.optional(S.String.pipe(T.Query())),
@@ -2601,7 +2582,7 @@ function __c18(j: number): any {
         }),
       ).annotate({ identifier: "AirAndPollen" });
     case 3:
-      return S.Array(__S(290, __c18, 2));
+      return S.Array(__S(274, __c17, 2));
     case 4:
       return S.suspend(() =>
         S.Struct({
@@ -2615,7 +2596,7 @@ function __c18(j: number): any {
         S.Struct({
           iconCode: S.optional(S.Number),
           iconPhrase: S.optional(S.String),
-          localSource: S.optional(__S(292, __c18, 4)),
+          localSource: S.optional(__S(276, __c17, 4)),
           hasPrecipitation: S.optional(S.Boolean),
           precipitationType: S.optional(S.String),
           precipitationIntensity: S.optional(S.String),
@@ -2626,12 +2607,12 @@ function __c18(j: number): any {
           rainProbability: S.optional(S.Number),
           snowProbability: S.optional(S.Number),
           iceProbability: S.optional(S.Number),
-          wind: S.optional(__S(273, __c17, 1)),
-          windGust: S.optional(__S(273, __c17, 1)),
-          totalLiquid: S.optional(__S(64, __c4, 0)),
-          rain: S.optional(__S(64, __c4, 0)),
-          snow: S.optional(__S(64, __c4, 0)),
-          ice: S.optional(__S(64, __c4, 0)),
+          wind: S.optional(__S(257, __c16, 1)),
+          windGust: S.optional(__S(257, __c16, 1)),
+          totalLiquid: S.optional(__S(48, __c3, 0)),
+          rain: S.optional(__S(48, __c3, 0)),
+          snow: S.optional(__S(48, __c3, 0)),
+          ice: S.optional(__S(48, __c3, 0)),
           hoursOfPrecipitation: S.optional(S.Number),
           hoursOfRain: S.optional(S.Number),
           hoursOfSnow: S.optional(S.Number),
@@ -2645,26 +2626,37 @@ function __c18(j: number): any {
       return S.suspend(() =>
         S.Struct({
           date: S.optional(S.String),
-          temperature: S.optional(__S(256, __c16, 0)),
-          realFeelTemperature: S.optional(__S(256, __c16, 0)),
-          realFeelTemperatureShade: S.optional(__S(256, __c16, 0)),
+          temperature: S.optional(__S(240, __c15, 0)),
+          realFeelTemperature: S.optional(__S(240, __c15, 0)),
+          realFeelTemperatureShade: S.optional(__S(240, __c15, 0)),
           hoursOfSun: S.optional(S.Number),
-          degreeDaySummary: S.optional(__S(304, __c19, 0)),
-          airAndPollen: S.optional(__S(291, __c18, 3)),
-          day: S.optional(__S(293, __c18, 5)),
-          night: S.optional(__S(293, __c18, 5)),
-          sources: S.optional(__S(294, __c18, 6)),
+          degreeDaySummary: S.optional(__S(288, __c18, 0)),
+          airAndPollen: S.optional(__S(275, __c17, 3)),
+          day: S.optional(__S(277, __c17, 5)),
+          night: S.optional(__S(277, __c17, 5)),
+          sources: S.optional(__S(278, __c17, 6)),
         }),
       ).annotate({ identifier: "DailyForecast" });
     case 8:
-      return S.Array(__S(295, __c18, 7));
+      return S.Array(__S(279, __c17, 7));
     case 9:
       return S.suspend(() =>
         S.Struct({
-          summary: S.optional(__S(289, __c18, 1)),
-          forecasts: S.optional(__S(296, __c18, 8)),
+          summary: S.optional(__S(273, __c17, 1)),
+          forecasts: S.optional(__S(280, __c17, 8)),
         }),
       ).annotate({ identifier: "DailyForecastResult" });
+  }
+}
+function __c18(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          heating: S.optional(__S(48, __c3, 0)),
+          cooling: S.optional(__S(48, __c3, 0)),
+        }),
+      ).annotate({ identifier: "DegreeDaySummary" });
   }
 }
 function __c19(j: number): any {
@@ -2672,20 +2664,9 @@ function __c19(j: number): any {
     case 0:
       return S.suspend(() =>
         S.Struct({
-          heating: S.optional(__S(64, __c4, 0)),
-          cooling: S.optional(__S(64, __c4, 0)),
-        }),
-      ).annotate({ identifier: "DegreeDaySummary" });
-  }
-}
-function __c20(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           startDate: S.String.pipe(T.Query()),
           endDate: S.String.pipe(T.Query()),
           unit: S.optional(S.String.pipe(T.Query())),
@@ -2707,22 +2688,34 @@ function __c20(j: number): any {
       return S.suspend(() =>
         S.Struct({
           date: S.optional(S.String),
-          temperature: S.optional(__S(336, __c21, 0)),
-          degreeDaySummary: S.optional(__S(304, __c19, 0)),
-          precipitation: S.optional(__S(64, __c4, 0)),
-          snowfall: S.optional(__S(64, __c4, 0)),
-          snowDepth: S.optional(__S(64, __c4, 0)),
+          temperature: S.optional(__S(320, __c20, 0)),
+          degreeDaySummary: S.optional(__S(288, __c18, 0)),
+          precipitation: S.optional(__S(48, __c3, 0)),
+          snowfall: S.optional(__S(48, __c3, 0)),
+          snowDepth: S.optional(__S(48, __c3, 0)),
         }),
       ).annotate({ identifier: "DailyHistoricalActuals" });
     case 2:
-      return S.Array(__S(321, __c20, 1));
+      return S.Array(__S(305, __c19, 1));
     case 3:
       return S.suspend(() =>
         S.Struct({
-          results: S.optional(__S(322, __c20, 2)),
+          results: S.optional(__S(306, __c19, 2)),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "DailyHistoricalActualsResult" });
+  }
+}
+function __c20(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          maximum: S.optional(__S(48, __c3, 0)),
+          minimum: S.optional(__S(48, __c3, 0)),
+          average: S.optional(__S(48, __c3, 0)),
+        }),
+      ).annotate({ identifier: "WeatherValueMaxMinAvg" });
   }
 }
 function __c21(j: number): any {
@@ -2730,21 +2723,9 @@ function __c21(j: number): any {
     case 0:
       return S.suspend(() =>
         S.Struct({
-          maximum: S.optional(__S(64, __c4, 0)),
-          minimum: S.optional(__S(64, __c4, 0)),
-          average: S.optional(__S(64, __c4, 0)),
-        }),
-      ).annotate({ identifier: "WeatherValueMaxMinAvg" });
-  }
-}
-function __c22(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           startDate: S.String.pipe(T.Query()),
           endDate: S.String.pipe(T.Query()),
           unit: S.optional(S.String.pipe(T.Query())),
@@ -2766,30 +2747,30 @@ function __c22(j: number): any {
       return S.suspend(() =>
         S.Struct({
           date: S.optional(S.String),
-          temperature: S.optional(__S(336, __c21, 0)),
-          degreeDaySummary: S.optional(__S(304, __c19, 0)),
-          precipitation: S.optional(__S(64, __c4, 0)),
+          temperature: S.optional(__S(320, __c20, 0)),
+          degreeDaySummary: S.optional(__S(288, __c18, 0)),
+          precipitation: S.optional(__S(48, __c3, 0)),
         }),
       ).annotate({ identifier: "DailyHistoricalNormals" });
     case 2:
-      return S.Array(__S(353, __c22, 1));
+      return S.Array(__S(337, __c21, 1));
     case 3:
       return S.suspend(() =>
         S.Struct({
-          results: S.optional(__S(354, __c22, 2)),
+          results: S.optional(__S(338, __c21, 2)),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "DailyHistoricalNormalsResult" });
   }
 }
-function __c23(j: number): any {
+function __c22(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           startDate: S.String.pipe(T.Query()),
           endDate: S.String.pipe(T.Query()),
           unit: S.optional(S.String.pipe(T.Query())),
@@ -2819,45 +2800,45 @@ function __c23(j: number): any {
     case 2:
       return S.suspend(() =>
         S.Struct({
-          maximum: S.optional(__S(369, __c23, 1)),
-          minimum: S.optional(__S(369, __c23, 1)),
-          average: S.optional(__S(64, __c4, 0)),
+          maximum: S.optional(__S(353, __c22, 1)),
+          minimum: S.optional(__S(353, __c22, 1)),
+          average: S.optional(__S(48, __c3, 0)),
         }),
       ).annotate({ identifier: "WeatherValueYearMaxMinAvg" });
     case 3:
       return S.suspend(() =>
         S.Struct({
-          maximum: S.optional(__S(369, __c23, 1)),
+          maximum: S.optional(__S(353, __c22, 1)),
         }),
       ).annotate({ identifier: "WeatherValueYearMax" });
     case 4:
       return S.suspend(() =>
         S.Struct({
           date: S.optional(S.String),
-          temperature: S.optional(__S(370, __c23, 2)),
-          precipitation: S.optional(__S(371, __c23, 3)),
-          snowfall: S.optional(__S(371, __c23, 3)),
+          temperature: S.optional(__S(354, __c22, 2)),
+          precipitation: S.optional(__S(355, __c22, 3)),
+          snowfall: S.optional(__S(355, __c22, 3)),
         }),
       ).annotate({ identifier: "DailyHistoricalRecords" });
     case 5:
-      return S.Array(__S(372, __c23, 4));
+      return S.Array(__S(356, __c22, 4));
     case 6:
       return S.suspend(() =>
         S.Struct({
-          results: S.optional(__S(373, __c23, 5)),
+          results: S.optional(__S(357, __c22, 5)),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "DailyHistoricalRecordsResult" });
   }
 }
-function __c24(j: number): any {
+function __c23(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           language: S.optional(S.String.pipe(T.Query())),
           duration: S.optional(S.Number.pipe(T.Query())),
           indexId: S.optional(S.Number.pipe(T.Query())),
@@ -2890,23 +2871,23 @@ function __c24(j: number): any {
         }),
       ).annotate({ identifier: "DailyIndex" });
     case 2:
-      return S.Array(__S(385, __c24, 1));
+      return S.Array(__S(369, __c23, 1));
     case 3:
       return S.suspend(() =>
         S.Struct({
-          results: S.optional(__S(386, __c24, 2)),
+          results: S.optional(__S(370, __c23, 2)),
         }),
       ).annotate({ identifier: "DailyIndicesResult" });
   }
 }
-function __c25(j: number): any {
+function __c24(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           format: S.String.pipe(T.Label()),
-          query: __S(16, __c1, 0).pipe(T.Query()),
+          query: S.String.pipe(T.Query()),
           unit: S.optional(S.String.pipe(T.Query())),
           duration: S.optional(S.Number.pipe(T.Query())),
           language: S.optional(S.String.pipe(T.Query())),
@@ -2932,34 +2913,34 @@ function __c25(j: number): any {
           iconPhrase: S.optional(S.String),
           hasPrecipitation: S.optional(S.Boolean),
           isDaylight: S.optional(S.Boolean),
-          temperature: S.optional(__S(64, __c4, 0)),
-          realFeelTemperature: S.optional(__S(64, __c4, 0)),
-          wetBulbTemperature: S.optional(__S(64, __c4, 0)),
-          dewPoint: S.optional(__S(64, __c4, 0)),
-          wind: S.optional(__S(273, __c17, 1)),
-          windGust: S.optional(__S(273, __c17, 1)),
+          temperature: S.optional(__S(48, __c3, 0)),
+          realFeelTemperature: S.optional(__S(48, __c3, 0)),
+          wetBulbTemperature: S.optional(__S(48, __c3, 0)),
+          dewPoint: S.optional(__S(48, __c3, 0)),
+          wind: S.optional(__S(257, __c16, 1)),
+          windGust: S.optional(__S(257, __c16, 1)),
           relativeHumidity: S.optional(S.Number),
-          visibility: S.optional(__S(64, __c4, 0)),
-          ceiling: S.optional(__S(64, __c4, 0)),
+          visibility: S.optional(__S(48, __c3, 0)),
+          ceiling: S.optional(__S(48, __c3, 0)),
           uvIndex: S.optional(S.Number),
           uvIndexPhrase: S.optional(S.String),
           precipitationProbability: S.optional(S.Number),
           rainProbability: S.optional(S.Number),
           snowProbability: S.optional(S.Number),
           iceProbability: S.optional(S.Number),
-          totalLiquid: S.optional(__S(64, __c4, 0)),
-          rain: S.optional(__S(64, __c4, 0)),
-          snow: S.optional(__S(64, __c4, 0)),
-          ice: S.optional(__S(64, __c4, 0)),
+          totalLiquid: S.optional(__S(48, __c3, 0)),
+          rain: S.optional(__S(48, __c3, 0)),
+          snow: S.optional(__S(48, __c3, 0)),
+          ice: S.optional(__S(48, __c3, 0)),
           cloudCover: S.optional(S.Number),
         }),
       ).annotate({ identifier: "HourlyForecast" });
     case 2:
-      return S.Array(__S(401, __c25, 1));
+      return S.Array(__S(385, __c24, 1));
     case 3:
       return S.suspend(() =>
         S.Struct({
-          forecasts: S.optional(__S(402, __c25, 2)),
+          forecasts: S.optional(__S(386, __c24, 2)),
         }),
       ).annotate({ identifier: "HourlyForecastResult" });
   }

@@ -249,7 +249,7 @@
     "com.azure.cognitiveservices_translator_text#TranslateResultAllItemTranslationsItemSentLenTransSentLenList": {
       "type": "list",
       "member": {
-        "target": "com.azure.cognitiveservices_translator_text#TranslateResultAllItemTranslationsItemSentLenTransSentLenItem"
+        "target": "smithy.api#Integer"
       },
       "traits": {}
     },
@@ -265,7 +265,7 @@
     "com.azure.cognitiveservices_translator_text#TranslateResultAllItemTranslationsItemSentLenSrcSentLenList": {
       "type": "list",
       "member": {
-        "target": "com.azure.cognitiveservices_translator_text#TranslateResultAllItemTranslationsItemSentLenSrcSentLenItem"
+        "target": "smithy.api#Integer"
       },
       "traits": {}
     },
@@ -306,7 +306,7 @@
           "target": "smithy.api#String"
         },
         "score": {
-          "target": "smithy.api#Integer"
+          "target": "smithy.api#Double"
         }
       },
       "traits": {}
@@ -519,13 +519,13 @@
       "type": "structure",
       "members": {
         "translation": {
-          "target": "com.azure.cognitiveservices_translator_text#LanguagesResultTranslation"
+          "target": "com.azure.cognitiveservices_translator_text#LanguagesResultTranslationMap"
         },
         "transliteration": {
-          "target": "com.azure.cognitiveservices_translator_text#LanguagesResultTransliteration"
+          "target": "com.azure.cognitiveservices_translator_text#LanguagesResultTransliterationMap"
         },
         "dictionary": {
-          "target": "com.azure.cognitiveservices_translator_text#LanguagesResultDictionary"
+          "target": "com.azure.cognitiveservices_translator_text#LanguagesResultDictionaryMap"
         }
       },
       "traits": {
@@ -1142,8 +1142,20 @@
     "com.azure.cognitiveservices_translator_text#DetectResultItem": {
       "type": "structure",
       "members": {
-        "text": {
+        "language": {
           "target": "smithy.api#String"
+        },
+        "score": {
+          "target": "smithy.api#Double"
+        },
+        "isTranslationSupported": {
+          "target": "smithy.api#Boolean"
+        },
+        "isTransliterationSupported": {
+          "target": "smithy.api#Boolean"
+        },
+        "alternatives": {
+          "target": "com.azure.cognitiveservices_translator_text#DetectAlternativesList"
         }
       },
       "traits": {}
@@ -1360,6 +1372,61 @@
         },
         "com.azure.protocols#audience": "https://cognitiveservices.azure.com/.default"
       }
+    },
+    "com.azure.cognitiveservices_translator_text#DetectAlternative": {
+      "type": "structure",
+      "members": {
+        "language": {
+          "target": "smithy.api#String"
+        },
+        "score": {
+          "target": "smithy.api#Double"
+        },
+        "isTranslationSupported": {
+          "target": "smithy.api#Boolean"
+        },
+        "isTransliterationSupported": {
+          "target": "smithy.api#Boolean"
+        }
+      },
+      "traits": {}
+    },
+    "com.azure.cognitiveservices_translator_text#DetectAlternativesList": {
+      "type": "list",
+      "member": {
+        "target": "com.azure.cognitiveservices_translator_text#DetectAlternative"
+      },
+      "traits": {}
+    },
+    "com.azure.cognitiveservices_translator_text#LanguagesResultTranslationMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "com.azure.cognitiveservices_translator_text#LanguagesResultTranslationLanguageCode"
+      },
+      "traits": {}
+    },
+    "com.azure.cognitiveservices_translator_text#LanguagesResultTransliterationMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "com.azure.cognitiveservices_translator_text#LanguagesResultTransliterationLanguageCode"
+      },
+      "traits": {}
+    },
+    "com.azure.cognitiveservices_translator_text#LanguagesResultDictionaryMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "com.azure.cognitiveservices_translator_text#LanguagesResultDictionaryLanguageCode"
+      },
+      "traits": {}
     }
   }
 }

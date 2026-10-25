@@ -472,7 +472,7 @@
         "smithy.api#http": {
           "method": "PUT",
           "uri": "/restore",
-          "code": 200,
+          "code": 202,
           "host": "{vaultBaseUrl}",
           "hostRaw": [
             "vaultBaseUrl"
@@ -497,6 +497,44 @@
           "traits": {
             "smithy.api#httpHeader": "Retry-After",
             "smithy.api#documentation": "The recommended number of seconds to wait before calling the URI specified in Azure-AsyncOperation."
+          }
+        },
+        "status": {
+          "target": "com.azure.keyvault_administration#OperationStatus",
+          "traits": {
+            "smithy.api#documentation": "Status of the operation."
+          }
+        },
+        "statusDetails": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The status details of the operation."
+          }
+        },
+        "error": {
+          "target": "com.azure.keyvault_administration#Error",
+          "traits": {
+            "smithy.api#documentation": "Error encountered, if any, during the operation.",
+            "com.distilled.openapi#nullable": {}
+          }
+        },
+        "startTime": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "The start time of the operation in UTC"
+          }
+        },
+        "endTime": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "The end time of the operation in UTC",
+            "com.distilled.openapi#nullable": {}
+          }
+        },
+        "jobId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Identifier for the operation."
           }
         }
       },
@@ -573,7 +611,7 @@
         "smithy.api#http": {
           "method": "PUT",
           "uri": "/prerestore",
-          "code": 200,
+          "code": 202,
           "host": "{vaultBaseUrl}",
           "hostRaw": [
             "vaultBaseUrl"
@@ -598,6 +636,44 @@
           "traits": {
             "smithy.api#httpHeader": "Retry-After",
             "smithy.api#documentation": "The recommended number of seconds to wait before calling the URI specified in Azure-AsyncOperation."
+          }
+        },
+        "status": {
+          "target": "com.azure.keyvault_administration#OperationStatus",
+          "traits": {
+            "smithy.api#documentation": "Status of the operation."
+          }
+        },
+        "statusDetails": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The status details of the operation."
+          }
+        },
+        "error": {
+          "target": "com.azure.keyvault_administration#Error",
+          "traits": {
+            "smithy.api#documentation": "Error encountered, if any, during the operation.",
+            "com.distilled.openapi#nullable": {}
+          }
+        },
+        "startTime": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "The start time of the operation in UTC"
+          }
+        },
+        "endTime": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "The end time of the operation in UTC",
+            "com.distilled.openapi#nullable": {}
+          }
+        },
+        "jobId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Identifier for the operation."
           }
         }
       },
@@ -645,7 +721,7 @@
         "smithy.api#http": {
           "method": "POST",
           "uri": "/prebackup",
-          "code": 200,
+          "code": 202,
           "host": "{vaultBaseUrl}",
           "hostRaw": [
             "vaultBaseUrl"
@@ -670,6 +746,50 @@
           "traits": {
             "smithy.api#httpHeader": "Retry-After",
             "smithy.api#documentation": "The recommended number of seconds to wait before calling the URI specified in Azure-AsyncOperation."
+          }
+        },
+        "status": {
+          "target": "com.azure.keyvault_administration#OperationStatus",
+          "traits": {
+            "smithy.api#documentation": "Status of the operation."
+          }
+        },
+        "statusDetails": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The status details of the operation."
+          }
+        },
+        "error": {
+          "target": "com.azure.keyvault_administration#Error",
+          "traits": {
+            "smithy.api#documentation": "Error encountered, if any, during the operation.",
+            "com.distilled.openapi#nullable": {}
+          }
+        },
+        "startTime": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "The start time of the operation in UTC"
+          }
+        },
+        "endTime": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "The end time of the operation in UTC",
+            "com.distilled.openapi#nullable": {}
+          }
+        },
+        "jobId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Identifier for the operation."
+          }
+        },
+        "azureStorageBlobContainerUri": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The Azure blob storage container Uri which contains the full backup"
           }
         }
       },
@@ -723,7 +843,7 @@
         "smithy.api#http": {
           "method": "PUT",
           "uri": "/keys/{keyName}/restore",
-          "code": 200,
+          "code": 202,
           "host": "{vaultBaseUrl}",
           "hostRaw": [
             "vaultBaseUrl"
@@ -748,6 +868,44 @@
           "traits": {
             "smithy.api#httpHeader": "Retry-After",
             "smithy.api#documentation": "The recommended number of seconds to wait before calling the URI specified in Azure-AsyncOperation."
+          }
+        },
+        "status": {
+          "target": "com.azure.keyvault_administration#OperationStatus",
+          "traits": {
+            "smithy.api#documentation": "Status of the operation."
+          }
+        },
+        "statusDetails": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The status details of the operation."
+          }
+        },
+        "error": {
+          "target": "com.azure.keyvault_administration#Error",
+          "traits": {
+            "smithy.api#documentation": "Error encountered, if any, during the operation.",
+            "com.distilled.openapi#nullable": {}
+          }
+        },
+        "startTime": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "The start time of the operation in UTC"
+          }
+        },
+        "endTime": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "The end time of the operation in UTC",
+            "com.distilled.openapi#nullable": {}
+          }
+        },
+        "jobId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Identifier for the operation."
           }
         }
       },
@@ -1316,7 +1474,7 @@
         "smithy.api#http": {
           "method": "POST",
           "uri": "/backup",
-          "code": 200,
+          "code": 202,
           "host": "{vaultBaseUrl}",
           "hostRaw": [
             "vaultBaseUrl"
@@ -1341,6 +1499,50 @@
           "traits": {
             "smithy.api#httpHeader": "Retry-After",
             "smithy.api#documentation": "The recommended number of seconds to wait before calling the URI specified in Azure-AsyncOperation."
+          }
+        },
+        "status": {
+          "target": "com.azure.keyvault_administration#OperationStatus",
+          "traits": {
+            "smithy.api#documentation": "Status of the operation."
+          }
+        },
+        "statusDetails": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The status details of the operation."
+          }
+        },
+        "error": {
+          "target": "com.azure.keyvault_administration#Error",
+          "traits": {
+            "smithy.api#documentation": "Error encountered, if any, during the operation.",
+            "com.distilled.openapi#nullable": {}
+          }
+        },
+        "startTime": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "The start time of the operation in UTC"
+          }
+        },
+        "endTime": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "The end time of the operation in UTC",
+            "com.distilled.openapi#nullable": {}
+          }
+        },
+        "jobId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "Identifier for the operation."
+          }
+        },
+        "azureStorageBlobContainerUri": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The Azure blob storage container Uri which contains the full backup"
           }
         }
       },
@@ -2505,7 +2707,7 @@
             }
           ]
         },
-        "com.azure.protocols#audience": "https://vault.azure.net/.default"
+        "com.azure.protocols#audience": "https://managedhsm.azure.net/.default"
       }
     }
   }

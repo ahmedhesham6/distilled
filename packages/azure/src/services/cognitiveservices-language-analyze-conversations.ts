@@ -18,6 +18,10 @@ export interface AnalyzeConversationsRequest {
   endpoint: string;
   /** The base class of a conversation input task. */
   kind: AnalyzeConversationTaskKind | (string & {});
+  /** The conversation item to analyze, e.g. `{ conversationItem: { id, participantId, text } }`. */
+  analysisInput: unknown;
+  /** Task parameters, e.g. `{ projectName, deploymentName, stringIndexType }` for a Conversation (CLU) task. */
+  parameters: unknown;
 }
 /** Enumeration of supported conversational task results. */
 export type AnalyzeConversationTaskResultsKind = "ConversationResult";
@@ -25,6 +29,8 @@ export type AnalyzeConversationTaskResultsKind = "ConversationResult";
 export interface AnalyzeConversationTaskResult {
   /** The base class of a conversation input task result. */
   kind: AnalyzeConversationTaskResultsKind;
+  /** The prediction for the conversation item: `{ query, prediction }`. */
+  result?: unknown;
 }
 export interface AnalyzeConversationsCancelJobRequest {
   /** Supported Cognitive Services endpoint (e.g., https://<resource-name>.api.cognitiveservices.azure.com). */
@@ -135,6 +141,8 @@ export interface AnalyzeConversationJobResult {
   taskName?: string;
   /** discriminator kind */
   kind: AnalyzeConversationResultsKind;
+  /** Results of the task: `{ conversations, errors, modelVersion }`; each conversation's shape depends on `kind`. */
+  results?: unknown;
 }
 /** List of results from tasks (if available). */
 export type TasksItemsList = Array<AnalyzeConversationJobResult>;
@@ -205,6 +213,8 @@ export interface Conversation {
   modality: InputModality | (string & {});
   /** domain */
   domain?: ConversationDomain | (string & {});
+  /** The conversation's items: `[{ id, participantId, text, role? }]` for text, `[{ id, participantId, itn, maskedItn, text, lexical, audioTimings? }]` for transcripts. */
+  conversationItems: unknown;
 }
 /** Array of conversation items */
 export type MultiLanguageConversationAnalysisInputConversationsList = Array<Conversation>;
@@ -223,6 +233,8 @@ export interface AnalyzeConversationLROTask {
   taskName?: string;
   /** Enumeration of supported analysis tasks on a collection of conversations. */
   kind: AnalyzeConversationLROTaskKind | (string & {});
+  /** Task parameters for `kind` (e.g. `{ summaryAspects }` for ConversationalSummarizationTask). */
+  parameters?: unknown;
 }
 /** Set of tasks to execute on the input conversation. */
 export type AnalyzeConversationsSubmitJobRequestTasksList = Array<AnalyzeConversationLROTask>;
@@ -308,6 +320,8 @@ function __c0(j: number): any {
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
           kind: S.String,
+          analysisInput: S.Unknown,
+          parameters: S.Unknown,
         }).pipe(
           T.Http({
             method: "POST",
@@ -324,6 +338,7 @@ function __c0(j: number): any {
       return S.suspend(() =>
         S.Struct({
           kind: S.String,
+          result: S.optional(S.Unknown),
         }),
       ).annotate({ identifier: "AnalyzeConversationTaskResult" });
   }
@@ -412,6 +427,7 @@ function __c3(j: number): any {
           status: S.String,
           taskName: S.optional(S.String),
           kind: S.String,
+          results: S.optional(S.Unknown),
         }),
       ).annotate({ identifier: "AnalyzeConversationJobResult" });
     case 7:
@@ -464,6 +480,7 @@ function __c4(j: number): any {
           language: S.String,
           modality: S.String,
           domain: S.optional(S.String),
+          conversationItems: S.Unknown,
         }),
       ).annotate({ identifier: "Conversation" });
     case 1:
@@ -479,6 +496,7 @@ function __c4(j: number): any {
         S.Struct({
           taskName: S.optional(S.String),
           kind: S.String,
+          parameters: S.optional(S.Unknown),
         }),
       ).annotate({ identifier: "AnalyzeConversationLROTask" });
     case 4:

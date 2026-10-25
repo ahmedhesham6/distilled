@@ -1363,14 +1363,10 @@ export interface DocumentsCountRequest {
 }
 export type DocumentsCountResponse = number;
 export type DocumentsSearchGetRequestFacetList = Array<string>;
-export type DocumentsSearchGetRequestHighlightList = Array<string>;
-export type DocumentsSearchGetRequestOrderbyList = Array<string>;
 export type DocumentsSearchGetRequestQueryType = "simple" | "full" | "semantic";
 export type DocumentsSearchGetRequestScoringParameterList = Array<string>;
-export type DocumentsSearchGetRequestSearchFieldsList = Array<string>;
 export type DocumentsSearchGetRequestSearchMode = "any" | "all";
 export type DocumentsSearchGetRequestScoringStatistics = "local" | "global";
-export type DocumentsSearchGetRequestSelectList = Array<string>;
 export type DocumentsSearchGetRequestSemanticErrorHandling = "partial" | "fail";
 export type DocumentsSearchGetRequestAnswers = "none" | "extractive";
 export type DocumentsSearchGetRequestCaptions = "none" | "extractive";
@@ -1394,8 +1390,8 @@ export interface DocumentsSearchGetRequest {
   facet?: DocumentsSearchGetRequestFacetList;
   /** The OData $filter expression to apply to the search query. */
   _filter?: string;
-  /** The list of field names to use for hit highlights. Only searchable fields can be used for hit highlighting. */
-  highlight?: DocumentsSearchGetRequestHighlightList;
+  /** The list of field names to use for hit highlights. Only searchable fields can be used for hit highlighting. Comma-separated. */
+  highlight?: string;
   /** A string tag that is appended to hit highlights. Must be set with highlightPreTag. Default is &lt;/em&gt;. */
   highlightPostTag?: string;
   /** A string tag that is prepended to hit highlights. Must be set with highlightPostTag. Default is &lt;em&gt;. */
@@ -1404,24 +1400,24 @@ export interface DocumentsSearchGetRequest {
   minimumCoverage?: number;
   /** The key of the document to use as the basis for finding similar documents. This parameter cannot be used together with search text. */
   moreLikeThis?: string;
-  /** The list of OData $orderby expressions by which to sort the results. Each expression can be either a field name or a call to either the geo.distance() or the search.score() functions. Each expression can be followed by asc to indicate ascending, and desc to indicate descending. The default is ascending order. Ties will be broken by the match scores of documents. If no OrderBy is specified, the default sort order is descending by document match score. There can be at most 32 $orderby clauses. */
-  _orderby?: DocumentsSearchGetRequestOrderbyList;
+  /** The list of OData $orderby expressions by which to sort the results. Each expression can be either a field name or a call to either the geo.distance() or the search.score() functions. Each expression can be followed by asc to indicate ascending, and desc to indicate descending. The default is ascending order. Ties will be broken by the match scores of documents. If no OrderBy is specified, the default sort order is descending by document match score. There can be at most 32 $orderby clauses. Comma-separated. */
+  _orderby?: string;
   /** A value that specifies the syntax of the search query. The default is 'simple'. Use 'full' if your query uses the Lucene query syntax. */
   queryType?: DocumentsSearchGetRequestQueryType | (string & {});
   /** The list of parameter values to be used in scoring functions (for example, referencePointParameter) using the format name-values. For example, if the scoring profile defines a function with a parameter called 'mylocation' the parameter string would be "mylocation--122.2,44.8" (without the quotes). */
   scoringParameter?: DocumentsSearchGetRequestScoringParameterList;
   /** The name of a scoring profile to evaluate match scores for matching documents in order to sort the results. */
   scoringProfile?: string;
-  /** The list of field names to which to scope the full-text search. When using fielded search (fieldName:searchExpression) in a full Lucene query, the field names of each fielded search expression take precedence over any field names listed in this parameter. */
-  searchFields?: DocumentsSearchGetRequestSearchFieldsList;
+  /** The list of field names to which to scope the full-text search. When using fielded search (fieldName:searchExpression) in a full Lucene query, the field names of each fielded search expression take precedence over any field names listed in this parameter. Comma-separated. */
+  searchFields?: string;
   /** A value that specifies whether any or all of the search terms must be matched in order to count the document as a match. */
   searchMode?: DocumentsSearchGetRequestSearchMode | (string & {});
   /** A value that specifies whether we want to calculate scoring statistics (such as document frequency) globally for more consistent scoring, or locally, for lower latency. */
   scoringStatistics?: DocumentsSearchGetRequestScoringStatistics | (string & {});
   /** A value to be used to create a sticky session, which can help to get more consistent results. As long as the same sessionId is used, a best-effort attempt will be made to target the same replica set. Be wary that reusing the same sessionID values repeatedly can interfere with the load balancing of the requests across replicas and adversely affect the performance of the search service. The value used as sessionId cannot start with a '_' character. */
   sessionId?: string;
-  /** The list of fields to retrieve. If unspecified, all fields marked as retrievable in the schema are included. */
-  _select?: DocumentsSearchGetRequestSelectList;
+  /** The list of fields to retrieve. If unspecified, all fields marked as retrievable in the schema are included. Comma-separated. */
+  _select?: string;
   /** The number of search results to skip. This value cannot be greater than 100,000. If you need to scan documents in sequence, but cannot use $skip due to this limitation, consider using $orderby on a totally-ordered key and $filter with a range query instead. */
   _skip?: number;
   /** The number of search results to retrieve. This can be used in conjunction with $skip to implement client-side paging of search results. If results are truncated due to server-side paging, the response will include a continuation token that can be used to issue another Search request for the next page of results. */
@@ -1765,7 +1761,6 @@ export interface GetDataSourceRequest {
   /** An opaque, globally-unique, client-generated string identifier for the request. */
   xMsClientRequestId?: string;
 }
-export type GetDocumentRequestSelectList = Array<string>;
 export interface GetDocumentRequest {
   /** The endpoint URL of the search service. */
   endpoint: string;
@@ -1773,8 +1768,8 @@ export interface GetDocumentRequest {
   indexName: string;
   /** The key of the document to retrieve. */
   key: string;
-  /** List of field names to retrieve for the document; Any field not retrieved will be missing from the returned document. */
-  _select?: GetDocumentRequestSelectList;
+  /** List of field names to retrieve for the document; Any field not retrieved will be missing from the returned document. Comma-separated. */
+  _select?: string;
   /** An opaque, globally-unique, client-generated string identifier for the request. */
   xMsClientRequestId?: string;
   /** Token identifying the user for which the query is being executed. This token is used to enforce security restrictions on documents. */
@@ -1789,7 +1784,6 @@ export type GetDocumentsAutocompleteRequestAutocompleteMode =
   | "oneTerm"
   | "twoTerms"
   | "oneTermWithContext";
-export type GetDocumentsAutocompleteRequestSearchFieldsList = Array<string>;
 export interface GetDocumentsAutocompleteRequest {
   /** The endpoint URL of the search service. */
   endpoint: string;
@@ -1811,8 +1805,8 @@ export interface GetDocumentsAutocompleteRequest {
   highlightPreTag?: string;
   /** A number between 0 and 100 indicating the percentage of the index that must be covered by an autocomplete query in order for the query to be reported as a success. This parameter can be useful for ensuring search availability even for services with only one replica. The default is 80. */
   minimumCoverage?: number;
-  /** The list of field names to consider when querying for auto-completed terms. Target fields must be included in the specified suggester. */
-  searchFields?: GetDocumentsAutocompleteRequestSearchFieldsList;
+  /** The list of field names to consider when querying for auto-completed terms. Target fields must be included in the specified suggester. Comma-separated. */
+  searchFields?: string;
   /** The number of auto-completed terms to retrieve. This must be a value between 1 and 100. The default is 5. */
   _top?: number;
   /** An opaque, globally-unique, client-generated string identifier for the request. */
@@ -1834,9 +1828,6 @@ export interface AutocompleteResult {
   /** The list of returned Autocompleted items. */
   value: AutocompleteResultValueList;
 }
-export type GetDocumentsSuggestRequestOrderbyList = Array<string>;
-export type GetDocumentsSuggestRequestSearchFieldsList = Array<string>;
-export type GetDocumentsSuggestRequestSelectList = Array<string>;
 export interface GetDocumentsSuggestRequest {
   /** The endpoint URL of the search service. */
   endpoint: string;
@@ -1856,12 +1847,12 @@ export interface GetDocumentsSuggestRequest {
   highlightPreTag?: string;
   /** A number between 0 and 100 indicating the percentage of the index that must be covered by a suggestions query in order for the query to be reported as a success. This parameter can be useful for ensuring search availability even for services with only one replica. The default is 80. */
   minimumCoverage?: number;
-  /** The list of OData $orderby expressions by which to sort the results. Each expression can be either a field name or a call to either the geo.distance() or the search.score() functions. Each expression can be followed by asc to indicate ascending, or desc to indicate descending. The default is ascending order. Ties will be broken by the match scores of documents. If no $orderby is specified, the default sort order is descending by document match score. There can be at most 32 $orderby clauses. */
-  _orderby?: GetDocumentsSuggestRequestOrderbyList;
-  /** The list of field names to search for the specified search text. Target fields must be included in the specified suggester. */
-  searchFields?: GetDocumentsSuggestRequestSearchFieldsList;
-  /** The list of fields to retrieve. If unspecified, only the key field will be included in the results. */
-  _select?: GetDocumentsSuggestRequestSelectList;
+  /** The list of OData $orderby expressions by which to sort the results. Each expression can be either a field name or a call to either the geo.distance() or the search.score() functions. Each expression can be followed by asc to indicate ascending, or desc to indicate descending. The default is ascending order. Ties will be broken by the match scores of documents. If no $orderby is specified, the default sort order is descending by document match score. There can be at most 32 $orderby clauses. Comma-separated. */
+  _orderby?: string;
+  /** The list of field names to search for the specified search text. Target fields must be included in the specified suggester. Comma-separated. */
+  searchFields?: string;
+  /** The list of fields to retrieve. If unspecified, only the key field will be included in the results. Comma-separated. */
+  _select?: string;
   /** The number of suggestions to retrieve. The value must be a number between 1 and 100. The default is 5. */
   _top?: number;
   /** An opaque, globally-unique, client-generated string identifier for the request. */
@@ -2753,13 +2744,12 @@ export interface ListAliasesResult {
   /** The URL that can be used to fetch the next set of results. */
   _odata_nextLink?: string;
 }
-export type ListDataSourcesRequestSelectList = Array<string>;
 export type ListDataSourcesRequestSearchType = "prefix";
 export interface ListDataSourcesRequest {
   /** The endpoint URL of the search service. */
   endpoint: string;
-  /** Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. */
-  _select?: ListDataSourcesRequestSelectList;
+  /** Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. Comma-separated. */
+  _select?: string;
   /** A string used to narrow down the listing so that fewer results need to be paged through. If omitted or an empty string is passed, no narrowing is applied. */
   search?: string;
   /** The maximum number of items to return in a single page. The server enforces a maximum; if omitted, the server determines a suitable default. */
@@ -2818,13 +2808,12 @@ export interface IndexDocumentsResult {
   /** The list of status information for each document in the indexing request. */
   value: IndexDocumentsResultValueList;
 }
-export type ListIndexersRequestSelectList = Array<string>;
 export type ListIndexersRequestSearchType = "prefix";
 export interface ListIndexersRequest {
   /** The endpoint URL of the search service. */
   endpoint: string;
-  /** Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. */
-  _select?: ListIndexersRequestSelectList;
+  /** Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. Comma-separated. */
+  _select?: string;
   /** A string used to narrow down the listing so that fewer results need to be paged through. If omitted or an empty string is passed, no narrowing is applied. */
   search?: string;
   /** The maximum number of items to return in a single page. The server enforces a maximum; if omitted, the server determines a suitable default. */
@@ -2869,13 +2858,12 @@ export interface ListIndexesResult {
   /** The URL that can be used to fetch the next set of results. */
   _odata_nextLink?: string;
 }
-export type ListIndexWithSelectedPropertiesRequestSelectList = Array<string>;
 export type ListIndexWithSelectedPropertiesRequestSearchType = "prefix";
 export interface ListIndexWithSelectedPropertiesRequest {
   /** The endpoint URL of the search service. */
   endpoint: string;
-  /** Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. */
-  _select?: ListIndexWithSelectedPropertiesRequestSelectList;
+  /** Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. Comma-separated. */
+  _select?: string;
   /** A string used to narrow down the listing so that fewer results need to be paged through. If omitted or an empty string is passed, no narrowing is applied. */
   search?: string;
   /** The maximum number of items to return in a single page. The server enforces a maximum; if omitted, the server determines a suitable default. */
@@ -3065,13 +3053,12 @@ export interface ListKnowledgeSourcesResult {
   /** The URL that can be used to fetch the next set of results. */
   _odata_nextLink?: string;
 }
-export type ListSkillsetsRequestSelectList = Array<string>;
 export type ListSkillsetsRequestSearchType = "prefix";
 export interface ListSkillsetsRequest {
   /** The endpoint URL of the search service. */
   endpoint: string;
-  /** Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. */
-  _select?: ListSkillsetsRequestSelectList;
+  /** Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. Comma-separated. */
+  _select?: string;
   /** A string used to narrow down the listing so that fewer results need to be paged through. If omitted or an empty string is passed, no narrowing is applied. */
   search?: string;
   /** The maximum number of items to return in a single page. The server enforces a maximum; if omitted, the server determines a suitable default. */
@@ -3092,13 +3079,12 @@ export interface ListSkillsetsResult {
   /** The URL that can be used to fetch the next set of results. */
   _odata_nextLink?: string;
 }
-export type ListSynonymMapsRequestSelectList = Array<string>;
 export type ListSynonymMapsRequestSearchType = "prefix";
 export interface ListSynonymMapsRequest {
   /** The endpoint URL of the search service. */
   endpoint: string;
-  /** Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. */
-  _select?: ListSynonymMapsRequestSelectList;
+  /** Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. Comma-separated. */
+  _select?: string;
   /** A string used to narrow down the listing so that fewer results need to be paged through. If omitted or an empty string is passed, no narrowing is applied. */
   search?: string;
   /** The maximum number of items to return in a single page. The server enforces a maximum; if omitted, the server determines a suitable default. */
@@ -4748,20 +4734,20 @@ function __c19(j: number): any {
           _count: S.optional(S.Boolean.pipe(T.Query("$count"))),
           facet: S.optional(__S(64, __c2, 0).pipe(T.Query())),
           _filter: S.optional(S.String.pipe(T.Query("$filter"))),
-          highlight: S.optional(__S(64, __c2, 0).pipe(T.Query())),
+          highlight: S.optional(S.String.pipe(T.Query())),
           highlightPostTag: S.optional(S.String.pipe(T.Query())),
           highlightPreTag: S.optional(S.String.pipe(T.Query())),
           minimumCoverage: S.optional(S.Number.pipe(T.Query())),
           moreLikeThis: S.optional(S.String.pipe(T.Query())),
-          _orderby: S.optional(__S(64, __c2, 0).pipe(T.Query("$orderby"))),
+          _orderby: S.optional(S.String.pipe(T.Query("$orderby"))),
           queryType: S.optional(S.String.pipe(T.Query())),
           scoringParameter: S.optional(__S(64, __c2, 0).pipe(T.Query())),
           scoringProfile: S.optional(S.String.pipe(T.Query())),
-          searchFields: S.optional(__S(64, __c2, 0).pipe(T.Query())),
+          searchFields: S.optional(S.String.pipe(T.Query())),
           searchMode: S.optional(S.String.pipe(T.Query())),
           scoringStatistics: S.optional(S.String.pipe(T.Query())),
           sessionId: S.optional(S.String.pipe(T.Query())),
-          _select: S.optional(__S(64, __c2, 0).pipe(T.Query("$select"))),
+          _select: S.optional(S.String.pipe(T.Query("$select"))),
           _skip: S.optional(S.Number.pipe(T.Query("$skip"))),
           _top: S.optional(S.Number.pipe(T.Query("$top"))),
           semanticConfiguration: S.optional(S.String.pipe(T.Query())),
@@ -5070,7 +5056,7 @@ function __c24(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           indexName: S.String.pipe(T.Label()),
           key: S.String.pipe(T.Label()),
-          _select: S.optional(__S(64, __c2, 0).pipe(T.Query("$select"))),
+          _select: S.optional(S.String.pipe(T.Query("$select"))),
           xMsClientRequestId: S.optional(S.String.pipe(T.Header("x-ms-client-request-id"))),
           xMsQuerySourceAuthorization: S.optional(
             S.String.pipe(T.Header("x-ms-query-source-authorization")),
@@ -5109,7 +5095,7 @@ function __c25(j: number): any {
           highlightPostTag: S.optional(S.String.pipe(T.Query())),
           highlightPreTag: S.optional(S.String.pipe(T.Query())),
           minimumCoverage: S.optional(S.Number.pipe(T.Query())),
-          searchFields: S.optional(__S(64, __c2, 0).pipe(T.Query())),
+          searchFields: S.optional(S.String.pipe(T.Query())),
           _top: S.optional(S.Number.pipe(T.Query("$top"))),
           xMsClientRequestId: S.optional(S.String.pipe(T.Header("x-ms-client-request-id"))),
         }).pipe(
@@ -5160,9 +5146,9 @@ function __c27(j: number): any {
           highlightPostTag: S.optional(S.String.pipe(T.Query())),
           highlightPreTag: S.optional(S.String.pipe(T.Query())),
           minimumCoverage: S.optional(S.Number.pipe(T.Query())),
-          _orderby: S.optional(__S(64, __c2, 0).pipe(T.Query("$orderby"))),
-          searchFields: S.optional(__S(64, __c2, 0).pipe(T.Query())),
-          _select: S.optional(__S(64, __c2, 0).pipe(T.Query("$select"))),
+          _orderby: S.optional(S.String.pipe(T.Query("$orderby"))),
+          searchFields: S.optional(S.String.pipe(T.Query())),
+          _select: S.optional(S.String.pipe(T.Query("$select"))),
           _top: S.optional(S.Number.pipe(T.Query("$top"))),
           xMsClientRequestId: S.optional(S.String.pipe(T.Header("x-ms-client-request-id"))),
         }).pipe(
@@ -6439,7 +6425,7 @@ function __c58(j: number): any {
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
-          _select: S.optional(__S(64, __c2, 0).pipe(T.Query("$select"))),
+          _select: S.optional(S.String.pipe(T.Query("$select"))),
           search: S.optional(S.String.pipe(T.Query())),
           pageSize: S.optional(S.Number.pipe(T.Query())),
           searchType: S.optional(S.String.pipe(T.Query())),
@@ -6526,7 +6512,7 @@ function __c60(j: number): any {
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
-          _select: S.optional(__S(64, __c2, 0).pipe(T.Query("$select"))),
+          _select: S.optional(S.String.pipe(T.Query("$select"))),
           search: S.optional(S.String.pipe(T.Query())),
           pageSize: S.optional(S.Number.pipe(T.Query())),
           searchType: S.optional(S.String.pipe(T.Query())),
@@ -6669,7 +6655,7 @@ function __c65(j: number): any {
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
-          _select: S.optional(__S(64, __c2, 0).pipe(T.Query("$select"))),
+          _select: S.optional(S.String.pipe(T.Query("$select"))),
           search: S.optional(S.String.pipe(T.Query())),
           pageSize: S.optional(S.Number.pipe(T.Query())),
           searchType: S.optional(S.String.pipe(T.Query())),
@@ -6857,7 +6843,7 @@ function __c70(j: number): any {
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
-          _select: S.optional(__S(64, __c2, 0).pipe(T.Query("$select"))),
+          _select: S.optional(S.String.pipe(T.Query("$select"))),
           search: S.optional(S.String.pipe(T.Query())),
           pageSize: S.optional(S.Number.pipe(T.Query())),
           searchType: S.optional(S.String.pipe(T.Query())),
@@ -6893,7 +6879,7 @@ function __c71(j: number): any {
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
-          _select: S.optional(__S(64, __c2, 0).pipe(T.Query("$select"))),
+          _select: S.optional(S.String.pipe(T.Query("$select"))),
           search: S.optional(S.String.pipe(T.Query())),
           pageSize: S.optional(S.Number.pipe(T.Query())),
           searchType: S.optional(S.String.pipe(T.Query())),

@@ -235,6 +235,9 @@
         },
         {
           "target": "com.azure.cosmos_nosql#CosmosRequestEntityTooLarge"
+        },
+        {
+          "target": "com.azure.cosmos_nosql#CosmosRbacPermissionDenied"
         }
       ]
     },
@@ -371,6 +374,9 @@
         },
         {
           "target": "com.azure.cosmos_nosql#CosmosTooManyRequests"
+        },
+        {
+          "target": "com.azure.cosmos_nosql#CosmosRbacPermissionDenied"
         }
       ]
     },
@@ -496,6 +502,9 @@
         },
         {
           "target": "com.azure.cosmos_nosql#CosmosTooManyRequests"
+        },
+        {
+          "target": "com.azure.cosmos_nosql#CosmosRbacPermissionDenied"
         }
       ]
     },
@@ -645,6 +654,9 @@
         },
         {
           "target": "com.azure.cosmos_nosql#CosmosTooManyRequests"
+        },
+        {
+          "target": "com.azure.cosmos_nosql#CosmosRbacPermissionDenied"
         }
       ]
     },
@@ -839,6 +851,9 @@
         },
         {
           "target": "com.azure.cosmos_nosql#CosmosRequestEntityTooLarge"
+        },
+        {
+          "target": "com.azure.cosmos_nosql#CosmosRbacPermissionDenied"
         }
       ]
     },
@@ -1026,6 +1041,9 @@
         },
         {
           "target": "com.azure.cosmos_nosql#CosmosTooManyRequests"
+        },
+        {
+          "target": "com.azure.cosmos_nosql#CosmosRbacPermissionDenied"
         }
       ]
     },
@@ -1237,6 +1255,9 @@
         },
         {
           "target": "com.azure.cosmos_nosql#CosmosRequestEntityTooLarge"
+        },
+        {
+          "target": "com.azure.cosmos_nosql#CosmosRbacPermissionDenied"
         }
       ]
     },
@@ -1397,6 +1418,9 @@
         },
         {
           "target": "com.azure.cosmos_nosql#CosmosRequestEntityTooLarge"
+        },
+        {
+          "target": "com.azure.cosmos_nosql#CosmosRbacPermissionDenied"
         }
       ]
     },
@@ -1509,6 +1533,36 @@
       },
       "traits": {
         "smithy.api#output": {}
+      }
+    },
+    "com.azure.cosmos_nosql#CosmosRbacPermissionDenied": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message; it names the principal, the data action and the resource."
+          }
+        },
+        "headers": {
+          "target": "com.azure.cosmos_nosql#HeaderMap",
+          "traits": {
+            "smithy.api#documentation": "The response headers: `x-ms-substatus` refines the status, `x-ms-activity-id` identifies the request."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 403,
+        "smithy.api#documentation": "The caller's Entra principal has no Cosmos DB data-plane role that allows the action on this resource (HTTP 403, `x-ms-substatus` 5301). A role assignment can take a few minutes to apply.",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 403,
+            "message": {
+              "includes": "does not have required RBAC permissions"
+            }
+          }
+        ]
       }
     }
   }

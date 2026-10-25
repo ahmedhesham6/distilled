@@ -2616,13 +2616,13 @@
         "target": "com.azure.keyvault_certificates#CreateCertificateRequest"
       },
       "output": {
-        "target": "smithy.api#Unit"
+        "target": "com.azure.keyvault_certificates#CertificateOperation"
       },
       "traits": {
         "smithy.api#http": {
           "method": "POST",
           "uri": "/certificates/{certificateName}/create",
-          "code": 200,
+          "code": 202,
           "host": "{vaultBaseUrl}",
           "hostRaw": [
             "vaultBaseUrl"

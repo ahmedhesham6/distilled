@@ -167,7 +167,15 @@
         },
         "smithy.api#documentation": "Rerun single trigger instance by runId.",
         "com.distilled.openapi#apiVersion": "2018-06-01"
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.datafactory#TriggerRunNotFound"
+        },
+        {
+          "target": "com.azure.datafactory#TriggerRerunNotSupported"
+        }
+      ]
     },
     "com.azure.datafactory#TriggerRunsRerunRequest": {
       "type": "structure",
@@ -232,7 +240,12 @@
         },
         "smithy.api#documentation": "Cancel a single trigger instance by runId.",
         "com.distilled.openapi#apiVersion": "2018-06-01"
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.datafactory#TriggerRunNotFound"
+        }
+      ]
     },
     "com.azure.datafactory#CancelTriggerRunRequest": {
       "type": "structure",
@@ -6092,7 +6105,12 @@
         },
         "smithy.api#documentation": "Stops a ManagedReserved type integration runtime.",
         "com.distilled.openapi#apiVersion": "2018-06-01"
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.datafactory#IntegrationRuntimeNotManaged"
+        }
+      ]
     },
     "com.azure.datafactory#StopIntegrationRuntimeResponse": {
       "type": "structure",
@@ -6173,7 +6191,12 @@
         },
         "smithy.api#documentation": "Starts a ManagedReserved type integration runtime.",
         "com.distilled.openapi#apiVersion": "2018-06-01"
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.datafactory#IntegrationRuntimeNotManaged"
+        }
+      ]
     },
     "com.azure.datafactory#StartIntegrationRuntimeResponse": {
       "type": "structure",
@@ -14806,6 +14829,93 @@
       "traits": {
         "smithy.api#title": "Azure Datafactory",
         "smithy.api#documentation": "Azure Datafactory API — merged from the datafactory resource-manager specs (latest stable api-version per resource provider)."
+      }
+    },
+    "com.azure.datafactory#TriggerRunNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The Data Factory error code (`BadRequest`)."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 400,
+        "smithy.api#documentation": "The trigger has no run with this run ID (HTTP 400 `BadRequest`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 400,
+            "message": {
+              "matches": "^Trigger run with id .* does not exist"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.datafactory#TriggerRerunNotSupported": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The Data Factory error code (`BadRequest`)."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 400,
+        "smithy.api#documentation": "Only tumbling window trigger runs can be rerun (HTTP 400 `BadRequest` \"Invalid trigger type: …\").",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 400,
+            "message": {
+              "includes": "Invalid trigger type"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.datafactory#IntegrationRuntimeNotManaged": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The Data Factory error code, if any (the body is empty)."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message, if any."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 405,
+        "smithy.api#documentation": "Start and stop apply only to managed (Azure-SSIS) integration runtimes; a self-hosted or Azure runtime answers HTTP 405 with an empty body.",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 405
+          }
+        ]
       }
     }
   }

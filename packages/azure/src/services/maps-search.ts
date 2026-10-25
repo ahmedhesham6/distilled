@@ -11,161 +11,21 @@ const __s: any[] = [];
 
 export type { AzureOpError, AzureOpContext };
 
-export type SearchGetGeocodeAutocompleteRequestCoordinatesList = Array<number>;
-export type SearchGetGeocodeAutocompleteRequestBboxList = Array<number>;
-export type SearchGetGeocodeAutocompleteRequestResultTypeGroupsItem = "Address" | "Place";
-export type SearchGetGeocodeAutocompleteRequestResultTypeGroupsList = Array<
-  SearchGetGeocodeAutocompleteRequestResultTypeGroupsItem | (string & {})
->;
-export type SearchGetGeocodeAutocompleteRequestResultTypesItem =
-  | "Address"
-  | "AdminDivision1"
-  | "AdminDivision2"
-  | "AdminDivision3"
-  | "AdministrativeBuilding"
-  | "Airport"
-  | "AirportTerminal"
-  | "AmusementPark"
-  | "AncientSite"
-  | "Aquarium"
-  | "Archipelago"
-  | "Basin"
-  | "Battlefield"
-  | "Bay"
-  | "Beach"
-  | "Bridge"
-  | "BusinessStructure"
-  | "Camp"
-  | "Canal"
-  | "Casino"
-  | "Castle"
-  | "Cave"
-  | "Cemetery"
-  | "Channel"
-  | "Church"
-  | "Cliff"
-  | "Coast"
-  | "CommunityCenter"
-  | "Continent"
-  | "CountryRegion"
-  | "Crater"
-  | "CulturalRegion"
-  | "Dam"
-  | "Delta"
-  | "Desert"
-  | "DrainageBasin"
-  | "Dune"
-  | "FacilityStructure"
-  | "FerryTerminal"
-  | "FinancialStructure"
-  | "FireStation"
-  | "Forest"
-  | "Fort"
-  | "Garden"
-  | "Geyser"
-  | "Glacier"
-  | "GolfCourse"
-  | "GreaterPopulatedPlace"
-  | "HigherEducationFacility"
-  | "HistoricalSite"
-  | "Hospital"
-  | "HotSpring"
-  | "Ice"
-  | "IndigenousPeoplesReserve"
-  | "IndustrialStructure"
-  | "Island"
-  | "Isthmus"
-  | "Lake"
-  | "LandArea"
-  | "Landform"
-  | "LandmarkBuilding"
-  | "Library"
-  | "Lighthouse"
-  | "Marina"
-  | "Market"
-  | "MedicalStructure"
-  | "MetroStation"
-  | "MilitaryBase"
-  | "Mission"
-  | "Monument"
-  | "Mosque"
-  | "Mountain"
-  | "MountainRange"
-  | "MultiModalStation"
-  | "Museum"
-  | "NauticalStructure"
-  | "Neighborhood"
-  | "Oasis"
-  | "ObservationPoint"
-  | "Ocean"
-  | "OfficeBuilding"
-  | "Other"
-  | "Park"
-  | "ParkingStructure"
-  | "Pass"
-  | "Peninsula"
-  | "Plain"
-  | "Planet"
-  | "Plateau"
-  | "Playground"
-  | "PlayingField"
-  | "Pole"
-  | "PoliticalUnit"
-  | "PopulatedPlace"
-  | "Port"
-  | "Postcode1"
-  | "Promontory"
-  | "RaceTrack"
-  | "RailwayStation"
-  | "Reef"
-  | "ReligiousStructure"
-  | "Reserve"
-  | "ResidentialStructure"
-  | "River"
-  | "RoadBlock"
-  | "Ruin"
-  | "ScientificResearchBase"
-  | "Sea"
-  | "SeaplaneLandingArea"
-  | "Shrine"
-  | "SkiArea"
-  | "Spring"
-  | "Stadium"
-  | "StatisticalDistrict"
-  | "Temple"
-  | "Theater"
-  | "TouristRailway"
-  | "TouristStructure"
-  | "Trailhead"
-  | "TransportationStructure"
-  | "Tunnel"
-  | "Valley"
-  | "Volcano"
-  | "Walkway"
-  | "Wall"
-  | "Waterfall"
-  | "WaterFeature"
-  | "Wetland"
-  | "Winery"
-  | "Zoo";
-export type SearchGetGeocodeAutocompleteRequestResultTypesList = Array<
-  SearchGetGeocodeAutocompleteRequestResultTypesItem | (string & {})
->;
 export interface SearchGetGeocodeAutocompleteRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
   endpoint?: string;
   /** Required. The user's query prefix. Example: "1 Micro" or "Muir Woods". */
   query: string;
   /** Required when `bbox` is not provided. A point on the earth specified as a longitude and latitude. When you specify this parameter, the user's location is taken into account and the results returned may be more relevant to the user. Example: &coordinates=lon,lat **Note:** `coordinates` becomes a secondary signal if `bbox` is provided. */
-  coordinates?: SearchGetGeocodeAutocompleteRequestCoordinatesList;
+  coordinates?: string;
   /** Required when `coordinates` is not provided. A rectangular area on the earth defined as a bounding box object. The sides of the rectangle are defined by longitude and latitude values. When you specify this parameter, the geographical area is taken into account when computing the results of a location query. Example: lon1,lat1,lon2,lat2. Minimum size approximately 0.00001 degrees (~1.1 meters) Maximum size: up to the full global extent (-180,-90 to 180,90) */
-  bbox?: SearchGetGeocodeAutocompleteRequestBboxList;
+  bbox?: string;
   /** Maximum number of responses that will be returned. Default: 5, minimum: 1 and maximum: 20. */
   top?: number;
   /** A comma separated list of returned entity type groups. The possible values are - Address - Place */
-  resultTypeGroups?: SearchGetGeocodeAutocompleteRequestResultTypeGroupsList;
+  resultTypeGroups?: string;
   /** A comma separated list of returned entity types. When type group is set to Address, the supported types are: - Address - RoadBlock All other types belong to the Place type group. These may include entities such as AdminDivision1, Neighborhood, PopulatedPlace, and more. Default value is all possible entity types. */
-  resultTypes?: SearchGetGeocodeAutocompleteRequestResultTypesList;
+  resultTypes?: string;
   /** A string that represents an [ISO 3166-1 Alpha-2 region/country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). This will alter Geopolitical disputed borders and labels to align with the specified user region. By default, the View parameter is set to "Auto" even if you haven't defined it in the request. Please refer to [Supported Views](https://aka.ms/AzureMapsLocalizationViews) for details and to see the available Views. */
   view?: string;
   /** Signal for the autocomplete result to an [ISO 3166-1 Alpha-2 region/country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) that is specified e.g. FR. Only results in the specified country/region will be returned. */
@@ -420,8 +280,6 @@ export interface AutocompleteResponse {
   /** Contains the URL to fetch the next page of results if the response is paginated. This is useful when the response is too large to be returned in a single call, allowing users to navigate through multiple pages of results. */
   nextLink?: string;
 }
-export type SearchGetGeocodingRequestBboxList = Array<number>;
-export type SearchGetGeocodingRequestCoordinatesList = Array<number>;
 export interface SearchGetGeocodingRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
   endpoint?: string;
@@ -434,11 +292,11 @@ export interface SearchGetGeocodingRequest {
   /** Signal for the geocoding result to an [ISO 3166-1 Alpha-2 region/country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) that is specified e.g. FR. This parameter should not be used when the `query` parameter is included in the request. */
   countryRegion?: string;
   /** A rectangular area on the earth defined as a bounding box object. The sides of the rectangle are defined by longitude and latitude values. When you specify this parameter, the geographical area is taken into account when computing the results of a location query. Example: lon1,lat1,lon2,lat2. Minimum size approximately 0.00001 degrees (~1.1 meters) Maximum size: up to the full global extent (-180,-90 to 180,90) */
-  bbox?: SearchGetGeocodingRequestBboxList;
+  bbox?: string;
   /** A string that represents an [ISO 3166-1 Alpha-2 region/country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). This will alter Geopolitical disputed borders and labels to align with the specified user region. By default, the View parameter is set to "Auto" even if you haven't defined it in the request. Please refer to [Supported Views](https://aka.ms/AzureMapsLocalizationViews) for details and to see the available Views. */
   view?: string;
   /** A point on the earth specified as a longitude and latitude. When you specify this parameter, the user's location is taken into account and the results returned may be more relevant to the user. Example: &coordinates=lon,lat */
-  coordinates?: SearchGetGeocodingRequestCoordinatesList;
+  coordinates?: string;
   /** The country subdivision portion of an address, such as WA. This parameter should not be used when the `query` parameter is included in the request. */
   adminDistrict?: string;
   /** The county for the structured address, such as King. This parameter should not be used when the `query` parameter is included in the request. */
@@ -620,7 +478,6 @@ export interface GeocodingBatchResponse {
   /** Contains the URL to fetch the next page of results if the response is paginated. This is useful when the response is too large to be returned in a single call, allowing users to navigate through multiple pages of results. */
   nextLink?: string;
 }
-export type SearchGetPolygonRequestCoordinatesList = Array<number>;
 export type SearchGetPolygonRequestResultType =
   | "countryRegion"
   | "adminDistrict"
@@ -636,7 +493,7 @@ export interface SearchGetPolygonRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
   endpoint?: string;
   /** A point on the earth specified as a longitude and latitude. Example: &coordinates=lon,lat */
-  coordinates: SearchGetPolygonRequestCoordinatesList;
+  coordinates: string;
   /** A string that represents an [ISO 3166-1 Alpha-2 region/country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). This will alter Geopolitical disputed borders and labels to align with the specified user region. By default, the View parameter is set to "Auto" even if you haven't defined it in the request. Please refer to [Supported Views](https://aka.ms/AzureMapsLocalizationViews) for details and to see the available Views. */
   view?: string;
   /** The geopolitical concept to return a boundary for. If not specified, the default is `countryRegion` result type. */
@@ -699,25 +556,13 @@ export interface Boundary {
   /** Display name and copyright attribution for the returned area. See `BoundaryProperties` for the per-property shape. */
   properties?: BoundaryProperties;
 }
-export type SearchGetReverseGeocodingRequestCoordinatesList = Array<number>;
-export type SearchGetReverseGeocodingRequestResultTypesItem =
-  | "Address"
-  | "Neighborhood"
-  | "PopulatedPlace"
-  | "Postcode1"
-  | "AdminDivision1"
-  | "AdminDivision2"
-  | "CountryRegion";
-export type SearchGetReverseGeocodingRequestResultTypesList = Array<
-  SearchGetReverseGeocodingRequestResultTypesItem | (string & {})
->;
 export interface SearchGetReverseGeocodingRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
   endpoint?: string;
   /** The coordinates of the location that you want to reverse geocode. Example: &coordinates=lon,lat */
-  coordinates: SearchGetReverseGeocodingRequestCoordinatesList;
+  coordinates: string;
   /** Specify entity types that you want in the response. Only the types you specify will be returned. If the point cannot be mapped to the entity types you specify, no location information is returned in the response. Default value is all possible entities. A comma separated list of entity types selected from the following options. - Address - Neighborhood - PopulatedPlace - Postcode1 - AdminDivision1 - AdminDivision2 - CountryRegion These entity types are ordered from the most specific entity to the least specific entity. When entities of more than one entity type are found, only the most specific entity is returned. For example, if you specify Address and AdminDistrict1 as entity types and entities were found for both types, only the Address entity information is returned in the response. */
-  resultTypes?: SearchGetReverseGeocodingRequestResultTypesList;
+  resultTypes?: string;
   /** A string that represents an [ISO 3166-1 Alpha-2 region/country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). This will alter Geopolitical disputed borders and labels to align with the specified user region. By default, the View parameter is set to "Auto" even if you haven't defined it in the request. Please refer to [Supported Views](https://aka.ms/AzureMapsLocalizationViews) for details and to see the available Views. */
   view?: string;
   /** Specifies which account is intended for usage in conjunction with the Azure AD security model. It represents a unique ID for the Azure Maps account and can be retrieved from the Azure Maps management plane Account API. For more information on using Microsoft Entra ID security in Azure Maps, see [Manage authentication in Azure Maps](/azure/azure-maps/how-to-manage-authentication). */
@@ -860,11 +705,11 @@ function __c0(j: number): any {
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           query: S.String.pipe(T.Query()),
-          coordinates: S.optional(__S(16, __c1, 0).pipe(T.Query())),
-          bbox: S.optional(__S(16, __c1, 0).pipe(T.Query())),
+          coordinates: S.optional(S.String.pipe(T.Query())),
+          bbox: S.optional(S.String.pipe(T.Query())),
           top: S.optional(S.Number.pipe(T.Query())),
-          resultTypeGroups: S.optional(__S(32, __c2, 0).pipe(T.Query())),
-          resultTypes: S.optional(__S(32, __c2, 0).pipe(T.Query())),
+          resultTypeGroups: S.optional(S.String.pipe(T.Query())),
+          resultTypes: S.optional(S.String.pipe(T.Query())),
           view: S.optional(S.String.pipe(T.Query())),
           countryRegion: S.optional(S.String.pipe(T.Query())),
           xMsClientId: S.optional(S.String.pipe(T.Header("x-ms-client-id"))),
@@ -887,7 +732,7 @@ function __c0(j: number): any {
         S.Struct({
           typeGroup: S.optional(S.String),
           type: S.optional(S.String),
-          address: S.optional(__S(38, __c2, 6)),
+          address: S.optional(__S(37, __c2, 5)),
           name: S.optional(S.String),
         }),
       ).annotate({ identifier: "AutocompleteProperties" });
@@ -895,7 +740,7 @@ function __c0(j: number): any {
       return S.suspend(() =>
         S.Struct({
           type: S.String,
-          geometry: S.optional(__S(33, __c2, 1)),
+          geometry: S.optional(__S(32, __c2, 0)),
           properties: __S(1, __c0, 1),
         }),
       ).annotate({ identifier: "AutocompleteFeature" });
@@ -920,8 +765,6 @@ function __c1(j: number): any {
 function __c2(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(S.String);
-    case 1:
       return S.suspend(() =>
         S.Struct({
           type: S.String,
@@ -929,23 +772,23 @@ function __c2(j: number): any {
           coordinates: __S(16, __c1, 0),
         }),
       ).annotate({ identifier: "GeoJsonPoint" });
-    case 2:
+    case 1:
       return S.suspend(() =>
         S.Struct({
           name: S.optional(S.String),
           shortName: S.optional(S.String),
         }),
       ).annotate({ identifier: "AddressAdminDistrictsItem" });
+    case 2:
+      return S.Array(__S(33, __c2, 1));
     case 3:
-      return S.Array(__S(34, __c2, 2));
-    case 4:
       return S.suspend(() =>
         S.Struct({
           ISO: S.optional(S.String),
           name: S.optional(S.String),
         }),
       ).annotate({ identifier: "AddressCountryRegion" });
-    case 5:
+    case 4:
       return S.suspend(() =>
         S.Struct({
           baseStreet: S.optional(S.String),
@@ -955,19 +798,19 @@ function __c2(j: number): any {
           displayName: S.optional(S.String),
         }),
       ).annotate({ identifier: "Intersection" });
-    case 6:
+    case 5:
       return S.suspend(() =>
         S.Struct({
           addressLine: S.optional(S.String),
           locality: S.optional(S.String),
           neighborhood: S.optional(S.String),
-          adminDistricts: S.optional(__S(35, __c2, 3)),
+          adminDistricts: S.optional(__S(34, __c2, 2)),
           postalCode: S.optional(S.String),
-          countryRegion: S.optional(__S(36, __c2, 4)),
+          countryRegion: S.optional(__S(35, __c2, 3)),
           formattedAddress: S.optional(S.String),
           streetName: S.optional(S.String),
           streetNumber: S.optional(S.String),
-          intersection: S.optional(__S(37, __c2, 5)),
+          intersection: S.optional(__S(36, __c2, 4)),
         }),
       ).annotate({ identifier: "Address" });
   }
@@ -982,9 +825,9 @@ function __c3(j: number): any {
           query: S.optional(S.String.pipe(T.Query())),
           addressLine: S.optional(S.String.pipe(T.Query())),
           countryRegion: S.optional(S.String.pipe(T.Query())),
-          bbox: S.optional(__S(16, __c1, 0).pipe(T.Query())),
+          bbox: S.optional(S.String.pipe(T.Query())),
           view: S.optional(S.String.pipe(T.Query())),
-          coordinates: S.optional(__S(16, __c1, 0).pipe(T.Query())),
+          coordinates: S.optional(S.String.pipe(T.Query())),
           adminDistrict: S.optional(S.String.pipe(T.Query())),
           adminDistrict2: S.optional(S.String.pipe(T.Query())),
           adminDistrict3: S.optional(S.String.pipe(T.Query())),
@@ -1010,37 +853,39 @@ function __c3(j: number): any {
 function __c4(j: number): any {
   switch (j) {
     case 0:
+      return S.Array(S.String);
+    case 1:
       return S.suspend(() =>
         S.Struct({
-          geometry: S.optional(__S(33, __c2, 1)),
+          geometry: S.optional(__S(32, __c2, 0)),
           calculationMethod: S.optional(S.String),
-          usageTypes: S.optional(__S(32, __c2, 0)),
+          usageTypes: S.optional(__S(64, __c4, 0)),
         }),
       ).annotate({ identifier: "GeocodePointsItem" });
-    case 1:
-      return S.Array(__S(64, __c4, 0));
     case 2:
-      return S.suspend(() =>
-        S.Struct({
-          type: S.optional(S.String),
-          confidence: S.optional(S.String),
-          matchCodes: S.optional(__S(32, __c2, 0)),
-          address: S.optional(__S(38, __c2, 6)),
-          geocodePoints: S.optional(__S(65, __c4, 1)),
-        }),
-      ).annotate({ identifier: "FeaturesItemProperties" });
+      return S.Array(__S(65, __c4, 1));
     case 3:
       return S.suspend(() =>
         S.Struct({
           type: S.optional(S.String),
+          confidence: S.optional(S.String),
+          matchCodes: S.optional(__S(64, __c4, 0)),
+          address: S.optional(__S(37, __c2, 5)),
+          geocodePoints: S.optional(__S(66, __c4, 2)),
+        }),
+      ).annotate({ identifier: "FeaturesItemProperties" });
+    case 4:
+      return S.suspend(() =>
+        S.Struct({
+          type: S.optional(S.String),
           id: S.optional(S.String),
-          properties: S.optional(__S(66, __c4, 2)),
-          geometry: __S(33, __c2, 1),
+          properties: S.optional(__S(67, __c4, 3)),
+          geometry: __S(32, __c2, 0),
           bbox: S.optional(__S(16, __c1, 0)),
         }),
       ).annotate({ identifier: "FeaturesItem" });
-    case 4:
-      return S.Array(__S(67, __c4, 3));
+    case 5:
+      return S.Array(__S(68, __c4, 4));
   }
 }
 function __c5(j: number): any {
@@ -1049,7 +894,7 @@ function __c5(j: number): any {
       return S.suspend(() =>
         S.Struct({
           type: S.optional(S.String),
-          features: S.optional(__S(68, __c4, 4)),
+          features: S.optional(__S(69, __c4, 5)),
           nextLink: S.optional(S.String),
         }),
       ).annotate({ identifier: "GeocodingResponse" });
@@ -1136,7 +981,7 @@ function __c7(j: number): any {
         S.Struct({
           optionalId: S.optional(S.String),
           type: S.optional(S.String),
-          features: S.optional(__S(68, __c4, 4)),
+          features: S.optional(__S(69, __c4, 5)),
           nextLink: S.optional(S.String),
           error: S.optional(__S(117, __c7, 5)),
         }),
@@ -1159,7 +1004,7 @@ function __c8(j: number): any {
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
-          coordinates: __S(16, __c1, 0).pipe(T.Query()),
+          coordinates: S.String.pipe(T.Query()),
           view: S.optional(S.String.pipe(T.Query())),
           resultType: S.optional(S.String.pipe(T.Query())),
           resolution: S.optional(S.String.pipe(T.Query())),
@@ -1229,8 +1074,8 @@ function __c9(j: number): any {
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
-          coordinates: __S(16, __c1, 0).pipe(T.Query()),
-          resultTypes: S.optional(__S(32, __c2, 0).pipe(T.Query())),
+          coordinates: S.String.pipe(T.Query()),
+          resultTypes: S.optional(S.String.pipe(T.Query())),
           view: S.optional(S.String.pipe(T.Query())),
           xMsClientId: S.optional(S.String.pipe(T.Header("x-ms-client-id"))),
           acceptLanguage: S.optional(S.String.pipe(T.Header("Accept-Language"))),
@@ -1256,7 +1101,7 @@ function __c10(j: number): any {
         S.Struct({
           optionalId: S.optional(S.String),
           coordinates: S.optional(__S(16, __c1, 0)),
-          resultTypes: S.optional(__S(32, __c2, 0)),
+          resultTypes: S.optional(__S(64, __c4, 0)),
           view: S.optional(S.String),
         }),
       ).annotate({ identifier: "ReverseGeocodingBatchRequestItem" });

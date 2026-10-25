@@ -394,7 +394,7 @@
           }
         },
         "bbox": {
-          "target": "com.azure.maps_traffic#GetTrafficTrafficIncidentRequestBboxList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "bbox",
             "smithy.api#required": {},

@@ -2565,10 +2565,10 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#ListIndexWithSelectedPropertiesRequestSelectList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "$select",
-            "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties."
+            "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. Comma-separated."
           }
         },
         "search": {
@@ -3091,10 +3091,10 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#ListSynonymMapsRequestSelectList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "$select",
-            "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties."
+            "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. Comma-separated."
           }
         },
         "search": {
@@ -4114,10 +4114,10 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#ListSkillsetsRequestSelectList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "$select",
-            "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties."
+            "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. Comma-separated."
           }
         },
         "search": {
@@ -7672,10 +7672,10 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#GetDocumentRequestSelectList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "$select",
-            "smithy.api#documentation": "List of field names to retrieve for the document; Any field not retrieved will be missing from the returned document."
+            "smithy.api#documentation": "List of field names to retrieve for the document; Any field not retrieved will be missing from the returned document. Comma-separated."
           }
         },
         "xMsClientRequestId": {
@@ -7852,24 +7852,24 @@
           }
         },
         "_orderby": {
-          "target": "com.azure.search_data#GetDocumentsSuggestRequestOrderbyList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "$orderby",
-            "smithy.api#documentation": "The list of OData $orderby expressions by which to sort the results. Each expression can be either a field name or a call to either the geo.distance() or the search.score() functions. Each expression can be followed by asc to indicate ascending, or desc to indicate descending. The default is ascending order. Ties will be broken by the match scores of documents. If no $orderby is specified, the default sort order is descending by document match score. There can be at most 32 $orderby clauses."
+            "smithy.api#documentation": "The list of OData $orderby expressions by which to sort the results. Each expression can be either a field name or a call to either the geo.distance() or the search.score() functions. Each expression can be followed by asc to indicate ascending, or desc to indicate descending. The default is ascending order. Ties will be broken by the match scores of documents. If no $orderby is specified, the default sort order is descending by document match score. There can be at most 32 $orderby clauses. Comma-separated."
           }
         },
         "searchFields": {
-          "target": "com.azure.search_data#GetDocumentsSuggestRequestSearchFieldsList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "searchFields",
-            "smithy.api#documentation": "The list of field names to search for the specified search text. Target fields must be included in the specified suggester."
+            "smithy.api#documentation": "The list of field names to search for the specified search text. Target fields must be included in the specified suggester. Comma-separated."
           }
         },
         "_select": {
-          "target": "com.azure.search_data#GetDocumentsSuggestRequestSelectList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "$select",
-            "smithy.api#documentation": "The list of fields to retrieve. If unspecified, only the key field will be included in the results."
+            "smithy.api#documentation": "The list of fields to retrieve. If unspecified, only the key field will be included in the results. Comma-separated."
           }
         },
         "_top": {
@@ -9652,10 +9652,10 @@
           }
         },
         "searchFields": {
-          "target": "com.azure.search_data#GetDocumentsAutocompleteRequestSearchFieldsList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "searchFields",
-            "smithy.api#documentation": "The list of field names to consider when querying for auto-completed terms. Target fields must be included in the specified suggester."
+            "smithy.api#documentation": "The list of field names to consider when querying for auto-completed terms. Target fields must be included in the specified suggester. Comma-separated."
           }
         },
         "_top": {
@@ -9846,10 +9846,10 @@
           }
         },
         "highlight": {
-          "target": "com.azure.search_data#DocumentsSearchGetRequestHighlightList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "highlight",
-            "smithy.api#documentation": "The list of field names to use for hit highlights. Only searchable fields can be used for hit highlighting."
+            "smithy.api#documentation": "The list of field names to use for hit highlights. Only searchable fields can be used for hit highlighting. Comma-separated."
           }
         },
         "highlightPostTag": {
@@ -9881,10 +9881,10 @@
           }
         },
         "_orderby": {
-          "target": "com.azure.search_data#DocumentsSearchGetRequestOrderbyList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "$orderby",
-            "smithy.api#documentation": "The list of OData $orderby expressions by which to sort the results. Each expression can be either a field name or a call to either the geo.distance() or the search.score() functions. Each expression can be followed by asc to indicate ascending, and desc to indicate descending. The default is ascending order. Ties will be broken by the match scores of documents. If no OrderBy is specified, the default sort order is descending by document match score. There can be at most 32 $orderby clauses."
+            "smithy.api#documentation": "The list of OData $orderby expressions by which to sort the results. Each expression can be either a field name or a call to either the geo.distance() or the search.score() functions. Each expression can be followed by asc to indicate ascending, and desc to indicate descending. The default is ascending order. Ties will be broken by the match scores of documents. If no OrderBy is specified, the default sort order is descending by document match score. There can be at most 32 $orderby clauses. Comma-separated."
           }
         },
         "queryType": {
@@ -9909,10 +9909,10 @@
           }
         },
         "searchFields": {
-          "target": "com.azure.search_data#DocumentsSearchGetRequestSearchFieldsList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "searchFields",
-            "smithy.api#documentation": "The list of field names to which to scope the full-text search. When using fielded search (fieldName:searchExpression) in a full Lucene query, the field names of each fielded search expression take precedence over any field names listed in this parameter."
+            "smithy.api#documentation": "The list of field names to which to scope the full-text search. When using fielded search (fieldName:searchExpression) in a full Lucene query, the field names of each fielded search expression take precedence over any field names listed in this parameter. Comma-separated."
           }
         },
         "searchMode": {
@@ -9937,10 +9937,10 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#DocumentsSearchGetRequestSelectList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "$select",
-            "smithy.api#documentation": "The list of fields to retrieve. If unspecified, all fields marked as retrievable in the schema are included."
+            "smithy.api#documentation": "The list of fields to retrieve. If unspecified, all fields marked as retrievable in the schema are included. Comma-separated."
           }
         },
         "_skip": {
@@ -12838,10 +12838,10 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#ListIndexersRequestSelectList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "$select",
-            "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties."
+            "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. Comma-separated."
           }
         },
         "search": {
@@ -13622,10 +13622,10 @@
           }
         },
         "_select": {
-          "target": "com.azure.search_data#ListDataSourcesRequestSelectList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "$select",
-            "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties."
+            "smithy.api#documentation": "Selects which top-level properties to retrieve. Specified as a comma-separated list of JSON property names, or '*' for all properties. The default is all properties. Comma-separated."
           }
         },
         "search": {

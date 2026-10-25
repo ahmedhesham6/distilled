@@ -38,7 +38,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Remove a user from the target group.\n\nRemove a user from the target group."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#RemoveUserFromGroupRequest": {
       "type": "structure",
@@ -100,7 +105,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Add a user to the target group.\n\nAdd a user to the target group."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#AddUserToGroupRequest": {
       "type": "structure",
@@ -162,7 +172,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Remove a user from all groups.\n\nRemove a user from all groups."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#RemoveUserFromAllGroupsRequest": {
       "type": "structure",
@@ -213,10 +228,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2024-12-01"
+          "apiVersion": "2024-12-01",
+          "bodyMediaType": "text/plain"
         },
         "smithy.api#documentation": "Send content inside request body to the specific user.\n\nSend content inside request body to the specific user."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#SendToUserRequest": {
       "type": "structure",
@@ -263,7 +284,15 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpPayload": {},
-            "smithy.api#required": {}
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The message payload, sent as-is under `contentType`."
+          }
+        },
+        "contentType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Content-Type",
+            "smithy.api#documentation": "Media type of `body`: `text/plain` (the default, clients receive `dataType: \"text\"`), `application/json` (`dataType: \"json\"`), or `application/octet-stream` (`dataType: \"binary\"`)."
           }
         }
       },
@@ -291,7 +320,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Close connections for the specific user.\n\nClose connections for the specific user."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#CloseUserConnectionsRequest": {
       "type": "structure",
@@ -366,7 +400,15 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Check if there are any client connections connected for the given user.\n\nCheck if there are any client connections connected for the given user."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        },
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubUserNotFound"
+        }
+      ]
     },
     "com.azure.webpubsub_data#UserExistsRequest": {
       "type": "structure",
@@ -420,7 +462,15 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Check if a connection has permission to the specified action.\n\nCheck if a connection has permission to the specified action."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        },
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubPermissionNotGranted"
+        }
+      ]
     },
     "com.azure.webpubsub_data#CheckPermissionRequest": {
       "type": "structure",
@@ -507,7 +557,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Revoke permission for the connection.\n\nRevoke permission for the connection."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#RevokePermissionRequest": {
       "type": "structure",
@@ -594,7 +649,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Grant permission to the connection.\n\nGrant permission to the connection."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#GrantPermissionRequest": {
       "type": "structure",
@@ -681,7 +741,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Remove a connection from the target group.\n\nRemove a connection from the target group."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#RemoveConnectionFromGroupRequest": {
       "type": "structure",
@@ -743,7 +808,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Add a connection to the target group.\n\nAdd a connection to the target group."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#AddConnectionToGroupRequest": {
       "type": "structure",
@@ -812,7 +882,12 @@
           "outputToken": "nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#GroupMemberPagedValues": {
       "type": "structure",
@@ -941,10 +1016,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2024-12-01"
+          "apiVersion": "2024-12-01",
+          "bodyMediaType": "text/plain"
         },
         "smithy.api#documentation": "Send content inside request body to a group of connections.\n\nSend content inside request body to a group of connections."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#SendToGroupRequest": {
       "type": "structure",
@@ -998,7 +1079,15 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpPayload": {},
-            "smithy.api#required": {}
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The message payload, sent as-is under `contentType`."
+          }
+        },
+        "contentType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Content-Type",
+            "smithy.api#documentation": "Media type of `body`: `text/plain` (the default, clients receive `dataType: \"text\"`), `application/json` (`dataType: \"json\"`), or `application/octet-stream` (`dataType: \"binary\"`)."
           }
         }
       },
@@ -1033,7 +1122,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Close connections in the specific group.\n\nClose connections in the specific group."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#CloseGroupConnectionsRequest": {
       "type": "structure",
@@ -1108,7 +1202,15 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Check if there are any client connections inside the given group\n\nCheck if there are any client connections inside the given group"
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        },
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubGroupNotFound"
+        }
+      ]
     },
     "com.azure.webpubsub_data#GroupExistsRequest": {
       "type": "structure",
@@ -1162,7 +1264,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Remove a connection from all groups.\n\nRemove a connection from all groups."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#RemoveConnectionFromAllGroupsRequest": {
       "type": "structure",
@@ -1213,10 +1320,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2024-12-01"
+          "apiVersion": "2024-12-01",
+          "bodyMediaType": "text/plain"
         },
         "smithy.api#documentation": "Send content inside request body to the specific connection.\n\nSend content inside request body to the specific connection."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#SendToConnectionRequest": {
       "type": "structure",
@@ -1256,7 +1369,15 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpPayload": {},
-            "smithy.api#required": {}
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The message payload, sent as-is under `contentType`."
+          }
+        },
+        "contentType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Content-Type",
+            "smithy.api#documentation": "Media type of `body`: `text/plain` (the default, clients receive `dataType: \"text\"`), `application/json` (`dataType: \"json\"`), or `application/octet-stream` (`dataType: \"binary\"`)."
           }
         }
       },
@@ -1284,7 +1405,15 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Check if the connection with the given connectionId exists.\n\nCheck if the connection with the given connectionId exists."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        },
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubConnectionNotFound"
+        }
+      ]
     },
     "com.azure.webpubsub_data#ConnectionExistsRequest": {
       "type": "structure",
@@ -1338,7 +1467,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Close the client connection.\n\nClose the client connection."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#CloseConnectionRequest": {
       "type": "structure",
@@ -1396,10 +1530,16 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2024-12-01"
+          "apiVersion": "2024-12-01",
+          "bodyMediaType": "text/plain"
         },
         "smithy.api#documentation": "Broadcast content inside request body to all the connected client connections.\n\nBroadcast content inside request body to all the connected client connections."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#SendToAllRequest": {
       "type": "structure",
@@ -1445,7 +1585,15 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpPayload": {},
-            "smithy.api#required": {}
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The message payload, sent as-is under `contentType`."
+          }
+        },
+        "contentType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Content-Type",
+            "smithy.api#documentation": "Media type of `body`: `text/plain` (the default, clients receive `dataType: \"text\"`), `application/json` (`dataType: \"json\"`), or `application/octet-stream` (`dataType: \"binary\"`)."
           }
         }
       },
@@ -1480,7 +1628,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Remove filtered connections from multiple groups.\n\nRemove filtered connections from multiple groups."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#RemoveConnectionsFromGroupsRequest": {
       "type": "structure",
@@ -1548,7 +1701,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Generate token for the client to connect Azure Web PubSub service.\n\nGenerate token for the client to connect Azure Web PubSub service."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#ClientTokenResponse": {
       "type": "structure",
@@ -1676,7 +1834,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Close the connections in the hub.\n\nClose the connections in the hub."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#CloseAllConnectionsRequest": {
       "type": "structure",
@@ -1743,7 +1906,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Add filtered connections to multiple groups.\n\nAdd filtered connections to multiple groups."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#AddConnectionsToGroupsRequest": {
       "type": "structure",
@@ -1811,7 +1979,12 @@
           "apiVersion": "2024-12-01"
         },
         "smithy.api#documentation": "Get service health status.\n\nGet service health status."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.webpubsub_data#WebPubSubAccessDenied"
+        }
+      ]
     },
     "com.azure.webpubsub_data#GetServiceStatusRequest": {
       "type": "structure",
@@ -1922,6 +2095,114 @@
           ]
         },
         "com.azure.protocols#audience": "https://webpubsub.azure.com/.default"
+      }
+    },
+    "com.azure.webpubsub_data#WebPubSubAccessDenied": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message (often empty)."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 403,
+        "smithy.api#documentation": "The caller's Entra principal has no Web PubSub data-plane role that allows the action on this service (HTTP 401 or 403, usually with an empty body). A new role assignment can take a few minutes to apply.",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 401
+          },
+          {
+            "status": 403
+          }
+        ]
+      }
+    },
+    "com.azure.webpubsub_data#WebPubSubConnectionNotFound": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message (often empty)."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The connection does not exist in the hub (HTTP 404 with an empty body).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404
+          }
+        ]
+      }
+    },
+    "com.azure.webpubsub_data#WebPubSubGroupNotFound": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message (often empty)."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The group has no connections in the hub (HTTP 404 with an empty body).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404
+          }
+        ]
+      }
+    },
+    "com.azure.webpubsub_data#WebPubSubUserNotFound": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message (often empty)."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The user has no connections in the hub (HTTP 404 with an empty body).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404
+          }
+        ]
+      }
+    },
+    "com.azure.webpubsub_data#WebPubSubPermissionNotGranted": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message (often empty)."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The connection does not hold the permission (HTTP 404 with an empty body).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404
+          }
+        ]
       }
     }
   }

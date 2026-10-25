@@ -60,6 +60,20 @@ export class MessagingUnauthorized
     [{ status: 401 }],
   ) {}
 
+/** The namespace is on the Basic tier, which has no publisher endpoints; use Standard or higher (HTTP 400 `is not allowed because the namespace is of Basic tier`). */
+export class PublisherRequiresStandardTier
+  extends /*@__PURE__*/ T.applyErrorMatchers(
+    /*@__PURE__*/ S.TaggedError<PublisherRequiresStandardTier>()("PublisherRequiresStandardTier", {
+      message: S.String,
+    }).pipe(C.withBadRequestError),
+    [
+      {
+        status: 400,
+        message: { includes: "is not allowed because the namespace is of Basic tier" },
+      },
+    ],
+  ) {}
+
 /** A namespace quota (throughput units, publisher or entity limits) is exceeded (HTTP 403). */
 export class QuotaExceeded
   extends /*@__PURE__*/ T.applyErrorMatchers(
@@ -175,8 +189,8 @@ export const SendEvent: API.OperationMethod<
   SendEventError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(0, __c0, 0) as any as S.Schema<SendEventRequest>,
-  output: __S(5, __c1, 1) as any as S.Schema<SendEventResponse>,
+  input: __S(4, __c1, 0) as any as S.Schema<SendEventRequest>,
+  output: __S(9, __c2, 1) as any as S.Schema<SendEventResponse>,
   errors: [
     MessagingEntityNotFound,
     InvalidPartition,
@@ -204,8 +218,8 @@ export const SendEventBatch: API.OperationMethod<
   SendEventBatchError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(15, __c3, 3) as any as S.Schema<SendEventBatchRequest>,
-  output: __S(5, __c1, 1) as any as S.Schema<SendEventBatchResponse>,
+  input: __S(19, __c4, 3) as any as S.Schema<SendEventBatchRequest>,
+  output: __S(9, __c2, 1) as any as S.Schema<SendEventBatchResponse>,
   errors: [
     BatchPartitionKeyMismatch,
     MessagingEntityNotFound,
@@ -233,8 +247,8 @@ export const SendPartitionEvent: API.OperationMethod<
   SendPartitionEventError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(16, __c4, 0) as any as S.Schema<SendPartitionEventRequest>,
-  output: __S(5, __c1, 1) as any as S.Schema<SendPartitionEventResponse>,
+  input: __S(20, __c5, 0) as any as S.Schema<SendPartitionEventRequest>,
+  output: __S(9, __c2, 1) as any as S.Schema<SendPartitionEventResponse>,
   errors: [
     MessagingEntityNotFound,
     InvalidPartition,
@@ -253,6 +267,7 @@ export type SendPublisherEventError =
   | QuotaExceeded
   | MessageTooLarge
   | MessagingUnauthorized
+  | PublisherRequiresStandardTier
   | AzureOpError;
 /** Send one event under a publisher identity (`POST /{eventHubName}/publishers/{publisherId}/messages`). */
 export const SendPublisherEvent: API.OperationMethod<
@@ -261,14 +276,15 @@ export const SendPublisherEvent: API.OperationMethod<
   SendPublisherEventError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(20, __c5, 0) as any as S.Schema<SendPublisherEventRequest>,
-  output: __S(5, __c1, 1) as any as S.Schema<SendPublisherEventResponse>,
+  input: __S(0, __c0, 0) as any as S.Schema<SendPublisherEventRequest>,
+  output: __S(9, __c2, 1) as any as S.Schema<SendPublisherEventResponse>,
   errors: [
     MessagingEntityNotFound,
     InvalidPartition,
     QuotaExceeded,
     MessageTooLarge,
     MessagingUnauthorized,
+    PublisherRequiresStandardTier,
     UnknownAzureError,
   ],
   protocol: AzureProtocol,
@@ -283,10 +299,39 @@ function __c0(j: number): any {
         S.Struct({
           namespaceName: S.String.pipe(T.HostLabel()),
           eventHubName: S.String.pipe(T.Label()),
+          publisherId: S.String.pipe(T.Label()),
           body: S.Unknown.pipe(T.HttpBody()),
           contentType: S.optional(S.String.pipe(T.Header("Content-Type"))),
-          brokerProperties: S.optional(__S(4, __c1, 0).pipe(T.JsonHeader("BrokerProperties"))),
-          userProperties: S.optional(__S(8, __c2, 0).pipe(T.HeaderPrefix(""))),
+          brokerProperties: S.optional(__S(8, __c2, 0).pipe(T.JsonHeader("BrokerProperties"))),
+          userProperties: S.optional(__S(12, __c3, 0).pipe(T.HeaderPrefix(""))),
+          timeout: S.optional(S.Number.pipe(T.Query())),
+          retryPolicy: S.optional(S.String.pipe(T.Header("x-ms-retrypolicy"))),
+        }).pipe(
+          T.Http({
+            method: "POST",
+            uri: "/{eventHubName}/publishers/{publisherId}/messages",
+            code: 201,
+            host: "https://{namespaceName}.servicebus.windows.net",
+            apiVersion: "2014-01",
+            accept: "*/*",
+            bodyMediaType: "application/atom+xml;type=entry;charset=utf-8",
+            audience: "https://eventhubs.azure.net/.default",
+          }),
+        ),
+      ).annotate({ identifier: "SendPublisherEventRequest" });
+  }
+}
+function __c1(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          namespaceName: S.String.pipe(T.HostLabel()),
+          eventHubName: S.String.pipe(T.Label()),
+          body: S.Unknown.pipe(T.HttpBody()),
+          contentType: S.optional(S.String.pipe(T.Header("Content-Type"))),
+          brokerProperties: S.optional(__S(8, __c2, 0).pipe(T.JsonHeader("BrokerProperties"))),
+          userProperties: S.optional(__S(12, __c3, 0).pipe(T.HeaderPrefix(""))),
           timeout: S.optional(S.Number.pipe(T.Query())),
           retryPolicy: S.optional(S.String.pipe(T.Header("x-ms-retrypolicy"))),
         }).pipe(
@@ -304,7 +349,7 @@ function __c0(j: number): any {
       ).annotate({ identifier: "SendEventRequest" });
   }
 }
-function __c1(j: number): any {
+function __c2(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -316,13 +361,13 @@ function __c1(j: number): any {
       return S.suspend(() => S.Struct({})).annotate({ identifier: "SendEventResponse" });
   }
 }
-function __c2(j: number): any {
+function __c3(j: number): any {
   switch (j) {
     case 0:
       return S.Record(S.String, S.String);
   }
 }
-function __c3(j: number): any {
+function __c4(j: number): any {
   switch (j) {
     case 0:
       return S.Record(S.String, S.Unknown);
@@ -330,18 +375,18 @@ function __c3(j: number): any {
       return S.suspend(() =>
         S.Struct({
           body: S.String.pipe(T.Body("Body")),
-          userProperties: S.optional(__S(12, __c3, 0).pipe(T.Body("UserProperties"))),
-          brokerProperties: S.optional(__S(4, __c1, 0).pipe(T.Body("BrokerProperties"))),
+          userProperties: S.optional(__S(16, __c4, 0).pipe(T.Body("UserProperties"))),
+          brokerProperties: S.optional(__S(8, __c2, 0).pipe(T.Body("BrokerProperties"))),
         }),
       ).annotate({ identifier: "BatchEvent" });
     case 2:
-      return S.Array(__S(13, __c3, 1));
+      return S.Array(__S(17, __c4, 1));
     case 3:
       return S.suspend(() =>
         S.Struct({
           namespaceName: S.String.pipe(T.HostLabel()),
           eventHubName: S.String.pipe(T.Label()),
-          events: __S(14, __c3, 2).pipe(T.HttpBody()),
+          events: __S(18, __c4, 2).pipe(T.HttpBody()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           retryPolicy: S.optional(S.String.pipe(T.Header("x-ms-retrypolicy"))),
         }).pipe(
@@ -359,7 +404,7 @@ function __c3(j: number): any {
       ).annotate({ identifier: "SendEventBatchRequest" });
   }
 }
-function __c4(j: number): any {
+function __c5(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -369,8 +414,8 @@ function __c4(j: number): any {
           partitionId: S.String.pipe(T.Label()),
           body: S.Unknown.pipe(T.HttpBody()),
           contentType: S.optional(S.String.pipe(T.Header("Content-Type"))),
-          brokerProperties: S.optional(__S(4, __c1, 0).pipe(T.JsonHeader("BrokerProperties"))),
-          userProperties: S.optional(__S(8, __c2, 0).pipe(T.HeaderPrefix(""))),
+          brokerProperties: S.optional(__S(8, __c2, 0).pipe(T.JsonHeader("BrokerProperties"))),
+          userProperties: S.optional(__S(12, __c3, 0).pipe(T.HeaderPrefix(""))),
           timeout: S.optional(S.Number.pipe(T.Query())),
           retryPolicy: S.optional(S.String.pipe(T.Header("x-ms-retrypolicy"))),
         }).pipe(
@@ -386,35 +431,6 @@ function __c4(j: number): any {
           }),
         ),
       ).annotate({ identifier: "SendPartitionEventRequest" });
-  }
-}
-function __c5(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.Struct({
-          namespaceName: S.String.pipe(T.HostLabel()),
-          eventHubName: S.String.pipe(T.Label()),
-          publisherId: S.String.pipe(T.Label()),
-          body: S.Unknown.pipe(T.HttpBody()),
-          contentType: S.optional(S.String.pipe(T.Header("Content-Type"))),
-          brokerProperties: S.optional(__S(4, __c1, 0).pipe(T.JsonHeader("BrokerProperties"))),
-          userProperties: S.optional(__S(8, __c2, 0).pipe(T.HeaderPrefix(""))),
-          timeout: S.optional(S.Number.pipe(T.Query())),
-          retryPolicy: S.optional(S.String.pipe(T.Header("x-ms-retrypolicy"))),
-        }).pipe(
-          T.Http({
-            method: "POST",
-            uri: "/{eventHubName}/publishers/{publisherId}/messages",
-            code: 201,
-            host: "https://{namespaceName}.servicebus.windows.net",
-            apiVersion: "2014-01",
-            accept: "*/*",
-            bodyMediaType: "application/atom+xml;type=entry;charset=utf-8",
-            audience: "https://eventhubs.azure.net/.default",
-          }),
-        ),
-      ).annotate({ identifier: "SendPublisherEventRequest" });
   }
 }
 // Schema table: entry i is schema j of builder f, made on first reach.

@@ -217,6 +217,18 @@ export class InvalidPropertyValue
     AzureErrorFields,
   ).pipe(Category.withBadRequestError) {}
 
+/**
+ * Returned when an operation is not available on the resource's edition or
+ * tier, e.g. pausing or creating a restore point of an Azure SQL database
+ * that is not a dedicated SQL pool (DW).
+ * Azure error code: `FeatureDisabledOnSelectedEdition`
+ */
+export class FeatureDisabledOnSelectedEdition
+  extends /*@__PURE__*/ Schema.TaggedError<FeatureDisabledOnSelectedEdition>()(
+    "FeatureDisabledOnSelectedEdition",
+    AzureErrorFields,
+  ).pipe(Category.withBadRequestError) {}
+
 // ---------------------------------------------------------------------------
 // Conflict errors
 // ---------------------------------------------------------------------------
@@ -1664,6 +1676,34 @@ export class StorageAuthorizationFailure
     AzureAuthErrorFields,
   ).pipe(Category.withAuthError) {}
 
+/** Storage: Abort Copy Blob found no pending copy to abort. Code `NoPendingCopyOperation`. */
+export class StorageNoPendingCopyOperation
+  extends /*@__PURE__*/ Schema.TaggedError<StorageNoPendingCopyOperation>()(
+    "StorageNoPendingCopyOperation",
+    AzureErrorFields,
+  ).pipe(Category.withConflictError) {}
+
+/**
+ * Storage: the operation (e.g. Set Blob Expiry) needs an account with a
+ * hierarchical namespace. Code `HierarchicalNamespaceNotEnabled`.
+ */
+export class StorageHierarchicalNamespaceNotEnabled
+  extends /*@__PURE__*/ Schema.TaggedError<StorageHierarchicalNamespaceNotEnabled>()(
+    "StorageHierarchicalNamespaceNotEnabled",
+    AzureErrorFields,
+  ).pipe(Category.withBadRequestError) {}
+
+/**
+ * Storage: a blob legal hold or immutability policy operation on a
+ * container without version-level immutability. Code
+ * `ImmutableStorageWithVersioningIsNotEnabled`.
+ */
+export class StorageImmutabilityNotEnabled
+  extends /*@__PURE__*/ Schema.TaggedError<StorageImmutabilityNotEnabled>()(
+    "StorageImmutabilityNotEnabled",
+    AzureErrorFields,
+  ).pipe(Category.withBadRequestError) {}
+
 /**
  * Microsoft.Storage: a Blob Access Point, data share, or storage connector
  * is written to an account whose data collaboration policy does not allow
@@ -1703,6 +1743,353 @@ export class FluidRelayTenantCreationDisabled
     AzureErrorFields,
   ).pipe(Category.withBadRequestError) {}
 
+/**
+ * Container Apps: an app or job refers to an image in a registry its
+ * managed identity cannot pull from yet ("unable to pull image using
+ * Managed identity ..."), typically while a new AcrPull role assignment
+ * propagates (matched by message). Transient: retry for a few minutes.
+ */
+export class ContainerAppsImagePullDenied
+  extends /*@__PURE__*/ Schema.TaggedError<ContainerAppsImagePullDenied>()(
+    "ContainerAppsImagePullDenied",
+    AzureErrorFields,
+  ).pipe(Category.withBadRequestError) {}
+
+/**
+ * Returned by the Key Vault secrets data plane when the secret, the secret
+ * version, or the deleted secret does not exist.
+ * Azure error code: `SecretNotFound`
+ */
+export class SecretNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<SecretNotFound>()(
+    "SecretNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Returned by the Key Vault certificates data plane when the certificate
+ * (or deleted certificate) does not exist.
+ * Azure error code: `CertificateNotFound`
+ */
+export class CertificateNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<CertificateNotFound>()(
+    "CertificateNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Returned by the Key Vault certificates data plane when a certificate has
+ * no pending create operation (it finished and was deleted, or never ran).
+ * Azure error code: `PendingCertificateNotFound`
+ */
+export class PendingCertificateNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<PendingCertificateNotFound>()(
+    "PendingCertificateNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Returned by the Key Vault certificates data plane when the certificate
+ * issuer does not exist.
+ * Azure error code: `CertificateIssuerNotFound`
+ */
+export class CertificateIssuerNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<CertificateIssuerNotFound>()(
+    "CertificateIssuerNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Returned by the Key Vault certificates data plane when the vault has no
+ * certificate contacts set.
+ * Azure error code: `ContactsNotFound`
+ */
+export class CertificateContactsNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<CertificateContactsNotFound>()(
+    "CertificateContactsNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+// ---------------------------------------------------------------------------
+// Container Registry data plane (Docker distribution error codes)
+// ---------------------------------------------------------------------------
+
+/**
+ * Container Registry: the token server refused to exchange an Entra token
+ * for a registry token (`/oauth2/exchange`, `/oauth2/token`).
+ */
+export class ContainerRegistryTokenExchangeFailed
+  extends /*@__PURE__*/ Schema.TaggedError<ContainerRegistryTokenExchangeFailed>()(
+    "ContainerRegistryTokenExchangeFailed",
+    {
+      message: /*@__PURE__*/ Schema.optional(Schema.String),
+      code: /*@__PURE__*/ Schema.optional(Schema.String),
+      status: /*@__PURE__*/ Schema.optional(Schema.Number),
+    },
+  ).pipe(Category.withAuthError) {}
+
+/**
+ * Container Registry: the registry token does not grant the operation (the
+ * identity has no role on the registry yet, or the role is still
+ * propagating). Code `UNAUTHORIZED`.
+ */
+export class ContainerRegistryUnauthorized
+  extends /*@__PURE__*/ Schema.TaggedError<ContainerRegistryUnauthorized>()(
+    "ContainerRegistryUnauthorized",
+    AzureErrorFields,
+  ).pipe(Category.withAuthError) {}
+
+/** Container Registry: the operation is denied (e.g. a locked artifact). Code `DENIED`. */
+export class ContainerRegistryDenied
+  extends /*@__PURE__*/ Schema.TaggedError<ContainerRegistryDenied>()(
+    "ContainerRegistryDenied",
+    AzureErrorFields,
+  ).pipe(Category.withAuthError) {}
+
+/** Container Registry: the repository does not exist. Code `NAME_UNKNOWN`. */
+export class ContainerRegistryRepositoryNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<ContainerRegistryRepositoryNotFound>()(
+    "ContainerRegistryRepositoryNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Container Registry: the manifest (or the tag it is addressed by) does not
+ * exist. Codes `MANIFEST_UNKNOWN`, `TAG_UNKNOWN`.
+ */
+export class ContainerRegistryManifestNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<ContainerRegistryManifestNotFound>()(
+    "ContainerRegistryManifestNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/** Container Registry: the blob does not exist. Code `BLOB_UNKNOWN`. */
+export class ContainerRegistryBlobNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<ContainerRegistryBlobNotFound>()(
+    "ContainerRegistryBlobNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/** Container Registry: the upload session does not exist. Code `BLOB_UPLOAD_UNKNOWN`. */
+export class ContainerRegistryUploadNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<ContainerRegistryUploadNotFound>()(
+    "ContainerRegistryUploadNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Container Registry: a manifest that does not parse, or names a blob the
+ * repository lacks. Codes `MANIFEST_INVALID`, `MANIFEST_BLOB_UNKNOWN`.
+ */
+export class ContainerRegistryManifestInvalid
+  extends /*@__PURE__*/ Schema.TaggedError<ContainerRegistryManifestInvalid>()(
+    "ContainerRegistryManifestInvalid",
+    AzureErrorFields,
+  ).pipe(Category.withBadRequestError) {}
+
+/**
+ * Container Registry: an upload whose content does not match its digest, or
+ * a malformed digest. Codes `DIGEST_INVALID`, `BLOB_UPLOAD_INVALID`.
+ */
+export class ContainerRegistryDigestInvalid
+  extends /*@__PURE__*/ Schema.TaggedError<ContainerRegistryDigestInvalid>()(
+    "ContainerRegistryDigestInvalid",
+    AzureErrorFields,
+  ).pipe(Category.withBadRequestError) {}
+
+/**
+ * Digital Twins data plane: the digital twin does not exist.
+ * Azure error code: `DigitalTwinNotFound`
+ */
+export class DigitalTwinNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<DigitalTwinNotFound>()(
+    "DigitalTwinNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Digital Twins data plane: the component path does not exist on the twin.
+ * Azure error code: `ComponentNotFound`
+ */
+export class DigitalTwinComponentNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<DigitalTwinComponentNotFound>()(
+    "DigitalTwinComponentNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Digital Twins data plane: the relationship does not exist.
+ * Azure error code: `RelationshipNotFound`
+ */
+export class DigitalTwinRelationshipNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<DigitalTwinRelationshipNotFound>()(
+    "DigitalTwinRelationshipNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Digital Twins data plane: the target twin of a relationship does not exist.
+ * Azure error code: `TargetTwinNotFound`
+ */
+export class DigitalTwinTargetNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<DigitalTwinTargetNotFound>()(
+    "DigitalTwinTargetNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Digital Twins data plane: the twin still has relationships, so it cannot be deleted.
+ * Azure error code: `RelationshipsNotDeleted`
+ */
+export class DigitalTwinRelationshipsNotDeleted
+  extends /*@__PURE__*/ Schema.TaggedError<DigitalTwinRelationshipsNotDeleted>()(
+    "DigitalTwinRelationshipsNotDeleted",
+    AzureErrorFields,
+  ).pipe(Category.withBadRequestError) {}
+
+/**
+ * Digital Twins data plane: the model does not exist.
+ * Azure error code: `ModelNotFound`
+ */
+export class DigitalTwinModelNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<DigitalTwinModelNotFound>()(
+    "DigitalTwinModelNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Digital Twins data plane: a model with this ID already exists (HTTP 409).
+ * Azure error code: `ModelAlreadyExists`, or a 409 with no code and "Some of
+ * the model ids already exist" (matched by message).
+ */
+export class DigitalTwinModelAlreadyExists
+  extends /*@__PURE__*/ Schema.TaggedError<DigitalTwinModelAlreadyExists>()(
+    "DigitalTwinModelAlreadyExists",
+    AzureErrorFields,
+  ).pipe(Category.withConflictError) {}
+
+/**
+ * Digital Twins data plane: other models still reference this model (HTTP 409).
+ * Azure error code: `ModelReferencesNotDeleted`
+ */
+export class DigitalTwinModelReferencesNotDeleted
+  extends /*@__PURE__*/ Schema.TaggedError<DigitalTwinModelReferencesNotDeleted>()(
+    "DigitalTwinModelReferencesNotDeleted",
+    AzureErrorFields,
+  ).pipe(Category.withConflictError) {}
+
+/**
+ * Digital Twins data plane: the event route does not exist.
+ * Azure error code: `EventRouteNotFound`
+ */
+export class DigitalTwinEventRouteNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<DigitalTwinEventRouteNotFound>()(
+    "DigitalTwinEventRouteNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Digital Twins data plane: the import or delete job does not exist. The
+ * 404 carries no code, only "There is no job available that matches the
+ * provided id ..." (matched by message).
+ */
+export class DigitalTwinJobNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<DigitalTwinJobNotFound>()(
+    "DigitalTwinJobNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Azure Load Testing data plane: the test does not exist.
+ * Azure error code: `TestNotFound`
+ */
+export class LoadTestNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<LoadTestNotFound>()(
+    "LoadTestNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Azure Load Testing data plane: the test (or test run) file does not exist.
+ * Azure error code: `TestFileNotFound`
+ */
+export class LoadTestFileNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<LoadTestFileNotFound>()(
+    "LoadTestFileNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Azure Load Testing data plane: the test run does not exist.
+ * Azure error code: `TestRunNotFound`
+ */
+export class LoadTestRunNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<LoadTestRunNotFound>()(
+    "LoadTestRunNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Dev Center data plane: the dev box pool does not exist in the project.
+ * Azure error code: `PoolNotFound`
+ */
+export class PoolNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<PoolNotFound>()("PoolNotFound", AzureErrorFields).pipe(
+    Category.withNotFoundError,
+  ) {}
+
+/**
+ * Dev Center data plane: the dev box does not exist.
+ * Azure error code: `DevBoxNotFound`
+ */
+export class DevBoxNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<DevBoxNotFound>()(
+    "DevBoxNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Dev Center data plane: the deployment environment does not exist.
+ * Azure error code: `EnvironmentNotFound`
+ */
+export class EnvironmentNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<EnvironmentNotFound>()(
+    "EnvironmentNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Dev Center data plane: the catalog has no environment definition with that name (a `ValidationError` detail).
+ * Azure error code: `EnvironmentDefinitionNotFound`
+ */
+export class EnvironmentDefinitionNotFound
+  extends /*@__PURE__*/ Schema.TaggedError<EnvironmentDefinitionNotFound>()(
+    "EnvironmentDefinitionNotFound",
+    AzureErrorFields,
+  ).pipe(Category.withNotFoundError) {}
+
+/**
+ * Dev Center data plane: the pool name is not an existing pool of the project (a `ValidationError` detail).
+ * Azure error code: `InvalidPoolName`
+ */
+export class InvalidPoolName
+  extends /*@__PURE__*/ Schema.TaggedError<InvalidPoolName>()(
+    "InvalidPoolName",
+    AzureErrorFields,
+  ).pipe(Category.withBadRequestError) {}
+
+/**
+ * Returned by Microsoft.Logic when a workflow trigger keeps no state to
+ * reset (`Recurrence`, `Http` and request triggers; only stateful polling
+ * connector triggers support reset).
+ * Azure error code: `WorkflowTriggerResetNotSupported`
+ */
+export class WorkflowTriggerResetNotSupported
+  extends /*@__PURE__*/ Schema.TaggedError<WorkflowTriggerResetNotSupported>()(
+    "WorkflowTriggerResetNotSupported",
+    AzureErrorFields,
+  ).pipe(Category.withBadRequestError) {}
+
 export const AZURE_ERROR_CODE_MAP: Record<string, new (props: any) => unknown> = {
   // Storage data planes
   BlobNotFound: BlobNotFound,
@@ -1734,6 +2121,9 @@ export const AZURE_ERROR_CODE_MAP: Record<string, new (props: any) => unknown> =
   InvalidAuthenticationInfo: StorageAuthenticationFailed,
   AuthorizationFailure: StorageAuthorizationFailure,
   KeyBasedAuthenticationNotPermitted: StorageAuthorizationFailure,
+  NoPendingCopyOperation: StorageNoPendingCopyOperation,
+  HierarchicalNamespaceNotEnabled: StorageHierarchicalNamespaceNotEnabled,
+  ImmutableStorageWithVersioningIsNotEnabled: StorageImmutabilityNotEnabled,
   TenantNotOnboardedToLegacy: DevBoxTenantNotOnboarded,
   MaxNumberOfGlobalEnvironmentsInSubExceeded: ContainerAppsEnvironmentQuotaExceeded,
   MaxNumberOfRegionalEnvironmentsInSubExceeded: ContainerAppsEnvironmentQuotaExceeded,
@@ -1765,6 +2155,7 @@ export const AZURE_ERROR_CODE_MAP: Record<string, new (props: any) => unknown> =
   PropertyRequired: MissingRequiredProperty,
   InvalidPropertyValue: InvalidPropertyValue,
   PropertyValueExceedsMaxLength: InvalidPropertyValue,
+  FeatureDisabledOnSelectedEdition: FeatureDisabledOnSelectedEdition,
 
   // Conflict
   Conflict: ResourceConflict,
@@ -1847,6 +2238,42 @@ export const AZURE_ERROR_CODE_MAP: Record<string, new (props: any) => unknown> =
     FederatedIdentityCredentialWriteConflict,
   SqlVulnerabilityAssessmentNoRuleBaseline: SqlVulnerabilityAssessmentBaselineNotFound,
   BearerFallbackDisabled: AppComplianceAutomationBearerFallbackDisabled,
+  CertificateNotFound: CertificateNotFound,
+  PendingCertificateNotFound: PendingCertificateNotFound,
+  CertificateIssuerNotFound: CertificateIssuerNotFound,
+  ContactsNotFound: CertificateContactsNotFound,
+  SecretNotFound: SecretNotFound,
+  // Container Registry data plane
+  UNAUTHORIZED: ContainerRegistryUnauthorized,
+  DENIED: ContainerRegistryDenied,
+  NAME_UNKNOWN: ContainerRegistryRepositoryNotFound,
+  MANIFEST_UNKNOWN: ContainerRegistryManifestNotFound,
+  TAG_UNKNOWN: ContainerRegistryManifestNotFound,
+  BLOB_UNKNOWN: ContainerRegistryBlobNotFound,
+  BLOB_UPLOAD_UNKNOWN: ContainerRegistryUploadNotFound,
+  MANIFEST_INVALID: ContainerRegistryManifestInvalid,
+  MANIFEST_BLOB_UNKNOWN: ContainerRegistryManifestInvalid,
+  DIGEST_INVALID: ContainerRegistryDigestInvalid,
+  BLOB_UPLOAD_INVALID: ContainerRegistryDigestInvalid,
+  // Digital Twins data plane
+  DigitalTwinNotFound: DigitalTwinNotFound,
+  ComponentNotFound: DigitalTwinComponentNotFound,
+  RelationshipNotFound: DigitalTwinRelationshipNotFound,
+  TargetTwinNotFound: DigitalTwinTargetNotFound,
+  RelationshipsNotDeleted: DigitalTwinRelationshipsNotDeleted,
+  ModelNotFound: DigitalTwinModelNotFound,
+  ModelAlreadyExists: DigitalTwinModelAlreadyExists,
+  ModelReferencesNotDeleted: DigitalTwinModelReferencesNotDeleted,
+  EventRouteNotFound: DigitalTwinEventRouteNotFound,
+  TestNotFound: LoadTestNotFound,
+  TestFileNotFound: LoadTestFileNotFound,
+  TestRunNotFound: LoadTestRunNotFound,
+  PoolNotFound: PoolNotFound,
+  DevBoxNotFound: DevBoxNotFound,
+  EnvironmentNotFound: EnvironmentNotFound,
+  EnvironmentDefinitionNotFound: EnvironmentDefinitionNotFound,
+  InvalidPoolName: InvalidPoolName,
+  WorkflowTriggerResetNotSupported: WorkflowTriggerResetNotSupported,
 };
 
 /**
@@ -2661,6 +3088,15 @@ export const AZURE_ERROR_MESSAGE_MATCHERS: ReadonlyArray<{
   readonly error: new (props: any) => unknown;
 }> = [
   {
+    code: "JobNotFound",
+    includes: "There is no job available that matches the provided id",
+    error: DigitalTwinJobNotFound,
+  },
+  {
+    includes: "Some of the model ids already exist",
+    error: DigitalTwinModelAlreadyExists,
+  },
+  {
     code: "409",
     includes: "is still updating its spec",
     error: ManagedHsmPoolUpdating,
@@ -3261,6 +3697,10 @@ export const AZURE_ERROR_MESSAGE_MATCHERS: ReadonlyArray<{
     includes: "New tenant creation is disabled by Azure Fluid Relay",
     error: FluidRelayTenantCreationDisabled,
   },
+  {
+    includes: "unable to pull image using Managed identity",
+    error: ContainerAppsImagePullDenied,
+  },
 ];
 
 export const matchAzureErrorMessage = (arm: {
@@ -3313,6 +3753,9 @@ export type AzureApiError =
   | StorageLeaseConflict
   | StorageAuthenticationFailed
   | StorageAuthorizationFailure
+  | StorageNoPendingCopyOperation
+  | StorageHierarchicalNamespaceNotEnabled
+  | StorageImmutabilityNotEnabled
   | AttestationComplianceDataNotFound
   | PowerBITenantNotSignedUp
   | FabricCapacityPrincipalNotFound
@@ -3338,6 +3781,7 @@ export type AzureApiError =
   | InvalidRequestContent
   | MissingRequiredProperty
   | InvalidPropertyValue
+  | FeatureDisabledOnSelectedEdition
   | ResourceConflict
   | PreconditionFailed
   | OperationNotAllowed
@@ -3497,6 +3941,11 @@ export type AzureApiError =
   | ManagedHsmPoolUpdating
   | ManagedHsmAlreadyBeingDeleted
   | ManagedHsmArmKeyManagementDisabled
+  | CertificateNotFound
+  | PendingCertificateNotFound
+  | CertificateIssuerNotFound
+  | CertificateContactsNotFound
+  | SecretNotFound
   | HypernetNotOnboarded
   | SqlVulnerabilityAssessmentResultsNotReady
   | SqlVulnerabilityAssessmentBaselineNotFound
@@ -3505,4 +3954,32 @@ export type AzureApiError =
   | HttpResponsePayloadAPISpecValidationFailed
   | StorageDataCollaborationNotAllowed
   | RunCommandRequiresFullPrivilege
-  | FluidRelayTenantCreationDisabled;
+  | FluidRelayTenantCreationDisabled
+  | ContainerAppsImagePullDenied
+  | ContainerRegistryTokenExchangeFailed
+  | ContainerRegistryUnauthorized
+  | ContainerRegistryDenied
+  | ContainerRegistryRepositoryNotFound
+  | ContainerRegistryManifestNotFound
+  | ContainerRegistryBlobNotFound
+  | ContainerRegistryUploadNotFound
+  | ContainerRegistryManifestInvalid
+  | ContainerRegistryDigestInvalid
+  | DigitalTwinNotFound
+  | DigitalTwinComponentNotFound
+  | DigitalTwinRelationshipNotFound
+  | DigitalTwinTargetNotFound
+  | DigitalTwinRelationshipsNotDeleted
+  | DigitalTwinModelNotFound
+  | DigitalTwinModelAlreadyExists
+  | DigitalTwinModelReferencesNotDeleted
+  | DigitalTwinEventRouteNotFound
+  | DigitalTwinJobNotFound
+  | LoadTestNotFound
+  | LoadTestFileNotFound
+  | LoadTestRunNotFound
+  | PoolNotFound
+  | DevBoxNotFound
+  | EnvironmentNotFound
+  | EnvironmentDefinitionNotFound
+  | InvalidPoolName;

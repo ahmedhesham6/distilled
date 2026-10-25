@@ -271,10 +271,10 @@
           }
         },
         "targetFace": {
-          "target": "com.azure.ai_face#AddPersonGroupOperationPersonGroupPersonFaceRequestTargetFaceList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "targetFace",
-            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'."
+            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated."
           }
         },
         "detectionModel": {
@@ -383,10 +383,10 @@
           }
         },
         "targetFace": {
-          "target": "com.azure.ai_face#AddPersonGroupOperationLargePersonGroupPersonFaceRequestTargetFaceList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "targetFace",
-            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'."
+            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated."
           }
         },
         "detectionModel": {
@@ -487,10 +487,10 @@
           }
         },
         "targetFace": {
-          "target": "com.azure.ai_face#FaceListOperationsAddLargeFaceListFaceRequestTargetFaceList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "targetFace",
-            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'."
+            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated."
           }
         },
         "detectionModel": {
@@ -1172,10 +1172,10 @@
           }
         },
         "targetFace": {
-          "target": "com.azure.ai_face#FaceListOperationsAddFaceListFaceRequestTargetFaceList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "targetFace",
-            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'."
+            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated."
           }
         },
         "detectionModel": {
@@ -2239,10 +2239,10 @@
           }
         },
         "returnFaceAttributes": {
-          "target": "com.azure.ai_face#FaceDetectionOperationsDetectFromSessionImageIdRequestReturnFaceAttributesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "returnFaceAttributes",
-            "smithy.api#documentation": "Analyze and return the one or more specified face attributes in the comma-separated string like 'returnFaceAttributes=headPose,glasses'. Face attribute analysis has additional computational and time cost."
+            "smithy.api#documentation": "Analyze and return the one or more specified face attributes in the comma-separated string like 'returnFaceAttributes=headPose,glasses'. Face attribute analysis has additional computational and time cost. Comma-separated (`headPose`, `glasses`, `occlusion`, `accessories`, `blur`, `exposure`, `noise`, `mask`, `qualityForRecognition`, `age`, `smile`, `facialHair`, `hair`)."
           }
         },
         "returnFaceLandmarks": {
@@ -2499,10 +2499,10 @@
           }
         },
         "returnFaceAttributes": {
-          "target": "com.azure.ai_face#FaceDetectionOperationsDetectRequestReturnFaceAttributesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "returnFaceAttributes",
-            "smithy.api#documentation": "Analyze and return the one or more specified face attributes in the comma-separated string like 'returnFaceAttributes=headPose,glasses'. Face attribute analysis has additional computational and time cost."
+            "smithy.api#documentation": "Analyze and return the one or more specified face attributes in the comma-separated string like 'returnFaceAttributes=headPose,glasses'. Face attribute analysis has additional computational and time cost. Comma-separated (`headPose`, `glasses`, `occlusion`, `accessories`, `blur`, `exposure`, `noise`, `mask`, `qualityForRecognition`, `age`, `smile`, `facialHair`, `hair`)."
           }
         },
         "returnFaceLandmarks": {
@@ -3232,10 +3232,10 @@
           }
         },
         "targetFace": {
-          "target": "com.azure.ai_face#AddPersonGroupOperationPersonGroupPersonFaceFromUrlRequestTargetFaceList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "targetFace",
-            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'."
+            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated."
           }
         },
         "detectionModel": {
@@ -4391,10 +4391,10 @@
           }
         },
         "targetFace": {
-          "target": "com.azure.ai_face#AddPersonGroupOperationLargePersonGroupPersonFaceFromUrlRequestTargetFaceList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "targetFace",
-            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'."
+            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated."
           }
         },
         "detectionModel": {
@@ -5503,10 +5503,10 @@
           }
         },
         "targetFace": {
-          "target": "com.azure.ai_face#FaceListOperationsAddLargeFaceListFaceFromUrlRequestTargetFaceList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "targetFace",
-            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'."
+            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated."
           }
         },
         "detectionModel": {
@@ -6413,10 +6413,10 @@
           }
         },
         "targetFace": {
-          "target": "com.azure.ai_face#FaceListOperationsAddFaceListFaceFromUrlRequestTargetFaceList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "targetFace",
-            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'."
+            "smithy.api#documentation": "A face rectangle to specify the target face to be added to a person, in the format of 'targetFace=left,top,width,height'. Comma-separated."
           }
         },
         "detectionModel": {
@@ -7793,10 +7793,10 @@
           }
         },
         "returnFaceAttributes": {
-          "target": "com.azure.ai_face#FaceDetectionOperationsDetectFromUrlRequestReturnFaceAttributesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "returnFaceAttributes",
-            "smithy.api#documentation": "Analyze and return the one or more specified face attributes in the comma-separated string like 'returnFaceAttributes=headPose,glasses'. Face attribute analysis has additional computational and time cost."
+            "smithy.api#documentation": "Analyze and return the one or more specified face attributes in the comma-separated string like 'returnFaceAttributes=headPose,glasses'. Face attribute analysis has additional computational and time cost. Comma-separated (`headPose`, `glasses`, `occlusion`, `accessories`, `blur`, `exposure`, `noise`, `mask`, `qualityForRecognition`, `age`, `smile`, `facialHair`, `hair`)."
           }
         },
         "returnFaceLandmarks": {

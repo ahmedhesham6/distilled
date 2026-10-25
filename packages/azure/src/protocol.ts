@@ -47,6 +47,12 @@ import { httpSymbol } from "@distilled.cloud/core/trait";
  *             `MissingTokenAudience` rather than receive the ARM token, and
  *             an `anonymous` one (Confidential Ledger identity) sends none
  *
+ *             Container Registry (`tokenExchange: "acr"`) trades the Entra
+ *             token for a registry refresh token (`/oauth2/exchange`) and
+ *             that for an access token scoped to the operation's
+ *             repository and actions (`/oauth2/token`); both are cached
+ *             until shortly before they expire
+ *
  *             hand-written models (manual-specs: Service Bus / Event Hubs
  *             messaging, Cosmos DB, Kudu) add `JsonHeader` members (sent as
  *             one JSON header, e.g. `BrokerProperties`), header maps with an
@@ -74,14 +80,16 @@ import { httpSymbol } from "@distilled.cloud/core/trait";
  *               3. unmapped 5xx -> retryable `InternalServerError`
  *               4. `UnknownAzureError` catch-all
  */
+import * as Clock from "effect/Clock";
 import * as Effect from "effect/Effect";
 import * as HttpBody from "effect/http/HttpBody";
-import type * as HttpClient from "effect/http/HttpClient";
+import * as HttpClient from "effect/http/HttpClient";
 import type * as HttpClientError from "effect/http/HttpClientError";
 import * as HttpClientRequest from "effect/http/HttpClientRequest";
 import type * as HttpClientResponse from "effect/http/HttpClientResponse";
 import * as Layer from "effect/Layer";
 import * as Redacted from "effect/Redacted";
+import * as Schedule from "effect/Schedule";
 import type * as AST from "effect/SchemaAST";
 import {
   type AzureCredentialsError,
@@ -95,6 +103,7 @@ import {
   matchAzureErrorMessage,
   type AzureApiError,
   AzureParseError,
+  ContainerRegistryTokenExchangeFailed,
   UnknownAzureError,
 } from "./errors.ts";
 import {
@@ -161,8 +170,18 @@ const parseArmError = (body: unknown): ArmError | undefined => {
   if (typeof body === "string") return body ? { message: body } : undefined;
   if (body === null || typeof body !== "object") return undefined;
   const b = body as Record<string, unknown>;
+  // Container Registry speaks the Docker distribution error shape:
+  // `{ errors: [{ code: "MANIFEST_UNKNOWN", message, detail }] }`.
+  const first =
+    b.error === undefined && Array.isArray(b.errors) && b.errors[0] !== null
+      ? b.errors[0]
+      : undefined;
   const inner =
-    b.error !== null && typeof b.error === "object" ? (b.error as Record<string, unknown>) : b;
+    b.error !== null && typeof b.error === "object"
+      ? (b.error as Record<string, unknown>)
+      : typeof first === "object"
+        ? (first as Record<string, unknown>)
+        : b;
   // Microsoft.Web (and other legacy RPs) return PascalCase `Code`/`Message`.
   const field = (name: string) => {
     const value = inner[name] ?? inner[name[0]!.toUpperCase() + name.slice(1)];
@@ -241,6 +260,14 @@ const encode = ({ input, inputAst }: { readonly input: unknown; readonly inputAs
     // Pageable operations: a page's `nextLink` is never sent as a member.
     const nextLink = nextLinkOf(http, unwrapped);
     if (http?.nextLink !== undefined) fields = withoutMember(fields, http.nextLink);
+    // Container Registry: an upload link (`Location` of a started upload)
+    // carries its own query (`?_state=…`), sent as-is after the path.
+    let linkQuery: string | undefined;
+    if (http?.tokenExchange === "acr") {
+      const split = splitUploadLink(http, fields);
+      fields = split.fields;
+      linkQuery = split.query;
+    }
     // The ARM token only goes to ARM. A data-plane host gets a token for its
     // own audience (a static token is sent as-is), and none when its
     // audience is unknown.
@@ -258,6 +285,12 @@ const encode = ({ input, inputAst }: { readonly input: unknown; readonly inputAs
       } else {
         const audience = audienceFor(http, http.audience, baseUrl);
         token = creds.tokenFor !== undefined ? yield* creds.tokenFor(audience) : creds.bearerToken;
+        // Container Registry takes only its own tokens: trade the Entra
+        // token for a registry refresh token, then for an access token
+        // scoped to what this operation does.
+        if (http.tokenExchange === "acr" && !http.uri.startsWith("/oauth2/")) {
+          token = yield* acrAccessToken(baseUrl, token, acrScopesFor(http, fields), creds.tenantId);
+        }
       }
     }
 
@@ -382,6 +415,7 @@ const encode = ({ input, inputAst }: { readonly input: unknown; readonly inputAs
       url += `${url.includes("?") ? "&" : "?"}api-version=${encodeURIComponent(http.apiVersion)}`;
     }
     if (sas !== undefined) url += `${url.includes("?") ? "&" : "?"}${sas}`;
+    if (linkQuery !== undefined) url += `${url.includes("?") ? "&" : "?"}${linkQuery}`;
     if (url !== request.url) {
       request = HttpClientRequest.setUrl(request, url);
     }
@@ -402,6 +436,230 @@ const audienceFor = (http: HttpTrait, fallback: string, baseUrl: string): string
   }
   return fallback;
 };
+
+// ---------------------------------------------------------------------------
+// Container Registry token exchange
+// ---------------------------------------------------------------------------
+
+/** The input with a greedy upload link's `?query` split off (sent verbatim). */
+const splitUploadLink = (
+  http: HttpTrait,
+  fields: unknown,
+): { readonly fields: unknown; readonly query: string | undefined } => {
+  const label = /\{([A-Za-z0-9_]+)\+\}/.exec(http.uri)?.[1];
+  if (label === undefined || fields === null || typeof fields !== "object") {
+    return { fields, query: undefined };
+  }
+  const value = (fields as Record<string, unknown>)[label];
+  if (typeof value !== "string") return { fields, query: undefined };
+  const link = value.replace(/^https?:\/\/[^/]+/i, "");
+  const q = link.indexOf("?");
+  return {
+    fields: { ...(fields as Record<string, unknown>), [label]: q >= 0 ? link.slice(0, q) : link },
+    query: q >= 0 && q < link.length - 1 ? link.slice(q + 1) : undefined,
+  };
+};
+
+/**
+ * The registry token scopes an operation needs, least first:
+ * `repository:<name>:<actions>` (or `registry:catalog:*` for the catalog).
+ */
+const acrScopesFor = (http: HttpTrait, fields: unknown): string[] => {
+  const input = (fields ?? {}) as Record<string, unknown>;
+  const name = typeof input.name === "string" ? input.name : undefined;
+  if (http.uri.startsWith("/acr/v1/_catalog")) return ["registry:catalog:*"];
+  if (http.uri.startsWith("/acr/v1/") && name !== undefined) {
+    const action =
+      http.method === "GET" || http.method === "HEAD"
+        ? "metadata_read"
+        : http.method === "DELETE"
+          ? "delete"
+          : "metadata_write";
+    return [`repository:${name}:${action}`];
+  }
+  if (http.uri.startsWith("/v2/") && name !== undefined) {
+    const action =
+      http.method === "GET" || http.method === "HEAD"
+        ? "pull"
+        : http.method === "DELETE"
+          ? "delete"
+          : "pull,push";
+    const from = typeof input.from === "string" ? [`repository:${input.from}:pull`] : [];
+    return [`repository:${name}:${action}`, ...from];
+  }
+  // An upload link: `v2/<name>/blobs/uploads/<uuid>`.
+  const link = /\{([A-Za-z0-9_]+)\+\}/.exec(http.uri)?.[1];
+  const value = link !== undefined ? input[link] : undefined;
+  const repo =
+    typeof value === "string"
+      ? /^\/?v2\/(.+?)\/blobs\/uploads(?:\/|$)/.exec(value)?.[1]
+      : undefined;
+  return repo !== undefined ? [`repository:${repo}:pull,push`] : [];
+};
+
+/** Registry tokens by registry + Entra token (+ scopes); entries expire. */
+const acrTokens = /*@__PURE__*/ new Map<
+  string,
+  { readonly token: Redacted.Redacted<string>; readonly expiresOnMs: number }
+>();
+
+/** Reuse a registry token until a minute before its JWT `exp`. */
+const ACR_TOKEN_SLACK_MS = 60_000;
+/** Lifetime assumed for a registry token whose `exp` cannot be read. */
+const ACR_TOKEN_FALLBACK_MS = 5 * 60_000;
+
+/** The claims of a JWT, or `undefined` when it is not one. */
+const jwtClaims = (token: string): Record<string, unknown> | undefined => {
+  try {
+    const payload = token.split(".")[1] ?? "";
+    const claims: unknown = JSON.parse(atob(payload.replace(/-/g, "+").replace(/_/g, "/")));
+    return claims !== null && typeof claims === "object"
+      ? (claims as Record<string, unknown>)
+      : undefined;
+  } catch {
+    return undefined;
+  }
+};
+
+const jwtExpiresOnMs = (token: string, now: number): number => {
+  const exp = jwtClaims(token)?.exp;
+  return typeof exp === "number" ? exp * 1000 : now + ACR_TOKEN_FALLBACK_MS;
+};
+
+/**
+ * Whether a registry access token grants an action for every requested
+ * scope. The token server answers a scope the identity may not use (yet:
+ * role assignments propagate for minutes) with a token granting nothing;
+ * such a token is not cached, so the next call asks again.
+ */
+const grantsEveryScope = (scopes: ReadonlyArray<string>) => (token: string) => {
+  const access = jwtClaims(token)?.access;
+  if (!Array.isArray(access)) return false;
+  const granted = access.filter(
+    (a) =>
+      a !== null &&
+      typeof a === "object" &&
+      Array.isArray((a as { actions?: unknown }).actions) &&
+      (a as { actions: unknown[] }).actions.length > 0,
+  );
+  return granted.length >= scopes.length;
+};
+
+/** POST a form to the registry's token server and read one token field. */
+const acrTokenRequest = (
+  baseUrl: string,
+  path: "/oauth2/exchange" | "/oauth2/token",
+  form: ReadonlyArray<readonly [string, string]>,
+  field: "refresh_token" | "access_token",
+) =>
+  Effect.gen(function* () {
+    const client = yield* HttpClient.HttpClient;
+    const params = new URLSearchParams();
+    for (const [k, v] of form) params.append(k, v);
+    const request = HttpClientRequest.post(`${baseUrl}${path}`).pipe(
+      HttpClientRequest.setHeaders({ Accept: "application/json" }),
+      HttpClientRequest.setBody(
+        HttpBody.text(params.toString(), "application/x-www-form-urlencoded"),
+      ),
+    );
+    // A throttled or failing token server is retried: 0.2 s + 0.4 s + 0.8 s.
+    const { response, text } = yield* client.execute(request).pipe(
+      Effect.flatMap((response) => Effect.map(response.text, (text) => ({ response, text }))),
+      Effect.repeat({
+        until: (sent) => sent.response.status !== 429 && sent.response.status < 500,
+        times: 3,
+        schedule: Schedule.exponential("200 millis"),
+      }),
+    );
+    let json: unknown;
+    try {
+      json = JSON.parse(text);
+    } catch {
+      json = undefined;
+    }
+    if (response.status >= 200 && response.status < 300) {
+      const value = (json as Record<string, unknown> | undefined)?.[field];
+      if (typeof value === "string" && value !== "") return Redacted.make(value);
+    }
+    const arm = parseArmError(json ?? text);
+    const Mapped = arm?.code !== undefined ? AZURE_ERROR_CODE_MAP[arm.code] : undefined;
+    if (Mapped !== undefined) {
+      return yield* fail(new Mapped({ message: arm!.message, code: arm!.code }));
+    }
+    return yield* fail(
+      new ContainerRegistryTokenExchangeFailed({
+        message: `${path} answered ${response.status}${arm?.message ? `: ${arm.message}` : ""}`,
+        code: arm?.code,
+        status: response.status,
+      }),
+    );
+  });
+
+/** A cached registry token, or a fresh one from `mint`. */
+const cachedAcrToken = (
+  key: string,
+  mint: Effect.Effect<Redacted.Redacted<string>, unknown, HttpClient.HttpClient>,
+  cacheable: (token: string) => boolean = () => true,
+) =>
+  Effect.gen(function* () {
+    const now = yield* Clock.currentTimeMillis;
+    const hit = acrTokens.get(key);
+    if (hit !== undefined && hit.expiresOnMs - ACR_TOKEN_SLACK_MS > now) return hit.token;
+    const token = yield* mint;
+    for (const [k, v] of acrTokens) if (v.expiresOnMs <= now) acrTokens.delete(k);
+    const value = Redacted.value(token);
+    if (cacheable(value)) {
+      acrTokens.set(key, { token, expiresOnMs: jwtExpiresOnMs(value, now) });
+    } else {
+      acrTokens.delete(key);
+    }
+    return token;
+  });
+
+/**
+ * Trade an Entra token for a registry access token holding `scopes`:
+ * `POST /oauth2/exchange` (refresh token), then `POST /oauth2/token`.
+ * Both tokens are cached until shortly before they expire.
+ */
+const acrAccessToken = (
+  baseUrl: string,
+  entraToken: Redacted.Redacted<string>,
+  scopes: ReadonlyArray<string>,
+  tenantId: string | undefined,
+) =>
+  Effect.gen(function* () {
+    const service = new URL(baseUrl).host;
+    const entra = Redacted.value(entraToken);
+    const refresh = yield* cachedAcrToken(
+      `refresh ${service} ${entra}`,
+      acrTokenRequest(
+        baseUrl,
+        "/oauth2/exchange",
+        [
+          ["grant_type", "access_token"],
+          ["service", service],
+          ["access_token", entra],
+          ...(tenantId !== undefined ? ([["tenant", tenantId]] as const) : []),
+        ],
+        "refresh_token",
+      ),
+    );
+    return yield* cachedAcrToken(
+      `access ${service} ${entra} ${scopes.join(" ")}`,
+      acrTokenRequest(
+        baseUrl,
+        "/oauth2/token",
+        [
+          ["grant_type", "refresh_token"],
+          ["service", service],
+          ["refresh_token", Redacted.value(refresh)],
+          ...scopes.map((scope) => ["scope", scope] as const),
+        ],
+        "access_token",
+      ),
+      grantsEveryScope(scopes),
+    );
+  });
 
 const HOST_PLACEHOLDER = /\{([^}]+)\}/g;
 

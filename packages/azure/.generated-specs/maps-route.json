@@ -1715,6 +1715,13 @@
             "smithy.api#required": {},
             "smithy.api#documentation": "System generated unique identifier for the asynchronous operation after it has\nbeen submitted."
           }
+        },
+        "xMsClientId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "x-ms-client-id",
+            "smithy.api#documentation": "Indicates the account intended for use with the Microsoft Entra ID security model: the Azure Maps account's unique ID."
+          }
         }
       },
       "traits": {

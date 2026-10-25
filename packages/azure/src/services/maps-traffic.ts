@@ -19,14 +19,13 @@ export type GetTrafficTrafficIncidentRequestIncidentType =
   | "RoadHazard"
   | "Construction"
   | "Weather";
-export type GetTrafficTrafficIncidentRequestBboxList = Array<number>;
 export interface GetTrafficTrafficIncidentRequest {
   /** The Azure Maps service hostname. Use `https://atlas.microsoft.com` for the Azure public cloud. To target a specific Azure Maps geography or a sovereign cloud, see [Azure Maps geographic scope](https://learn.microsoft.com/azure/azure-maps/geographic-scope). */
   endpoint?: string;
   /** Specifies the type of traffic incident to be returned. Multiple incident types within a single request are supported. If not specified, the results will include all incident types within the provided bounding box. Example, '&incidentType=Accident' or '&incidentType=Accident,Construction'. */
   incidentType?: GetTrafficTrafficIncidentRequestIncidentType | (string & {});
   /** Defines a rectangular area of interest on the Earth's surface. The sides of the rectangle are specified by longitude and latitude values and must adhere to the GeoJSON format: [minLon, minLat, maxLon, maxLat]. For more information, see [RFC 7946, Section 5](https://www.rfc-editor.org/rfc/rfc7946#section-5). <ul><li>**Minimum Dimensions**: The height or width of the bounding box must be at least 12 meters.</li><li>**Maximum Area**: The bounding box can cover an area up to 10,000 square kilometers.</li><li>**Incident Inclusion**: Traffic incidents will be included in the response if they overlap with the bounding box, or if their start, end, or any part of the incident passes through the bounding box. The start and end locations of the incident can be outside the bounding box.</li></ul>**Example**: `bbox=-105,37,-94,45` */
-  bbox: GetTrafficTrafficIncidentRequestBboxList;
+  bbox: string;
   /** Specifies which account is intended for usage in conjunction with the Azure AD security model. It represents a unique ID for the Azure Maps account and can be retrieved from the Azure Maps management plane Account API. For more information on using Microsoft Entra ID security in Azure Maps, see [Manage authentication in Azure Maps](/azure/azure-maps/how-to-manage-authentication). */
   xMsClientId?: string;
   /** Language in which traffic incident results should be returned. For more information, see [Supported Languages](https://docs.microsoft.com/azure/azure-maps/supported-languages) for reference. */
@@ -124,7 +123,7 @@ export const GetTrafficTrafficIncident: API.OperationMethod<
   GetTrafficTrafficIncidentError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(1, __c0, 1) as any as S.Schema<GetTrafficTrafficIncidentRequest>,
+  input: __S(0, __c0, 0) as any as S.Schema<GetTrafficTrafficIncidentRequest>,
   output: __S(7, __c0, 7) as any as S.Schema<TrafficIncidentResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
@@ -135,13 +134,11 @@ export const GetTrafficTrafficIncident: API.OperationMethod<
 function __c0(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(S.Number);
-    case 1:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.optional(S.String.pipe(T.HostLabel())),
           incidentType: S.optional(S.String.pipe(T.Query())),
-          bbox: __S(0, __c0, 0).pipe(T.Query()),
+          bbox: S.String.pipe(T.Query()),
           xMsClientId: S.optional(S.String.pipe(T.Header("x-ms-client-id"))),
           acceptLanguage: S.optional(S.String.pipe(T.Header("Accept-Language"))),
         }).pipe(
@@ -157,12 +154,14 @@ function __c0(j: number): any {
           }),
         ),
       ).annotate({ identifier: "GetTrafficTrafficIncidentRequest" });
+    case 1:
+      return S.Array(S.Number);
     case 2:
       return S.suspend(() =>
         S.Struct({
           type: S.String,
-          bbox: S.optional(__S(0, __c0, 0)),
-          coordinates: __S(0, __c0, 0),
+          bbox: S.optional(__S(1, __c0, 1)),
+          coordinates: __S(1, __c0, 1),
         }),
       ).annotate({ identifier: "GeoJsonPoint" });
     case 3:

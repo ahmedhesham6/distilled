@@ -38,7 +38,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Declines an offer to work on a job.\n\nDeclines an offer to work on a job."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#JobRouterOperationsDeclineJobOfferResponse": {
       "type": "structure",
@@ -113,7 +118,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Accepts an offer to work on a job and returns a 409/Conflict if another agent accepted the job already.\n\nAccepts an offer to work on a job and returns a 409/Conflict if another agent accepted the job already."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#AcceptJobOfferResult": {
       "type": "structure",
@@ -239,7 +249,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2023-11-01"
+          "apiVersion": "2023-11-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Creates or updates a worker.\n\nCreates or updates a worker."
       }
@@ -661,7 +672,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Retrieves an existing worker by Id.\n\nRetrieves an existing worker by Id."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#GetJobRouterOperationWorkerResponse": {
       "type": "structure",
@@ -1025,7 +1041,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Retrieves a queue's statistics.\n\nRetrieves a queue's statistics."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#RouterQueueStatistics": {
       "type": "structure",
@@ -1160,7 +1181,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2023-11-01"
+          "apiVersion": "2023-11-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Creates or updates a queue.\n\nCreates or updates a queue."
       }
@@ -1325,7 +1347,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Retrieves an existing queue by Id.\n\nRetrieves an existing queue by Id."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#GetJobRouterAdministrationOperationQueueResponse": {
       "type": "structure",
@@ -1559,7 +1586,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Gets a job's position details.\n\nGets a job's position details."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#RouterJobPositionDetails": {
       "type": "structure",
@@ -1648,7 +1680,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Unassign a job.\n\nUnassign a job."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#UnassignJobResult": {
       "type": "structure",
@@ -1730,7 +1767,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Closes a completed job.\n\nCloses a completed job."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#JobRouterOperationsCloseJobResponse": {
       "type": "structure",
@@ -1817,7 +1859,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Completes an assigned job.\n\nCompletes an assigned job."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#CompleteJobRouterOperationJobResponse": {
       "type": "structure",
@@ -1892,7 +1939,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Submits request to cancel an existing job by Id while supplying free-form cancellation reason.\n\nSubmits request to cancel an existing job by Id while supplying free-form cancellation reason."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#CancelJobRouterOperationJobResponse": {
       "type": "structure",
@@ -1965,7 +2017,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Reclassify a job.\n\nReclassify a job."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#JobRouterOperationsReclassifyJobResponse": {
       "type": "structure",
@@ -2069,7 +2126,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2023-11-01"
+          "apiVersion": "2023-11-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Creates or updates a router job.\n\nCreates or updates a router job."
       }
@@ -2782,7 +2840,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Retrieves an existing job by Id.\n\nRetrieves an existing job by Id."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#GetJobRouterOperationJobResponse": {
       "type": "structure",
@@ -3335,7 +3398,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2023-11-01"
+          "apiVersion": "2023-11-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Creates or updates a exception policy.\n\nCreates or updates a exception policy."
       }
@@ -3444,6 +3508,36 @@
             "smithy.api#documentation": "The type discriminator describing a sub-type of ExceptionAction.",
             "smithy.api#required": {}
           }
+        },
+        "note": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`cancel` action: a note recorded on the cancelled job."
+          }
+        },
+        "dispositionCode": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`cancel` action: the disposition code set on the cancelled job."
+          }
+        },
+        "classificationPolicyId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`reclassify` action: the classification policy that reclassifies the job."
+          }
+        },
+        "queueId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`manualReclassify` action: the queue the job moves to."
+          }
+        },
+        "priority": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "`manualReclassify` action: the job's new priority."
+          }
         }
       },
       "traits": {
@@ -3484,6 +3578,18 @@
           "traits": {
             "smithy.api#documentation": "The type discriminator describing a sub-type of ExceptionTrigger.",
             "smithy.api#required": {}
+          }
+        },
+        "threshold": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#documentation": "`queueLength` trigger: the queue length at which the exception triggers."
+          }
+        },
+        "thresholdSeconds": {
+          "target": "smithy.api#Double",
+          "traits": {
+            "smithy.api#documentation": "`waitTime` trigger: the seconds a job waits before the exception triggers."
           }
         }
       },
@@ -3590,7 +3696,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Retrieves an existing exception policy by Id.\n\nRetrieves an existing exception policy by Id."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#GetJobRouterAdministrationOperationExceptionPolicyResponse": {
       "type": "structure",
@@ -3843,7 +3954,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2023-11-01"
+          "apiVersion": "2023-11-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Creates or updates a distribution policy.\n\nCreates or updates a distribution policy."
       }
@@ -4064,7 +4176,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Retrieves an existing distribution policy by Id.\n\nRetrieves an existing distribution policy by Id."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#GetJobRouterAdministrationOperationDistributionPolicyResponse": {
       "type": "structure",
@@ -4329,7 +4446,8 @@
           "hostRaw": [
             "endpoint"
           ],
-          "apiVersion": "2023-11-01"
+          "apiVersion": "2023-11-01",
+          "jsonContentType": "application/merge-patch+json"
         },
         "smithy.api#documentation": "Creates or updates a classification policy.\n\nCreates or updates a classification policy."
       }
@@ -4464,6 +4582,42 @@
           "traits": {
             "smithy.api#documentation": "The type discriminator describing a sub-type of RouterRule",
             "smithy.api#required": {}
+          }
+        },
+        "value": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "`static` rule: the value the rule always returns."
+          }
+        },
+        "language": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`expression` rule: the expression language (`powerFx`)."
+          }
+        },
+        "expression": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`expression` rule: the expression to evaluate."
+          }
+        },
+        "functionUri": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`function` rule: URL of the HTTP-triggered Azure Function."
+          }
+        },
+        "webhookUri": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`webhook` rule: URL of the webhook."
+          }
+        },
+        "authorizationServerUri": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`webhook` rule: URL of the OAuth 2.0 token endpoint."
           }
         }
       },
@@ -4657,6 +4811,42 @@
             "smithy.api#documentation": "The type discriminator describing a sub-type of RouterRule",
             "smithy.api#required": {}
           }
+        },
+        "value": {
+          "target": "smithy.api#Document",
+          "traits": {
+            "smithy.api#documentation": "`static` rule: the value the rule always returns."
+          }
+        },
+        "language": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`expression` rule: the expression language (`powerFx`)."
+          }
+        },
+        "expression": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`expression` rule: the expression to evaluate."
+          }
+        },
+        "functionUri": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`function` rule: URL of the HTTP-triggered Azure Function."
+          }
+        },
+        "webhookUri": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`webhook` rule: URL of the webhook."
+          }
+        },
+        "authorizationServerUri": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "`webhook` rule: URL of the OAuth 2.0 token endpoint."
+          }
         }
       },
       "traits": {
@@ -4692,7 +4882,12 @@
           "apiVersion": "2023-11-01"
         },
         "smithy.api#documentation": "Retrieves an existing classification policy by Id.\n\nRetrieves an existing classification policy by Id."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.communication_job_router#RouterEntityNotFound"
+        }
+      ]
     },
     "com.azure.communication_job_router#GetJobRouterAdministrationOperationClassificationPolicyResponse": {
       "type": "structure",
@@ -5035,6 +5230,36 @@
           ]
         },
         "com.azure.protocols#audience": "https://communication.azure.com/.default"
+      }
+    },
+    "com.azure.communication_job_router#RouterEntityNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The Job Router policy, queue, job, worker, assignment, or offer does not exist (HTTP 404 `NotFound`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/communicationError/code": "NotFound"
+            }
+          }
+        ]
       }
     }
   }

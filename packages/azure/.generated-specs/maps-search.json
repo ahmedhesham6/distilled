@@ -294,7 +294,7 @@
           }
         },
         "coordinates": {
-          "target": "com.azure.maps_search#SearchGetPolygonRequestCoordinatesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "coordinates",
             "smithy.api#required": {},
@@ -1326,7 +1326,7 @@
           }
         },
         "coordinates": {
-          "target": "com.azure.maps_search#SearchGetReverseGeocodingRequestCoordinatesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "coordinates",
             "smithy.api#required": {},
@@ -1334,7 +1334,7 @@
           }
         },
         "resultTypes": {
-          "target": "com.azure.maps_search#SearchGetReverseGeocodingRequestResultTypesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "resultTypes",
             "smithy.api#documentation": "Specify entity types that you want in the response. Only the types you specify will be returned. If the point cannot be mapped to the entity types you specify, no location information is returned in the response. Default value is all possible entities. A comma separated list of entity types selected from the following options.\n\n- Address\n- Neighborhood\n- PopulatedPlace\n- Postcode1\n- AdminDivision1\n- AdminDivision2\n- CountryRegion\n\nThese entity types are ordered from the most specific entity to the least specific entity. When entities of more than one entity type are found, only the most specific entity is returned. For example, if you specify Address and AdminDistrict1 as entity types and entities were found for both types, only the Address entity information is returned in the response."
@@ -2548,14 +2548,14 @@
           }
         },
         "coordinates": {
-          "target": "com.azure.maps_search#SearchGetGeocodeAutocompleteRequestCoordinatesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "coordinates",
             "smithy.api#documentation": "Required when `bbox` is not provided. A point on the earth specified as a longitude and latitude. When you specify this parameter, the user's location is taken into account and the results returned may be more relevant to the user. Example: &coordinates=lon,lat\n\n**Note:** `coordinates` becomes a secondary signal if `bbox` is provided."
           }
         },
         "bbox": {
-          "target": "com.azure.maps_search#SearchGetGeocodeAutocompleteRequestBboxList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "bbox",
             "smithy.api#documentation": "Required when `coordinates` is not provided. A rectangular area on the earth defined as a bounding box object. The sides of the rectangle are defined by longitude and latitude values. When you specify this parameter, the geographical area is taken into account when computing the results of a location query.\n\nExample: lon1,lat1,lon2,lat2.\n\nMinimum size approximately 0.00001 degrees (~1.1 meters)\n\nMaximum size: up to the full global extent (-180,-90 to 180,90)"
@@ -2569,14 +2569,14 @@
           }
         },
         "resultTypeGroups": {
-          "target": "com.azure.maps_search#SearchGetGeocodeAutocompleteRequestResultTypeGroupsList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "resultTypeGroups",
             "smithy.api#documentation": "A comma separated list of returned entity type groups. The possible values are\n\n- Address\n- Place"
           }
         },
         "resultTypes": {
-          "target": "com.azure.maps_search#SearchGetGeocodeAutocompleteRequestResultTypesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "resultTypes",
             "smithy.api#documentation": "A comma separated list of returned entity types. When type group is set to Address, the supported types are:\n\n- Address\n- RoadBlock\n\nAll other types belong to the Place type group. These may include entities such as AdminDivision1, Neighborhood, PopulatedPlace, and more. Default value is all possible entity types."
@@ -3511,7 +3511,7 @@
           }
         },
         "bbox": {
-          "target": "com.azure.maps_search#SearchGetGeocodingRequestBboxList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "bbox",
             "smithy.api#documentation": "A rectangular area on the earth defined as a bounding box object. The sides of the rectangle are defined by longitude and latitude values. When you specify this parameter, the geographical area is taken into account when computing the results of a location query.\n\nExample: lon1,lat1,lon2,lat2.\n\nMinimum size approximately 0.00001 degrees (~1.1 meters)\n\nMaximum size: up to the full global extent (-180,-90 to 180,90)"
@@ -3525,7 +3525,7 @@
           }
         },
         "coordinates": {
-          "target": "com.azure.maps_search#SearchGetGeocodingRequestCoordinatesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "coordinates",
             "smithy.api#documentation": "A point on the earth specified as a longitude and latitude. When you specify this parameter, the user's location is taken into account and the results returned may be more relevant to the user. Example: &coordinates=lon,lat"

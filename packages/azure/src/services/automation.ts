@@ -10948,6 +10948,7 @@ function __c67(j: number): any {
             uri: "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/content",
             code: 200,
             apiVersion: "2024-10-23",
+            bodyMediaType: "text/powershell",
           }),
         ),
       ).annotate({ identifier: "ReplaceRunbookDraftContentRequest" });

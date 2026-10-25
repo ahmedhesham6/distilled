@@ -35,6 +35,8 @@ export type RunStatus =
 export interface RequiredAction {
   /** The object type. */
   type: string;
+  /** For `type: "submit_tool_outputs"`: the tool calls the run waits for. */
+  submit_tool_outputs?: unknown;
 }
 /** The details of an error as encountered by an agent thread run. */
 export interface RunError {
@@ -44,9 +46,24 @@ export interface RunError {
   message: string;
 }
 /** An abstract representation of an input tool definition that an agent can use. */
-export type ToolDefinition = RequiredAction;
+export interface ToolDefinition {
+  /** The object type. */
+  type: string;
+  /** For `type: "function"`: the function definition. */
+  function?: unknown;
+  /** For `type: "file_search"`: file search options. */
+  file_search?: unknown;
+  /** For `type: "azure_function"`: the Azure Function definition. */
+  azure_function?: unknown;
+  /** For `type: "bing_grounding"`: Bing grounding search parameters. */
+  bing_grounding?: unknown;
+  /** For `type: "connected_agent"`: the connected agent. */
+  connected_agent?: unknown;
+  /** For `type: "openapi"`: the OpenAPI function definition. */
+  openapi?: unknown;
+}
 /** The overridden enabled tools used for this agent thread run. */
-export type ThreadRunToolsList = Array<RequiredAction>;
+export type ThreadRunToolsList = Array<ToolDefinition>;
 /** The reason why the run is incomplete. This will point to which specific token limit was reached over the course of the run. */
 export type IncompleteDetailsReason = "max_completion_tokens" | "max_prompt_tokens";
 /** Details on why the run is incomplete. Will be `null` if the run is not incomplete. */
@@ -257,7 +274,7 @@ export interface VectorStoreFileBatch {
   file_counts: VectorStoreFileCount;
 }
 /** The collection of tools to enable for the new agent. */
-export type CreateAgentRequestToolsList = Array<RequiredAction>;
+export type CreateAgentRequestToolsList = Array<ToolDefinition>;
 /** A set of up to 16 key/value pairs that can be attached to an object, used for storing additional information about that object in a structured format. Keys may be up to 64 characters in length and values may be up to 512 characters in length. */
 export type CreateAgentRequestMetadataMap = { [key: string]: string | undefined };
 export interface CreateAgentRequest {
@@ -287,7 +304,7 @@ export interface CreateAgentRequest {
 /** The object type, which is always assistant. */
 export type AgentObject = "assistant";
 /** The collection of tools enabled for the agent. */
-export type AgentToolsList = Array<RequiredAction>;
+export type AgentToolsList = Array<ToolDefinition>;
 /** A set of up to 16 key/value pairs that can be attached to an object, used for storing additional information about that object in a structured format. Keys may be up to 64 characters in length and values may be up to 512 characters in length. */
 export type AgentMetadataMap = { [key: string]: string | undefined };
 /** Represents an agent that can call the model and use tools. */
@@ -366,10 +383,24 @@ export interface MessageIncompleteDetails {
   /** The provided reason describing why the message was marked as incomplete. */
   reason: MessageIncompleteDetailsReason;
 }
+/** The text and associated annotations for a single item of agent thread message content. */
+export interface MessageTextDetails {
+  /** The text data. */
+  value: string;
+  /** A list of annotations associated with this text. */
+  annotations?: unknown;
+}
 /** An abstract representation of a single item of thread message content. */
-export type MessageContent = RequiredAction;
+export interface MessageContent {
+  /** The object type. */
+  type: string;
+  /** For `type: "text"`: the text and its annotations. */
+  text?: MessageTextDetails;
+  /** For `type: "image_file"`: the image file reference. */
+  image_file?: unknown;
+}
 /** The list of content items associated with the agent thread message. */
-export type ThreadMessageContentList = Array<RequiredAction>;
+export type ThreadMessageContentList = Array<MessageContent>;
 /** A list of files attached to the message, and the tools they were added to. */
 export type ThreadMessageAttachmentsList = Array<MessageAttachment>;
 /** A set of up to 16 key/value pairs that can be attached to an object, used for storing additional information about that object in a structured format. Keys may be up to 64 characters in length and values may be up to 512 characters in length. */
@@ -405,9 +436,6 @@ export interface ThreadMessage {
   /** A set of up to 16 key/value pairs that can be attached to an object, used for storing additional information about that object in a structured format. Keys may be up to 64 characters in length and values may be up to 512 characters in length. */
   metadata: ThreadMessageMetadataMap | null;
 }
-export type CreateRunRunRequestIncludeItem =
-  "step_details.tool_calls[*].file_search.results[*].content";
-export type CreateRunRunRequestIncludeList = Array<CreateRunRunRequestIncludeItem | (string & {})>;
 /** A list of files attached to the message, and the tools they should be added to. */
 export type ThreadMessageOptionsAttachmentsList = Array<MessageAttachment>;
 /** A set of up to 16 key/value pairs that can be attached to an object, used for storing additional information about that object in a structured format. Keys may be up to 64 characters in length and values may be up to 512 characters in length. */
@@ -426,7 +454,7 @@ export interface ThreadMessageOptions {
 /** Adds additional messages to the thread before creating the run. */
 export type CreateRunRunRequestAdditionalMessagesList = Array<ThreadMessageOptions>;
 /** The overridden list of enabled tools that the agent should use to run the thread. */
-export type CreateRunRunRequestToolsList = Array<RequiredAction>;
+export type CreateRunRunRequestToolsList = Array<ToolDefinition>;
 /** A set of up to 16 key/value pairs that can be attached to an object, used for storing additional information about that object in a structured format. Keys may be up to 64 characters in length and values may be up to 512 characters in length. */
 export type CreateRunRunRequestMetadataMap = { [key: string]: string | undefined };
 export interface CreateRunRunRequest {
@@ -434,8 +462,8 @@ export interface CreateRunRunRequest {
   endpoint: string;
   /** Identifier of the thread. */
   threadId: string;
-  /** A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content. */
-  include__?: CreateRunRunRequestIncludeList;
+  /** A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content. Comma-separated (`step_details.tool_calls[*].file_search.results[*].content`). */
+  include__?: string;
   /** The ID of the agent that should run the thread. */
   assistant_id: string;
   /** The overridden model name that the agent should use to run the thread. */
@@ -485,7 +513,7 @@ export interface AgentThreadCreationOptions {
   metadata?: AgentThreadCreationOptionsMetadataMap | null;
 }
 /** The overridden list of enabled tools the agent should use to run the thread. */
-export type CreateThreadAndRunRequestToolsList = Array<RequiredAction>;
+export type CreateThreadAndRunRequestToolsList = Array<ToolDefinition>;
 /** A set of up to 16 key/value pairs that can be attached to an object, used for storing additional information about that object in a structured format. Keys may be up to 64 characters in length and values may be up to 512 characters in length. */
 export type CreateThreadAndRunRequestMetadataMap = { [key: string]: string | undefined };
 export interface CreateThreadAndRunRequest {
@@ -566,6 +594,8 @@ export type VectorStoreChunkingStrategyRequestType = "auto" | "static";
 export interface VectorStoreChunkingStrategyRequest {
   /** The object type. */
   type: VectorStoreChunkingStrategyRequestType | (string & {});
+  /** For `type: "static"`: the chunk size and overlap. */
+  static?: unknown;
 }
 export interface CreateVectorStoreFileBatchVectorStoreFileBatchRequest {
   /** Project endpoint in the form of: https://<aiservices-id>.services.ai.azure.com/api/projects/<project-name> */
@@ -610,6 +640,8 @@ export type VectorStoreChunkingStrategyResponseType = "other" | "static";
 export interface VectorStoreChunkingStrategyResponse {
   /** The object type. */
   type: VectorStoreChunkingStrategyResponseType;
+  /** For `type: "static"`: the chunk size and overlap. */
+  static?: unknown;
 }
 /** Description of a file attached to a vector store. */
 export interface VectorStoreFile {
@@ -844,11 +876,6 @@ export interface GetRunRunRequest {
   /** Identifier of the run. */
   runId: string;
 }
-export type GetRunStepRunStepRequestIncludeItem =
-  "step_details.tool_calls[*].file_search.results[*].content";
-export type GetRunStepRunStepRequestIncludeList = Array<
-  GetRunStepRunStepRequestIncludeItem | (string & {})
->;
 export interface GetRunStepRunStepRequest {
   /** Project endpoint in the form of: https://<aiservices-id>.services.ai.azure.com/api/projects/<project-name> */
   endpoint: string;
@@ -858,8 +885,8 @@ export interface GetRunStepRunStepRequest {
   runId: string;
   /** Identifier of the run step. */
   stepId: string;
-  /** A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content. */
-  include__?: GetRunStepRunStepRequestIncludeList;
+  /** A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content. Comma-separated (`step_details.tool_calls[*].file_search.results[*].content`). */
+  include__?: string;
 }
 /** The object type, which is always 'thread.run.step'. */
 export type RunStepObject = "thread.run.step";
@@ -871,6 +898,10 @@ export type RunStepStatus = "in_progress" | "cancelled" | "failed" | "completed"
 export interface RunStepDetails {
   /** The object type. */
   type: RunStepType;
+  /** For `type: "message_creation"`: the message the step created. */
+  message_creation?: unknown;
+  /** For `type: "tool_calls"`: the tool calls the step made. */
+  tool_calls?: unknown;
 }
 /** Possible error code values attributable to a failed run step. */
 export type RunStepErrorCode = "server_error" | "rate_limit_exceeded";
@@ -1048,11 +1079,6 @@ export interface ListRunRunsResponse {
   /** A value indicating whether there are additional values available not captured in this list. */
   has_more: boolean;
 }
-export type ListRunStepRunStepsRequestIncludeItem =
-  "step_details.tool_calls[*].file_search.results[*].content";
-export type ListRunStepRunStepsRequestIncludeList = Array<
-  ListRunStepRunStepsRequestIncludeItem | (string & {})
->;
 export type ListRunStepRunStepsRequestOrder = "asc" | "desc";
 export interface ListRunStepRunStepsRequest {
   /** Project endpoint in the form of: https://<aiservices-id>.services.ai.azure.com/api/projects/<project-name> */
@@ -1061,8 +1087,8 @@ export interface ListRunStepRunStepsRequest {
   threadId: string;
   /** Identifier of the run. */
   runId: string;
-  /** A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content. */
-  include__?: ListRunStepRunStepsRequestIncludeList;
+  /** A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content. Comma-separated (`step_details.tool_calls[*].file_search.results[*].content`). */
+  include__?: string;
   /** A limit on the number of objects to be returned on one page. Limit can range between 1 and 100, and the default is 20. */
   limit?: number;
   /** Sort order by the created_at timestamp of the objects. asc for ascending order and desc for descending order. */
@@ -1231,7 +1257,7 @@ export interface SubmitRunToolOutputsToRunRequest {
   stream?: boolean | null;
 }
 /** The modified collection of tools to enable for the agent. */
-export type UpdateAgentRequestToolsList = Array<RequiredAction>;
+export type UpdateAgentRequestToolsList = Array<ToolDefinition>;
 /** A set of up to 16 key/value pairs that can be attached to an object, used for storing additional information about that object in a structured format. Keys may be up to 64 characters in length and values may be up to 512 characters in length. */
 export type UpdateAgentRequestMetadataMap = { [key: string]: string | undefined };
 export interface UpdateAgentRequest {
@@ -1309,7 +1335,7 @@ export const CancelRunRun: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(0, __c0, 0) as any as S.Schema<CancelRunRunRequest>,
-  output: __S(74, __c9, 2) as any as S.Schema<ThreadRun>,
+  output: __S(75, __c9, 3) as any as S.Schema<ThreadRun>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1358,7 +1384,7 @@ export const CreateMessageMessage: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(304, __c38, 0) as any as S.Schema<CreateMessageMessageRequest>,
-  output: __S(312, __c39, 0) as any as S.Schema<ThreadMessage>,
+  output: __S(315, __c39, 3) as any as S.Schema<ThreadMessage>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1373,7 +1399,7 @@ export const CreateRunRun: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(416, __c52, 0) as any as S.Schema<CreateRunRunRequest>,
-  output: __S(74, __c9, 2) as any as S.Schema<ThreadRun>,
+  output: __S(75, __c9, 3) as any as S.Schema<ThreadRun>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1387,8 +1413,8 @@ export const CreateThreadAndRun: API.OperationMethod<
   CreateThreadAndRunError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(449, __c56, 1) as any as S.Schema<CreateThreadAndRunRequest>,
-  output: __S(74, __c9, 2) as any as S.Schema<ThreadRun>,
+  input: __S(441, __c55, 1) as any as S.Schema<CreateThreadAndRunRequest>,
+  output: __S(75, __c9, 3) as any as S.Schema<ThreadRun>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1402,8 +1428,8 @@ export const CreateThreadThread: API.OperationMethod<
   CreateThreadThreadError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(456, __c57, 0) as any as S.Schema<CreateThreadThreadRequest>,
-  output: __S(464, __c58, 0) as any as S.Schema<AgentThread>,
+  input: __S(448, __c56, 0) as any as S.Schema<CreateThreadThreadRequest>,
+  output: __S(456, __c57, 0) as any as S.Schema<AgentThread>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1418,8 +1444,8 @@ export const CreateVectorStoreFileBatchVectorStoreFileBatch: API.OperationMethod
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(
-    472,
-    __c59,
+    464,
+    __c58,
     0,
   ) as any as S.Schema<CreateVectorStoreFileBatchVectorStoreFileBatchRequest>,
   output: __S(88, __c11, 0) as any as S.Schema<VectorStoreFileBatch>,
@@ -1436,8 +1462,8 @@ export const CreateVectorStoreFileVectorStoreFile: API.OperationMethod<
   CreateVectorStoreFileVectorStoreFileError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(488, __c61, 0) as any as S.Schema<CreateVectorStoreFileVectorStoreFileRequest>,
-  output: __S(504, __c63, 0) as any as S.Schema<VectorStoreFile>,
+  input: __S(480, __c60, 0) as any as S.Schema<CreateVectorStoreFileVectorStoreFileRequest>,
+  output: __S(496, __c62, 0) as any as S.Schema<VectorStoreFile>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1451,8 +1477,8 @@ export const CreateVectorStoreVectorStore: API.OperationMethod<
   CreateVectorStoreVectorStoreError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(512, __c64, 0) as any as S.Schema<CreateVectorStoreVectorStoreRequest>,
-  output: __S(521, __c65, 1) as any as S.Schema<VectorStore>,
+  input: __S(504, __c63, 0) as any as S.Schema<CreateVectorStoreVectorStoreRequest>,
+  output: __S(513, __c64, 1) as any as S.Schema<VectorStore>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1583,7 +1609,7 @@ export const GetMessageMessage: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(184, __c23, 0) as any as S.Schema<GetMessageMessageRequest>,
-  output: __S(312, __c39, 0) as any as S.Schema<ThreadMessage>,
+  output: __S(315, __c39, 3) as any as S.Schema<ThreadMessage>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1598,7 +1624,7 @@ export const GetRunRun: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(192, __c24, 0) as any as S.Schema<GetRunRunRequest>,
-  output: __S(74, __c9, 2) as any as S.Schema<ThreadRun>,
+  output: __S(75, __c9, 3) as any as S.Schema<ThreadRun>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1613,7 +1639,7 @@ export const GetRunStepRunStep: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(216, __c27, 0) as any as S.Schema<GetRunStepRunStepRequest>,
-  output: __S(224, __c28, 0) as any as S.Schema<RunStep>,
+  output: __S(225, __c28, 1) as any as S.Schema<RunStep>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1628,7 +1654,7 @@ export const GetThreadThread: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(232, __c29, 0) as any as S.Schema<GetThreadThreadRequest>,
-  output: __S(464, __c58, 0) as any as S.Schema<AgentThread>,
+  output: __S(456, __c57, 0) as any as S.Schema<AgentThread>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1658,7 +1684,7 @@ export const GetVectorStoreFileVectorStoreFile: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(248, __c31, 0) as any as S.Schema<GetVectorStoreFileVectorStoreFileRequest>,
-  output: __S(504, __c63, 0) as any as S.Schema<VectorStoreFile>,
+  output: __S(496, __c62, 0) as any as S.Schema<VectorStoreFile>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1673,7 +1699,7 @@ export const GetVectorStoreVectorStore: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(256, __c32, 0) as any as S.Schema<GetVectorStoreVectorStoreRequest>,
-  output: __S(521, __c65, 1) as any as S.Schema<VectorStore>,
+  output: __S(513, __c64, 1) as any as S.Schema<VectorStore>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1831,7 +1857,7 @@ export const ModifyVectorStoreVectorStore: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(368, __c46, 0) as any as S.Schema<ModifyVectorStoreVectorStoreRequest>,
-  output: __S(521, __c65, 1) as any as S.Schema<VectorStore>,
+  output: __S(513, __c64, 1) as any as S.Schema<VectorStore>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1846,7 +1872,7 @@ export const SubmitRunToolOutputsToRun: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(378, __c47, 2) as any as S.Schema<SubmitRunToolOutputsToRunRequest>,
-  output: __S(74, __c9, 2) as any as S.Schema<ThreadRun>,
+  output: __S(75, __c9, 3) as any as S.Schema<ThreadRun>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1876,7 +1902,7 @@ export const UpdateMessageMessage: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(392, __c49, 0) as any as S.Schema<UpdateMessageMessageRequest>,
-  output: __S(312, __c39, 0) as any as S.Schema<ThreadMessage>,
+  output: __S(315, __c39, 3) as any as S.Schema<ThreadMessage>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1891,7 +1917,7 @@ export const UpdateRunRun: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(400, __c50, 0) as any as S.Schema<UpdateRunRunRequest>,
-  output: __S(74, __c9, 2) as any as S.Schema<ThreadRun>,
+  output: __S(75, __c9, 3) as any as S.Schema<ThreadRun>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1906,7 +1932,7 @@ export const UpdateThreadThread: API.OperationMethod<
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(408, __c51, 0) as any as S.Schema<UpdateThreadThreadRequest>,
-  output: __S(464, __c58, 0) as any as S.Schema<AgentThread>,
+  output: __S(456, __c57, 0) as any as S.Schema<AgentThread>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -1920,7 +1946,7 @@ export const UploadFileFile: API.OperationMethod<
   UploadFileFileError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(440, __c55, 0) as any as S.Schema<UploadFileFileRequest>,
+  input: __S(432, __c54, 0) as any as S.Schema<UploadFileFileRequest>,
   output: __S(168, __c21, 0) as any as S.Schema<FileInfo>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
@@ -1955,28 +1981,34 @@ function __c1(j: number): any {
     case 0:
       return S.suspend(() =>
         S.Struct({
-          type: S.String,
-        }),
-      ).annotate({ identifier: "RequiredAction" });
-    case 1:
-      return S.Array(__S(8, __c1, 0));
-  }
-}
-function __c2(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.Struct({
           uri: S.String,
           type: S.String,
         }),
       ).annotate({ identifier: "VectorStoreDataSource" });
   }
 }
-function __c3(j: number): any {
+function __c2(j: number): any {
   switch (j) {
     case 0:
       return S.Record(S.String, S.String);
+  }
+}
+function __c3(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          type: S.String,
+          function: S.optional(S.Unknown),
+          file_search: S.optional(S.Unknown),
+          azure_function: S.optional(S.Unknown),
+          bing_grounding: S.optional(S.Unknown),
+          connected_agent: S.optional(S.Unknown),
+          openapi: S.optional(S.Unknown),
+        }),
+      ).annotate({ identifier: "ToolDefinition" });
+    case 1:
+      return S.Array(__S(24, __c3, 0));
   }
 }
 function __c4(j: number): any {
@@ -2038,7 +2070,7 @@ function __c5(j: number): any {
     case 0:
       return S.Array(S.String);
     case 1:
-      return S.Array(__S(16, __c2, 0));
+      return S.Array(__S(8, __c1, 0));
   }
 }
 function __c6(j: number): any {
@@ -2078,18 +2110,25 @@ function __c9(j: number): any {
     case 0:
       return S.suspend(() =>
         S.Struct({
+          type: S.String,
+          submit_tool_outputs: S.optional(S.Unknown),
+        }),
+      ).annotate({ identifier: "RequiredAction" });
+    case 1:
+      return S.suspend(() =>
+        S.Struct({
           code: S.String,
           message: S.String,
         }),
       ).annotate({ identifier: "RunError" });
-    case 1:
+    case 2:
       return S.suspend(() =>
         S.Struct({
           type: S.String,
           last_messages: S.optional(S.NullOr(S.Number)),
         }),
       ).annotate({ identifier: "TruncationObject" });
-    case 2:
+    case 3:
       return S.suspend(() =>
         S.Struct({
           id: S.String,
@@ -2097,11 +2136,11 @@ function __c9(j: number): any {
           thread_id: S.String,
           assistant_id: S.String,
           status: S.String,
-          required_action: S.optional(S.NullOr(__S(8, __c1, 0))),
-          last_error: S.NullOr(__S(72, __c9, 0)),
+          required_action: S.optional(S.NullOr(__S(72, __c9, 0))),
+          last_error: S.NullOr(__S(73, __c9, 1)),
           model: S.String,
           instructions: S.String,
-          tools: __S(9, __c1, 1),
+          tools: __S(25, __c3, 1),
           created_at: S.Number,
           expires_at: S.NullOr(S.Number),
           started_at: S.NullOr(S.Number),
@@ -2114,10 +2153,10 @@ function __c9(j: number): any {
           top_p: S.optional(S.NullOr(S.Number)),
           max_prompt_tokens: S.NullOr(S.Number),
           max_completion_tokens: S.NullOr(S.Number),
-          truncation_strategy: S.NullOr(__S(73, __c9, 1)),
+          truncation_strategy: S.NullOr(__S(74, __c9, 2)),
           tool_choice: S.NullOr(S.Unknown),
           response_format: S.NullOr(S.Unknown),
-          metadata: S.NullOr(__S(24, __c3, 0)),
+          metadata: S.NullOr(__S(16, __c2, 0)),
           tool_resources: S.optional(S.NullOr(__S(39, __c4, 7))),
           parallel_tool_calls: S.Boolean,
         }),
@@ -2431,12 +2470,12 @@ function __c25(j: number): any {
           name: S.optional(S.NullOr(S.String)),
           description: S.optional(S.NullOr(S.String)),
           instructions: S.optional(S.NullOr(S.String)),
-          tools: S.optional(__S(9, __c1, 1)),
+          tools: S.optional(__S(25, __c3, 1)),
           tool_resources: S.optional(S.NullOr(__S(39, __c4, 7))),
           temperature: S.optional(S.NullOr(S.Number)),
           top_p: S.optional(S.NullOr(S.Number)),
           response_format: S.optional(S.NullOr(S.Unknown)),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -2463,12 +2502,12 @@ function __c26(j: number): any {
           description: S.NullOr(S.String),
           model: S.String,
           instructions: S.NullOr(S.String),
-          tools: __S(9, __c1, 1),
+          tools: __S(25, __c3, 1),
           tool_resources: S.NullOr(__S(39, __c4, 7)),
           temperature: S.NullOr(S.Number),
           top_p: S.NullOr(S.Number),
           response_format: S.optional(S.NullOr(S.Unknown)),
-          metadata: S.NullOr(__S(24, __c3, 0)),
+          metadata: S.NullOr(__S(16, __c2, 0)),
         }),
       ).annotate({ identifier: "Agent" });
   }
@@ -2482,7 +2521,7 @@ function __c27(j: number): any {
           threadId: S.String.pipe(T.Label()),
           runId: S.String.pipe(T.Label()),
           stepId: S.String.pipe(T.Label()),
-          include__: S.optional(__S(424, __c53, 0).pipe(T.Query("include[]"))),
+          include__: S.optional(S.String.pipe(T.Query("include[]"))),
         }).pipe(
           T.Http({
             method: "GET",
@@ -2502,6 +2541,14 @@ function __c28(j: number): any {
     case 0:
       return S.suspend(() =>
         S.Struct({
+          type: S.String,
+          message_creation: S.optional(S.Unknown),
+          tool_calls: S.optional(S.Unknown),
+        }),
+      ).annotate({ identifier: "RunStepDetails" });
+    case 1:
+      return S.suspend(() =>
+        S.Struct({
           id: S.String,
           object: S.String,
           type: S.String,
@@ -2509,15 +2556,15 @@ function __c28(j: number): any {
           thread_id: S.String,
           run_id: S.String,
           status: S.String,
-          step_details: __S(480, __c60, 0),
-          last_error: S.NullOr(__S(496, __c62, 0)),
+          step_details: __S(224, __c28, 0),
+          last_error: S.NullOr(__S(488, __c61, 0)),
           created_at: S.Number,
           expired_at: S.NullOr(S.Number),
           completed_at: S.NullOr(S.Number),
           cancelled_at: S.NullOr(S.Number),
           failed_at: S.NullOr(S.Number),
           usage: S.optional(S.NullOr(__S(64, __c8, 0))),
-          metadata: S.NullOr(__S(24, __c3, 0)),
+          metadata: S.NullOr(__S(16, __c2, 0)),
         }),
       ).annotate({ identifier: "RunStep" });
   }
@@ -2697,7 +2744,7 @@ function __c35(j: number): any {
         ),
       ).annotate({ identifier: "ListMessageMessagesRequest" });
     case 1:
-      return S.Array(__S(312, __c39, 0));
+      return S.Array(__S(315, __c39, 3));
     case 2:
       return S.suspend(() =>
         S.Struct({
@@ -2732,7 +2779,7 @@ function __c36(j: number): any {
         ),
       ).annotate({ identifier: "ListRunRunsRequest" });
     case 1:
-      return S.Array(__S(74, __c9, 2));
+      return S.Array(__S(75, __c9, 3));
     case 2:
       return S.suspend(() =>
         S.Struct({
@@ -2751,7 +2798,7 @@ function __c37(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           threadId: S.String.pipe(T.Label()),
           runId: S.String.pipe(T.Label()),
-          include__: S.optional(__S(424, __c53, 0).pipe(T.Query("include[]"))),
+          include__: S.optional(S.String.pipe(T.Query("include[]"))),
           limit: S.optional(S.Number.pipe(T.Query())),
           order: S.optional(S.String.pipe(T.Query())),
           after: S.optional(S.String.pipe(T.Query())),
@@ -2769,7 +2816,7 @@ function __c37(j: number): any {
         ),
       ).annotate({ identifier: "ListRunStepRunStepsRequest" });
     case 1:
-      return S.Array(__S(224, __c28, 0));
+      return S.Array(__S(225, __c28, 1));
     case 2:
       return S.suspend(() =>
         S.Struct({
@@ -2790,7 +2837,7 @@ function __c38(j: number): any {
           role: S.String,
           content: S.Unknown,
           attachments: S.optional(S.NullOr(__S(322, __c40, 2))),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -2810,6 +2857,23 @@ function __c39(j: number): any {
     case 0:
       return S.suspend(() =>
         S.Struct({
+          value: S.String,
+          annotations: S.optional(S.Unknown),
+        }),
+      ).annotate({ identifier: "MessageTextDetails" });
+    case 1:
+      return S.suspend(() =>
+        S.Struct({
+          type: S.String,
+          text: S.optional(__S(312, __c39, 0)),
+          image_file: S.optional(S.Unknown),
+        }),
+      ).annotate({ identifier: "MessageContent" });
+    case 2:
+      return S.Array(__S(313, __c39, 1));
+    case 3:
+      return S.suspend(() =>
+        S.Struct({
           id: S.String,
           object: S.String,
           created_at: S.Number,
@@ -2819,11 +2883,11 @@ function __c39(j: number): any {
           completed_at: S.NullOr(S.Number),
           incomplete_at: S.NullOr(S.Number),
           role: S.String,
-          content: __S(9, __c1, 1),
+          content: __S(314, __c39, 2),
           assistant_id: S.NullOr(S.String),
           run_id: S.NullOr(S.String),
           attachments: S.NullOr(__S(322, __c40, 2)),
-          metadata: S.NullOr(__S(24, __c3, 0)),
+          metadata: S.NullOr(__S(16, __c2, 0)),
         }),
       ).annotate({ identifier: "ThreadMessage" });
   }
@@ -2836,7 +2900,7 @@ function __c40(j: number): any {
       return S.suspend(() =>
         S.Struct({
           file_id: S.optional(S.String),
-          data_source: S.optional(__S(16, __c2, 0)),
+          data_source: S.optional(__S(8, __c1, 0)),
           tools: __S(320, __c40, 0),
         }),
       ).annotate({ identifier: "MessageAttachment" });
@@ -2867,7 +2931,7 @@ function __c41(j: number): any {
         ),
       ).annotate({ identifier: "ListThreadThreadsRequest" });
     case 1:
-      return S.Array(__S(464, __c58, 0));
+      return S.Array(__S(456, __c57, 0));
     case 2:
       return S.suspend(() =>
         S.Struct({
@@ -2908,7 +2972,7 @@ function __c42(j: number): any {
 function __c43(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(__S(504, __c63, 0));
+      return S.Array(__S(496, __c62, 0));
     case 1:
       return S.suspend(() =>
         S.Struct({
@@ -2968,7 +3032,7 @@ function __c45(j: number): any {
         ),
       ).annotate({ identifier: "ListVectorStoreVectorStoresRequest" });
     case 1:
-      return S.Array(__S(521, __c65, 1));
+      return S.Array(__S(513, __c64, 1));
     case 2:
       return S.suspend(() =>
         S.Struct({
@@ -2987,8 +3051,8 @@ function __c46(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           vectorStoreId: S.String.pipe(T.Label()),
           name: S.optional(S.NullOr(S.String)),
-          expires_after: S.optional(S.NullOr(__S(520, __c65, 0))),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          expires_after: S.optional(S.NullOr(__S(512, __c64, 0))),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -3047,12 +3111,12 @@ function __c48(j: number): any {
           name: S.optional(S.NullOr(S.String)),
           description: S.optional(S.NullOr(S.String)),
           instructions: S.optional(S.NullOr(S.String)),
-          tools: S.optional(__S(9, __c1, 1)),
+          tools: S.optional(__S(25, __c3, 1)),
           tool_resources: S.optional(__S(39, __c4, 7)),
           temperature: S.optional(S.NullOr(S.Number)),
           top_p: S.optional(S.NullOr(S.Number)),
           response_format: S.optional(S.NullOr(S.Unknown)),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -3075,7 +3139,7 @@ function __c49(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           threadId: S.String.pipe(T.Label()),
           messageId: S.String.pipe(T.Label()),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -3098,7 +3162,7 @@ function __c50(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           threadId: S.String.pipe(T.Label()),
           runId: S.String.pipe(T.Label()),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -3121,7 +3185,7 @@ function __c51(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           threadId: S.String.pipe(T.Label()),
           tool_resources: S.optional(S.NullOr(__S(39, __c4, 7))),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -3143,24 +3207,24 @@ function __c52(j: number): any {
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
           threadId: S.String.pipe(T.Label()),
-          include__: S.optional(__S(424, __c53, 0).pipe(T.Query("include[]"))),
+          include__: S.optional(S.String.pipe(T.Query("include[]"))),
           assistant_id: S.String,
           model: S.optional(S.NullOr(S.String)),
           instructions: S.optional(S.NullOr(S.String)),
           additional_instructions: S.optional(S.NullOr(S.String)),
-          additional_messages: S.optional(S.NullOr(__S(433, __c54, 1))),
-          tools: S.optional(S.NullOr(__S(9, __c1, 1))),
+          additional_messages: S.optional(S.NullOr(__S(425, __c53, 1))),
+          tools: S.optional(S.NullOr(__S(25, __c3, 1))),
           tool_resources: S.optional(S.NullOr(__S(39, __c4, 7))),
           stream: S.optional(S.Boolean),
           temperature: S.optional(S.NullOr(S.Number)),
           top_p: S.optional(S.NullOr(S.Number)),
           max_prompt_tokens: S.optional(S.NullOr(S.Number)),
           max_completion_tokens: S.optional(S.NullOr(S.Number)),
-          truncation_strategy: S.optional(S.NullOr(__S(73, __c9, 1))),
+          truncation_strategy: S.optional(S.NullOr(__S(74, __c9, 2))),
           tool_choice: S.optional(S.NullOr(S.Unknown)),
           response_format: S.optional(S.NullOr(S.Unknown)),
           parallel_tool_calls: S.optional(S.Boolean),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -3178,25 +3242,19 @@ function __c52(j: number): any {
 function __c53(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(S.String);
-  }
-}
-function __c54(j: number): any {
-  switch (j) {
-    case 0:
       return S.suspend(() =>
         S.Struct({
           role: S.String,
           content: S.Unknown,
           attachments: S.optional(S.NullOr(__S(322, __c40, 2))),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }),
       ).annotate({ identifier: "ThreadMessageOptions" });
     case 1:
-      return S.Array(__S(432, __c54, 0));
+      return S.Array(__S(424, __c53, 0));
   }
 }
-function __c55(j: number): any {
+function __c54(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3216,14 +3274,14 @@ function __c55(j: number): any {
       ).annotate({ identifier: "UploadFileFileRequest" });
   }
 }
-function __c56(j: number): any {
+function __c55(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
-          messages: S.optional(__S(433, __c54, 1)),
+          messages: S.optional(__S(425, __c53, 1)),
           tool_resources: S.optional(S.NullOr(__S(39, __c4, 7))),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }),
       ).annotate({ identifier: "AgentThreadCreationOptions" });
     case 1:
@@ -3231,21 +3289,21 @@ function __c56(j: number): any {
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
           assistant_id: S.String,
-          thread: S.optional(__S(448, __c56, 0)),
+          thread: S.optional(__S(440, __c55, 0)),
           model: S.optional(S.NullOr(S.String)),
           instructions: S.optional(S.NullOr(S.String)),
-          tools: S.optional(S.NullOr(__S(9, __c1, 1))),
+          tools: S.optional(S.NullOr(__S(25, __c3, 1))),
           tool_resources: S.optional(S.NullOr(__S(39, __c4, 7))),
           stream: S.optional(S.Boolean),
           temperature: S.optional(S.NullOr(S.Number)),
           top_p: S.optional(S.NullOr(S.Number)),
           max_prompt_tokens: S.optional(S.NullOr(S.Number)),
           max_completion_tokens: S.optional(S.NullOr(S.Number)),
-          truncation_strategy: S.optional(S.NullOr(__S(73, __c9, 1))),
+          truncation_strategy: S.optional(S.NullOr(__S(74, __c9, 2))),
           tool_choice: S.optional(S.NullOr(S.Unknown)),
           response_format: S.optional(S.NullOr(S.Unknown)),
           parallel_tool_calls: S.optional(S.Boolean),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -3260,15 +3318,15 @@ function __c56(j: number): any {
       ).annotate({ identifier: "CreateThreadAndRunRequest" });
   }
 }
-function __c57(j: number): any {
+function __c56(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           endpoint: S.String.pipe(T.HostLabel()),
-          messages: S.optional(__S(433, __c54, 1)),
+          messages: S.optional(__S(425, __c53, 1)),
           tool_resources: S.optional(S.NullOr(__S(39, __c4, 7))),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -3283,7 +3341,7 @@ function __c57(j: number): any {
       ).annotate({ identifier: "CreateThreadThreadRequest" });
   }
 }
-function __c58(j: number): any {
+function __c57(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3292,12 +3350,12 @@ function __c58(j: number): any {
           object: S.String,
           created_at: S.Number,
           tool_resources: S.NullOr(__S(39, __c4, 7)),
-          metadata: S.NullOr(__S(24, __c3, 0)),
+          metadata: S.NullOr(__S(16, __c2, 0)),
         }),
       ).annotate({ identifier: "AgentThread" });
   }
 }
-function __c59(j: number): any {
+function __c58(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3306,7 +3364,7 @@ function __c59(j: number): any {
           vectorStoreId: S.String.pipe(T.Label()),
           file_ids: S.optional(__S(40, __c5, 0)),
           data_sources: S.optional(__S(41, __c5, 1)),
-          chunking_strategy: S.optional(__S(480, __c60, 0)),
+          chunking_strategy: S.optional(__S(472, __c59, 0)),
         }).pipe(
           T.Http({
             method: "POST",
@@ -3321,17 +3379,18 @@ function __c59(j: number): any {
       ).annotate({ identifier: "CreateVectorStoreFileBatchVectorStoreFileBatchRequest" });
   }
 }
-function __c60(j: number): any {
+function __c59(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           type: S.String,
+          static: S.optional(S.Unknown),
         }),
       ).annotate({ identifier: "VectorStoreChunkingStrategyRequest" });
   }
 }
-function __c61(j: number): any {
+function __c60(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3339,8 +3398,8 @@ function __c61(j: number): any {
           endpoint: S.String.pipe(T.HostLabel()),
           vectorStoreId: S.String.pipe(T.Label()),
           file_id: S.optional(S.String),
-          data_source: S.optional(__S(16, __c2, 0)),
-          chunking_strategy: S.optional(__S(480, __c60, 0)),
+          data_source: S.optional(__S(8, __c1, 0)),
+          chunking_strategy: S.optional(__S(472, __c59, 0)),
         }).pipe(
           T.Http({
             method: "POST",
@@ -3355,7 +3414,7 @@ function __c61(j: number): any {
       ).annotate({ identifier: "CreateVectorStoreFileVectorStoreFileRequest" });
   }
 }
-function __c62(j: number): any {
+function __c61(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3366,7 +3425,7 @@ function __c62(j: number): any {
       ).annotate({ identifier: "VectorStoreFileError" });
   }
 }
-function __c63(j: number): any {
+function __c62(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3377,13 +3436,13 @@ function __c63(j: number): any {
           created_at: S.Number,
           vector_store_id: S.String,
           status: S.String,
-          last_error: S.NullOr(__S(496, __c62, 0)),
-          chunking_strategy: __S(480, __c60, 0),
+          last_error: S.NullOr(__S(488, __c61, 0)),
+          chunking_strategy: __S(472, __c59, 0),
         }),
       ).annotate({ identifier: "VectorStoreFile" });
   }
 }
-function __c64(j: number): any {
+function __c63(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3392,9 +3451,9 @@ function __c64(j: number): any {
           file_ids: S.optional(__S(40, __c5, 0)),
           name: S.optional(S.String),
           configuration: S.optional(__S(48, __c6, 0)),
-          expires_after: S.optional(__S(520, __c65, 0)),
-          chunking_strategy: S.optional(__S(480, __c60, 0)),
-          metadata: S.optional(S.NullOr(__S(24, __c3, 0))),
+          expires_after: S.optional(__S(512, __c64, 0)),
+          chunking_strategy: S.optional(__S(472, __c59, 0)),
+          metadata: S.optional(S.NullOr(__S(16, __c2, 0))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -3409,7 +3468,7 @@ function __c64(j: number): any {
       ).annotate({ identifier: "CreateVectorStoreVectorStoreRequest" });
   }
 }
-function __c65(j: number): any {
+function __c64(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -3428,10 +3487,10 @@ function __c65(j: number): any {
           usage_bytes: S.Number,
           file_counts: __S(96, __c12, 0),
           status: S.String,
-          expires_after: S.optional(__S(520, __c65, 0)),
+          expires_after: S.optional(__S(512, __c64, 0)),
           expires_at: S.optional(S.NullOr(S.Number)),
           last_active_at: S.NullOr(S.Number),
-          metadata: S.NullOr(__S(24, __c3, 0)),
+          metadata: S.NullOr(__S(16, __c2, 0)),
         }),
       ).annotate({ identifier: "VectorStore" });
   }

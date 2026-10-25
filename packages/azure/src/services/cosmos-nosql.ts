@@ -42,6 +42,16 @@ export class CosmosPreconditionFailed
     [{ status: 412 }],
   ) {}
 
+/** The caller's Entra principal has no Cosmos DB data-plane role that allows the action on this resource (HTTP 403, `x-ms-substatus` 5301). A role assignment can take a few minutes to apply. */
+export class CosmosRbacPermissionDenied
+  extends /*@__PURE__*/ T.applyErrorMatchers(
+    /*@__PURE__*/ S.TaggedError<CosmosRbacPermissionDenied>()("CosmosRbacPermissionDenied", {
+      message: S.String,
+      headers: S.Unknown,
+    }).pipe(C.withAuthError),
+    [{ status: 403, message: { includes: "does not have required RBAC permissions" } }],
+  ) {}
+
 /** The document exceeds the maximum document size of 2 MB (HTTP 413). */
 export class CosmosRequestEntityTooLarge
   extends /*@__PURE__*/ T.applyErrorMatchers(
@@ -348,6 +358,7 @@ export type CreateDocumentError =
   | CosmosPreconditionFailed
   | CosmosTooManyRequests
   | CosmosRequestEntityTooLarge
+  | CosmosRbacPermissionDenied
   | AzureOpError;
 /** Create a document in a container (`POST /dbs/{db}/colls/{coll}/docs`). */
 export const CreateDocument: API.OperationMethod<
@@ -356,14 +367,15 @@ export const CreateDocument: API.OperationMethod<
   CreateDocumentError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(12, __c3, 0) as any as S.Schema<CreateDocumentRequest>,
-  output: __S(20, __c5, 0) as any as S.Schema<CreateDocumentResponse>,
+  input: __S(16, __c4, 0) as any as S.Schema<CreateDocumentRequest>,
+  output: __S(24, __c6, 0) as any as S.Schema<CreateDocumentResponse>,
   errors: [
     CosmosNotFound,
     CosmosConflict,
     CosmosPreconditionFailed,
     CosmosTooManyRequests,
     CosmosRequestEntityTooLarge,
+    CosmosRbacPermissionDenied,
     UnknownAzureError,
   ],
   protocol: AzureProtocol,
@@ -374,6 +386,7 @@ export type DeleteDocumentError =
   | CosmosNotFound
   | CosmosPreconditionFailed
   | CosmosTooManyRequests
+  | CosmosRbacPermissionDenied
   | AzureOpError;
 /** Delete a document (`DELETE /dbs/{db}/colls/{coll}/docs/{id}`). */
 export const DeleteDocument: API.OperationMethod<
@@ -382,14 +395,24 @@ export const DeleteDocument: API.OperationMethod<
   DeleteDocumentError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(24, __c6, 0) as any as S.Schema<DeleteDocumentRequest>,
-  output: __S(25, __c6, 1) as any as S.Schema<DeleteDocumentResponse>,
-  errors: [CosmosNotFound, CosmosPreconditionFailed, CosmosTooManyRequests, UnknownAzureError],
+  input: __S(28, __c7, 0) as any as S.Schema<DeleteDocumentRequest>,
+  output: __S(29, __c7, 1) as any as S.Schema<DeleteDocumentResponse>,
+  errors: [
+    CosmosNotFound,
+    CosmosPreconditionFailed,
+    CosmosTooManyRequests,
+    CosmosRbacPermissionDenied,
+    UnknownAzureError,
+  ],
   protocol: AzureProtocol,
   retry: Retry.Retry,
 }));
 
-export type GetDocumentError = CosmosNotFound | CosmosTooManyRequests | AzureOpError;
+export type GetDocumentError =
+  | CosmosNotFound
+  | CosmosTooManyRequests
+  | CosmosRbacPermissionDenied
+  | AzureOpError;
 /** Read a document (`GET /dbs/{db}/colls/{coll}/docs/{id}`). */
 export const GetDocument: API.OperationMethod<
   GetDocumentRequest,
@@ -397,14 +420,18 @@ export const GetDocument: API.OperationMethod<
   GetDocumentError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(28, __c7, 0) as any as S.Schema<GetDocumentRequest>,
-  output: __S(20, __c5, 0) as any as S.Schema<GetDocumentResponse>,
-  errors: [CosmosNotFound, CosmosTooManyRequests, UnknownAzureError],
+  input: __S(32, __c8, 0) as any as S.Schema<GetDocumentRequest>,
+  output: __S(24, __c6, 0) as any as S.Schema<GetDocumentResponse>,
+  errors: [CosmosNotFound, CosmosTooManyRequests, CosmosRbacPermissionDenied, UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
 }));
 
-export type ListDocumentsError = CosmosNotFound | CosmosTooManyRequests | AzureOpError;
+export type ListDocumentsError =
+  | CosmosNotFound
+  | CosmosTooManyRequests
+  | CosmosRbacPermissionDenied
+  | AzureOpError;
 /** List the documents of a container, one page at a time (`GET /dbs/{db}/colls/{coll}/docs`); with `aIm: "Incremental feed"` it reads the change feed. */
 export const ListDocuments: API.OperationMethod<
   ListDocumentsRequest,
@@ -412,9 +439,9 @@ export const ListDocuments: API.OperationMethod<
   ListDocumentsError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(32, __c8, 0) as any as S.Schema<ListDocumentsRequest>,
-  output: __S(36, __c9, 0) as any as S.Schema<ListDocumentsResponse>,
-  errors: [CosmosNotFound, CosmosTooManyRequests, UnknownAzureError],
+  input: __S(36, __c9, 0) as any as S.Schema<ListDocumentsRequest>,
+  output: __S(40, __c10, 0) as any as S.Schema<ListDocumentsResponse>,
+  errors: [CosmosNotFound, CosmosTooManyRequests, CosmosRbacPermissionDenied, UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
 }));
@@ -425,6 +452,7 @@ export type PatchDocumentError =
   | CosmosPreconditionFailed
   | CosmosTooManyRequests
   | CosmosRequestEntityTooLarge
+  | CosmosRbacPermissionDenied
   | AzureOpError;
 /** Change parts of a document (`PATCH /dbs/{db}/colls/{coll}/docs/{id}`, `application/json_patch+json`). */
 export const PatchDocument: API.OperationMethod<
@@ -433,21 +461,26 @@ export const PatchDocument: API.OperationMethod<
   PatchDocumentError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(42, __c10, 2) as any as S.Schema<PatchDocumentRequest>,
-  output: __S(20, __c5, 0) as any as S.Schema<PatchDocumentResponse>,
+  input: __S(2, __c0, 2) as any as S.Schema<PatchDocumentRequest>,
+  output: __S(24, __c6, 0) as any as S.Schema<PatchDocumentResponse>,
   errors: [
     CosmosNotFound,
     CosmosConflict,
     CosmosPreconditionFailed,
     CosmosTooManyRequests,
     CosmosRequestEntityTooLarge,
+    CosmosRbacPermissionDenied,
     UnknownAzureError,
   ],
   protocol: AzureProtocol,
   retry: Retry.Retry,
 }));
 
-export type QueryDocumentsError = CosmosNotFound | CosmosTooManyRequests | AzureOpError;
+export type QueryDocumentsError =
+  | CosmosNotFound
+  | CosmosTooManyRequests
+  | CosmosRbacPermissionDenied
+  | AzureOpError;
 /** Run a SQL query over a container, one page at a time (`POST /dbs/{db}/colls/{coll}/docs`, `x-ms-documentdb-isquery: True`, `application/query+json`). */
 export const QueryDocuments: API.OperationMethod<
   QueryDocumentsRequest,
@@ -455,9 +488,9 @@ export const QueryDocuments: API.OperationMethod<
   QueryDocumentsError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(2, __c0, 2) as any as S.Schema<QueryDocumentsRequest>,
-  output: __S(36, __c9, 0) as any as S.Schema<QueryDocumentsResponse>,
-  errors: [CosmosNotFound, CosmosTooManyRequests, UnknownAzureError],
+  input: __S(6, __c1, 2) as any as S.Schema<QueryDocumentsRequest>,
+  output: __S(40, __c10, 0) as any as S.Schema<QueryDocumentsResponse>,
+  errors: [CosmosNotFound, CosmosTooManyRequests, CosmosRbacPermissionDenied, UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
 }));
@@ -468,6 +501,7 @@ export type ReplaceDocumentError =
   | CosmosPreconditionFailed
   | CosmosTooManyRequests
   | CosmosRequestEntityTooLarge
+  | CosmosRbacPermissionDenied
   | AzureOpError;
 /** Replace a document (`PUT /dbs/{db}/colls/{coll}/docs/{id}`). */
 export const ReplaceDocument: API.OperationMethod<
@@ -476,14 +510,15 @@ export const ReplaceDocument: API.OperationMethod<
   ReplaceDocumentError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(4, __c1, 0) as any as S.Schema<ReplaceDocumentRequest>,
-  output: __S(20, __c5, 0) as any as S.Schema<ReplaceDocumentResponse>,
+  input: __S(8, __c2, 0) as any as S.Schema<ReplaceDocumentRequest>,
+  output: __S(24, __c6, 0) as any as S.Schema<ReplaceDocumentResponse>,
   errors: [
     CosmosNotFound,
     CosmosConflict,
     CosmosPreconditionFailed,
     CosmosTooManyRequests,
     CosmosRequestEntityTooLarge,
+    CosmosRbacPermissionDenied,
     UnknownAzureError,
   ],
   protocol: AzureProtocol,
@@ -496,6 +531,7 @@ export type UpsertDocumentError =
   | CosmosPreconditionFailed
   | CosmosTooManyRequests
   | CosmosRequestEntityTooLarge
+  | CosmosRbacPermissionDenied
   | AzureOpError;
 /** Create a document, or replace the one with the same id (`POST /dbs/{db}/colls/{coll}/docs` with `x-ms-documentdb-is-upsert: True`). */
 export const UpsertDocument: API.OperationMethod<
@@ -504,14 +540,15 @@ export const UpsertDocument: API.OperationMethod<
   UpsertDocumentError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(8, __c2, 0) as any as S.Schema<UpsertDocumentRequest>,
-  output: __S(20, __c5, 0) as any as S.Schema<UpsertDocumentResponse>,
+  input: __S(12, __c3, 0) as any as S.Schema<UpsertDocumentRequest>,
+  output: __S(24, __c6, 0) as any as S.Schema<UpsertDocumentResponse>,
   errors: [
     CosmosNotFound,
     CosmosConflict,
     CosmosPreconditionFailed,
     CosmosTooManyRequests,
     CosmosRequestEntityTooLarge,
+    CosmosRbacPermissionDenied,
     UnknownAzureError,
   ],
   protocol: AzureProtocol,
@@ -524,10 +561,12 @@ function __c0(j: number): any {
     case 0:
       return S.suspend(() =>
         S.Struct({
-          name: S.String,
-          value: S.Unknown,
+          op: S.String,
+          path: S.String,
+          value: S.optional(S.Unknown),
+          from: S.optional(S.String),
         }),
-      ).annotate({ identifier: "QueryParameter" });
+      ).annotate({ identifier: "PatchOperation" });
     case 1:
       return S.Array(__S(0, __c0, 0));
     case 2:
@@ -536,10 +575,51 @@ function __c0(j: number): any {
           accountName: S.String.pipe(T.HostLabel()),
           databaseId: S.String.pipe(T.Label()),
           collectionId: S.String.pipe(T.Label()),
-          query: S.String,
-          parameters: S.optional(__S(1, __c0, 1)),
+          documentId: S.String.pipe(T.Label()),
+          operations: __S(1, __c0, 1),
+          condition: S.optional(S.String),
           partitionKey: S.optional(
-            __S(16, __c4, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
+            __S(20, __c5, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
+          ),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
+          sessionToken: S.optional(S.String.pipe(T.Header("x-ms-session-token"))),
+        }).pipe(
+          T.Http({
+            method: "PATCH",
+            uri: "/dbs/{databaseId}/colls/{collectionId}/docs/{documentId}",
+            code: 200,
+            host: "https://{accountName}.documents.azure.com",
+            apiVersion: "2018-12-31",
+            apiVersionHeader: "x-ms-version",
+            authScheme: "cosmos-aad",
+            jsonContentType: "application/json_patch+json",
+            audience: "https://cosmos.azure.com/.default",
+          }),
+        ),
+      ).annotate({ identifier: "PatchDocumentRequest" });
+  }
+}
+function __c1(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          name: S.String,
+          value: S.Unknown,
+        }),
+      ).annotate({ identifier: "QueryParameter" });
+    case 1:
+      return S.Array(__S(4, __c1, 0));
+    case 2:
+      return S.suspend(() =>
+        S.Struct({
+          accountName: S.String.pipe(T.HostLabel()),
+          databaseId: S.String.pipe(T.Label()),
+          collectionId: S.String.pipe(T.Label()),
+          query: S.String,
+          parameters: S.optional(__S(5, __c1, 1)),
+          partitionKey: S.optional(
+            __S(20, __c5, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
           ),
           maxItemCount: S.optional(S.Number.pipe(T.Header("x-ms-max-item-count"))),
           continuation: S.optional(S.String.pipe(T.Header("x-ms-continuation"))),
@@ -565,7 +645,7 @@ function __c0(j: number): any {
       ).annotate({ identifier: "QueryDocumentsRequest" });
   }
 }
-function __c1(j: number): any {
+function __c2(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -576,7 +656,7 @@ function __c1(j: number): any {
           documentId: S.String.pipe(T.Label()),
           document: S.Unknown.pipe(T.HttpBody()),
           partitionKey: S.optional(
-            __S(16, __c4, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
+            __S(20, __c5, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
           ),
           ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           indexingDirective: S.optional(S.String.pipe(T.Header("x-ms-indexing-directive"))),
@@ -596,7 +676,7 @@ function __c1(j: number): any {
       ).annotate({ identifier: "ReplaceDocumentRequest" });
   }
 }
-function __c2(j: number): any {
+function __c3(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -606,7 +686,7 @@ function __c2(j: number): any {
           collectionId: S.String.pipe(T.Label()),
           document: S.Unknown.pipe(T.HttpBody()),
           partitionKey: S.optional(
-            __S(16, __c4, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
+            __S(20, __c5, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
           ),
           ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           indexingDirective: S.optional(S.String.pipe(T.Header("x-ms-indexing-directive"))),
@@ -627,7 +707,7 @@ function __c2(j: number): any {
       ).annotate({ identifier: "UpsertDocumentRequest" });
   }
 }
-function __c3(j: number): any {
+function __c4(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -637,7 +717,7 @@ function __c3(j: number): any {
           collectionId: S.String.pipe(T.Label()),
           document: S.Unknown.pipe(T.HttpBody()),
           partitionKey: S.optional(
-            __S(16, __c4, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
+            __S(20, __c5, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
           ),
           indexingDirective: S.optional(S.String.pipe(T.Header("x-ms-indexing-directive"))),
           sessionToken: S.optional(S.String.pipe(T.Header("x-ms-session-token"))),
@@ -656,13 +736,13 @@ function __c3(j: number): any {
       ).annotate({ identifier: "CreateDocumentRequest" });
   }
 }
-function __c4(j: number): any {
+function __c5(j: number): any {
   switch (j) {
     case 0:
       return S.Array(S.Unknown);
   }
 }
-function __c5(j: number): any {
+function __c6(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -676,7 +756,7 @@ function __c5(j: number): any {
       ).annotate({ identifier: "CreateDocumentResponse" });
   }
 }
-function __c6(j: number): any {
+function __c7(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -686,7 +766,7 @@ function __c6(j: number): any {
           collectionId: S.String.pipe(T.Label()),
           documentId: S.String.pipe(T.Label()),
           partitionKey: S.optional(
-            __S(16, __c4, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
+            __S(20, __c5, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
           ),
           ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           sessionToken: S.optional(S.String.pipe(T.Header("x-ms-session-token"))),
@@ -713,7 +793,7 @@ function __c6(j: number): any {
       ).annotate({ identifier: "DeleteDocumentResponse" });
   }
 }
-function __c7(j: number): any {
+function __c8(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -723,7 +803,7 @@ function __c7(j: number): any {
           collectionId: S.String.pipe(T.Label()),
           documentId: S.String.pipe(T.Label()),
           partitionKey: S.optional(
-            __S(16, __c4, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
+            __S(20, __c5, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
           ),
           ifNoneMatch: S.optional(S.String.pipe(T.Header("If-None-Match"))),
           consistencyLevel: S.optional(S.String.pipe(T.Header("x-ms-consistency-level"))),
@@ -743,7 +823,7 @@ function __c7(j: number): any {
       ).annotate({ identifier: "GetDocumentRequest" });
   }
 }
-function __c8(j: number): any {
+function __c9(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -754,7 +834,7 @@ function __c8(j: number): any {
           maxItemCount: S.optional(S.Number.pipe(T.Header("x-ms-max-item-count"))),
           continuation: S.optional(S.String.pipe(T.Header("x-ms-continuation"))),
           partitionKey: S.optional(
-            __S(16, __c4, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
+            __S(20, __c5, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
           ),
           aIm: S.optional(S.String.pipe(T.Header("A-IM"))),
           partitionKeyRangeId: S.optional(
@@ -778,13 +858,13 @@ function __c8(j: number): any {
       ).annotate({ identifier: "ListDocumentsRequest" });
   }
 }
-function __c9(j: number): any {
+function __c10(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           _rid: S.optional(S.String),
-          Documents: S.optional(__S(16, __c4, 0)),
+          Documents: S.optional(__S(20, __c5, 0)),
           _count: S.optional(S.Number),
           continuation: S.optional(S.String.pipe(T.Header("x-ms-continuation"))),
           requestCharge: S.optional(S.Number.pipe(T.Header("x-ms-request-charge"))),
@@ -793,49 +873,6 @@ function __c9(j: number): any {
           activityId: S.optional(S.String.pipe(T.Header("x-ms-activity-id"))),
         }),
       ).annotate({ identifier: "ListDocumentsResponse" });
-  }
-}
-function __c10(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.Struct({
-          op: S.String,
-          path: S.String,
-          value: S.optional(S.Unknown),
-          from: S.optional(S.String),
-        }),
-      ).annotate({ identifier: "PatchOperation" });
-    case 1:
-      return S.Array(__S(40, __c10, 0));
-    case 2:
-      return S.suspend(() =>
-        S.Struct({
-          accountName: S.String.pipe(T.HostLabel()),
-          databaseId: S.String.pipe(T.Label()),
-          collectionId: S.String.pipe(T.Label()),
-          documentId: S.String.pipe(T.Label()),
-          operations: __S(41, __c10, 1),
-          condition: S.optional(S.String),
-          partitionKey: S.optional(
-            __S(16, __c4, 0).pipe(T.JsonHeader("x-ms-documentdb-partitionkey")),
-          ),
-          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
-          sessionToken: S.optional(S.String.pipe(T.Header("x-ms-session-token"))),
-        }).pipe(
-          T.Http({
-            method: "PATCH",
-            uri: "/dbs/{databaseId}/colls/{collectionId}/docs/{documentId}",
-            code: 200,
-            host: "https://{accountName}.documents.azure.com",
-            apiVersion: "2018-12-31",
-            apiVersionHeader: "x-ms-version",
-            authScheme: "cosmos-aad",
-            jsonContentType: "application/json_patch+json",
-            audience: "https://cosmos.azure.com/.default",
-          }),
-        ),
-      ).annotate({ identifier: "PatchDocumentRequest" });
   }
 }
 // Schema table: entry i is schema j of builder f, made on first reach.

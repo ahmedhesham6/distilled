@@ -32,19 +32,80 @@
           "uri": "/$schemaGroups/$schemas/{id}",
           "code": 200,
           "host": "https://{fullyQualifiedNamespace}",
-          "apiVersion": "2023-07-01"
+          "apiVersion": "2023-07-01",
+          "headers": {
+            "Accept": "application/json; serialization=Avro, application/json; serialization=Json, text/plain; charset=utf-8, text/vnd.ms.protobuf, application/json"
+          }
         },
         "smithy.api#documentation": "Get a registered schema by its unique ID reference.\n\nGets a registered schema by its unique ID.  Azure Schema Registry guarantees that ID is unique within a namespace. Operation response type is based on serialization of schema requested."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.schemaregistry_data#SchemaRegistryAccessDenied"
+        },
+        {
+          "target": "com.azure.schemaregistry_data#SchemaNotFound"
+        }
+      ]
     },
     "com.azure.schemaregistry_data#GetSchemaByIdResponse": {
       "type": "structure",
       "members": {
         "body": {
-          "target": "smithy.api#Document",
+          "target": "smithy.api#Blob",
           "traits": {
-            "com.distilled.openapi#rawResponse": {},
-            "smithy.api#required": {}
+            "smithy.api#httpPayload": {},
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The schema text, UTF-8 encoded."
+          }
+        },
+        "contentType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Content-Type",
+            "smithy.api#documentation": "Format of the schema: `application/json; serialization=Avro`, `application/json; serialization=Json`, `text/plain; charset=utf-8` (custom), or `text/vnd.ms.protobuf`."
+          }
+        },
+        "location": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Location",
+            "smithy.api#documentation": "URL location of schema, identified by schema group, schema name, and version."
+          }
+        },
+        "schemaId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Id",
+            "smithy.api#documentation": "References a specific schema in the registry namespace."
+          }
+        },
+        "schemaIdLocation": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Id-Location",
+            "smithy.api#documentation": "URL location of schema, identified by schema ID."
+          }
+        },
+        "schemaGroupName": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Group-Name",
+            "smithy.api#documentation": "References a specific schema group in the registry namespace."
+          }
+        },
+        "schemaName": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Name",
+            "smithy.api#documentation": "References a specific schema in the registry namespace."
+          }
+        },
+        "schemaVersion": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Version",
+            "smithy.api#documentation": "Version of the returned schema."
           }
         }
       },
@@ -90,19 +151,80 @@
           "uri": "/$schemaGroups/{groupName}/schemas/{schemaName}/versions/{schemaVersion}",
           "code": 200,
           "host": "https://{fullyQualifiedNamespace}",
-          "apiVersion": "2023-07-01"
+          "apiVersion": "2023-07-01",
+          "headers": {
+            "Accept": "application/json; serialization=Avro, application/json; serialization=Json, text/plain; charset=utf-8, text/vnd.ms.protobuf, application/json"
+          }
         },
         "smithy.api#documentation": "Get specific schema versions.\n\nGets one specific version of one schema."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.schemaregistry_data#SchemaRegistryAccessDenied"
+        },
+        {
+          "target": "com.azure.schemaregistry_data#SchemaNotFound"
+        }
+      ]
     },
     "com.azure.schemaregistry_data#GetSchemaByVersionResponse": {
       "type": "structure",
       "members": {
         "body": {
-          "target": "smithy.api#Document",
+          "target": "smithy.api#Blob",
           "traits": {
-            "com.distilled.openapi#rawResponse": {},
-            "smithy.api#required": {}
+            "smithy.api#httpPayload": {},
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The schema text, UTF-8 encoded."
+          }
+        },
+        "contentType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Content-Type",
+            "smithy.api#documentation": "Format of the schema: `application/json; serialization=Avro`, `application/json; serialization=Json`, `text/plain; charset=utf-8` (custom), or `text/vnd.ms.protobuf`."
+          }
+        },
+        "location": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Location",
+            "smithy.api#documentation": "URL location of schema, identified by schema group, schema name, and version."
+          }
+        },
+        "schemaId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Id",
+            "smithy.api#documentation": "References a specific schema in the registry namespace."
+          }
+        },
+        "schemaIdLocation": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Id-Location",
+            "smithy.api#documentation": "URL location of schema, identified by schema ID."
+          }
+        },
+        "schemaGroupName": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Group-Name",
+            "smithy.api#documentation": "References a specific schema group in the registry namespace."
+          }
+        },
+        "schemaName": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Name",
+            "smithy.api#documentation": "References a specific schema in the registry namespace."
+          }
+        },
+        "schemaVersion": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Version",
+            "smithy.api#documentation": "Version of the returned schema."
           }
         }
       },
@@ -174,7 +296,15 @@
           "outputToken": "NextLink",
           "items": "Value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.schemaregistry_data#SchemaRegistryAccessDenied"
+        },
+        {
+          "target": "com.azure.schemaregistry_data#SchemaNotFound"
+        }
+      ]
     },
     "com.azure.schemaregistry_data#SchemaVersions": {
       "type": "structure",
@@ -256,12 +386,21 @@
         "smithy.api#http": {
           "method": "PUT",
           "uri": "/$schemaGroups/{groupName}/schemas/{schemaName}",
-          "code": 200,
+          "code": 204,
           "host": "https://{fullyQualifiedNamespace}",
-          "apiVersion": "2023-07-01"
+          "apiVersion": "2023-07-01",
+          "bodyMediaType": "text/plain; charset=utf-8"
         },
         "smithy.api#documentation": "Register new schema\n\nRegister new schema. If schema of specified name does not exist in specified group, schema is created at version 1. If schema of specified name exists already in specified group, schema is created at latest version + 1."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.schemaregistry_data#SchemaRegistryAccessDenied"
+        },
+        {
+          "target": "com.azure.schemaregistry_data#SchemaNotFound"
+        }
+      ]
     },
     "com.azure.schemaregistry_data#RegisterSchemaResponse": {
       "type": "structure",
@@ -271,6 +410,41 @@
           "traits": {
             "smithy.api#httpHeader": "Location",
             "smithy.api#documentation": "URL location of schema, identified by schema group, schema name, and version."
+          }
+        },
+        "schemaId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Id",
+            "smithy.api#documentation": "References a specific schema in the registry namespace."
+          }
+        },
+        "schemaIdLocation": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Id-Location",
+            "smithy.api#documentation": "URL location of schema, identified by schema ID."
+          }
+        },
+        "schemaGroupName": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Group-Name",
+            "smithy.api#documentation": "References a specific schema group in the registry namespace."
+          }
+        },
+        "schemaName": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Name",
+            "smithy.api#documentation": "References a specific schema in the registry namespace."
+          }
+        },
+        "schemaVersion": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Version",
+            "smithy.api#documentation": "Version of the returned schema."
           }
         }
       },
@@ -311,6 +485,14 @@
             "smithy.api#httpPayload": {},
             "smithy.api#required": {}
           }
+        },
+        "contentType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Content-Type",
+            "smithy.api#required": {},
+            "smithy.api#documentation": "Format of the schema: `application/json; serialization=Avro`, `application/json; serialization=Json`, `text/plain; charset=utf-8` (custom), or `text/vnd.ms.protobuf`."
+          }
         }
       },
       "traits": {
@@ -329,12 +511,21 @@
         "smithy.api#http": {
           "method": "POST",
           "uri": "/$schemaGroups/{groupName}/schemas/{schemaName}:get-id",
-          "code": 200,
+          "code": 204,
           "host": "https://{fullyQualifiedNamespace}",
-          "apiVersion": "2023-07-01"
+          "apiVersion": "2023-07-01",
+          "bodyMediaType": "text/plain; charset=utf-8"
         },
         "smithy.api#documentation": "Get properties for existing schema.\n\nGets the properties referencing an existing schema within the specified schema group, as matched by schema content comparison."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.schemaregistry_data#SchemaRegistryAccessDenied"
+        },
+        {
+          "target": "com.azure.schemaregistry_data#SchemaNotFound"
+        }
+      ]
     },
     "com.azure.schemaregistry_data#GetSchemaPropertiesByContentResponse": {
       "type": "structure",
@@ -344,6 +535,41 @@
           "traits": {
             "smithy.api#httpHeader": "Location",
             "smithy.api#documentation": "URL location of schema, identified by schema group, schema name, and version."
+          }
+        },
+        "schemaId": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Id",
+            "smithy.api#documentation": "References a specific schema in the registry namespace."
+          }
+        },
+        "schemaIdLocation": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Id-Location",
+            "smithy.api#documentation": "URL location of schema, identified by schema ID."
+          }
+        },
+        "schemaGroupName": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Group-Name",
+            "smithy.api#documentation": "References a specific schema group in the registry namespace."
+          }
+        },
+        "schemaName": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Name",
+            "smithy.api#documentation": "References a specific schema in the registry namespace."
+          }
+        },
+        "schemaVersion": {
+          "target": "smithy.api#Integer",
+          "traits": {
+            "smithy.api#httpHeader": "Schema-Version",
+            "smithy.api#documentation": "Version of the returned schema."
           }
         }
       },
@@ -384,6 +610,14 @@
             "smithy.api#httpPayload": {},
             "smithy.api#required": {}
           }
+        },
+        "contentType": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#httpHeader": "Content-Type",
+            "smithy.api#required": {},
+            "smithy.api#documentation": "Format of the schema: `application/json; serialization=Avro`, `application/json; serialization=Json`, `text/plain; charset=utf-8` (custom), or `text/vnd.ms.protobuf`."
+          }
         }
       },
       "traits": {
@@ -414,7 +648,12 @@
           "outputToken": "NextLink",
           "items": "Value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.schemaregistry_data#SchemaRegistryAccessDenied"
+        }
+      ]
     },
     "com.azure.schemaregistry_data#SchemaGroups": {
       "type": "structure",
@@ -503,6 +742,51 @@
           ]
         },
         "com.azure.protocols#audience": "https://eventhubs.azure.net/.default"
+      }
+    },
+    "com.azure.schemaregistry_data#SchemaRegistryAccessDenied": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 401,
+        "smithy.api#documentation": "The caller's Entra principal has no Schema Registry role that allows the action on this schema group or namespace (HTTP 401 `Authorization failed for specified action`, or 403). A new role assignment can take a few minutes to apply.",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 401
+          },
+          {
+            "status": 403
+          }
+        ]
+      }
+    },
+    "com.azure.schemaregistry_data#SchemaNotFound": {
+      "type": "structure",
+      "members": {
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The schema, schema version, or schema group does not exist (HTTP 404 `ItemNotFound`). `GetSchemaPropertiesByContent` also answers it when no version of the schema has this content.",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404
+          }
+        ]
       }
     }
   }

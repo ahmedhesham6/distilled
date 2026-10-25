@@ -9895,7 +9895,8 @@
           "method": "PUT",
           "uri": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/runbooks/{runbookName}/draft/content",
           "code": 200,
-          "apiVersion": "2024-10-23"
+          "apiVersion": "2024-10-23",
+          "bodyMediaType": "text/powershell"
         },
         "smithy.api#documentation": "Replaces the runbook draft content.",
         "com.distilled.openapi#apiVersion": "2024-10-23"

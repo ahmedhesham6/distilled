@@ -56,6 +56,24 @@
             "smithy.api#httpHeader": "retry-after",
             "smithy.api#documentation": "This header will only be present when the operation status is a non-terminal status. It indicates the minimum amount of time in seconds to wait before polling for operation status again."
           }
+        },
+        "id": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The unique id of the send operation; pass it to EmailGetSendResult."
+          }
+        },
+        "status": {
+          "target": "com.azure.communication_email#EmailSendResultStatus",
+          "traits": {
+            "smithy.api#documentation": "Status of the send operation."
+          }
+        },
+        "error": {
+          "target": "com.azure.communication_email#EmailSendResultError",
+          "traits": {
+            "smithy.api#documentation": "The error detail."
+          }
         }
       },
       "traits": {

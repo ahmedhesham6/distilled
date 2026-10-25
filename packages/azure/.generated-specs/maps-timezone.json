@@ -71,25 +71,29 @@
         "id": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Id property"
+            "smithy.api#documentation": "Id property",
+            "smithy.api#jsonName": "Id"
           }
         },
         "isAlias": {
           "target": "smithy.api#Boolean",
           "traits": {
-            "smithy.api#documentation": "IsAlias property"
+            "smithy.api#documentation": "IsAlias property",
+            "smithy.api#jsonName": "IsAlias"
           }
         },
         "aliasOf": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "AliasOf property"
+            "smithy.api#documentation": "AliasOf property",
+            "smithy.api#jsonName": "AliasOf"
           }
         },
         "hasZone1970Location": {
           "target": "smithy.api#Boolean",
           "traits": {
-            "smithy.api#documentation": "This attribute returns `True` if the IanaId has any country/zone associated\nwith it."
+            "smithy.api#documentation": "This attribute returns `True` if the IanaId has any country/zone associated\nwith it.",
+            "smithy.api#jsonName": "HasZone1970Location"
           }
         }
       },
@@ -185,7 +189,8 @@
         "version": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Version property"
+            "smithy.api#documentation": "Version property",
+            "smithy.api#jsonName": "Version"
           }
         }
       },
@@ -288,19 +293,22 @@
         "windowsId": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Windows Id property"
+            "smithy.api#documentation": "Windows Id property",
+            "smithy.api#jsonName": "WindowsId"
           }
         },
         "territory": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Territory property"
+            "smithy.api#documentation": "Territory property",
+            "smithy.api#jsonName": "Territory"
           }
         },
         "ianaIds": {
           "target": "com.azure.maps_timezone#TimezoneWindowsIanaIdsList",
           "traits": {
-            "smithy.api#documentation": "IanaIds array"
+            "smithy.api#documentation": "IanaIds array",
+            "smithy.api#jsonName": "IanaIds"
           }
         }
       },
@@ -479,19 +487,22 @@
         "version": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Version property"
+            "smithy.api#documentation": "Version property",
+            "smithy.api#jsonName": "Version"
           }
         },
         "referenceUtcTimestamp": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Reference Utc Timestamp property"
+            "smithy.api#documentation": "Reference Utc Timestamp property",
+            "smithy.api#jsonName": "ReferenceUtcTimestamp"
           }
         },
         "timeZones": {
           "target": "com.azure.maps_timezone#TimezoneResultTimeZonesList",
           "traits": {
-            "smithy.api#documentation": "TimeZoneId array"
+            "smithy.api#documentation": "TimeZoneId array",
+            "smithy.api#jsonName": "TimeZones"
           }
         }
       },
@@ -514,43 +525,50 @@
         "id": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Id property"
+            "smithy.api#documentation": "Id property",
+            "smithy.api#jsonName": "Id"
           }
         },
         "aliases": {
           "target": "com.azure.maps_timezone#TimezoneIdAliasesList",
           "traits": {
-            "smithy.api#documentation": "An array of time zone ID aliases. Only returned when [options]=*zoneinfo* or\n*all*.\n\nNote: may be null."
+            "smithy.api#documentation": "An array of time zone ID aliases. Only returned when [options]=*zoneinfo* or\n*all*.\n\nNote: may be null.",
+            "smithy.api#jsonName": "Aliases"
           }
         },
         "countries": {
           "target": "com.azure.maps_timezone#TimezoneIdCountriesList",
           "traits": {
-            "smithy.api#documentation": "An array of country/region records. Only returned when [options]=*zoneinfo* or\n*all*."
+            "smithy.api#documentation": "An array of country/region records. Only returned when [options]=*zoneinfo* or\n*all*.",
+            "smithy.api#jsonName": "Countries"
           }
         },
         "names": {
           "target": "com.azure.maps_timezone#TimezoneNames",
           "traits": {
-            "smithy.api#documentation": "Timezone names object."
+            "smithy.api#documentation": "Timezone names object.",
+            "smithy.api#jsonName": "Names"
           }
         },
         "referenceTime": {
           "target": "com.azure.maps_timezone#ReferenceTime",
           "traits": {
-            "smithy.api#documentation": "Details in effect at the local time."
+            "smithy.api#documentation": "Details in effect at the local time.",
+            "smithy.api#jsonName": "ReferenceTime"
           }
         },
         "representativePoint": {
           "target": "com.azure.maps_timezone#RepresentativePoint",
           "traits": {
-            "smithy.api#documentation": "Representative point property"
+            "smithy.api#documentation": "Representative point property",
+            "smithy.api#jsonName": "RepresentativePoint"
           }
         },
         "timeTransitions": {
           "target": "com.azure.maps_timezone#TimezoneIdTimeTransitionsList",
           "traits": {
-            "smithy.api#documentation": "Time zone DST transitions from [transitionsFrom] until timestamp + 1 year."
+            "smithy.api#documentation": "Time zone DST transitions from [transitionsFrom] until timestamp + 1 year.",
+            "smithy.api#jsonName": "TimeTransitions"
           }
         }
       },
@@ -573,31 +591,36 @@
         "tag": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Tag property"
+            "smithy.api#documentation": "Tag property",
+            "smithy.api#jsonName": "Tag"
           }
         },
         "standardOffset": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "StandardOffset property"
+            "smithy.api#documentation": "StandardOffset property",
+            "smithy.api#jsonName": "StandardOffset"
           }
         },
         "daylightSavings": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "DaylightSavings property"
+            "smithy.api#documentation": "DaylightSavings property",
+            "smithy.api#jsonName": "DaylightSavings"
           }
         },
         "utcStart": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Start date, start time for this transition period"
+            "smithy.api#documentation": "Start date, start time for this transition period",
+            "smithy.api#jsonName": "UtcStart"
           }
         },
         "utcEnd": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "End date, end time for this transition period"
+            "smithy.api#documentation": "End date, end time for this transition period",
+            "smithy.api#jsonName": "UtcEnd"
           }
         }
       },
@@ -611,13 +634,15 @@
         "latitude": {
           "target": "smithy.api#Double",
           "traits": {
-            "smithy.api#documentation": "Latitude property"
+            "smithy.api#documentation": "Latitude property",
+            "smithy.api#jsonName": "Latitude"
           }
         },
         "longitude": {
           "target": "smithy.api#Double",
           "traits": {
-            "smithy.api#documentation": "Longitude property"
+            "smithy.api#documentation": "Longitude property",
+            "smithy.api#jsonName": "Longitude"
           }
         }
       },
@@ -631,49 +656,57 @@
         "tag": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Time zone name in effect at the reference timestamp (i.e. PST or PDT depending\nwhether Daylight Savings Time is in effect)."
+            "smithy.api#documentation": "Time zone name in effect at the reference timestamp (i.e. PST or PDT depending\nwhether Daylight Savings Time is in effect).",
+            "smithy.api#jsonName": "Tag"
           }
         },
         "standardOffset": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "UTC offset in effect at the `ReferenceUTCTimestamp`."
+            "smithy.api#documentation": "UTC offset in effect at the `ReferenceUTCTimestamp`.",
+            "smithy.api#jsonName": "StandardOffset"
           }
         },
         "daylightSavings": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Time saving in minutes in effect at the `ReferenceUTCTimestamp`."
+            "smithy.api#documentation": "Time saving in minutes in effect at the `ReferenceUTCTimestamp`.",
+            "smithy.api#jsonName": "DaylightSavings"
           }
         },
         "wallTime": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Current wall time at the given time zone as shown in the `Tag` property."
+            "smithy.api#documentation": "Current wall time at the given time zone as shown in the `Tag` property.",
+            "smithy.api#jsonName": "WallTime"
           }
         },
         "posixTzValidYear": {
           "target": "smithy.api#Integer",
           "traits": {
-            "smithy.api#documentation": "The year this POSIX string is valid for. Note: A POSIX string will only be\nvalid in the given year."
+            "smithy.api#documentation": "The year this POSIX string is valid for. Note: A POSIX string will only be\nvalid in the given year.",
+            "smithy.api#jsonName": "PosixTzValidYear"
           }
         },
         "posixTz": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "POSIX string used to set the time zone environment variable."
+            "smithy.api#documentation": "POSIX string used to set the time zone environment variable.",
+            "smithy.api#jsonName": "PosixTz"
           }
         },
         "sunrise": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Sunrise at the given time zone as shown in the `Tag` property, populated only\nwhen the call is `byCoordinates`. The sunrise is represented as a UTC timestamp\nconforming to [RFC 3339, section\n5.6](https://www.rfc-editor.org/rfc/rfc3339#section-5.6). Note that\nthe Timezone API does not return sunrise and sunset times when solar day is\nobserved in the requested region."
+            "smithy.api#documentation": "Sunrise at the given time zone as shown in the `Tag` property, populated only\nwhen the call is `byCoordinates`. The sunrise is represented as a UTC timestamp\nconforming to [RFC 3339, section\n5.6](https://www.rfc-editor.org/rfc/rfc3339#section-5.6). Note that\nthe Timezone API does not return sunrise and sunset times when solar day is\nobserved in the requested region.",
+            "smithy.api#jsonName": "Sunrise"
           }
         },
         "sunset": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Sunset at the given time zone as shown in the `Tag` property, populated only\nwhen the call is `byCoordinates`. The sunset is represented as a UTC timestamp\nconforming to [RFC 3339, section\n5.6](https://www.rfc-editor.org/rfc/rfc3339#section-5.6). Note that\nthe Timezone API does not return sunrise and sunset times when solar day is\nobserved in the requested region."
+            "smithy.api#documentation": "Sunset at the given time zone as shown in the `Tag` property, populated only\nwhen the call is `byCoordinates`. The sunset is represented as a UTC timestamp\nconforming to [RFC 3339, section\n5.6](https://www.rfc-editor.org/rfc/rfc3339#section-5.6). Note that\nthe Timezone API does not return sunrise and sunset times when solar day is\nobserved in the requested region.",
+            "smithy.api#jsonName": "Sunset"
           }
         }
       },
@@ -687,25 +720,29 @@
         "iso6391LanguageCode": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "The ISO 639-1 language code of the Names"
+            "smithy.api#documentation": "The ISO 639-1 language code of the Names",
+            "smithy.api#jsonName": "ISO6391LanguageCode"
           }
         },
         "generic": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Generic Name"
+            "smithy.api#documentation": "Generic Name",
+            "smithy.api#jsonName": "Generic"
           }
         },
         "standard": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Standard Name"
+            "smithy.api#documentation": "Standard Name",
+            "smithy.api#jsonName": "Standard"
           }
         },
         "daylight": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "Daylight Name"
+            "smithy.api#documentation": "Daylight Name",
+            "smithy.api#jsonName": "Daylight"
           }
         }
       },
@@ -728,13 +765,15 @@
         "name": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "country/region Name"
+            "smithy.api#documentation": "country/region Name",
+            "smithy.api#jsonName": "Name"
           }
         },
         "code": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "ISO-3166 2-letter country/region code for the country/region."
+            "smithy.api#documentation": "ISO-3166 2-letter country/region code for the country/region.",
+            "smithy.api#jsonName": "Code"
           }
         }
       },
@@ -938,7 +977,7 @@
           }
         },
         "query": {
-          "target": "com.azure.maps_timezone#GetTimezoneTimezoneByCoordinatesRequestQueryList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "query",
             "smithy.api#required": {},

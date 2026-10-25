@@ -383,10 +383,11 @@
       "type": "structure",
       "members": {
         "body": {
-          "target": "smithy.api#String",
+          "target": "smithy.api#Blob",
           "traits": {
-            "com.distilled.openapi#rawResponse": {},
-            "smithy.api#required": {}
+            "smithy.api#httpPayload": {},
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The tile bytes, in the format the tileset serves (PNG, JPEG, or vector `pbf`)."
           }
         }
       },
@@ -781,10 +782,11 @@
       "type": "structure",
       "members": {
         "body": {
-          "target": "smithy.api#Document",
+          "target": "smithy.api#Blob",
           "traits": {
-            "com.distilled.openapi#rawResponse": {},
-            "smithy.api#required": {}
+            "smithy.api#httpPayload": {},
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The image bytes (PNG)."
           }
         }
       },
@@ -824,14 +826,14 @@
           }
         },
         "center": {
-          "target": "com.azure.maps_render#GetRenderMapStaticImageRequestCenterList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "center",
             "smithy.api#documentation": "Coordinates of the center point in double. Format: 'lon,lat'. Longitude range:\n-180 to 180. Latitude range: -90 to 90.\n\nNote: Either center or bbox are required parameters. They are\nmutually exclusive."
           }
         },
         "bbox": {
-          "target": "com.azure.maps_render#GetRenderMapStaticImageRequestBboxList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "bbox",
             "smithy.api#documentation": "A bounding box is defined by two latitudes and two longitudes that represent\nthe four sides of a rectangular area on the Earth. Format : 'minLon, minLat,\nmaxLon, maxLat' (in double).\n\nNote: Either bbox or center are required\nparameters. They are mutually exclusive. bbox shouldn’t be used with\nheight or width.\n\nThe maximum and minimum allowed ranges for Lat and Lon are defined for each\nzoom level\nin the table at the top of this page."
@@ -1110,10 +1112,11 @@
       "type": "structure",
       "members": {
         "body": {
-          "target": "smithy.api#String",
+          "target": "smithy.api#Blob",
           "traits": {
-            "com.distilled.openapi#rawResponse": {},
-            "smithy.api#required": {}
+            "smithy.api#httpPayload": {},
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The state tile bytes (vector `pbf`)."
           }
         }
       },
@@ -1625,7 +1628,7 @@
           }
         },
         "mincoordinates": {
-          "target": "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestMincoordinatesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "mincoordinates",
             "smithy.api#required": {},
@@ -1633,7 +1636,7 @@
           }
         },
         "maxcoordinates": {
-          "target": "com.azure.maps_render#GetRenderCopyrightFromBoundingBoxRequestMaxcoordinatesList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "maxcoordinates",
             "smithy.api#required": {},
@@ -1784,7 +1787,7 @@
           }
         },
         "bounds": {
-          "target": "com.azure.maps_render#GetRenderMapAttributionRequestBoundsList",
+          "target": "smithy.api#String",
           "traits": {
             "smithy.api#httpQuery": "bounds",
             "smithy.api#required": {},

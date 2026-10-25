@@ -17,9 +17,7 @@ export interface CopyFileAbortRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The copy identifier provided in the x-ms-copy-id header of the original Copy File operation. */
   copyid: string;
@@ -127,9 +125,7 @@ export interface CreateFileRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -235,9 +231,7 @@ export interface CreateFileHardLinkRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -290,9 +284,7 @@ export interface CreateFileSymbolicLinkRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -486,9 +478,7 @@ export interface DeleteFileRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -679,9 +669,7 @@ export interface DownloadFileRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -785,9 +773,7 @@ export interface FileAcquireLeaseRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -824,9 +810,7 @@ export interface FileBreakLeaseRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -861,9 +845,7 @@ export interface FileChangeLeaseRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -900,9 +882,7 @@ export interface FileForceCloseHandlesRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -937,9 +917,7 @@ export interface FileGetRangeListRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The snapshot parameter is an opaque DateTime value that, when present, specifies the share snapshot to query. */
   sharesnapshot?: string;
@@ -999,9 +977,7 @@ export interface FileReleaseLeaseRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -1038,9 +1014,7 @@ export interface FileStartCopyRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -1164,9 +1138,7 @@ export interface GetFilePropertiesRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The snapshot parameter is an opaque DateTime value that, when present, specifies the share snapshot to query. */
   sharesnapshot?: string;
@@ -1259,9 +1231,7 @@ export interface GetFileSymbolicLinkRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -1647,9 +1617,7 @@ export interface ListFileHandlesRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** A string value that identifies the portion of the list to be returned with the next list operation. The operation returns a marker value within the response body if the list returned was not complete. The marker value may then be used in a subsequent call to request the next set of list items. The marker value is opaque to the client. */
   marker?: string;
@@ -1838,9 +1806,7 @@ export interface RenameFileRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -2087,9 +2053,7 @@ export interface SetFileHTTPHeadersRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -2176,9 +2140,7 @@ export interface SetFileMetadataRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -2493,9 +2455,7 @@ export interface UploadFileRangeRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -2546,9 +2506,7 @@ export interface UploadFileRangeFromURLRequest {
   url: string;
   /** The name of the target share. */
   shareName: string;
-  /** The path of the target directory. */
-  directory: string;
-  /** The path of the target file. */
+  /** Path of the target file relative to the share root, e.g. `reports/2026/q1.csv`; `/` separates directories. */
   fileName: string;
   /** The timeout parameter is expressed in seconds. For more information, see <a href="https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations">Setting Timeouts for File Service Operations.</a> */
   timeout?: number;
@@ -3388,7 +3346,6 @@ function __c0(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           copyid: S.String.pipe(T.Query()),
           timeout: S.optional(S.Number.pipe(T.Query())),
@@ -3398,7 +3355,7 @@ function __c0(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -3714,7 +3671,6 @@ function __c10(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsAllowTrailingDot: S.optional(S.Boolean.pipe(T.Header("x-ms-allow-trailing-dot"))),
@@ -3726,7 +3682,7 @@ function __c10(j: number): any {
         }).pipe(
           T.Http({
             method: "GET",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -3795,7 +3751,6 @@ function __c11(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsLeaseDuration: S.optional(S.Number.pipe(T.Header("x-ms-lease-duration"))),
@@ -3806,7 +3761,7 @@ function __c11(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -3844,7 +3799,6 @@ function __c13(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsLeaseId: S.optional(S.String.pipe(T.Header("x-ms-lease-id"))),
@@ -3854,7 +3808,7 @@ function __c13(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -3876,7 +3830,6 @@ function __c14(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsLeaseId: S.String.pipe(T.Header("x-ms-lease-id")),
@@ -3887,7 +3840,7 @@ function __c14(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -3909,7 +3862,6 @@ function __c15(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           marker: S.optional(S.String.pipe(T.Query())),
@@ -3920,7 +3872,7 @@ function __c15(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -3941,7 +3893,6 @@ function __c16(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           sharesnapshot: S.optional(S.String.pipe(T.Query())),
           prevsharesnapshot: S.optional(S.String.pipe(T.Query())),
@@ -3956,7 +3907,7 @@ function __c16(j: number): any {
         }).pipe(
           T.Http({
             method: "GET",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -4002,7 +3953,6 @@ function __c17(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsLeaseId: S.String.pipe(T.Header("x-ms-lease-id")),
@@ -4012,7 +3962,7 @@ function __c17(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -4049,7 +3999,6 @@ function __c19(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsAllowTrailingDot: S.optional(S.Boolean.pipe(T.Header("x-ms-allow-trailing-dot"))),
@@ -4088,7 +4037,7 @@ function __c19(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -4136,7 +4085,6 @@ function __c20(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsCopySource: S.String.pipe(T.Header("x-ms-copy-source")),
@@ -4171,7 +4119,7 @@ function __c20(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -4255,7 +4203,6 @@ function __c22(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           sharesnapshot: S.optional(S.String.pipe(T.Query())),
           timeout: S.optional(S.Number.pipe(T.Query())),
@@ -4265,7 +4212,7 @@ function __c22(j: number): any {
         }).pipe(
           T.Http({
             method: "HEAD",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -4328,7 +4275,6 @@ function __c23(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           sharesnapshot: S.optional(S.String.pipe(T.Query())),
@@ -4337,7 +4283,7 @@ function __c23(j: number): any {
         }).pipe(
           T.Http({
             method: "GET",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -4740,7 +4686,6 @@ function __c32(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsClientRequestId: S.optional(S.String.pipe(T.Header("x-ms-client-request-id"))),
@@ -4750,7 +4695,7 @@ function __c32(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -4859,7 +4804,6 @@ function __c35(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           marker: S.optional(S.String.pipe(T.Query())),
           maxresults: S.optional(S.Number.pipe(T.Query())),
@@ -4870,7 +4814,7 @@ function __c35(j: number): any {
         }).pipe(
           T.Http({
             method: "GET",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -5052,7 +4996,6 @@ function __c39(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsFileRenameSource: S.String.pipe(T.Header("x-ms-file-rename-source")),
@@ -5083,7 +5026,7 @@ function __c39(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -5295,7 +5238,6 @@ function __c45(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsContentLength: S.optional(S.Number.pipe(T.Header("x-ms-content-length"))),
@@ -5323,7 +5265,7 @@ function __c45(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -5368,7 +5310,6 @@ function __c46(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsFileCreationTime: S.optional(S.String.pipe(T.Header("x-ms-file-creation-time"))),
@@ -5383,7 +5324,7 @@ function __c46(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -5424,7 +5365,6 @@ function __c47(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsLeaseId: S.optional(S.String.pipe(T.Header("x-ms-lease-id"))),
@@ -5434,7 +5374,7 @@ function __c47(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -5784,7 +5724,6 @@ function __c57(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsRange: S.String.pipe(T.Header("x-ms-range")),
@@ -5802,7 +5741,7 @@ function __c57(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -5914,7 +5853,6 @@ function __c59(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsRange: S.String.pipe(T.Header("x-ms-range")),
@@ -5938,7 +5876,7 @@ function __c59(j: number): any {
         }).pipe(
           T.Http({
             method: "PUT",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
@@ -6078,7 +6016,6 @@ function __c63(j: number): any {
         S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
-          directory: S.String.pipe(T.Label()),
           fileName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsAllowTrailingDot: S.optional(S.Boolean.pipe(T.Header("x-ms-allow-trailing-dot"))),
@@ -6087,7 +6024,7 @@ function __c63(j: number): any {
         }).pipe(
           T.Http({
             method: "DELETE",
-            uri: "/{shareName}/{directory}/{fileName}",
+            uri: "/{shareName}/{fileName+}",
             code: 200,
             host: "{url}",
             hostRaw: ["url"],
