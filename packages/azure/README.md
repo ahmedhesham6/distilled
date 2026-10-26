@@ -29,6 +29,35 @@ const Live = Layer.mergeAll(
 program.pipe(Effect.provide(Live), Effect.runPromise);
 ```
 
+## Data planes
+
+Each data-plane group is its own module (`keyvault-secrets`, `storage-blob`,
+`servicebus-messaging`, …). An operation requests a token for its own
+audience, so one credentials layer serves ARM and every data plane:
+
+```ts
+import { Effect, Layer, Redacted } from "effect";
+import * as FetchHttpClient from "effect/http/FetchHttpClient";
+import * as Azure from "@distilled.cloud/azure";
+import * as secrets from "@distilled.cloud/azure/keyvault-secrets";
+
+const program = Effect.gen(function* () {
+  const secret = yield* secrets.GetSecret({
+    vaultBaseUrl: "https://my-vault.vault.azure.net",
+    secretName: "db-password",
+  });
+  return Redacted.make(secret.value ?? "");
+});
+
+const Live = Layer.mergeAll(
+  FetchHttpClient.layer,
+  Azure.fromManagedIdentity(), // inside Functions, Container Apps, VMs, AKS
+  Azure.AzureProtocol,
+);
+
+program.pipe(Effect.provide(Live), Effect.runPromise);
+```
+
 ## Auth
 
 Each layer mints Microsoft Entra ID tokens for ARM and for each data plane's audience, caches them per scope, and refreshes them 5 minutes before they expire:
