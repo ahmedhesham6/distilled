@@ -2590,6 +2590,20 @@ export class HybridNetworkOperationInProgress
   ).pipe(Category.withConflictError) {}
 
 /**
+ * HTTP 409 `InvalidResourceOperation` ("Another 'DELETE' operation ... is
+ * active/in-progress", matched by message): a DELETE of the resource is
+ * already running. Microsoft.Orbital GeoCatalogs return it for a repeated
+ * DELETE while the first one still runs (GET may still report
+ * `Succeeded`). Other conflicts with the same code stay
+ * {@link HybridNetworkOperationInProgress}.
+ */
+export class DeleteOperationInProgress
+  extends /*@__PURE__*/ Schema.TaggedError<DeleteOperationInProgress>()(
+    "DeleteOperationInProgress",
+    AzureErrorFields,
+  ).pipe(Category.withConflictError) {}
+
+/**
  * Returned by Microsoft.HybridCompute when an Arc gateway is written or
  * deleted while it is still provisioning. HTTP 409 without an error code
  * ("Gateway operation not allowed. The Gateway is a transitioning state.",
@@ -3411,6 +3425,11 @@ export const AZURE_ERROR_MESSAGE_MATCHERS: ReadonlyArray<{
   },
   {
     code: "InvalidResourceOperation",
+    includes: "'DELETE'",
+    error: DeleteOperationInProgress,
+  },
+  {
+    code: "InvalidResourceOperation",
     includes: "is active/in-progress",
     error: HybridNetworkOperationInProgress,
   },
@@ -3916,6 +3935,7 @@ export type AzureApiError =
   | AmlFilesystemContainerInaccessible
   | SignalRCustomCertificateNotFound
   | HybridNetworkOperationInProgress
+  | DeleteOperationInProgress
   | ConnectedClusterOperationInProgress
   | CustomLocationClusterExtensionNotFound
   | StorageTaskAssignmentOperationInProgress

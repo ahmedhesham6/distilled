@@ -749,7 +749,8 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#documentation": "SAS uri",
-            "smithy.api#required": {}
+            "smithy.api#required": {},
+            "smithy.api#sensitive": {}
           }
         },
         "type": {
@@ -1460,13 +1461,15 @@
         "key": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "For `type: \"ApiKey\"`: the API key."
+            "smithy.api#documentation": "For `type: \"ApiKey\"`: the API key.",
+            "smithy.api#sensitive": {}
           }
         },
         "SAS": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "For `type: \"SAS\"`: the SAS token."
+            "smithy.api#documentation": "For `type: \"SAS\"`: the SAS token.",
+            "smithy.api#sensitive": {}
           }
         }
       },

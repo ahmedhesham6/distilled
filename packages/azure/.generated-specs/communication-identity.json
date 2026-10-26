@@ -52,7 +52,8 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#documentation": "The access token issued for the identity.",
-            "smithy.api#required": {}
+            "smithy.api#required": {},
+            "smithy.api#sensitive": {}
           }
         },
         "expiresOn": {

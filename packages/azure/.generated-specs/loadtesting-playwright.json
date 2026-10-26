@@ -674,7 +674,8 @@
         "jwtToken": {
           "target": "smithy.api#String",
           "traits": {
-            "smithy.api#documentation": "The access token value in JWT format."
+            "smithy.api#documentation": "The access token value in JWT format.",
+            "smithy.api#sensitive": {}
           }
         },
         "createdAt": {

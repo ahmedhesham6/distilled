@@ -6463,7 +6463,8 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#documentation": "The SAS token string used for authentication.",
-            "smithy.api#required": {}
+            "smithy.api#required": {},
+            "smithy.api#sensitive": {}
           }
         }
       },
@@ -6538,7 +6539,8 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#documentation": "The URL of the unsigned link.",
-            "smithy.api#required": {}
+            "smithy.api#required": {},
+            "smithy.api#sensitive": {}
           }
         }
       },

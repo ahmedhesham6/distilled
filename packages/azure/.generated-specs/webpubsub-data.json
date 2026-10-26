@@ -1715,7 +1715,8 @@
           "target": "smithy.api#String",
           "traits": {
             "smithy.api#documentation": "Access token for the client to connect Azure Web PubSub service",
-            "smithy.api#required": {}
+            "smithy.api#required": {},
+            "smithy.api#sensitive": {}
           }
         }
       },
