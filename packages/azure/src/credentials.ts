@@ -11,8 +11,11 @@
  * - {@link fromClientSecret} -- a service principal's client secret
  *   (OAuth2 client-credentials grant).
  * - {@link fromManagedIdentity} -- the identity of the host: App Service,
- *   Functions and Container Apps (`IDENTITY_ENDPOINT`), or VMs and AKS
+ *   Functions and Container Apps (`IDENTITY_ENDPOINT`), an AKS pod with
+ *   workload identity (`AZURE_FEDERATED_TOKEN_FILE`), or VMs and AKS nodes
  *   (the instance metadata service).
+ * - {@link fromWorkloadIdentity} -- an AKS pod's federated workload identity
+ *   (the projected service-account token exchanged at Entra ID).
  * - {@link fromStaticToken} / {@link CredentialsFromEnv} -- one pre-acquired
  *   bearer token (`AZURE_BEARER_TOKEN`).
  * - {@link fromEnv} -- the chain: client secret, then managed identity, then
@@ -325,16 +328,187 @@ const appServiceEndpoint = /*@__PURE__*/ Effect.gen(function* () {
   return endpoint && header ? { endpoint, header } : undefined;
 });
 
+// ---------------------------------------------------------------------------
+// Workload identity (AKS)
+// ---------------------------------------------------------------------------
+
+export interface WorkloadIdentityOptions {
+  /**
+   * Tenant of the identity.
+   * @default the `AZURE_TENANT_ID` environment variable
+   */
+  readonly tenantId?: string;
+  /**
+   * Client ID of the user-assigned identity the Kubernetes service account is federated with.
+   * @default the `AZURE_CLIENT_ID` environment variable
+   */
+  readonly clientId?: string;
+  /**
+   * Path of the projected service-account token.
+   * @default the `AZURE_FEDERATED_TOKEN_FILE` environment variable
+   */
+  readonly tokenFile?: string;
+  /**
+   * @default the `AZURE_AUTHORITY_HOST` environment variable, else "https://login.microsoftonline.com"
+   */
+  readonly authorityHost?: string;
+  /**
+   * Subscription for ARM operations that take `{subscriptionId}`.
+   * @default the `AZURE_SUBSCRIPTION_ID` environment variable, else none
+   */
+  readonly subscriptionId?: string;
+  /** @default "https://management.azure.com" */
+  readonly apiBaseUrl?: string;
+}
+
+interface ResolvedWorkloadIdentity {
+  readonly tenantId: string;
+  readonly clientId: string;
+  readonly tokenFile: string;
+  readonly authorityHost: string;
+}
+
+/**
+ * The workload identity the AKS webhook injects into a pod labelled
+ * `azure.workload.identity/use: "true"`, when all of it is present.
+ */
+const workloadIdentityOf = (
+  options: Pick<WorkloadIdentityOptions, "tenantId" | "clientId" | "tokenFile" | "authorityHost">,
+): Effect.Effect<ResolvedWorkloadIdentity | undefined> =>
+  Effect.gen(function* () {
+    const tokenFile = options.tokenFile ?? (yield* optionalEnv("AZURE_FEDERATED_TOKEN_FILE"));
+    const clientId = options.clientId ?? (yield* optionalEnv("AZURE_CLIENT_ID"));
+    const tenantId = options.tenantId ?? (yield* optionalEnv("AZURE_TENANT_ID"));
+    const authorityHost =
+      options.authorityHost ??
+      (yield* optionalEnv("AZURE_AUTHORITY_HOST")) ??
+      DEFAULT_AUTHORITY_HOST;
+    return tokenFile && clientId && tenantId
+      ? { tokenFile, clientId, tenantId, authorityHost }
+      : undefined;
+  });
+
+/**
+ * Read the projected service-account token. Kubelet rotates the file, so it
+ * is read again for every token request (the token cache bounds how often).
+ */
+const readFederatedToken = (tokenFile: string, scope: string) =>
+  Effect.tryPromise({
+    try: () => import("node:fs/promises").then((fs) => fs.readFile(tokenFile, "utf8")),
+    catch: (cause) =>
+      new ManagedIdentityUnavailable({
+        message: `No workload identity: cannot read the federated token file ${tokenFile}: ${String(cause)}`,
+        scope,
+      }),
+  }).pipe(Effect.map((token) => token.trim()));
+
+/**
+ * Request one token by exchanging the pod's projected service-account token
+ * (a client assertion) at Microsoft Entra ID for the federated identity.
+ */
+const requestWorkloadIdentityToken = (
+  identity: ResolvedWorkloadIdentity,
+  scope: string,
+): Effect.Effect<AccessToken, AzureCredentialsError> =>
+  Effect.gen(function* () {
+    const issuedAt = yield* Clock.currentTimeMillis;
+    const assertion = yield* readFederatedToken(identity.tokenFile, scope);
+    const authority = identity.authorityHost.replace(/\/+$/, "");
+    const request = HttpClientRequest.post(
+      `${authority}/${encodeURIComponent(identity.tenantId)}/oauth2/v2.0/token`,
+      { acceptJson: true },
+    ).pipe(
+      HttpClientRequest.bodyUrlParams({
+        grant_type: "client_credentials",
+        client_id: identity.clientId,
+        client_assertion_type: "urn:ietf:params:oauth:client-assertion-type:jwt-bearer",
+        client_assertion: assertion,
+        scope,
+      }),
+    );
+    const response = yield* sendWithRetry(request, { imds: false }).pipe(
+      Effect.mapError(
+        (e) =>
+          new TokenRequestFailed({
+            message: `Microsoft Entra ID token endpoint ${e.message}`,
+            scope,
+          }),
+      ),
+    );
+    const token = accessTokenOf(response, issuedAt);
+    if (token !== undefined) return token;
+    return yield* Effect.fail(
+      new TokenRequestFailed({
+        message: `Microsoft Entra ID did not issue a workload identity token for client ${identity.clientId}: ${reasonOf(response)}`,
+        code: stringField(response.body, "error"),
+        status: response.status,
+        scope,
+      }),
+    );
+  });
+
+/**
+ * Credentials of an AKS pod with Microsoft Entra Workload ID: the pod's
+ * projected service-account token (`AZURE_FEDERATED_TOKEN_FILE`) is
+ * exchanged at Microsoft Entra ID for tokens of the user-assigned identity
+ * its service account is federated with (`AZURE_CLIENT_ID`,
+ * `AZURE_TENANT_ID`). {@link fromManagedIdentity} uses it too when the
+ * workload identity webhook set those variables.
+ *
+ * @example
+ * ```ts
+ * Effect.provide(Azure.fromWorkloadIdentity());
+ * ```
+ */
+export const fromWorkloadIdentity = (
+  options: WorkloadIdentityOptions = {},
+): Layer.Layer<Credentials> =>
+  Layer.sync(Credentials, () =>
+    makeConfig(
+      (scope) =>
+        workloadIdentityOf(options).pipe(
+          Effect.flatMap((identity) =>
+            identity !== undefined
+              ? requestWorkloadIdentityToken(identity, scope)
+              : Effect.fail(
+                  new ManagedIdentityUnavailable({
+                    message:
+                      "No workload identity: AZURE_FEDERATED_TOKEN_FILE, AZURE_CLIENT_ID and AZURE_TENANT_ID are required",
+                    scope,
+                  }),
+                ),
+          ),
+        ),
+      {
+        subscriptionId:
+          options.subscriptionId !== undefined
+            ? Effect.succeed(options.subscriptionId)
+            : optionalEnv("AZURE_SUBSCRIPTION_ID").pipe(Effect.map((id) => id ?? "")),
+        tenantId: options.tenantId,
+        apiBaseUrl: options.apiBaseUrl,
+      },
+    ),
+  );
+
 /**
  * Request one managed-identity token: from the App Service identity endpoint
- * (App Service, Functions, Container Apps) when the host sets one, else from
- * the instance metadata service (VMs, VM scale sets, AKS).
+ * (App Service, Functions, Container Apps) when the host sets one, from the
+ * workload identity token exchange in an AKS pod the workload identity
+ * webhook configured, else from the instance metadata service (VMs, VM
+ * scale sets, AKS nodes).
  */
 export const requestManagedIdentityToken = (
   options: { readonly clientId?: string },
   scope: string,
 ): Effect.Effect<AccessToken, AzureCredentialsError> =>
   Effect.gen(function* () {
+    const workload = yield* workloadIdentityOf({});
+    if (
+      workload !== undefined &&
+      (options.clientId === undefined || options.clientId === workload.clientId)
+    ) {
+      return yield* requestWorkloadIdentityToken(workload, scope);
+    }
     const issuedAt = yield* Clock.currentTimeMillis;
     const appService = yield* appServiceEndpoint;
     const resource = resourceOf(scope);
@@ -514,7 +688,8 @@ export const fromEnv = (): Layer.Layer<Credentials> =>
         });
       }
       const appService = yield* appServiceEndpoint;
-      const managed = appService !== undefined ? true : yield* imdsAnswers;
+      const workload = yield* workloadIdentityOf({});
+      const managed = appService !== undefined || workload !== undefined || (yield* imdsAnswers);
       if (managed) {
         return managedIdentityConfig({
           ...(clientId ? { clientId } : {}),

@@ -21,6 +21,7 @@ import {
   fromEnv,
   fromManagedIdentity,
   fromStaticToken,
+  fromWorkloadIdentity,
   makeTokenCache,
 } from "../src/credentials.ts";
 import * as Retry from "../src/retry.ts";
@@ -379,6 +380,108 @@ describe("fromManagedIdentity", () => {
     const error = await runFlip(ListResourceGroups({}), fromManagedIdentity(), layer);
     expect(error._tag).toBe("ConfigError");
     expect(calls.every((c) => c.url.host === "169.254.169.254")).toBe(true);
+  });
+});
+
+describe("fromWorkloadIdentity", () => {
+  /** Write a projected service-account token where the AKS webhook would mount it. */
+  const tokenFile = (token: string) =>
+    Effect.runPromise(
+      Effect.gen(function* () {
+        const fs = yield* FileSystem.FileSystem;
+        const dir = yield* fs.makeTempDirectory({ prefix: "azure-wi-" });
+        const file = `${dir}/azure-identity-token`;
+        yield* fs.writeFileString(file, `${token}\n`);
+        return file;
+      }).pipe(Effect.provide(NodeFileSystem.layer)),
+    );
+
+  const workloadRoute = (call: Captured): Reply => {
+    const params = new URLSearchParams(call.body);
+    return {
+      status: 200,
+      json: { expires_in: 3599, access_token: `wi:${params.get("scope")}` },
+    };
+  };
+
+  test("exchanges the projected token as a client assertion", async () => {
+    const file = await tokenFile("projected.jwt");
+    const { calls, layer } = fakeHttp(workloadRoute);
+    const result = await run(config, fromWorkloadIdentity(), layer, {
+      AZURE_FEDERATED_TOKEN_FILE: file,
+      AZURE_CLIENT_ID: "wi-client",
+      AZURE_TENANT_ID: "tenant-1",
+      AZURE_AUTHORITY_HOST: "https://login.microsoftonline.com/",
+      AZURE_SUBSCRIPTION_ID: SP.subscriptionId,
+    });
+    expect(Redacted.value(result.bearerToken)).toBe(`wi:${ARM_SCOPE}`);
+    expect(result.subscriptionId).toBe(SP.subscriptionId);
+    expect(calls).toHaveLength(1);
+    expect(calls[0]!.url.toString()).toBe(LOGIN);
+    expect(Object.fromEntries(new URLSearchParams(calls[0]!.body))).toEqual({
+      grant_type: "client_credentials",
+      client_id: "wi-client",
+      client_assertion_type: "urn:ietf:params:oauth:client-assertion-type:jwt-bearer",
+      client_assertion: "projected.jwt",
+      scope: ARM_SCOPE,
+    });
+  });
+
+  test("fromManagedIdentity uses the exchange in a pod the webhook configured", async () => {
+    const file = await tokenFile("projected.jwt");
+    const { calls, layer } = fakeHttp(workloadRoute);
+    const result = await run(config, fromManagedIdentity(), layer, {
+      AZURE_FEDERATED_TOKEN_FILE: file,
+      AZURE_CLIENT_ID: "wi-client",
+      AZURE_TENANT_ID: "tenant-1",
+    });
+    expect(Redacted.value(result.bearerToken)).toBe(`wi:${ARM_SCOPE}`);
+    expect(calls.map((c) => c.url.host)).toEqual(["login.microsoftonline.com"]);
+  });
+
+  test("fromEnv picks the workload identity before IMDS", async () => {
+    const file = await tokenFile("projected.jwt");
+    const { calls, layer } = fakeHttp(workloadRoute);
+    const result = await run(config, fromEnv(), layer, {
+      AZURE_FEDERATED_TOKEN_FILE: file,
+      AZURE_CLIENT_ID: "wi-client",
+      AZURE_TENANT_ID: "tenant-1",
+    });
+    expect(Redacted.value(result.bearerToken)).toBe(`wi:${ARM_SCOPE}`);
+    expect(calls.map((c) => c.url.host)).toEqual(["login.microsoftonline.com"]);
+  });
+
+  test("a missing token file fails with ManagedIdentityUnavailable", async () => {
+    const { calls, layer } = fakeHttp(workloadRoute);
+    const error = await runFlip(
+      config,
+      fromWorkloadIdentity({
+        tokenFile: "/nonexistent/azure-identity-token",
+        clientId: "wi-client",
+        tenantId: "tenant-1",
+      }),
+      layer,
+    );
+    expect(error._tag).toBe("ManagedIdentityUnavailable");
+    expect(error.message).toContain("/nonexistent/azure-identity-token");
+    expect(calls).toHaveLength(0);
+  });
+
+  test("an unmatched federated credential fails with TokenRequestFailed", async () => {
+    const file = await tokenFile("projected.jwt");
+    const { layer } = fakeHttp(() => ({
+      status: 400,
+      json: {
+        error: "invalid_client",
+        error_description: "AADSTS70021: No matching federated identity record found",
+      },
+    }));
+    const error = await runFlip(config, fromWorkloadIdentity({ tokenFile: file }), layer, {
+      AZURE_CLIENT_ID: "wi-client",
+      AZURE_TENANT_ID: "tenant-1",
+    });
+    expect(error._tag).toBe("TokenRequestFailed");
+    expect(error.message).toContain("AADSTS70021");
   });
 });
 
