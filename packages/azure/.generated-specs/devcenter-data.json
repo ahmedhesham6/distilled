@@ -2364,7 +2364,12 @@
           "apiVersion": "2025-02-01"
         },
         "smithy.api#documentation": "Gets a snapshot by snapshot id."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.devcenter_data#DevBoxSnapshotNotFound"
+        }
+      ]
     },
     "com.azure.devcenter_data#DevBoxSnapshot": {
       "type": "structure",
@@ -2682,7 +2687,12 @@
           "apiVersion": "2025-02-01"
         },
         "smithy.api#documentation": "Gets an operation on a Dev Box."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.devcenter_data#DevBoxOperationNotFound"
+        }
+      ]
     },
     "com.azure.devcenter_data#DevBoxOperation": {
       "type": "structure",
@@ -3445,7 +3455,12 @@
           "apiVersion": "2025-02-01"
         },
         "smithy.api#documentation": "Gets a customization group."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.devcenter_data#CustomizationGroupNotFound"
+        }
+      ]
     },
     "com.azure.devcenter_data#GetDevBoxCustomizationGroupRequest": {
       "type": "structure",
@@ -3646,7 +3661,12 @@
           "outputToken": "nextLink",
           "items": "value"
         }
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.devcenter_data#DevBoxActionNotFound"
+        }
+      ]
     },
     "com.azure.devcenter_data#PagedDevBoxActionDelayResult": {
       "type": "structure",
@@ -3924,7 +3944,12 @@
           "apiVersion": "2025-02-01"
         },
         "smithy.api#documentation": "Delays the occurrence of an action."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.devcenter_data#DevBoxActionNotFound"
+        }
+      ]
     },
     "com.azure.devcenter_data#DevBoxesDelayActionRequest": {
       "type": "structure",
@@ -4002,7 +4027,12 @@
           "apiVersion": "2025-02-01"
         },
         "smithy.api#documentation": "Skips an occurrence of an action."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.devcenter_data#DevBoxActionNotFound"
+        }
+      ]
     },
     "com.azure.devcenter_data#DevBoxesSkipActionRequest": {
       "type": "structure",
@@ -4072,7 +4102,12 @@
           "apiVersion": "2025-02-01"
         },
         "smithy.api#documentation": "Gets an action."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.devcenter_data#DevBoxActionNotFound"
+        }
+      ]
     },
     "com.azure.devcenter_data#GetDevBoxActionRequest": {
       "type": "structure",
@@ -5604,7 +5639,12 @@
           "apiVersion": "2025-02-01"
         },
         "smithy.api#documentation": "Gets a schedule."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.devcenter_data#DevBoxScheduleNotFound"
+        }
+      ]
     },
     "com.azure.devcenter_data#GetDevBoxScheduleByPoolRequest": {
       "type": "structure",
@@ -6086,7 +6126,12 @@
           "apiVersion": "2025-02-01"
         },
         "smithy.api#documentation": "Get the status of an operation."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.devcenter_data#OperationStatusNotFound"
+        }
+      ]
     },
     "com.azure.devcenter_data#OperationStatus": {
       "type": "structure",
@@ -6217,7 +6262,12 @@
           "apiVersion": "2025-02-01"
         },
         "smithy.api#documentation": "Gets the log for an imaging build task."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.devcenter_data#ImageBuildLogNotFound"
+        }
+      ]
     },
     "com.azure.devcenter_data#GetDevBoxImagingTaskLogResponse": {
       "type": "structure",
@@ -7442,7 +7492,12 @@
           "apiVersion": "2025-02-01"
         },
         "smithy.api#documentation": "Gets a customization task."
-      }
+      },
+      "errors": [
+        {
+          "target": "com.azure.devcenter_data#CustomizationTaskNotFound"
+        }
+      ]
     },
     "com.azure.devcenter_data#GetDevBoxCustomizationTaskDefinitionsRequest": {
       "type": "structure",
@@ -8068,6 +8123,246 @@
           ]
         },
         "com.azure.protocols#audience": "https://devcenter.azure.com/.default"
+      }
+    },
+    "com.azure.devcenter_data#DevBoxActionNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The dev box or its scheduled action does not exist (HTTP 404 RFC 9110 problem details `{ title: \"Not Found\" }` with no error code).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/title": "Not Found"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.devcenter_data#DevBoxOperationNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The dev box or its operation does not exist (HTTP 404 RFC 9110 problem details with no error code).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/title": "Not Found"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.devcenter_data#OperationStatusNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The project has no long-running operation with that id (HTTP 404 RFC 9110 problem details with no error code).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/title": "Not Found"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.devcenter_data#CustomizationTaskNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The catalog does not publish a customization task with that name (HTTP 404 with an empty body).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "message": {
+              "matches": "^$"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.devcenter_data#DevBoxSnapshotNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The dev box has no snapshot with that id (HTTP 404 `SnapshotNotFound`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/error/code": "SnapshotNotFound"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.devcenter_data#CustomizationGroupNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The dev box has no customization group with that name (HTTP 404 `DevBoxCustomizationGroupNotFound`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/error/code": "DevBoxCustomizationGroupNotFound"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.devcenter_data#ImageBuildLogNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The project has no image build log with that id (HTTP 404 `ImageBuildLogIdNotFound`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/error/code": "ImageBuildLogIdNotFound"
+            }
+          }
+        ]
+      }
+    },
+    "com.azure.devcenter_data#DevBoxScheduleNotFound": {
+      "type": "structure",
+      "members": {
+        "code": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error code."
+          }
+        },
+        "message": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The service's error message."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#error": "client",
+        "smithy.api#httpError": 404,
+        "smithy.api#documentation": "The pool does not exist or has no schedule with that name (HTTP 404 `ScheduleNotFound`).",
+        "com.distilled.openapi#errorMatchers": [
+          {
+            "status": 404,
+            "body": {
+              "/error/code": "ScheduleNotFound"
+            }
+          }
+        ]
       }
     }
   }

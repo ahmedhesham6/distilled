@@ -369,8 +369,13 @@ const encode = ({ input, inputAst }: { readonly input: unknown; readonly inputAs
       // A write without a payload (create container, flush, clear range,
       // Service Bus peek-lock) sends a zero-length body: Storage and
       // Service Bus answer 411 without `Content-Length`, and the builder's
-      // `{}` JSON fallback is not a Storage body.
-      request = HttpClientRequest.setBody(request, HttpBody.uint8Array(new Uint8Array(0)));
+      // `{}` JSON fallback is not a Storage body. The empty body carries no
+      // media type: Azure Files rejects Rename Directory with any
+      // `Content-Type` (400 InvalidHeaderValue).
+      request = HttpClientRequest.removeHeader(
+        HttpClientRequest.setBody(request, HttpBody.uint8Array(new Uint8Array(0))),
+        "content-type",
+      );
     } else if (http?.jsonContentType !== undefined && request.body._tag === "Uint8Array") {
       // A JSON body under the service's own media type, sent exactly (a
       // charset parameter turns a Service Bus batch into one message).

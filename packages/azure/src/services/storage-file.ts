@@ -399,6 +399,13 @@ export interface CreateShareResponse {
 }
 export type CreateSharePermissionRequestXMsFileRequestIntent = "backup";
 export type CreateSharePermissionRequestFormat = "Sddl" | "Binary";
+/** A share-level permission (security descriptor). */
+export interface SharePermission {
+  /** The permission in the Security Descriptor Definition Language (SDDL), or base64 binary when `format` is `Binary`. */
+  permission: string;
+  /** Encoding of `permission`: `Sddl` (the default) or `Binary`. */
+  format?: CreateSharePermissionRequestFormat | (string & {});
+}
 export interface CreateSharePermissionRequest {
   /** The URL of the service account, share, directory or file that is the target of the desired operation. */
   url: string;
@@ -408,9 +415,8 @@ export interface CreateSharePermissionRequest {
   timeout?: number;
   /** Valid value is backup */
   xMsFileRequestIntent?: CreateSharePermissionRequestXMsFileRequestIntent | (string & {});
-  /** The permission in the Security Descriptor Definition Language (SDDL). */
-  permission: string;
-  format?: CreateSharePermissionRequestFormat | (string & {});
+  /** The security descriptor to store. */
+  sharePermission: SharePermission;
 }
 export interface CreateSharePermissionResponse {
   /** This header uniquely identifies the request that was made and can be used for troubleshooting the request. */
@@ -2651,8 +2657,8 @@ export const CreateSharePermission: API.OperationMethod<
   CreateSharePermissionError,
   AzureOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(960, __c60, 0) as any as S.Schema<CreateSharePermissionRequest>,
-  output: __S(961, __c60, 1) as any as S.Schema<CreateSharePermissionResponse>,
+  input: __S(961, __c60, 1) as any as S.Schema<CreateSharePermissionRequest>,
+  output: __S(962, __c60, 2) as any as S.Schema<CreateSharePermissionResponse>,
   errors: [UnknownAzureError],
   protocol: AzureProtocol,
   retry: Retry.Retry,
@@ -5911,12 +5917,18 @@ function __c60(j: number): any {
     case 0:
       return S.suspend(() =>
         S.Struct({
+          permission: S.String,
+          format: S.optional(S.String),
+        }),
+      ).annotate({ identifier: "SharePermission" });
+    case 1:
+      return S.suspend(() =>
+        S.Struct({
           url: S.String.pipe(T.HostLabel()),
           shareName: S.String.pipe(T.Label()),
           timeout: S.optional(S.Number.pipe(T.Query())),
           xMsFileRequestIntent: S.optional(S.String.pipe(T.Header("x-ms-file-request-intent"))),
-          permission: S.String,
-          format: S.optional(S.String),
+          sharePermission: __S(960, __c60, 0).pipe(T.HttpBody()),
         }).pipe(
           T.Http({
             method: "PUT",
@@ -5932,7 +5944,7 @@ function __c60(j: number): any {
           }),
         ),
       ).annotate({ identifier: "CreateSharePermissionRequest" });
-    case 1:
+    case 2:
       return S.suspend(() =>
         S.Struct({
           xMsRequestId: S.optional(S.String.pipe(T.Header("x-ms-request-id"))),

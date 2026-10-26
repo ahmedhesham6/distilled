@@ -157,6 +157,7 @@ describe("Storage requests", () => {
     expect(request.url).toBe(`${BLOB}/assets?restype=container`);
     expect(request.body).toEqual(new Uint8Array(0));
     expect(request.headers["content-length"]).toBe("0");
+    expect(request.headers["content-type"]).toBeUndefined();
   });
 
   test("queue enqueue sends <QueueMessage><MessageText> and reads the list back", async () => {

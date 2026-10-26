@@ -8628,15 +8628,13 @@
             "smithy.api#documentation": "Valid value is backup"
           }
         },
-        "permission": {
-          "target": "smithy.api#String",
+        "sharePermission": {
+          "target": "com.azure.storage_file#SharePermission",
           "traits": {
-            "smithy.api#documentation": "The permission in the Security Descriptor Definition Language (SDDL).",
-            "smithy.api#required": {}
+            "smithy.api#httpPayload": {},
+            "smithy.api#required": {},
+            "smithy.api#documentation": "The security descriptor to store."
           }
-        },
-        "format": {
-          "target": "com.azure.storage_file#CreateSharePermissionRequestFormat"
         }
       },
       "traits": {
@@ -11807,6 +11805,27 @@
           ]
         },
         "com.azure.protocols#audience": "https://storage.azure.com/.default"
+      }
+    },
+    "com.azure.storage_file#SharePermission": {
+      "type": "structure",
+      "members": {
+        "permission": {
+          "target": "smithy.api#String",
+          "traits": {
+            "smithy.api#documentation": "The permission in the Security Descriptor Definition Language (SDDL), or base64 binary when `format` is `Binary`.",
+            "smithy.api#required": {}
+          }
+        },
+        "format": {
+          "target": "com.azure.storage_file#CreateSharePermissionRequestFormat",
+          "traits": {
+            "smithy.api#documentation": "Encoding of `permission`: `Sddl` (the default) or `Binary`."
+          }
+        }
+      },
+      "traits": {
+        "smithy.api#documentation": "A share-level permission (security descriptor)."
       }
     }
   }
