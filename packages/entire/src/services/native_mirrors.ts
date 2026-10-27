@@ -89,6 +89,7 @@ export interface ListProjectNativeMirrorTargetsOutputBody {
 }
 export interface ListRepoAvailablePlacementsRequest {
   repoId: string;
+  ifNoneMatch?: string;
 }
 export type ListNativeMirrorTargetsOutputBodyTargetsList = Array<NativeMirrorTarget>;
 export interface ListNativeMirrorTargetsOutputBody {
@@ -309,6 +310,7 @@ function __c6(j: number): any {
       return S.suspend(() =>
         S.Struct({
           repoId: S.String.pipe(T.Label()),
+          ifNoneMatch: S.optional(S.String.pipe(T.Header("If-None-Match"))),
         }).pipe(
           T.Http({ method: "GET", uri: "/api/v1/repos/{repoId}/available-placements", code: 200 }),
         ),

@@ -178,6 +178,8 @@ export interface CompleteOrgBillingSignupRequest {
   checkoutSessionId: string;
 }
 export interface CreateAccountBillingPurchaseRequest {
+  /** Makes a repeat of this request one purchase. */
+  idempotencyKey?: string;
   /** Credit to buy, in US cents. From 1000 ($10) to 1000000 ($10,000). */
   amount_cents: number;
 }
@@ -209,6 +211,8 @@ export interface BillingSettingsSession {
 }
 export interface CreateOrgBillingPurchaseRequest {
   org_id: string;
+  /** Makes a repeat of this request one purchase. */
+  idempotencyKey?: string;
   /** Credit to buy, in US cents. From 1000 ($10) to 1000000 ($10,000). */
   amount_cents: number;
 }
@@ -1084,6 +1088,7 @@ function __c15(j: number): any {
     case 0:
       return S.suspend(() =>
         S.Struct({
+          idempotencyKey: S.optional(S.String.pipe(T.Header("Idempotency-Key"))),
           amount_cents: S.Number,
         }).pipe(T.Http({ method: "POST", uri: "/api/v1/me/billing/purchases", code: 200 })),
       ).annotate({ identifier: "CreateAccountBillingPurchaseRequest" });
@@ -1136,6 +1141,7 @@ function __c19(j: number): any {
       return S.suspend(() =>
         S.Struct({
           org_id: S.String.pipe(T.Label()),
+          idempotencyKey: S.optional(S.String.pipe(T.Header("Idempotency-Key"))),
           amount_cents: S.Number,
         }).pipe(
           T.Http({ method: "POST", uri: "/api/v1/orgs/{org_id}/billing/purchases", code: 200 }),

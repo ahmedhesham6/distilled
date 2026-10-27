@@ -77,6 +77,10 @@ export interface ListTrailEventsRequest {
   per_page?: string;
   /** Numeric resume cursor: for SSE, used when Last-Event-ID is absent; for JSON pages, an alternative first-page start to cursor (mutually exclusive with cursor). */
   after?: string;
+  /** text/event-stream streams events; otherwise returns a JSON page. */
+  accept?: string;
+  /** SSE numeric resume cursor; falls back to after. */
+  lastEventID?: string;
 }
 export interface ReviewEventJSON {
   actor_id: string | null;
@@ -120,6 +124,10 @@ export interface ListTrailEventsBySlugRequest {
   per_page?: string;
   /** Numeric resume cursor: for SSE, used when Last-Event-ID is absent; for JSON pages, an alternative first-page start to cursor (mutually exclusive with cursor). */
   after?: string;
+  /** text/event-stream streams events; otherwise returns a JSON page. */
+  accept?: string;
+  /** SSE numeric resume cursor; falls back to after. */
+  lastEventID?: string;
 }
 export interface ListTrailWatchersRequest {
   repo_id: string;
@@ -316,6 +324,8 @@ function __c3(j: number): any {
           cursor: S.optional(S.String.pipe(T.Query())),
           per_page: S.optional(S.String.pipe(T.Query())),
           after: S.optional(S.String.pipe(T.Query())),
+          accept: S.optional(S.String.pipe(T.Header("Accept"))),
+          lastEventID: S.optional(S.String.pipe(T.Header("Last-Event-ID"))),
         }).pipe(
           T.Http({
             method: "GET",
@@ -369,6 +379,8 @@ function __c5(j: number): any {
           cursor: S.optional(S.String.pipe(T.Query())),
           per_page: S.optional(S.String.pipe(T.Query())),
           after: S.optional(S.String.pipe(T.Query())),
+          accept: S.optional(S.String.pipe(T.Header("Accept"))),
+          lastEventID: S.optional(S.String.pipe(T.Header("Last-Event-ID"))),
         }).pipe(
           T.Http({
             method: "GET",

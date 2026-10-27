@@ -87,6 +87,8 @@ export interface CreateProjectTrailAttachmentRequest {
   trail_id: string;
   /** Known target project ULID; verified against the canonical project reference */
   project_id?: string;
+  /** Optional actor-scoped replay key; retries return the original attachment with a fresh upload URL. */
+  idempotencyKey?: string;
   content_type?: unknown;
   filename?: unknown;
   height?: unknown;
@@ -108,6 +110,8 @@ export interface CreateTrailAttachmentRequest {
   repo_id: string;
   /** Trail number */
   number: string;
+  /** Optional replay-safe key; a retried upload-intent resolves to the same attachment with a fresh presigned URL. */
+  idempotencyKey?: string;
   contentType?: unknown;
   filename?: unknown;
   height?: unknown;
@@ -514,6 +518,7 @@ function __c5(j: number): any {
           project: S.String.pipe(T.Label()),
           trail_id: S.String.pipe(T.Label()),
           project_id: S.optional(S.String.pipe(T.Query())),
+          idempotencyKey: S.optional(S.String.pipe(T.Header("Idempotency-Key"))),
           content_type: S.optional(S.Unknown),
           filename: S.optional(S.Unknown),
           height: S.optional(S.Unknown),
@@ -551,6 +556,7 @@ function __c6(j: number): any {
         S.Struct({
           repo_id: S.String.pipe(T.Label()),
           number: S.String.pipe(T.Label()),
+          idempotencyKey: S.optional(S.String.pipe(T.Header("Idempotency-Key"))),
           contentType: S.optional(S.Unknown),
           filename: S.optional(S.Unknown),
           height: S.optional(S.Unknown),

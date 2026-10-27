@@ -14,9 +14,9 @@ import { makeRestProtocol, type RestErrorEnvelope } from "@distilled.cloud/core/
  *   * {@link EntireCoreProtocol} -- the Core control plane (`coreBaseUrl`)
  *   * {@link EntireCellProtocol} -- the regional cell (`apiBaseUrl`)
  *
- * Failures are RFC 9457 problem documents (`{ status, title, detail,
- * errors? }`); {@link errorEnvelope} reads `detail` (falling back to `title`)
- * as the message, and the HTTP status picks the error class.
+ * Failures are RFC 9457 problem documents or a bare `{ error }`;
+ * {@link errorEnvelope} reads either, and the HTTP status picks the error
+ * class.
  */
 import * as Effect from "effect/Effect";
 import type * as HttpClient from "effect/http/HttpClient";
@@ -51,30 +51,32 @@ export type EntireOpError =
 export type EntireOpContext = Credentials | HttpClient.HttpClient;
 
 /**
- * `{ code?, message? }` from a problem document. `detail` is the
- * occurrence-specific explanation; `title` is the status's generic summary.
- * Field-level validation failures add `errors[].message`, appended so a 422
- * names the offending field.
+ * `{ code?, message? }` from a failed response. Entire answers in two shapes:
+ *
+ *   * an RFC 9457 problem document -- `{ code, status, title, detail,
+ *     errors? }` -- from Core and most cell routes. `detail` is the
+ *     occurrence-specific explanation, `title` the status's generic summary,
+ *     and `code` a stable slug (`not_found`, `validation_error`). Field-level
+ *     validation failures add `errors[].message`, appended so a 422 names
+ *     the offending field.
+ *   * a bare `{ error }` from the cell's git and settings routes
+ *     (`repo not in this region`, `unknown secret key`).
  */
 const errorEnvelope = (body: unknown): RestErrorEnvelope | undefined => {
   if (body === null || typeof body !== "object") return undefined;
   const b = body as Record<string, unknown>;
-  const detail = typeof b.detail === "string" ? b.detail : undefined;
-  const title = typeof b.title === "string" ? b.title : undefined;
+  const text = (v: unknown) => (typeof v === "string" && v.length > 0 ? v : undefined);
   const fieldErrors = Array.isArray(b.errors)
-    ? b.errors.flatMap((e) =>
-        e !== null && typeof e === "object" && typeof (e as any).message === "string"
-          ? [
-              typeof (e as any).location === "string"
-                ? `${(e as any).location}: ${(e as any).message}`
-                : (e as any).message,
-            ]
-          : [],
-      )
+    ? b.errors.flatMap((e) => {
+        if (e === null || typeof e !== "object") return [];
+        const message = text((e as Record<string, unknown>).message);
+        const location = text((e as Record<string, unknown>).location);
+        return message === undefined ? [] : [location ? `${location}: ${message}` : message];
+      })
     : [];
-  const message =
-    [detail ?? title, ...fieldErrors].filter((m) => m !== undefined).join("; ") || undefined;
-  return { code: title, message };
+  const head = text(b.detail) ?? text(b.error) ?? text(b.title);
+  const message = [head, ...fieldErrors].filter((m) => m !== undefined).join("; ") || undefined;
+  return { code: text(b.code) ?? text(b.title), message };
 };
 
 const statusMap = {

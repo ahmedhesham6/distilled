@@ -116,6 +116,8 @@ export interface WriteGitMetaRequest {
   repo_id: string;
   /** Metadata namespace: the ref sub-path under refs/meta/ (e.g. entire/settings) */
   namespace: string;
+  /** Optimistic concurrency: apply only if the namespace's ETag still matches; "*" requires it to exist. Omit to apply unconditionally (merges onto the latest). */
+  ifMatch?: string;
   expected?: WriteGitMetaRequestExpected;
   /** Colon-namespaced metadata key, e.g. agent:model */
   key: string;
@@ -302,6 +304,7 @@ function __c3(j: number): any {
         S.Struct({
           repo_id: S.String.pipe(T.Label()),
           namespace: S.String.pipe(T.Query()),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           expected: S.optional(__S(24, __c3, 0)),
           key: S.String,
           op: S.String,

@@ -36,6 +36,7 @@ export interface AttachTrailChangeRequest {
   changeId: string;
   /** Known target project ULID; verified against the canonical project reference */
   project_id?: string;
+  ifMatch?: string;
 }
 /** available: read succeeded (possibly empty). unavailable: the read failed; not zero deployments. not_applicable: no head SHA. */
 export type ChangeSummaryResponseDeploymentsAvailability =
@@ -284,6 +285,8 @@ export interface CreateProjectTrailRequest {
   project: string;
   /** Known target project ULID; verified against the canonical project reference */
   project_id?: string;
+  /** Required when changes is non-empty; reuse for retries (24-hour retention) */
+  idempotencyKey?: string;
   /** Actor references: ulid:ACCOUNT_ID or @username. A bare string is a GitHub login (legacy). */
   assignees?: CreateProjectTrailRequestAssigneesList | null;
   body?: string;
@@ -448,6 +451,10 @@ export interface CreateTrailChangeRequest {
   trailId: string;
   /** Known target project ULID; verified against the canonical project reference */
   project_id?: string;
+  /** Parent Trail ETag */
+  ifMatch: string;
+  /** Reuse for retries of the same creation request (24-hour retention) */
+  idempotencyKey: string;
   assignees?: unknown;
   base?: unknown;
   branchAction?: unknown;
@@ -477,6 +484,8 @@ export interface DeleteProjectDiscussionMessageRequest {
   messageId: string;
   /** Known target project ULID; verified against the canonical project reference */
   project_id?: string;
+  /** Optional message ETag from the message's etag field or write response. Stale or weak validators return 412. */
+  ifMatch?: string;
 }
 export interface DeleteProjectDiscussionMessageResponse {}
 export interface EnsureProjectTrailBodyDocumentRequest {
@@ -970,6 +979,8 @@ export interface ListProjectDiscussionEventsRequest {
   project_id?: string;
   after?: string;
   limit?: string;
+  accept?: string;
+  lastEventID?: string;
 }
 export interface DiscussionEventJSON {
   actorId: string;
@@ -1281,6 +1292,8 @@ export interface UpdateProjectDiscussionRequest {
   discussionId: string;
   /** Known target project ULID; verified against the canonical project reference */
   project_id?: string;
+  /** Optional discussion ETag from a read or write response. Stale or weak validators return 412. */
+  ifMatch?: string;
   resolved?: unknown;
   title?: unknown;
 }
@@ -1300,6 +1313,8 @@ export interface UpdateProjectDiscussionMessageRequest {
   messageId: string;
   /** Known target project ULID; verified against the canonical project reference */
   project_id?: string;
+  /** Optional message ETag from the message's etag field or write response. Stale or weak validators return 412. */
+  ifMatch?: string;
   body?: unknown;
 }
 /** Actor references: ulid:ACCOUNT_ID or @username. A bare string is a GitHub login (legacy). */
@@ -1318,6 +1333,7 @@ export interface UpdateProjectTrailRequest {
   trailId: string;
   /** Known target project ULID; verified against the canonical project reference */
   project_id?: string;
+  ifMatch?: string;
   /** Actor references: ulid:ACCOUNT_ID or @username. A bare string is a GitHub login (legacy). */
   assignees?: UpdateProjectTrailRequestAssigneesList;
   /** Markdown input. When an editor document exists, updates its rich content and stores the plain-text projection in body. */
@@ -1693,6 +1709,7 @@ function __c0(j: number): any {
           trailId: S.String.pipe(T.Label()),
           changeId: S.String.pipe(T.Label()),
           project_id: S.optional(S.String.pipe(T.Query())),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
         }).pipe(
           T.Http({
             method: "PUT",
@@ -2367,6 +2384,8 @@ function __c8(j: number): any {
           project_id: S.optional(S.String.pipe(T.Query())),
           after: S.optional(S.String.pipe(T.Query())),
           limit: S.optional(S.String.pipe(T.Query())),
+          accept: S.optional(S.String.pipe(T.Header("Accept"))),
+          lastEventID: S.optional(S.String.pipe(T.Header("Last-Event-ID"))),
         }).pipe(
           T.Http({
             method: "GET",
@@ -2628,6 +2647,7 @@ function __c13(j: number): any {
           trailId: S.String.pipe(T.Label()),
           discussionId: S.String.pipe(T.Label()),
           project_id: S.optional(S.String.pipe(T.Query())),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           resolved: S.optional(S.Unknown),
           title: S.optional(S.Unknown),
         }).pipe(
@@ -2658,6 +2678,7 @@ function __c14(j: number): any {
           discussionId: S.String.pipe(T.Label()),
           messageId: S.String.pipe(T.Label()),
           project_id: S.optional(S.String.pipe(T.Query())),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           body: S.optional(S.Unknown),
         }).pipe(
           T.Http({
@@ -2678,6 +2699,7 @@ function __c15(j: number): any {
           project: S.String.pipe(T.Label()),
           trailId: S.String.pipe(T.Label()),
           project_id: S.optional(S.String.pipe(T.Query())),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           assignees: S.optional(__S(608, __c19, 0)),
           body: S.optional(S.String),
           metadata: S.optional(__S(672, __c21, 0)),
@@ -2749,6 +2771,7 @@ function __c18(j: number): any {
           host: S.String.pipe(T.Label()),
           project: S.String.pipe(T.Label()),
           project_id: S.optional(S.String.pipe(T.Query())),
+          idempotencyKey: S.optional(S.String.pipe(T.Header("Idempotency-Key"))),
           assignees: S.optional(S.NullOr(__S(608, __c19, 0))),
           body: S.optional(S.String),
           changes: S.optional(S.NullOr(__S(577, __c18, 1))),
@@ -2917,6 +2940,8 @@ function __c23(j: number): any {
           project: S.String.pipe(T.Label()),
           trailId: S.String.pipe(T.Label()),
           project_id: S.optional(S.String.pipe(T.Query())),
+          ifMatch: S.String.pipe(T.Header("If-Match")),
+          idempotencyKey: S.String.pipe(T.Header("Idempotency-Key")),
           assignees: S.optional(S.Unknown),
           base: S.optional(S.Unknown),
           branchAction: S.optional(S.Unknown),
@@ -2957,6 +2982,7 @@ function __c24(j: number): any {
           discussionId: S.String.pipe(T.Label()),
           messageId: S.String.pipe(T.Label()),
           project_id: S.optional(S.String.pipe(T.Query())),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
         }).pipe(
           T.Http({
             method: "DELETE",

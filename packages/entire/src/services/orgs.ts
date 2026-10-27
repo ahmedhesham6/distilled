@@ -25,6 +25,24 @@ const TELEMETRY = {
   propagate: "w3c",
 } as const;
 
+/** The account has reached its organization creation limit (HTTP 409). */
+export class OrgCreationLimitReached
+  extends /*@__PURE__*/ T.applyErrorMatchers(
+    /*@__PURE__*/ S.TaggedError<OrgCreationLimitReached>()("OrgCreationLimitReached", {
+      message: S.String,
+    }),
+    [{ status: 409, message: { includes: "organization creation limit reached" } }],
+  ) {}
+
+/** The name is not a valid org name: lowercase letters, digits, `.` and `-` (HTTP 400). */
+export class OrgNameInvalid
+  extends /*@__PURE__*/ T.applyErrorMatchers(
+    /*@__PURE__*/ S.TaggedError<OrgNameInvalid>()("OrgNameInvalid", {
+      message: S.String,
+    }),
+    [{ status: 400, message: { includes: "invalid org name" } }],
+  ) {}
+
 export interface AcceptInvitationRequest {
   token: string;
 }
@@ -406,6 +424,7 @@ export interface ListOrgsRequest {
   name?: string;
   /** Optional: opaque commit token from an org create or delete, to read at a snapshot that contains that write. Applies to both the name lookup and the page. */
   commitToken?: string;
+  ifNoneMatch?: string;
 }
 export type ListOrgsOutputBodyOrgsList = Array<Org>;
 export interface ListOrgsOutputBody {
@@ -470,8 +489,8 @@ export const acceptInvitation: API.OperationMethod<
   AcceptInvitationError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(0, __c0, 0) as any as S.Schema<AcceptInvitationRequest>,
-  output: __S(2, __c0, 2) as any as S.Schema<AcceptInvitationResponse>,
+  input: __S(80, __c10, 0) as any as S.Schema<AcceptInvitationRequest>,
+  output: __S(82, __c10, 2) as any as S.Schema<AcceptInvitationResponse>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -487,8 +506,8 @@ export const addOrgMember: API.OperationMethod<
   AddOrgMemberError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(16, __c2, 0) as any as S.Schema<AddOrgMemberRequest>,
-  output: __S(8, __c1, 0) as any as S.Schema<Membership>,
+  input: __S(96, __c12, 0) as any as S.Schema<AddOrgMemberRequest>,
+  output: __S(88, __c11, 0) as any as S.Schema<Membership>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -496,7 +515,7 @@ export const addOrgMember: API.OperationMethod<
   span: "AddOrgMember",
 }));
 
-export type CreateOrgError = EntireOpError;
+export type CreateOrgError = OrgCreationLimitReached | OrgNameInvalid | EntireOpError;
 /** Create organization */
 export const createOrg: API.OperationMethod<
   CreateOrgRequest,
@@ -504,9 +523,9 @@ export const createOrg: API.OperationMethod<
   CreateOrgError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(80, __c10, 0) as any as S.Schema<CreateOrgRequest>,
-  output: __S(81, __c10, 1) as any as S.Schema<CreatedOrg>,
-  errors: [UnknownEntireError],
+  input: __S(104, __c13, 0) as any as S.Schema<CreateOrgRequest>,
+  output: __S(105, __c13, 1) as any as S.Schema<CreatedOrg>,
+  errors: [OrgCreationLimitReached, OrgNameInvalid, UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
   telemetry: TELEMETRY,
@@ -521,8 +540,8 @@ export const createOrgInvitation: API.OperationMethod<
   CreateOrgInvitationError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(96, __c12, 0) as any as S.Schema<CreateOrgInvitationRequest>,
-  output: __S(107, __c13, 3) as any as S.Schema<Invitation>,
+  input: __S(120, __c15, 0) as any as S.Schema<CreateOrgInvitationRequest>,
+  output: __S(131, __c16, 3) as any as S.Schema<Invitation>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -538,8 +557,8 @@ export const declineInvitation: API.OperationMethod<
   DeclineInvitationError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(112, __c14, 0) as any as S.Schema<DeclineInvitationRequest>,
-  output: __S(120, __c15, 0) as any as S.Schema<DeclineInvitationResponse>,
+  input: __S(136, __c17, 0) as any as S.Schema<DeclineInvitationRequest>,
+  output: __S(144, __c18, 0) as any as S.Schema<DeclineInvitationResponse>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -555,8 +574,8 @@ export const deleteOrg: API.OperationMethod<
   DeleteOrgError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(128, __c16, 0) as any as S.Schema<DeleteOrgRequest>,
-  output: __S(120, __c15, 0) as any as S.Schema<DeleteOrgResponse>,
+  input: __S(152, __c19, 0) as any as S.Schema<DeleteOrgRequest>,
+  output: __S(144, __c18, 0) as any as S.Schema<DeleteOrgResponse>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -568,8 +587,8 @@ export type GetOrgError = EntireOpError;
 /** Get an organization */
 export const getOrg: API.OperationMethod<GetOrgRequest, Org, GetOrgError, EntireOpContext> =
   /*@__PURE__*/ API.make(() => ({
-    input: __S(136, __c17, 0) as any as S.Schema<GetOrgRequest>,
-    output: __S(144, __c18, 0) as any as S.Schema<Org>,
+    input: __S(160, __c20, 0) as any as S.Schema<GetOrgRequest>,
+    output: __S(168, __c21, 0) as any as S.Schema<Org>,
     errors: [UnknownEntireError],
     protocol: EntireCoreProtocol,
     retry: Retry.Retry,
@@ -585,8 +604,8 @@ export const getOrgPersonAccess: API.OperationMethod<
   GetOrgPersonAccessError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(152, __c19, 0) as any as S.Schema<GetOrgPersonAccessRequest>,
-  output: __S(156, __c19, 4) as any as S.Schema<OrgPerson>,
+  input: __S(176, __c22, 0) as any as S.Schema<GetOrgPersonAccessRequest>,
+  output: __S(180, __c22, 4) as any as S.Schema<OrgPerson>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -604,8 +623,8 @@ export const listOrgInvitations: API.PaginatedOperationMethod<
   Invitation
 > = /*@__PURE__*/ API.makePaginated(
   () => ({
-    input: __S(168, __c21, 0) as any as S.Schema<ListOrgInvitationsRequest>,
-    output: __S(169, __c21, 1) as any as S.Schema<ListOrgInvitationsOutputBody>,
+    input: __S(0, __c0, 0) as any as S.Schema<ListOrgInvitationsRequest>,
+    output: __S(1, __c0, 1) as any as S.Schema<ListOrgInvitationsOutputBody>,
     errors: [UnknownEntireError],
     protocol: EntireCoreProtocol,
     retry: Retry.Retry,
@@ -631,8 +650,8 @@ export const listOrgMembers: API.PaginatedOperationMethod<
   OrgMemberListItem
 > = /*@__PURE__*/ API.makePaginated(
   () => ({
-    input: __S(184, __c23, 0) as any as S.Schema<ListOrgMembersRequest>,
-    output: __S(187, __c23, 3) as any as S.Schema<ListOrgMembersOutputBody>,
+    input: __S(16, __c2, 0) as any as S.Schema<ListOrgMembersRequest>,
+    output: __S(19, __c2, 3) as any as S.Schema<ListOrgMembersOutputBody>,
     errors: [UnknownEntireError],
     protocol: EntireCoreProtocol,
     retry: Retry.Retry,
@@ -728,7 +747,7 @@ export const removeOrgMember: API.OperationMethod<
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(48, __c6, 0) as any as S.Schema<RemoveOrgMemberRequest>,
-  output: __S(120, __c15, 0) as any as S.Schema<RemoveOrgMemberResponse>,
+  output: __S(144, __c18, 0) as any as S.Schema<RemoveOrgMemberResponse>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -745,7 +764,7 @@ export const removeOrgMemberByMembershipID: API.OperationMethod<
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(56, __c7, 0) as any as S.Schema<RemoveOrgMemberByMembershipIDRequest>,
-  output: __S(120, __c15, 0) as any as S.Schema<RemoveOrgMemberByMembershipIDResponse>,
+  output: __S(144, __c18, 0) as any as S.Schema<RemoveOrgMemberByMembershipIDResponse>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -762,7 +781,7 @@ export const revokeOrgInvitation: API.OperationMethod<
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(64, __c8, 0) as any as S.Schema<RevokeOrgInvitationRequest>,
-  output: __S(120, __c15, 0) as any as S.Schema<RevokeOrgInvitationResponse>,
+  output: __S(144, __c18, 0) as any as S.Schema<RevokeOrgInvitationResponse>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -779,7 +798,7 @@ export const updateOrgMemberRole: API.OperationMethod<
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(72, __c9, 0) as any as S.Schema<UpdateOrgMemberRoleRequest>,
-  output: __S(8, __c1, 0) as any as S.Schema<Membership>,
+  output: __S(88, __c11, 0) as any as S.Schema<Membership>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -793,46 +812,51 @@ function __c0(j: number): any {
     case 0:
       return S.suspend(() =>
         S.Struct({
-          token: S.String,
-        }).pipe(T.Http({ method: "POST", uri: "/api/v1/invitations/accept", code: 200 })),
-      ).annotate({ identifier: "AcceptInvitationRequest" });
+          orgId: S.String.pipe(T.Label()),
+          pageSize: S.optional(S.Number.pipe(T.Query())),
+          pageToken: S.optional(S.String.pipe(T.Query())),
+          status: S.optional(S.String.pipe(T.Query())),
+        }).pipe(T.Http({ method: "GET", uri: "/api/v1/orgs/{orgId}/invitations", code: 200 })),
+      ).annotate({ identifier: "ListOrgInvitationsRequest" });
     case 1:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
-            host: S.String,
-            project: S.String,
-            repo: S.optional(S.String),
+            _schema: S.optional(S.String.pipe(T.Body("$schema"))),
+            invitations: __S(8, __c1, 0),
+            nextPageToken: S.optional(S.String),
           }),
           [S.Record(S.String, S.Unknown)],
         ),
-      ).annotate({ identifier: "InvitationReference" });
-    case 2:
-      return S.suspend(() =>
-        S.Struct({
-          membership: S.optional(__S(8, __c1, 0)),
-          orgId: S.String,
-          orgName: S.String,
-          projectId: S.optional(S.String),
-          projectName: S.optional(S.String),
-          reference: S.optional(__S(1, __c0, 1)),
-          repoId: S.optional(S.String),
-          repoName: S.optional(S.String),
-          role: S.String,
-          scope: S.String,
-        }),
-      ).annotate({ identifier: "AcceptInvitationResponse" });
+      ).annotate({ identifier: "ListOrgInvitationsOutputBody" });
   }
 }
 function __c1(j: number): any {
   switch (j) {
     case 0:
+      return S.Array(__S(131, __c16, 3));
+  }
+}
+function __c2(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          orgId: S.String.pipe(T.Label()),
+          pageSize: S.optional(S.Number.pipe(T.Query())),
+          pageToken: S.optional(S.String.pipe(T.Query())),
+          sort: S.optional(S.String.pipe(T.Query())),
+          order: S.optional(S.String.pipe(T.Query())),
+        }).pipe(T.Http({ method: "GET", uri: "/api/v1/orgs/{orgId}/members", code: 200 })),
+      ).annotate({ identifier: "ListOrgMembersRequest" });
+    case 1:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
-            _schema: S.optional(S.String.pipe(T.Body("$schema"))),
             accountId: S.String,
+            avatarUrl: S.optional(S.String),
             createdAt: S.String,
+            displayName: S.optional(S.String),
             handle: S.optional(S.String),
             id: S.String,
             orgId: S.String,
@@ -844,20 +868,20 @@ function __c1(j: number): any {
           }),
           [S.Record(S.String, S.Unknown)],
         ),
-      ).annotate({ identifier: "Membership" });
-  }
-}
-function __c2(j: number): any {
-  switch (j) {
-    case 0:
+      ).annotate({ identifier: "OrgMemberListItem" });
+    case 2:
+      return S.Array(__S(17, __c2, 1));
+    case 3:
       return S.suspend(() =>
-        S.Struct({
-          orgId: S.String.pipe(T.Label()),
-          provider: S.String,
-          providerUserId: S.String,
-          role: S.optional(S.String),
-        }).pipe(T.Http({ method: "POST", uri: "/api/v1/orgs/{orgId}/members", code: 200 })),
-      ).annotate({ identifier: "AddOrgMemberRequest" });
+        S.StructWithRest(
+          S.Struct({
+            _schema: S.optional(S.String.pipe(T.Body("$schema"))),
+            members: __S(18, __c2, 2),
+            nextPageToken: S.optional(S.String),
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "ListOrgMembersOutputBody" });
   }
 }
 function __c3(j: number): any {
@@ -881,12 +905,12 @@ function __c3(j: number): any {
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
-            accessScopes: __S(160, __c20, 0),
+            accessScopes: __S(184, __c23, 0),
             accountId: S.String,
             avatarUrl: S.optional(S.String),
             displayName: S.optional(S.String),
             handle: S.optional(S.String),
-            membership: __S(161, __c20, 1),
+            membership: __S(185, __c23, 1),
             provider: S.optional(S.String),
             username: S.optional(S.String),
           }),
@@ -900,7 +924,7 @@ function __c3(j: number): any {
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            invitations: S.optional(__S(176, __c22, 0)),
+            invitations: S.optional(__S(8, __c1, 0)),
             items: __S(26, __c3, 2),
             nextPageToken: S.optional(S.String),
             totalCount: S.Number,
@@ -919,17 +943,18 @@ function __c4(j: number): any {
           pageToken: S.optional(S.String.pipe(T.Query())),
           name: S.optional(S.String.pipe(T.Query())),
           commitToken: S.optional(S.String.pipe(T.Query())),
+          ifNoneMatch: S.optional(S.String.pipe(T.Header("If-None-Match"))),
         }).pipe(T.Http({ method: "GET", uri: "/api/v1/orgs", code: 200 })),
       ).annotate({ identifier: "ListOrgsRequest" });
     case 1:
-      return S.Array(__S(144, __c18, 0));
+      return S.Array(__S(168, __c21, 0));
     case 2:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
             nextPageToken: S.optional(S.String),
-            org: S.optional(__S(144, __c18, 0)),
+            org: S.optional(__S(168, __c21, 0)),
             orgs: __S(33, __c4, 1),
           }),
           [S.Record(S.String, S.Unknown)],
@@ -1034,6 +1059,78 @@ function __c10(j: number): any {
     case 0:
       return S.suspend(() =>
         S.Struct({
+          token: S.String,
+        }).pipe(T.Http({ method: "POST", uri: "/api/v1/invitations/accept", code: 200 })),
+      ).annotate({ identifier: "AcceptInvitationRequest" });
+    case 1:
+      return S.suspend(() =>
+        S.StructWithRest(
+          S.Struct({
+            host: S.String,
+            project: S.String,
+            repo: S.optional(S.String),
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "InvitationReference" });
+    case 2:
+      return S.suspend(() =>
+        S.Struct({
+          membership: S.optional(__S(88, __c11, 0)),
+          orgId: S.String,
+          orgName: S.String,
+          projectId: S.optional(S.String),
+          projectName: S.optional(S.String),
+          reference: S.optional(__S(81, __c10, 1)),
+          repoId: S.optional(S.String),
+          repoName: S.optional(S.String),
+          role: S.String,
+          scope: S.String,
+        }),
+      ).annotate({ identifier: "AcceptInvitationResponse" });
+  }
+}
+function __c11(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.StructWithRest(
+          S.Struct({
+            _schema: S.optional(S.String.pipe(T.Body("$schema"))),
+            accountId: S.String,
+            createdAt: S.String,
+            handle: S.optional(S.String),
+            id: S.String,
+            orgId: S.String,
+            provider: S.optional(S.String),
+            role: S.String,
+            status: S.String,
+            username: S.optional(S.String),
+            workosOrgMembershipId: S.optional(S.String),
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "Membership" });
+  }
+}
+function __c12(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          orgId: S.String.pipe(T.Label()),
+          provider: S.String,
+          providerUserId: S.String,
+          role: S.optional(S.String),
+        }).pipe(T.Http({ method: "POST", uri: "/api/v1/orgs/{orgId}/members", code: 200 })),
+      ).annotate({ identifier: "AddOrgMemberRequest" });
+  }
+}
+function __c13(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
           name: S.String,
           region: S.optional(S.String),
         }).pipe(T.Http({ method: "POST", uri: "/api/v1/orgs", code: 200 })),
@@ -1043,7 +1140,7 @@ function __c10(j: number): any {
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            capabilities: __S(88, __c11, 0),
+            capabilities: __S(112, __c14, 0),
             commitToken: S.optional(S.String),
             createdAt: S.String,
             id: S.String,
@@ -1057,7 +1154,7 @@ function __c10(j: number): any {
       ).annotate({ identifier: "CreatedOrg" });
   }
 }
-function __c11(j: number): any {
+function __c14(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1076,7 +1173,7 @@ function __c11(j: number): any {
       ).annotate({ identifier: "OrgCapabilities" });
   }
 }
-function __c12(j: number): any {
+function __c15(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1088,7 +1185,7 @@ function __c12(j: number): any {
       ).annotate({ identifier: "CreateOrgInvitationRequest" });
   }
 }
-function __c13(j: number): any {
+function __c16(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1102,14 +1199,14 @@ function __c13(j: number): any {
         ),
       ).annotate({ identifier: "AccountProfileHandle" });
     case 1:
-      return S.Array(__S(104, __c13, 0));
+      return S.Array(__S(128, __c16, 0));
     case 2:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
             avatarUrl: S.optional(S.String),
             displayName: S.optional(S.String),
-            handles: __S(105, __c13, 1),
+            handles: __S(129, __c16, 1),
             username: S.optional(S.String),
           }),
           [S.Record(S.String, S.Unknown)],
@@ -1122,16 +1219,16 @@ function __c13(j: number): any {
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
             acceptedAt: S.optional(S.String),
             acceptedBy: S.optional(S.String),
-            acceptedByIdentity: S.optional(__S(106, __c13, 2)),
+            acceptedByIdentity: S.optional(__S(130, __c16, 2)),
             createdAt: S.String,
             declinedAt: S.optional(S.String),
             email: S.optional(S.String),
             expiresAt: S.String,
             id: S.String,
             invitedBy: S.String,
-            invitedByIdentity: S.optional(__S(106, __c13, 2)),
+            invitedByIdentity: S.optional(__S(130, __c16, 2)),
             inviteeAccountId: S.optional(S.String),
-            inviteeIdentity: S.optional(__S(106, __c13, 2)),
+            inviteeIdentity: S.optional(__S(130, __c16, 2)),
             revokedAt: S.optional(S.String),
             role: S.String,
             status: S.String,
@@ -1141,7 +1238,7 @@ function __c13(j: number): any {
       ).annotate({ identifier: "Invitation" });
   }
 }
-function __c14(j: number): any {
+function __c17(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1151,13 +1248,13 @@ function __c14(j: number): any {
       ).annotate({ identifier: "DeclineInvitationRequest" });
   }
 }
-function __c15(j: number): any {
+function __c18(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() => S.Struct({})).annotate({ identifier: "DeclineInvitationResponse" });
   }
 }
-function __c16(j: number): any {
+function __c19(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1167,7 +1264,7 @@ function __c16(j: number): any {
       ).annotate({ identifier: "DeleteOrgRequest" });
   }
 }
-function __c17(j: number): any {
+function __c20(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1177,14 +1274,14 @@ function __c17(j: number): any {
       ).annotate({ identifier: "GetOrgRequest" });
   }
 }
-function __c18(j: number): any {
+function __c21(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            capabilities: __S(88, __c11, 0),
+            capabilities: __S(112, __c14, 0),
             createdAt: S.String,
             id: S.String,
             name: S.String,
@@ -1197,7 +1294,7 @@ function __c18(j: number): any {
       ).annotate({ identifier: "Org" });
   }
 }
-function __c19(j: number): any {
+function __c22(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1216,7 +1313,7 @@ function __c19(j: number): any {
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
-            allowedRoles: __S(160, __c20, 0),
+            allowedRoles: __S(184, __c23, 0),
             targetId: S.optional(S.String),
           }),
           [S.Record(S.String, S.Unknown)],
@@ -1226,7 +1323,7 @@ function __c19(j: number): any {
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
-            capabilities: __S(153, __c19, 1),
+            capabilities: __S(177, __c22, 1),
             resourceId: S.String,
             resourceName: S.String,
             resourceType: S.String,
@@ -1237,7 +1334,7 @@ function __c19(j: number): any {
         ),
       ).annotate({ identifier: "OrgPersonGrant" });
     case 3:
-      return S.Array(__S(154, __c19, 2));
+      return S.Array(__S(178, __c22, 2));
     case 4:
       return S.suspend(() =>
         S.StructWithRest(
@@ -1246,9 +1343,9 @@ function __c19(j: number): any {
             accountId: S.String,
             avatarUrl: S.optional(S.String),
             displayName: S.optional(S.String),
-            grants: __S(155, __c19, 3),
+            grants: __S(179, __c22, 3),
             handle: S.optional(S.String),
-            membership: __S(161, __c20, 1),
+            membership: __S(185, __c23, 1),
             provider: S.optional(S.String),
             username: S.optional(S.String),
           }),
@@ -1257,7 +1354,7 @@ function __c19(j: number): any {
       ).annotate({ identifier: "OrgPerson" });
   }
 }
-function __c20(j: number): any {
+function __c23(j: number): any {
   switch (j) {
     case 0:
       return S.Array(S.String);
@@ -1273,83 +1370,6 @@ function __c20(j: number): any {
           [S.Record(S.String, S.Unknown)],
         ),
       ).annotate({ identifier: "OrgPersonMembership" });
-  }
-}
-function __c21(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.Struct({
-          orgId: S.String.pipe(T.Label()),
-          pageSize: S.optional(S.Number.pipe(T.Query())),
-          pageToken: S.optional(S.String.pipe(T.Query())),
-          status: S.optional(S.String.pipe(T.Query())),
-        }).pipe(T.Http({ method: "GET", uri: "/api/v1/orgs/{orgId}/invitations", code: 200 })),
-      ).annotate({ identifier: "ListOrgInvitationsRequest" });
-    case 1:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            invitations: __S(176, __c22, 0),
-            nextPageToken: S.optional(S.String),
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "ListOrgInvitationsOutputBody" });
-  }
-}
-function __c22(j: number): any {
-  switch (j) {
-    case 0:
-      return S.Array(__S(107, __c13, 3));
-  }
-}
-function __c23(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.Struct({
-          orgId: S.String.pipe(T.Label()),
-          pageSize: S.optional(S.Number.pipe(T.Query())),
-          pageToken: S.optional(S.String.pipe(T.Query())),
-          sort: S.optional(S.String.pipe(T.Query())),
-          order: S.optional(S.String.pipe(T.Query())),
-        }).pipe(T.Http({ method: "GET", uri: "/api/v1/orgs/{orgId}/members", code: 200 })),
-      ).annotate({ identifier: "ListOrgMembersRequest" });
-    case 1:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            accountId: S.String,
-            avatarUrl: S.optional(S.String),
-            createdAt: S.String,
-            displayName: S.optional(S.String),
-            handle: S.optional(S.String),
-            id: S.String,
-            orgId: S.String,
-            provider: S.optional(S.String),
-            role: S.String,
-            status: S.String,
-            username: S.optional(S.String),
-            workosOrgMembershipId: S.optional(S.String),
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "OrgMemberListItem" });
-    case 2:
-      return S.Array(__S(185, __c23, 1));
-    case 3:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            members: __S(186, __c23, 2),
-            nextPageToken: S.optional(S.String),
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "ListOrgMembersOutputBody" });
   }
 }
 // Schema table: entry i is schema j of builder f, made on first reach.

@@ -272,6 +272,8 @@ export interface CreateProjectAgentRunRequest {
   project: string;
   /** An unarchived agent of the project (ULID). */
   id: string;
+  /** Required. Repeating the identical request returns the run it first started, even after the agent was edited or archived; a different request under the key is 409. */
+  idempotencyKey: string;
   /** Optional commit pin: the run is refused (409) if the Change's head is no longer this commit. */
   head_sha?: string;
   target: RunTargetInput;
@@ -279,6 +281,8 @@ export interface CreateProjectAgentRunRequest {
 export interface CreateRepoRunRequest {
   /** Repository id (placement ULID or public repo_<group ULID>). */
   repo_id: string;
+  /** Required. Repeating the identical request returns the run it first started, even after the agent was edited or archived; a different request under the key is 409. */
+  idempotencyKey: string;
   /** An unarchived agent of the project that owns the repository (ULID). */
   agent_id: string;
   /** Optional commit pin: the run is refused (409) if the Change's head is no longer this commit. */
@@ -459,12 +463,16 @@ export interface RetryProjectRunRequest {
   project: string;
   /** Run id (ULID). */
   id: string;
+  /** Optional. Shares the run starts' key space: the same key cannot name both. */
+  idempotencyKey?: string;
 }
 export interface RetryRepoRunRequest {
   /** Repository id (placement ULID or public repo_<group ULID>). */
   repo_id: string;
   /** Run id (ULID). */
   id: string;
+  /** Optional. Shares the run starts' key space: the same key cannot name both. */
+  idempotencyKey?: string;
 }
 export type CancelProjectRunError = EntireOpError;
 /** Cancel a run Cancels a run that has not finished -- queued or running -- and returns it. Canceling a finished run changes nothing and returns it as it ended. The runner releases any sandbox the run allocated, including one whose provisioning was in flight. Project read access admits the caller; anyone else reads the project as not found. A repository's readers act through its own run routes (/repos/{repo_id}/runs). Requires push on the repository (automation principals also project write or manage), and canManageAgents to cancel a run someone else started or a push started. Served only by the project's primary processing cell. */
@@ -969,6 +977,7 @@ function __c5(j: number): any {
           host: S.String.pipe(T.Label()),
           project: S.String.pipe(T.Label()),
           id: S.String.pipe(T.Label()),
+          idempotencyKey: S.optional(S.String.pipe(T.Header("Idempotency-Key"))),
         }).pipe(
           T.Http({ method: "POST", uri: "/api/v1/{host}/{project}/runs/{id}/retry", code: 200 }),
         ),
@@ -982,6 +991,7 @@ function __c6(j: number): any {
         S.Struct({
           repo_id: S.String.pipe(T.Label()),
           id: S.String.pipe(T.Label()),
+          idempotencyKey: S.optional(S.String.pipe(T.Header("Idempotency-Key"))),
         }).pipe(
           T.Http({ method: "POST", uri: "/api/v1/repos/{repo_id}/runs/{id}/retry", code: 200 }),
         ),
@@ -996,6 +1006,7 @@ function __c7(j: number): any {
           host: S.String.pipe(T.Label()),
           project: S.String.pipe(T.Label()),
           id: S.String.pipe(T.Label()),
+          idempotencyKey: S.String.pipe(T.Header("Idempotency-Key")),
           head_sha: S.optional(S.String),
           target: __S(256, __c8, 0),
         }).pipe(
@@ -1021,6 +1032,7 @@ function __c9(j: number): any {
       return S.suspend(() =>
         S.Struct({
           repo_id: S.String.pipe(T.Label()),
+          idempotencyKey: S.String.pipe(T.Header("Idempotency-Key")),
           agent_id: S.String,
           head_sha: S.optional(S.String),
           target: __S(256, __c8, 0),

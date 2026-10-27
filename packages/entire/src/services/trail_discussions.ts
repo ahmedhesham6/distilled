@@ -257,6 +257,10 @@ export interface ListTrailDiscussionEventsRequest {
   after?: string;
   /** Page size (default 200, capped at 1000). */
   per_page?: string;
+  /** text/event-stream streams events as SSE; otherwise a JSON page is returned. */
+  accept?: string;
+  /** SSE resume cursor (falls back to ?after=); non-negative integer. */
+  lastEventID?: string;
 }
 export interface TrailDiscussionEventJSON {
   actor_id: string;
@@ -1128,6 +1132,8 @@ function __c20(j: number): any {
           number: S.String.pipe(T.Label()),
           after: S.optional(S.String.pipe(T.Query())),
           per_page: S.optional(S.String.pipe(T.Query())),
+          accept: S.optional(S.String.pipe(T.Header("Accept"))),
+          lastEventID: S.optional(S.String.pipe(T.Header("Last-Event-ID"))),
         }).pipe(
           T.Http({
             method: "GET",

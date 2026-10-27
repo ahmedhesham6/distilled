@@ -55,6 +55,8 @@ export interface PostEditorUpdateRequest {
 export interface PutEditorContentRequest {
   /** Editor document key. */
   documentKey: string;
+  /** Optimistic concurrency: a weak ETag (W/"<updatedAt>") from a prior read/write of this document, as returned by the sync GET or this route. If present, the request 412s when it no longer matches the document's current ETag. Omit to apply unconditionally. */
+  ifMatch?: string;
   /** Replacement editor-document content (ProseMirror JSON). Required. */
   contentJson: unknown;
   /** Apply only while the document is structurally empty: every node is the top doc node or a paragraph (any number of blank paragraphs, or an empty content array, still counts as empty), and no text node holds non-whitespace text. Any other node type -- horizontalRule, taskList/taskItem, codeBlock, blockquote, attachmentImage, heading, bulletList/orderedList, hardBreak, ... -- counts as content even when it renders no visible text of its own. A document that already has content is a 200 no-op, not an error: see the response's isApplied/reason. This is not concurrency control -- combine it with If-Match if you need both. */
@@ -189,6 +191,7 @@ function __c3(j: number): any {
       return S.suspend(() =>
         S.Struct({
           documentKey: S.String.pipe(T.Label()),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           contentJson: S.Unknown,
           onlyIfEmpty: S.optional(S.Boolean),
           schemaVersion: S.optional(S.Number),

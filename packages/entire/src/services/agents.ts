@@ -32,6 +32,8 @@ export interface ArchiveProjectAgentRequest {
   project: string;
   /** Agent or Environment id (ULID). */
   id: string;
+  /** Required: copy the JSON etag write token from the last read or write of this configuration. Missing returns 428; stale returns 412. */
+  ifMatch?: string;
 }
 export interface AgentArchivedBy {
   /** Full principal id: an account ULID, svc_<ULID> for a service account, or aut_<ULID> for an automation. */
@@ -188,6 +190,8 @@ export interface CreateProjectAgentRequest {
   host: string;
   /** Canonical public project name. */
   project: string;
+  /** Required. Reuse it, with the same body, to retry this create: the retry returns the configuration the first attempt saved instead of saving another. The same key with a different body returns 409. Scoped to the caller, project and resource; it does not expire. */
+  idempotencyKey: string;
   /** Free-form description. */
   description?: string;
   environment?: CreateProjectAgentRequestEnvironment;
@@ -555,6 +559,8 @@ export interface ReplaceProjectAgentRequest {
   project: string;
   /** Agent or Environment id (ULID). */
   id: string;
+  /** Required: copy the JSON etag write token from the last read or write of this configuration. Missing returns 428; stale returns 412. */
+  ifMatch?: string;
   /** Free-form description. */
   description?: string;
   /** An active environment of the project (ULID). Inline environments are create-only. */
@@ -588,6 +594,8 @@ export interface RestoreProjectAgentRequest {
   project: string;
   /** Agent or Environment id (ULID). */
   id: string;
+  /** Required: copy the JSON etag write token from the last read or write of this configuration. Missing returns 428; stale returns 412. */
+  ifMatch?: string;
 }
 export type ArchiveProjectAgentError = EntireOpError;
 /** Archive an agent Archives the agent under the same If-Match precondition as a replace (428 missing, 412 stale). Send no body, or an empty object. The version does not change but the ETag does; history stays readable, the record leaves the default list, and further writes, including a second archive, return 409. Requires repository push on every repository of the current selection the project still owns. Restore it with POST .../agents/{id}/restore. Requires canManageAgents (automation principals require project write or manage). Route requests to the project's API URL returned by Core. */
@@ -822,6 +830,7 @@ function __c0(j: number): any {
           host: S.String.pipe(T.Label()),
           project: S.String.pipe(T.Label()),
           id: S.String.pipe(T.Label()),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -931,6 +940,7 @@ function __c6(j: number): any {
         S.Struct({
           host: S.String.pipe(T.Label()),
           project: S.String.pipe(T.Label()),
+          idempotencyKey: S.String.pipe(T.Header("Idempotency-Key")),
           description: S.optional(S.String),
           environment: S.optional(__S(96, __c6, 0)),
           environment_id: S.optional(S.String),
@@ -980,6 +990,7 @@ function __c8(j: number): any {
           host: S.String.pipe(T.Label()),
           project: S.String.pipe(T.Label()),
           id: S.String.pipe(T.Label()),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           description: S.optional(S.String),
           environment_id: S.String,
           harness: S.optional(S.String),
@@ -1005,6 +1016,7 @@ function __c9(j: number): any {
           host: S.String.pipe(T.Label()),
           project: S.String.pipe(T.Label()),
           id: S.String.pipe(T.Label()),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
         }).pipe(
           T.Http({
             method: "POST",

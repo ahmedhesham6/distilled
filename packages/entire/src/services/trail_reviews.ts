@@ -69,6 +69,8 @@ export interface CreateReviewCommentsRequest {
   repo_id: string;
   number: string;
   review_id: string;
+  /** Optional replay-safe key; a retried request with the same key and body returns the cached response instead of re-executing. */
+  idempotencyKey?: string;
   comments?: CreateReviewCommentsRequestCommentsList | null;
   summary?: string | null;
 }
@@ -227,6 +229,8 @@ export interface CreateReviewCommentsBySlugRequest {
   repo: string;
   number: string;
   review_id: string;
+  /** Optional replay-safe key; a retried request with the same key and body returns the cached response instead of re-executing. */
+  idempotencyKey?: string;
   comments?: CreateReviewCommentsBySlugRequestCommentsList | null;
   summary?: string | null;
 }
@@ -531,6 +535,8 @@ export interface StartReviewRequest {
   repo_id: string;
   /** Trail number */
   number: string;
+  /** Optional replay-safe key; a retried request with the same key and body returns the cached response instead of re-executing. */
+  idempotencyKey?: string;
   actor_id?: string;
   base_ref?: string;
   base_sha?: string | null;
@@ -563,6 +569,8 @@ export interface StartReviewBySlugRequest {
   repo: string;
   /** Trail number */
   number: string;
+  /** Optional replay-safe key; a retried request with the same key and body returns the cached response instead of re-executing. */
+  idempotencyKey?: string;
   actor_id?: string;
   base_ref?: string;
   base_sha?: string | null;
@@ -938,6 +946,7 @@ function __c0(j: number): any {
           repo_id: S.String.pipe(T.Label()),
           number: S.String.pipe(T.Label()),
           review_id: S.String.pipe(T.Label()),
+          idempotencyKey: S.optional(S.String.pipe(T.Header("Idempotency-Key"))),
           comments: S.optional(S.NullOr(__S(19, __c1, 3))),
           summary: S.optional(S.NullOr(S.String)),
         }).pipe(
@@ -1183,6 +1192,7 @@ function __c4(j: number): any {
           repo: S.String.pipe(T.Label()),
           number: S.String.pipe(T.Label()),
           review_id: S.String.pipe(T.Label()),
+          idempotencyKey: S.optional(S.String.pipe(T.Header("Idempotency-Key"))),
           comments: S.optional(S.NullOr(__S(19, __c1, 3))),
           summary: S.optional(S.NullOr(S.String)),
         }).pipe(
@@ -1262,6 +1272,7 @@ function __c7(j: number): any {
         S.Struct({
           repo_id: S.String.pipe(T.Label()),
           number: S.String.pipe(T.Label()),
+          idempotencyKey: S.optional(S.String.pipe(T.Header("Idempotency-Key"))),
           actor_id: S.optional(S.String),
           base_ref: S.optional(S.String),
           base_sha: S.optional(S.NullOr(S.String)),
@@ -1312,6 +1323,7 @@ function __c9(j: number): any {
           owner: S.String.pipe(T.Label()),
           repo: S.String.pipe(T.Label()),
           number: S.String.pipe(T.Label()),
+          idempotencyKey: S.optional(S.String.pipe(T.Header("Idempotency-Key"))),
           actor_id: S.optional(S.String),
           base_ref: S.optional(S.String),
           base_sha: S.optional(S.NullOr(S.String)),

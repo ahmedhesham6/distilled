@@ -25,6 +25,15 @@ const TELEMETRY = {
   propagate: "w3c",
 } as const;
 
+/** The repository is not in this cell (HTTP 404 `repo not in this region`): transient right after a create, otherwise the repository lives in another region's cell. */
+export class RepoNotInRegion
+  extends /*@__PURE__*/ T.applyErrorMatchers(
+    /*@__PURE__*/ S.TaggedError<RepoNotInRegion>()("RepoNotInRegion", {
+      message: S.String,
+    }),
+    [{ status: 404, message: { includes: "not in this region" } }],
+  ) {}
+
 /** Repo ids to authorize and hydrate */
 export type BatchReposRequestIdsList = Array<string>;
 export type BatchReposRequestIncludeItem = "activity";
@@ -360,7 +369,7 @@ export const getRepoActivity: API.OperationMethod<
   span: "GetRepoActivity",
 }));
 
-export type GetRepoMetaError = EntireOpError;
+export type GetRepoMetaError = RepoNotInRegion | EntireOpError;
 /** Metadata for one repository */
 export const getRepoMeta: API.OperationMethod<
   GetRepoMetaRequest,
@@ -370,7 +379,7 @@ export const getRepoMeta: API.OperationMethod<
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(80, __c5, 0) as any as S.Schema<GetRepoMetaRequest>,
   output: __S(34, __c2, 2) as any as S.Schema<RepoListItem>,
-  errors: [UnknownEntireError],
+  errors: [RepoNotInRegion, UnknownEntireError],
   protocol: EntireCellProtocol,
   retry: Retry.Retry,
   telemetry: TELEMETRY,

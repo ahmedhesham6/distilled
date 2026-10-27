@@ -32,6 +32,8 @@ export interface ArchiveProjectEnvironmentRequest {
   project: string;
   /** Agent or Environment id (ULID). */
   id: string;
+  /** Required: copy the JSON etag write token from the last read or write of this configuration. Missing returns 428; stale returns 412. */
+  ifMatch?: string;
 }
 export interface EnvironmentArchivedBy {
   /** Full principal id: an account ULID, svc_<ULID> for a service account, or aut_<ULID> for an automation. */
@@ -71,6 +73,8 @@ export interface CreateProjectEnvironmentRequest {
   host: string;
   /** Canonical public project name. */
   project: string;
+  /** Required. Reuse it, with the same body, to retry this create: the retry returns the configuration the first attempt saved instead of saving another. The same key with a different body returns 409. Scoped to the caller, project and resource; it does not expire. */
+  idempotencyKey: string;
   /** Sandbox lifetime in minutes (Daytona: idle time; E2B: initial wall-clock lifetime, renewed while in use). Omit or send null for the cell default. */
   auto_stop_minutes?: number | null;
   /** Free-form description. */
@@ -161,6 +165,8 @@ export interface ReplaceProjectEnvironmentRequest {
   project: string;
   /** Agent or Environment id (ULID). */
   id: string;
+  /** Required: copy the JSON etag write token from the last read or write of this configuration. Missing returns 428; stale returns 412. */
+  ifMatch?: string;
   /** Sandbox lifetime in minutes (Daytona: idle time; E2B: initial wall-clock lifetime, renewed while in use). Omit or send null for the cell default. */
   auto_stop_minutes?: number | null;
   /** Free-form description. */
@@ -316,6 +322,7 @@ function __c0(j: number): any {
           host: S.String.pipe(T.Label()),
           project: S.String.pipe(T.Label()),
           id: S.String.pipe(T.Label()),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
         }).pipe(
           T.Http({
             method: "POST",
@@ -366,6 +373,7 @@ function __c3(j: number): any {
         S.Struct({
           host: S.String.pipe(T.Label()),
           project: S.String.pipe(T.Label()),
+          idempotencyKey: S.String.pipe(T.Header("Idempotency-Key")),
           auto_stop_minutes: S.optional(S.NullOr(S.Number)),
           description: S.optional(S.String),
           name: S.String,
@@ -487,6 +495,7 @@ function __c9(j: number): any {
           host: S.String.pipe(T.Label()),
           project: S.String.pipe(T.Label()),
           id: S.String.pipe(T.Label()),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           auto_stop_minutes: S.optional(S.NullOr(S.Number)),
           description: S.optional(S.String),
           name: S.String,

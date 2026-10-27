@@ -988,6 +988,8 @@ export interface UpdateTrailRequest {
   repo_id: string;
   /** Trail number */
   number: string;
+  /** Optimistic concurrency: a weak ETag (W/"<updatedAt>") from a prior read/write. If present, the request 412s when it no longer matches the trail's current ETag. Omit to apply unconditionally (backward-compatible default). */
+  ifMatch?: string;
   assignees?: UpdateTrailRequestAssigneesList;
   base?: string;
   branch?: string | null;
@@ -1030,6 +1032,8 @@ export interface UpdateTrailBySlugRequest {
   owner: string;
   repo: string;
   number: string;
+  /** Optimistic concurrency: a weak ETag (W/"<updatedAt>") from a prior read/write. If present, the request 412s when it no longer matches the trail's current ETag. Omit to apply unconditionally (backward-compatible default). */
+  ifMatch?: string;
   assignees?: UpdateTrailBySlugRequestAssigneesList;
   base?: string;
   branch?: string | null;
@@ -1775,6 +1779,7 @@ function __c12(j: number): any {
         S.Struct({
           repo_id: S.String.pipe(T.Label()),
           number: S.String.pipe(T.Label()),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           assignees: S.optional(__S(384, __c12, 0)),
           base: S.optional(S.String),
           branch: S.optional(S.NullOr(S.String)),
@@ -1843,6 +1848,7 @@ function __c15(j: number): any {
           owner: S.String.pipe(T.Label()),
           repo: S.String.pipe(T.Label()),
           number: S.String.pipe(T.Label()),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           assignees: S.optional(__S(480, __c15, 0)),
           base: S.optional(S.String),
           branch: S.optional(S.NullOr(S.String)),

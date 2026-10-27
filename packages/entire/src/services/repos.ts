@@ -25,6 +25,24 @@ const TELEMETRY = {
   propagate: "w3c",
 } as const;
 
+/** The project already has a repository with this name (HTTP 409, `repo/name-in-use`). */
+export class RepoNameInUse
+  extends /*@__PURE__*/ T.applyErrorMatchers(
+    /*@__PURE__*/ S.TaggedError<RepoNameInUse>()("RepoNameInUse", {
+      message: S.String,
+    }),
+    [{ status: 409, message: { includes: "already exists in this project" } }],
+  ) {}
+
+/** The name is not a valid repository name: 1-64 lowercase letters, digits, `.` and `-` (HTTP 400). */
+export class RepoNameInvalid
+  extends /*@__PURE__*/ T.applyErrorMatchers(
+    /*@__PURE__*/ S.TaggedError<RepoNameInvalid>()("RepoNameInvalid", {
+      message: S.String,
+    }),
+    [{ status: 400, message: { includes: "invalid name" } }],
+  ) {}
+
 /** Clusters to add native mirrors on once the repo is active. Core stores them with the create and retries each until its mirror exists. */
 export type CreateRepoRequestMirrorClusterSlugsList = Array<string>;
 /** Hash format; defaults to sha1. */
@@ -821,7 +839,7 @@ export interface UpdateBranchProtectionRequest {
   /** Patterns to remove; absent entries are ignored. */
   removeRefs?: UpdateBranchProtectionRequestRemoveRefsList;
 }
-export type CreateRepoError = EntireOpError;
+export type CreateRepoError = RepoNameInUse | RepoNameInvalid | EntireOpError;
 /** Create repository An account needs create permission on the project. A plugin installation's access token needs repositories:create; the repository then goes in the installation's project and joins the installation, and the response comes after the installation can mint tokens for it. An installation token cannot set clusterHost or mirrorClusterSlugs. An installation creates at most its plugin's daily limit of repositories in a rolling 24 hours (100 by default); past it the create answers 429 with Retry-After. */
 export const createRepo: API.OperationMethod<
   CreateRepoRequest,
@@ -829,9 +847,9 @@ export const createRepo: API.OperationMethod<
   CreateRepoError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(0, __c0, 0) as any as S.Schema<CreateRepoRequest>,
-  output: __S(3, __c0, 3) as any as S.Schema<CreatedRepo>,
-  errors: [UnknownEntireError],
+  input: __S(96, __c12, 0) as any as S.Schema<CreateRepoRequest>,
+  output: __S(99, __c12, 3) as any as S.Schema<CreatedRepo>,
+  errors: [RepoNameInUse, RepoNameInvalid, UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
   telemetry: TELEMETRY,
@@ -846,8 +864,8 @@ export const createRepoInvitation: API.OperationMethod<
   CreateRepoInvitationError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(32, __c4, 0) as any as S.Schema<CreateRepoInvitationRequest>,
-  output: __S(43, __c5, 3) as any as S.Schema<ResourceInvitation>,
+  input: __S(192, __c24, 0) as any as S.Schema<CreateRepoInvitationRequest>,
+  output: __S(203, __c25, 3) as any as S.Schema<ResourceInvitation>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -863,8 +881,8 @@ export const deleteRepo: API.OperationMethod<
   DeleteRepoError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(144, __c18, 0) as any as S.Schema<DeleteRepoRequest>,
-  output: __S(152, __c19, 0) as any as S.Schema<DeleteRepoResponse>,
+  input: __S(208, __c26, 0) as any as S.Schema<DeleteRepoRequest>,
+  output: __S(216, __c27, 0) as any as S.Schema<DeleteRepoResponse>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -880,8 +898,8 @@ export const detachRepo: API.OperationMethod<
   DetachRepoError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(208, __c26, 0) as any as S.Schema<DetachRepoRequest>,
-  output: __S(211, __c26, 3) as any as S.Schema<DetachRepoResult>,
+  input: __S(224, __c28, 0) as any as S.Schema<DetachRepoRequest>,
+  output: __S(227, __c28, 3) as any as S.Schema<DetachRepoResult>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -897,8 +915,8 @@ export const getBranchProtection: API.OperationMethod<
   GetBranchProtectionError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(216, __c27, 0) as any as S.Schema<GetBranchProtectionRequest>,
-  output: __S(226, __c28, 2) as any as S.Schema<BranchProtection>,
+  input: __S(232, __c29, 0) as any as S.Schema<GetBranchProtectionRequest>,
+  output: __S(242, __c30, 2) as any as S.Schema<BranchProtection>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -910,8 +928,8 @@ export type GetRepoError = EntireOpError;
 /** Get repository */
 export const getRepo: API.OperationMethod<GetRepoRequest, Repo, GetRepoError, EntireOpContext> =
   /*@__PURE__*/ API.make(() => ({
-    input: __S(232, __c29, 0) as any as S.Schema<GetRepoRequest>,
-    output: __S(240, __c30, 0) as any as S.Schema<Repo>,
+    input: __S(248, __c31, 0) as any as S.Schema<GetRepoRequest>,
+    output: __S(256, __c32, 0) as any as S.Schema<Repo>,
     errors: [UnknownEntireError],
     protocol: EntireCoreProtocol,
     retry: Retry.Retry,
@@ -927,8 +945,8 @@ export const getRepoDetach: API.OperationMethod<
   GetRepoDetachError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(248, __c31, 0) as any as S.Schema<GetRepoDetachRequest>,
-  output: __S(249, __c31, 1) as any as S.Schema<RepoDetachState>,
+  input: __S(264, __c33, 0) as any as S.Schema<GetRepoDetachRequest>,
+  output: __S(265, __c33, 1) as any as S.Schema<RepoDetachState>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -944,8 +962,8 @@ export const getRepoVisibility: API.OperationMethod<
   GetRepoVisibilityError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(256, __c32, 0) as any as S.Schema<GetRepoVisibilityRequest>,
-  output: __S(264, __c33, 0) as any as S.Schema<GetRepoVisibilityOutputBody>,
+  input: __S(272, __c34, 0) as any as S.Schema<GetRepoVisibilityRequest>,
+  output: __S(280, __c35, 0) as any as S.Schema<GetRepoVisibilityOutputBody>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -961,8 +979,8 @@ export const grantRepoAccess: API.OperationMethod<
   GrantRepoAccessError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(272, __c34, 0) as any as S.Schema<GrantRepoAccessRequest>,
-  output: __S(273, __c34, 1) as any as S.Schema<GrantRepoAccessOutputBody>,
+  input: __S(0, __c0, 0) as any as S.Schema<GrantRepoAccessRequest>,
+  output: __S(1, __c0, 1) as any as S.Schema<GrantRepoAccessOutputBody>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -980,8 +998,8 @@ export const listProjectRepos: API.PaginatedOperationMethod<
   Repo
 > = /*@__PURE__*/ API.makePaginated(
   () => ({
-    input: __S(280, __c35, 0) as any as S.Schema<ListProjectReposRequest>,
-    output: __S(282, __c35, 2) as any as S.Schema<ListProjectReposOutputBody>,
+    input: __S(8, __c1, 0) as any as S.Schema<ListProjectReposRequest>,
+    output: __S(10, __c1, 2) as any as S.Schema<ListProjectReposOutputBody>,
     errors: [UnknownEntireError],
     protocol: EntireCoreProtocol,
     retry: Retry.Retry,
@@ -1007,8 +1025,8 @@ export const listRepoCollaborators: API.PaginatedOperationMethod<
   RepoCollaborator
 > = /*@__PURE__*/ API.makePaginated(
   () => ({
-    input: __S(48, __c6, 0) as any as S.Schema<ListRepoCollaboratorsRequest>,
-    output: __S(51, __c6, 3) as any as S.Schema<ListRepoCollaboratorsOutputBody>,
+    input: __S(16, __c2, 0) as any as S.Schema<ListRepoCollaboratorsRequest>,
+    output: __S(19, __c2, 3) as any as S.Schema<ListRepoCollaboratorsOutputBody>,
     errors: [UnknownEntireError],
     protocol: EntireCoreProtocol,
     retry: Retry.Retry,
@@ -1034,8 +1052,8 @@ export const listRepoGrants: API.PaginatedOperationMethod<
   RepoGrant
 > = /*@__PURE__*/ API.makePaginated(
   () => ({
-    input: __S(56, __c7, 0) as any as S.Schema<ListRepoGrantsRequest>,
-    output: __S(59, __c7, 3) as any as S.Schema<ListRepoGrantsOutputBody>,
+    input: __S(24, __c3, 0) as any as S.Schema<ListRepoGrantsRequest>,
+    output: __S(27, __c3, 3) as any as S.Schema<ListRepoGrantsOutputBody>,
     errors: [UnknownEntireError],
     protocol: EntireCoreProtocol,
     retry: Retry.Retry,
@@ -1061,8 +1079,8 @@ export const listRepoInvitations: API.PaginatedOperationMethod<
   ResourceInvitation
 > = /*@__PURE__*/ API.makePaginated(
   () => ({
-    input: __S(64, __c8, 0) as any as S.Schema<ListRepoInvitationsRequest>,
-    output: __S(65, __c8, 1) as any as S.Schema<ListResourceInvitationsOutputBody>,
+    input: __S(32, __c4, 0) as any as S.Schema<ListRepoInvitationsRequest>,
+    output: __S(33, __c4, 1) as any as S.Schema<ListResourceInvitationsOutputBody>,
     errors: [UnknownEntireError],
     protocol: EntireCoreProtocol,
     retry: Retry.Retry,
@@ -1088,8 +1106,8 @@ export const listRepoLanguageFacets: API.PaginatedOperationMethod<
   string
 > = /*@__PURE__*/ API.makePaginated(
   () => ({
-    input: __S(80, __c10, 0) as any as S.Schema<ListRepoLanguageFacetsRequest>,
-    output: __S(88, __c11, 0) as any as S.Schema<RepoFacetPage>,
+    input: __S(48, __c6, 0) as any as S.Schema<ListRepoLanguageFacetsRequest>,
+    output: __S(56, __c7, 0) as any as S.Schema<RepoFacetPage>,
     errors: [UnknownEntireError],
     protocol: EntireCoreProtocol,
     retry: Retry.Retry,
@@ -1115,8 +1133,8 @@ export const listRepoOrgFacets: API.PaginatedOperationMethod<
   string
 > = /*@__PURE__*/ API.makePaginated(
   () => ({
-    input: __S(96, __c12, 0) as any as S.Schema<ListRepoOrgFacetsRequest>,
-    output: __S(88, __c11, 0) as any as S.Schema<RepoFacetPage>,
+    input: __S(64, __c8, 0) as any as S.Schema<ListRepoOrgFacetsRequest>,
+    output: __S(56, __c7, 0) as any as S.Schema<RepoFacetPage>,
     errors: [UnknownEntireError],
     protocol: EntireCoreProtocol,
     retry: Retry.Retry,
@@ -1142,8 +1160,8 @@ export const listRepoPeople: API.PaginatedOperationMethod<
   ResourcePerson
 > = /*@__PURE__*/ API.makePaginated(
   () => ({
-    input: __S(104, __c13, 0) as any as S.Schema<ListRepoPeopleRequest>,
-    output: __S(109, __c13, 5) as any as S.Schema<ResourcePeopleOutputBody>,
+    input: __S(72, __c9, 0) as any as S.Schema<ListRepoPeopleRequest>,
+    output: __S(77, __c9, 5) as any as S.Schema<ResourcePeopleOutputBody>,
     errors: [UnknownEntireError],
     protocol: EntireCoreProtocol,
     retry: Retry.Retry,
@@ -1169,8 +1187,8 @@ export const listRepos: API.PaginatedOperationMethod<
   RepoIndexEntry
 > = /*@__PURE__*/ API.makePaginated(
   () => ({
-    input: __S(112, __c14, 0) as any as S.Schema<ListReposRequest>,
-    output: __S(115, __c14, 3) as any as S.Schema<ListReposOutputBody>,
+    input: __S(80, __c10, 0) as any as S.Schema<ListReposRequest>,
+    output: __S(83, __c10, 3) as any as S.Schema<ListReposOutputBody>,
     errors: [UnknownEntireError],
     protocol: EntireCoreProtocol,
     retry: Retry.Retry,
@@ -1194,8 +1212,8 @@ export const lookupRepoBySlug: API.OperationMethod<
   LookupRepoBySlugError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(120, __c15, 0) as any as S.Schema<LookupRepoBySlugRequest>,
-  output: __S(121, __c15, 1) as any as S.Schema<LookupBySlugOutputBody>,
+  input: __S(88, __c11, 0) as any as S.Schema<LookupRepoBySlugRequest>,
+  output: __S(89, __c11, 1) as any as S.Schema<LookupBySlugOutputBody>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -1245,8 +1263,8 @@ export const revokeRepoAccess: API.OperationMethod<
   RevokeRepoAccessError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(160, __c20, 0) as any as S.Schema<RevokeRepoAccessRequest>,
-  output: __S(152, __c19, 0) as any as S.Schema<RevokeRepoAccessResponse>,
+  input: __S(144, __c18, 0) as any as S.Schema<RevokeRepoAccessRequest>,
+  output: __S(216, __c27, 0) as any as S.Schema<RevokeRepoAccessResponse>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -1262,8 +1280,8 @@ export const revokeRepoAccessByProvider: API.OperationMethod<
   RevokeRepoAccessByProviderError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(168, __c21, 0) as any as S.Schema<RevokeRepoAccessByProviderRequest>,
-  output: __S(152, __c19, 0) as any as S.Schema<RevokeRepoAccessByProviderResponse>,
+  input: __S(152, __c19, 0) as any as S.Schema<RevokeRepoAccessByProviderRequest>,
+  output: __S(216, __c27, 0) as any as S.Schema<RevokeRepoAccessByProviderResponse>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -1279,8 +1297,8 @@ export const revokeRepoInvitation: API.OperationMethod<
   RevokeRepoInvitationError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(176, __c22, 0) as any as S.Schema<RevokeRepoInvitationRequest>,
-  output: __S(152, __c19, 0) as any as S.Schema<RevokeRepoInvitationResponse>,
+  input: __S(160, __c20, 0) as any as S.Schema<RevokeRepoInvitationRequest>,
+  output: __S(216, __c27, 0) as any as S.Schema<RevokeRepoInvitationResponse>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -1296,8 +1314,8 @@ export const setBranchProtection: API.OperationMethod<
   SetBranchProtectionError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(184, __c23, 0) as any as S.Schema<SetBranchProtectionRequest>,
-  output: __S(226, __c28, 2) as any as S.Schema<BranchProtection>,
+  input: __S(168, __c21, 0) as any as S.Schema<SetBranchProtectionRequest>,
+  output: __S(242, __c30, 2) as any as S.Schema<BranchProtection>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -1313,8 +1331,8 @@ export const setRepoVisibility: API.OperationMethod<
   SetRepoVisibilityError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(192, __c24, 0) as any as S.Schema<SetRepoVisibilityRequest>,
-  output: __S(264, __c33, 0) as any as S.Schema<SetRepoVisibilityOutputBody>,
+  input: __S(176, __c22, 0) as any as S.Schema<SetRepoVisibilityRequest>,
+  output: __S(280, __c35, 0) as any as S.Schema<SetRepoVisibilityOutputBody>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -1330,8 +1348,8 @@ export const updateBranchProtection: API.OperationMethod<
   UpdateBranchProtectionError,
   EntireOpContext
 > = /*@__PURE__*/ API.make(() => ({
-  input: __S(200, __c25, 0) as any as S.Schema<UpdateBranchProtectionRequest>,
-  output: __S(226, __c28, 2) as any as S.Schema<BranchProtection>,
+  input: __S(184, __c23, 0) as any as S.Schema<UpdateBranchProtectionRequest>,
+  output: __S(242, __c30, 2) as any as S.Schema<BranchProtection>,
   errors: [UnknownEntireError],
   protocol: EntireCoreProtocol,
   retry: Retry.Retry,
@@ -1345,217 +1363,57 @@ function __c0(j: number): any {
     case 0:
       return S.suspend(() =>
         S.Struct({
-          clusterHost: S.optional(S.String),
-          mirrorClusterSlugs: S.optional(__S(8, __c1, 0)),
-          name: S.String,
-          objectFormat: S.optional(S.String),
-          projectId: S.optional(S.String),
-        }).pipe(T.Http({ method: "POST", uri: "/api/v1/repos", code: 200 })),
-      ).annotate({ identifier: "CreateRepoRequest" });
+          repoId: S.String.pipe(T.Label()),
+          accountId: S.optional(S.String),
+          granteeType: S.optional(S.String),
+          provider: S.optional(S.String),
+          providerUserId: S.optional(S.String),
+          role: S.String,
+        }).pipe(T.Http({ method: "POST", uri: "/api/v1/repos/{repoId}/grants", code: 200 })),
+      ).annotate({ identifier: "GrantRepoAccessRequest" });
     case 1:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            attempts: S.Number,
-            clusterSlug: S.String,
-            createdAt: S.String,
-            creationFailedAt: S.optional(S.String),
-            desiredState: S.String,
-            failureCode: S.optional(S.String),
-            failureMessage: S.optional(S.String),
-            lastError: S.optional(S.String),
-            nextRetryAt: S.optional(S.String),
-            placementId: S.String,
-            stage: S.String,
             status: S.String,
           }),
           [S.Record(S.String, S.Unknown)],
         ),
-      ).annotate({ identifier: "NativeMirrorPlacement" });
-    case 2:
-      return S.Array(__S(1, __c0, 1));
-    case 3:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            candidate: S.optional(__S(24, __c3, 0)),
-            capabilities: __S(16, __c2, 0),
-            clusterHost: S.optional(S.String),
-            clusterSlug: S.optional(S.String),
-            commitToken: S.optional(S.String),
-            detachedAt: S.optional(S.String),
-            foreign: S.optional(S.Boolean),
-            fullName: S.optional(S.String),
-            id: S.String,
-            jurisdiction: S.optional(S.String),
-            lastPushedAt: S.optional(S.String),
-            mirrorClusterSlugs: S.optional(__S(8, __c1, 0)),
-            mirrorSuspended: S.optional(S.Boolean),
-            mirrorSuspendedAt: S.optional(S.String),
-            name: S.String,
-            nativeMirrors: S.optional(__S(2, __c0, 2)),
-            objectFormat: S.optional(S.String),
-            owningProjectId: S.String,
-            path: S.optional(S.String),
-            placements: S.optional(__S(26, __c3, 2)),
-            primaries: S.optional(__S(28, __c3, 4)),
-            provider: S.String,
-            provisionAttempts: S.optional(S.Number),
-            provisionReason: S.optional(S.String),
-            repoGroupId: S.optional(S.String),
-            repositoryId: S.optional(S.String),
-            state: S.optional(S.String),
-            visibility: S.optional(S.String),
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "CreatedRepo" });
+      ).annotate({ identifier: "GrantRepoAccessOutputBody" });
   }
 }
 function __c1(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(S.String);
-  }
-}
-function __c2(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            canManage: S.Boolean,
-            canPull: S.Boolean,
-            canPush: S.Boolean,
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "RepoCapabilities" });
-  }
-}
-function __c3(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            access: S.String,
-            onboardable: S.Boolean,
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "RepoCandidate" });
-    case 1:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            apiBaseUrl: S.optional(S.String),
-            cell: S.String,
-            clusterSlug: S.String,
-            id: S.String,
-            jurisdiction: S.String,
-            mirror: S.Boolean,
-            status: S.String,
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "RepoPlacement" });
-    case 2:
-      return S.Array(__S(25, __c3, 1));
-    case 3:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            forge: S.String,
-            repo_id: S.String,
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "ForgeRepoIdentity" });
-    case 4:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            data_primary: __S(27, __c3, 3),
-            git_data: S.String,
-            processing: S.String,
-            processing_primary: S.optional(__S(27, __c3, 3)),
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "RepoPrimaries" });
-  }
-}
-function __c4(j: number): any {
-  switch (j) {
-    case 0:
       return S.suspend(() =>
         S.Struct({
-          repoId: S.String.pipe(T.Label()),
-          email: S.String,
-          role: S.String,
-        }).pipe(T.Http({ method: "POST", uri: "/api/v1/repos/{repoId}/invitations", code: 200 })),
-      ).annotate({ identifier: "CreateRepoInvitationRequest" });
-  }
-}
-function __c5(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            handle: S.String,
-            isPrimary: S.Boolean,
-            provider: S.String,
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "AccountProfileHandle" });
+          projectId: S.String.pipe(T.Label()),
+          pageSize: S.optional(S.Number.pipe(T.Query())),
+          pageToken: S.optional(S.String.pipe(T.Query())),
+          name: S.optional(S.String.pipe(T.Query())),
+          scope: S.optional(S.String.pipe(T.Query())),
+          commitToken: S.optional(S.String.pipe(T.Query())),
+        }).pipe(T.Http({ method: "GET", uri: "/api/v1/projects/{projectId}/repos", code: 200 })),
+      ).annotate({ identifier: "ListProjectReposRequest" });
     case 1:
-      return S.Array(__S(40, __c5, 0));
+      return S.Array(__S(256, __c32, 0));
     case 2:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            avatarUrl: S.optional(S.String),
-            displayName: S.optional(S.String),
-            handles: __S(41, __c5, 1),
-            username: S.optional(S.String),
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "AccountIdentity" });
-    case 3:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            acceptedAt: S.optional(S.String),
-            acceptedBy: S.optional(S.String),
-            acceptedByIdentity: S.optional(__S(42, __c5, 2)),
-            createdAt: S.String,
-            declinedAt: S.optional(S.String),
-            email: S.optional(S.String),
-            expiresAt: S.String,
-            id: S.String,
-            invitedBy: S.String,
-            invitedByIdentity: S.optional(__S(42, __c5, 2)),
-            inviteeAccountId: S.optional(S.String),
-            inviteeIdentity: S.optional(__S(42, __c5, 2)),
-            revokedAt: S.optional(S.String),
-            role: S.String,
-            scope: S.String,
-            scopeId: S.String,
-            status: S.String,
+            candidatesIncomplete: S.optional(S.Boolean),
+            nextPageToken: S.optional(S.String),
+            repo: S.optional(__S(256, __c32, 0)),
+            repos: __S(9, __c1, 1),
           }),
           [S.Record(S.String, S.Unknown)],
         ),
-      ).annotate({ identifier: "ResourceInvitation" });
+      ).annotate({ identifier: "ListProjectReposOutputBody" });
   }
 }
-function __c6(j: number): any {
+function __c2(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1578,13 +1436,13 @@ function __c6(j: number): any {
         ),
       ).annotate({ identifier: "RepoCollaborator" });
     case 2:
-      return S.Array(__S(49, __c6, 1));
+      return S.Array(__S(17, __c2, 1));
     case 3:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            collaborators: __S(50, __c6, 2),
+            collaborators: __S(18, __c2, 2),
             nextPageToken: S.optional(S.String),
           }),
           [S.Record(S.String, S.Unknown)],
@@ -1592,7 +1450,7 @@ function __c6(j: number): any {
       ).annotate({ identifier: "ListRepoCollaboratorsOutputBody" });
   }
 }
-function __c7(j: number): any {
+function __c3(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1618,13 +1476,13 @@ function __c7(j: number): any {
         ),
       ).annotate({ identifier: "RepoGrant" });
     case 2:
-      return S.Array(__S(57, __c7, 1));
+      return S.Array(__S(25, __c3, 1));
     case 3:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            grants: __S(58, __c7, 2),
+            grants: __S(26, __c3, 2),
             nextPageToken: S.optional(S.String),
           }),
           [S.Record(S.String, S.Unknown)],
@@ -1632,7 +1490,7 @@ function __c7(j: number): any {
       ).annotate({ identifier: "ListRepoGrantsOutputBody" });
   }
 }
-function __c8(j: number): any {
+function __c4(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1648,7 +1506,7 @@ function __c8(j: number): any {
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            invitations: __S(72, __c9, 0),
+            invitations: __S(40, __c5, 0),
             nextPageToken: S.optional(S.String),
           }),
           [S.Record(S.String, S.Unknown)],
@@ -1656,13 +1514,13 @@ function __c8(j: number): any {
       ).annotate({ identifier: "ListResourceInvitationsOutputBody" });
   }
 }
-function __c9(j: number): any {
+function __c5(j: number): any {
   switch (j) {
     case 0:
-      return S.Array(__S(43, __c5, 3));
+      return S.Array(__S(203, __c25, 3));
   }
 }
-function __c10(j: number): any {
+function __c6(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1674,14 +1532,14 @@ function __c10(j: number): any {
       ).annotate({ identifier: "ListRepoLanguageFacetsRequest" });
   }
 }
-function __c11(j: number): any {
+function __c7(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            items: __S(8, __c1, 0),
+            items: __S(104, __c13, 0),
             nextPageToken: S.optional(S.String),
           }),
           [S.Record(S.String, S.Unknown)],
@@ -1689,7 +1547,7 @@ function __c11(j: number): any {
       ).annotate({ identifier: "RepoFacetPage" });
   }
 }
-function __c12(j: number): any {
+function __c8(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1701,7 +1559,7 @@ function __c12(j: number): any {
       ).annotate({ identifier: "ListRepoOrgFacetsRequest" });
   }
 }
-function __c13(j: number): any {
+function __c9(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1726,34 +1584,34 @@ function __c13(j: number): any {
         ),
       ).annotate({ identifier: "ResourcePersonDirectGrant" });
     case 2:
-      return S.Array(__S(105, __c13, 1));
+      return S.Array(__S(73, __c9, 1));
     case 3:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
             accountId: S.String,
             avatarUrl: S.optional(S.String),
-            directGrant: __S(105, __c13, 1),
+            directGrant: __S(73, __c9, 1),
             displayName: S.optional(S.String),
             handle: S.optional(S.String),
             joinedAt: S.optional(S.String),
             provider: S.optional(S.String),
             role: S.String,
-            sources: __S(106, __c13, 2),
+            sources: __S(74, __c9, 2),
             username: S.optional(S.String),
           }),
           [S.Record(S.String, S.Unknown)],
         ),
       ).annotate({ identifier: "ResourcePerson" });
     case 4:
-      return S.Array(__S(107, __c13, 3));
+      return S.Array(__S(75, __c9, 3));
     case 5:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            invitations: S.optional(__S(72, __c9, 0)),
-            items: __S(108, __c13, 4),
+            invitations: S.optional(__S(40, __c5, 0)),
+            items: __S(76, __c9, 4),
             nextPageToken: S.optional(S.String),
             totalCount: S.Number,
           }),
@@ -1762,7 +1620,7 @@ function __c13(j: number): any {
       ).annotate({ identifier: "ResourcePeopleOutputBody" });
   }
 }
-function __c14(j: number): any {
+function __c10(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1791,7 +1649,7 @@ function __c14(j: number): any {
           S.Struct({
             activityHotness: S.optional(S.Number),
             archived: S.optional(S.Boolean),
-            candidate: S.optional(__S(24, __c3, 0)),
+            candidate: S.optional(__S(120, __c15, 0)),
             cell: S.String,
             checkpointCount: S.optional(S.Number),
             clusterSlug: S.String,
@@ -1806,8 +1664,8 @@ function __c14(j: number): any {
             openPrCount: S.optional(S.Number),
             org: S.String,
             permission: S.optional(S.String),
-            placements: __S(26, __c3, 2),
-            primaries: S.optional(__S(28, __c3, 4)),
+            placements: __S(122, __c15, 2),
+            primaries: S.optional(__S(124, __c15, 4)),
             provider: S.String,
             pushedAt: S.optional(S.String),
             repoGroupId: S.String,
@@ -1818,7 +1676,7 @@ function __c14(j: number): any {
         ),
       ).annotate({ identifier: "RepoIndexEntry" });
     case 2:
-      return S.Array(__S(113, __c14, 1));
+      return S.Array(__S(81, __c10, 1));
     case 3:
       return S.suspend(() =>
         S.StructWithRest(
@@ -1826,7 +1684,7 @@ function __c14(j: number): any {
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
             candidatesIncomplete: S.Boolean,
             nextPageToken: S.optional(S.String),
-            repos: __S(114, __c14, 2),
+            repos: __S(82, __c10, 2),
             truncated: S.Boolean,
           }),
           [S.Record(S.String, S.Unknown)],
@@ -1834,7 +1692,7 @@ function __c14(j: number): any {
       ).annotate({ identifier: "ListReposOutputBody" });
   }
 }
-function __c15(j: number): any {
+function __c11(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -1859,12 +1717,160 @@ function __c15(j: number): any {
       ).annotate({ identifier: "LookupBySlugOutputBody" });
   }
 }
+function __c12(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          clusterHost: S.optional(S.String),
+          mirrorClusterSlugs: S.optional(__S(104, __c13, 0)),
+          name: S.String,
+          objectFormat: S.optional(S.String),
+          projectId: S.optional(S.String),
+        }).pipe(T.Http({ method: "POST", uri: "/api/v1/repos", code: 200 })),
+      ).annotate({ identifier: "CreateRepoRequest" });
+    case 1:
+      return S.suspend(() =>
+        S.StructWithRest(
+          S.Struct({
+            _schema: S.optional(S.String.pipe(T.Body("$schema"))),
+            attempts: S.Number,
+            clusterSlug: S.String,
+            createdAt: S.String,
+            creationFailedAt: S.optional(S.String),
+            desiredState: S.String,
+            failureCode: S.optional(S.String),
+            failureMessage: S.optional(S.String),
+            lastError: S.optional(S.String),
+            nextRetryAt: S.optional(S.String),
+            placementId: S.String,
+            stage: S.String,
+            status: S.String,
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "NativeMirrorPlacement" });
+    case 2:
+      return S.Array(__S(97, __c12, 1));
+    case 3:
+      return S.suspend(() =>
+        S.StructWithRest(
+          S.Struct({
+            _schema: S.optional(S.String.pipe(T.Body("$schema"))),
+            candidate: S.optional(__S(120, __c15, 0)),
+            capabilities: __S(112, __c14, 0),
+            clusterHost: S.optional(S.String),
+            clusterSlug: S.optional(S.String),
+            commitToken: S.optional(S.String),
+            detachedAt: S.optional(S.String),
+            foreign: S.optional(S.Boolean),
+            fullName: S.optional(S.String),
+            id: S.String,
+            jurisdiction: S.optional(S.String),
+            lastPushedAt: S.optional(S.String),
+            mirrorClusterSlugs: S.optional(__S(104, __c13, 0)),
+            mirrorSuspended: S.optional(S.Boolean),
+            mirrorSuspendedAt: S.optional(S.String),
+            name: S.String,
+            nativeMirrors: S.optional(__S(98, __c12, 2)),
+            objectFormat: S.optional(S.String),
+            owningProjectId: S.String,
+            path: S.optional(S.String),
+            placements: S.optional(__S(122, __c15, 2)),
+            primaries: S.optional(__S(124, __c15, 4)),
+            provider: S.String,
+            provisionAttempts: S.optional(S.Number),
+            provisionReason: S.optional(S.String),
+            repoGroupId: S.optional(S.String),
+            repositoryId: S.optional(S.String),
+            state: S.optional(S.String),
+            visibility: S.optional(S.String),
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "CreatedRepo" });
+  }
+}
+function __c13(j: number): any {
+  switch (j) {
+    case 0:
+      return S.Array(S.String);
+  }
+}
+function __c14(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.StructWithRest(
+          S.Struct({
+            canManage: S.Boolean,
+            canPull: S.Boolean,
+            canPush: S.Boolean,
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "RepoCapabilities" });
+  }
+}
+function __c15(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.StructWithRest(
+          S.Struct({
+            access: S.String,
+            onboardable: S.Boolean,
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "RepoCandidate" });
+    case 1:
+      return S.suspend(() =>
+        S.StructWithRest(
+          S.Struct({
+            apiBaseUrl: S.optional(S.String),
+            cell: S.String,
+            clusterSlug: S.String,
+            id: S.String,
+            jurisdiction: S.String,
+            mirror: S.Boolean,
+            status: S.String,
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "RepoPlacement" });
+    case 2:
+      return S.Array(__S(121, __c15, 1));
+    case 3:
+      return S.suspend(() =>
+        S.StructWithRest(
+          S.Struct({
+            forge: S.String,
+            repo_id: S.String,
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "ForgeRepoIdentity" });
+    case 4:
+      return S.suspend(() =>
+        S.StructWithRest(
+          S.Struct({
+            data_primary: __S(123, __c15, 3),
+            git_data: S.String,
+            processing: S.String,
+            processing_primary: S.optional(__S(123, __c15, 3)),
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "RepoPrimaries" });
+  }
+}
 function __c16(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
-          repoIds: __S(8, __c1, 0),
+          repoIds: __S(104, __c13, 0),
         }).pipe(T.Http({ method: "POST", uri: "/api/v1/repos/resolve-ids", code: 200 })),
       ).annotate({ identifier: "ResolveRepoIDsRequest" });
     case 1:
@@ -1920,12 +1926,12 @@ function __c17(j: number): any {
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
-            candidate: S.optional(__S(24, __c3, 0)),
+            candidate: S.optional(__S(120, __c15, 0)),
             fullName: S.optional(S.String),
             gitCommand: S.optional(S.String),
             movedTo: S.optional(__S(136, __c17, 0)),
-            placements: S.optional(__S(26, __c3, 2)),
-            primaries: S.optional(__S(28, __c3, 4)),
+            placements: S.optional(__S(122, __c15, 2)),
+            primaries: S.optional(__S(124, __c15, 4)),
             provider: S.String,
             repoGroupId: S.optional(S.String),
             repoId: S.optional(S.String),
@@ -1955,23 +1961,6 @@ function __c18(j: number): any {
       return S.suspend(() =>
         S.Struct({
           repoId: S.String.pipe(T.Label()),
-          cascade: S.optional(S.Boolean.pipe(T.Query())),
-        }).pipe(T.Http({ method: "DELETE", uri: "/api/v1/repos/{repoId}", code: 200 })),
-      ).annotate({ identifier: "DeleteRepoRequest" });
-  }
-}
-function __c19(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() => S.Struct({})).annotate({ identifier: "DeleteRepoResponse" });
-  }
-}
-function __c20(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.Struct({
-          repoId: S.String.pipe(T.Label()),
           granteeType: S.String.pipe(T.Label()),
           granteeId: S.String.pipe(T.Label()),
         }).pipe(
@@ -1984,7 +1973,7 @@ function __c20(j: number): any {
       ).annotate({ identifier: "RevokeRepoAccessRequest" });
   }
 }
-function __c21(j: number): any {
+function __c19(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2002,7 +1991,7 @@ function __c21(j: number): any {
       ).annotate({ identifier: "RevokeRepoAccessByProviderRequest" });
   }
 }
-function __c22(j: number): any {
+function __c20(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2015,20 +2004,20 @@ function __c22(j: number): any {
       ).annotate({ identifier: "RevokeRepoInvitationRequest" });
   }
 }
-function __c23(j: number): any {
+function __c21(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           repoId: S.String.pipe(T.Label()),
-          rules: __S(225, __c28, 1),
+          rules: __S(241, __c30, 1),
         }).pipe(
           T.Http({ method: "PUT", uri: "/api/v1/repos/{repoId}/branch-protection", code: 200 }),
         ),
       ).annotate({ identifier: "SetBranchProtectionRequest" });
   }
 }
-function __c24(j: number): any {
+function __c22(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2039,21 +2028,105 @@ function __c24(j: number): any {
       ).annotate({ identifier: "SetRepoVisibilityRequest" });
   }
 }
-function __c25(j: number): any {
+function __c23(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.Struct({
           repoId: S.String.pipe(T.Label()),
-          addRules: S.optional(__S(225, __c28, 1)),
-          removeRefs: S.optional(__S(8, __c1, 0)),
+          addRules: S.optional(__S(241, __c30, 1)),
+          removeRefs: S.optional(__S(104, __c13, 0)),
         }).pipe(
           T.Http({ method: "PATCH", uri: "/api/v1/repos/{repoId}/branch-protection", code: 200 }),
         ),
       ).annotate({ identifier: "UpdateBranchProtectionRequest" });
   }
 }
+function __c24(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          repoId: S.String.pipe(T.Label()),
+          email: S.String,
+          role: S.String,
+        }).pipe(T.Http({ method: "POST", uri: "/api/v1/repos/{repoId}/invitations", code: 200 })),
+      ).annotate({ identifier: "CreateRepoInvitationRequest" });
+  }
+}
+function __c25(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.StructWithRest(
+          S.Struct({
+            handle: S.String,
+            isPrimary: S.Boolean,
+            provider: S.String,
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "AccountProfileHandle" });
+    case 1:
+      return S.Array(__S(200, __c25, 0));
+    case 2:
+      return S.suspend(() =>
+        S.StructWithRest(
+          S.Struct({
+            avatarUrl: S.optional(S.String),
+            displayName: S.optional(S.String),
+            handles: __S(201, __c25, 1),
+            username: S.optional(S.String),
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "AccountIdentity" });
+    case 3:
+      return S.suspend(() =>
+        S.StructWithRest(
+          S.Struct({
+            _schema: S.optional(S.String.pipe(T.Body("$schema"))),
+            acceptedAt: S.optional(S.String),
+            acceptedBy: S.optional(S.String),
+            acceptedByIdentity: S.optional(__S(202, __c25, 2)),
+            createdAt: S.String,
+            declinedAt: S.optional(S.String),
+            email: S.optional(S.String),
+            expiresAt: S.String,
+            id: S.String,
+            invitedBy: S.String,
+            invitedByIdentity: S.optional(__S(202, __c25, 2)),
+            inviteeAccountId: S.optional(S.String),
+            inviteeIdentity: S.optional(__S(202, __c25, 2)),
+            revokedAt: S.optional(S.String),
+            role: S.String,
+            scope: S.String,
+            scopeId: S.String,
+            status: S.String,
+          }),
+          [S.Record(S.String, S.Unknown)],
+        ),
+      ).annotate({ identifier: "ResourceInvitation" });
+  }
+}
 function __c26(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() =>
+        S.Struct({
+          repoId: S.String.pipe(T.Label()),
+          cascade: S.optional(S.Boolean.pipe(T.Query())),
+        }).pipe(T.Http({ method: "DELETE", uri: "/api/v1/repos/{repoId}", code: 200 })),
+      ).annotate({ identifier: "DeleteRepoRequest" });
+  }
+}
+function __c27(j: number): any {
+  switch (j) {
+    case 0:
+      return S.suspend(() => S.Struct({})).annotate({ identifier: "DeleteRepoResponse" });
+  }
+}
+function __c28(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2077,7 +2150,7 @@ function __c26(j: number): any {
         ),
       ).annotate({ identifier: "DetachPrecondition" });
     case 2:
-      return S.Array(__S(209, __c26, 1));
+      return S.Array(__S(225, __c28, 1));
     case 3:
       return S.suspend(() =>
         S.StructWithRest(
@@ -2087,9 +2160,9 @@ function __c26(j: number): any {
             eligible: S.Boolean,
             name: S.String,
             nativeName: S.optional(S.String),
-            notices: S.optional(__S(8, __c1, 0)),
-            preconditions: __S(210, __c26, 2),
-            releasedAddresses: S.optional(__S(8, __c1, 0)),
+            notices: S.optional(__S(104, __c13, 0)),
+            preconditions: __S(226, __c28, 2),
+            releasedAddresses: S.optional(__S(104, __c13, 0)),
             requestedBy: S.String,
             status: S.optional(S.String),
             statusUrl: S.optional(S.String),
@@ -2100,7 +2173,7 @@ function __c26(j: number): any {
       ).annotate({ identifier: "DetachRepoResult" });
   }
 }
-function __c27(j: number): any {
+function __c29(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2112,7 +2185,7 @@ function __c27(j: number): any {
       ).annotate({ identifier: "GetBranchProtectionRequest" });
   }
 }
-function __c28(j: number): any {
+function __c30(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2125,20 +2198,20 @@ function __c28(j: number): any {
         ),
       ).annotate({ identifier: "BranchRule" });
     case 1:
-      return S.Array(__S(224, __c28, 0));
+      return S.Array(__S(240, __c30, 0));
     case 2:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            rules: __S(225, __c28, 1),
+            rules: __S(241, __c30, 1),
           }),
           [S.Record(S.String, S.Unknown)],
         ),
       ).annotate({ identifier: "BranchProtection" });
   }
 }
-function __c29(j: number): any {
+function __c31(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2150,15 +2223,15 @@ function __c29(j: number): any {
       ).annotate({ identifier: "GetRepoRequest" });
   }
 }
-function __c30(j: number): any {
+function __c32(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
         S.StructWithRest(
           S.Struct({
             _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            candidate: S.optional(__S(24, __c3, 0)),
-            capabilities: __S(16, __c2, 0),
+            candidate: S.optional(__S(120, __c15, 0)),
+            capabilities: __S(112, __c14, 0),
             clusterHost: S.optional(S.String),
             clusterSlug: S.optional(S.String),
             detachedAt: S.optional(S.String),
@@ -2173,8 +2246,8 @@ function __c30(j: number): any {
             objectFormat: S.optional(S.String),
             owningProjectId: S.String,
             path: S.optional(S.String),
-            placements: S.optional(__S(26, __c3, 2)),
-            primaries: S.optional(__S(28, __c3, 4)),
+            placements: S.optional(__S(122, __c15, 2)),
+            primaries: S.optional(__S(124, __c15, 4)),
             provider: S.String,
             provisionAttempts: S.optional(S.Number),
             provisionReason: S.optional(S.String),
@@ -2187,7 +2260,7 @@ function __c30(j: number): any {
       ).annotate({ identifier: "Repo" });
   }
 }
-function __c31(j: number): any {
+function __c33(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2203,7 +2276,7 @@ function __c31(j: number): any {
             detachedAt: S.optional(S.String),
             frozen: S.Boolean,
             nativeName: S.optional(S.String),
-            releasedAddresses: __S(8, __c1, 0),
+            releasedAddresses: __S(104, __c13, 0),
             resumable: S.Boolean,
             status: S.String,
             step: S.optional(S.Number),
@@ -2214,7 +2287,7 @@ function __c31(j: number): any {
       ).annotate({ identifier: "RepoDetachState" });
   }
 }
-function __c32(j: number): any {
+function __c34(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2224,7 +2297,7 @@ function __c32(j: number): any {
       ).annotate({ identifier: "GetRepoVisibilityRequest" });
   }
 }
-function __c33(j: number): any {
+function __c35(j: number): any {
   switch (j) {
     case 0:
       return S.suspend(() =>
@@ -2236,61 +2309,6 @@ function __c33(j: number): any {
           [S.Record(S.String, S.Unknown)],
         ),
       ).annotate({ identifier: "GetRepoVisibilityOutputBody" });
-  }
-}
-function __c34(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.Struct({
-          repoId: S.String.pipe(T.Label()),
-          accountId: S.optional(S.String),
-          granteeType: S.optional(S.String),
-          provider: S.optional(S.String),
-          providerUserId: S.optional(S.String),
-          role: S.String,
-        }).pipe(T.Http({ method: "POST", uri: "/api/v1/repos/{repoId}/grants", code: 200 })),
-      ).annotate({ identifier: "GrantRepoAccessRequest" });
-    case 1:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            status: S.String,
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "GrantRepoAccessOutputBody" });
-  }
-}
-function __c35(j: number): any {
-  switch (j) {
-    case 0:
-      return S.suspend(() =>
-        S.Struct({
-          projectId: S.String.pipe(T.Label()),
-          pageSize: S.optional(S.Number.pipe(T.Query())),
-          pageToken: S.optional(S.String.pipe(T.Query())),
-          name: S.optional(S.String.pipe(T.Query())),
-          scope: S.optional(S.String.pipe(T.Query())),
-          commitToken: S.optional(S.String.pipe(T.Query())),
-        }).pipe(T.Http({ method: "GET", uri: "/api/v1/projects/{projectId}/repos", code: 200 })),
-      ).annotate({ identifier: "ListProjectReposRequest" });
-    case 1:
-      return S.Array(__S(240, __c30, 0));
-    case 2:
-      return S.suspend(() =>
-        S.StructWithRest(
-          S.Struct({
-            _schema: S.optional(S.String.pipe(T.Body("$schema"))),
-            candidatesIncomplete: S.optional(S.Boolean),
-            nextPageToken: S.optional(S.String),
-            repo: S.optional(__S(240, __c30, 0)),
-            repos: __S(281, __c35, 1),
-          }),
-          [S.Record(S.String, S.Unknown)],
-        ),
-      ).annotate({ identifier: "ListProjectReposOutputBody" });
   }
 }
 // Schema table: entry i is schema j of builder f, made on first reach.

@@ -58,6 +58,8 @@ export interface DeleteTrailGateRequest {
   repo_id: string;
   /** Gate definition id (ULID) */
   gateId: string;
+  /** Optimistic concurrency: a weak ETag (W/"...") from a prior read/write of this gate. A mismatch is a 412; omit to delete unconditionally. */
+  ifMatch?: string;
 }
 export interface DeleteTrailGateResponse {}
 export interface GetTrailGateConfigRequest {
@@ -177,6 +179,8 @@ export interface UpdateTrailGateRequest {
   repo_id: string;
   /** Gate definition id (ULID) */
   gateId: string;
+  /** Optimistic concurrency: a weak ETag (W/"...") from a prior read/write of this gate. A mismatch is a 412; omit to apply unconditionally. */
+  ifMatch?: string;
   blocking?: boolean;
   config?: unknown;
   enabled?: boolean;
@@ -404,6 +408,7 @@ function __c3(j: number): any {
         S.Struct({
           repo_id: S.String.pipe(T.Label()),
           gateId: S.String.pipe(T.Label()),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
         }).pipe(
           T.Http({
             method: "DELETE",
@@ -590,6 +595,7 @@ function __c12(j: number): any {
         S.Struct({
           repo_id: S.String.pipe(T.Label()),
           gateId: S.String.pipe(T.Label()),
+          ifMatch: S.optional(S.String.pipe(T.Header("If-Match"))),
           blocking: S.optional(S.Boolean),
           config: S.optional(S.Unknown),
           enabled: S.optional(S.Boolean),

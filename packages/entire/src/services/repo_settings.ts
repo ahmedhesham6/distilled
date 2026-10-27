@@ -26,6 +26,15 @@ const TELEMETRY = {
   propagate: "w3c",
 } as const;
 
+/** The repository is not in this cell (HTTP 404 `repo not in this region`). A new repository reaches its cell a few seconds after Core creates it, so this is transient right after a create; otherwise the repository lives in another region's cell. */
+export class RepoNotInRegion
+  extends /*@__PURE__*/ T.applyErrorMatchers(
+    /*@__PURE__*/ S.TaggedError<RepoNotInRegion>()("RepoNotInRegion", {
+      message: S.String,
+    }),
+    [{ status: 404, message: { includes: "not in this region" } }],
+  ) {}
+
 export interface DeleteRepoSecretRequest {
   repo_id: string;
   secretKey: string;
@@ -40,7 +49,7 @@ export interface ListRepoSecretsRequest {
 }
 export interface RepoSecretMetaItem {
   /** Which secret is configured (e.g. api_key_anthropic). */
-  secretKey: string | Redacted.Redacted<string>;
+  secretKey: string;
   /** When the secret was last set or rotated (RFC3339, milliseconds). */
   updatedAt: string;
 }
@@ -55,7 +64,7 @@ export interface SetRepoSecretRequest {
   repo_id: string;
   secretKey: string;
   /** The secret value to store (e.g. an Anthropic or OpenAI API key). Stored encrypted; never returned by any endpoint. */
-  value: string;
+  value: string | Redacted.Redacted<string>;
 }
 export interface SetRepoSecretResponse {}
 export interface UpdateRepoPublicSharingRequest {
@@ -83,7 +92,7 @@ export interface RunnerSettingsOutputBody {
 }
 export interface UpdateRepoTrailSettingsRequest {
   repo_id: string;
-  trails_enabled?: boolean;
+  trails_enabled: boolean;
 }
 export interface TrailSettingsBody {
   trails_enabled: boolean;
@@ -93,7 +102,7 @@ export interface TrailSettingsOutputBody {
   _schema?: string;
   settings: TrailSettingsBody;
 }
-export type DeleteRepoSecretError = EntireOpError;
+export type DeleteRepoSecretError = RepoNotInRegion | EntireOpError;
 /** Delete a repository secret Deletes a repository secret, removing the stored ciphertext and its key from the live store; a backup taken before the deletion still holds them until it ages out. Idempotent -- deleting a key that is not configured succeeds. Requires repo-admin (manage_settings). */
 export const deleteRepoSecret: API.OperationMethod<
   DeleteRepoSecretRequest,
@@ -103,14 +112,14 @@ export const deleteRepoSecret: API.OperationMethod<
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(0, __c0, 0) as any as S.Schema<DeleteRepoSecretRequest>,
   output: __S(4, __c1, 0) as any as S.Schema<DeleteRepoSecretResponse>,
-  errors: [UnknownEntireError],
+  errors: [RepoNotInRegion, UnknownEntireError],
   protocol: EntireCellProtocol,
   retry: Retry.Retry,
   telemetry: TELEMETRY,
   span: "DeleteRepoSecret",
 }));
 
-export type ListRepoSecretsError = EntireOpError;
+export type ListRepoSecretsError = RepoNotInRegion | EntireOpError;
 /** List which repository secrets are configured Which repository secrets are configured and when each was last set or rotated -- metadata only, never the values. There is no endpoint that returns a stored secret value. Requires repo-admin (manage_settings), the same tier as setting one. */
 export const listRepoSecrets: API.PaginatedOperationMethod<
   ListRepoSecretsRequest,
@@ -122,7 +131,7 @@ export const listRepoSecrets: API.PaginatedOperationMethod<
   () => ({
     input: __S(8, __c2, 0) as any as S.Schema<ListRepoSecretsRequest>,
     output: __S(11, __c2, 3) as any as S.Schema<RepoSecretsListOutputBody>,
-    errors: [UnknownEntireError],
+    errors: [RepoNotInRegion, UnknownEntireError],
     protocol: EntireCellProtocol,
     retry: Retry.Retry,
     telemetry: TELEMETRY,
@@ -137,7 +146,7 @@ export const listRepoSecrets: API.PaginatedOperationMethod<
   paginateCursor,
 ) as any;
 
-export type SetRepoSecretError = EntireOpError;
+export type SetRepoSecretError = RepoNotInRegion | EntireOpError;
 /** Set or rotate a repository secret Stores a repository secret (a customer-supplied model provider API key) encrypted at rest. Write-only: no endpoint ever returns the stored value -- it can only be rotated (by setting it again) or deleted. The runner reads it in the repository's own cell, never over the API. Setting an existing key rotates it. Requires repo-admin (manage_settings): the stored key decides which account pays for the repository's model calls. */
 export const setRepoSecret: API.OperationMethod<
   SetRepoSecretRequest,
@@ -147,14 +156,14 @@ export const setRepoSecret: API.OperationMethod<
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(12, __c3, 0) as any as S.Schema<SetRepoSecretRequest>,
   output: __S(4, __c1, 0) as any as S.Schema<SetRepoSecretResponse>,
-  errors: [UnknownEntireError],
+  errors: [RepoNotInRegion, UnknownEntireError],
   protocol: EntireCellProtocol,
   retry: Retry.Retry,
   telemetry: TELEMETRY,
   span: "SetRepoSecret",
 }));
 
-export type UpdateRepoPublicSharingError = EntireOpError;
+export type UpdateRepoPublicSharingError = RepoNotInRegion | EntireOpError;
 /** Turn repository-wide public sharing on or off The repository-wide opt-in that lets individual sessions in a private repository be shared publicly. Turning it off retracts that visibility, even for sessions already shared. */
 export const updateRepoPublicSharing: API.OperationMethod<
   UpdateRepoPublicSharingRequest,
@@ -164,14 +173,14 @@ export const updateRepoPublicSharing: API.OperationMethod<
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(16, __c4, 0) as any as S.Schema<UpdateRepoPublicSharingRequest>,
   output: __S(17, __c4, 1) as any as S.Schema<PublicSharingOutputBody>,
-  errors: [UnknownEntireError],
+  errors: [RepoNotInRegion, UnknownEntireError],
   protocol: EntireCellProtocol,
   retry: Retry.Retry,
   telemetry: TELEMETRY,
   span: "UpdateRepoPublicSharing",
 }));
 
-export type UpdateRepoRunnerSettingsError = EntireOpError;
+export type UpdateRepoRunnerSettingsError = RepoNotInRegion | EntireOpError;
 /** Update a repository's runner settings */
 export const updateRepoRunnerSettings: API.OperationMethod<
   UpdateRepoRunnerSettingsRequest,
@@ -181,14 +190,14 @@ export const updateRepoRunnerSettings: API.OperationMethod<
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(20, __c5, 0) as any as S.Schema<UpdateRepoRunnerSettingsRequest>,
   output: __S(22, __c5, 2) as any as S.Schema<RunnerSettingsOutputBody>,
-  errors: [UnknownEntireError],
+  errors: [RepoNotInRegion, UnknownEntireError],
   protocol: EntireCellProtocol,
   retry: Retry.Retry,
   telemetry: TELEMETRY,
   span: "UpdateRepoRunnerSettings",
 }));
 
-export type UpdateRepoTrailSettingsError = EntireOpError;
+export type UpdateRepoTrailSettingsError = RepoNotInRegion | EntireOpError;
 /** Update a repository's trail settings */
 export const updateRepoTrailSettings: API.OperationMethod<
   UpdateRepoTrailSettingsRequest,
@@ -198,7 +207,7 @@ export const updateRepoTrailSettings: API.OperationMethod<
 > = /*@__PURE__*/ API.make(() => ({
   input: __S(24, __c6, 0) as any as S.Schema<UpdateRepoTrailSettingsRequest>,
   output: __S(26, __c6, 2) as any as S.Schema<TrailSettingsOutputBody>,
-  errors: [UnknownEntireError],
+  errors: [RepoNotInRegion, UnknownEntireError],
   protocol: EntireCellProtocol,
   retry: Retry.Retry,
   telemetry: TELEMETRY,
@@ -242,7 +251,7 @@ function __c2(j: number): any {
     case 1:
       return S.suspend(() =>
         S.Struct({
-          secretKey: S.String.pipe(T.SensitiveValue({})),
+          secretKey: S.String,
           updatedAt: S.String,
         }),
       ).annotate({ identifier: "RepoSecretMetaItem" });
@@ -265,7 +274,7 @@ function __c3(j: number): any {
         S.Struct({
           repo_id: S.String.pipe(T.Label()),
           secretKey: S.String.pipe(T.Label()),
-          value: S.String,
+          value: S.String.pipe(T.SensitiveValue({})),
         }).pipe(
           T.Http({ method: "PUT", uri: "/api/v1/repos/{repo_id}/secrets/{secretKey}", code: 200 }),
         ),
@@ -330,7 +339,7 @@ function __c6(j: number): any {
       return S.suspend(() =>
         S.Struct({
           repo_id: S.String.pipe(T.Label()),
-          trails_enabled: S.optional(S.Boolean),
+          trails_enabled: S.Boolean,
         }).pipe(
           T.Http({ method: "PATCH", uri: "/api/v1/repos/{repo_id}/trail-settings", code: 200 }),
         ),

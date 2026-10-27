@@ -247,6 +247,9 @@ for (const api of APIS) {
         successStatuses: ["200", "201", "202", "204"],
         // Every failure shares one problem document; no per-op classes.
         statusToErrorClass: {},
+        // Agent and environment writes require `Idempotency-Key`, and
+        // replaces require `If-Match`; both are modeled header members.
+        headerParams: true,
         operationNames: OPERATION_NAMES,
       },
     );
