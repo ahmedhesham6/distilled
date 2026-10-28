@@ -111,7 +111,7 @@ export class SourceTableNotReady
     [{ status: 400, message: { includes: "while it is being created or modified" } }],
   ) {}
 
-/** The table is still being created, modified or restored (HTTP 400: '... is still being created'). Retryable after a short wait. */
+/** The table is still being created, modified, restored or deleted (HTTP 400: '... is still being created' / '... is either creating or deleting'). Retryable after a short wait. */
 export class TableInTransition
   extends /*@__PURE__*/ T.applyErrorMatchers(
     /*@__PURE__*/ S.TaggedError<TableInTransition>()("TableInTransition", {
@@ -122,7 +122,10 @@ export class TableInTransition
       domain: /*@__PURE__*/ S.optional(S.String),
       details: /*@__PURE__*/ S.optional(/*@__PURE__*/ S.Array(S.Unknown)),
     }).pipe(C.withBadRequestError),
-    [{ status: 400, message: { includes: "is still being created" } }],
+    [
+      { status: 400, message: { includes: "is still being created" } },
+      { status: 400, message: { includes: "is either creating or deleting" } },
+    ],
   ) {}
 
 /** Checks that all writes before the consistency token was generated in the same cluster are readable by Databoost. */
