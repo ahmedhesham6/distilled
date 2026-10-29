@@ -11,16 +11,17 @@ import * as Kubernetes from "../src/index.ts";
 import * as Retry from "../src/retry.ts";
 
 /** Run `effect` against a fake API server that answers `reply`. */
-const call = async <A, E, R>(effect: Effect.Effect<A, E, R>, reply: unknown) => {
+const call = async <A, E, R>(effect: Effect.Effect<A, E, R>, reply: unknown, status = 200) => {
   let request: HttpClientRequest.HttpClientRequest | undefined;
   const client = HttpClient.make((req) =>
     Effect.sync(() => {
       request = req;
-      return HttpClientResponse.fromWeb(req, new Response(JSON.stringify(reply)));
+      return HttpClientResponse.fromWeb(req, new Response(JSON.stringify(reply), { status }));
     }),
   );
   const result = await Effect.runPromise(
     effect.pipe(
+      Effect.result,
       Retry.none,
       Effect.provide(
         Layer.mergeAll(
@@ -28,7 +29,7 @@ const call = async <A, E, R>(effect: Effect.Effect<A, E, R>, reply: unknown) => 
           fromToken({ token: Redacted.make("t"), apiBaseUrl: "https://k8s.test" }),
         ),
       ),
-    ) as Effect.Effect<A, E>,
+    ) as Effect.Effect<Result.Result<A, E>>,
   );
   const web = Result.getOrThrow(HttpClientRequest.toWebResult(request!));
   return { result, web, body: await web.text() };
@@ -58,7 +59,7 @@ describe("snapshot.storage.k8s.io/v1 (a CRD group)", () => {
       "https://k8s.test/apis/snapshot.storage.k8s.io/v1/namespaces/default/volumesnapshots",
     );
     expect(JSON.parse(body)).toEqual(snapshot);
-    expect(result.spec.source.persistentVolumeClaimName).toBe("data");
+    expect(Result.getOrThrow(result).spec.source.persistentVolumeClaimName).toBe("data");
   });
 
   test("lists cluster-scoped VolumeSnapshotClasses", async () => {
@@ -80,7 +81,7 @@ describe("snapshot.storage.k8s.io/v1 (a CRD group)", () => {
     expect(web.url).toBe(
       "https://k8s.test/apis/snapshot.storage.k8s.io/v1/volumesnapshotclasses?limit=10",
     );
-    expect(result.items[0]?.driver).toBe("hostpath.csi.k8s.io");
+    expect(Result.getOrThrow(result).items[0]?.driver).toBe("hostpath.csi.k8s.io");
   });
 
   test("patches a VolumeSnapshot with a merge patch", async () => {
@@ -95,5 +96,24 @@ describe("snapshot.storage.k8s.io/v1 (a CRD group)", () => {
     expect(web.method).toBe("PATCH");
     expect(web.headers.get("content-type")).toBe("application/merge-patch+json");
     expect(JSON.parse(body)).toEqual({ metadata: { labels: { keep: "yes" } } });
+  });
+
+  test("reads a missing VolumeSnapshot as NotFound", async () => {
+    const { result } = await call(
+      Kubernetes.snapshot_storage.readSnapshotStorageV1NamespacedVolumeSnapshot({
+        namespace: "default",
+        name: "gone",
+      }),
+      {
+        kind: "Status",
+        apiVersion: "v1",
+        status: "Failure",
+        message: 'volumesnapshots.snapshot.storage.k8s.io "gone" not found',
+        reason: "NotFound",
+        code: 404,
+      },
+      404,
+    );
+    expect(Result.isFailure(result) && result.failure._tag).toBe("NotFound");
   });
 });
