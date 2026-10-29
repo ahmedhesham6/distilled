@@ -123,12 +123,11 @@ describe("snapshot.storage.k8s.io/v1 (a CRD group)", () => {
     const custom = Object.entries(errors("snapshot_storage"));
     expect(custom.length).toBeGreaterThan(0);
     for (const [name, union] of custom) {
-      // VolumeSnapshot is namespaced like a Job; the other two are
-      // cluster-scoped like a PersistentVolume.
+      // VolumeSnapshotContent and VolumeSnapshotClass are cluster-scoped
+      // like a PersistentVolume; VolumeSnapshot is namespaced like a Job.
       const template = name
-        .replace("SnapshotStorageV1", name.includes("VolumeSnapshotC") ? "CoreV1" : "BatchV1")
-        .replace(/VolumeSnapshot(Content|Class)/, "PersistentVolume")
-        .replace("VolumeSnapshot", "Job");
+        .replace(/SnapshotStorageV1(\w*)VolumeSnapshot(Content|Class)/, "CoreV1$1PersistentVolume")
+        .replace(/SnapshotStorageV1(\w*)VolumeSnapshot/, "BatchV1$1Job");
       expect([name, union]).toEqual([name, builtIn[template]]);
     }
   });

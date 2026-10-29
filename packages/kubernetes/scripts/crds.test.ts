@@ -1,8 +1,7 @@
-import { mkdtempSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import * as path from "node:path";
-import { describe, expect, test } from "vitest";
-import { parseAllDocuments } from "yaml";
+import { afterAll, describe, expect, test } from "vitest";
 import { crdSpec, groupPascal, readCrds, type Crd } from "./crds.ts";
 
 const fixtures = path.join(import.meta.dirname, "../test/fixtures");
@@ -12,9 +11,10 @@ const json = (file: string) => JSON.parse(readFileSync(path.join(fixtures, file)
 const base = json("crd-templates.json");
 /** What a real API server publishes for the external-snapshotter CRDs. */
 const served = json("snapshot-served.json");
-const crds: Crd[] = readdirSync(path.join(fixtures, "crds")).flatMap((file) =>
-  parseAllDocuments(readFileSync(path.join(fixtures, "crds", file), "utf8")).map((d) => d.toJS()),
+const manifests = readdirSync(path.join(fixtures, "crds")).map((file) =>
+  path.join(fixtures, "crds", file),
 );
+const crds: Crd[] = await readCrds(manifests);
 
 /** The same summary as test/fixtures/snapshot-served.json, of a built fragment. */
 const operations = (paths: Record<string, any>) => {
@@ -74,12 +74,6 @@ describe("crdSpec", () => {
     expect(groupPascal("cert-manager.io")).toBe("CertManagerIo");
   });
 
-  test("refuses a manifest that is not a CRD", () => {
-    expect(() => crdSpec(base, [{ ...crds[0]!, kind: "Deployment" }])).toThrow(
-      /expected a CustomResourceDefinition/,
-    );
-  });
-
   test("names the custom kind, not the template's, in every description", () => {
     expect(JSON.stringify(built.paths)).not.toMatch(/\b(Job|PersistentVolume|StatefulSet)\b/);
   });
@@ -118,11 +112,25 @@ describe("crdSpec", () => {
 
 describe("readCrds", () => {
   const dir = mkdtempSync(path.join(tmpdir(), "crds-"));
+  afterAll(() => rmSync(dir, { recursive: true }));
 
   test("reads every document of each manifest", async () => {
-    const file = path.join(fixtures, "crds", readdirSync(path.join(fixtures, "crds"))[0]!);
-    const read = await readCrds([file]);
-    expect(read.map((crd) => crd.kind)).toEqual(["CustomResourceDefinition"]);
+    const both = path.join(dir, "both.yaml");
+    writeFileSync(
+      both,
+      manifests
+        .slice(0, 2)
+        .map((file) => readFileSync(file, "utf8"))
+        .join("\n---\n"),
+    );
+    const read = await readCrds([both, manifests[2]!]);
+    expect(read.map((crd) => crd.spec.names.kind)).toEqual(crds.map((crd) => crd.spec.names.kind));
+  });
+
+  test("refuses a manifest that is not a CRD", async () => {
+    const deployment = path.join(dir, "deployment.yaml");
+    writeFileSync(deployment, "kind: Deployment\n");
+    await expect(readCrds([deployment])).rejects.toThrow(/expected a CustomResourceDefinition/);
   });
 
   test("names a missing manifest and how to fetch it", async () => {

@@ -29,15 +29,15 @@ import { parseAllDocuments } from "yaml";
 
 /**
  * The CustomResourceDefinitions in `files`, every YAML document of each.
- * A missing file names the command that fetches it; a file that does not
- * parse is refused, not read in part.
+ * A missing file names the commands that fetch it; a file that does not
+ * parse, or holds another kind, is refused.
  */
 export const readCrds = async (files: ReadonlyArray<string>): Promise<Crd[]> => {
   const crds: Crd[] = [];
   for (const file of files) {
     const text = await fs.readFile(file, "utf8").catch((cause) => {
       throw new Error(
-        `crds: cannot read ${file}; fetch the CRD manifests with \`pnpm specs:local kubernetes\` and generate with DISTILLED_SPECS_LOCAL=1`,
+        `crds: cannot read ${file}. Fetch the spec mirror with \`pnpm --filter @distilled.cloud/kubernetes run specs:fetch\`; if the mirror has no CRD manifests yet, run \`pnpm specs:local kubernetes\` and generate with DISTILLED_SPECS_LOCAL=1`,
         { cause },
       );
     });
@@ -46,7 +46,11 @@ export const readCrds = async (files: ReadonlyArray<string>): Promise<Crd[]> => 
         throw new Error(`crds: ${file} is not valid YAML: ${doc.errors[0]!.message}`);
       }
       const crd = doc.toJS();
-      if (crd !== null && crd !== undefined) crds.push(crd);
+      if (crd === null || crd === undefined) continue;
+      if (crd.kind !== "CustomResourceDefinition") {
+        throw new Error(`crds: ${file}: expected a CustomResourceDefinition, got ${crd.kind}`);
+      }
+      crds.push(crd);
     }
   }
   return crds;
@@ -54,7 +58,7 @@ export const readCrds = async (files: ReadonlyArray<string>): Promise<Crd[]> => 
 
 /** The parts of a CustomResourceDefinition this reads. */
 export interface Crd {
-  readonly kind?: string;
+  readonly kind: "CustomResourceDefinition";
   readonly spec: {
     readonly group: string;
     readonly scope: "Namespaced" | "Cluster";
@@ -75,7 +79,7 @@ export interface CrdSpec {
 }
 
 /** Patch types the API server accepts for a custom resource. */
-export const CRD_PATCH_TYPES = [
+const CRD_PATCH_TYPES = [
   "application/json-patch+json",
   "application/merge-patch+json",
   "application/apply-patch+yaml",
@@ -83,13 +87,21 @@ export const CRD_PATCH_TYPES = [
 
 const META = "io.k8s.apimachinery.pkg.apis.meta.v1";
 
+/** A group, version and kind, as `x-kubernetes-group-version-kind` names it. */
+interface Gvk {
+  readonly group: string;
+  readonly version: string;
+  readonly kind: string;
+}
+
+const pascal = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
 /** `snapshot.storage.k8s.io` → `SnapshotStorage`. */
 export const groupPascal = (group: string): string =>
   group
     .replace(/\.k8s\.io$/, "")
     .split(/[.-]/)
-    .filter(Boolean)
-    .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+    .map(pascal)
     .join("");
 
 /** `snapshot.storage.k8s.io` → `io.k8s.storage.snapshot`. */
@@ -97,7 +109,7 @@ const definitionPrefix = (group: string): string => group.split(".").reverse().j
 
 /**
  * A built-in resource whose path items serve as the template for one
- * scope: its paths relative to `/{base}`, and the names to swap out.
+ * scope: its group-version path (`base`), and the names to swap out.
  */
 interface Template {
   readonly base: string;
@@ -155,8 +167,9 @@ const STATUS_TEXT: Record<string, string> = {
   "422": "Unprocessable Entity",
 };
 
-/** Path suffixes (after the plural) a resource serves, by subresource. */
-const collection = (t: Template) => `${t.namespaced ? "/namespaces/{namespace}" : ""}/${t.plural}`;
+/** The collection path under a group-version: `[/namespaces/{namespace}]/<plural>`. */
+const collection = (namespaced: boolean, plural: string) =>
+  `${namespaced ? "/namespaces/{namespace}" : ""}/${plural}`;
 
 /**
  * Copy a template path item for the custom resource: operation ids, schema
@@ -166,7 +179,7 @@ const fromTemplate = (
   base: Record<string, any>,
   t: Template,
   templatePath: string,
-  target: { gv: string; kind: string; def: string; listDef: string; tag: string; gvk: object },
+  target: { gv: string; kind: string; def: string; listDef: string; tag: string; gvk: Gvk },
 ): any => {
   const item = base.paths?.[templatePath];
   if (item === undefined) {
@@ -195,6 +208,7 @@ const fromTemplate = (
     // `{verb}{GV}{rest}`: the GV is the first match, the kind the first
     // match after it.
     const at = op.operationId.indexOf(t.gv);
+    if (at < 0) throw new Error(`crds: ${op.operationId} does not name ${t.gv}`);
     const rest = op.operationId.slice(at + t.gv.length).replace(t.kind, target.kind);
     op.operationId = `${op.operationId.slice(0, at)}${target.gv}${rest}`;
     if (typeof op.description === "string") {
@@ -210,14 +224,18 @@ const fromTemplate = (
   return copy;
 };
 
-const pascal = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-
 /** A property key as a definition name segment: `app.kubernetes.io/name` → `AppKubernetesIoName`. */
 const segment = (key: string) =>
   key
     .split(/[^A-Za-z0-9]+/)
     .map(pascal)
     .join("");
+
+/** Add `value` to `definitions` as `name`, which must be free. */
+const define = (definitions: Record<string, any>, name: string, value: unknown) => {
+  if (definitions[name] !== undefined) throw new Error(`crds: two schemas are named ${name}`);
+  definitions[name] = value;
+};
 
 /**
  * `schema`, with each nested object schema (one with `properties`, also as
@@ -232,10 +250,7 @@ const hoist = (schema: any, name: string, definitions: Record<string, any>): any
   for (const [key, value] of Object.entries<any>(schema.properties)) {
     properties[key] = hoist(value, `${name}${segment(key)}`, definitions);
   }
-  if (definitions[name] !== undefined) {
-    throw new Error(`crds: two schemas are named ${name}`);
-  }
-  definitions[name] = { ...schema, properties };
+  define(definitions, name, { ...schema, properties });
   return { $ref: `#/definitions/${name}` };
 };
 
@@ -243,7 +258,7 @@ const hoist = (schema: any, name: string, definitions: Record<string, any>): any
 const resourceDefinition = (
   schema: Record<string, any> | undefined,
   def: string,
-  gvk: object,
+  gvk: Gvk,
   definitions: Record<string, any>,
 ) => {
   const properties: Record<string, any> = {};
@@ -261,8 +276,8 @@ const resourceDefinition = (
   };
 };
 
-const listDefinition = (def: string, gvk: object, kind: string) => ({
-  description: `${kind} is a list of ${(gvk as { kind: string }).kind}`,
+const listDefinition = (def: string, gvk: Gvk, kind: string) => ({
+  description: `${kind} is a list of ${gvk.kind}`,
   type: "object",
   required: ["items"],
   properties: {
@@ -282,9 +297,6 @@ export const crdSpec = (base: Record<string, any>, crds: ReadonlyArray<Crd>): Cr
   const paths: Record<string, any> = {};
   const definitions: Record<string, any> = {};
   for (const crd of crds) {
-    if (crd.kind !== undefined && crd.kind !== "CustomResourceDefinition") {
-      throw new Error(`crds: expected a CustomResourceDefinition, got ${crd.kind}`);
-    }
     const { group, scope, names } = crd.spec;
     const listKind = names.listKind ?? `${names.kind}List`;
     for (const version of crd.spec.versions) {
@@ -292,31 +304,29 @@ export const crdSpec = (base: Record<string, any>, crds: ReadonlyArray<Crd>): Cr
       const gvk = { group, kind: names.kind, version: version.name };
       const def = `${definitionPrefix(group)}.${version.name}.${names.kind}`;
       const listDef = `${definitionPrefix(group)}.${version.name}.${listKind}`;
-      if (definitions[def] !== undefined || definitions[listDef] !== undefined) {
-        throw new Error(`crds: two schemas are named ${def}`);
-      }
-      definitions[def] = resourceDefinition(version.schema?.openAPIV3Schema, def, gvk, definitions);
-      if (definitions[listDef] !== undefined) {
-        throw new Error(`crds: two schemas are named ${listDef}`);
-      }
-      definitions[listDef] = listDefinition(def, gvk, listKind);
+      define(
+        definitions,
+        def,
+        resourceDefinition(version.schema?.openAPIV3Schema, def, gvk, definitions),
+      );
+      define(definitions, listDef, listDefinition(def, gvk, listKind));
 
+      const gp = groupPascal(group);
       const target = {
-        gv: `${groupPascal(group)}${version.name.charAt(0).toUpperCase()}${version.name.slice(1)}`,
+        gv: `${gp}${pascal(version.name)}`,
         kind: names.kind,
         def,
         listDef,
-        tag: `${groupPascal(group).charAt(0).toLowerCase()}${groupPascal(group).slice(1)}_${version.name}`,
+        tag: `${gp.charAt(0).toLowerCase()}${gp.slice(1)}_${version.name}`,
         gvk,
       };
       const t = scope === "Namespaced" ? NAMESPACED : CLUSTER;
       const here = `/apis/${group}/${version.name}`;
-      const resource = { ...t, plural: names.plural };
       const copy = (from: Template, suffix: string) =>
-        (paths[`${here}${collection(resource)}${suffix}`] = fromTemplate(
+        (paths[`${here}${collection(t.namespaced, names.plural)}${suffix}`] = fromTemplate(
           base,
           from,
-          `${from.base}${collection(from)}${suffix}`,
+          `${from.base}${collection(from.namespaced, from.plural)}${suffix}`,
           target,
         ));
       // Where the custom resource handler differs from a built-in one:

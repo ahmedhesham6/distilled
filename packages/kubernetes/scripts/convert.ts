@@ -101,11 +101,14 @@ const API_GROUP_MAP: Record<string, string> = {
 };
 
 // A custom resource group's module: `SnapshotStorage` → `snapshot_storage`.
+// Several CRDs share a group's module; a built-in group's name is refused.
+const BUILT_IN_GROUPS = new Set(Object.keys(API_GROUP_MAP));
 for (const crd of crds) {
   const group = groupPascal(crd.spec.group);
-  if (API_GROUP_MAP[group] === undefined) {
-    API_GROUP_MAP[group] = group.replace(/(?<!^)([A-Z])/g, "_$1").toLowerCase();
+  if (BUILT_IN_GROUPS.has(group)) {
+    throw new Error(`CRD group ${crd.spec.group} has the name of a built-in group (${group})`);
   }
+  API_GROUP_MAP[group] = group.replace(/(?<!^)([A-Z])/g, "_$1").toLowerCase();
 }
 
 // Sorted list of group prefixes (longer first for correct matching).

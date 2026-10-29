@@ -1,4 +1,5 @@
 {
+  "source": "The path items and parameters of batch/v1 jobs, v1 persistentvolumes and apps/v1 statefulsets, cut from specs/spec-mirror-kubernetes/specs/swagger.json at the pinned mirror commit",
   "paths": {
     "/apis/batch/v1/namespaces/{namespace}/jobs": {
       "delete": {
