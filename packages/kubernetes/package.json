@@ -93,7 +93,8 @@
   },
   "devDependencies": {
     "@distilled.cloud/dev": "workspace:*",
-    "@types/node": "catalog:"
+    "@types/node": "catalog:",
+    "yaml": "catalog:"
   },
   "peerDependencies": {
     "effect": "catalog:"

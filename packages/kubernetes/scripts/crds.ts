@@ -1,0 +1,294 @@
+/**
+ * crds — turn CustomResourceDefinition manifests into Swagger 2.0 paths and
+ * definitions shaped like the ones the API server publishes for them, so
+ * scripts/convert.ts can convert custom resources exactly like built-in ones.
+ *
+ * The API server serves each CRD version as the standard resource endpoints
+ * (list/create/deletecollection, read/replace/delete/patch, the `status` and
+ * `scale` subresources, list across namespaces). Their parameters are the
+ * same as a built-in resource's of the same scope, so each path item is a
+ * copy of a built-in template resource's, with the group, version, kind,
+ * plural and schema refs swapped. What differs from a built-in resource:
+ *
+ * - operation ids name the group with `.k8s.io` dropped and each remaining
+ *   segment capitalized (`snapshot.storage.k8s.io` → `SnapshotStorage`,
+ *   `cert-manager.io` → `CertManagerIo`)
+ * - definitions are named by the reversed group
+ *   (`io.k8s.storage.snapshot.v1.VolumeSnapshot`): the version's
+ *   `openAPIV3Schema` with `metadata` as `ObjectMeta`, plus a `<Kind>List`.
+ *   The API server keeps nested objects inline; here each one becomes a
+ *   definition named by its path (`…VolumeSnapshotSpecSource`), the way the
+ *   built-in definitions name theirs, so the generated types do too.
+ * - PATCH accepts JSON patch, merge patch and apply, not strategic merge
+ *
+ * Checked against the OpenAPI a v1.36 API server publishes for the
+ * external-snapshotter CRDs (test/crds.test.ts).
+ */
+
+/** The parts of a CustomResourceDefinition this reads. */
+export interface Crd {
+  readonly kind?: string;
+  readonly spec: {
+    readonly group: string;
+    readonly scope: "Namespaced" | "Cluster";
+    readonly names: { readonly kind: string; readonly listKind?: string; readonly plural: string };
+    readonly versions: ReadonlyArray<{
+      readonly name: string;
+      readonly served: boolean;
+      readonly schema?: { readonly openAPIV3Schema?: Record<string, any> };
+      readonly subresources?: { readonly status?: object; readonly scale?: object };
+    }>;
+  };
+}
+
+/** The Swagger 2.0 fragment for one or more CRDs. */
+export interface CrdSpec {
+  readonly paths: Record<string, any>;
+  readonly definitions: Record<string, any>;
+}
+
+/** Patch types the API server accepts for a custom resource. */
+export const CRD_PATCH_TYPES = [
+  "application/json-patch+json",
+  "application/merge-patch+json",
+  "application/apply-patch+yaml",
+];
+
+const META = "io.k8s.apimachinery.pkg.apis.meta.v1";
+
+/** `snapshot.storage.k8s.io` → `SnapshotStorage`. */
+export const groupPascal = (group: string): string =>
+  group
+    .replace(/\.k8s\.io$/, "")
+    .split(/[.-]/)
+    .filter(Boolean)
+    .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+    .join("");
+
+/** `snapshot.storage.k8s.io` → `io.k8s.storage.snapshot`. */
+const definitionPrefix = (group: string): string => group.split(".").reverse().join(".");
+
+/**
+ * A built-in resource whose path items serve as the template for one
+ * scope: its paths relative to `/{base}`, and the names to swap out.
+ */
+interface Template {
+  readonly base: string;
+  readonly gv: string;
+  readonly kind: string;
+  readonly def: string;
+  readonly plural: string;
+  readonly namespaced: boolean;
+}
+
+const NAMESPACED: Template = {
+  base: "/apis/batch/v1",
+  gv: "BatchV1",
+  kind: "Job",
+  def: "io.k8s.api.batch.v1.Job",
+  plural: "jobs",
+  namespaced: true,
+};
+const CLUSTER: Template = {
+  base: "/api/v1",
+  gv: "CoreV1",
+  kind: "PersistentVolume",
+  def: "io.k8s.api.core.v1.PersistentVolume",
+  plural: "persistentvolumes",
+  namespaced: false,
+};
+/** The scale subresource, which the templates above do not have. */
+const SCALE: Template = {
+  base: "/apis/apps/v1",
+  gv: "AppsV1",
+  kind: "StatefulSet",
+  def: "io.k8s.api.apps.v1.StatefulSet",
+  plural: "statefulsets",
+  namespaced: true,
+};
+
+const HTTP_METHODS = ["get", "post", "put", "patch", "delete"] as const;
+
+/** Path suffixes (after the plural) a resource serves, by subresource. */
+const collection = (t: Template) => `${t.namespaced ? "/namespaces/{namespace}" : ""}/${t.plural}`;
+
+/**
+ * Copy a template path item for the custom resource: operation ids, schema
+ * refs, descriptions and the group-version-kind name the CR instead.
+ */
+const fromTemplate = (
+  base: Record<string, any>,
+  t: Template,
+  templatePath: string,
+  target: { gv: string; kind: string; def: string; listDef: string; tag: string; gvk: object },
+): any => {
+  const item = base.paths?.[templatePath];
+  if (item === undefined) {
+    throw new Error(`crds: the base spec has no template path ${templatePath}`);
+  }
+  const copy = structuredClone(item);
+  const swapRefs = (node: any): void => {
+    if (node === null || typeof node !== "object") return;
+    if (typeof node.$ref === "string") {
+      if (node.$ref === `#/definitions/${t.def}`) node.$ref = `#/definitions/${target.def}`;
+      else if (node.$ref === `#/definitions/${t.def}List`) {
+        node.$ref = `#/definitions/${target.listDef}`;
+      }
+    }
+    for (const v of Object.values(node)) swapRefs(v);
+  };
+  const kindWord = new RegExp(`\\b${t.kind}\\b`, "g");
+  for (const method of HTTP_METHODS) {
+    const op = copy[method];
+    if (op === undefined) continue;
+    // `{verb}{GV}{rest}`: the GV is the first match, the kind the first
+    // match after it.
+    const at = op.operationId.indexOf(t.gv);
+    const rest = op.operationId.slice(at + t.gv.length).replace(t.kind, target.kind);
+    op.operationId = `${op.operationId.slice(0, at)}${target.gv}${rest}`;
+    if (typeof op.description === "string") {
+      op.description = op.description.replace(kindWord, target.kind);
+    }
+    op.tags = [target.tag];
+    op["x-kubernetes-group-version-kind"] = target.gvk;
+    if (method === "patch") op.consumes = [...CRD_PATCH_TYPES];
+    swapRefs(op);
+  }
+  return copy;
+};
+
+const pascal = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+/**
+ * `schema`, with each nested object schema (one with `properties`, also as
+ * an array item) moved into `definitions` under `name` + its property path.
+ */
+const hoist = (schema: any, name: string, definitions: Record<string, any>): any => {
+  if (schema?.type === "array" && schema.items !== undefined) {
+    return { ...schema, items: hoist(schema.items, name, definitions) };
+  }
+  if (schema?.type !== "object" || schema.properties === undefined) return schema;
+  const properties: Record<string, any> = {};
+  for (const [key, value] of Object.entries<any>(schema.properties)) {
+    properties[key] = hoist(value, `${name}${pascal(key)}`, definitions);
+  }
+  if (definitions[name] !== undefined) {
+    throw new Error(`crds: two schemas are named ${name}`);
+  }
+  definitions[name] = { ...schema, properties };
+  return { $ref: `#/definitions/${name}` };
+};
+
+/** The definition of a served version: its schema with typed metadata. */
+const resourceDefinition = (
+  schema: Record<string, any> | undefined,
+  def: string,
+  gvk: object,
+  definitions: Record<string, any>,
+) => {
+  const properties: Record<string, any> = {};
+  for (const [key, value] of Object.entries<any>(schema?.properties ?? {})) {
+    properties[key] =
+      key === "metadata"
+        ? { description: "Standard object's metadata.", $ref: `#/definitions/${META}.ObjectMeta` }
+        : hoist(value, `${def}${pascal(key)}`, definitions);
+  }
+  return {
+    type: "object",
+    ...schema,
+    properties,
+    "x-kubernetes-group-version-kind": [gvk],
+  };
+};
+
+const listDefinition = (def: string, gvk: object, kind: string) => ({
+  description: `${kind} is a list of ${(gvk as { kind: string }).kind}`,
+  type: "object",
+  required: ["items"],
+  properties: {
+    apiVersion: { type: "string" },
+    items: { type: "array", items: { $ref: `#/definitions/${def}` } },
+    kind: { type: "string" },
+    metadata: { $ref: `#/definitions/${META}.ListMeta` },
+  },
+  "x-kubernetes-group-version-kind": [{ ...gvk, kind }],
+});
+
+/**
+ * The paths and definitions for every served version of `crds`, built from
+ * the template path items in `base` (the core swagger.json).
+ */
+export const crdSpec = (base: Record<string, any>, crds: ReadonlyArray<Crd>): CrdSpec => {
+  const paths: Record<string, any> = {};
+  const definitions: Record<string, any> = {};
+  for (const crd of crds) {
+    if (crd.kind !== undefined && crd.kind !== "CustomResourceDefinition") {
+      throw new Error(`crds: expected a CustomResourceDefinition, got ${crd.kind}`);
+    }
+    const { group, scope, names } = crd.spec;
+    const listKind = names.listKind ?? `${names.kind}List`;
+    for (const version of crd.spec.versions) {
+      if (!version.served) continue;
+      const gvk = { group, kind: names.kind, version: version.name };
+      const def = `${definitionPrefix(group)}.${version.name}.${names.kind}`;
+      const listDef = `${definitionPrefix(group)}.${version.name}.${listKind}`;
+      if (definitions[def] !== undefined || definitions[listDef] !== undefined) {
+        throw new Error(`crds: two schemas are named ${def}`);
+      }
+      definitions[def] = resourceDefinition(version.schema?.openAPIV3Schema, def, gvk, definitions);
+      definitions[listDef] = listDefinition(def, gvk, listKind);
+
+      const target = {
+        gv: `${groupPascal(group)}${version.name.charAt(0).toUpperCase()}${version.name.slice(1)}`,
+        kind: names.kind,
+        def,
+        listDef,
+        tag: `${groupPascal(group).charAt(0).toLowerCase()}${groupPascal(group).slice(1)}_${version.name}`,
+        gvk,
+      };
+      const t = scope === "Namespaced" ? NAMESPACED : CLUSTER;
+      const here = `/apis/${group}/${version.name}`;
+      const resource = { ...t, plural: names.plural };
+      const copy = (from: Template, suffix: string) =>
+        (paths[`${here}${collection(resource)}${suffix}`] = fromTemplate(
+          base,
+          from,
+          `${from.base}${collection(from)}${suffix}`,
+          target,
+        ));
+      // Where the custom resource handler differs from a built-in one:
+      // deletecollection takes the list parameters (and no DeleteOptions
+      // body), delete returns a Status, and read takes resourceVersion.
+      const items = copy(t, "");
+      items.delete.parameters = structuredClone(items.get.parameters);
+      const resourceVersion = items.get.parameters.find(
+        (p: any) =>
+          (p.$ref ? base.parameters?.[p.$ref.split("/").pop()] : p)?.name === "resourceVersion",
+      );
+      const item = copy(t, "/{name}");
+      for (const code of ["200", "202"]) {
+        if (item.delete.responses[code]) {
+          item.delete.responses[code].schema = { $ref: `#/definitions/${META}.Status` };
+        }
+      }
+      const reads = [item];
+      if (version.subresources?.status !== undefined) reads.push(copy(t, "/{name}/status"));
+      if (resourceVersion !== undefined) {
+        for (const read of reads)
+          read.get.parameters = [...(read.get.parameters ?? []), resourceVersion];
+      }
+      if (version.subresources?.scale !== undefined) {
+        if (!t.namespaced) {
+          throw new Error(
+            `crds: ${names.kind}: scale on a cluster-scoped resource is not supported`,
+          );
+        }
+        copy(SCALE, "/{name}/scale");
+      }
+      if (t.namespaced) {
+        paths[`${here}/${names.plural}`] = fromTemplate(base, t, `${t.base}/${t.plural}`, target);
+      }
+    }
+  }
+  return { paths, definitions };
+};
