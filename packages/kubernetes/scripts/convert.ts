@@ -43,8 +43,7 @@ import { writeModel } from "@distilled.cloud/dev/codegen/models";
 import { convertOpenApiToSmithy } from "@distilled.cloud/dev/codegen/openapi";
 import { finalizeConvert } from "@distilled.cloud/dev/codegen/patches";
 import { resolveSpecPath } from "@distilled.cloud/dev/codegen/spec-path";
-import { parseAllDocuments } from "yaml";
-import { crdSpec, groupPascal, type Crd } from "./crds.ts";
+import { crdSpec, groupPascal, readCrds } from "./crds.ts";
 
 const root = path.resolve(import.meta.dirname, "..");
 const specPath = resolveSpecPath(root, "specs/spec-mirror-kubernetes/specs/swagger.json");
@@ -61,14 +60,7 @@ const CRDS = [
   "specs/spec-mirror-kubernetes/specs/crds/snapshot.storage.k8s.io_volumesnapshots.yaml",
 ];
 
-const crds: Crd[] = [];
-for (const file of CRDS) {
-  const text = await fs.readFile(resolveSpecPath(root, file), "utf8");
-  for (const doc of parseAllDocuments(text)) {
-    const crd = doc.toJS();
-    if (crd !== null && crd !== undefined) crds.push(crd);
-  }
-}
+const crds = await readCrds(CRDS.map((file) => resolveSpecPath(root, file)));
 
 // ============================================================================
 // API-group split (ported verbatim from distilled v0 scripts/generate.ts)

@@ -1,8 +1,9 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { mkdtempSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import * as path from "node:path";
 import { describe, expect, test } from "vitest";
 import { parseAllDocuments } from "yaml";
-import { crdSpec, groupPascal, type Crd } from "./crds.ts";
+import { crdSpec, groupPascal, readCrds, type Crd } from "./crds.ts";
 
 const fixtures = path.join(import.meta.dirname, "../test/fixtures");
 const json = (file: string) => JSON.parse(readFileSync(path.join(fixtures, file), "utf8"));
@@ -77,5 +78,63 @@ describe("crdSpec", () => {
     expect(() => crdSpec(base, [{ ...crds[0]!, kind: "Deployment" }])).toThrow(
       /expected a CustomResourceDefinition/,
     );
+  });
+
+  test("names the custom kind, not the template's, in every description", () => {
+    expect(JSON.stringify(built.paths)).not.toMatch(/\b(Job|PersistentVolume|StatefulSet)\b/);
+  });
+
+  /** A namespaced CRD `Foo` whose schema is `spec`. */
+  const foo = (spec: Record<string, any>): Crd => ({
+    kind: "CustomResourceDefinition",
+    spec: {
+      group: "example.com",
+      scope: "Namespaced",
+      names: { kind: "Foo", plural: "foos" },
+      versions: [
+        {
+          name: "v1",
+          served: true,
+          schema: { openAPIV3Schema: { type: "object", properties: spec } },
+        },
+      ],
+    },
+  });
+  const object = { type: "object", properties: { a: { type: "string" } } };
+
+  test("refuses a nested object named like the kind's list", () => {
+    expect(() => crdSpec(base, [foo({ list: object })])).toThrow(/two schemas are named/);
+  });
+
+  test("names nested objects by keys with any characters", () => {
+    const { definitions } = crdSpec(base, [
+      foo({ spec: { type: "object", properties: { "app.kubernetes.io/name": object } } }),
+    ]);
+    expect(definitions["com.example.v1.FooSpec"].properties["app.kubernetes.io/name"]).toEqual({
+      $ref: "#/definitions/com.example.v1.FooSpecAppKubernetesIoName",
+    });
+  });
+});
+
+describe("readCrds", () => {
+  const dir = mkdtempSync(path.join(tmpdir(), "crds-"));
+
+  test("reads every document of each manifest", async () => {
+    const file = path.join(fixtures, "crds", readdirSync(path.join(fixtures, "crds"))[0]!);
+    const read = await readCrds([file]);
+    expect(read.map((crd) => crd.kind)).toEqual(["CustomResourceDefinition"]);
+  });
+
+  test("names a missing manifest and how to fetch it", async () => {
+    const missing = path.join(dir, "missing.yaml");
+    await expect(readCrds([missing])).rejects.toThrow(
+      new RegExp(`${missing}.*pnpm specs:local kubernetes`),
+    );
+  });
+
+  test("refuses a manifest that does not parse", async () => {
+    const broken = path.join(dir, "broken.yaml");
+    writeFileSync(broken, "kind: CustomResourceDefinition\nspec: [unclosed\n");
+    await expect(readCrds([broken])).rejects.toThrow(/broken\.yaml/);
   });
 });

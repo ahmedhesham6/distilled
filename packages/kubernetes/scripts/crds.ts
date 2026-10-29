@@ -22,8 +22,35 @@
  * - PATCH accepts JSON patch, merge patch and apply, not strategic merge
  *
  * Checked against the OpenAPI a v1.36 API server publishes for the
- * external-snapshotter CRDs (test/crds.test.ts).
+ * external-snapshotter CRDs (scripts/crds.test.ts).
  */
+import * as fs from "node:fs/promises";
+import { parseAllDocuments } from "yaml";
+
+/**
+ * The CustomResourceDefinitions in `files`, every YAML document of each.
+ * A missing file names the command that fetches it; a file that does not
+ * parse is refused, not read in part.
+ */
+export const readCrds = async (files: ReadonlyArray<string>): Promise<Crd[]> => {
+  const crds: Crd[] = [];
+  for (const file of files) {
+    const text = await fs.readFile(file, "utf8").catch((cause) => {
+      throw new Error(
+        `crds: cannot read ${file}; fetch the CRD manifests with \`pnpm specs:local kubernetes\` and generate with DISTILLED_SPECS_LOCAL=1`,
+        { cause },
+      );
+    });
+    for (const doc of parseAllDocuments(text)) {
+      if (doc.errors.length > 0) {
+        throw new Error(`crds: ${file} is not valid YAML: ${doc.errors[0]!.message}`);
+      }
+      const crd = doc.toJS();
+      if (crd !== null && crd !== undefined) crds.push(crd);
+    }
+  }
+  return crds;
+};
 
 /** The parts of a CustomResourceDefinition this reads. */
 export interface Crd {
@@ -109,6 +136,25 @@ const SCALE: Template = {
 
 const HTTP_METHODS = ["get", "post", "put", "patch", "delete"] as const;
 
+/**
+ * The error statuses each verb declares, the same as the built-in groups'
+ * patches (patches/<group>/00{1,2,3}-add-missing-*-responses.patch.json):
+ * 404 when it names an object, 409 when it writes one, 422 when it
+ * validates one. List and deletecollection declare none.
+ */
+const ERRORS: Record<(typeof HTTP_METHODS)[number], { named: string[]; collection: string[] }> = {
+  get: { named: ["404"], collection: [] },
+  post: { named: [], collection: ["409", "422"] },
+  put: { named: ["404", "409", "422"], collection: [] },
+  patch: { named: ["404", "409", "422"], collection: [] },
+  delete: { named: ["404", "409"], collection: [] },
+};
+const STATUS_TEXT: Record<string, string> = {
+  "404": "Not Found",
+  "409": "Conflict",
+  "422": "Unprocessable Entity",
+};
+
 /** Path suffixes (after the plural) a resource serves, by subresource. */
 const collection = (t: Template) => `${t.namespaced ? "/namespaces/{namespace}" : ""}/${t.plural}`;
 
@@ -138,6 +184,11 @@ const fromTemplate = (
     for (const v of Object.values(node)) swapRefs(v);
   };
   const kindWord = new RegExp(`\\b${t.kind}\\b`, "g");
+  for (const param of copy.parameters ?? []) {
+    if (typeof param.description === "string") {
+      param.description = param.description.replace(kindWord, target.kind);
+    }
+  }
   for (const method of HTTP_METHODS) {
     const op = copy[method];
     if (op === undefined) continue;
@@ -152,12 +203,21 @@ const fromTemplate = (
     op.tags = [target.tag];
     op["x-kubernetes-group-version-kind"] = target.gvk;
     if (method === "patch") op.consumes = [...CRD_PATCH_TYPES];
+    const errors = ERRORS[method][templatePath.includes("{name}") ? "named" : "collection"];
+    for (const status of errors) op.responses[status] = { description: STATUS_TEXT[status] };
     swapRefs(op);
   }
   return copy;
 };
 
 const pascal = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+/** A property key as a definition name segment: `app.kubernetes.io/name` → `AppKubernetesIoName`. */
+const segment = (key: string) =>
+  key
+    .split(/[^A-Za-z0-9]+/)
+    .map(pascal)
+    .join("");
 
 /**
  * `schema`, with each nested object schema (one with `properties`, also as
@@ -170,7 +230,7 @@ const hoist = (schema: any, name: string, definitions: Record<string, any>): any
   if (schema?.type !== "object" || schema.properties === undefined) return schema;
   const properties: Record<string, any> = {};
   for (const [key, value] of Object.entries<any>(schema.properties)) {
-    properties[key] = hoist(value, `${name}${pascal(key)}`, definitions);
+    properties[key] = hoist(value, `${name}${segment(key)}`, definitions);
   }
   if (definitions[name] !== undefined) {
     throw new Error(`crds: two schemas are named ${name}`);
@@ -191,7 +251,7 @@ const resourceDefinition = (
     properties[key] =
       key === "metadata"
         ? { description: "Standard object's metadata.", $ref: `#/definitions/${META}.ObjectMeta` }
-        : hoist(value, `${def}${pascal(key)}`, definitions);
+        : hoist(value, `${def}${segment(key)}`, definitions);
   }
   return {
     type: "object",
@@ -236,6 +296,9 @@ export const crdSpec = (base: Record<string, any>, crds: ReadonlyArray<Crd>): Cr
         throw new Error(`crds: two schemas are named ${def}`);
       }
       definitions[def] = resourceDefinition(version.schema?.openAPIV3Schema, def, gvk, definitions);
+      if (definitions[listDef] !== undefined) {
+        throw new Error(`crds: two schemas are named ${listDef}`);
+      }
       definitions[listDef] = listDefinition(def, gvk, listKind);
 
       const target = {

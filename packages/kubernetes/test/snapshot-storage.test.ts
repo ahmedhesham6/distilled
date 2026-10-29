@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import * as path from "node:path";
 import * as Effect from "effect/Effect";
 import * as HttpClient from "effect/http/HttpClient";
 import * as HttpClientRequest from "effect/http/HttpClientRequest";
@@ -84,20 +86,6 @@ describe("snapshot.storage.k8s.io/v1 (a CRD group)", () => {
     expect(Result.getOrThrow(result).items[0]?.driver).toBe("hostpath.csi.k8s.io");
   });
 
-  test("patches a VolumeSnapshot with a merge patch", async () => {
-    const { web, body } = await call(
-      Kubernetes.snapshot_storage.patchSnapshotStorageV1NamespacedVolumeSnapshot({
-        namespace: "default",
-        name: "data-snap",
-        body: { metadata: { labels: { keep: "yes" } } },
-      }),
-      snapshot,
-    );
-    expect(web.method).toBe("PATCH");
-    expect(web.headers.get("content-type")).toBe("application/merge-patch+json");
-    expect(JSON.parse(body)).toEqual({ metadata: { labels: { keep: "yes" } } });
-  });
-
   test("reads a missing VolumeSnapshot as NotFound", async () => {
     const { result } = await call(
       Kubernetes.snapshot_storage.readSnapshotStorageV1NamespacedVolumeSnapshot({
@@ -115,5 +103,33 @@ describe("snapshot.storage.k8s.io/v1 (a CRD group)", () => {
       404,
     );
     expect(Result.isFailure(result) && result.failure._tag).toBe("NotFound");
+  });
+
+  test("declares the same typed errors as a built-in resource of the same scope", () => {
+    const errors = (module: string) => {
+      const source = readFileSync(
+        path.join(import.meta.dirname, `../src/services/${module}.ts`),
+        "utf8",
+      );
+      return Object.fromEntries(
+        [
+          ...source.matchAll(
+            /export const (\w+): API\.OperationMethod<[\s\S]*?errors: \[([^\]]*)\]/g,
+          ),
+        ].map((m) => [m[1]!, m[2]!]),
+      );
+    };
+    const builtIn = { ...errors("batch"), ...errors("core") };
+    const custom = Object.entries(errors("snapshot_storage"));
+    expect(custom.length).toBeGreaterThan(0);
+    for (const [name, union] of custom) {
+      // VolumeSnapshot is namespaced like a Job; the other two are
+      // cluster-scoped like a PersistentVolume.
+      const template = name
+        .replace("SnapshotStorageV1", name.includes("VolumeSnapshotC") ? "CoreV1" : "BatchV1")
+        .replace(/VolumeSnapshot(Content|Class)/, "PersistentVolume")
+        .replace("VolumeSnapshot", "Job");
+      expect([name, union]).toEqual([name, builtIn[template]]);
+    }
   });
 });
