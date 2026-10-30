@@ -25,12 +25,7 @@ import {
   matchTypedError,
   nameOf,
 } from "@distilled.cloud/core/protocol-http";
-import {
-  hasSensitiveMember,
-  unwrapRedactedDeep,
-  wrapSensitive,
-} from "@distilled.cloud/core/protocol-rest";
-import { checkResponse, withholdActual } from "@distilled.cloud/core/response-validation";
+import { checkSuccess, unwrapRedactedDeep } from "@distilled.cloud/core/protocol-rest";
 import { parseRetryAfterForStatus } from "@distilled.cloud/core/retry-after";
 import * as Telemetry from "@distilled.cloud/core/telemetry";
 /**
@@ -634,25 +629,16 @@ const decodeResponse = (
 
       // 2xx: the response body IS the payload (no envelope). Wire->TS key
       // mapping is schema-driven; sensitive members come back Redacted.
-      // Strict mode checks the mapped body against the output schema first.
-      // For an output with sensitive members, a non-JSON body fails in every
-      // mode and parse errors withhold the body.
-      const sensitive = hasSensitiveMember(outputAst);
-      if (nonJson && sensitive) {
-        return fail(new StripeParseError({ body: "[REDACTED]", cause: "Invalid JSON response" }));
-      }
+      // Strict mode checks the mapped body against the output schema first,
+      // and parse errors withhold a body that can hold a secret (core
+      // `checkSuccess`).
       const body: unknown = nonJson ? text : (json ?? {});
-      const mapped = mapsVerbatim(outputAst, "decode") ? body : mapKeys(outputAst, body, "decode");
-      const cause = checkResponse(context, outputAst, mapped);
-      if (cause !== undefined) {
-        return fail(
-          new StripeParseError({
-            body: sensitive ? "[REDACTED]" : nonJson ? text : json,
-            cause: sensitive ? withholdActual(cause) : cause,
-          }),
-        );
-      }
-      return Effect.succeed(sensitive ? wrapSensitive(outputAst, mapped) : mapped);
+      const checked = checkSuccess(context, outputAst, {
+        value: mapsVerbatim(outputAst, "decode") ? body : mapKeys(outputAst, body, "decode"),
+        body: nonJson ? text : json,
+        nonJson,
+      });
+      return checked.ok ? Effect.succeed(checked.value) : fail(new StripeParseError(checked.error));
     },
   });
 

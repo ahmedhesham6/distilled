@@ -184,7 +184,7 @@ const sensitiveOutputs = /*@__PURE__*/ new WeakMap<AST.AST, boolean>();
  * Whether any member, map value or list element reachable from `ast` is
  * marked {@link SensitiveValue}. Such an output is decoded through
  * {@link wrapSensitive}, and its parse errors withhold the response body (see
- * {@link RestParseErrorInfo}); hand-written protocols use this to do the same.
+ * {@link checkSuccess}, which every REST-style protocol's success path uses).
  */
 export const hasSensitiveMember = (ast: AST.AST): boolean => {
   const cached = sensitiveOutputs.get(ast);
@@ -316,15 +316,80 @@ const defaultErrorEnvelope = (body: unknown): RestErrorEnvelope | undefined => {
 // here; the generated operation annotations reintroduce it for callers.
 const fail = (e: unknown): Effect.Effect<never> => Effect.fail(e) as Effect.Effect<never>;
 
+// =============================================================================
+// 2xx bodies
+// =============================================================================
+
+/** A 2xx body a protocol read, for {@link checkSuccess}. */
+export interface SuccessBody {
+  /** The value to check and return: the body mapped onto the output's TS names. */
+  readonly value: unknown;
+  /** What a parse error reports as `body` for an output without sensitive members. */
+  readonly body: unknown;
+  /** Whether the body was not JSON. */
+  readonly nonJson: boolean;
+}
+
+/** The outcome of {@link checkSuccess}: the value, or the parse error's fields. */
+export type SuccessCheck =
+  | { readonly ok: true; readonly value: unknown }
+  | { readonly ok: false; readonly error: RestParseErrorInfo };
+
+/**
+ * Check a 2xx body against the operation's output schema and deliver its
+ * sensitive values as `Redacted`. Every REST-style protocol ends its success
+ * path here, so all of them treat a body that can hold a secret alike:
+ *
+ * - The checked value comes back through {@link wrapSensitive}.
+ * - A mismatch (validating modes, see `core/response-validation`) reports
+ *   `read.body` and the schema error.
+ * - For an output with sensitive members ({@link hasSensitiveMember}), a
+ *   non-JSON body fails in every mode with `"Invalid JSON response"`, and a
+ *   mismatch reports `body: "[REDACTED]"` and the schema error without the
+ *   value it found (`withholdActual`).
+ *
+ * Synchronous, for protocols that already hold the calling fiber's context;
+ * {@link validateSuccess} is the `Effect` form.
+ */
+export const checkSuccess = (
+  context: Context.Context<any>,
+  outputAst: AST.AST,
+  read: SuccessBody,
+): SuccessCheck => {
+  const sensitive = hasSensitiveMember(outputAst);
+  if (read.nonJson && sensitive) {
+    return { ok: false, error: { body: "[REDACTED]", cause: "Invalid JSON response" } };
+  }
+  const invalid = checkResponse(context, outputAst, read.value);
+  if (invalid !== undefined) {
+    return {
+      ok: false,
+      error: sensitive
+        ? { body: "[REDACTED]", cause: withholdActual(invalid) }
+        : { body: read.body, cause: invalid },
+    };
+  }
+  return { ok: true, value: sensitive ? wrapSensitive(outputAst, read.value) : read.value };
+};
+
+/**
+ * {@link checkSuccess} on the calling fiber, failing with `parseError` (the
+ * SDK's `<Sdk>ParseError`) built from the withheld-or-not fields.
+ */
+export const validateSuccess = <E>(
+  outputAst: AST.AST,
+  read: SuccessBody,
+  parseError: (info: RestParseErrorInfo) => E,
+): Effect.Effect<unknown, E> =>
+  Effect.withFiber((fiber) => {
+    const checked = checkSuccess(fiber.context as Context.Context<any>, outputAst, read);
+    return checked.ok ? Effect.succeed(checked.value) : Effect.fail(parseError(checked.error));
+  });
+
 /** Per-operation decode facts, read from the output schema once. */
 interface DecodePlan {
   readonly binary: boolean;
   readonly verbatim: boolean;
-  /**
-   * The output has sensitive members (see {@link hasSensitiveMember}): decoded
-   * values are wrapped in `Redacted` and parse errors withhold the body.
-   */
-  readonly sensitive: boolean;
   /** Members read from response headers (`T.Header`). */
   readonly headers: ReadonlyArray<ResponseHeaderMember>;
 }
@@ -336,7 +401,6 @@ const decodePlanFor = (outputAst: AST.AST): DecodePlan => {
     plan = {
       binary: getAnn(outputAst, binaryResponseSymbol) !== undefined,
       verbatim: mapsVerbatim(outputAst, "decode"),
-      sensitive: hasSensitiveMember(outputAst),
       headers: responseHeaderMembers(outputAst),
     };
     decodePlans.set(outputAst, plan);
@@ -496,30 +560,18 @@ export const makeRestProtocol = <C>(options: RestProtocolOptions<C>): Layer.Laye
     // with sensitive members, a non-JSON body fails in every mode and parse
     // errors withhold the body.
     const plan = decodePlanFor(outputAst);
-    if (nonJson && plan.sensitive) {
-      return {
-        ok: false,
-        error: options.parseError({ body: "[REDACTED]", cause: "Invalid JSON response" }),
-      };
-    }
     let body: unknown = nonJson ? text : (json ?? {});
     if (options.transformResponse) body = options.transformResponse(body);
-    const mapped = withResponseHeaders(
-      plan.headers,
-      plan.verbatim ? body : mapKeys(outputAst, body, "decode"),
-      headers,
-    );
-    const invalid = checkResponse(context, outputAst, mapped);
-    if (invalid !== undefined) {
-      return {
-        ok: false,
-        error: options.parseError({
-          body: plan.sensitive ? "[REDACTED]" : nonJson ? text : json,
-          cause: plan.sensitive ? withholdActual(invalid) : invalid,
-        }),
-      };
-    }
-    return { ok: true, value: plan.sensitive ? wrapSensitive(outputAst, mapped) : mapped };
+    const checked = checkSuccess(context, outputAst, {
+      value: withResponseHeaders(
+        plan.headers,
+        plan.verbatim ? body : mapKeys(outputAst, body, "decode"),
+        headers,
+      ),
+      body: nonJson ? text : json,
+      nonJson,
+    });
+    return checked.ok ? checked : { ok: false, error: options.parseError(checked.error) };
   };
 
   const decodeResponse = (
